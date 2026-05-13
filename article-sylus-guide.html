@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylus Mechanics Deep Dive | Deepspace Hunter Station</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .article-content h1 {
+            color: var(--accent);
+            font-size: 38px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .article-content h2 {
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .article-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .article-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .back-home {
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .post-meta {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .quote-box {
+            border-left: 4px solid var(--accent);
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-size: 22px;
+            color: #fff;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .compare-table th {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .compare-table td {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 15px;
+            color: #ccc;
+        }
+
+        .ad-placeholder {
+            border: 1px dashed rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.02);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header class="main-header">
+    <nav class="nav-container">
+        <a href="index.html" class="logo">
+            DEEPSPACE <span>HUNTER</span>
+        </a>
+    </nav>
+</header>
+
+<main class="container">
+
+<article class="article-content">
+
+    <a href="index.html" class="back-home">← Back to Guides</a>
+
+    <h1>
+        Sylus & Shen Xinghui Deep Dive:
+        The New Combat Law of Love and Deepspace
+    </h1>
+
+    <div class="post-meta">
+        Published on May 13, 2026 | By Hunter Alpha
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop" alt="cover">
+
+    <p>
+        Love and Deepspace has quietly shifted away from traditional
+        “higher stats = stronger character” design.
+    </p>
+
+    <p>
+        The newest combat philosophy now revolves around:
+        <span class="highlight">
+            rhythm control, burst timing, and energy circulation.
+        </span>
+    </p>
+
+    <p>
+        Among all current characters,
+        Shen Xinghui and Sylus represent two completely different directions
+        of the game's evolving combat system.
+    </p>
+
+    <div class="quote-box">
+        Shen Xinghui controls burst windows.<br><br>
+        Sylus controls combat tempo itself.
+    </div>
+
+    <h2>I. Shen Xinghui — Why He Is the Most Timing-Dependent DPS</h2>
+
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1400&auto=format&fit=crop" alt="shen xinghui">
+
+    <p>
+        Shen Xinghui is not a sustained DPS character.
+    </p>
+
+    <p>
+        His entire design philosophy revolves around:
+        <span class="highlight">damage compression.</span>
+    </p>
+
+    <p>
+        Instead of dealing damage evenly across 20 seconds,
+        he attempts to squeeze all multipliers into a
+        3-5 second burst phase.
+    </p>
+
+    <p>
+        His strongest mechanics include:
+    </p>
+
+    <ul style="padding-left:25px; color:#ccc; line-height:2;">
+        <li>Light resonance burst</li>
+        <li>Shield-break bonus multipliers</li>
+        <li>Follow-up chase attacks</li>
+        <li>Light corrosion critical scaling</li>
+    </ul>
+
+    <p style="margin-top:20px;">
+        This creates one major weakness:
+    </p>
+
+    <div class="quote-box">
+        Missing the burst window means losing almost the entire rotation.
+    </div>
+
+    <p>
+        Boss movement, mistimed resonance,
+        or failed shield synchronization can completely destroy his DPS cycle.
+    </p>
+
+    <div class="ad-placeholder" style="height:100px; margin:35px 0;">
+        [In-Article Ad Slot]
+    </div>
+
+    <h2>II. The Real Power of Light Attribute Mechanics</h2>
+
+    <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1400&auto=format&fit=crop" alt="light combat">
+
+    <p>
+        Most players think Shen Xinghui is powerful because his numbers are high.
+    </p>
+
+    <p>
+        But the real reason is:
+        <span class="highlight">
+            multiplier stacking efficiency.
+        </span>
+    </p>
+
+    <p>
+        During enemy weakness states,
+        he can simultaneously gain:
+    </p>
+
+    <ul style="padding-left:25px; color:#ccc; line-height:2;">
+        <li>Light attribute amplification</li>
+        <li>Weakness bonus damage</li>
+        <li>Critical scaling</li>
+        <li>Resonance follow-up attacks</li>
+    </ul>
+
+    <p>
+        This creates explosive exponential damage scaling.
+    </p>
+
+    <div class="quote-box">
+        He feels less like a mobile RPG character,
+        and more like a traditional action-game finisher.
+    </div>
+
+    <h2>III. Sylus — Numerical Inflation or Mechanical Revolution?</h2>
+
+    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1400&auto=format&fit=crop" alt="sylus">
+
+    <p>
+        If Shen Xinghui represents burst timing,
+        Sylus represents:
+        <span class="highlight">
+            infinite combat flow.
+        </span>
+    </p>
+
+    <p>
+        His true strength does not come from raw multipliers.
+    </p>
+
+    <p>
+        Instead, it comes from:
+    </p>
+
+    <div class="quote-box">
+        Energy circulation and resonance efficiency.
+    </div>
+
+    <p>
+        Traditional characters follow a simple loop:
+    </p>
+
+    <p>
+        Skill → Cooldown → Energy Recovery → Repeat
+    </p>
+
+    <p>
+        Sylus completely breaks this formula.
+    </p>
+
+    <p>
+        His abilities feed energy back into each other,
+        enabling:
+    </p>
+
+    <ul style="padding-left:25px; color:#ccc; line-height:2;">
+        <li>Dark energy recovery</li>
+        <li>Resonance cooldown acceleration</li>
+        <li>Enhanced-state extension</li>
+        <li>Follow-up energy generation</li>
+    </ul>
+
+    <p>
+        This creates the famous:
+        <span class="highlight">“Infinite Dark Energy Loop.”</span>
+    </p>
+
+    <h2>IV. Core Builds — Critical or Attack Scaling?</h2>
+
+    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1400&auto=format&fit=crop" alt="builds">
+
+    <p>
+        Sylus currently has two dominant build paths.
+    </p>
+
+    <p>
+        <span class="highlight">Critical Build:</span>
+        Extremely high ceiling,
+        devastating during resonance windows,
+        but unstable if crit consistency fails.
+    </p>
+
+    <p>
+        <span class="highlight">Attack Build:</span>
+        More reliable,
+        smoother energy rotation,
+        and better suited for most players.
+    </p>
+
+    <div class="quote-box">
+        In real combat scenarios,
+        Attack builds are often more practical than Crit builds.
+    </div>
+
+    <h2>V. Character Comparison — Who Should You Pull?</h2>
+
+    <table class="compare-table">
+
+        <tr>
+            <th>Character</th>
+            <th>Core Identity</th>
+            <th>Best For</th>
+        </tr>
+
+        <tr>
+            <td>Shen Xinghui</td>
+            <td>Burst Window Execution</td>
+            <td>Players who love explosive damage</td>
+        </tr>
+
+        <tr>
+            <td>Sylus</td>
+            <td>Infinite Combat Rotation</td>
+            <td>Players who enjoy advanced mechanics</td>
+        </tr>
+
+    </table>
+
+    <p style="margin-top:30px;">
+        Their differences are fundamental.
+    </p>
+
+    <div class="quote-box">
+        Shen Xinghui is a finisher.<br><br>
+        Sylus is a perpetual engine.
+    </div>
+
+    <h2>VI. Final Thoughts — The New Rule of Linkon City</h2>
+
+    <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1400&auto=format&fit=crop" alt="future">
+
+    <p>
+        Love and Deepspace is no longer just about bigger numbers.
+    </p>
+
+    <p>
+        The future of combat design clearly revolves around:
+    </p>
+
+    <ul style="padding-left:25px; color:#ccc; line-height:2;">
+        <li>Tempo control</li>
+        <li>Window optimization</li>
+        <li>Resource efficiency</li>
+        <li>Combat flow mastery</li>
+    </ul>
+
+    <p>
+        Shen Xinghui represents
+        <span class="highlight">burst compression.</span>
+    </p>
+
+    <p>
+        Sylus represents
+        <span class="highlight">combat domination through energy flow.</span>
+    </p>
+
+    <div class="quote-box">
+        Linkon City's combat rules have already changed.
+    </div>
+
+</article>
+
+</main>
+
+<footer class="main-footer">
+    <p>
+        © 2026 Deepspace Hunter Station |
+        <a href="legal/privacy.html" style="color:#666;">
+            Privacy Policy
+        </a>
+    </p>
+</footer>
+
+</body>
+</html>
