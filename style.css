@@ -1,4 +1,6 @@
-/* 基础变量 */
+/* =========================================
+   1. 基础变量与全局设置
+   ========================================= */
 :root {
     --bg-color: #0b0d14;
     --card-bg: #161a25;
@@ -24,7 +26,9 @@ body {
     padding: 20px;
 }
 
-/* 导航栏 */
+/* =========================================
+   2. 导航栏
+   ========================================= */
 .main-header {
     background: #000;
     border-bottom: 1px solid var(--border);
@@ -44,8 +48,12 @@ body {
 .logo span { color: #fff; }
 .nav-links { list-style: none; display: flex; gap: 20px; }
 .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
+/* 选中状态（如果需要） */
+.nav-links a.active { color: var(--accent); font-weight: bold; }
 
-/* 广告占位符样式 */
+/* =========================================
+   3. 广告位
+   ========================================= */
 .ad-container {
     display: flex;
     justify-content: center;
@@ -63,7 +71,9 @@ body {
 .top-banner .ad-placeholder { width: 728px; height: 90px; }
 .sidebar-ad .ad-placeholder { width: 300px; height: 250px; }
 
-/* 文章卡片 */
+/* =========================================
+   4. 文章卡片 (核心修复区)
+   ========================================= */
 .post-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -71,14 +81,65 @@ body {
     margin-bottom: 25px;
     border-radius: 8px;
     overflow: hidden;
+    /* 必须设置相对定位，作为隐形点击层的基准 */
+    position: relative; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.post-thumb img { width: 300px; height: 180px; object-fit: cover; }
+
+/* 悬停反馈：轻微上浮和阴影，不使用下划线 */
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.post-thumb img { 
+    width: 300px; 
+    height: 180px; 
+    object-fit: cover; 
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* 悬停时图片稍微亮一点点 */
+.post-card:hover .post-thumb img {
+    filter: brightness(1.1);
+}
+
 .post-info { padding: 20px; }
 .category { color: var(--accent); font-size: 12px; font-weight: bold; }
-.post-info h3 a { color: #fff; text-decoration: none; font-size: 20px; }
+
+/* 标题样式 */
+.post-info h3 { margin: 10px 0; }
+.post-info h3 a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 20px; 
+    transition: color 0.3s ease;
+}
+
+/* 核心：隐形点击覆盖层 */
+.main-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 必须保证 z-index 足够高，盖住图片和所有文字内容 */
+    z-index: 10; 
+    cursor: pointer;
+}
+
+/* 悬停时标题变色 */
+.post-card:hover .main-link {
+    color: var(--accent) !important;
+}
+
 .post-meta { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
 
-/* 底部 */
+/* =========================================
+   5. 页脚与适配
+   ========================================= */
 .main-footer {
     background: #000;
     padding: 40px 20px;
@@ -94,39 +155,6 @@ body {
 @media (max-width: 768px) {
     .container { flex-direction: column; }
     .post-card { flex-direction: column; }
-    .post-thumb img { width: 100%; }
+    .post-thumb img { width: 100%; height: 200px; }
     .top-banner .ad-placeholder { width: 100%; height: 50px; }
-}
-
-/* 1. 确保卡片是定位基准 */
-.post-card {
-    position: relative; /* 必须加这一句 */
-    transition: transform 0.3s ease;
-}
-
-/* 2. 让标题里的链接产生一个“隐形覆盖层” */
-.main-link::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* 让这个隐形层铺在图片和所有文字上面 */
-}
-
-/* 3. 彻底去除链接的视觉感知（颜色随整体，无下划线） */
-.main-link {
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-/* 4. 悬停效果：如果你想让用户知道这里能点，可以加个轻微的卡片上浮，而不是下划线 */
-.post-card:hover {
-    transform: translateY(-4px); /* 卡片轻轻往上跳一下 */
-}
-
-/* 5. 悬停时让标题颜色变一下（可选，通常比下划线高级） */
-.post-card:hover .main-link {
-    color: var(--accent) !important;
 }
