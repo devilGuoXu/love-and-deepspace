@@ -44,11 +44,13 @@
         nav a { color: var(--gold-accent); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
 
         header {
-            padding: 180px 20px;
+            padding: 200px 20px; /* 增加上下留白，让大图露出来 */
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.95)), url('https://placehold.co/1200x800/050505/333?text=THE+SYLUS+CHRONICLES');
+            background: 
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), /* 黑色渐变层，确保文字清晰 */
+                url('images/sylus-lore-cover.png'); /* 你的图片路径 */
             background-size: cover;
-            background-position: center;
+            background-position: center 20%; /* 确保在缩放时，秦彻的头部不会被切掉 */
             border-bottom: 2px solid var(--sylus-red);
         }
 
