@@ -73,18 +73,30 @@
             transition: 0.3s;
         }
 
-        .op-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 280px; /* 关键点：高度从380px降至280px */
-            overflow: hidden;
-        }
-
-        .op-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+		.op-image-wrapper {
+		    position: relative;
+		    width: 100%;
+		    /* 删掉固定的 height: 280px */
+		    overflow: hidden;
+		    border-radius: 12px; /* 建议加上圆角，更有卡片感 */
+		    line-height: 0;      /* 彻底消除图片下方的空白间隙 */
+		}
+		
+		.op-image {
+		    width: 100%;
+		    /* 1. 使用你建议的 3/4 比例（竖版海报感） */
+		    aspect-ratio: 3 / 4; 
+		    
+		    /* 2. 核心：裁剪模式 */
+		    object-fit: cover;
+		    
+		    /* 3. 解决“只显示下面”的问题：强制对齐到顶部 */
+		    /* 这样会优先显示秦彻的头部和上半身，而不是腿部 */
+		    object-position: top center; 
+		    
+		    display: block;
+		    transition: transform 0.5s ease; /* 为以后的悬停放大做准备 */
+		}
 
         .tier-tag {
             position: absolute;
