@@ -53,27 +53,7 @@ body {
 .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
 
 /* =========================================
-   4. 广告位
-   ========================================= */
-.ad-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-.ad-placeholder {
-    background: #1a1e2b;
-    border: 1px dashed #444;
-    color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-}
-.top-banner .ad-placeholder { width: 728px; height: 90px; }
-.sidebar-ad .ad-placeholder { width: 300px; height: 250px; }
-
-/* =========================================
-   5. 文章卡片 (核心布局)
+   4. 文章卡片布局 (重点修复)
    ========================================= */
 .post-card {
     background: var(--card-bg);
@@ -82,20 +62,22 @@ body {
     margin-bottom: 25px;
     border-radius: 8px;
     overflow: hidden;
-    position: relative; /* 必须：给透明层提供定位基准 */
+    position: relative; /* 必须：作为定位基准 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* 开启层级上下文 */
 }
 
-/* 核心：透明点击层 */
+/* 终极全卡片点击层 */
 .full-card-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10; /* 确保它盖在图片和文字之上 */
-    text-decoration: none;
-    background: transparent; /* 完全透明 */
+    z-index: 999; /* 确保在最顶层，无视一切阻碍 */
+    display: block;
+    background-color: rgba(255, 255, 255, 0); /* 填充透明色以防浏览器误判为空标签 */
+    cursor: pointer;
 }
 
 /* 悬停反馈 */
@@ -104,14 +86,15 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 悬停时让标题变色（即使鼠标点在图片上） */
-.post-card:hover h3 {
+/* 悬停时让标题变色 */
+.post-card:hover .post-info h3 {
     color: var(--accent);
 }
 
-/* 图片样式 */
+/* 图片区域 */
 .post-thumb {
-    flex-shrink: 0; /* 防止图片被挤压 */
+    flex-shrink: 0;
+    line-height: 0; /* 消除图片底部间隙 */
 }
 
 .post-thumb img { 
@@ -121,19 +104,23 @@ body {
     display: block;
 }
 
-/* 文字内容区域 */
+/* 文章信息区域 */
 .post-info { 
     padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .category { 
     color: var(--accent); 
     font-size: 12px; 
     font-weight: bold; 
+    margin-bottom: 5px;
 }
 
 .post-info h3 { 
-    margin: 10px 0; 
+    margin: 5px 0 10px 0; 
     color: #fff; 
     font-size: 20px; 
     transition: color 0.3s ease;
@@ -142,16 +129,17 @@ body {
 .post-info p {
     color: var(--text-main);
     margin: 0;
+    font-size: 14px;
 }
 
 .post-meta { 
     font-size: 12px; 
     color: var(--text-muted); 
-    margin-top: 10px; 
+    margin-top: 15px; 
 }
 
 /* =========================================
-   6. 页脚与适配
+   5. 页脚与适配
    ========================================= */
 .main-footer {
     background: #000;
