@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operative Files | Meta Analysis - Deepspace Hunter Station</title>
+    
+    <!-- 1. 首先引用全局样式，保持导航和基础色调统一 -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- 2. 局部覆盖样式：只针对本页面生效，不会影响主页 -->
+    <style>
+        /* 压缩顶部间距，让内容上移 */
+        .hub-content {
+            padding: 10px 20px; /* 极简内边距 */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 调整标题区域：减小字号和间距 */
+        .category-header {
+            text-align: center;
+            margin-top: 10px;    /* 距离导航栏的距离 */
+            margin-bottom: 20px; /* 距离下方图片的距离 */
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .category-header h1 {
+            color: var(--accent);
+            font-size: 1.8rem;    /* 缩小标题字号 */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .category-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* 广告位：进一步压缩高度 */
+        .top-banner {
+            margin: 0 auto 20px auto;
+            max-width: 728px;
+        }
+
+        .ad-placeholder {
+            height: 50px; /* 高度从90px缩减到50px */
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--border);
+            line-height: 50px;
+            text-align: center;
+            color: #444;
+            font-size: 11px;
+        }
+
+        /* 核心修改：缩短图片容器高度，确保首屏可见 */
+        .operative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .op-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .op-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 280px; /* 关键点：高度从380px降至280px */
+            overflow: hidden;
+        }
+
+        .op-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tier-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--accent);
+            padding: 3px 8px;
+            border: 1px solid var(--accent);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .op-details {
+            padding: 15px;
+        }
+
+        .op-details h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .evol-type {
+            color: var(--accent);
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .btn-analyze {
+            display: block;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid var(--border);
+            color: #fff;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+
+        .op-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" style="color:var(--accent);">Operative Files</a></li>
+                <li><a href="#">Combat Guides</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hub-content">
+        <header class="category-header">
+            <h1>Operative Files</h1>
+            <p>Classified Intelligence Database</p>
+        </header>
+
+        <!-- 顶部广告位：已压缩高度 -->
+        <div class="top-banner">
+            <div class="ad-placeholder">Ad Space (Top Banner)</div>
+        </div>
+
+        <div class="operative-grid">
+            <!-- 秦彻 Sylus -->
+            <a href="sylus.html" class="op-card">
+                <div class="op-image-wrapper">
+                    <span class="tier-tag">SS</span>
+                    <img src="../images/sylus-thumb.jpg" alt="Sylus" class="op-image">
+                </div>
+                <div class="op-details">
+                    <span class="evol-type">Energy Manipulation</span>
+                    <h2>Sylus</h2>
+                    <span class="btn-analyze">Access File</span>
+                </div>
+            </a>
+
+            <!-- 沈星回 Xavier -->
+            <a href="xavier.html" class="op-card">
+                <div class="op-image-wrapper">
+                    <span class="tier-tag">S+</span>
+                    <img src="../images/xavier-thumb.jpg" alt="Xavier" class="op-image">
+                </div>
+                <div class="op-details">
+                    <span class="evol-type">Light Control</span>
+                    <h2>Xavier</h2>
+                    <span class="btn-analyze">Access File</span>
+                </div>
+            </a>
+
+            <!-- 黎深 Zayne -->
+            <a href="zayne.html" class="op-card">
+                <div class="op-image-wrapper">
+                    <span class="tier-tag">S</span>
+                    <img src="../images/zayne-thumb.jpg" alt="Zayne" class="op-image">
+                </div>
+                <div class="op-details">
+                    <span class="evol-type">Ice Creation</span>
+                    <h2>Zayne</h2>
+                    <span class="btn-analyze">Access File</span>
+                </div>
+            </a>
+
+            <!-- 祁煜 Rafayel -->
+            <a href="rafayel.html" class="op-card">
+                <div class="op-image-wrapper">
+                    <span class="tier-tag">S</span>
+                    <img src="../images/rafayel-thumb.jpg" alt="Rafayel" class="op-image">
+                </div>
+                <div class="op-details">
+                    <span class="evol-type">Fire Manifestation</span>
+                    <h2>Rafayel</h2>
+                    <span class="btn-analyze">Access File</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+	<footer class="main-footer">
+		<div class="footer-nav">
+			<a href="/legal/about.html">About Us</a>
+			<a href="/legal/contact.html">Contact Us</a>
+			<a href="/legal/privacy.html">Privacy Policy</a>
+			<a href="/legal/disclaimer.html">Disclaimer</a>
+		</div>
+		<div class="copyright">
+			<p>© 2026 Deepspace Hunter Station. All rights reserved.</p>
+			<p style="margin-top: 5px;">Love and Deepspace fan-site for tactical analysis.</p>
+		</div>
+	</footer>
+
+</body>
+</html>
