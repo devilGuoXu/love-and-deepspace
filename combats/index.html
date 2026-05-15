@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMBAT TERMINAL | Deepspace Hunter</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.webp">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="combat-style.css">
 </head>
-<body class="combat-root">
-    <div class="vignette-overlay"></div>
-
+<body class="combat-page">
+    <div class="vignette"></div>
+    
+    <!-- 导航栏 - 完全使用主页的样式，不加额外类 -->
     <header class="main-header">
-        <div class="nav-container">
-            <a href="/" class="logo">DEEPSPACE <span>HUNTER</span></a>
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/operatives/">Operative Files</a></li>
-                <li><a href="/combats/" style="color:var(--accent);" class="active">Combat Guides</a></li>
-                <li><a href="/resources/">Resource Planning</a></li>
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="./" style="color:var(--accent);">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
 
-    <main class="combat-master-layout">
+    <main class="combat-layout">
+        <!-- 侧边分类栏 -->
         <aside class="tactical-sidebar">
-            <div class="sidebar-label">⟡ DATABASE INDEX ⟡</div>
+            <div class="sidebar-label">DATABASE INDEX</div>
             <ul class="category-list">
                 <li class="active" data-category="basic">
                     <span class="code">00</span> Basic Protocols
@@ -39,12 +42,13 @@
                     <span class="code">03</span> Protocore Builds
                 </li>
                 <li class="locked" data-category="classified">
-                    <span class="code">XX</span> Classified · N109
+                    <span class="code">XX</span> Classified...
                 </li>
             </ul>
         </aside>
 
         <section class="content-stream">
+            <!-- 状态仪表盘 -->
             <div class="status-dashboard">
                 <div class="dash-item">
                     <label>SYNC RATE</label>
@@ -60,7 +64,7 @@
                 </div>
             </div>
 
-            <!-- 动态内容区域 - 会根据侧边栏点击变化 -->
+            <!-- 动态内容区域 -->
             <div id="dynamic-content">
                 <!-- Basic Protocols 默认内容 -->
                 <article class="log-entry">
@@ -77,7 +81,7 @@
                             <div class="data-point">Oath Charge: 1000 Energy</div>
                         </div>
                     </div>
-                    <a href="#" class="log-link">VIEW BASIC TRAINING →</a>
+                    <a href="#" class="log-link" onclick="alert('Full basic training guide coming soon'); return false;">VIEW BASIC TRAINING →</a>
                 </article>
 
                 <article class="log-entry">
@@ -94,7 +98,7 @@
                             <div class="data-point">Slow Duration: 2.5s</div>
                         </div>
                     </div>
-                    <a href="#" class="log-link">VIEW DODGE TIMING →</a>
+                    <a href="#" class="log-link" onclick="alert('Perfect dodge timing guide coming soon'); return false;">VIEW DODGE TIMING →</a>
                 </article>
 
                 <div class="end-of-data">⟡ BASIC PROTOCOLS — COMPLETE ⟡</div>
@@ -102,225 +106,81 @@
         </section>
     </main>
 
-    <footer class="combat-footer">
+    <footer class="main-footer">
         <div class="footer-links">
             <a href="../legal/about.html">About Us</a>
-            <a href="../legal/contact.html">Contact</a>
+            <a href="../legal/contact.html">Contact Us</a>
             <a href="../legal/privacy.html">Privacy Policy</a>
             <a href="../legal/disclaimer.html">Disclaimer</a>
         </div>
-        <p>© 2026 Deepspace Combat Research Center. Fan-made site.</p>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
     </footer>
 
     <script>
-        // 侧边栏菜单数据 - 每个分类对应的内容
+        // 侧边栏菜单数据
         const categoryContent = {
             basic: {
                 title: "Basic Protocols",
                 entries: [
-                    {
-                        id: "ENTRY_#001",
-                        date: "2026.05.16",
-                        tag: "BASIC_PROTOCOL",
-                        title: "Combat Basics: Resonance & Ardent Oath",
-                        desc: "Understanding the core combat loop: Build Resonance Energy → Trigger Resonance Skill → Charge Ardent Oath. Each character has unique resonance windows and optimal rotation patterns.",
-                        points: [
-                            { label: "Resonance CD", value: "12s" },
-                            { label: "Oath Charge", value: "1000 Energy" }
-                        ]
-                    },
-                    {
-                        id: "ENTRY_#002",
-                        date: "2026.05.15",
-                        tag: "DODGE_MECHANIC",
-                        title: "Perfect Dodge: Invincibility Frames",
-                        desc: "Perfect dodge grants 0.8 seconds of invincibility and triggers a 30% slow-motion effect on enemies. Sylus additionally gains 15% Resonance Energy refund in Dark Energy state.",
-                        points: [
-                            { label: "i-Frames", value: "0.8s" },
-                            { label: "Slow Duration", value: "2.5s" }
-                        ]
-                    },
-                    {
-                        id: "ENTRY_#003",
-                        date: "2026.05.14",
-                        tag: "WEAKNESS_BREAK",
-                        title: "Weakness Break System",
-                        desc: "Enemies have shields matching their attribute. Breaking weakness with correct attribute deals 200% stagger damage and increases all damage by 50% for 8 seconds.",
-                        points: [
-                            { label: "Stagger DMG", value: "200%" },
-                            { label: "DMG Bonus", value: "+50%" }
-                        ]
-                    }
+                    { id: "ENTRY_#001", date: "2026.05.16", tag: "BASIC_PROTOCOL", title: "Combat Basics: Resonance & Ardent Oath", desc: "Understanding the core combat loop: Build Resonance Energy → Trigger Resonance Skill → Charge Ardent Oath.", points: ["Resonance CD: 12s", "Oath Charge: 1000 Energy"] },
+                    { id: "ENTRY_#002", date: "2026.05.15", tag: "DODGE_MECHANIC", title: "Perfect Dodge: Invincibility Frames", desc: "Perfect dodge grants 0.8s invincibility and 30% slow-motion. Sylus gains 15% Resonance Energy refund.", points: ["i-Frames: 0.8s", "Slow Duration: 2.5s"] }
                 ]
             },
             boss: {
                 title: "Boss Strategies",
                 entries: [
-                    {
-                        id: "ENTRY_#104",
-                        date: "2026.05.14",
-                        tag: "ELITE_BOSS",
-                        title: "Target: Magma Golem — Pattern Alpha",
-                        desc: "High-frequency thermal vibrations detected. Frost-type operatives (Zayne) achieve 42% higher shield break efficiency. Perfect dodge windows align with overhead slam (0.4s reaction).",
-                        points: [
-                            { label: "Thermal Resist", value: "70%" },
-                            { label: "Frost Bonus", value: "+38%" }
-                        ]
-                    },
-                    {
-                        id: "ENTRY_#098",
-                        date: "2026.05.10",
-                        tag: "VOID_LORD",
-                        title: "Void Lord: Phase Transition Guide",
-                        desc: "Phase 2 triggers at 40% HP. During transition, collect 5 light orbs to disable his invincibility shield. Recommended DPS check: 45k sustained.",
-                        points: [
-                            { label: "Phase HP Threshold", value: "40%" },
-                            { label: "Required DPS", value: "45k" }
-                        ]
-                    }
+                    { id: "ENTRY_#104", date: "2026.05.14", tag: "ELITE_BOSS", title: "Target: Magma Golem", desc: "High-frequency thermal vibrations detected. Frost-type operatives achieve 42% higher shield break.", points: ["Thermal Resist: 70%", "Frost Bonus: +38%"] }
                 ]
             },
             abyssal: {
                 title: "Abyssal Trials",
                 entries: [
-                    {
-                        id: "ENTRY_#119",
-                        date: "2026.05.12",
-                        tag: "FLOOR_12",
-                        title: "Abyssal Floor 12: Clear Guide",
-                        desc: "Recommended team: Sylus (Main DPS) + Xavier (Sub DPS). Prioritize breaking left add first. Use Ardent Oath when boss summons adds to cleave them down.",
-                        points: [
-                            { label: "Clear Requirement", value: "3:30" },
-                            { label: "Recommended Power", value: "85k+" }
-                        ]
-                    },
-                    {
-                        id: "ENTRY_#115",
-                        date: "2026.05.08",
-                        tag: "FLOOR_9",
-                        title: "Abyssal Floor 9: Double Elite",
-                        desc: "Two elite spawn simultaneously. Crowd control is essential. Use Resonance skills to group them before bursting. Zayne's freeze is extremely valuable.",
-                        points: [
-                            { label: "CC Required", value: "Yes" },
-                            { label: "Burst Window", value: "5s" }
-                        ]
-                    }
+                    { id: "ENTRY_#119", date: "2026.05.12", tag: "FLOOR_12", title: "Abyssal Floor 12 Guide", desc: "Sylus + Xavier recommended. Prioritize left add. Use Ardent Oath when boss summons.", points: ["Clear Time: 3:30", "Req Power: 85k+"] }
                 ]
             },
             protocore: {
                 title: "Protocore Builds",
                 entries: [
-                    {
-                        id: "ENTRY_#082",
-                        date: "2026.05.16",
-                        tag: "CORE_SYSTEM",
-                        title: "Fundamental Force: Protocore Shielding",
-                        desc: "Analysis of Wanderer defensive layers. Elemental Resonance Breakpoint reduces total resistance by 60%. Optimal timing for Ardent Oath deals bonus 50% Weakness DMG.",
-                        points: [
-                            { label: "Resist Reduction", value: "60%" },
-                            { label: "Break Bonus", value: "+50%" }
-                        ]
-                    },
-                    {
-                        id: "ENTRY_#088",
-                        date: "2026.05.11",
-                        tag: "ENERGY_REGEN",
-                        title: "Energy Regen Breakpoints",
-                        desc: "For Sylus, reaching 145% Energy Recharge allows perfect loop without downtime. Xavier benefits from Crit Rate > 65% for consistent burst windows.",
-                        points: [
-                            { label: "Sylus ER Breakpoint", value: "145%" },
-                            { label: "Xavier CR Required", value: "65%" }
-                        ]
-                    }
+                    { id: "ENTRY_#082", date: "2026.05.16", tag: "CORE_SYSTEM", title: "Protocore Shielding Analysis", desc: "Elemental Resonance reduces resistance by 60% during weakness break.", points: ["Resist Reduction: 60%", "Break Bonus: +50%"] }
                 ]
             },
             classified: {
-                title: "Classified · N109",
+                title: "Classified N109",
                 entries: [
-                    {
-                        id: "ENTRY_#XXX",
-                        date: "CLASSIFIED",
-                        tag: "RESTRICTED",
-                        title: "[ENCRYPTED] Restricted Access",
-                        desc: "This file requires Level 5 clearance. Please contact Deepspace Hunter HQ for authorization.",
-                        points: [
-                            { label: "Clearance", value: "Level 5" },
-                            { label: "Status", value: "Locked" }
-                        ]
-                    }
+                    { id: "ENTRY_#XXX", date: "CLASSIFIED", tag: "RESTRICTED", title: "Restricted Access", desc: "Requires Level 5 clearance.", points: ["Clearance: Level 5", "Status: Locked"] }
                 ]
             }
         };
 
-        // 获取所有侧边栏菜单项
-        const menuItems = document.querySelectorAll('.category-list li');
-        const contentContainer = document.getElementById('dynamic-content');
-
-        // 渲染内容的函数
-        function renderContent(categoryKey) {
-            const data = categoryContent[categoryKey];
+        function renderContent(category) {
+            const data = categoryContent[category];
             if (!data) return;
-
             let html = '';
             for (const entry of data.entries) {
-                const pointsHtml = entry.points.map(p => 
-                    `<div class="data-point">${p.label}: ${p.value}</div>`
-                ).join('');
-
-                const criticalClass = entry.tag === 'ELITE_BOSS' ? ' critical' : '';
-                
-                html += `
-                    <article class="log-entry${criticalClass}">
-                        <div class="log-header">
-                            <span class="log-id">${entry.id}</span>
-                            <span class="log-date">${entry.date}</span>
-                            <span class="tag ${entry.tag === 'ELITE_BOSS' ? 'danger' : ''}">${entry.tag}</span>
-                        </div>
-                        <div class="log-body">
-                            <h3>${entry.title}</h3>
-                            <p>${entry.desc}</p>
-                            <div class="mini-data-flex">
-                                ${pointsHtml}
-                            </div>
-                        </div>
-                        <a href="#" class="log-link" onclick="alert('Full guide for ${entry.title} — coming soon'); return false;">VIEW DETAILS →</a>
-                    </article>
-                `;
+                const pointsHtml = entry.points.map(p => `<div class="data-point">${p}</div>`).join('');
+                html += `<article class="log-entry"><div class="log-header"><span class="log-id">${entry.id}</span><span class="log-date">${entry.date}</span><span class="tag">${entry.tag}</span></div><div class="log-body"><h3>${entry.title}</h3><p>${entry.desc}</p><div class="mini-data-flex">${pointsHtml}</div></div><a href="#" class="log-link" onclick="alert('Full guide coming soon'); return false;">VIEW DETAILS →</a></article>`;
             }
-            
             html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${data.entries.length} ENTRIES ⟡</div>`;
-            contentContainer.innerHTML = html;
+            document.getElementById('dynamic-content').innerHTML = html;
         }
 
-        // 添加点击事件
-        menuItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // 如果是锁定的分类，显示提示
+        // 绑定侧边栏点击事件
+        document.querySelectorAll('.category-list li').forEach(item => {
+            item.addEventListener('click', function() {
                 if (this.classList.contains('locked')) {
-                    alert('This section requires higher clearance. Content coming soon.');
+                    alert('This section requires higher clearance.');
                     return;
                 }
-
-                // 移除所有active状态
-                menuItems.forEach(li => li.classList.remove('active'));
-                // 添加当前项的active状态
+                document.querySelectorAll('.category-list li').forEach(li => li.classList.remove('active'));
                 this.classList.add('active');
-
-                // 获取分类key
                 const category = this.getAttribute('data-category');
-                if (category && categoryContent[category]) {
-                    renderContent(category);
-                }
+                if (category && categoryContent[category]) renderContent(category);
             });
         });
 
-        // 初始化：确保Basic Protocols默认选中并显示内容
-        const defaultActive = document.querySelector('.category-list li.active');
-        if (defaultActive && defaultActive.getAttribute('data-category')) {
-            renderContent(defaultActive.getAttribute('data-category'));
-        } else {
-            renderContent('basic');
-        }
+        // 默认显示 basic 内容
+        renderContent('basic');
     </script>
 </body>
 </html>
