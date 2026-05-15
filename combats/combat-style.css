@@ -1,62 +1,197 @@
 /* =========================================
-   战斗页面专用样式 (命名空间：.combat-page)
+   COMBAT GUIDES ADVANCED STYLING
    ========================================= */
 
-/* 修改战斗页面的特定色调（如果不喜欢根目录的金色，可以在这里局部覆盖变量） */
+/* 1. 战术背景与扫描线效果 */
 .combat-page {
     --combat-blue: #00d4ff;
-}
-
-/* 标题样式 - 不会影响首页的 h2 */
-.combat-page .combat-title {
-    color: var(--accent);
-    border-left: 4px solid var(--accent);
-    padding-left: 15px;
-    margin: 30px 0 20px;
-    font-size: 24px;
-    text-transform: uppercase;
-}
-
-/* 战斗信息卡片 - 沿用基础卡片色调但增加战术感 */
-.combat-page .combat-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    --danger: #ff4d4d;
+    background-color: #05070a;
+    background-image: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+        linear-gradient(90deg, rgba(201, 160, 99, 0.02), rgba(0, 212, 255, 0.02));
+    background-size: 100% 4px, 100% 100%;
     position: relative;
 }
 
-.combat-page .combat-card h3 {
-    color: #fff;
-    margin-top: 0;
-    font-size: 18px;
+/* 2. 战术数据头 */
+.tactical-overlay {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
 }
 
-/* 战术数据表格 */
-.combat-page .tactical-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+/* 3. 容器调整 */
+.combat-container {
+    display: block !important; /* 覆盖根目录 flex */
+    padding-top: 10px;
 }
 
-.combat-page .tactical-table th {
-    background: var(--border);
+/* 4. 标题进阶 */
+.section-header {
+    font-size: 1.4rem;
     color: var(--accent);
-    text-align: left;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-header::after {
+    content: "ONLINE";
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    font-size: 10px;
+    color: var(--combat-blue);
+    opacity: 0.6;
+}
+
+/* 5. 战术网格与卡片 */
+.tactical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.data-card {
+    background: rgba(22, 26, 37, 0.6);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    border-left: 3px solid var(--accent);
+}
+
+.card-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.card-body { padding: 20px; }
+
+.tactical-note {
+    margin-top: 15px;
     padding: 12px;
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px dashed rgba(0, 212, 255, 0.3);
+    font-size: 13px;
+}
+
+.data-list {
+    margin-top: 10px;
+    padding-left: 18px;
     font-size: 14px;
 }
 
-.combat-page .tactical-table td {
-    padding: 12px;
+.data-list li { margin-bottom: 8px; color: var(--text-main); }
+
+/* 6. 表格重塑 */
+.table-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tactical-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tactical-table th {
+    background: #1a1f2e;
+    padding: 15px;
+    color: var(--accent);
+    text-align: left;
+    font-size: 13px;
+}
+
+.tactical-table td {
+    padding: 15px;
     border-bottom: 1px solid var(--border);
     font-size: 14px;
 }
 
-/* 专门针对战斗页面的容器微调 */
-.combat-page .container {
-    display: block; /* 覆盖根目录的 flex 布局，方便单栏阅读攻略 */
-    max-width: 900px; /* 攻略类页面较窄更易阅读 */
+.highlight-row {
+    background: rgba(201, 160, 99, 0.08);
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 7. 威胁评估 */
+.threat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.threat-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+}
+
+.threat-box.alert {
+    border-color: rgba(255, 77, 77, 0.4);
+}
+
+.threat-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.threat-tag {
+    font-size: 10px;
+    background: #2a2f3d;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--text-muted);
+}
+
+.threat-tag.highlight {
+    background: var(--danger);
+    color: #fff;
+}
+
+.danger-bar {
+    width: 100%;
+    height: 4px;
+    background: #000;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.danger-bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--danger));
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { width: 0; }
+}
+
+/* 8. 响应式布局 */
+@media (max-width: 900px) {
+    .tactical-grid, .threat-grid {
+        grid-template-columns: 1fr;
+    }
+    .tactical-overlay {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
