@@ -13,46 +13,120 @@
         <span class="arrow">←</span>
         <span class="text">RETURN TO DATABASE</span>
     </a>
-    <!-- 样式中变量改为：--char-accent: #ff73b1; (珊瑚粉紫) -->
-    <section class="hero-header">
-        <img src="../images/rafayel-full.png" class="hero-bg">
-        <div class="hero-content">
-            <span class="status-tag">The Last Lemurian</span>
-            <h1>RAFAYEL</h1>
-            <p>A FLAMING CANVAS UNDER THE ABYSS</p>
-        </div>
-    </section>
 
-    <div class="detail-container">
-        <aside class="sticky-sidebar">
-            <!-- 新增：侧边栏立绘 -->
-            <div class="sidebar-portrait">
-                <img src="../images/rafayel-thumb.webp" alt="Sylus Portrait" style="width:100%; border:1px solid var(--accent); margin-bottom:20px; filter: grayscale(0.3) contrast(1.1);">
+    <main class="character-page">
+        <!-- MASSIVE HERO -->
+        <section class="hero-header">
+            <img src="../images/rafayel-full.png" alt="Rafayel Cinematic" class="hero-bg">
+            <div class="hero-content">
+                <span class="status-tag">The Last Lemurian</span>
+                <h1>RAFAYEL</h1>
+                <p style="letter-spacing: 15px; text-transform: uppercase;">A Flaming Canvas Under The Abyss</p>
             </div>
+        </section>
+
+        <div class="detail-container">
             
-            <div class="spec-box" style="border-left-color: #ff73b1;">
-                <h3>Technical Dossier</h3>
-                <div class="stat-row"><label>Evol</label><span>Fire (Eldritch Flame)</span></div>
-                <div class="stat-row"><label>Affiliation</label><span>Mo Art Studio</span></div>
-                <div class="stat-row"><label>Birthday</label><span>March 6</span></div>
-                <div class="stat-row"><label>Weapon</label><span>Ritual Dagger / Paints</span></div>
-            </div>
-        </aside>
-
-        <div class="main-content">
-            <section class="section-block">
-                <h2 class="section-header">01. ARTISTIC & LORE ARCHIVE</h2>
-                <div class="lore-text">
-                    Rafayel is a genius artist whose paintings are sought after by collectors worldwide. However, his vibrant colors hide a dark origin: he is the God of Lemuria, a sunken civilization. His fire Evol is unique, manifesting as "Sea Fire" that consumes everything it touches. He is unpredictable, passionate, and deeply sentimental about the lost city of the deep.
+            <!-- STICKY SIDEBAR -->
+            <aside class="sticky-sidebar">
+                <div class="sidebar-portrait">
+                    <img src="../images/rafayel-thumb.webp" alt="Rafayel Portrait" style="width:100%; border:1px solid var(--accent); margin-bottom:20px; filter: contrast(1.1);">
                 </div>
-            </section>
+                
+                <div class="spec-box">
+                    <h3>Technical Dossier</h3>
+                    <div class="stat-row"><label>Real Name</label><span>Rafayel</span></div>
+                    <div class="stat-row"><label>Age</label><span>24 (Physical)</span></div>
+                    <div class="stat-row"><label>Evol</label><span>Fire (Eldritch Flame)</span></div>
+                    <div class="stat-row"><label>Specialty</label><span>Burn / DoT / Critical</span></div>
+                    <div class="stat-row"><label>Affiliation</label><span>Mo Art Studio</span></div>
+                    <div class="stat-row"><label>Danger Level</label><span style="color:var(--accent);">High (Volatile)</span></div>
+                </div>
 
-            <section class="section-block">
-                <h2 class="section-header">05. INTERCEPTED VOICE FILES</h2>
-                <div class="skill-card">"The ocean remembers what you've forgotten."</div>
-                <div class="skill-card">"Does my painting lack color, or does your heart lack me?"</div>
-            </section>
+                <div class="spec-box">
+                    <h3>Combat Ratings</h3>
+                    <div class="stat-row"><label>Elemental DMG</label><span>10.0 / 10</span></div>
+                    <div class="stat-row"><label>Mobility</label><span>9.5 / 10</span></div>
+                    <div class="stat-row"><label>Resilience</label><span>6.0 / 10</span></div>
+                    <div class="stat-row"><label>Style</label><span>Exquisite</span></div>
+                </div>
+
+                <div class="spec-box" style="border-left-color: var(--text-gold);">
+                    <h3>Relationship Map</h3>
+                    <div class="stat-row"><label>The Hunter</label><span>His Only "Muse"</span></div>
+                    <div class="stat-row"><label>Lemuria</label><span>Echoes of Ruin</span></div>
+                    <div class="stat-row"><label>Zayne</label><span>Clinical Friction</span></div>
+                </div>
+            </aside>
+
+            <div class="main-content">
+                
+                <!-- 01. LORE ARCHIVE -->
+                <section class="section-block">
+                    <h2 class="section-header">01. ARTISTIC & LORE ARCHIVE</h2>
+                    <div class="lore-text">
+                        Rafayel is a world-renowned genius painter, famous for his vibrant use of color and "living" textures. However, the art world remains oblivious to his true identity: the God of Lemuria, the sovereign of a civilization swallowed by the tides thousands of years ago. His studio, Mo Art, serves as a sanctuary and a facade for his relentless search for the truth behind the Great Flood.
+                        <br><br>
+                        His Evol manifests as "Abyssal Fire"—a paradoxical flame that burns underwater and refuses to be extinguished by conventional means. Unlike others, his energy is tied to his emotions and his bloodline. He is a man of contradictions: acting like a pampered, dramatic artist one moment, and revealing a lethal, calculating hunter's instinct the next. He claims he met the Hunter in a past life, promising that even if the ocean dries up, their contract remains eternal.
+                    </div>
+                </section>
+
+                <!-- 02. SKILLS -->
+                <section class="section-block">
+                    <h2 class="section-header">02. TACTICAL SKILL BREAKDOWN</h2>
+                    <div class="skill-grid">
+                        <div class="skill-card">
+                            <h4>Basic Attack: Crimson Ripple</h4>
+                            <p>Swings his brush-blade to deal 4 stages of Fire DMG. The final hit creates a "Flame Petal" that explodes on contact, dealing AoE damage.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Resonance: Flowing Heat</h4>
+                            <p>Rafayel and Hunter summon a whirlpool of fire. Enemies are pulled to the center and inflicted with 'Deep Sea Burn', losing 3% HP every second.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Ardent Oath: Abyssal Rebirth</h4>
+                            <p>Unleashes the full power of Lemuria. The battlefield turns into an ocean of fire, dealing 1450% DMG and resetting all skill cooldowns.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 03. RANK BONUSES -->
+                <section class="section-block">
+                    <h2 class="section-header">03. ASCENSION & RANK BONUSES</h2>
+                    <div class="ascension-node"><div class="rank-circle">R1</div><div><strong>Lingering Smoke:</strong> Enemies hit by Crimson Ripple take 15% more Fire DMG for 10s.</div></div>
+                    <div class="ascension-node"><div class="rank-circle">R2</div><div><strong>Tidal Surge:</strong> Gain 20% Crit Rate when Fighting in the 'Abyssal' state.</div></div>
+                    <div class="ascension-node"><div class="rank-circle">R3</div><div><strong>Eternal Echo:</strong> Ardent Oath's DMG is increased by 50% against targets above 70% HP.</div></div>
+                </section>
+
+                <!-- 04. INTERCEPTED VOICE FILES -->
+                <section class="section-block">
+                    <h2 class="section-header">04. INTERCEPTED VOICE FILES</h2>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"The ocean remembers what you've forgotten... but don't worry, I remember for both of us."</div>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"Does my painting lack color, or does your heart lack me? Answer carefully, I might pout."</div>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"Fire in the water? It's not a miracle, it's a curse. But for you, I'll make it a masterpiece."</div>
+                </section>
+
+                <!-- 05. SIGNATURE MEMORIES -->
+                <section class="section-block">
+                    <h2 class="section-header">05. SIGNATURE MEMORIES</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="background:#1a1a1a; padding:15px; text-align:center; border:1px solid #333;">
+                            <div style="height:250px; background:#222; margin-bottom:15px; border: 1px solid var(--accent);"></div>
+                            <span style="color:var(--text-gold);">[YOUR FRAGRANCE]</span><br><small>Solar Path - Crit DMG</small>
+                        </div>
+                        <div style="background:#1a1a1a; padding:15px; text-align:center; border:1px solid #333;">
+                            <div style="height:250px; background:#222; margin-bottom:15px; border: 1px solid var(--accent);"></div>
+                            <span style="color:var(--text-gold);">[DEEP SEA]</span><br><small>Lunar Path - Fire Boost</small>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="main-footer" style="text-align:center; padding: 40px; opacity:0.5; font-size: 12px;">
+        <p>© 2026 Deepspace Hunter Station | Archive: Lemuria/0603</p>
+    </footer>
 </body>
 </html>
