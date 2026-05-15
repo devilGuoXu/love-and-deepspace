@@ -37,8 +37,23 @@
     --accent-rgb: 255, 115, 177;
     --text-gold: #f8adff;
     --panel-bg: rgba(20, 15, 26, 0.9);
-    --border-color: rgba(255, 115, 177, 0.3);
+    --border-color: rgba(25, 15, 30, 0.9);
     --glow: rgba(255, 115, 177, 0.4);
+}
+
+/* 特殊动画：模拟水光倒影 */
+.rafayel-theme .hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 115, 177, 0.1), transparent);
+    animation: water-ripple 8s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes water-ripple {
+    from { transform: scale(1); opacity: 0.3; }
+    to { transform: scale(1.5); opacity: 0.6; }
 }
 
 /* --- 核心 UI 增强 --- */
