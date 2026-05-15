@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESOURCE PLANNING | Deepspace Hunter</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.webp">
+    <title>RESOURCE COMMAND CENTER | Deepspace Hunter</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="resource-style.css">
 </head>
 <body class="rp-body">
-    <!-- 导航栏 -->
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
@@ -24,266 +23,221 @@
 
     <div class="rp-container">
         <!-- 头部 -->
-        <div class="rp-header">
+        <div class="rp-header-v5">
             <div>
-                <h1>📊 RESOURCE PLANNING</h1>
-                <p>Material calculator · Pull planner · Stamina tracker</p>
+                <h1>📊 RESOURCE COMMAND CENTER <small>v5.0 · ULTRA HD</small></h1>
+                <p>Strategic planning · Real-time tracking · AI recommendations · Pull simulator · Multi-character optimization</p>
             </div>
-            <div class="last-updated" id="lastUpdated">Data saved locally</div>
-        </div>
-
-        <!-- 4个关键指标卡片 -->
-        <div class="stats-row">
-            <div class="stat-mini-card">
-                <div class="stat-label">💎 TOTAL DIAMONDS</div>
-                <div class="stat-value" id="statDiamonds">0</div>
-                <div class="stat-sub">≈ <span id="statPulls">0</span> pulls</div>
-            </div>
-            <div class="stat-mini-card">
-                <div class="stat-label">🎫 WISHES</div>
-                <div class="stat-value" id="statWishes">0</div>
-                <div class="stat-sub">+ <span id="statTotalPulls">0</span> total</div>
-            </div>
-            <div class="stat-mini-card">
-                <div class="stat-label">⚡ STAMINA TODAY</div>
-                <div class="stat-value" id="statStamina">0</div>
-                <div class="stat-sub">/ 240 base + 60 snack</div>
-            </div>
-            <div class="stat-mini-card" id="pullReadinessCard">
-                <div class="stat-label">🎯 PITY READINESS</div>
-                <div class="stat-value" id="statReadiness">0%</div>
-                <div class="stat-sub" id="readinessSub">Need <span id="needPulls">0</span> more pulls</div>
+            <div class="header-stats-mini">
+                <div class="header-stat"><div class="label">LAST SYNC</div><div class="value" id="lastSync">Just now</div></div>
+                <div class="header-stat"><div class="label">SESSION ID</div><div class="value">HUNTER#001</div></div>
             </div>
         </div>
 
-        <!-- 双列主布局 -->
-        <div class="rp-two-col">
-            <!-- 左侧：资源管理 + 养成计算器 -->
+        <!-- 12指标仪表盘 -->
+        <div class="dashboard-grid">
+            <div class="dash-card"><div class="icon">💎</div><div class="label">DIAMONDS</div><div class="value" id="dashDiamonds">0</div><div class="trend">≈ <span id="dashPulls">0</span> pulls</div></div>
+            <div class="dash-card"><div class="icon">🎫</div><div class="label">WISHES</div><div class="value" id="dashWishes">0</div><div class="trend">total saved</div></div>
+            <div class="dash-card"><div class="icon">⚡</div><div class="label">STAMINA</div><div class="value" id="dashStamina">0</div><div class="trend">/ 240 daily</div></div>
+            <div class="dash-card"><div class="icon">🪙</div><div class="label">GOLD (M)</div><div class="value" id="dashGold">0</div><div class="trend">million</div></div>
+            <div class="dash-card"><div class="icon">📘</div><div class="label">EXP BOTTLES</div><div class="value" id="dashExp">0</div><div class="trend">purple</div></div>
+            <div class="dash-card"><div class="icon">🔮</div><div class="label">PROTOCORE</div><div class="value" id="dashProtocore">0</div><div class="trend">dust</div></div>
+            <div class="dash-card"><div class="icon">🎯</div><div class="label">PITY READY</div><div class="value" id="dashReadiness">0%</div><div class="trend" id="dashReadinessSub">need 0</div></div>
+            <div class="dash-card"><div class="icon">📅</div><div class="label">MONTHLY INC</div><div class="value">~7,200</div><div class="trend">diamonds</div></div>
+            <div class="dash-card"><div class="icon">🏆</div><div class="label">ABYSS TRIAL</div><div class="value" id="dashAbyss">0</div><div class="trend">stars this week</div></div>
+            <div class="dash-card"><div class="icon">⭐</div><div class="label">5★ OWNED</div><div class="value" id="dashFiveStar">0</div><div class="trend">memories</div></div>
+            <div class="dash-card"><div class="icon">📊</div><div class="label">TOTAL LVL</div><div class="value" id="dashTotalLvl">0</div><div class="trend">sum of all chars</div></div>
+            <div class="dash-card"><div class="icon">💪</div><div class="label">POWER RATING</div><div class="value" id="dashPower">0</div><div class="trend">estimated CP</div></div>
+        </div>
+
+        <!-- 主网格 4列 -->
+        <div class="rp-grid-v5">
+            <!-- 第1列：资源管理 + 材料库存 -->
             <div>
-                <!-- 资源库存卡片 -->
-                <div class="rp-card" style="margin-bottom: 24px;">
-                    <div class="rp-card-header">
-                        <h3>💰 RESOURCE STOCK</h3>
-                        <button class="btn-outline" id="resetResourcesBtn" style="padding: 4px 12px;">Reset</button>
-                    </div>
-                    <div class="rp-card-body">
-                        <div class="resource-table">
-                            <div class="resource-row">
-                                <span class="resource-label">💎 Diamonds</span>
-                                <div class="resource-input-group">
-                                    <input type="number" id="diamonds" class="resource-input" value="12450" step="100">
-                                    <button class="quick-add" data-field="diamonds" data-value="15000">15k</button>
-                                    <button class="quick-add" data-field="diamonds" data-value="25920">Hard pity</button>
-                                </div>
-                            </div>
-                            <div class="resource-row">
-                                <span class="resource-label">🎫 Empyrean Wishes</span>
-                                <div class="resource-input-group">
-                                    <input type="number" id="wishes" class="resource-input" value="15" step="1">
-                                    <button class="quick-add" data-field="wishes" data-value="10">+10</button>
-                                    <button class="quick-add" data-field="wishes" data-value="70">70</button>
-                                </div>
-                            </div>
-                            <div class="resource-row">
-                                <span class="resource-label">🪙 Gold (Million)</span>
-                                <div class="resource-input-group">
-                                    <input type="number" id="gold" class="resource-input" value="3.2" step="0.1">
-                                    <button class="quick-add" data-field="gold" data-value="5">5M</button>
-                                    <button class="quick-add" data-field="gold" data-value="10">10M</button>
-                                </div>
-                            </div>
-                            <div class="resource-row">
-                                <span class="resource-label">⚡ Stamina (current)</span>
-                                <div class="resource-input-group">
-                                    <input type="number" id="stamina" class="resource-input" value="240" step="10">
-                                    <button class="quick-add" data-field="stamina" data-value="240">240</button>
-                                    <button class="quick-add" data-field="stamina" data-value="300">300</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-gold" id="saveResourcesBtn" style="margin-top: 16px;">💾 SAVE TO LOCALSTORAGE</button>
+                <div class="card-v5" style="margin-bottom: 24px;">
+                    <div class="card-header-v5"><h3>💰 MAIN RESOURCES</h3><button class="btn-outline" id="resetResourcesBtn">Reset</button></div>
+                    <div class="card-body-v5">
+                        <div class="resource-row"><span>💎 Diamonds</span><div><input type="number" id="diamonds" class="resource-input" value="12450"><button class="quick-add" data-field="diamonds" data-value="15000">15k</button><button class="quick-add" data-field="diamonds" data-value="25920">Hard</button></div></div>
+                        <div class="resource-row"><span>🎫 Empyrean Wishes</span><div><input type="number" id="wishes" class="resource-input" value="15"><button class="quick-add" data-field="wishes" data-value="10">+10</button><button class="quick-add" data-field="wishes" data-value="70">70</button></div></div>
+                        <div class="resource-row"><span>🪙 Gold (Million)</span><div><input type="number" id="gold" class="resource-input" value="3.2" step="0.1"><button class="quick-add" data-field="gold" data-value="5">5M</button><button class="quick-add" data-field="gold" data-value="10">10M</button></div></div>
+                        <div class="resource-row"><span>⚡ Stamina (current)</span><div><input type="number" id="stamina" class="resource-input" value="240"><button class="quick-add" data-field="stamina" data-value="240">240</button><button class="quick-add" data-field="stamina" data-value="300">300</button></div></div>
+                        <button class="btn-gold" id="saveResourcesBtn" style="margin-top: 16px;">💾 SAVE ALL DATA</button>
                     </div>
                 </div>
 
-                <!-- 养成计算器卡片 -->
-                <div class="rp-card">
-                    <div class="rp-card-header">
-                        <h3>📈 ASCENSION CALCULATOR</h3>
-                        <span style="font-size: 0.7rem; color: #5a6070;">1 → 80</span>
+                <div class="card-v5">
+                    <div class="card-header-v5"><h3>📦 MATERIAL INVENTORY</h3><span style="font-size:0.6rem;">← editable</span></div>
+                    <div class="card-body-v5">
+                        <div class="resource-row"><span>📘 Purple EXP Bottle</span><input type="number" id="expBottles" class="resource-input" value="245"></div>
+                        <div class="resource-row"><span>🔮 Protocore Dust</span><input type="number" id="protocoreDust" class="resource-input" value="1800"></div>
+                        <div class="resource-row"><span>⚪ Ascension Core (L)</span><input type="number" id="coreL" class="resource-input" value="12"></div>
+                        <div class="resource-row"><span>🔵 Ascension Core (M)</span><input type="number" id="coreM" class="resource-input" value="45"></div>
+                        <div class="resource-row"><span>🟢 Ascension Core (S)</span><input type="number" id="coreS" class="resource-input" value="120"></div>
+                        <div class="resource-row"><span>🎴 Memory Shards</span><input type="number" id="shards" class="resource-input" value="320"></div>
+                        <div class="resource-row"><span>✨ Stardust</span><input type="number" id="stardust" class="resource-input" value="560"></div>
                     </div>
-                    <div class="rp-card-body">
-                        <div class="calc-grid">
-                            <div class="calc-field">
-                                <label>CHARACTER</label>
-                                <select id="charSelect">
-                                    <option value="sylus">Sylus (Dark)</option>
-                                    <option value="xavier">Xavier (Light)</option>
-                                    <option value="zayne">Zayne (Ice)</option>
-                                    <option value="rafayel">Rafayel (Fire)</option>
-                                </select>
-                            </div>
-                            <div class="calc-field">
-                                <label>TARGET LEVEL</label>
-                                <input type="range" id="levelSlider" min="1" max="80" value="80" style="width: 100%;">
-                                <div class="range-value"><span id="levelValue">80</span> / 80</div>
-                            </div>
+                </div>
+            </div>
+
+            <!-- 第2列：多角色养成 -->
+            <div>
+                <div class="card-v5" style="margin-bottom: 24px;">
+                    <div class="card-header-v5"><h3>⚔️ 6-CHARACTER TRACKER</h3><span>target Lv.80</span></div>
+                    <div class="card-body-v5">
+                        <div class="char-grid" id="charGrid"></div>
+                        <div style="margin-top: 16px; background:#1a1f2a; border-radius:12px; padding:12px;">
+                            <div class="resource-row"><span>📘 Total EXP needed</span><span id="totalExpAll">0</span></div>
+                            <div class="resource-row"><span>🪙 Total Gold needed</span><span id="totalGoldAll">0</span></div>
+                            <div class="resource-row"><span>⚡ Stamina equivalent</span><span id="totalStamAll">0</span></div>
+                            <div class="resource-row"><span>📅 Days to farm (240/day)</span><span id="daysToFarm">0</span></div>
                         </div>
-                        <div class="result-summary">
-                            <div class="result-item">
-                                <span>📘 EXP Bottles (purple)</span>
-                                <span class="value" id="expNeeded">0</span>
-                            </div>
-                            <div class="result-item">
-                                <span>🪙 Gold Required</span>
-                                <span class="value" id="goldNeeded">0</span>
-                            </div>
-                            <div class="result-item">
-                                <span>⚡ Stamina Cost</span>
-                                <span class="value" id="staminaNeeded">0</span>
-                            </div>
-                            <div class="result-progress">
-                                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-                            </div>
-                            <div class="resource-gap" id="resourceGapMsg"></div>
+                    </div>
+                </div>
+
+                <div class="card-v5">
+                    <div class="card-header-v5"><h3>📈 SINGLE CHAR CALC</h3></div>
+                    <div class="card-body-v5">
+                        <select id="charSelect" style="width:100%; background:#1a1f2a; border:1px solid var(--rp-border); border-radius:12px; padding:10px; margin-bottom:16px;">
+                            <option value="sylus">🌑 Sylus (Dark)</option>
+                            <option value="xavier">✨ Xavier (Light)</option>
+                            <option value="zayne">❄️ Zayne (Ice)</option>
+                            <option value="rafayel">🔥 Rafayel (Fire)</option>
+                            <option value="caleb">🌪️ Caleb (Wind)</option>
+                            <option value="lumi">💫 Lumi (Light)</option>
+                        </select>
+                        <input type="range" id="levelSlider" min="1" max="80" value="80" style="width:100%;">
+                        <div class="range-value" style="text-align:center; margin:10px 0;">Target Level: <span id="levelValue">80</span> / 80</div>
+                        <div style="background:rgba(0,0,0,0.3); border-radius:16px; padding:16px;">
+                            <div class="resource-row"><span>📘 EXP Bottles</span><span id="expNeeded">0</span></div>
+                            <div class="resource-row"><span>🪙 Gold Required</span><span id="goldNeeded">0</span></div>
+                            <div class="resource-row"><span>⚡ Stamina Cost</span><span id="staminaNeeded">0</span></div>
+                            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 右侧：卡池规划 + 效率工具 -->
+            <!-- 第3列：抽卡规划 + 模拟器 -->
             <div>
-                <!-- 卡池规划器 -->
-                <div class="rp-card" style="margin-bottom: 24px;">
-                    <div class="rp-card-header">
-                        <h3>🎲 PITY & PULL PLANNER</h3>
-                        <button class="btn-outline" id="simulateBtn" style="padding: 4px 12px;">Simulate</button>
-                    </div>
-                    <div class="rp-card-body">
-                        <div class="pity-control">
-                            <div class="calc-field">
-                                <label>CURRENT PITY (since last 5★)</label>
-                                <input type="range" id="pitySlider" min="0" max="70" value="25" style="width: 100%;">
-                                <div class="range-value"><span id="pityValue">25</span> / 70 pulls</div>
-                            </div>
-                            <div class="calc-field" style="margin-top: 16px;">
-                                <label>GUARANTEE STATUS</label>
-                                <select id="guaranteeSelect">
-                                    <option value="no">50/50 Active (not guaranteed)</option>
-                                    <option value="yes">Guaranteed Rate-up ✅</option>
-                                </select>
-                            </div>
+                <div class="card-v5" style="margin-bottom: 24px;">
+                    <div class="card-header-v5"><h3>🎲 PITY & PULL SIMULATOR</h3><button class="btn-outline" id="simulateBtn">10 Pulls</button><button class="btn-outline" id="resetPityBtn">Reset</button></div>
+                    <div class="card-body-v5">
+                        <div><label>CURRENT PITY</label><input type="range" id="pitySlider" min="0" max="70" value="25" style="width:100%;"><div style="text-align:center;"><span id="pityValue">25</span> / 70 pulls</div></div>
+                        <div style="margin:16px 0;"><label>GUARANTEE</label><select id="guaranteeSelect" style="width:100%; background:#1a1f2a; border:1px solid var(--rp-border); border-radius:12px; padding:10px;"><option value="no">50/50 Active</option><option value="yes">Guaranteed ✅</option></select></div>
+                        <div style="background:rgba(0,0,0,0.3); border-radius:16px; padding:16px;">
+                            <div class="resource-row"><span>🎯 Expected pulls to 5★</span><span id="avgPulls">0</span></div>
+                            <div class="resource-row"><span>💎 Expected diamond cost</span><span id="expectedDiamonds">0</span></div>
+                            <div class="progress-bar"><div class="progress-fill" id="pityProgress"></div></div>
                         </div>
-                        <div class="pity-stats">
-                            <div class="pity-stat-row">
-                                <span class="pity-stat-label">🎯 Expected pulls to hit 5★</span>
-                                <span class="pity-stat-value" id="avgPulls">0</span>
-                            </div>
-                            <div class="pity-stat-row">
-                                <span class="pity-stat-label">💎 Expected diamond cost</span>
-                                <span class="pity-stat-value" id="expectedDiamonds">0</span>
-                            </div>
-                            <div class="pity-stat-row">
-                                <span class="pity-stat-label">📊 Probability within 70 pulls</span>
-                                <span class="pity-stat-value probability-highlight" id="probability">~36%</span>
-                            </div>
+                        <div class="simulator-area">
+                            <div style="display:flex; justify-content:space-between;"><span>🎰 QUICK SIMULATION</span><span id="simResult" style="color:var(--rp-gold);">Click to pull</span></div>
+                            <div class="gacha-history" id="gachaHistory"></div>
                         </div>
-                        <div class="progress-bar" style="margin-top: 8px;"><div class="progress-fill" id="pityProgress"></div></div>
                     </div>
                 </div>
 
-                <!-- 体力效率 + 周历 -->
-                <div class="rp-card">
-                    <div class="rp-card-header">
-                        <h3>⚡ STAMINA EFFICIENCY</h3>
-                        <span class="badge-daily">DAILY RESET</span>
+                <div class="card-v5">
+                    <div class="card-header-v5"><h3>📊 PITY PROBABILITY CURVE</h3></div>
+                    <div class="card-body-v5">
+                        <div class="prob-chart">
+                            <div class="prob-bar-container" id="probChart"></div>
+                            <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:var(--rp-text-dim);">
+                                <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>90</span>
+                            </div>
+                        </div>
+                        <div style="font-size:0.7rem; color:var(--rp-text-dim); text-align:center;">
+                            Soft pity starts at 70 pulls. Hard pity at 90.
+                        </div>
                     </div>
-                    <div class="rp-card-body">
-                        <div class="efficiency-list">
-                            <div class="efficiency-item">
-                                <span class="efficiency-name">💰 Gold (Bounty Hunt)</span>
-                                <span class="efficiency-value">12,000 / 20 stam</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="efficiency-name">📘 EXP (Bounty Hunt)</span>
-                                <span class="efficiency-value">5x Purple / 20 stam</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="efficiency-name">🔮 Protocore Dust</span>
-                                <span class="efficiency-value">~180 / 25 stam</span>
-                            </div>
-                            <div class="efficiency-item">
-                                <span class="efficiency-name">🌀 Ascension Mats</span>
-                                <span class="efficiency-value">varies by element</span>
-                            </div>
-                        </div>
-                        <div style="margin-top: 16px; background: #1a1f2a; border-radius: 12px; padding: 12px;">
-                            <div style="display: flex; justify-content: space-between;">
-                                <span>📅 Weekly stamina budget</span>
-                                <strong id="weeklyStam" style="color: var(--rp-gold);">1680</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-                                <span>🏆 Daily recommended grind</span>
-                                <span style="font-size: 0.75rem;">Bounty x3 → Core → Story</span>
-                            </div>
-                        </div>
+                </div>
+            </div>
 
-                        <!-- 每日待办清单 -->
-                        <div style="margin-top: 20px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <span style="font-size: 0.8rem; font-weight: 600;">✅ DAILY CHECKLIST</span>
-                                <span class="reset-todo" id="resetTodoBtn">reset week</span>
-                            </div>
-                            <div class="weekly-checklist" id="weeklyChecklist">
-                                <!-- 动态生成周一到周日 -->
-                            </div>
-                            <div style="font-size: 0.7rem; color: #5a6070; text-align: center; margin-top: 12px;">
-                                Click to check off daily tasks
-                            </div>
-                        </div>
+            <!-- 第4列：周常任务 + 兑换商店 -->
+            <div>
+                <div class="card-v5" style="margin-bottom: 24px;">
+                    <div class="card-header-v5"><h3>✅ WEEKLY TASKS</h3><span id="weeklyProgress">0%</span></div>
+                    <div class="card-body-v5">
+                        <div class="task-list" id="taskList"></div>
+                        <button class="btn-outline" id="resetTasksBtn" style="width:100%; margin-top:16px;">Reset Weekly Progress</button>
+                    </div>
+                </div>
+
+                <div class="card-v5">
+                    <div class="card-header-v5"><h3>🛒 EXCHANGE SHOP RATINGS</h3></div>
+                    <div class="card-body-v5">
+                        <table class="shop-table">
+                            <thead><tr><th>Item</th><th>Cost</th><th>Value</th><th>Priority</th></tr></thead>
+                            <tbody>
+                                <tr><td>💎 Limited Wish</td><td>150 dia</td><td>1 pull</td><td class="best">★ MUST</td></tr>
+                                <tr><td>🎫 Empyrean Wish</td><td>150 dia</td><td>1 pull</td><td class="best">★ MUST</td></tr>
+                                <tr><td>📘 EXP Bottle (10)</td><td>30 stam</td><td>high</td><td>★★★</td></tr>
+                                <tr><td>🔮 Protocore Dust</td><td>20 stam</td><td>medium</td><td>★★</td></tr>
+                                <tr><td>🪙 Gold (10k)</td><td>10 stam</td><td>low</td><td>★</td></tr>
+                                <tr><td>🌀 Ascension Box</td><td>40 stam</td><td>varies</td><td>★★</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 第三行：F2P月度收入 -->
-        <div class="rp-card" style="margin-top: 0;">
-            <div class="rp-card-header">
-                <h3>📅 F2P MONTHLY INCOME BREAKDOWN</h3>
-                <span class="badge-daily">ESTIMATED</span>
+        <!-- 第二行：时间轴规划 + AI助手 + 全球数据 -->
+        <div class="rp-grid-v5">
+            <div class="card-v5">
+                <div class="card-header-v5"><h3>📅 OPTIMAL FARMING TIMELINE</h3></div>
+                <div class="card-body-v5">
+                    <div class="timeline" id="timeline"></div>
+                </div>
             </div>
-            <div class="rp-card-body">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <span>✅ Daily Commissions</span>
-                            <span style="color: var(--rp-gold);">+150/day (4,500/mo)</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <span>⭐ Abyssal Trials</span>
-                            <span style="color: var(--rp-gold);">+600 / reset</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <span>🎁 Login Events</span>
-                            <span style="color: var(--rp-gold);">~800 avg</span>
+
+            <div class="card-v5">
+                <div class="card-header-v5"><h3>🤖 AI PLANNING ASSISTANT</h3></div>
+                <div class="card-body-v5">
+                    <div class="ai-assistant">
+                        <div class="ai-message">
+                            <div class="ai-avatar">🤖</div>
+                            <div class="ai-text" id="aiAdvice">Analyzing your resources...</div>
                         </div>
                     </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <span>🏆 Hunter Contest</span>
-                            <span style="color: var(--rp-gold);">+300~1200</span>
+                    <button class="btn-outline" id="refreshAdviceBtn" style="width:100%; margin-top:12px;">🔄 Refresh AI Advice</button>
+                </div>
+            </div>
+
+            <div class="card-v5">
+                <div class="card-header-v5"><h3>🌍 COMMUNITY BENCHMARKS</h3></div>
+                <div class="card-body-v5">
+                    <div class="global-stats" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
+                        <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:12px; text-align:center;">
+                            <div style="font-size:0.6rem;">AVG PLAYER LVL</div>
+                            <div style="font-size:1.2rem; font-weight:bold; color:var(--rp-gold);">54</div>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <span>📝 Maintenance & Codes</span>
-                            <span style="color: var(--rp-gold);">~500</span>
+                        <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:12px; text-align:center;">
+                            <div style="font-size:0.6rem;">AVG 5★ COUNT</div>
+                            <div style="font-size:1.2rem; font-weight:bold; color:var(--rp-gold);">4.2</div>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 8px 0; font-weight: 700;">
-                            <span>🔥 TOTAL F2P MONTHLY</span>
-                            <span style="color: var(--rp-gold);" id="monthlyTotal">~7,000</span>
+                        <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:12px; text-align:center;">
+                            <div style="font-size:0.6rem;">TOP 10% CP</div>
+                            <div style="font-size:1.2rem; font-weight:bold; color:var(--rp-gold);">125k+</div>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:12px; text-align:center;">
+                            <div style="font-size:0.6rem;">MONTHLY SAVINGS</div>
+                            <div style="font-size:1.2rem; font-weight:bold; color:var(--rp-gold);">7.2k</div>
                         </div>
                     </div>
                 </div>
-                <div style="margin-top: 16px; text-align: center; font-size: 0.75rem; color: var(--rp-gold);">
-                    ≈ <span id="monthlyPulls">43</span> pulls per month
+            </div>
+
+            <div class="card-v5">
+                <div class="card-header-v5"><h3>⚡ STAMINA OPTIMIZER</h3></div>
+                <div class="card-body-v5">
+                    <div class="resource-row"><span>📅 Weekly free stamina</span><span id="weeklyStam">1680</span></div>
+                    <div class="resource-row"><span>🏆 Daily recommended spend</span><span>240-300 stam</span></div>
+                    <div class="resource-row"><span>🎯 Best value farm</span><span>Bounty Hunt (Gold/EXP)</span></div>
+                    <div class="resource-row"><span>📈 Stamina to Gold ratio</span><span>1:200</span></div>
+                    <div class="resource-row"><span>📘 Stamina to EXP ratio</span><span>1:0.83 bottle</span></div>
+                    <div style="margin-top:16px; background:#1a1f2a; border-radius:12px; padding:12px;">
+                        <div class="resource-row"><span>💡 TIP</span><span>Use stamina snacks before daily reset</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,199 +250,345 @@
             <a href="../legal/privacy.html">Privacy Policy</a>
             <a href="../legal/disclaimer.html">Disclaimer</a>
         </div>
-        <p>© 2026 Deepspace Hunter Station — Resource Planning Tool v2.0</p>
+        <p>© 2026 Deepspace Hunter Station — Resource Command Center v5.0</p>
     </footer>
 
     <script>
-        // ---------- 数据模型 ----------
-        const costMap = { exp: 485, gold: 1280000 };
-        const STAMINA_PER_EXP = 6;
-        const GOLD_PER_STAMINA = 200;
-
-        // 待办数据
-        let todoData = JSON.parse(localStorage.getItem('rp_todo')) || {
-            mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false
-        };
-        const dayOrder = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-        const dayNames = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-
-        // 更新所有UI
+        // ============ 常量配置 ============
+        const COST_EXP = 485;      // 1-80级所需紫色经验瓶
+        const COST_GOLD = 1280000; // 1-80级所需金币
+        
+        // 6个角色数据
+        const characters = [
+            { id: 'sylus', name: '🌑 Sylus', element: 'Dark', level: 80 },
+            { id: 'xavier', name: '✨ Xavier', element: 'Light', level: 60 },
+            { id: 'zayne', name: '❄️ Zayne', element: 'Ice', level: 40 },
+            { id: 'rafayel', name: '🔥 Rafayel', element: 'Fire', level: 20 },
+            { id: 'caleb', name: '🌪️ Caleb', element: 'Wind', level: 1 },
+            { id: 'lumi', name: '💫 Lumi', element: 'Light', level: 1 }
+        ];
+        
+        // 周常任务
+        let tasks = [
+            { name: "🎯 Bounty Hunt x3 daily", current: 0, target: 21, unit: "times" },
+            { name: "⚡ Spend 500 stamina", current: 0, target: 500, unit: "stam" },
+            { name: "🔮 Core Hunt x10", current: 0, target: 10, unit: "runs" },
+            { name: "📖 Complete Story stages", current: 0, target: 15, unit: "stages" },
+            { name: "🏆 Abyssal Trials", current: 0, target: 5, unit: "floors" },
+            { name: "🎁 Daily Login (7 days)", current: 0, target: 7, unit: "days" }
+        ];
+        
+        let gachaHistory = [];
+        
+        // ============ 辅助函数 ============
+        function getLevelProgress(level) {
+            return (level - 1) / 79;
+        }
+        
+        function getExpNeeded(level) {
+            return Math.floor(COST_EXP * getLevelProgress(level));
+        }
+        
+        function getGoldNeeded(level) {
+            return Math.floor(COST_GOLD * getLevelProgress(level));
+        }
+        
+        // ============ 更新所有UI ============
         function updateAll() {
             updateResources();
-            updateAscension();
+            updateCharGrid();
+            updateSingleCalc();
             updatePity();
-            updateMonthlyIncome();
-            updateTodoUI();
+            updateTasks();
+            updateTimeline();
+            updateAIAdvice();
+            updateProbChart();
         }
-
-        // 更新资源统计和顶部卡片
+        
         function updateResources() {
             let diamonds = parseFloat(document.getElementById('diamonds').value) || 0;
             let wishes = parseFloat(document.getElementById('wishes').value) || 0;
             let gold = parseFloat(document.getElementById('gold').value) || 0;
             let stamina = parseFloat(document.getElementById('stamina').value) || 0;
-
+            let exp = parseFloat(document.getElementById('expBottles').value) || 0;
+            let dust = parseFloat(document.getElementById('protocoreDust').value) || 0;
+            
+            document.getElementById('dashDiamonds').innerText = Math.floor(diamonds).toLocaleString();
+            document.getElementById('dashWishes').innerText = wishes;
+            document.getElementById('dashPulls').innerText = Math.floor(diamonds / 150);
+            document.getElementById('dashStamina').innerText = stamina;
+            document.getElementById('dashGold').innerText = gold;
+            document.getElementById('dashExp').innerText = exp;
+            document.getElementById('dashProtocore').innerText = dust;
+            
             let totalPulls = Math.floor(diamonds / 150) + wishes;
-            document.getElementById('statDiamonds').innerText = Math.floor(diamonds).toLocaleString();
-            document.getElementById('statWishes').innerText = wishes;
-            document.getElementById('statTotalPulls').innerText = totalPulls;
-            document.getElementById('statPulls').innerText = Math.floor(diamonds / 150);
-            document.getElementById('statStamina').innerText = stamina;
-
-            // 计算距离大保底还差多少
             let pity = parseInt(document.getElementById('pitySlider').value) || 0;
             let guarantee = document.getElementById('guaranteeSelect').value === 'yes';
-            let remainingToSoft = Math.max(0, 70 - pity);
-            let neededPulls = remainingToSoft + (guarantee ? 0 : 35);
-            let readiness = Math.min(100, Math.floor((totalPulls / neededPulls) * 100));
-            document.getElementById('statReadiness').innerText = readiness + '%';
-            document.getElementById('needPulls').innerText = Math.max(0, neededPulls - totalPulls);
-            if (totalPulls >= neededPulls) {
-                document.getElementById('pullReadinessCard').classList.add('success');
-                document.getElementById('readinessSub').innerHTML = '✓ Ready for guaranteed';
-            } else {
-                document.getElementById('pullReadinessCard').classList.remove('success');
-            }
+            let need = Math.max(0, (70 - pity) + (guarantee ? 0 : 35));
+            let readiness = Math.min(100, Math.floor((totalPulls / need) * 100)) || 0;
+            document.getElementById('dashReadiness').innerText = readiness + '%';
+            document.getElementById('dashReadinessSub').innerText = `need ${Math.max(0, need - totalPulls)}`;
+            
+            let totalLevel = characters.reduce((sum, c) => sum + c.level, 0);
+            document.getElementById('dashTotalLvl').innerText = totalLevel;
+            document.getElementById('dashPower').innerText = Math.floor(totalLevel * 125 + diamonds / 100);
         }
-
-        // 养成计算器
-        function updateAscension() {
+        
+        function updateCharGrid() {
+            let totalExp = 0, totalGold = 0;
+            let container = document.getElementById('charGrid');
+            container.innerHTML = '';
+            
+            characters.forEach(char => {
+                let expNeeded = getExpNeeded(char.level);
+                let goldNeeded = getGoldNeeded(char.level);
+                totalExp += expNeeded;
+                totalGold += goldNeeded;
+                let pct = (char.level / 80) * 100;
+                
+                container.innerHTML += `
+                    <div class="char-item">
+                        <div class="char-header">
+                            <span>${char.name}</span>
+                            <span>Lv.${char.level} / 80</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.7rem;">
+                            <span>📘 ${expNeeded}</span>
+                            <span>🪙 ${(goldNeeded/1e6).toFixed(1)}M</span>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('totalExpAll').innerText = totalExp;
+            document.getElementById('totalGoldAll').innerText = (totalGold / 1e6).toFixed(1) + 'M';
+            let totalStam = totalExp * 6 + Math.floor(totalGold / 200);
+            document.getElementById('totalStamAll').innerText = totalStam;
+            document.getElementById('daysToFarm').innerText = Math.ceil(totalStam / 240);
+        }
+        
+        function updateSingleCalc() {
             let level = parseInt(document.getElementById('levelSlider').value);
             document.getElementById('levelValue').innerText = level;
-            let ratio = (level - 1) / 79;
-            let exp = Math.floor(costMap.exp * ratio);
-            let goldCost = Math.floor(costMap.gold * ratio);
-            let staminaExp = exp * STAMINA_PER_EXP;
-            let staminaGold = Math.floor(goldCost / GOLD_PER_STAMINA);
-            let totalStamina = staminaExp + staminaGold;
-
-            document.getElementById('expNeeded').innerText = exp.toLocaleString();
-            document.getElementById('goldNeeded').innerText = goldCost.toLocaleString();
-            document.getElementById('staminaNeeded').innerText = totalStamina.toLocaleString();
-            let percent = (level / 80) * 100;
-            document.getElementById('progressFill').style.width = percent + '%';
-
-            // 检查资源缺口
-            let currentGold = parseFloat(document.getElementById('gold').value) || 0;
-            let currentStamina = parseFloat(document.getElementById('stamina').value) || 0;
-            let goldShortfall = goldCost - currentGold * 1000000;
-            if (goldShortfall > 0) {
-                document.getElementById('resourceGapMsg').innerHTML = `⚠️ Gold shortfall: ${Math.ceil(goldShortfall / 1000000)}M needed`;
-            } else {
-                document.getElementById('resourceGapMsg').innerHTML = '';
-            }
+            let exp = getExpNeeded(level);
+            let gold = getGoldNeeded(level);
+            document.getElementById('expNeeded').innerText = exp;
+            document.getElementById('goldNeeded').innerText = gold.toLocaleString();
+            document.getElementById('staminaNeeded').innerText = exp * 6 + Math.floor(gold / 200);
+            document.getElementById('progressFill').style.width = (level / 80 * 100) + '%';
         }
-
-        // 卡池规划
+        
         function updatePity() {
             let pity = parseInt(document.getElementById('pitySlider').value);
             document.getElementById('pityValue').innerText = pity;
             let guarantee = document.getElementById('guaranteeSelect').value === 'yes';
-            let remainingToSoft = Math.max(0, 70 - pity);
-            let avgPulls = remainingToSoft + (guarantee ? 0 : 35);
-            let expectedDiamonds = avgPulls * 150;
-            document.getElementById('avgPulls').innerText = avgPulls;
-            document.getElementById('expectedDiamonds').innerText = expectedDiamonds.toLocaleString();
-            let prob = Math.min(80, Math.floor((pity / 70) * 60 + 10));
-            document.getElementById('probability').innerHTML = `~${prob}%`;
-            let progressPercent = (pity / 70) * 100;
-            document.getElementById('pityProgress').style.width = progressPercent + '%';
+            let remain = Math.max(0, 70 - pity);
+            let avg = remain + (guarantee ? 0 : 35);
+            document.getElementById('avgPulls').innerText = avg;
+            document.getElementById('expectedDiamonds').innerText = (avg * 150).toLocaleString();
+            document.getElementById('pityProgress').style.width = (pity / 70 * 100) + '%';
+        }
+        
+        function updateTasks() {
+            let container = document.getElementById('taskList');
+            let total = 0, completed = 0;
+            container.innerHTML = '';
+            tasks.forEach(t => {
+                let pct = Math.min(100, (t.current / t.target) * 100);
+                total += t.target;
+                completed += t.current;
+                container.innerHTML += `
+                    <div class="task-item">
+                        <span>${t.name}</span>
+                        <div class="task-progress">
+                            <div class="task-bar"><div class="task-fill" style="width:${pct}%"></div></div>
+                            <span>${t.current}/${t.target}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('weeklyProgress').innerHTML = Math.floor((completed / total) * 100) + '%';
+        }
+        
+        function updateTimeline() {
+            let container = document.getElementById('timeline');
+            let days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+            let farms = ['Gold/EXP', 'Core Hunt', 'Ascension Mats', 'Protocore', 'Gold/EXP', 'Core/EXP', 'Rest/Story'];
+            container.innerHTML = '';
+            for (let i = 0; i < 7; i++) {
+                container.innerHTML += `
+                    <div class="timeline-node">
+                        <div class="timeline-date">${days[i]}</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">🎯 Priority: ${farms[i]}</div>
+                            <div class="timeline-desc">Recommended stamina: 240 | Focus on ${farms[i].toLowerCase()} farming</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        function updateAIAdvice() {
+            let diamonds = parseFloat(document.getElementById('diamonds').value) || 0;
+            let wishes = parseFloat(document.getElementById('wishes').value) || 0;
+            let totalPulls = Math.floor(diamonds / 150) + wishes;
+            let pity = parseInt(document.getElementById('pitySlider').value);
+            let advice = '';
+            if (totalPulls >= 140) advice = '✅ You have enough for hard pity! Ready for next banner.';
+            else if (totalPulls >= 70) advice = '⚠️ You have soft pity ready. Consider saving for guaranteed rate-up.';
+            else if (pity > 60) advice = '🎯 Your pity is high! Do single pulls to save wishes.';
+            else advice = '📊 Continue saving. Focus on daily commissions and events.';
+            document.getElementById('aiAdvice').innerHTML = advice;
+        }
+        
+        function updateProbChart() {
+            let container = document.getElementById('probChart');
+            container.innerHTML = '';
+            let probs = [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 1.2, 2.5, 5, 10, 20, 35, 60, 85, 100, 100, 100];
+            for (let i = 0; i < 20; i++) {
+                let height = Math.min(120, probs[i] * 2);
+                container.innerHTML += `<div class="prob-bar" style="height:${height}px"></div>`;
+            }
+        }
+        
+        function simulatePull() {
+            let pity = parseInt(document.getElementById('pitySlider').value);
+            let isGuaranteed = document.getElementById('guaranteeSelect').value === 'yes';
+            let is5Star = false;
+            if (pity >= 70) is5Star = true;
+            else if (Math.random() < 0.006) is5Star = true;
+            
+            if (is5Star) {
+                let isRateUp = isGuaranteed || Math.random() < 0.5;
+                gachaHistory.unshift(isRateUp ? '⭐' : '☆');
+                document.getElementById('simResult').innerHTML = isRateUp ? '🔥 5★ RATE-UP!' : '😢 5★ (lost 50/50)';
+                document.getElementById('pitySlider').value = 0;
+                if (!isRateUp) document.getElementById('guaranteeSelect').value = 'yes';
+                else if (isGuaranteed) document.getElementById('guaranteeSelect').value = 'no';
+            } else {
+                gachaHistory.unshift('○');
+                document.getElementById('pitySlider').value = pity + 1;
+                document.getElementById('simResult').innerHTML = '❄️ 3★ / 4★';
+            }
+            if (gachaHistory.length > 30) gachaHistory.pop();
+            updateGachaDisplay();
+            updatePity();
             updateResources();
         }
-
-        function updateMonthlyIncome() {
-            let base = 4500 + 800 + 600 + 500;
-            document.getElementById('monthlyTotal').innerText = '~' + base.toLocaleString();
-            document.getElementById('monthlyPulls').innerText = Math.floor(base / 150);
+        
+        function updateGachaDisplay() {
+            let container = document.getElementById('gachaHistory');
+            container.innerHTML = gachaHistory.map(h => {
+                let cls = '';
+                if (h === '⭐') cls = 'gold';
+                else if (h === '☆') cls = 'purple';
+                return `<div class="pull-dot ${cls}">${h}</div>`;
+            }).join('');
         }
-
-        function updateTodoUI() {
-            const container = document.getElementById('weeklyChecklist');
-            container.innerHTML = '';
-            dayOrder.forEach((day, idx) => {
-                const div = document.createElement('div');
-                div.className = 'weekday' + (todoData[day] ? ' checked' : '');
-                div.innerHTML = `<div class="day">${dayNames[idx]}</div><div class="check-icon">${todoData[day] ? '✅' : '◻️'}</div>`;
-                div.onclick = () => {
-                    todoData[day] = !todoData[day];
-                    localStorage.setItem('rp_todo', JSON.stringify(todoData));
-                    updateTodoUI();
-                };
-                container.appendChild(div);
-            });
+        
+        function resetPitySim() {
+            document.getElementById('pitySlider').value = 0;
+            gachaHistory = [];
+            updateGachaDisplay();
+            updatePity();
+            document.getElementById('simResult').innerHTML = 'Click to pull';
         }
-
-        function resetTodo() {
-            for (let day of dayOrder) todoData[day] = false;
-            localStorage.setItem('rp_todo', JSON.stringify(todoData));
-            updateTodoUI();
+        
+        function resetTasks() {
+            tasks.forEach(t => t.current = 0);
+            updateTasks();
+            localStorage.setItem('rp_tasks', JSON.stringify(tasks));
         }
-
-        function saveResources() {
+        
+        function saveAllData() {
             let data = {
                 diamonds: document.getElementById('diamonds').value,
                 wishes: document.getElementById('wishes').value,
                 gold: document.getElementById('gold').value,
-                stamina: document.getElementById('stamina').value
+                stamina: document.getElementById('stamina').value,
+                expBottles: document.getElementById('expBottles').value,
+                protocoreDust: document.getElementById('protocoreDust').value,
+                coreL: document.getElementById('coreL').value,
+                coreM: document.getElementById('coreM').value,
+                coreS: document.getElementById('coreS').value,
+                shards: document.getElementById('shards').value,
+                stardust: document.getElementById('stardust').value,
+                tasks: tasks,
+                characters: characters
             };
-            localStorage.setItem('rp_resources', JSON.stringify(data));
-            document.getElementById('lastUpdated').innerHTML = 'Saved at ' + new Date().toLocaleTimeString();
-            alert('Resource data saved!');
+            localStorage.setItem('rp_all_data', JSON.stringify(data));
+            document.getElementById('lastSync').innerHTML = new Date().toLocaleTimeString();
+            alert('All data saved!');
         }
-
-        function loadResources() {
-            let saved = localStorage.getItem('rp_resources');
+        
+        function loadAllData() {
+            let saved = localStorage.getItem('rp_all_data');
             if (saved) {
                 let data = JSON.parse(saved);
                 if (data.diamonds) document.getElementById('diamonds').value = data.diamonds;
                 if (data.wishes) document.getElementById('wishes').value = data.wishes;
                 if (data.gold) document.getElementById('gold').value = data.gold;
                 if (data.stamina) document.getElementById('stamina').value = data.stamina;
+                if (data.expBottles) document.getElementById('expBottles').value = data.expBottles;
+                if (data.protocoreDust) document.getElementById('protocoreDust').value = data.protocoreDust;
+                if (data.coreL) document.getElementById('coreL').value = data.coreL;
+                if (data.coreM) document.getElementById('coreM').value = data.coreM;
+                if (data.coreS) document.getElementById('coreS').value = data.coreS;
+                if (data.shards) document.getElementById('shards').value = data.shards;
+                if (data.stardust) document.getElementById('stardust').value = data.stardust;
+                if (data.tasks) tasks = data.tasks;
+                if (data.characters) {
+                    for (let i = 0; i < data.characters.length && i < characters.length; i++) {
+                        characters[i].level = data.characters[i].level;
+                    }
+                }
             }
         }
-
+        
         function resetResources() {
             document.getElementById('diamonds').value = '0';
             document.getElementById('wishes').value = '0';
             document.getElementById('gold').value = '0';
             document.getElementById('stamina').value = '240';
+            document.getElementById('expBottles').value = '0';
+            document.getElementById('protocoreDust').value = '0';
+            document.getElementById('coreL').value = '0';
+            document.getElementById('coreM').value = '0';
+            document.getElementById('coreS').value = '0';
+            document.getElementById('shards').value = '0';
+            document.getElementById('stardust').value = '0';
             updateAll();
         }
-
-        // 快捷添加按钮
+        
+        // 事件绑定
+        document.getElementById('saveResourcesBtn').addEventListener('click', saveAllData);
+        document.getElementById('resetResourcesBtn').addEventListener('click', resetResources);
+        document.getElementById('simulateBtn').addEventListener('click', simulatePull);
+        document.getElementById('resetPityBtn').addEventListener('click', resetPitySim);
+        document.getElementById('resetTasksBtn').addEventListener('click', resetTasks);
+        document.getElementById('refreshAdviceBtn').addEventListener('click', updateAIAdvice);
+        document.getElementById('levelSlider').addEventListener('input', updateSingleCalc);
+        document.getElementById('pitySlider').addEventListener('input', () => { updatePity(); updateResources(); });
+        document.getElementById('guaranteeSelect').addEventListener('change', () => { updatePity(); updateResources(); });
+        
         document.querySelectorAll('.quick-add').forEach(btn => {
             btn.addEventListener('click', () => {
                 let field = btn.dataset.field;
-                let val = btn.dataset.value;
-                let input = document.getElementById(field);
-                if (input) input.value = val;
+                if (field) document.getElementById(field).value = btn.dataset.value;
                 updateAll();
             });
         });
-
-        // 绑定事件
-        document.getElementById('levelSlider').addEventListener('input', updateAscension);
-        document.getElementById('pitySlider').addEventListener('input', () => { updatePity(); updateResources(); });
-        document.getElementById('guaranteeSelect').addEventListener('change', () => { updatePity(); updateResources(); });
-        document.getElementById('charSelect').addEventListener('change', updateAscension);
-        document.getElementById('saveResourcesBtn').addEventListener('click', saveResources);
-        document.getElementById('resetResourcesBtn').addEventListener('click', resetResources);
-        document.getElementById('simulateBtn').addEventListener('click', () => { updatePity(); alert(`Expected ${document.getElementById('avgPulls').innerText} pulls to hit 5★`); });
-        document.getElementById('resetTodoBtn').addEventListener('click', resetTodo);
-        document.getElementById('diamonds').addEventListener('input', updateResources);
-        document.getElementById('wishes').addEventListener('input', updateResources);
-        document.getElementById('gold').addEventListener('input', updateResources);
-        document.getElementById('stamina').addEventListener('input', updateResources);
-
-        // 周常体力显示
-        function updateWeeklyStam() {
-            document.getElementById('weeklyStam').innerText = 1680;
-        }
-
+        
+        ['diamonds','wishes','gold','stamina','expBottles','protocoreDust','coreL','coreM','coreS','shards','stardust'].forEach(id => {
+            let el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateAll);
+        });
+        
         // 初始化
-        loadResources();
+        loadAllData();
         updateAll();
-        updateWeeklyStam();
+        document.getElementById('weeklyStam').innerText = 1680;
     </script>
 </body>
 </html>
