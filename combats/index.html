@@ -7,36 +7,34 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="combat-style.css">
 </head>
-<body class="combat-page">
-    <div class="vignette"></div>
-    
+<body class="combat-root">
+    <div class="vignette-overlay"></div>
+
     <header class="main-header">
-        <nav class="nav-container">
-            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+        <div class="nav-container">
+            <a href="/" class="logo">DEEPSPACE <span>HUNTER</span></a>
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="../operatives/">Operative Files</a></li>
-                <li><a href="./" class="nav-active">Combat Guides</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/operatives/">Operative Files</a></li>
+                <li><a href="/combats/" class="active">Combat Guides</a></li>
                 <li><a href="#">Resource Planning</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
-    <main class="combat-layout">
-        <!-- 侧边分类栏：这是后期扩展的核心，可以无限增加分类 -->
+    <main class="combat-master-layout">
         <aside class="tactical-sidebar">
-            <div class="sidebar-label">DATABASE INDEX</div>
+            <div class="sidebar-label">⟡ DATABASE INDEX ⟡</div>
             <ul class="category-list">
                 <li class="active"><span class="code">00</span> Basic Protocols</li>
                 <li><span class="code">01</span> Boss Strategies</li>
                 <li><span class="code">02</span> Abyssal Trials</li>
                 <li><span class="code">03</span> Protocore Builds</li>
-                <li class="locked"><span class="code">XX</span> Classified...</li>
+                <li class="locked"><span class="code">XX</span> Classified · N109</li>
             </ul>
         </aside>
 
         <section class="content-stream">
-            <!-- 亮点 1：战术状态面板 -->
             <div class="status-dashboard">
                 <div class="dash-item">
                     <label>SYNC RATE</label>
@@ -52,8 +50,6 @@
                 </div>
             </div>
 
-            <!-- 亮点 2：可扩展的档案条目 -->
-            <!-- 以后每增加一个攻略，就复制一个 log-entry 卡片 -->
             <article class="log-entry">
                 <div class="log-header">
                     <span class="log-id">ENTRY_#082</span>
@@ -62,13 +58,13 @@
                 </div>
                 <div class="log-body">
                     <h3>Fundamental Force: Protocore Shielding</h3>
-                    <p>Analysis of Wanderer defensive layers. Priority: Elemental Resonance.</p>
+                    <p>Analysis of Wanderer defensive layers. Elemental Resonance Breakpoint reduces total resistance by 60%.</p>
                     <div class="mini-data-flex">
-                        <div class="data-point"><span>Reduction:</span> 60%</div>
-                        <div class="data-point"><span>Break Bonus:</span> +50%</div>
+                        <div class="data-point">Resistance Reduction: 60%</div>
+                        <div class="data-point">Break Bonus: +50%</div>
                     </div>
                 </div>
-                <a href="#" class="log-link">VIEW FULL DATA</a>
+                <a href="#" class="log-link">VIEW FULL DATA →</a>
             </article>
 
             <article class="log-entry critical">
@@ -78,19 +74,41 @@
                     <span class="tag danger">ELITE_BOSS</span>
                 </div>
                 <div class="log-body">
-                    <h3>Target: Magma Golem - Pattern Alpha</h3>
-                    <p>Detecting high-frequency thermal vibrations. Frost-type Operatives recommended.</p>
+                    <h3>Target: Magma Golem — Pattern Alpha</h3>
+                    <p>High-frequency thermal vibrations detected. Frost-type operatives recommended.</p>
                 </div>
-                <a href="#" class="log-link">OPEN ENCRYPTED FILE</a>
+                <a href="#" class="log-link">OPEN ENCRYPTED FILE →</a>
             </article>
 
-            <!-- 更多内容可以源源不断加在这里 -->
-            <div class="end-of-data">END OF LOCAL CACHE - FETCHING MORE...</div>
+            <article class="log-entry">
+                <div class="log-header">
+                    <span class="log-id">ENTRY_#119</span>
+                    <span class="log-date">2026.05.12</span>
+                    <span class="tag">ENERGY_MECHANICS</span>
+                </div>
+                <div class="log-body">
+                    <h3>Sylus: "Infinite Dark Energy" Rotation</h3>
+                    <p>Perfect dodge refunds 15% Resonance Energy. 3-1-3 silent pulse combo enables near-permanent ultimate uptime.</p>
+                    <div class="mini-data-flex">
+                        <div class="data-point">Energy Refund: 15%</div>
+                        <div class="data-point">Loop Uptime: 94%</div>
+                    </div>
+                </div>
+                <a href="#" class="log-link">DOWNLOAD ROTATION LOG →</a>
+            </article>
+
+            <div class="end-of-data">⟡ END OF LOCAL CACHE — FETCHING UPDATED DATA ⟡</div>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <p class="copyright">TACTICAL OS V4.0.2 // STABLE CONNECTION</p>
+    <footer class="combat-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p>© 2026 Deepspace Combat Research Center. Fan-made site.</p>
     </footer>
 </body>
 </html>
