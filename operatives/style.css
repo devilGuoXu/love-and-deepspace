@@ -1,17 +1,15 @@
 /* --- 基础布局与通用样式 --- */
 :root {
-    /* 这里定义默认颜色（以秦彻为准） */
+    /* 默认：秦彻 Sylus */
     --accent: #cc0000;
-    --panel-bg: #0d1117;
-    --text-main: #d1d1d1;
     --text-gold: #c9a063;
+    --panel-bg: #0d1117;
     --bg-dark: #050505;
     --border-color: #2a2f3d;
+    --text-main: #d1d1d1;
 }
 
 /* --- 角色皮肤主题定义 --- */
-
-/* Xavier (沈星回) 主题 */
 .xavier-theme {
     --accent: #6eb7ff;   /* 星光蓝 */
     --text-gold: #a5d8ff;
@@ -19,48 +17,106 @@
     --border-color: #1e2d3d;
 }
 
-/* Zayne (黎深) 主题 */
 .zayne-theme {
-    --accent: #94b9ff;   /* 冰晶色 */
+    --accent: #94b9ff;   /* 黎深蓝 */
     --text-gold: #cbdfff;
     --panel-bg: #0f141c;
     --border-color: #252e3d;
 }
 
-/* Rafayel (祁煜) 主题 */
 .rafayel-theme {
-    --accent: #ff73b1;   /* 珊瑚色 */
+    --accent: #ff73b1;   /* 祁煜色 */
     --text-gold: #f8adff;
     --panel-bg: #140f1a;
     --border-color: #3d2536;
 }
 
-/* --- 核心布局代码 (只写一遍) --- */
+/* --- 核心 UI 代码 --- */
+
+* { box-sizing: border-box; margin: 0; padding: 0; } /* 初始化，防止边距乱掉 */
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
 }
 
+/* 让 Hero 区域有高度 */
+.hero-header {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid var(--accent); /* 颜色随主题变 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg-dark));
+    text-align: center;
+}
+
+.hero-header h1 {
+    font-size: 5rem;
+    letter-spacing: 20px;
+    color: #fff;
+}
+
+/* 详情容器 */
+.detail-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* 面板样式 */
 .spec-box {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-left: 5px solid var(--accent); /* 侧边条颜色随主题变 */
-    padding: 35px;
+    padding: 25px;
+    margin-bottom: 20px;
 }
 
-.hero-header {
-    border-bottom: 4px solid var(--accent);
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .stat-row label {
-    color: var(--text-gold);
+    color: var(--text-gold); /* 标签颜色随主题变 */
+    font-weight: bold;
+}
+
+/* 技能卡片 */
+.skill-card {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
 }
 
 .skill-card:hover {
-    border-color: var(--accent);
+    border-color: var(--accent); /* 悬停颜色随主题变 */
+    transform: translateX(10px);
 }
 
 .rank-circle {
-    background: var(--accent);
+    width: 40px; height: 40px;
+    background: var(--accent); /* 圆圈颜色随主题变 */
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 响应式：手机端变单列 */
+@media (max-width: 800px) {
+    .detail-container { grid-template-columns: 1fr; }
 }
