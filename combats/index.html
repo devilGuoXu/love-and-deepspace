@@ -26,11 +26,21 @@
         <aside class="tactical-sidebar">
             <div class="sidebar-label">⟡ DATABASE INDEX ⟡</div>
             <ul class="category-list">
-                <li class="active"><span class="code">00</span> Basic Protocols</li>
-                <li><span class="code">01</span> Boss Strategies</li>
-                <li><span class="code">02</span> Abyssal Trials</li>
-                <li><span class="code">03</span> Protocore Builds</li>
-                <li class="locked"><span class="code">XX</span> Classified · N109</li>
+                <li class="active" data-category="basic">
+                    <span class="code">00</span> Basic Protocols
+                </li>
+                <li data-category="boss">
+                    <span class="code">01</span> Boss Strategies
+                </li>
+                <li data-category="abyssal">
+                    <span class="code">02</span> Abyssal Trials
+                </li>
+                <li data-category="protocore">
+                    <span class="code">03</span> Protocore Builds
+                </li>
+                <li class="locked" data-category="classified">
+                    <span class="code">XX</span> Classified · N109
+                </li>
             </ul>
         </aside>
 
@@ -50,54 +60,45 @@
                 </div>
             </div>
 
-            <article class="log-entry">
-                <div class="log-header">
-                    <span class="log-id">ENTRY_#082</span>
-                    <span class="log-date">2026.05.16</span>
-                    <span class="tag">CORE_SYSTEM</span>
-                </div>
-                <div class="log-body">
-                    <h3>Fundamental Force: Protocore Shielding</h3>
-                    <p>Analysis of Wanderer defensive layers. Elemental Resonance Breakpoint reduces total resistance by 60%.</p>
-                    <div class="mini-data-flex">
-                        <div class="data-point">Resistance Reduction: 60%</div>
-                        <div class="data-point">Break Bonus: +50%</div>
+            <!-- 动态内容区域 - 会根据侧边栏点击变化 -->
+            <div id="dynamic-content">
+                <!-- Basic Protocols 默认内容 -->
+                <article class="log-entry">
+                    <div class="log-header">
+                        <span class="log-id">ENTRY_#001</span>
+                        <span class="log-date">2026.05.16</span>
+                        <span class="tag">BASIC_PROTOCOL</span>
                     </div>
-                </div>
-                <a href="#" class="log-link">VIEW FULL DATA →</a>
-            </article>
-
-            <article class="log-entry critical">
-                <div class="log-header">
-                    <span class="log-id">ENTRY_#104</span>
-                    <span class="log-date">2026.05.14</span>
-                    <span class="tag danger">ELITE_BOSS</span>
-                </div>
-                <div class="log-body">
-                    <h3>Target: Magma Golem — Pattern Alpha</h3>
-                    <p>High-frequency thermal vibrations detected. Frost-type operatives recommended.</p>
-                </div>
-                <a href="#" class="log-link">OPEN ENCRYPTED FILE →</a>
-            </article>
-
-            <article class="log-entry">
-                <div class="log-header">
-                    <span class="log-id">ENTRY_#119</span>
-                    <span class="log-date">2026.05.12</span>
-                    <span class="tag">ENERGY_MECHANICS</span>
-                </div>
-                <div class="log-body">
-                    <h3>Sylus: "Infinite Dark Energy" Rotation</h3>
-                    <p>Perfect dodge refunds 15% Resonance Energy. 3-1-3 silent pulse combo enables near-permanent ultimate uptime.</p>
-                    <div class="mini-data-flex">
-                        <div class="data-point">Energy Refund: 15%</div>
-                        <div class="data-point">Loop Uptime: 94%</div>
+                    <div class="log-body">
+                        <h3>Combat Basics: Resonance & Ardent Oath</h3>
+                        <p>Understanding the core combat loop: Build Resonance Energy → Trigger Resonance Skill → Charge Ardent Oath. Each character has unique resonance windows and optimal rotation patterns.</p>
+                        <div class="mini-data-flex">
+                            <div class="data-point">Resonance CD: 12s</div>
+                            <div class="data-point">Oath Charge: 1000 Energy</div>
+                        </div>
                     </div>
-                </div>
-                <a href="#" class="log-link">DOWNLOAD ROTATION LOG →</a>
-            </article>
+                    <a href="#" class="log-link">VIEW BASIC TRAINING →</a>
+                </article>
 
-            <div class="end-of-data">⟡ END OF LOCAL CACHE — FETCHING UPDATED DATA ⟡</div>
+                <article class="log-entry">
+                    <div class="log-header">
+                        <span class="log-id">ENTRY_#002</span>
+                        <span class="log-date">2026.05.15</span>
+                        <span class="tag">DODGE_MECHANIC</span>
+                    </div>
+                    <div class="log-body">
+                        <h3>Perfect Dodge: Invincibility Frames</h3>
+                        <p>Perfect dodge grants 0.8 seconds of invincibility and triggers a 30% slow-motion effect on enemies. Sylus additionally gains 15% Resonance Energy refund in Dark Energy state.</p>
+                        <div class="mini-data-flex">
+                            <div class="data-point">i-Frames: 0.8s</div>
+                            <div class="data-point">Slow Duration: 2.5s</div>
+                        </div>
+                    </div>
+                    <a href="#" class="log-link">VIEW DODGE TIMING →</a>
+                </article>
+
+                <div class="end-of-data">⟡ BASIC PROTOCOLS — COMPLETE ⟡</div>
+            </div>
         </section>
     </main>
 
@@ -110,5 +111,216 @@
         </div>
         <p>© 2026 Deepspace Combat Research Center. Fan-made site.</p>
     </footer>
+
+    <script>
+        // 侧边栏菜单数据 - 每个分类对应的内容
+        const categoryContent = {
+            basic: {
+                title: "Basic Protocols",
+                entries: [
+                    {
+                        id: "ENTRY_#001",
+                        date: "2026.05.16",
+                        tag: "BASIC_PROTOCOL",
+                        title: "Combat Basics: Resonance & Ardent Oath",
+                        desc: "Understanding the core combat loop: Build Resonance Energy → Trigger Resonance Skill → Charge Ardent Oath. Each character has unique resonance windows and optimal rotation patterns.",
+                        points: [
+                            { label: "Resonance CD", value: "12s" },
+                            { label: "Oath Charge", value: "1000 Energy" }
+                        ]
+                    },
+                    {
+                        id: "ENTRY_#002",
+                        date: "2026.05.15",
+                        tag: "DODGE_MECHANIC",
+                        title: "Perfect Dodge: Invincibility Frames",
+                        desc: "Perfect dodge grants 0.8 seconds of invincibility and triggers a 30% slow-motion effect on enemies. Sylus additionally gains 15% Resonance Energy refund in Dark Energy state.",
+                        points: [
+                            { label: "i-Frames", value: "0.8s" },
+                            { label: "Slow Duration", value: "2.5s" }
+                        ]
+                    },
+                    {
+                        id: "ENTRY_#003",
+                        date: "2026.05.14",
+                        tag: "WEAKNESS_BREAK",
+                        title: "Weakness Break System",
+                        desc: "Enemies have shields matching their attribute. Breaking weakness with correct attribute deals 200% stagger damage and increases all damage by 50% for 8 seconds.",
+                        points: [
+                            { label: "Stagger DMG", value: "200%" },
+                            { label: "DMG Bonus", value: "+50%" }
+                        ]
+                    }
+                ]
+            },
+            boss: {
+                title: "Boss Strategies",
+                entries: [
+                    {
+                        id: "ENTRY_#104",
+                        date: "2026.05.14",
+                        tag: "ELITE_BOSS",
+                        title: "Target: Magma Golem — Pattern Alpha",
+                        desc: "High-frequency thermal vibrations detected. Frost-type operatives (Zayne) achieve 42% higher shield break efficiency. Perfect dodge windows align with overhead slam (0.4s reaction).",
+                        points: [
+                            { label: "Thermal Resist", value: "70%" },
+                            { label: "Frost Bonus", value: "+38%" }
+                        ]
+                    },
+                    {
+                        id: "ENTRY_#098",
+                        date: "2026.05.10",
+                        tag: "VOID_LORD",
+                        title: "Void Lord: Phase Transition Guide",
+                        desc: "Phase 2 triggers at 40% HP. During transition, collect 5 light orbs to disable his invincibility shield. Recommended DPS check: 45k sustained.",
+                        points: [
+                            { label: "Phase HP Threshold", value: "40%" },
+                            { label: "Required DPS", value: "45k" }
+                        ]
+                    }
+                ]
+            },
+            abyssal: {
+                title: "Abyssal Trials",
+                entries: [
+                    {
+                        id: "ENTRY_#119",
+                        date: "2026.05.12",
+                        tag: "FLOOR_12",
+                        title: "Abyssal Floor 12: Clear Guide",
+                        desc: "Recommended team: Sylus (Main DPS) + Xavier (Sub DPS). Prioritize breaking left add first. Use Ardent Oath when boss summons adds to cleave them down.",
+                        points: [
+                            { label: "Clear Requirement", value: "3:30" },
+                            { label: "Recommended Power", value: "85k+" }
+                        ]
+                    },
+                    {
+                        id: "ENTRY_#115",
+                        date: "2026.05.08",
+                        tag: "FLOOR_9",
+                        title: "Abyssal Floor 9: Double Elite",
+                        desc: "Two elite spawn simultaneously. Crowd control is essential. Use Resonance skills to group them before bursting. Zayne's freeze is extremely valuable.",
+                        points: [
+                            { label: "CC Required", value: "Yes" },
+                            { label: "Burst Window", value: "5s" }
+                        ]
+                    }
+                ]
+            },
+            protocore: {
+                title: "Protocore Builds",
+                entries: [
+                    {
+                        id: "ENTRY_#082",
+                        date: "2026.05.16",
+                        tag: "CORE_SYSTEM",
+                        title: "Fundamental Force: Protocore Shielding",
+                        desc: "Analysis of Wanderer defensive layers. Elemental Resonance Breakpoint reduces total resistance by 60%. Optimal timing for Ardent Oath deals bonus 50% Weakness DMG.",
+                        points: [
+                            { label: "Resist Reduction", value: "60%" },
+                            { label: "Break Bonus", value: "+50%" }
+                        ]
+                    },
+                    {
+                        id: "ENTRY_#088",
+                        date: "2026.05.11",
+                        tag: "ENERGY_REGEN",
+                        title: "Energy Regen Breakpoints",
+                        desc: "For Sylus, reaching 145% Energy Recharge allows perfect loop without downtime. Xavier benefits from Crit Rate > 65% for consistent burst windows.",
+                        points: [
+                            { label: "Sylus ER Breakpoint", value: "145%" },
+                            { label: "Xavier CR Required", value: "65%" }
+                        ]
+                    }
+                ]
+            },
+            classified: {
+                title: "Classified · N109",
+                entries: [
+                    {
+                        id: "ENTRY_#XXX",
+                        date: "CLASSIFIED",
+                        tag: "RESTRICTED",
+                        title: "[ENCRYPTED] Restricted Access",
+                        desc: "This file requires Level 5 clearance. Please contact Deepspace Hunter HQ for authorization.",
+                        points: [
+                            { label: "Clearance", value: "Level 5" },
+                            { label: "Status", value: "Locked" }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // 获取所有侧边栏菜单项
+        const menuItems = document.querySelectorAll('.category-list li');
+        const contentContainer = document.getElementById('dynamic-content');
+
+        // 渲染内容的函数
+        function renderContent(categoryKey) {
+            const data = categoryContent[categoryKey];
+            if (!data) return;
+
+            let html = '';
+            for (const entry of data.entries) {
+                const pointsHtml = entry.points.map(p => 
+                    `<div class="data-point">${p.label}: ${p.value}</div>`
+                ).join('');
+
+                const criticalClass = entry.tag === 'ELITE_BOSS' ? ' critical' : '';
+                
+                html += `
+                    <article class="log-entry${criticalClass}">
+                        <div class="log-header">
+                            <span class="log-id">${entry.id}</span>
+                            <span class="log-date">${entry.date}</span>
+                            <span class="tag ${entry.tag === 'ELITE_BOSS' ? 'danger' : ''}">${entry.tag}</span>
+                        </div>
+                        <div class="log-body">
+                            <h3>${entry.title}</h3>
+                            <p>${entry.desc}</p>
+                            <div class="mini-data-flex">
+                                ${pointsHtml}
+                            </div>
+                        </div>
+                        <a href="#" class="log-link" onclick="alert('Full guide for ${entry.title} — coming soon'); return false;">VIEW DETAILS →</a>
+                    </article>
+                `;
+            }
+            
+            html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${data.entries.length} ENTRIES ⟡</div>`;
+            contentContainer.innerHTML = html;
+        }
+
+        // 添加点击事件
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                // 如果是锁定的分类，显示提示
+                if (this.classList.contains('locked')) {
+                    alert('This section requires higher clearance. Content coming soon.');
+                    return;
+                }
+
+                // 移除所有active状态
+                menuItems.forEach(li => li.classList.remove('active'));
+                // 添加当前项的active状态
+                this.classList.add('active');
+
+                // 获取分类key
+                const category = this.getAttribute('data-category');
+                if (category && categoryContent[category]) {
+                    renderContent(category);
+                }
+            });
+        });
+
+        // 初始化：确保Basic Protocols默认选中并显示内容
+        const defaultActive = document.querySelector('.category-list li.active');
+        if (defaultActive && defaultActive.getAttribute('data-category')) {
+            renderContent(defaultActive.getAttribute('data-category'));
+        } else {
+            renderContent('basic');
+        }
+    </script>
 </body>
 </html>
