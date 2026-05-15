@@ -1,4 +1,4 @@
-/* ========= RESOURCE PLANNING 专属样式 ========= */
+/* ========= RESOURCE PLANNING v2 - 高信息密度版 ========= */
 :root {
     --rp-gold: #c9a063;
     --rp-gold-dim: #8b6b3a;
@@ -7,6 +7,9 @@
     --rp-progress-bg: #1e232e;
     --rp-danger: #ff6b6b;
     --rp-success: #6bcf7f;
+    --rp-warning: #ffb347;
+    --rp-text-main: #e8edf2;
+    --rp-text-dim: #8a94a8;
 }
 
 * {
@@ -17,66 +20,124 @@ body.rp-body {
     background-color: #05070c;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-/* 主容器 */
+/* 主容器 - 更紧凑的边距 */
 .rp-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 30px 24px 70px;
+    padding: 20px 24px 50px;
 }
 
-/* 页面头部 */
+/* 头部 */
 .rp-header {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 .rp-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     background: linear-gradient(135deg, #fff 30%, var(--rp-gold) 80%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    letter-spacing: -0.5px;
+    margin: 0;
 }
 .rp-header p {
-    color: #8a94a8;
-    margin-top: 8px;
+    color: var(--rp-text-dim);
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+}
+.last-updated {
+    font-size: 0.7rem;
+    color: #5a6070;
 }
 
-/* 三列网格 */
-.rp-grid {
+/* 统计卡片行 - 4个关键指标 */
+.stats-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+.stat-mini-card {
+    background: var(--rp-bg-card);
+    border: 1px solid var(--rp-border);
+    border-radius: 20px;
+    padding: 16px 20px;
+    transition: 0.2s;
+}
+.stat-mini-card:hover {
+    border-color: var(--rp-gold);
+}
+.stat-mini-card .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--rp-text-dim);
+}
+.stat-mini-card .stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--rp-gold);
+    line-height: 1.2;
+}
+.stat-mini-card .stat-sub {
+    font-size: 0.7rem;
+    color: #5a6070;
+}
+.stat-mini-card.warning .stat-value {
+    color: var(--rp-warning);
+}
+.stat-mini-card.danger .stat-value {
+    color: var(--rp-danger);
 }
 
-/* 通用卡片样式 */
+/* 双列主布局 */
+.rp-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+/* 通用卡片 */
 .rp-card {
     background: var(--rp-bg-card);
     border: 1px solid var(--rp-border);
-    border-radius: 24px;
-    padding: 24px;
-    transition: all 0.2s;
+    border-radius: 20px;
+    overflow: hidden;
 }
-.rp-card:hover {
-    border-color: var(--rp-gold);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+.rp-card-header {
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--rp-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.rp-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
+.rp-card-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rp-gold);
+    margin: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--rp-gold);
+    gap: 8px;
 }
-.rp-card h3 .emoji {
-    font-size: 1.4rem;
+.rp-card-body {
+    padding: 20px;
 }
 
-/* 资源仪表盘内部样式 */
+/* 资源编辑表格 */
+.resource-table {
+    width: 100%;
+}
 .resource-row {
     display: flex;
     justify-content: space-between;
@@ -88,17 +149,18 @@ body.rp-body {
     border-bottom: none;
 }
 .resource-label {
-    font-weight: 500;
-    color: #b0bedb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
 }
-.resource-value {
-    font-family: monospace;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #fff;
+.resource-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .resource-input {
-    width: 120px;
+    width: 130px;
     background: #1a1f2a;
     border: 1px solid var(--rp-border);
     border-radius: 12px;
@@ -106,59 +168,83 @@ body.rp-body {
     color: #fff;
     font-family: monospace;
     text-align: right;
+    font-size: 0.85rem;
 }
 .resource-input:focus {
     outline: none;
     border-color: var(--rp-gold);
 }
-
-/* 养成计算器 */
-.selector-group {
-    margin-bottom: 20px;
+.quick-add {
+    background: rgba(201, 160, 99, 0.15);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: var(--rp-gold);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.2s;
 }
-.selector-label {
+.quick-add:hover {
+    background: var(--rp-gold);
+    color: #000;
+}
+
+/* 养成计算器 - 更紧凑 */
+.calc-grid {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.calc-field {
+    flex: 1;
+    min-width: 120px;
+}
+.calc-field label {
     display: block;
-    font-size: 12px;
-    color: #8a94a8;
+    font-size: 0.7rem;
+    color: var(--rp-text-dim);
     margin-bottom: 6px;
 }
-select, .range-input {
+.calc-field select, .calc-field input {
     width: 100%;
     background: #1a1f2a;
     border: 1px solid var(--rp-border);
     border-radius: 12px;
-    padding: 10px 14px;
+    padding: 10px;
     color: #fff;
-    font-size: 14px;
+    font-size: 0.85rem;
 }
-.range-input {
-    width: 100%;
-    margin-top: 8px;
-}
-.calc-result {
-    background: rgba(201, 160, 99, 0.08);
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 20px;
-}
-.result-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-.total-value {
-    font-size: 1.5rem;
-    font-weight: 700;
+.range-value {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 6px;
     color: var(--rp-gold);
 }
-
-/* 进度条 */
+.result-summary {
+    background: rgba(201, 160, 99, 0.06);
+    border-radius: 16px;
+    padding: 16px;
+}
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+.result-item .value {
+    font-weight: 700;
+    color: var(--rp-gold);
+    font-family: monospace;
+}
+.result-progress {
+    margin: 12px 0 8px;
+}
 .progress-bar {
     background: var(--rp-progress-bg);
     border-radius: 20px;
-    height: 8px;
+    height: 6px;
     overflow: hidden;
-    margin: 10px 0;
 }
 .progress-fill {
     background: var(--rp-gold);
@@ -167,46 +253,122 @@ select, .range-input {
     border-radius: 20px;
     transition: width 0.3s;
 }
-
-/* 体力效率表 */
-.efficiency-table {
-    width: 100%;
-    border-collapse: collapse;
+.resource-gap {
+    color: var(--rp-danger);
+    font-size: 0.75rem;
+    margin-top: 8px;
+    text-align: right;
 }
-.efficiency-table td {
-    padding: 10px 0;
+
+/* 卡池规划器 */
+.pity-control {
+    margin-bottom: 20px;
+}
+.pity-slider-container {
+    margin: 16px 0;
+}
+.pity-stats {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 16px;
+}
+.pity-stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.efficiency-table td:last-child {
-    text-align: right;
+.pity-stat-row:last-child {
+    border-bottom: none;
+}
+.pity-stat-label {
+    font-size: 0.8rem;
+}
+.pity-stat-value {
+    font-weight: 700;
     color: var(--rp-gold);
     font-family: monospace;
 }
-.badge {
+.probability-highlight {
+    color: var(--rp-success);
+}
+
+/* 效率表格 - 更紧凑 */
+.efficiency-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.efficiency-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.efficiency-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+.efficiency-value {
+    font-family: monospace;
+    color: var(--rp-gold);
+    font-size: 0.85rem;
+}
+.badge-daily {
     background: var(--rp-gold);
     color: #000;
-    font-size: 10px;
+    font-size: 0.65rem;
     padding: 2px 8px;
     border-radius: 20px;
     font-weight: 600;
 }
 
-/* 卡池规划器 */
-.pity-tracker {
-    background: #0a0e16;
-    border-radius: 16px;
-    padding: 16px;
+/* 周历待办 */
+.weekly-checklist {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
     margin-top: 16px;
 }
-.pity-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--rp-gold);
+.weekday {
     text-align: center;
+    padding: 8px 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.weekday.checked {
+    background: rgba(107, 207, 127, 0.15);
+    border: 1px solid var(--rp-success);
+}
+.weekday .day {
+    font-size: 0.7rem;
+    color: var(--rp-text-dim);
+}
+.weekday .check-icon {
+    font-size: 0.9rem;
+}
+.weekday:hover {
+    background: rgba(201, 160, 99, 0.1);
+}
+.reset-todo {
+    font-size: 0.7rem;
+    color: var(--rp-text-dim);
+    text-align: center;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.reset-todo:hover {
+    color: var(--rp-gold);
 }
 
 /* 按钮 */
-.save-btn {
+.btn-gold {
     background: var(--rp-gold);
     border: none;
     padding: 10px 20px;
@@ -216,11 +378,25 @@ select, .range-input {
     cursor: pointer;
     transition: 0.2s;
     width: 100%;
-    margin-top: 16px;
+    font-size: 0.85rem;
 }
-.save-btn:hover {
+.btn-gold:hover {
     background: #d4a857;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+}
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--rp-gold);
+    padding: 8px 16px;
+    border-radius: 40px;
+    color: var(--rp-gold);
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.75rem;
+}
+.btn-outline:hover {
+    background: var(--rp-gold);
+    color: #000;
 }
 
 /* 页脚 */
@@ -228,17 +404,17 @@ select, .range-input {
     background: #010103;
     border-top: 1px solid var(--rp-border);
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 20px;
+    padding: 30px 20px;
+    margin-top: 30px;
     color: #6a7080;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .rp-footer .footer-links {
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 .rp-footer .footer-links a {
     color: #9aa2b5;
@@ -250,7 +426,18 @@ select, .range-input {
 
 /* 响应式 */
 @media (max-width: 1000px) {
-    .rp-grid {
+    .rp-two-col {
         grid-template-columns: 1fr;
+    }
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+    .weekly-checklist {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
