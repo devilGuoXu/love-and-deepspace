@@ -32,6 +32,16 @@
     --glow: rgba(148, 185, 255, 0.4);
 }
 
+/* 黎深专属：表格样式微调 */
+.zayne-theme .wiki-table th {
+    background: rgba(165, 216, 255, 0.1);
+    border-bottom: 2px solid var(--accent);
+}
+
+.zayne-theme .skill-card {
+    border-left: 4px solid var(--accent); /* 像冰柱一样的侧边条 */
+}
+
 .rafayel-theme {
     --accent: #ff73b1;
     --accent-rgb: 255, 115, 177;
