@@ -23,6 +23,23 @@
     --glow: rgba(255, 255, 255, 0.6);
 }
 
+/* 沈星回专属：光束掠过效果 */
+.xavier-theme .hero-header::after {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    animation: light-sweep 4s infinite linear;
+}
+
+@keyframes light-sweep {
+    0% { transform: translateX(-100%) skewX(-45deg); }
+    100% { transform: translateX(200%) skewX(-45deg); }
+}
+
+/* 技能卡片增加悬停时的“星尘”发光 */
+.xavier-theme .skill-card:hover {
+    box-shadow: 0 0 20px rgba(224, 230, 237, 0.3);
+    border-color: var(--accent);
+}
+
 .zayne-theme {
     --accent: #94b9ff;
     --accent-rgb: 148, 185, 255;
