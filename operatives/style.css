@@ -15,12 +15,12 @@
 
 /* --- 角色主题扩展 --- */
 .xavier-theme {
-    --accent: #6eb7ff;
-    --accent-rgb: 110, 183, 255;
-    --text-gold: #a5d8ff;
-    --panel-bg: rgba(10, 17, 26, 0.9);
-    --border-color: rgba(110, 183, 255, 0.3);
-    --glow: rgba(110, 183, 255, 0.4);
+    --accent: #e0e6ed;
+    --accent-rgb: 224, 230, 237;
+    --text-gold: #ffffff;
+    --panel-bg: rgba(10, 12, 16, 0.95);
+    --border-color: rgba(224, 230, 237, 0.2);
+    --glow: rgba(255, 255, 255, 0.6);
 }
 
 .zayne-theme {
