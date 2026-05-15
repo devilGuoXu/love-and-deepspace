@@ -1,0 +1,62 @@
+/* =========================================
+   战斗页面专用样式 (命名空间：.combat-page)
+   ========================================= */
+
+/* 修改战斗页面的特定色调（如果不喜欢根目录的金色，可以在这里局部覆盖变量） */
+.combat-page {
+    --combat-blue: #00d4ff;
+}
+
+/* 标题样式 - 不会影响首页的 h2 */
+.combat-page .combat-title {
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+    margin: 30px 0 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/* 战斗信息卡片 - 沿用基础卡片色调但增加战术感 */
+.combat-page .combat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.combat-page .combat-card h3 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* 战术数据表格 */
+.combat-page .tactical-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.combat-page .tactical-table th {
+    background: var(--border);
+    color: var(--accent);
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.combat-page .tactical-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+/* 专门针对战斗页面的容器微调 */
+.combat-page .container {
+    display: block; /* 覆盖根目录的 flex 布局，方便单栏阅读攻略 */
+    max-width: 900px; /* 攻略类页面较窄更易阅读 */
+}
