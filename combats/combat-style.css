@@ -1,197 +1,178 @@
 /* =========================================
-   COMBAT GUIDES ADVANCED STYLING
+   COMBAT GUIDES ULTIMATE STYLING
    ========================================= */
 
-/* 1. 战术背景与扫描线效果 */
+/* 1. 战术背景层 */
 .combat-page {
-    --combat-blue: #00d4ff;
-    --danger: #ff4d4d;
-    background-color: #05070a;
-    background-image: 
+    --accent: #c9a063;
+    --cyber-blue: #00d4ff;
+    --danger: #ff3344;
+    --bg-dark: #05070a;
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+}
+
+.terminal-bg-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
         linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
-        linear-gradient(90deg, rgba(201, 160, 99, 0.02), rgba(0, 212, 255, 0.02));
+        radial-gradient(circle at 50% 50%, rgba(20, 30, 40, 1) 0%, rgba(5, 7, 10, 1) 100%);
     background-size: 100% 4px, 100% 100%;
+    opacity: 0.8;
+}
+
+/* 2. 战术横幅动画 */
+.tactical-banner {
+    padding: 60px 0 40px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(201, 160, 99, 0.2);
+    margin-bottom: 50px;
+}
+
+.banner-glitch {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: #fff;
+    text-transform: uppercase;
     position: relative;
 }
 
-/* 2. 战术数据头 */
-.tactical-overlay {
-    max-width: 1200px;
-    margin: 20px auto 0;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
+.banner-sub {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-}
-
-/* 3. 容器调整 */
-.combat-container {
-    display: block !important; /* 覆盖根目录 flex */
-    padding-top: 10px;
-}
-
-/* 4. 标题进阶 */
-.section-header {
-    font-size: 1.4rem;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-.section-header::after {
-    content: "ONLINE";
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    font-size: 10px;
-    color: var(--combat-blue);
-    opacity: 0.6;
-}
-
-/* 5. 战术网格与卡片 */
-.tactical-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.data-card {
-    background: rgba(22, 26, 37, 0.6);
-    border: 1px solid var(--border);
-    backdrop-filter: blur(10px);
-    border-left: 3px solid var(--accent);
-}
-
-.card-header {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 20px;
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--accent);
-    letter-spacing: 1px;
-}
-
-.card-body { padding: 20px; }
-
-.tactical-note {
-    margin-top: 15px;
-    padding: 12px;
-    background: rgba(0, 212, 255, 0.05);
-    border: 1px dashed rgba(0, 212, 255, 0.3);
-    font-size: 13px;
-}
-
-.data-list {
+    font-size: 0.8rem;
+    color: var(--cyber-blue);
     margin-top: 10px;
-    padding-left: 18px;
-    font-size: 14px;
+    letter-spacing: 2px;
 }
 
-.data-list li { margin-bottom: 8px; color: var(--text-main); }
+.scanner-line {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    animation: scanMove 3s infinite linear;
+}
 
-/* 6. 表格重塑 */
-.table-wrapper {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+@keyframes scanMove {
+    0% { left: 0; }
+    100% { left: 100%; }
+}
+
+/* 3. 进阶数据卡片 (切角效果) */
+.section-header {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-header span {
+    background: var(--accent);
+    color: #000;
+    padding: 2px 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.cyber-border {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+}
+
+.card-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: var(--accent);
+}
+
+/* 4. 迷你数据网格 */
+.stat-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat-item span { font-size: 10px; color: var(--text-muted); }
+.stat-item strong { color: var(--cyber-blue); font-size: 14px; }
+
+/* 5. 威胁进度条进化 */
+.gauge-container {
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    margin-top: 15px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
-.tactical-table {
-    width: 100%;
-    border-collapse: collapse;
+.gauge-fill {
+    height: 100%;
+    background: var(--accent);
 }
 
-.tactical-table th {
-    background: #1a1f2e;
-    padding: 15px;
-    color: var(--accent);
-    text-align: left;
-    font-size: 13px;
+.alert-red .gauge-fill {
+    background: var(--danger);
+    box-shadow: 0 0 10px var(--danger);
 }
 
-.tactical-table td {
-    padding: 15px;
-    border-bottom: 1px solid var(--border);
-    font-size: 14px;
+.pulse-bg { animation: pulseBg 1.5s infinite alternate; }
+@keyframes pulseBg {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
 }
 
-.highlight-row {
-    background: rgba(201, 160, 99, 0.08);
+/* 6. 文字特效 */
+.highlight { color: var(--accent); font-weight: bold; }
+.highlight-alt { color: var(--danger); font-weight: bold; }
+.highlight-blue { color: var(--cyber-blue); }
+
+.pulse-text {
+    animation: pulseText 1.5s infinite alternate;
     color: #fff;
     font-weight: bold;
 }
 
-/* 7. 威胁评估 */
-.threat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+@keyframes pulseText {
+    from { text-shadow: 0 0 5px var(--accent); }
+    to { text-shadow: 0 0 15px var(--accent); }
 }
 
-.threat-box {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 20px;
+/* 导航激活态微调 */
+.nav-active {
+    color: var(--accent) !important;
+    position: relative;
 }
 
-.threat-box.alert {
-    border-color: rgba(255, 77, 77, 0.4);
-}
-
-.threat-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.threat-tag {
-    font-size: 10px;
-    background: #2a2f3d;
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: var(--text-muted);
-}
-
-.threat-tag.highlight {
-    background: var(--danger);
-    color: #fff;
-}
-
-.danger-bar {
+.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
     width: 100%;
-    height: 4px;
-    background: #000;
-    margin-top: 15px;
-    border-radius: 2px;
-}
-
-.danger-bar .fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--danger));
-    box-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
-    animation: slideIn 1.5s ease-out;
-}
-
-@keyframes slideIn {
-    from { width: 0; }
-}
-
-/* 8. 响应式布局 */
-@media (max-width: 900px) {
-    .tactical-grid, .threat-grid {
-        grid-template-columns: 1fr;
-    }
-    .tactical-overlay {
-        flex-direction: column;
-        gap: 5px;
-    }
+    height: 2px;
+    background: var(--accent);
 }
