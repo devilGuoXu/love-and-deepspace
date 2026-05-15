@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>XAVIER: THE CHRONO-KNIGHT | Deepspace Hunter Database</title>
+
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
     <link rel="stylesheet" href="style.css">
-    <!-- 沿用 Sylus 的 CSS 结构，仅微调颜色变量 -->
-    <style>
-        :root {
-            --char-accent: #6eb7ff; /* 星光蓝 */
-            --char-theme: #f0faff; 
-            --char-dark: #0a0d14;
-            --char-panel: #161b26;
-            --char-border: #2d384d;
-        }
-        /* 此处插入 Sylus 版的所有 CSS 代码，并将变量名替换为上述变量 */
-        /* ... 为了篇幅，重点展示内容差异 ... */
-    </style>
 </head>
+
 <body class="xavier-theme">
+    <a href="javascript:history.back()" class="back-terminal">
+        <span class="arrow">←</span>
+        <span class="text">RETURN TO DATABASE</span>
+    </a>
     <main>
         <section class="hero-header">
             <img src="../images/xavier-full.webp" class="hero-bg">
@@ -30,6 +25,11 @@
 
         <div class="detail-container">
             <aside class="sticky-sidebar">
+                <!-- 新增：侧边栏立绘 -->
+                <div class="sidebar-portrait">
+                    <img src="../images/xavier-thumb.webp" alt="Sylus Portrait" style="width:100%; border:1px solid var(--accent); margin-bottom:20px; filter: grayscale(0.3) contrast(1.1);">
+                </div>
+                
                 <div class="spec-box">
                     <h3>Technical Dossier</h3>
                     <div class="stat-row"><label>Codename</label><span>Lumia</span></div>
