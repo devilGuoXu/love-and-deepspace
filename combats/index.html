@@ -6,7 +6,9 @@
     <title>COMBAT GUIDES | Deepspace Hunter Database</title>
 
     <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <!-- 引用根目录样式 -->
     <link rel="stylesheet" href="../style.css">
+    <!-- 引用战斗专用优化样式 -->
     <link rel="stylesheet" href="combat-style.css">
 </head>
 <body class="combat-page">
@@ -14,15 +16,20 @@
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/operatives/">Operative Files</a></li>
-                <li><a href="/combats/" style="color:var(--accent);">Combat Guides</a></li>
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="./" style="color:var(--accent);">Combat Guides</a></li>
                 <li><a href="#">Resource Planning</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="detail-container">
+    <div class="tactical-overlay">
+        <div class="coord">LOC: 31.2304° N, 121.4737° E</div>
+        <div class="timestamp" id="system-clock">SYSTEM CLOCK: LOADING...</div>
+    </div>
+
+    <main class="container combat-container">
         <!-- SECTION 01: CORE MECHANICS -->
         <section class="section-block">
             <h2 class="section-header">01. SYSTEM CORE MECHANICS</h2>
@@ -32,7 +39,7 @@
                     <div class="card-body">
                         <p>Most Elite Wanderers utilize a <strong>Protocore Shield</strong>. Direct HP damage is reduced by 60% while the shield is active.</p>
                         <div class="tactical-note">
-                            <strong>PROTOCOL:</strong> Use Resonance Skills matching the enemy's elemental weakness to deplete shields 50% faster.
+                            <strong>TACTICAL PROTOCOL:</strong> Use Resonance Skills matching the enemy's elemental weakness to deplete shields 50% faster.
                         </div>
                     </div>
                 </div>
@@ -54,7 +61,7 @@
         <!-- SECTION 02: SYNERGY TABLE -->
         <section class="section-block">
             <h2 class="section-header">02. DAMAGE MULTIPLIER MATRIX</h2>
-            <div class="table-container">
+            <div class="table-wrapper">
                 <table class="tactical-table">
                     <thead>
                         <tr>
@@ -66,7 +73,7 @@
                     <tbody>
                         <tr>
                             <td>Neutral State</td>
-                            <td>Basic Combos</td>
+                            <td>Basic Combos / Skills</td>
                             <td>1.0x</td>
                         </tr>
                         <tr>
@@ -76,8 +83,8 @@
                         </tr>
                         <tr class="highlight-row">
                             <td>BROKEN STATE</td>
-                            <td>ARDENT OATH [ULT]</td>
-                            <td>3.0x [MAX CRIT]</td>
+                            <td>ARDENT OATH [ULTIMATE]</td>
+                            <td>3.0x [CRIT THRESHOLD]</td>
                         </tr>
                     </tbody>
                 </table>
@@ -89,17 +96,28 @@
             <h2 class="section-header">03. WANDERER THREAT ASSESSMENT</h2>
             <div class="threat-grid">
                 <div class="threat-box">
-                    <h4>HEAVY-TYPE</h4>
+                    <div class="threat-info">
+                        <h4>HEAVY-TYPE</h4>
+                        <span class="threat-tag">STUN PREFERRED</span>
+                    </div>
                     <p>Focus on <strong>Zayne's</strong> Freeze to halt high-damage AOE wind-ups.</p>
                     <div class="danger-bar"><div class="fill" style="width: 85%;"></div></div>
                 </div>
+
                 <div class="threat-box">
-                    <h4>STALKER-TYPE</h4>
+                    <div class="threat-info">
+                        <h4>STALKER-TYPE</h4>
+                        <span class="threat-tag">AGILITY REQUIRED</span>
+                    </div>
                     <p>High mobility. <strong>Xavier's</strong> Light-based lunges are mandatory for tracking.</p>
                     <div class="danger-bar"><div class="fill" style="width: 65%;"></div></div>
                 </div>
-                <div class="threat-box">
-                    <h4>ALPHA-TYPE</h4>
+
+                <div class="threat-box alert">
+                    <div class="threat-info">
+                        <h4>ALPHA-TYPE</h4>
+                        <span class="threat-tag highlight">LETHAL</span>
+                    </div>
                     <p>Extreme aggression. <strong>Sylus's</strong> Relentless state is optimal for raw DPS races.</p>
                     <div class="danger-bar"><div class="fill" style="width: 95%;"></div></div>
                 </div>
@@ -108,7 +126,17 @@
     </main>
 
     <footer class="main-footer">
-        <p>© 2026 DEEPSPACE HUNTER ASSOCIATION | TACTICAL DIVISION</p>
+        <p class="copyright">© 2026 DEEPSPACE HUNTER ASSOCIATION | TACTICAL DATA UNIT</p>
     </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toISOString().replace('T', ' ').substring(0, 19);
+            document.getElementById('system-clock').innerText = 'SYSTEM CLOCK: ' + timeString + ' UTC';
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
