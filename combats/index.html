@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TACTICAL ANALYSIS | Deepspace Hunter</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <title>COMBAT TERMINAL | Deepspace Hunter</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="combat-style.css">
 </head>
 <body class="combat-page">
-    <!-- 背景扫描线与网格装饰 -->
-    <div class="terminal-bg-effects"></div>
-
+    <div class="vignette"></div>
+    
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
@@ -24,124 +22,75 @@
         </nav>
     </header>
 
-    <main class="container combat-container">
-        <!-- 顶部动态装饰 -->
-        <div class="tactical-banner">
-            <div class="banner-glitch" data-text="TACTICAL ANALYSIS SYSTEM">TACTICAL ANALYSIS SYSTEM</div>
-            <div class="banner-sub">PROTOCOL: EVOL-SYNC-88 | STATUS: ENCRYPTED</div>
-            <div class="scanner-line"></div>
-        </div>
+    <main class="combat-layout">
+        <!-- 侧边分类栏：这是后期扩展的核心，可以无限增加分类 -->
+        <aside class="tactical-sidebar">
+            <div class="sidebar-label">DATABASE INDEX</div>
+            <ul class="category-list">
+                <li class="active"><span class="code">00</span> Basic Protocols</li>
+                <li><span class="code">01</span> Boss Strategies</li>
+                <li><span class="code">02</span> Abyssal Trials</li>
+                <li><span class="code">03</span> Protocore Builds</li>
+                <li class="locked"><span class="code">XX</span> Classified...</li>
+            </ul>
+        </aside>
 
-        <!-- 01. CORE MECHANICS - 采用更硬核的布局 -->
-        <section class="section-block">
-            <h2 class="section-header"><span>01</span> CORE COMBAT LOGIC</h2>
-            <div class="tactical-grid">
-                <div class="data-card cyber-border">
-                    <div class="card-header">
-                        <span class="header-icon">◈</span> SHIELD SYSTEM [PROTOCORE]
-                    </div>
-                    <div class="card-body">
-                        <p class="data-text">Elite Wanderers utilize <strong>Protocore Shielding</strong>, reducing incoming direct impact by <span class="highlight-alt">60%</span>.</p>
-                        <div class="tactical-note">
-                            <div class="note-label">RECO:</div>
-                            Matching elements accelerates shield collapse by <span class="highlight">1.5x</span>.
-                        </div>
-                    </div>
-                    <div class="card-corner"></div>
+        <section class="content-stream">
+            <!-- 亮点 1：战术状态面板 -->
+            <div class="status-dashboard">
+                <div class="dash-item">
+                    <label>SYNC RATE</label>
+                    <div class="value">98.4%</div>
                 </div>
-
-                <div class="data-card cyber-border">
-                    <div class="card-header">
-                        <span class="header-icon">◈</span> EVASION [CHRONO-STASIS]
-                    </div>
-                    <div class="card-body">
-                        <p class="data-text">Perfect Dodge (0.2s) triggers <strong>Chrono-Stasis</strong>, slowing time-space locally.</p>
-                        <div class="stat-mini-grid">
-                            <div class="stat-item"><span>TIME SLOW</span><br><strong>-50%</strong></div>
-                            <div class="stat-item"><span>ENERGY REGEN</span><br><strong>+15%</strong></div>
-                            <div class="stat-item"><span>IFRAME</span><br><strong>ACTIVE</strong></div>
-                        </div>
-                    </div>
-                    <div class="card-corner"></div>
+                <div class="dash-item">
+                    <label>THREAT LEVEL</label>
+                    <div class="value warning">CRITICAL</div>
+                </div>
+                <div class="dash-item">
+                    <label>ACTIVE LOGS</label>
+                    <div class="value">142</div>
                 </div>
             </div>
-        </section>
 
-        <!-- 02. SYNERGY MATRIX - 更加数字化的表格 -->
-        <section class="section-block">
-            <h2 class="section-header"><span>02</span> DAMAGE MULTIPLIER MATRIX</h2>
-            <div class="table-wrapper">
-                <div class="table-header-deco">DEEPSPACE_INTEL_STREAM // V.2.06</div>
-                <table class="tactical-table">
-                    <thead>
-                        <tr>
-                            <th>STATE</th>
-                            <th>ACTION</th>
-                            <th>EFFICIENCY</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cell-dim">Neutral Phase</td>
-                            <td>Basic Combos</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-dim">Break Phase</td>
-                            <td>Resonance Skill</td>
-                            <td class="highlight-blue">150% + IMPACT</td>
-                        </tr>
-                        <tr class="highlight-row">
-                            <td>BROKEN</td>
-                            <td>ARDENT OATH</td>
-                            <td><span class="pulse-text">300% CRIT THRESH</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <!-- 亮点 2：可扩展的档案条目 -->
+            <!-- 以后每增加一个攻略，就复制一个 log-entry 卡片 -->
+            <article class="log-entry">
+                <div class="log-header">
+                    <span class="log-id">ENTRY_#082</span>
+                    <span class="log-date">2026.05.16</span>
+                    <span class="tag">CORE_SYSTEM</span>
+                </div>
+                <div class="log-body">
+                    <h3>Fundamental Force: Protocore Shielding</h3>
+                    <p>Analysis of Wanderer defensive layers. Priority: Elemental Resonance.</p>
+                    <div class="mini-data-flex">
+                        <div class="data-point"><span>Reduction:</span> 60%</div>
+                        <div class="data-point"><span>Break Bonus:</span> +50%</div>
+                    </div>
+                </div>
+                <a href="#" class="log-link">VIEW FULL DATA</a>
+            </article>
 
-        <!-- 03. THREATS - 引入极简可视化图表感 -->
-        <section class="section-block">
-            <h2 class="section-header"><span>03</span> WANDERER THREAT ASSESSMENT</h2>
-            <div class="threat-grid">
-                <div class="threat-box">
-                    <div class="threat-info">
-                        <span class="danger-level">L-01</span>
-                        <h4>HEAVY-TYPE</h4>
-                    </div>
-                    <div class="threat-desc">Lockdown with <strong>Zayne's</strong> freeze.</div>
-                    <div class="gauge-container">
-                        <div class="gauge-fill" style="width: 85%;"></div>
-                    </div>
+            <article class="log-entry critical">
+                <div class="log-header">
+                    <span class="log-id">ENTRY_#104</span>
+                    <span class="log-date">2026.05.14</span>
+                    <span class="tag danger">ELITE_BOSS</span>
                 </div>
-                <div class="threat-box">
-                    <div class="threat-info">
-                        <span class="danger-level">L-02</span>
-                        <h4>STALKER-TYPE</h4>
-                    </div>
-                    <div class="threat-desc">Tracking with <strong>Xavier's</strong> speed.</div>
-                    <div class="gauge-container">
-                        <div class="gauge-fill" style="width: 65%;"></div>
-                    </div>
+                <div class="log-body">
+                    <h3>Target: Magma Golem - Pattern Alpha</h3>
+                    <p>Detecting high-frequency thermal vibrations. Frost-type Operatives recommended.</p>
                 </div>
-                <div class="threat-box alert-red">
-                    <div class="threat-info">
-                        <span class="danger-level highlight">L-MAX</span>
-                        <h4>ALPHA-TYPE</h4>
-                    </div>
-                    <div class="threat-desc">DPS Race with <strong>Sylus's</strong> Relentless.</div>
-                    <div class="gauge-container">
-                        <div class="gauge-fill pulse-bg" style="width: 95%;"></div>
-                    </div>
-                </div>
-            </div>
+                <a href="#" class="log-link">OPEN ENCRYPTED FILE</a>
+            </article>
+
+            <!-- 更多内容可以源源不断加在这里 -->
+            <div class="end-of-data">END OF LOCAL CACHE - FETCHING MORE...</div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <div class="footer-line"></div>
-        <p class="copyright">DATABASE STATUS: ONLINE // © 2026 DEEPSPACE HUNTER ASSN.</p>
+        <p class="copyright">TACTICAL OS V4.0.2 // STABLE CONNECTION</p>
     </footer>
 </body>
 </html>
