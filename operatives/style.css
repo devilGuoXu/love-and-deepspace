@@ -90,11 +90,12 @@ body::before {
     position: absolute; /* 核心：脱离文档流，不挤占位置 */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;  /* 核心：等比例铺满，自动裁切多余部分 */
     object-position: center 20%; /* 视情况调整：20% 让人物头部稍微靠上显示 */
-    z-index: 1;         /* 放在最底层 */
+    z-index: 0;         /* 放在最底层 */
+    display: block;
 }
 
 .hero-content {
@@ -117,6 +118,17 @@ body::before {
     background: linear-gradient(to bottom, transparent, var(--bg-dark));
     z-index: 1; /* 位于图片之上，文字之下 */
     pointer-events: none; /* 确保不影响点击 */
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 @keyframes title-glow {
