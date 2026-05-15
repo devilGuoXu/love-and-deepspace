@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESOURCE PLANNING | Deepspace Hunter</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="resource-style.css">
+</head>
+<body class="rp-body">
+    <!-- 导航栏 -->
+    <header class="main-header" style="background: #000000cc; backdrop-filter: blur(12px); border-bottom: 1px solid #2a2f3d;">
+        <div class="nav-container" style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px;">
+            <a href="/" class="logo" style="color: #c9a063; text-decoration: none; font-size: 24px; font-weight: bold;">DEEPSPACE <span style="color:#fff;">HUNTER</span></a>
+            <ul class="nav-links" style="display: flex; gap: 28px; list-style: none;">
+                <li><a href="/" style="color:#fff; text-decoration: none;">Home</a></li>
+                <li><a href="/operatives/" style="color:#fff; text-decoration: none;">Operative Files</a></li>
+                <li><a href="/combats/" style="color:#fff; text-decoration: none;">Combat Guides</a></li>
+                <li><a href="/resources/" style="color:#c9a063; text-decoration: none; font-weight: bold;">Resource Planning</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="rp-container">
+        <div class="rp-header">
+            <h1>📊 RESOURCE PLANNING</h1>
+            <p>Optimize your grind. Calculate costs. Plan your pulls.</p>
+        </div>
+
+        <div class="rp-grid">
+            <!-- 卡片1：资源仪表盘 -->
+            <div class="rp-card">
+                <h3><span class="emoji">💰</span> RESOURCE STOCK</h3>
+                <div class="resource-row">
+                    <span class="resource-label">💎 Diamonds</span>
+                    <input type="number" id="diamonds" class="resource-input" value="12450" step="100">
+                </div>
+                <div class="resource-row">
+                    <span class="resource-label">🎫 Empyrean Wishes</span>
+                    <input type="number" id="wishes" class="resource-input" value="15" step="1">
+                </div>
+                <div class="resource-row">
+                    <span class="resource-label">🪙 Gold (M)</span>
+                    <input type="number" id="gold" class="resource-input" value="3.2" step="0.1">
+                </div>
+                <div class="resource-row">
+                    <span class="resource-label">⚡ Stamina</span>
+                    <input type="number" id="stamina" class="resource-input" value="240" step="10">
+                </div>
+                <button class="save-btn" id="saveResourcesBtn">💾 SAVE DATA</button>
+                <div style="font-size: 11px; color:#555; margin-top: 12px; text-align:center;">Data saved locally</div>
+            </div>
+
+            <!-- 卡片2：养成计算器 -->
+            <div class="rp-card">
+                <h3><span class="emoji">📈</span> ASCENSION CALC</h3>
+                <div class="selector-group">
+                    <span class="selector-label">CHARACTER</span>
+                    <select id="charSelect">
+                        <option value="sylus">Sylus (Dark)</option>
+                        <option value="xavier">Xavier (Light)</option>
+                        <option value="zayne">Zayne (Ice)</option>
+                        <option value="rafayel">Rafayel (Fire)</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <span class="selector-label">TARGET LEVEL</span>
+                    <input type="range" id="levelSlider" min="1" max="80" value="80" class="range-input">
+                    <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                        <span>Lv.1</span>
+                        <span id="levelValue">Lv.80</span>
+                    </div>
+                </div>
+                <div class="calc-result" id="calcResult">
+                    <div class="result-row"><span>📘 EXP Bottles</span><span id="expNeeded">0</span></div>
+                    <div class="result-row"><span>🪙 Gold Required</span><span id="goldNeeded">0</span></div>
+                    <div class="result-row"><span>⚡ Stamina Cost</span><span id="staminaNeeded">0</span></div>
+                    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+                </div>
+            </div>
+
+            <!-- 卡片3：卡池规划器 -->
+            <div class="rp-card">
+                <h3><span class="emoji">🎲</span> PITY PLANNER</h3>
+                <div class="selector-group">
+                    <span class="selector-label">CURRENT PITY</span>
+                    <input type="range" id="pitySlider" min="0" max="70" value="25" class="range-input">
+                    <div style="text-align: center; margin-top: 8px;"><span id="pityValue">25</span> / 70 pulls</div>
+                </div>
+                <div class="selector-group">
+                    <span class="selector-label">GUARANTEE?</span>
+                    <select id="guaranteeSelect">
+                        <option value="no">50/50 Active</option>
+                        <option value="yes">Guaranteed Rate-up</option>
+                    </select>
+                </div>
+                <div class="pity-tracker">
+                    <div class="result-row"><span>🎯 Avg. to hit 5★</span><span id="avgPulls">0</span></div>
+                    <div class="result-row"><span>💎 Expected Cost</span><span id="expectedDiamonds">0</span></div>
+                    <div class="progress-bar"><div class="progress-fill" id="pityProgress" style="width:0%"></div></div>
+                </div>
+                <button class="save-btn" id="simulateBtn">🔄 SIMULATE PULLS</button>
+            </div>
+        </div>
+
+        <!-- 第二行：体力效率表 + F2P收入 -->
+        <div class="rp-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="rp-card">
+                <h3><span class="emoji">⚡</span> STAMINA EFFICIENCY</h3>
+                <table class="efficiency-table">
+                    <tr><td>💰 Gold (Bounty)</td><td>12,000 / 20 stam</td></tr>
+                    <tr><td>📘 EXP (Bounty)</td><td>5x Purple Bottle / 20 stam</td></tr>
+                    <tr><td>🔮 Protocore Dust</td><td>~180 / 25 stam</td></tr>
+                    <tr><td>🌀 Ascension Mats</td><td>Varies by element</td></tr>
+                    <tr><td><span class="badge">DAILY MUST</span> Bounty x3</td><td>Priority #1</td></tr>
+                </table>
+                <div style="margin-top: 16px; background:#1a1f2a; border-radius: 12px; padding: 12px;">
+                    <span>📅 Weekly Stamina Budget: <strong id="weeklyStam">1680</strong> (240/day + 60 snack)</span>
+                </div>
+            </div>
+
+            <div class="rp-card">
+                <h3><span class="emoji">📅</span> F2P MONTHLY INCOME</h3>
+                <table class="efficiency-table">
+                    <tr><td>✅ Daily Commissions</td><td>+150/day (4,500/mo)</td></tr>
+                    <tr><td>⭐ Abyssal Trials</td><td>+600 / reset</td></tr>
+                    <tr><td>🎁 Login Events</td><td>~800 avg</td></tr>
+                    <tr><td>🏆 Hunter Contest</td><td>+300~1200</td></tr>
+                    <tr><td><strong>🔥 Total F2P Monthly</strong></td><td><strong id="monthlyTotal">~7,000</strong> 💎</td></tr>
+                </table>
+                <div style="margin-top: 12px; font-size:12px; color:#c9a063;">≈ 43 pulls per month</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rp-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p>© 2026 Deepspace Hunter Station — Resource Planning Tool</p>
+    </footer>
+
+    <script>
+        // 养成成本映射 (到80级的累计消耗)
+        const costMap = {
+            exp: 485,
+            gold: 1280000
+        };
+        const STAMINA_PER_EXP_BOTTLE = 6;
+        const GOLD_PER_STAMINA = 200;
+
+        function updateAscension() {
+            let level = parseInt(document.getElementById('levelSlider').value);
+            document.getElementById('levelValue').innerText = `Lv.${level}`;
+            let ratio = (level - 1) / 79;
+            let exp = Math.floor(costMap.exp * ratio);
+            let goldCost = Math.floor(costMap.gold * ratio);
+            let staminaExp = exp * STAMINA_PER_EXP_BOTTLE;
+            let staminaGold = Math.floor(goldCost / GOLD_PER_STAMINA);
+            let totalStamina = staminaExp + staminaGold;
+            document.getElementById('expNeeded').innerText = exp + ' bottles';
+            document.getElementById('goldNeeded').innerText = goldCost.toLocaleString();
+            document.getElementById('staminaNeeded').innerText = totalStamina;
+            let percent = (level / 80) * 100;
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function updatePity() {
+            let pity = parseInt(document.getElementById('pitySlider').value);
+            document.getElementById('pityValue').innerText = pity;
+            let guarantee = document.getElementById('guaranteeSelect').value === 'yes';
+            let remainingToSoft = Math.max(0, 70 - pity);
+            let avgPulls = remainingToSoft + (guarantee ? 0 : 35);
+            let expectedDiamonds = avgPulls * 150;
+            document.getElementById('avgPulls').innerText = avgPulls;
+            document.getElementById('expectedDiamonds').innerText = expectedDiamonds.toLocaleString();
+            let progressPercent = (pity / 70) * 100;
+            document.getElementById('pityProgress').style.width = progressPercent + '%';
+        }
+
+        function saveResources() {
+            let diamonds = document.getElementById('diamonds').value;
+            let wishes = document.getElementById('wishes').value;
+            let gold = document.getElementById('gold').value;
+            let stamina = document.getElementById('stamina').value;
+            let data = { diamonds, wishes, gold, stamina };
+            localStorage.setItem('rp_resources', JSON.stringify(data));
+            alert('Resource data saved!');
+        }
+
+        function loadResources() {
+            let saved = localStorage.getItem('rp_resources');
+            if (saved) {
+                let data = JSON.parse(saved);
+                if (data.diamonds) document.getElementById('diamonds').value = data.diamonds;
+                if (data.wishes) document.getElementById('wishes').value = data.wishes;
+                if (data.gold) document.getElementById('gold').value = data.gold;
+                if (data.stamina) document.getElementById('stamina').value = data.stamina;
+            }
+        }
+
+        function updateMonthly() {
+            let base = 4500 + 800 + 600;
+            document.getElementById('monthlyTotal').innerText = '~' + base.toLocaleString();
+        }
+
+        function updateWeeklyStam() {
+            let daily = 240;
+            let snacks = 60;
+            let weekly = (daily + snacks) * 7;
+            document.getElementById('weeklyStam').innerText = weekly;
+        }
+
+        // 绑定事件
+        document.getElementById('levelSlider').addEventListener('input', updateAscension);
+        document.getElementById('pitySlider').addEventListener('input', updatePity);
+        document.getElementById('guaranteeSelect').addEventListener('change', updatePity);
+        document.getElementById('simulateBtn').addEventListener('click', () => { updatePity(); alert('Simulation complete. Expected pull cost calculated based on pity.'); });
+        document.getElementById('saveResourcesBtn').addEventListener('click', saveResources);
+
+        // 初始化
+        updateAscension();
+        updatePity();
+        loadResources();
+        updateMonthly();
+        updateWeeklyStam();
+    </script>
+</body>
+</html>
