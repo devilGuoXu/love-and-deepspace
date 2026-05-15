@@ -1,0 +1,66 @@
+/* --- 基础布局与通用样式 --- */
+:root {
+    /* 这里定义默认颜色（以秦彻为准） */
+    --accent: #cc0000;
+    --panel-bg: #0d1117;
+    --text-main: #d1d1d1;
+    --text-gold: #c9a063;
+    --bg-dark: #050505;
+    --border-color: #2a2f3d;
+}
+
+/* --- 角色皮肤主题定义 --- */
+
+/* Xavier (沈星回) 主题 */
+.xavier-theme {
+    --accent: #6eb7ff;   /* 星光蓝 */
+    --text-gold: #a5d8ff;
+    --panel-bg: #0a111a;
+    --border-color: #1e2d3d;
+}
+
+/* Zayne (黎深) 主题 */
+.zayne-theme {
+    --accent: #94b9ff;   /* 冰晶色 */
+    --text-gold: #cbdfff;
+    --panel-bg: #0f141c;
+    --border-color: #252e3d;
+}
+
+/* Rafayel (祁煜) 主题 */
+.rafayel-theme {
+    --accent: #ff73b1;   /* 珊瑚色 */
+    --text-gold: #f8adff;
+    --panel-bg: #140f1a;
+    --border-color: #3d2536;
+}
+
+/* --- 核心布局代码 (只写一遍) --- */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+.spec-box {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent); /* 侧边条颜色随主题变 */
+    padding: 35px;
+}
+
+.hero-header {
+    border-bottom: 4px solid var(--accent);
+}
+
+.stat-row label {
+    color: var(--text-gold);
+}
+
+.skill-card:hover {
+    border-color: var(--accent);
+}
+
+.rank-circle {
+    background: var(--accent);
+}
