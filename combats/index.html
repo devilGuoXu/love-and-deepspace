@@ -3,140 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMBAT GUIDES | Deepspace Hunter Database</title>
-
+    <title>TACTICAL ANALYSIS | Deepspace Hunter</title>
     <link rel="icon" type="image/x-icon" href="../favicon.webp">
-    <!-- 引用根目录样式 -->
     <link rel="stylesheet" href="../style.css">
-    <!-- 引用战斗专用优化样式 -->
     <link rel="stylesheet" href="combat-style.css">
 </head>
 <body class="combat-page">
+    <!-- 背景扫描线与网格装饰 -->
+    <div class="terminal-bg-effects"></div>
+
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
             <ul class="nav-links">
                 <li><a href="../">Home</a></li>
                 <li><a href="../operatives/">Operative Files</a></li>
-                <li><a href="./" style="color:var(--accent);">Combat Guides</a></li>
+                <li><a href="./" class="nav-active">Combat Guides</a></li>
                 <li><a href="#">Resource Planning</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="tactical-overlay">
-        <div class="coord">LOC: 31.2304° N, 121.4737° E</div>
-        <div class="timestamp" id="system-clock">SYSTEM CLOCK: LOADING...</div>
-    </div>
-
     <main class="container combat-container">
-        <!-- SECTION 01: CORE MECHANICS -->
+        <!-- 顶部动态装饰 -->
+        <div class="tactical-banner">
+            <div class="banner-glitch" data-text="TACTICAL ANALYSIS SYSTEM">TACTICAL ANALYSIS SYSTEM</div>
+            <div class="banner-sub">PROTOCOL: EVOL-SYNC-88 | STATUS: ENCRYPTED</div>
+            <div class="scanner-line"></div>
+        </div>
+
+        <!-- 01. CORE MECHANICS - 采用更硬核的布局 -->
         <section class="section-block">
-            <h2 class="section-header">01. SYSTEM CORE MECHANICS</h2>
+            <h2 class="section-header"><span>01</span> CORE COMBAT LOGIC</h2>
             <div class="tactical-grid">
-                <div class="data-card">
-                    <div class="card-header">SHIELD SYSTEM [PROTOCORE]</div>
+                <div class="data-card cyber-border">
+                    <div class="card-header">
+                        <span class="header-icon">◈</span> SHIELD SYSTEM [PROTOCORE]
+                    </div>
                     <div class="card-body">
-                        <p>Most Elite Wanderers utilize a <strong>Protocore Shield</strong>. Direct HP damage is reduced by 60% while the shield is active.</p>
+                        <p class="data-text">Elite Wanderers utilize <strong>Protocore Shielding</strong>, reducing incoming direct impact by <span class="highlight-alt">60%</span>.</p>
                         <div class="tactical-note">
-                            <strong>TACTICAL PROTOCOL:</strong> Use Resonance Skills matching the enemy's elemental weakness to deplete shields 50% faster.
+                            <div class="note-label">RECO:</div>
+                            Matching elements accelerates shield collapse by <span class="highlight">1.5x</span>.
                         </div>
                     </div>
+                    <div class="card-corner"></div>
                 </div>
 
-                <div class="data-card">
-                    <div class="card-header">EVASION [CHRONO-STASIS]</div>
-                    <div class="card-body">
-                        <p>Executing a <strong>Perfect Dodge</strong> (0.2s window) triggers a localized time-dilation field.</p>
-                        <ul class="data-list">
-                            <li>Enemy movement speed -50%</li>
-                            <li>Resonance Energy +15%</li>
-                            <li>Grants brief invulnerability frames (i-frames)</li>
-                        </ul>
+                <div class="data-card cyber-border">
+                    <div class="card-header">
+                        <span class="header-icon">◈</span> EVASION [CHRONO-STASIS]
                     </div>
+                    <div class="card-body">
+                        <p class="data-text">Perfect Dodge (0.2s) triggers <strong>Chrono-Stasis</strong>, slowing time-space locally.</p>
+                        <div class="stat-mini-grid">
+                            <div class="stat-item"><span>TIME SLOW</span><br><strong>-50%</strong></div>
+                            <div class="stat-item"><span>ENERGY REGEN</span><br><strong>+15%</strong></div>
+                            <div class="stat-item"><span>IFRAME</span><br><strong>ACTIVE</strong></div>
+                        </div>
+                    </div>
+                    <div class="card-corner"></div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 02: SYNERGY TABLE -->
+        <!-- 02. SYNERGY MATRIX - 更加数字化的表格 -->
         <section class="section-block">
-            <h2 class="section-header">02. DAMAGE MULTIPLIER MATRIX</h2>
+            <h2 class="section-header"><span>02</span> DAMAGE MULTIPLIER MATRIX</h2>
             <div class="table-wrapper">
+                <div class="table-header-deco">DEEPSPACE_INTEL_STREAM // V.2.06</div>
                 <table class="tactical-table">
                     <thead>
                         <tr>
-                            <th>COMBAT STATE</th>
-                            <th>TACTICAL ACTION</th>
-                            <th>DMG MULTIPLIER</th>
+                            <th>STATE</th>
+                            <th>ACTION</th>
+                            <th>EFFICIENCY</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Neutral State</td>
-                            <td>Basic Combos / Skills</td>
-                            <td>1.0x</td>
+                            <td class="cell-dim">Neutral Phase</td>
+                            <td>Basic Combos</td>
+                            <td>100%</td>
                         </tr>
                         <tr>
-                            <td>Shield Break Phase</td>
-                            <td>Resonance Synergy</td>
-                            <td>1.5x + Impact</td>
+                            <td class="cell-dim">Break Phase</td>
+                            <td>Resonance Skill</td>
+                            <td class="highlight-blue">150% + IMPACT</td>
                         </tr>
                         <tr class="highlight-row">
-                            <td>BROKEN STATE</td>
-                            <td>ARDENT OATH [ULTIMATE]</td>
-                            <td>3.0x [CRIT THRESHOLD]</td>
+                            <td>BROKEN</td>
+                            <td>ARDENT OATH</td>
+                            <td><span class="pulse-text">300% CRIT THRESH</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- SECTION 03: ENEMY CLASSIFICATION -->
+        <!-- 03. THREATS - 引入极简可视化图表感 -->
         <section class="section-block">
-            <h2 class="section-header">03. WANDERER THREAT ASSESSMENT</h2>
+            <h2 class="section-header"><span>03</span> WANDERER THREAT ASSESSMENT</h2>
             <div class="threat-grid">
                 <div class="threat-box">
                     <div class="threat-info">
+                        <span class="danger-level">L-01</span>
                         <h4>HEAVY-TYPE</h4>
-                        <span class="threat-tag">STUN PREFERRED</span>
                     </div>
-                    <p>Focus on <strong>Zayne's</strong> Freeze to halt high-damage AOE wind-ups.</p>
-                    <div class="danger-bar"><div class="fill" style="width: 85%;"></div></div>
+                    <div class="threat-desc">Lockdown with <strong>Zayne's</strong> freeze.</div>
+                    <div class="gauge-container">
+                        <div class="gauge-fill" style="width: 85%;"></div>
+                    </div>
                 </div>
-
                 <div class="threat-box">
                     <div class="threat-info">
+                        <span class="danger-level">L-02</span>
                         <h4>STALKER-TYPE</h4>
-                        <span class="threat-tag">AGILITY REQUIRED</span>
                     </div>
-                    <p>High mobility. <strong>Xavier's</strong> Light-based lunges are mandatory for tracking.</p>
-                    <div class="danger-bar"><div class="fill" style="width: 65%;"></div></div>
+                    <div class="threat-desc">Tracking with <strong>Xavier's</strong> speed.</div>
+                    <div class="gauge-container">
+                        <div class="gauge-fill" style="width: 65%;"></div>
+                    </div>
                 </div>
-
-                <div class="threat-box alert">
+                <div class="threat-box alert-red">
                     <div class="threat-info">
+                        <span class="danger-level highlight">L-MAX</span>
                         <h4>ALPHA-TYPE</h4>
-                        <span class="threat-tag highlight">LETHAL</span>
                     </div>
-                    <p>Extreme aggression. <strong>Sylus's</strong> Relentless state is optimal for raw DPS races.</p>
-                    <div class="danger-bar"><div class="fill" style="width: 95%;"></div></div>
+                    <div class="threat-desc">DPS Race with <strong>Sylus's</strong> Relentless.</div>
+                    <div class="gauge-container">
+                        <div class="gauge-fill pulse-bg" style="width: 95%;"></div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p class="copyright">© 2026 DEEPSPACE HUNTER ASSOCIATION | TACTICAL DATA UNIT</p>
+        <div class="footer-line"></div>
+        <p class="copyright">DATABASE STATUS: ONLINE // © 2026 DEEPSPACE HUNTER ASSN.</p>
     </footer>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const timeString = now.toISOString().replace('T', ' ').substring(0, 19);
-            document.getElementById('system-clock').innerText = 'SYSTEM CLOCK: ' + timeString + ' UTC';
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
