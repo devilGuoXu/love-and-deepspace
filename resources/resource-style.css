@@ -1,6 +1,6 @@
 /* ============================================
-   RESOURCE PLANNING v4 - ULTRA HD EDITION
-   深空猎人·战略资源指挥中心
+   RESOURCE PLANNING v5 - ULTRA HD COMMAND CENTER
+   深空猎人·战略资源指挥中心 | 旗舰版
    ============================================ */
 
 :root {
@@ -26,7 +26,6 @@
     --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
     --glow-gold: 0 0 12px rgba(201,160,99,0.3);
-    --glow-red: 0 0 12px rgba(255,94,107,0.3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,24 +33,22 @@
 body.rp-body {
     background: radial-gradient(ellipse at top, #0a0f1a 0%, #020408 100%);
     min-height: 100vh;
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     color: var(--rp-text-main);
 }
 
-/* 滚动条美化 */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--rp-bg-dark); }
 ::-webkit-scrollbar-thumb { background: var(--rp-gold-dim); border-radius: 10px; }
 
-/* 主容器 */
 .rp-container {
     max-width: 1800px;
     margin: 0 auto;
     padding: 20px 28px 50px;
 }
 
-/* ========= 头部区域 ========= */
-.rp-header-v4 {
+/* 头部 */
+.rp-header-v5 {
     background: linear-gradient(135deg, rgba(10,14,22,0.95) 0%, rgba(2,4,8,0.98) 100%);
     border: 1px solid var(--rp-border);
     border-radius: 28px;
@@ -64,7 +61,7 @@ body.rp-body {
     flex-wrap: wrap;
     gap: 20px;
 }
-.rp-header-v4 h1 {
+.rp-header-v5 h1 {
     font-size: 2.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #fff 20%, var(--rp-gold) 60%, var(--rp-gold-light) 100%);
@@ -73,14 +70,14 @@ body.rp-body {
     color: transparent;
     letter-spacing: -1px;
 }
-.rp-header-v4 h1 small { font-size: 0.8rem; color: var(--rp-text-dim); background: none; -webkit-background-clip: unset; }
-.rp-header-v4 p { color: var(--rp-text-dim); margin-top: 8px; font-size: 0.85rem; }
+.rp-header-v5 h1 small { font-size: 0.8rem; color: var(--rp-text-dim); background: none; -webkit-background-clip: unset; }
+.rp-header-v5 p { color: var(--rp-text-dim); margin-top: 8px; font-size: 0.85rem; }
 .header-stats-mini { display: flex; gap: 24px; }
 .header-stat { text-align: right; }
 .header-stat .label { font-size: 0.7rem; color: var(--rp-text-muted); }
 .header-stat .value { font-size: 1.3rem; font-weight: 700; color: var(--rp-gold); }
 
-/* ========= 战略仪表盘 - 12指标网格 ========= */
+/* 12指标仪表盘 */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -106,30 +103,28 @@ body.rp-body {
 .dash-card .label { font-size: 0.6rem; text-transform: uppercase; color: var(--rp-text-muted); letter-spacing: 1px; }
 .dash-card .value { font-size: 1.2rem; font-weight: 800; color: var(--rp-gold); line-height: 1.3; }
 .dash-card .trend { font-size: 0.55rem; margin-top: 4px; }
-.dash-card.trend-up .trend { color: var(--rp-success); }
-.dash-card.trend-down .trend { color: var(--rp-danger); }
 
-/* ========= 主内容网格 ========= */
-.rp-grid-v4 {
+/* 主网格 */
+.rp-grid-v5 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 28px;
 }
 
-/* 通用卡片样式升级 */
-.card-v4 {
+/* 卡片 */
+.card-v5 {
     background: linear-gradient(145deg, var(--rp-bg-card) 0%, rgba(5,8,14,0.95) 100%);
     border: 1px solid var(--rp-border);
     border-radius: 24px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
-.card-v4:hover {
+.card-v5:hover {
     border-color: var(--rp-gold);
     box-shadow: var(--shadow-lg);
 }
-.card-header-v4 {
+.card-header-v5 {
     padding: 16px 20px;
     background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(201,160,99,0.05) 100%);
     border-bottom: 1px solid var(--rp-border);
@@ -137,106 +132,83 @@ body.rp-body {
     justify-content: space-between;
     align-items: center;
 }
-.card-header-v4 h3 {
+.card-header-v5 h3 {
     font-size: 1rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
 }
-.card-header-v4 h3 .accent { color: var(--rp-gold); }
-.card-body-v4 { padding: 20px; }
+.card-body-v5 { padding: 20px; }
 
-/* ========= 资源全景图 (热力图风格) ========= */
-.heatmap-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-    margin: 16px 0;
-}
-.heatmap-day {
-    text-align: center;
-    padding: 8px 4px;
-    background: var(--rp-progress-bg);
-    border-radius: 12px;
-    font-size: 0.7rem;
-}
-.heatmap-day.high { background: linear-gradient(135deg, #2ecc71, #27ae60); color: #fff; }
-.heatmap-day.medium { background: linear-gradient(135deg, #f39c12, #e67e22); }
-.heatmap-day.low { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-
-/* ========= 概率分布图表 (SVG模拟) ========= */
-.prob-chart {
-    background: var(--rp-progress-bg);
-    border-radius: 16px;
-    padding: 16px;
-    margin: 16px 0;
-}
-.prob-bar-container {
+/* 资源行 */
+.resource-row {
     display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 120px;
-    margin: 16px 0;
-}
-.prob-bar {
-    flex: 1;
-    background: linear-gradient(180deg, var(--rp-gold), var(--rp-gold-dim));
-    border-radius: 4px 4px 0 0;
-    min-height: 2px;
-    transition: height 0.3s;
-}
-.prob-label {
-    text-align: center;
-    font-size: 0.6rem;
-    margin-top: 8px;
-    color: var(--rp-text-dim);
-}
-
-/* ========= 养成路线图时间轴 ========= */
-timeline-v4 {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-.timeline-node {
-    display: flex;
-    gap: 16px;
-    position: relative;
-}
-.timeline-date {
-    min-width: 80px;
-    font-size: 0.7rem;
-    color: var(--rp-gold);
-    font-family: monospace;
-}
-.timeline-content {
-    flex: 1;
-    background: rgba(255,255,255,0.03);
-    border-radius: 16px;
-    padding: 12px;
-}
-.timeline-title { font-weight: 600; margin-bottom: 6px; }
-.timeline-desc { font-size: 0.7rem; color: var(--rp-text-dim); }
-
-/* ========= 对比表格 ========= */
-.compare-table {
-    width: 100%;
-    font-size: 0.75rem;
-    border-collapse: collapse;
-}
-.compare-table th, .compare-table td {
-    padding: 10px 6px;
-    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.compare-table th { color: var(--rp-gold); font-weight: 600; }
-.rank-s { color: var(--rp-gold); font-weight: bold; }
-.rank-a { color: var(--rp-success); }
-.rank-b { color: var(--rp-info); }
-.rank-c { color: var(--rp-text-dim); }
+.resource-input {
+    width: 110px;
+    background: #1a1f2a;
+    border: 1px solid var(--rp-border);
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: #fff;
+    font-family: monospace;
+    text-align: right;
+}
+.quick-add {
+    background: rgba(201,160,99,0.15);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: var(--rp-gold);
+    font-size: 0.6rem;
+    cursor: pointer;
+}
 
-/* ========= 智能规划助手 ========= */
+/* 角色网格 */
+.char-grid { display: flex; flex-direction: column; gap: 14px; }
+.char-item { background: rgba(0,0,0,0.25); border-radius: 14px; padding: 12px; }
+.char-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
+.progress-bar { background: var(--rp-progress-bg); border-radius: 10px; height: 6px; overflow: hidden; margin: 8px 0; }
+.progress-fill { background: var(--rp-gold); height: 100%; width: 0%; transition: width 0.3s; }
+
+/* 抽卡模拟器 */
+.simulator-area { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 16px; margin: 16px 0; }
+.gacha-history { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; max-height: 100px; overflow-y: auto; }
+.pull-dot { width: 30px; height: 30px; border-radius: 8px; background: #1e232e; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; }
+.pull-dot.gold { background: var(--rp-gold); color: #000; font-weight: bold; }
+.pull-dot.purple { background: #8b5cf6; }
+.pull-dot.blue { background: #3b82f6; }
+
+/* 概率图表 */
+.prob-chart { background: var(--rp-progress-bg); border-radius: 16px; padding: 16px; margin: 16px 0; }
+.prob-bar-container { display: flex; align-items: flex-end; gap: 6px; height: 140px; margin: 16px 0; }
+.prob-bar { flex: 1; background: linear-gradient(180deg, var(--rp-gold), var(--rp-gold-dim)); border-radius: 4px 4px 0 0; min-height: 2px; transition: height 0.3s; }
+
+/* 任务清单 */
+.task-list { display: flex; flex-direction: column; gap: 12px; }
+.task-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.task-progress { display: flex; align-items: center; gap: 12px; }
+.task-bar { width: 100px; background: var(--rp-progress-bg); border-radius: 10px; height: 5px; overflow: hidden; }
+.task-fill { background: var(--rp-success); height: 100%; width: 0%; }
+
+/* 兑换商店 */
+.shop-table { width: 100%; font-size: 0.75rem; border-collapse: collapse; }
+.shop-table th, .shop-table td { padding: 10px 6px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.shop-table th { color: var(--rp-gold); }
+.best { color: var(--rp-success); font-weight: bold; }
+
+/* 时间轴 */
+.timeline { display: flex; flex-direction: column; gap: 16px; }
+.timeline-node { display: flex; gap: 16px; }
+.timeline-date { min-width: 70px; font-size: 0.7rem; color: var(--rp-gold); font-family: monospace; }
+.timeline-content { flex: 1; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 10px; }
+
+/* AI助手 */
 .ai-assistant {
     background: linear-gradient(135deg, rgba(46,204,113,0.05), rgba(52,152,219,0.05));
     border-radius: 20px;
@@ -244,11 +216,7 @@ timeline-v4 {
     margin-top: 16px;
     border: 1px solid rgba(46,204,113,0.2);
 }
-.ai-message {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-}
+.ai-message { display: flex; gap: 12px; margin-bottom: 16px; }
 .ai-avatar {
     width: 36px;
     height: 36px;
@@ -259,58 +227,58 @@ timeline-v4 {
     justify-content: center;
     font-size: 1.2rem;
 }
-.ai-text {
-    flex: 1;
-    background: rgba(0,0,0,0.4);
-    border-radius: 18px;
-    padding: 12px 16px;
-    font-size: 0.8rem;
-    line-height: 1.5;
-}
+.ai-text { flex: 1; background: rgba(0,0,0,0.4); border-radius: 18px; padding: 12px 16px; font-size: 0.8rem; line-height: 1.5; }
 
-/* ========= 全球数据看板 ========= */
-.global-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 16px;
-}
-.global-stat-card {
-    text-align: center;
-    padding: 12px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 16px;
-}
-
-/* ========= 按钮 ========= */
-.btn-v4 {
+/* 按钮 */
+.btn-gold {
     background: linear-gradient(135deg, var(--rp-gold), var(--rp-gold-dim));
     border: none;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 40px;
     color: #000;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
+    font-size: 0.85rem;
     transition: all 0.2s;
-    font-size: 0.8rem;
 }
-.btn-v4-outline {
+.btn-outline {
     background: transparent;
     border: 1px solid var(--rp-gold);
-    padding: 7px 18px;
+    padding: 8px 16px;
     border-radius: 40px;
     color: var(--rp-gold);
     cursor: pointer;
     font-size: 0.75rem;
 }
-.btn-v4:hover { transform: translateY(-1px); box-shadow: var(--glow-gold); }
+.btn-gold:hover, .btn-outline:hover { transform: translateY(-1px); opacity: 0.9; }
 
-/* ========= 响应式 ========= */
-@media (max-width: 1600px) {
-    .dashboard-grid { grid-template-columns: repeat(6, 1fr); }
-    .rp-grid-v4 { grid-template-columns: repeat(2, 1fr); }
+/* 页脚 */
+.rp-footer {
+    background: #010103;
+    border-top: 1px solid var(--rp-border);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    color: #6a7080;
+    font-size: 0.75rem;
 }
-@media (max-width: 1000px) {
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.footer-links a { color: #9aa2b5; text-decoration: none; }
+.footer-links a:hover { color: var(--rp-gold); }
+
+/* 响应式 */
+@media (max-width: 1400px) {
+    .dashboard-grid { grid-template-columns: repeat(6, 1fr); }
+    .rp-grid-v5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
     .dashboard-grid { grid-template-columns: repeat(3, 1fr); }
-    .rp-grid-v4 { grid-template-columns: 1fr; }
+    .rp-grid-v5 { grid-template-columns: 1fr; }
 }
