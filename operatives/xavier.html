@@ -13,52 +13,119 @@
         <span class="arrow">←</span>
         <span class="text">RETURN TO DATABASE</span>
     </a>
-    <main>
+
+    <main class="character-page">
+        <!-- MASSIVE HERO -->
         <section class="hero-header">
-            <img src="../images/xavier-full.png" class="hero-bg">
+            <img src="../images/xavier-full.png" alt="Xavier Cinematic" class="hero-bg">
             <div class="hero-content">
                 <span class="status-tag">Lumia Knight - Active</span>
                 <h1>XAVIER</h1>
-                <p>THE SWORD OF LIGHT FROM PHILOS</p>
+                <p style="letter-spacing: 15px; text-transform: uppercase;">The Sword of Light From Philos</p>
             </div>
         </section>
 
         <div class="detail-container">
+            
+            <!-- STICKY SIDEBAR -->
             <aside class="sticky-sidebar">
-                <!-- 新增：侧边栏立绘 -->
                 <div class="sidebar-portrait">
-                    <img src="../images/xavier-thumb.webp" alt="Sylus Portrait" style="width:100%; border:1px solid var(--accent); margin-bottom:20px; filter: grayscale(0.3) contrast(1.1);">
+                    <img src="../images/xavier-thumb.webp" alt="Xavier Portrait" style="width:100%; border:1px solid var(--accent); margin-bottom:20px; filter: grayscale(0.2) contrast(1.1);">
                 </div>
                 
                 <div class="spec-box">
                     <h3>Technical Dossier</h3>
-                    <div class="stat-row"><label>Codename</label><span>Lumia</span></div>
+                    <div class="stat-row"><label>Real Name</label><span>Xavier</span></div>
+                    <div class="stat-row"><label>Age</label><span>214+ (Chrono-divergent)</span></div>
                     <div class="stat-row"><label>Evol</label><span>Light Manipulation</span></div>
+                    <div class="stat-row"><label>Specialty</label><span>Burst / Speed / Continuous DMG</span></div>
                     <div class="stat-row"><label>Affiliation</label><span>Deepspace Hunters</span></div>
-                    <div class="stat-row"><label>Age</label><span>Unknown (Appears 23)</span></div>
-                    <div class="stat-row"><label>Weapon</label><span>Sword / Light Blades</span></div>
-                    <div class="stat-row"><label>Danger Level</label><span style="color:var(--char-accent);">A-Rank (Guardian)</span></div>
+                    <div class="stat-row"><label>Danger Level</label><span style="color:var(--accent);">S-Rank (Classified)</span></div>
+                </div>
+
+                <div class="spec-box">
+                    <h3>Combat Ratings</h3>
+                    <div class="stat-row"><label>Agility</label><span>10.0 / 10</span></div>
+                    <div class="stat-row"><label>Lethality</label><span>9.8 / 10</span></div>
+                    <div class="stat-row"><label>Stamina</label><span>7.5 / 10</span></div>
+                    <div class="stat-row"><label>Instinct</label><span>Intuitive</span></div>
+                </div>
+
+                <div class="spec-box" style="border-left-color: var(--text-gold);">
+                    <h3>Relationship Map</h3>
+                    <div class="stat-row"><label>The Hunter</label><span>The Promise of Light</span></div>
+                    <div class="stat-row"><label>Philos</label><span>A Dying Homeworld</span></div>
+                    <div class="stat-row"><label>Jeremiah</label><span>The Watcher</span></div>
                 </div>
             </aside>
 
             <div class="main-content">
+                
+                <!-- 01. BIOGRAPHY & CHRONO ARCHIVE -->
                 <section class="section-block">
                     <h2 class="section-header">01. BIOGRAPHY & CHRONO ARCHIVE</h2>
                     <div class="lore-text">
-                        Xavier is a mysterious veteran hunter known for his sleepy demeanor and unparalleled swordsmanship. Although he appears youthful, historical records from the planet Philos hint at a legacy spanning centuries. He is not just a hunter; he is a protector of a forgotten timeline. His light Evol allows him to manipulate photons, creating illusions or solidifying light into lethal blades. He often falls asleep in unusual places, but his combat instincts never fade.
+                        Xavier is a veteran Deepspace Hunter known for his soft-spoken nature and his habit of napping in the most improbable places—from city park benches to the middle of active mission zones. However, this facade of lethargy hides a legendary figure from another era. As a high-ranking knight from the planet Philos, he has wandered through time for over two centuries, carrying the weight of a world that failed to be saved.
+                        <br><br>
+                        His light Evol is pure and ancient, capable of refracting through the air to create decoys or solidifying into a blade that can cut through the hardest Wanderer cores. While most hunters rely on technical training, Xavier moves by instinct honed through thousands of battles. He doesn't just fight for the future; he fights to fulfill a promise made under a dying star long ago. To him, the present is a precious second chance, and he will not let the darkness extinguish it again.
                     </div>
                 </section>
 
+                <!-- 02. TACTICAL SKILL BREAKDOWN -->
                 <section class="section-block">
                     <h2 class="section-header">02. TACTICAL SKILL BREAKDOWN</h2>
                     <div class="skill-grid">
-                        <div class="skill-card"><h4>Basic: Starshade Strike</h4><p>Rapid sword strikes dealing Light DMG. Final hit triggers a "Starlight Mark".</p></div>
-                        <div class="skill-card"><h4>Resonance: Infinite Ray</h4><p>Xavier and Hunter summon a barrage of light beams, reducing enemy mobility by 50%.</p></div>
-                        <div class="skill-card"><h4>Ardent Oath: Solar Eclipse</h4><p>A massive horizontal slash that clears all Starlight Marks to deal bonus explosive DMG.</p></div>
+                        <div class="skill-card">
+                            <h4>Basic Attack: Starshade Strike</h4>
+                            <p>Executes 5 rapid lunges. The final strike releases a 'Photon Flash' that marks all enemies, increasing their chance to be Critically Hit by 10%.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Resonance: Infinite Ray</h4>
+                            <p>Xavier and Hunter create a cage of light. Enemies within the perimeter have their DEF reduced by 30% and move in slow motion for 5s.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Ardent Oath: Solar Eclipse</h4>
+                            <p>Xavier momentarily reverts to his Knight-Commander form. A screen-wide horizontal slash deals 1500% DMG, ignoring 50% of the target's Armor.</p>
+                        </div>
                     </div>
                 </section>
+
+                <!-- 03. ASCENSION & RANK BONUSES -->
+                <section class="section-block">
+                    <h2 class="section-header">03. ASCENSION & RANK BONUSES</h2>
+                    <div class="ascension-node"><div class="rank-circle">R1</div><div><strong>Distant Echo:</strong> Starshade Strike's final hit generates 50% more Energy for the Ardent Oath.</div></div>
+                    <div class="ascension-node"><div class="rank-circle">R2</div><div><strong>Lumia's Grace:</strong> While resonance is active, Hunter and Xavier are immune to all Crowd Control effects.</div></div>
+                    <div class="ascension-node"><div class="rank-circle">R3</div><div><strong>Endless Dawn:</strong> If Solar Eclipse kills an enemy, its cooldown is reduced by 25%.</div></div>
+                </section>
+
+                <!-- 04. OPTIMIZED PROTOCORE BUILDS -->
+                <section class="section-block">
+                    <h2 class="section-header">04. OPTIMIZED PROTOCORE BUILDS</h2>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Strategy</th><th>Primary Stats</th><th>Slot Focus</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Flash Killer</strong></td><td>Crit Rate / Crit DMG</td><td>Speed & Lethality</td></tr>
+                            <tr><td><strong>Sun Guardian</strong></td><td>ATK / Energy Regen</td><td>Spam Resonance Skills</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- 05. INTERCEPTED VOICE FILES -->
+                <section class="section-block">
+                    <h2 class="section-header">05. INTERCEPTED VOICE FILES</h2>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"Is it time to wake up? Five more minutes... the stars were just getting bright."</div>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"Don't wander too far from my light. It's easy to get lost in this world."</div>
+                    <div class="skill-card" style="margin-bottom: 10px; font-style: italic;">"I've seen the end of the world. It’s much quieter than you think. That's why I prefer your voice."</div>
+                </section>
+
             </div>
         </div>
     </main>
+
+    <footer class="main-footer" style="text-align:center; padding: 40px; opacity:0.5; font-size: 12px;">
+        <p>© 2026 Deepspace Hunter Station | Archive: Philos/0423</p>
+    </footer>
 </body>
 </html>
