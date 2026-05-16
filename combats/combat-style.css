@@ -251,7 +251,6 @@
 /* 已查看条目标记样式 */
 .log-entry-final.viewed {
     opacity: 0.85;
-    border-left: 1px solid #2ecc71;
 }
 
 .log-entry-final.viewed::before {
@@ -261,4 +260,13 @@
 .log-entry-final.viewed .log-link {
     color: #2ecc71;
     border-bottom-color: #2ecc71;
+}
+
+.read-badge {
+    margin-left: auto;
+    font-size: 10px;
+    color: #2ecc71;
+    background: rgba(46, 204, 113, 0.15);
+    padding: 2px 8px;
+    border-radius: 20px;
 }
