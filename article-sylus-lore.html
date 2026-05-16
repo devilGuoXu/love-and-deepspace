@@ -99,10 +99,22 @@
     </section>
 </div>
 
+<button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
+    
 <footer>
     <p>© 2026 Deepspace Combat Research Center. All rights reserved.</p>
     <p>This is a fan-made strategy site. "Love and Deepspace" is a trademark of Infold Games.</p>
 </footer>
-
+    
+<script>
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', function() {
+        backToTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+    
 </body>
 </html>
