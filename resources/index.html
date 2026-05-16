@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="resource-style.css">
 </head>
 <body>
-    <!-- 导航栏 - 与主页完全一致 -->
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
@@ -23,7 +22,6 @@
     </header>
 
     <div class="resource-page">
-        <!-- 顶部汇总卡片 - 4个关键指标 -->
         <div class="stats-summary">
             <div class="stat-summary-card">
                 <div class="stat-icon">💎</div>
@@ -51,9 +49,7 @@
             </div>
         </div>
 
-        <!-- 双列主布局 -->
         <div class="resource-two-col">
-            <!-- 左侧：资源管理 -->
             <div class="info-card">
                 <div class="card-title">
                     <span>💰 RESOURCE STOCK</span>
@@ -106,7 +102,6 @@
                 </div>
             </div>
 
-            <!-- 右侧：抽卡规划 -->
             <div class="info-card">
                 <div class="card-title">
                     <span>🎲 PITY & PULL PLANNER</span>
@@ -147,9 +142,7 @@
             </div>
         </div>
 
-        <!-- 第二行：养成规划 -->
         <div class="resource-two-col">
-            <!-- 左侧：角色养成规划 -->
             <div class="info-card">
                 <div class="card-title">
                     <span>⚔️ CHARACTER ASCENSION PLANNER</span>
@@ -163,14 +156,12 @@
                         <button class="role-btn" data-role="rafayel">🔥 Rafayel</button>
                     </div>
                     
-                    <!-- 当前角色等级 -->
                     <div class="resource-item">
                         <span>📊 Current Level</span>
                         <input type="range" id="currentLevel" min="1" max="80" value="40" style="width: 200px;">
                         <span id="currentLevelValue" style="color:#c9a063; min-width: 40px;">40</span>
                     </div>
 
-                    <!-- 养成需求 -->
                     <div class="requirements">
                         <div class="req-row">
                             <span class="req-label">📘 EXP Bottles needed</span>
@@ -200,7 +191,6 @@
                 </div>
             </div>
 
-            <!-- 右侧：效率工具 + 快速建议 -->
             <div class="info-card">
                 <div class="card-title">
                     <span>⚡ EFFICIENCY & TIPS</span>
@@ -250,11 +240,9 @@
     </footer>
 
     <script>
-        // ============ 常量 ============
-        const COST_EXP = 485;      // 1-80级需要485个紫色经验瓶
-        const COST_GOLD = 1280000; // 1-80级需要128万金币
+        const COST_EXP = 485;
+        const COST_GOLD = 1280000;
         
-        // 角色当前等级
         let charLevels = {
             sylus: 80,
             xavier: 60,
@@ -263,7 +251,6 @@
         };
         let currentRole = 'sylus';
         
-        // 计算所需资源
         function getNeededExp(level) {
             return Math.floor(COST_EXP * ((level - 1) / 79));
         }
@@ -271,7 +258,6 @@
             return Math.floor(COST_GOLD * ((level - 1) / 79));
         }
         
-        // 获取所有DOM元素的值
         function getResources() {
             return {
                 diamonds: parseFloat(document.getElementById('diamonds').value) || 0,
@@ -284,15 +270,13 @@
                 guarantee: document.getElementById('guaranteeSelect').value === 'yes'
             };
         }
-        
-        // 更新所有UI
+
         function updateAll() {
             updateTopStats();
             updatePityPlanner();
             updateAscensionPlanner();
         }
         
-        // 更新顶部汇总
         function updateTopStats() {
             const r = getResources();
             const totalPullsRaw = Math.floor(r.diamonds / 150) + r.wishes;
@@ -310,7 +294,6 @@
             document.getElementById('pityStatus').innerHTML = `need ${Math.max(0, neededForPity - totalPullsRaw)} more`;
         }
         
-        // 更新抽卡规划器
         function updatePityPlanner() {
             const r = getResources();
             const totalPulls = Math.floor(r.diamonds / 150) + r.wishes;
@@ -339,7 +322,6 @@
             document.getElementById('pullAdvice').innerHTML = advice;
         }
         
-        // 更新养成规划器
         function updateAscensionPlanner() {
             const r = getResources();
             const currentLvl = parseInt(document.getElementById('currentLevel').value) || 1;
@@ -355,7 +337,6 @@
             document.getElementById('haveExp').innerText = r.expBottles;
             document.getElementById('haveGold').innerText = r.gold;
             
-            // 计算缺口
             const expGap = Math.max(0, expNeeded - r.expBottles);
             const goldGap = Math.max(0, goldNeeded - r.gold * 1000000);
             
@@ -367,11 +348,9 @@
             }
             document.getElementById('resourceGap').innerHTML = gapMsg;
             
-            // 进度条
             const progress = (currentLvl / 80) * 100;
             document.getElementById('levelProgressFill').style.width = progress + '%';
             
-            // 更新角色选择器的高亮
             document.querySelectorAll('.role-btn').forEach(btn => {
                 if (btn.dataset.role === currentRole) {
                     btn.classList.add('active');
@@ -381,7 +360,6 @@
             });
         }
         
-        // 保存数据到localStorage
         function saveData() {
             const data = {
                 diamonds: document.getElementById('diamonds').value,
@@ -398,7 +376,6 @@
             alert('Data saved!');
         }
         
-        // 加载数据
         function loadData() {
             const saved = localStorage.getItem('rp_saved_data');
             if (saved) {
@@ -416,7 +393,6 @@
             updateAll();
         }
         
-        // 重置所有资源
         function resetAll() {
             document.getElementById('diamonds').value = '0';
             document.getElementById('wishes').value = '0';
@@ -429,7 +405,6 @@
             updateAll();
         }
         
-        // 模拟抽卡
         function simulatePull() {
             let r = getResources();
             let pity = r.pity;
@@ -453,7 +428,6 @@
             updateAll();
         }
         
-        // 切换角色
         function switchRole(role) {
             currentRole = role;
             const currentLvl = charLevels[role] || 1;
@@ -462,7 +436,6 @@
             updateAscensionPlanner();
         }
         
-        // 保存当前等级到角色
         function saveCurrentLevel() {
             const currentLvl = parseInt(document.getElementById('currentLevel').value);
             charLevels[currentRole] = currentLvl;
@@ -475,7 +448,6 @@
             updateAscensionPlanner();
         }
         
-        // 事件绑定
         document.getElementById('saveBtn').addEventListener('click', saveData);
         document.getElementById('resetBtn').addEventListener('click', resetAll);
         document.getElementById('simulateBtn').addEventListener('click', simulatePull);
@@ -485,12 +457,10 @@
         document.getElementById('currentLevel').addEventListener('input', updateAscensionPlanner);
         document.getElementById('currentLevel').addEventListener('change', saveCurrentLevel);
         
-        // 资源输入监听
         ['diamonds', 'wishes', 'gold', 'stamina', 'expBottles', 'protocoreDust'].forEach(id => {
             document.getElementById(id).addEventListener('input', updateAll);
         });
         
-        // 快捷按钮
         document.querySelectorAll('.quick-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const field = btn.dataset.field;
@@ -502,7 +472,6 @@
             });
         });
         
-        // 角色切换
         document.querySelectorAll('.role-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const role = btn.dataset.role;
@@ -510,7 +479,6 @@
             });
         });
         
-        // 初始化
         loadData();
     </script>
 </body>
