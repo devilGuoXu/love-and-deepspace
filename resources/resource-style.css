@@ -1,15 +1,9 @@
-/* ============================================
-   RESOURCE PLANNING - 修复版
-   卡片布局优化，数据联动
-   ============================================ */
-
 .resource-page {
     max-width: 1600px;
     margin: 0 auto;
     padding: 24px 28px 50px;
 }
 
-/* 顶部汇总卡片 - 4列 */
 .stats-summary {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -49,7 +43,6 @@
     margin-top: 4px;
 }
 
-/* 双列主布局 */
 .resource-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -57,7 +50,6 @@
     margin-bottom: 28px;
 }
 
-/* 通用卡片 */
 .info-card {
     background: #0f121b;
     border: 1px solid #2a2f3d;
@@ -82,7 +74,6 @@
     padding: 20px;
 }
 
-/* 资源表格 */
 .resource-table {
     display: flex;
     flex-direction: column;
@@ -134,7 +125,6 @@
     color: #000;
 }
 
-/* 角色选择器 */
 .role-selector {
     display: flex;
     gap: 10px;
@@ -160,7 +150,6 @@
     border-color: #c9a063;
 }
 
-/* 养成需求显示 */
 .requirements {
     background: #0a0e16;
     border-radius: 16px;
@@ -199,7 +188,6 @@
     text-align: right;
 }
 
-/* 抽卡规划 */
 .pull-planner {
     background: #0a0e16;
     border-radius: 16px;
@@ -237,7 +225,6 @@
     transition: width 0.3s;
 }
 
-/* 进度条通用 */
 .progress-bg {
     background: #1e232e;
     border-radius: 10px;
@@ -252,7 +239,6 @@
     transition: width 0.3s;
 }
 
-/* 按钮 */
 .btn-primary {
     background: #c9a063;
     border: none;
@@ -294,7 +280,6 @@
     color: #c9a063;
 }
 
-/* 响应式 */
 @media (max-width: 1100px) {
     .stats-summary {
         grid-template-columns: repeat(2, 1fr);
