@@ -1,5 +1,5 @@
 /* =========================================
-   1. 基础变量
+   1. Basic variable
    ========================================= */
 :root {
     --bg-color: #0b0d14;
@@ -11,7 +11,7 @@
 }
 
 /* =========================================
-   2. 全局样式
+   2. Global style
    ========================================= */
 body {
     margin: 0;
@@ -30,7 +30,7 @@ body {
 }
 
 /* =========================================
-   3. 导航栏
+   3. Navigation bar
    ========================================= */
 .main-header {
     background: #000;
@@ -53,7 +53,7 @@ body {
 .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
 
 /* =========================================
-   4. 文章卡片布局 (重点修复)
+   4. Article card layout (key fix)
    ========================================= */
 .post-card {
     background: var(--card-bg);
@@ -62,39 +62,35 @@ body {
     margin-bottom: 25px;
     border-radius: 8px;
     overflow: hidden;
-    position: relative; /* 必须：作为定位基准 */
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1; /* 开启层级上下文 */
+    z-index: 1;
 }
 
-/* 终极全卡片点击层 */
 .full-card-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999; /* 确保在最顶层，无视一切阻碍 */
+    z-index: 999;
     display: block;
-    background-color: rgba(255, 255, 255, 0); /* 填充透明色以防浏览器误判为空标签 */
+    background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
 }
 
-/* 悬停反馈 */
 .post-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 悬停时让标题变色 */
 .post-card:hover .post-info h3 {
     color: var(--accent);
 }
 
-/* 图片区域 */
 .post-thumb {
     flex-shrink: 0;
-    line-height: 0; /* 消除图片底部间隙 */
+    line-height: 0;
 }
 
 .post-thumb img { 
@@ -104,7 +100,6 @@ body {
     display: block;
 }
 
-/* 文章信息区域 */
 .post-info { 
     padding: 20px; 
     display: flex;
@@ -139,9 +134,6 @@ body {
     margin-top: 15px; 
 }
 
-/* =========================================
-   5. 页脚与适配
-   ========================================= */
 .main-footer {
     background: #000;
     padding: 40px 20px;
@@ -160,9 +152,6 @@ body {
     .top-banner .ad-placeholder { width: 100%; height: 50px; }
 }
 
-/* =========================================
-   回到顶部按钮
-   ========================================= */
 .back-to-top {
     position: fixed;
     bottom: 40px;
@@ -201,7 +190,6 @@ body {
     line-height: 1;
 }
 
-/* 响应式调整 */
 @media (max-width: 768px) {
     .back-to-top {
         bottom: 20px;
