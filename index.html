@@ -108,7 +108,7 @@
         </aside>
     </main>
 
-    <!-- 回到顶部按钮 -->
+    <!-- Back to top button -->
     <button id="backToTopBtn" class="back-to-top" title="Back to Top">
         <span class="arrow-up">↑</span>
     </button>
@@ -126,11 +126,11 @@
     </footer>
 
     <script>
-    // ============ 回到顶部功能 ============
+    // ============ Back to top function ============
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     if (backToTopBtn) {
-        // 监听滚动事件
+        // Monitor scrolling events
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
@@ -139,7 +139,7 @@
             }
         });
 
-        // 点击回到顶部
+        // Click to return to the top
         backToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
