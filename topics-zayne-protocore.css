@@ -565,3 +565,44 @@ p {
         font-size: 20px;
     }
 }
+
+.main-footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #222;
+    background: #050505;
+    color: #6a7080;
+    font-size: 0.75rem;
+}
+
+.main-footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-links a {
+    color: #9aa2b5;
+    text-decoration: none;
+}
+
+.main-footer .footer-links a:hover {
+    color: var(--xavier-gold);
+}
+
+.main-footer .copyright,
+.main-footer .disclaimer-mini {
+    color: #6a7080;
+    margin: 5px 0;
+}
+
+.conclusion p:first-child {
+    color: #aaa;
+    margin-bottom: 16px;
+}
+
+.conclusion p:last-child {
+    color: var(--xavier-gold);
+}
