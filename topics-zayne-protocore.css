@@ -565,3 +565,34 @@ p {
         font-size: 20px;
     }
 }
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #2a2f3d;
+    color: #6a7080;
+    font-size: 0.8rem;
+    background: #010103;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+footer .footer-links a {
+    color: #9aa2b5;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    color: var(--abyss-purple, #8b5cf6);
+}
+
+footer p {
+    margin: 5px 0;
+    color: #6a7080;
+}
