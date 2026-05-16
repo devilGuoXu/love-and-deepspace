@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F2P Diamond Saving Strategy | 90 Days of Data | Deepspace Hub</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.webp">
+    <meta name="description" content="90 days. 1 account. Zero spending. Here's exactly how many diamonds you can save as F2P and how to spend them.">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="topics-f2p-saving.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="/">&larr; BACK TO MISSION HUB</a>
+        <div class="nav-buttons">
+            <a href="#calculator" class="nav-btn">📊 CALCULATOR</a>
+            <a href="#checklist" class="nav-btn">✅ CHECKLIST</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-label">90 DAYS · 1 ACCOUNT · $0 SPENT</div>
+        <h1 class="hero-title">F2P Diamond<br>Saving Strategy</h1>
+        <p class="hero-subtitle">How to save 25,000+ diamonds without swiping your card.<br>Real data. Real results. No bullshit.</p>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-number" id="statTotal">0</div>
+            <div class="hero-stat-label">Diamonds Saved (90d)</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-number" id="statPulls">0</div>
+            <div class="hero-stat-label">Free Pulls Equivalent</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-number" id="statPity">0</div>
+            <div class="hero-stat-label">Pity Counters Reached</div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <section class="income-section">
+        <div class="section-label">THE NUMBERS</div>
+        <h2 class="section-title">Where Do Diamonds Come From?</h2>
+        <p class="section-desc">I tracked every single diamond source for 90 days. Here's what I found.</p>
+        
+        <div class="income-grid">
+            <div class="income-card">
+                <div class="income-icon">✅</div>
+                <div class="income-name">Daily Commissions</div>
+                <div class="income-amount">+150/day</div>
+                <div class="income-total">13,500 / 90d</div>
+                <div class="income-bar"><div class="income-fill" style="width: 45%"></div></div>
+                <div class="income-note">Your bread and butter. Never skip.</div>
+            </div>
+            <div class="income-card">
+                <div class="income-icon">⭐</div>
+                <div class="income-name">Abyssal Trials</div>
+                <div class="income-amount">+600/reset</div>
+                <div class="income-total">~4,800 / 90d</div>
+                <div class="income-bar"><div class="income-fill" style="width: 16%"></div></div>
+                <div class="income-note">Resets every 2 weeks. Clear as high as you can.</div>
+            </div>
+            <div class="income-card">
+                <div class="income-icon">🎁</div>
+                <div class="income-name">Login Events</div>
+                <div class="income-amount">~800/mo</div>
+                <div class="income-total">~2,400 / 90d</div>
+                <div class="income-bar"><div class="income-fill" style="width: 8%"></div></div>
+                <div class="income-note">Log in every day. Free diamonds are free diamonds.</div>
+            </div>
+            <div class="income-card">
+                <div class="income-icon">🏆</div>
+                <div class="income-name">Hunter Contest</div>
+                <div class="income-amount">300-1,200/reset</div>
+                <div class="income-total">~4,200 / 90d</div>
+                <div class="income-bar"><div class="income-fill" style="width: 14%"></div></div>
+                <div class="income-note">Endgame content. Build your teams for this.</div>
+            </div>
+            <div class="income-card">
+                <div class="income-icon">📝</div>
+                <div class="income-name">Maintenance & Codes</div>
+                <div class="income-amount">~500/mo</div>
+                <div class="income-total">~1,500 / 90d</div>
+                <div class="income-bar"><div class="income-fill" style="width: 5%"></div></div>
+                <div class="income-note">Check Discord. Check Reddit. Don't miss codes.</div>
+            </div>
+            <div class="income-card">
+                <div class="income-icon">📖</div>
+                <div class="income-name">Story & Achievements</div>
+                <div class="income-amount">One-time</div>
+                <div class="income-total">~3,500</div>
+                <div class="income-bar"><div class="income-fill" style="width: 12%"></div></div>
+                <div class="income-note">Clear all chapters. Claim all achievements.</div>
+            </div>
+        </div>
+        
+        <div class="income-total-box">
+            <div class="total-label">TOTAL F2P DIAMONDS (90 DAYS)</div>
+            <div class="total-number">~29,900</div>
+            <div class="total-pulls">≈ 199 pulls</div>
+            <div class="total-note">Enough for 2 hard pities. Enough for 1 guaranteed rate-up plus extras.</div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="section-label">PLAN YOUR PULLS</div>
+        <h2 class="section-title">Diamond Calculator</h2>
+        <p class="section-desc">Enter your current diamonds and see how many pulls you can guarantee.</p>
+        
+        <div class="calculator-card">
+            <div class="calc-input-group">
+                <div class="calc-label">💎 Current Diamonds</div>
+                <input type="number" id="diamondInput" class="calc-input" value="5000" step="100">
+                <div class="calc-hint">≈ <span id="previewPulls">33</span> pulls</div>
+            </div>
+            
+            <div class="calc-results">
+                <div class="calc-result-item">
+                    <span class="result-label">🎫 Total Pulls Available</span>
+                    <span class="result-value" id="totalPullsCalc">0</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="result-label">🎯 Expected 5★ (avg 65 pulls)</span>
+                    <span class="result-value" id="expectedFiveStar">0</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="result-label">💯 Chance to reach soft pity (70)</span>
+                    <span class="result-value" id="pityChance">0%</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="result-label">📅 Days to save for guarantee (150 pulls)</span>
+                    <span class="result-value" id="daysToGuarantee">0</span>
+                </div>
+            </div>
+            
+            <div class="calc-progress">
+                <div class="progress-label">Progress to 150 pulls (hard pity guarantee)</div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width: 0%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="checklist" class="checklist-section">
+        <div class="section-label">DON'T MISS THESE</div>
+        <h2 class="section-title">The F2P Checklist</h2>
+        <p class="section-desc">Tick these off every day. Consistency > luck.</p>
+        
+        <div class="checklist-grid">
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📅</span>
+                    <span class="checklist-title">Daily (Every Single Day)</span>
+                    <span class="checklist-value">+150 each</span>
+                </div>
+                <div class="checklist-items" id="dailyChecklist">
+                </div>
+                <div class="checklist-progress">
+                    <span>Today's progress</span>
+                    <span id="dailyProgress">0/4</span>
+                </div>
+            </div>
+            
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📆</span>
+                    <span class="checklist-title">Weekly (Reset Monday)</span>
+                    <span class="checklist-value">+600+</span>
+                </div>
+                <div class="checklist-items" id="weeklyChecklist">
+                </div>
+                <div class="checklist-progress">
+                    <span>This week's progress</span>
+                    <span id="weeklyProgress">0/3</span>
+                </div>
+            </div>
+            
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📆</span>
+                    <span class="checklist-title">Monthly (Don't Miss)</span>
+                    <span class="checklist-value">~2,400</span>
+                </div>
+                <div class="checklist-items" id="monthlyChecklist">
+                </div>
+            </div>
+        </div>
+        
+        <div class="reset-btn-container">
+            <button id="resetChecklistBtn" class="reset-btn">⟳ Reset Weekly Progress</button>
+        </div>
+    </section>
+
+    <section class="tips-section">
+        <div class="section-label">PRO TIPS</div>
+        <h2 class="section-title">What I Learned The Hard Way</h2>
+        
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-number">01</div>
+                <div class="tip-title">Never pull on impulse</div>
+                <div class="tip-desc">Sleep on it. If you still want it tomorrow, think about it again. Most of my regret pulls happened at 2 AM.</div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">02</div>
+                <div class="tip-title">Skip the first day of banner</div>
+                <div class="tip-desc">Wait for community reviews. I've saved thousands by not pulling on day 1 "hype."</div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">03</div>
+                <div class="tip-title">Don't chase 4★ characters</div>
+                <div class="tip-desc">You'll get them eventually. 4★ aren't worth wasting guaranteed pity on.</div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">04</div>
+                <div class="tip-title">Stop at soft pity if you're unsure</div>
+                <div class="tip-desc">70 pulls is soft pity. If you're not sure about the banner, stop at 70 and wait for the next one.</div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">05</div>
+                <div class="tip-title">Use the "wait 3 days" rule</div>
+                <div class="tip-desc">Before spending on a banner, wait 3 days. If you still want it, pull. FOMO fades fast.</div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">06</div>
+                <div class="tip-title">Track your pity</div>
+                <div class="tip-desc">Keep a note of your pity counter. Knowing you're close to guarantee changes how you spend.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Questions You Might Have</h2>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">❓ Should I buy stamina with diamonds as F2P?</div>
+                <div class="faq-answer">No. Stamina refills are a trap for F2P. Every diamond you spend on stamina is a pull you lose. Only refill if you're whaling.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ What's better: saving for 150 or pulling on every banner?</div>
+                <div class="faq-answer">Save for 150. Guarantee > luck. I've seen too many people waste 70 pulls on a banner they didn't really want and get nothing.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Should I pull for weapons?</div>
+                <div class="faq-answer">Not as F2P. Characters > weapons. A good character with a 4★ weapon > a bad character with a 5★ weapon.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ How many diamonds can I really save per patch?</div>
+                <div class="faq-answer">~6-8k per month if you do everything. ~8-10k if there's an event. That's 40-60 pulls per month.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Is the monthly card worth it for low spenders?</div>
+                <div class="faq-answer">This guide is F2P. But if you're willing to spend $5, yes — it's the best value in the game. But you don't need it.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion-section">
+        <div class="conclusion-box">
+            <div class="conclusion-icon">💎</div>
+            <div class="conclusion-text">
+                <p><strong>The bottom line:</strong> As F2P, you can guarantee one rate-up character every 2-3 months. That's enough. You don't need every character. You need the right ones.</p>
+                <p>Be patient. Plan ahead. Skip banners that don't fit your account. And remember — the game is more fun when you're not stressed about pulls.</p>
+                <p class="conclusion-signature">— 90 days of data, 0 regrets</p>
+            </div>
+        </div>
+        
+        <div class="share-links">
+            <span>Share this guide:</span>
+            <a href="#" onclick="alert('Copy this link to share!'); return false;">📋 Copy Link</a>
+        </div>
+    </section>
+</div>
+
+<button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
+
+<footer>
+    <div class="footer-links">
+        <a href="../legal/about.html">About Us</a>
+        <a href="../legal/contact.html">Contact Us</a>
+        <a href="../legal/privacy.html">Privacy Policy</a>
+        <a href="../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p>© 2026 Deepspace Hunter Station. All original content is protected.</p>
+    <p>Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+</footer>
+
+<script>
+function updateHeroStats() {
+    const totalDiamonds = 29900;
+    const totalPulls = Math.floor(totalDiamonds / 150);
+    const pityCount = Math.floor(totalPulls / 70);
+    
+    animateNumber('statTotal', 0, totalDiamonds, 1000);
+    animateNumber('statPulls', 0, totalPulls, 1000);
+    animateNumber('statPity', 0, pityCount, 1000);
+}
+
+function animateNumber(elementId, start, end, duration) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    const range = end - start;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    let current = start;
+    const timer = setInterval(() => {
+        current += Math.ceil(range / 100);
+        if (current >= end) {
+            element.innerText = end.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.innerText = current.toLocaleString();
+        }
+    }, stepTime);
+}
+
+function updateCalculator() {
+    const diamonds = parseInt(document.getElementById('diamondInput').value) || 0;
+    const pulls = Math.floor(diamonds / 150);
+    const expectedFiveStar = Math.floor(pulls / 65);
+    const pityChance = Math.min(100, Math.floor((pulls / 70) * 100));
+    const daysToGuarantee = Math.ceil((150 - pulls) / 4.4); // 平均每天约4.4抽
+    
+    document.getElementById('totalPullsCalc').innerText = pulls;
+    document.getElementById('expectedFiveStar').innerText = expectedFiveStar;
+    document.getElementById('pityChance').innerText = pityChance + '%';
+    document.getElementById('daysToGuarantee').innerText = Math.max(0, daysToGuarantee);
+    document.getElementById('progressFill').style.width = Math.min(100, (pulls / 150) * 100) + '%';
+    document.getElementById('previewPulls').innerText = pulls;
+}
+
+const dailyTasks = [
+    { name: "📋 Complete Daily Commissions", diamonds: 150, key: "daily" },
+    { name: "🎁 Claim Login Reward", diamonds: 50, key: "login" },
+    { name: "⚡ Use 120+ Stamina", diamonds: 30, key: "stamina" },
+    { name: "🏠 Visit Destiny Cafe", diamonds: 20, key: "cafe" }
+];
+
+const weeklyTasks = [
+    { name: "⭐ Abyssal Trials (clear max floors)", diamonds: 600, key: "abyssal" },
+    { name: "🏆 Hunter Contest (claim rewards)", diamonds: 400, key: "contest" },
+    { name: "📖 Complete Weekly Bounty x3", diamonds: 150, key: "bounty" }
+];
+
+const monthlyTasks = [
+    { name: "📝 Claim Monthly Login (28 days)", diamonds: 800 },
+    { name: "🎯 Complete Event Pass", diamonds: 500 },
+    { name: "🔍 Search for Redemption Codes", diamonds: 300 }
+];
+
+let dailyProgress = JSON.parse(localStorage.getItem('f2p_daily')) || {};
+let weeklyProgress = JSON.parse(localStorage.getItem('f2p_weekly')) || {};
+
+function renderChecklist() {
+    const dailyContainer = document.getElementById('dailyChecklist');
+    dailyContainer.innerHTML = '';
+    let dailyCompleted = 0;
+    dailyTasks.forEach(task => {
+        const isChecked = dailyProgress[task.key] === true;
+        if (isChecked) dailyCompleted++;
+        dailyContainer.innerHTML += `
+            <div class="checklist-item" data-key="${task.key}" data-type="daily">
+                <span class="checklist-check ${isChecked ? 'checked' : ''}">${isChecked ? '✓' : '○'}</span>
+                <span class="checklist-text ${isChecked ? 'completed' : ''}">${task.name}</span>
+                <span class="checklist-diamonds">+${task.diamonds}</span>
+            </div>
+        `;
+    });
+    document.getElementById('dailyProgress').innerText = `${dailyCompleted}/${dailyTasks.length}`;
+    
+    const weeklyContainer = document.getElementById('weeklyChecklist');
+    weeklyContainer.innerHTML = '';
+    let weeklyCompleted = 0;
+    weeklyTasks.forEach(task => {
+        const isChecked = weeklyProgress[task.key] === true;
+        if (isChecked) weeklyCompleted++;
+        weeklyContainer.innerHTML += `
+            <div class="checklist-item" data-key="${task.key}" data-type="weekly">
+                <span class="checklist-check ${isChecked ? 'checked' : ''}">${isChecked ? '✓' : '○'}</span>
+                <span class="checklist-text ${isChecked ? 'completed' : ''}">${task.name}</span>
+                <span class="checklist-diamonds">+${task.diamonds}</span>
+            </div>
+        `;
+    });
+    document.getElementById('weeklyProgress').innerText = `${weeklyCompleted}/${weeklyTasks.length}`;
+    
+    const monthlyContainer = document.getElementById('monthlyChecklist');
+    monthlyContainer.innerHTML = '';
+    monthlyTasks.forEach(task => {
+        monthlyContainer.innerHTML += `
+            <div class="checklist-item">
+                <span class="checklist-check">○</span>
+                <span class="checklist-text">${task.name}</span>
+                <span class="checklist-diamonds">+${task.diamonds}</span>
+            </div>
+        `;
+    });
+    
+    document.querySelectorAll('.checklist-item[data-type="daily"]').forEach(item => {
+        item.addEventListener('click', () => {
+            const key = item.dataset.key;
+            dailyProgress[key] = !dailyProgress[key];
+            localStorage.setItem('f2p_daily', JSON.stringify(dailyProgress));
+            renderChecklist();
+            updateChecklistTotal();
+        });
+    });
+    
+    document.querySelectorAll('.checklist-item[data-type="weekly"]').forEach(item => {
+        item.addEventListener('click', () => {
+            const key = item.dataset.key;
+            weeklyProgress[key] = !weeklyProgress[key];
+            localStorage.setItem('f2p_weekly', JSON.stringify(weeklyProgress));
+            renderChecklist();
+            updateChecklistTotal();
+        });
+    });
+}
+
+function updateChecklistTotal() {
+    let dailyEarned = 0;
+    Object.keys(dailyProgress).forEach(key => {
+        if (dailyProgress[key]) {
+            const task = dailyTasks.find(t => t.key === key);
+            if (task) dailyEarned += task.diamonds;
+        }
+    });
+    let weeklyEarned = 0;
+    Object.keys(weeklyProgress).forEach(key => {
+        if (weeklyProgress[key]) {
+            const task = weeklyTasks.find(t => t.key === key);
+            if (task) weeklyEarned += task.diamonds;
+        }
+    });
+}
+
+function resetWeeklyProgress() {
+    if (confirm('Reset all weekly progress? This cannot be undone.')) {
+        weeklyProgress = {};
+        localStorage.setItem('f2p_weekly', JSON.stringify(weeklyProgress));
+        renderChecklist();
+    }
+}
+
+const backToTopBtn = document.getElementById('backToTopBtn');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+document.getElementById('diamondInput')?.addEventListener('input', updateCalculator);
+document.getElementById('resetChecklistBtn')?.addEventListener('click', resetWeeklyProgress);
+
+updateHeroStats();
+updateCalculator();
+renderChecklist();
+
+console.log('F2P Diamond Saving Strategy loaded. Track your progress and save those diamonds!');
+</script>
+
+</body>
+</html>
