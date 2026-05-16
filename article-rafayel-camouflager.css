@@ -7,23 +7,6 @@
     --rafayel-light: #61a5c2;
 }
 
-/* Header 覆盖 - 蓝紫色调 */
-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('images/rafayel-cover.png');
-    background-size: cover;
-    background-position: center 30%;
-    border-bottom: 2px solid var(--rafayel-aqua);
-}
-
-header h1 {
-    font-size: 3.5rem;
-    letter-spacing: -1px;
-}
-
-header p {
-    color: var(--rafayel-light);
-}
-
 /* 标题风格覆盖 */
 h2 {
     color: var(--rafayel-aqua);
