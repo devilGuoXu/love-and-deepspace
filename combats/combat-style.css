@@ -1,15 +1,13 @@
 /* =========================================
-   COMBAT TERMINAL STYLING - 完全修复版
+   COMBAT TERMINAL STYLING
    ========================================= */
 
 .combat-page {
     background-color: #05070a;
 }
-
-/* 暗角效果 - 从导航栏下方开始，不遮挡导航栏 */
 .combat-vignette {
     position: fixed;
-    top: 80px;  /* 关键修复：从导航栏下方开始 */
+    top: 80px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -18,7 +16,6 @@
     z-index: 0;
 }
 
-/* 主布局 */
 .combat-layout-fixed {
     display: flex;
     max-width: 1400px;
@@ -29,7 +26,6 @@
     z-index: 2;
 }
 
-/* ========= 侧边栏样式 ========= */
 .tactical-sidebar-final {
     width: 260px;
     position: sticky;
@@ -90,12 +86,10 @@
     cursor: not-allowed;
 }
 
-/* ========= 右侧内容流 ========= */
 .content-stream-final {
     flex: 1;
 }
 
-/* 状态仪表盘 */
 .status-dashboard-final {
     display: flex;
     gap: 24px;
@@ -130,7 +124,6 @@
     color: #ff4d4d;
 }
 
-/* 日志条目卡片 */
 .log-entry-final {
     background: #0d1117;
     border: 1px solid #2a2f3d;
@@ -233,7 +226,6 @@
     border-top: 1px dashed #2a2f3d;
 }
 
-/* 响应式 */
 @media (max-width: 880px) {
     .combat-layout-fixed {
         flex-direction: column;
@@ -248,7 +240,6 @@
     }
 }
 
-/* 已查看条目标记样式 */
 .log-entry-final.viewed {
     opacity: 0.85;
 }
@@ -271,7 +262,6 @@
     border-radius: 20px;
 }
 
-/* ========= 回到顶部按钮 ========= */
 .back-to-top {
     position: fixed;
     bottom: 40px;
@@ -310,7 +300,6 @@
     line-height: 1;
 }
 
-/* 响应式调整 */
 @media (max-width: 768px) {
     .back-to-top {
         bottom: 20px;
