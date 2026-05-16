@@ -72,6 +72,11 @@
         </section>
     </main>
 
+    <!-- 回到顶部按钮 -->
+    <button id="backToTopBtn" class="back-to-top" title="Back to Top">
+        <span class="arrow-up">↑</span>
+    </button>
+
     <!-- 页脚 - 使用主页样式 -->
     <footer class="main-footer">
         <div class="footer-links">
@@ -355,6 +360,26 @@
 
         // 初始化
         renderContent('basic');
+
+    // ============ 回到顶部功能 ============
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    // 监听滚动事件
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // 点击回到顶部
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
     </script>
 </body>
 </html>
