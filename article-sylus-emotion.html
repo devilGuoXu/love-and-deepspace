@@ -99,7 +99,7 @@
 
     <img src="images/sylus-streamer.png" alt="banner">
 
-    <!-- 投票区 -->
+    <!-- Voting area -->
     <div class="poll-section">
         <div class="poll-title">💬 Which Sylus moment stole your heart?</div>
         <div class="poll-options">
@@ -111,7 +111,7 @@
         <div class="poll-result" id="pollResult">👥 1,247 votes · Click to vote</div>
     </div>
 
-    <!-- 评论区 -->
+    <!-- Comment section -->
     <div class="comments-section" id="comments">
         <div class="comments-title">💬 Player Comments</div>
         <div class="comment-item">
@@ -152,7 +152,7 @@
 </footer>
 
 <script>
-    // 回到顶部功能
+    // Go to top function
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -165,7 +165,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 投票功能
+    // Voting function
     let voteCount = JSON.parse(localStorage.getItem('sylus_votes')) || { a: 342, b: 512, c: 203, d: 190 };
     
     function updatePollDisplay() {
