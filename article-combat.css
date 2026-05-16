@@ -1,0 +1,104 @@
+/* ========== COMBAT PAGE UNIQUE STYLES ========== */
+:root {
+    --xavier-gold: #b8860b;
+    --primary-gold: #ffd700;
+}
+
+/* Xavier 标题特殊样式 */
+.xavier-header {
+    color: var(--xavier-gold);
+    border-left: 6px solid var(--primary-gold);
+    padding-left: 20px;
+    background: linear-gradient(90deg, #1a1505, transparent);
+    border-bottom: none;
+}
+
+/* 数据盒子 */
+.data-box {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-left: 4px solid var(--sylus-red);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.data-box strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.data-box ol {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.data-box li {
+    margin-bottom: 8px;
+}
+
+/* 表格样式 */
+.stats-table-wrapper {
+    overflow-x: auto;
+    margin: 40px 0;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    font-size: 1rem;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 18px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.stats-table th {
+    background: #222;
+    color: var(--sylus-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-table tr:nth-child(even) {
+    background: #16161a;
+}
+
+.highlight {
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
+/* 结论卡片 */
+.conclusion-card {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0c);
+    padding: 45px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    margin-top: 60px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: var(--sylus-red);
+    color: white;
+    padding: 18px 36px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background: #ff1a1a;
+    transform: translateY(-3px);
+}
