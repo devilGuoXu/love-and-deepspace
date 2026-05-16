@@ -34,7 +34,7 @@ body {
     border-bottom: 1px solid rgba(232, 226, 199, 0.15);
 }
 
-.xavier-nav .nav-inner {
+.xavier-nav .nav-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -253,9 +253,16 @@ body {
     margin-top: 60px;
 }
 
-.conclusion p {
-    color: #666;
-    font-size: 0.85rem;
+.conclusion .conclusion-text {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.conclusion .conclusion-highlight {
+    color: var(--xavier-gold);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .back-to-top {
@@ -287,6 +294,38 @@ body {
     border-color: var(--xavier-gold);
 }
 
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #222;
+    background: #050505;
+    color: #6a7080;
+    font-size: 0.75rem;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+footer .footer-links a {
+    color: #9aa2b5;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    color: var(--xavier-gold);
+}
+
+footer .copyright,
+footer .disclaimer-mini {
+    color: #6a7080;
+    margin: 5px 0;
+}
+
 @media (max-width: 700px) {
     .xavier-hero h1 {
         font-size: 2rem;
@@ -301,45 +340,4 @@ body {
     .chapter h2 {
         font-size: 1.4rem;
     }
-}
-
-.main-footer {
-    text-align: center;
-    padding: 50px 20px;
-    border-top: 1px solid #222;
-    background: #050505;
-    color: #6a7080;
-    font-size: 0.75rem;
-}
-
-.main-footer .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.main-footer .footer-links a {
-    color: #9aa2b5;
-    text-decoration: none;
-}
-
-.main-footer .footer-links a:hover {
-    color: var(--xavier-gold);
-}
-
-.main-footer .copyright,
-.main-footer .disclaimer-mini {
-    color: #6a7080;
-    margin: 5px 0;
-}
-
-.conclusion p:first-child {
-    color: #aaa;
-    margin-bottom: 16px;
-}
-
-.conclusion p:last-child {
-    color: var(--xavier-gold);
 }
