@@ -260,3 +260,37 @@ footer p:last-child {
         padding: 20px;
     }
 }
+
+.article-header {
+    position: relative;
+    padding: 180px 20px 120px;
+    text-align: center;
+}
+
+.article-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/sylus-emotion.png');
+    background-size: cover;
+    background-position: center 30%;
+    z-index: -1;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #05070c);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 关键：移除 border-bottom */
+/* 没有 border-bottom 样式 */
