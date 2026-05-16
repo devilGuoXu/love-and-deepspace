@@ -55,15 +55,15 @@
             <div class="status-dashboard-final">
                 <div class="dash-item">
                     <label>SYNC RATE</label>
-                    <div class="value">98.4%</div>
+                    <div class="value" id="syncRateValue">0%</div>
                 </div>
                 <div class="dash-item">
                     <label>THREAT LEVEL</label>
-                    <div class="value warning">CRITICAL</div>
+                    <div class="value" id="threatLevelValue">LOW</div>
                 </div>
                 <div class="dash-item">
                     <label>ACTIVE LOGS</label>
-                    <div class="value">142</div>
+                    <div class="value" id="activeLogsValue">0</div>
                 </div>
             </div>
 
@@ -85,10 +85,12 @@
     </footer>
 
     <script>
-        // 侧边栏内容数据
+        // ============ 侧边栏内容数据 ============
         const categoryContent = {
             basic: {
                 title: "Basic Protocols",
+                threatLevel: "LOW",
+                threatColor: "#2ecc71",
                 entries: [
                     {
                         id: "ENTRY_#001",
@@ -118,6 +120,8 @@
             },
             boss: {
                 title: "Boss Strategies",
+                threatLevel: "CRITICAL",
+                threatColor: "#ff4d4d",
                 entries: [
                     {
                         id: "ENTRY_#104",
@@ -139,6 +143,8 @@
             },
             abyssal: {
                 title: "Abyssal Trials",
+                threatLevel: "EXTREME",
+                threatColor: "#9b59b6",
                 entries: [
                     {
                         id: "ENTRY_#119",
@@ -147,11 +153,21 @@
                         title: "Abyssal Floor 12: Clear Guide",
                         desc: "Recommended: Sylus + Xavier. Break left add first. Use Ardent Oath on add spawn.",
                         points: ["Clear Time: 3:30", "Req Power: 85k+"]
+                    },
+                    {
+                        id: "ENTRY_#115",
+                        date: "2026.05.08",
+                        tag: "FLOOR_9",
+                        title: "Abyssal Floor 9: Double Elite",
+                        desc: "Two elites spawn simultaneously. Crowd control is essential. Zayne's freeze is extremely valuable.",
+                        points: ["CC Required: Yes", "Burst Window: 5s"]
                     }
                 ]
             },
             protocore: {
                 title: "Protocore Builds",
+                threatLevel: "MODERATE",
+                threatColor: "#f39c12",
                 entries: [
                     {
                         id: "ENTRY_#082",
@@ -160,11 +176,21 @@
                         title: "Protocore Shielding Analysis",
                         desc: "Elemental Resonance reduces resistance by 60% during weakness break window.",
                         points: ["Resist Reduction: 60%", "Break Bonus: +50%"]
+                    },
+                    {
+                        id: "ENTRY_#088",
+                        date: "2026.05.11",
+                        tag: "ENERGY_REGEN",
+                        title: "Energy Regen Breakpoints",
+                        desc: "Sylus benefits from 145% Energy Recharge for perfect loops. Xavier needs Crit Rate > 65%.",
+                        points: ["Sylus ER: 145%", "Xavier CR: 65%"]
                     }
                 ]
             },
             classified: {
                 title: "Classified N109",
+                threatLevel: "UNKNOWN",
+                threatColor: "#555555",
                 entries: [
                     {
                         id: "ENTRY_#XXX",
@@ -178,48 +204,154 @@
             }
         };
 
+        // 计算总条目数
+        const totalEntries = Object.values(categoryContent).reduce((sum, cat) => sum + cat.entries.length, 0);
+        
+        // 更新 ACTIVE LOGS 显示
+        document.getElementById('activeLogsValue').innerText = totalEntries;
+
+        // 用户浏览记录 - 用于计算 SYNC RATE
+        let viewedEntries = JSON.parse(localStorage.getItem('combat_viewed_entries')) || {};
+
+        // 更新仪表盘数据
+        function updateDashboard(categoryKey) {
+            const category = categoryContent[categoryKey];
+            if (!category) return;
+
+            // 1. 更新 THREAT LEVEL（根据当前分类）
+            const threatElement = document.getElementById('threatLevelValue');
+            if (threatElement) {
+                threatElement.innerText = category.threatLevel;
+                threatElement.style.color = category.threatColor;
+                // 移除之前的 warning class，重新添加样式
+                threatElement.classList.remove('warning');
+                if (category.threatLevel === 'CRITICAL' || category.threatLevel === 'EXTREME') {
+                    threatElement.classList.add('warning');
+                }
+            }
+
+            // 2. 更新 SYNC RATE（根据已查看内容比例）
+            const viewedCount = Object.keys(viewedEntries).length;
+            const syncRate = Math.min(100, Math.floor((viewedCount / totalEntries) * 100));
+            const syncElement = document.getElementById('syncRateValue');
+            if (syncElement) {
+                syncElement.innerText = syncRate + '%';
+                if (syncRate >= 80) syncElement.style.color = "#2ecc71";
+                else if (syncRate >= 50) syncElement.style.color = "#f39c12";
+                else syncElement.style.color = "#c9a063";
+            }
+        }
+
+        // 标记条目为已查看
+        function markAsViewed(entryId) {
+            if (!viewedEntries[entryId]) {
+                viewedEntries[entryId] = true;
+                localStorage.setItem('combat_viewed_entries', JSON.stringify(viewedEntries));
+                // 更新同步率显示（保持当前分类不变）
+                const currentCategory = getCurrentCategory();
+                updateDashboard(currentCategory);
+                return true;
+            }
+            return false;
+        }
+
+        // 获取当前激活的分类
+        function getCurrentCategory() {
+            const activeItem = document.querySelector('.category-list-final li.active');
+            return activeItem ? activeItem.getAttribute('data-category') : 'basic';
+        }
+
+        // 渲染内容
         function renderContent(categoryKey) {
             const data = categoryContent[categoryKey];
             if (!data) return;
 
             let html = '';
             for (const entry of data.entries) {
+                const isViewed = viewedEntries[entry.id];
+                const viewedClass = isViewed ? ' viewed' : '';
                 const pointsHtml = entry.points.map(p => `<div class="data-point">${p}</div>`).join('');
                 const criticalClass = entry.tag === 'ELITE_BOSS' ? ' critical-card' : '';
                 
                 html += `
-                    <article class="log-entry-final${criticalClass}">
+                    <article class="log-entry-final${criticalClass}${viewedClass}" data-entry-id="${entry.id}">
                         <div class="log-header">
                             <span class="log-id">${entry.id}</span>
                             <span class="log-date">${entry.date}</span>
                             <span class="tag ${entry.tag === 'ELITE_BOSS' ? 'danger-tag' : ''}">${entry.tag}</span>
+                            ${isViewed ? '<span class="read-badge">✓ READ</span>' : ''}
                         </div>
                         <div class="log-body">
                             <h3>${entry.title}</h3>
                             <p>${entry.desc}</p>
                             <div class="mini-data-flex">${pointsHtml}</div>
                         </div>
-                        <a href="#" class="log-link" onclick="alert('Full guide coming soon'); return false;">VIEW DETAILS →</a>
+                        <a href="#" class="log-link" data-entry-id="${entry.id}">VIEW DETAILS →</a>
                     </article>
                 `;
             }
             html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${data.entries.length} ENTRIES ⟡</div>`;
             document.getElementById('dynamic-content').innerHTML = html;
+
+            // 绑定 VIEW DETAILS 点击事件
+            document.querySelectorAll('.log-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const entryId = this.getAttribute('data-entry-id');
+                    const article = this.closest('.log-entry-final');
+                    
+                    // 标记为已查看
+                    if (markAsViewed(entryId)) {
+                        // 更新UI显示已读标记
+                        const header = article.querySelector('.log-header');
+                        if (header && !header.querySelector('.read-badge')) {
+                            const badge = document.createElement('span');
+                            badge.className = 'read-badge';
+                            badge.innerHTML = '✓ READ';
+                            badge.style.cssText = 'margin-left:auto; font-size:10px; color:#2ecc71;';
+                            header.appendChild(badge);
+                        }
+                        article.classList.add('viewed');
+                    }
+                    
+                    alert(`Opening: ${entryId}\nFull guide content will be available soon.`);
+                });
+            });
+
+            // 更新仪表盘
+            updateDashboard(categoryKey);
         }
 
         // 绑定侧边栏点击事件
         document.querySelectorAll('.category-list-final li').forEach(item => {
             item.addEventListener('click', function() {
                 if (this.classList.contains('locked')) {
-                    alert('Higher clearance required.');
+                    alert('Higher clearance required. This section is classified.');
                     return;
                 }
                 document.querySelectorAll('.category-list-final li').forEach(li => li.classList.remove('active'));
                 this.classList.add('active');
                 const category = this.getAttribute('data-category');
-                if (category && categoryContent[category]) renderContent(category);
+                if (category && categoryContent[category]) {
+                    renderContent(category);
+                }
             });
         });
+
+        // 添加重置浏览记录的功能（在控制台可用）
+        window.resetCombatProgress = function() {
+            if (confirm('Reset all viewed progress? SYNC RATE will return to 0%.')) {
+                viewedEntries = {};
+                localStorage.removeItem('combat_viewed_entries');
+                const currentCategory = getCurrentCategory();
+                renderContent(currentCategory);
+                updateDashboard(currentCategory);
+                console.log('Progress reset successfully!');
+            }
+        };
+
+        // 控制台提示
+        console.log('Combat Terminal loaded. Type resetCombatProgress() to reset viewed progress.');
 
         // 初始化
         renderContent('basic');
