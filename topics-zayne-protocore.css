@@ -1,0 +1,621 @@
+/* ============================================
+   Zayne Protocore Build Guide - Styles
+   Player perspective, long-form content
+   ============================================ */
+
+:root {
+    --zayne-blue: #4a90d9;
+    --zayne-light: #7cb8e8;
+    --zayne-dark: #1a3a5c;
+    --zayne-ice: #a8e6ff;
+}
+
+/* 容器 */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* 头部 */
+.article-header {
+    padding: 180px 20px 120px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #05070c);
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.article-header p {
+    font-size: 1.2rem;
+    color: var(--zayne-light);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* 目录 */
+.toc {
+    background: #0a0e16;
+    border: 1px solid #2a2f3d;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.toc h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--zayne-light);
+}
+
+.toc ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    margin: 0;
+}
+
+.toc a {
+    color: #b0bedb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.toc a:hover {
+    color: var(--zayne-blue);
+}
+
+/* 章节标记 */
+.chapter-marker {
+    font-size: 0.75rem;
+    color: var(--zayne-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* 标题 */
+h2 {
+    font-size: 2rem;
+    color: var(--zayne-blue);
+    margin: 50px 0 25px 0;
+    border-left: 4px solid var(--zayne-blue);
+    padding-left: 20px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--zayne-light);
+    margin: 35px 0 15px 0;
+}
+
+h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 20px 0 10px 0;
+}
+
+p {
+    margin-bottom: 24px;
+    line-height: 1.8;
+    color: #d1d1d1;
+}
+
+/* 引用框 */
+.quote-box {
+    border-left: 4px solid var(--zayne-blue);
+    padding: 24px 30px;
+    margin: 40px 0;
+    background: linear-gradient(90deg, rgba(74, 144, 217, 0.08), transparent);
+    font-style: italic;
+    color: #e0e0e0;
+    border-radius: 0 16px 16px 0;
+}
+
+/* 分析卡片 */
+.analysis-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+/* 统计高亮 */
+.stat-highlight {
+    background: linear-gradient(135deg, var(--zayne-dark), #0a1620);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--zayne-blue);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #8a94a8;
+}
+
+/* 洞察列表 */
+.insight-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.insight-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.insight-false {
+    color: #ff5e6b;
+}
+
+/* 数据表格 */
+.data-table-wrapper {
+    margin: 30px 0;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f121b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.data-table th {
+    background: rgba(74, 144, 217, 0.15);
+    color: var(--zayne-light);
+    font-weight: 600;
+}
+
+.table-note {
+    font-size: 0.75rem;
+    color: #6a7080;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* 公式框 */
+.formula-box {
+    background: #0a0e16;
+    border: 1px solid var(--zayne-blue);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.formula-box code {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--zayne-light);
+}
+
+/* 构建卡片 */
+.build-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 20px;
+    margin: 35px 0;
+    overflow: hidden;
+}
+
+.build-header {
+    background: linear-gradient(135deg, rgba(74, 144, 217, 0.15), rgba(0,0,0,0.3));
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.build-icon {
+    font-size: 2rem;
+}
+
+.build-title {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #fff;
+}
+
+.build-subtitle {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    margin: 5px 0 0 0;
+}
+
+.build-recommend {
+    background: var(--zayne-blue);
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.build-recommend.solid {
+    background: #2a2f3d;
+    color: #fff;
+}
+
+.build-content {
+    padding: 25px;
+}
+
+.build-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: #0a0e16;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-name {
+    color: #8a94a8;
+    font-size: 0.75rem;
+}
+
+.build-protocores ul, .build-substats ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.build-protocores li, .build-substats li {
+    margin: 8px 0;
+    color: #d1d1d1;
+}
+
+.build-rotation {
+    background: #0a0e16;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* 警告框 */
+.warning-box {
+    background: rgba(255, 94, 107, 0.1);
+    border-left: 4px solid #ff5e6b;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-radius: 0 12px 12px 0;
+}
+
+/* 优先层级 */
+.substat-priority {
+    margin: 25px 0;
+}
+
+.priority-tier {
+    background: #0f121b;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.s-tier { border-left: 4px solid #ffd700; }
+.a-tier { border-left: 4px solid #c0c0c0; }
+.b-tier { border-left: 4px solid #cd7f32; }
+.f-tier { border-left: 4px solid #6a7080; }
+
+.tier-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.s-tier .tier-label { color: #ffd700; }
+.a-tier .tier-label { color: #c0c0c0; }
+.b-tier .tier-label { color: #cd7f32; }
+.f-tier .tier-label { color: #6a7080; }
+
+.tier-stats {
+    font-family: monospace;
+    margin-bottom: 6px;
+}
+
+.tier-reason {
+    font-size: 0.8rem;
+    color: #8a94a8;
+}
+
+/* 原型核心卡片 */
+.protocore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.protocore-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.protocore-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.protocore-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.protocore-main {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.protocore-alts {
+    font-size: 0.75rem;
+    color: #8a94a8;
+    margin-bottom: 10px;
+}
+
+.protocore-why {
+    font-size: 0.75rem;
+    color: var(--zayne-light);
+    border-top: 1px solid #2a2f3d;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+/* 队伍卡片 */
+.team-card {
+    background: #0f121b;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.team-name {
+    font-weight: bold;
+    color: var(--zayne-light);
+    margin-bottom: 8px;
+}
+
+.team-members {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    margin-bottom: 10px;
+}
+
+.team-desc {
+    font-size: 0.85rem;
+}
+
+/* 轮换指南 */
+.rotation-guide {
+    margin: 30px 0;
+}
+
+.rotation-step {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--zayne-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-desc {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    margin-top: 5px;
+}
+
+/* 提示框 */
+.tip-box {
+    background: rgba(74, 144, 217, 0.1);
+    border: 1px solid var(--zayne-blue);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 20px 0;
+}
+
+/* 错误列表 */
+.mistake-list {
+    margin: 25px 0;
+}
+
+.mistake-item {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.mistake-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.mistake-desc {
+    font-size: 0.85rem;
+    color: #8a94a8;
+}
+
+/* FAQ */
+.faq-list {
+    margin: 25px 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.faq-q {
+    font-weight: bold;
+    color: var(--zayne-light);
+    margin-bottom: 8px;
+}
+
+.faq-a {
+    font-size: 0.9rem;
+    color: #b0bedb;
+}
+
+/* 结论卡片 */
+.conclusion-card {
+    background: linear-gradient(135deg, #0f121b, #0a0e16);
+    border: 1px solid var(--zayne-blue);
+    border-radius: 20px;
+    padding: 35px;
+    margin: 40px 0;
+}
+
+.signature {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2f3d;
+    font-style: italic;
+    color: #8a94a8;
+}
+
+/* 构建选择按钮 */
+.build-choices {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.choice-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.choice-btn {
+    background: rgba(74, 144, 217, 0.15);
+    border: 1px solid var(--zayne-blue);
+    padding: 10px 24px;
+    border-radius: 40px;
+    color: var(--zayne-light);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.choice-btn:hover {
+    background: var(--zayne-blue);
+    color: #000;
+}
+
+/* 回到顶部 */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--zayne-blue), var(--zayne-dark));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .toc ul {
+        grid-template-columns: 1fr;
+    }
+    .protocore-grid {
+        grid-template-columns: 1fr;
+    }
+    .build-stats {
+        grid-template-columns: 1fr;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+}
