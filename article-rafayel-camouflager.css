@@ -1,0 +1,118 @@
+/* ========== RAFAYEL PAGE UNIQUE STYLES ========== */
+
+:root {
+    --rafayel-blue: #1a3a5c;
+    --rafayel-aqua: #2c7da0;
+    --rafayel-deep: #0b2545;
+    --rafayel-light: #61a5c2;
+}
+
+/* Header 覆盖 - 蓝紫色调 */
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('images/rafayel-cover.png');
+    background-size: cover;
+    background-position: center 30%;
+    border-bottom: 2px solid var(--rafayel-aqua);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: var(--rafayel-light);
+}
+
+/* 标题风格覆盖 */
+h2 {
+    color: var(--rafayel-aqua);
+    border-bottom: 1px solid #333;
+    border-left: none;
+    padding-left: 0;
+}
+
+h3 {
+    color: var(--rafayel-light);
+}
+
+/* 引用框 - 深海风格 */
+.quote-box {
+    border-left: 4px solid var(--rafayel-aqua);
+    background: linear-gradient(90deg, #0a1620, transparent);
+}
+
+/* 分析卡片 */
+.analysis-card {
+    border-top: 4px solid var(--rafayel-aqua);
+}
+
+/* 章节标记 */
+.chapter-marker {
+    font-size: 0.85rem;
+    color: var(--rafayel-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* 深海记忆特殊样式 */
+.memory-block {
+    background: linear-gradient(135deg, #0a1620, #050a10);
+    border: 1px solid var(--rafayel-blue);
+    border-radius: 16px;
+    padding: 35px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-block::before {
+    content: "🌊";
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 4rem;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.memory-title {
+    font-size: 1.3rem;
+    color: var(--rafayel-light);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* 时间线标记 */
+.timeline-note {
+    background: #0a0a0a;
+    border-left: 3px solid var(--rafayel-aqua);
+    padding: 20px 25px;
+    margin: 30px 0;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+}
+
+/* 图片占位符内图片样式 */
+.image-placeholder img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    .memory-block {
+        padding: 25px;
+    }
+    .image-placeholder img {
+        max-width: 100%;
+    }
+}
