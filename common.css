@@ -274,7 +274,6 @@ footer p:last-child {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('images/sylus-emotion.png');
     background-size: cover;
     background-position: center 30%;
     z-index: -1;
