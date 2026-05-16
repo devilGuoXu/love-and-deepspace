@@ -10,14 +10,12 @@
     --zayne-ice: #a8e6ff;
 }
 
-/* 容器 */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 24px 80px;
 }
 
-/* 头部 */
 .article-header {
     padding: 180px 20px 120px;
     text-align: center;
@@ -53,7 +51,6 @@
     z-index: 1;
 }
 
-/* 目录 */
 .toc {
     background: #0a0e16;
     border: 1px solid #2a2f3d;
@@ -91,7 +88,6 @@
     color: var(--zayne-blue);
 }
 
-/* 章节标记 */
 .chapter-marker {
     font-size: 0.75rem;
     color: var(--zayne-light);
@@ -100,7 +96,6 @@
     margin-bottom: 15px;
 }
 
-/* 标题 */
 h2 {
     font-size: 2rem;
     color: var(--zayne-blue);
@@ -127,7 +122,6 @@ p {
     color: #d1d1d1;
 }
 
-/* 引用框 */
 .quote-box {
     border-left: 4px solid var(--zayne-blue);
     padding: 24px 30px;
@@ -138,7 +132,6 @@ p {
     border-radius: 0 16px 16px 0;
 }
 
-/* 分析卡片 */
 .analysis-card {
     background: #0f121b;
     border: 1px solid #2a2f3d;
@@ -147,7 +140,6 @@ p {
     margin: 30px 0;
 }
 
-/* 统计高亮 */
 .stat-highlight {
     background: linear-gradient(135deg, var(--zayne-dark), #0a1620);
     border-radius: 20px;
@@ -168,7 +160,6 @@ p {
     color: #8a94a8;
 }
 
-/* 洞察列表 */
 .insight-list {
     list-style: none;
     padding: 0;
@@ -184,7 +175,6 @@ p {
     color: #ff5e6b;
 }
 
-/* 数据表格 */
 .data-table-wrapper {
     margin: 30px 0;
     overflow-x: auto;
@@ -217,7 +207,6 @@ p {
     text-align: right;
 }
 
-/* 公式框 */
 .formula-box {
     background: #0a0e16;
     border: 1px solid var(--zayne-blue);
@@ -233,7 +222,6 @@ p {
     color: var(--zayne-light);
 }
 
-/* 构建卡片 */
 .build-card {
     background: #0f121b;
     border: 1px solid #2a2f3d;
@@ -319,7 +307,6 @@ p {
     margin-top: 20px;
 }
 
-/* 警告框 */
 .warning-box {
     background: rgba(255, 94, 107, 0.1);
     border-left: 4px solid #ff5e6b;
@@ -328,7 +315,6 @@ p {
     border-radius: 0 12px 12px 0;
 }
 
-/* 优先层级 */
 .substat-priority {
     margin: 25px 0;
 }
@@ -365,7 +351,6 @@ p {
     color: #8a94a8;
 }
 
-/* 原型核心卡片 */
 .protocore-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -409,7 +394,6 @@ p {
     margin-top: 10px;
 }
 
-/* 队伍卡片 */
 .team-card {
     background: #0f121b;
     border-radius: 16px;
@@ -433,7 +417,6 @@ p {
     font-size: 0.85rem;
 }
 
-/* 轮换指南 */
 .rotation-guide {
     margin: 30px 0;
 }
@@ -468,7 +451,6 @@ p {
     margin-top: 5px;
 }
 
-/* 提示框 */
 .tip-box {
     background: rgba(74, 144, 217, 0.1);
     border: 1px solid var(--zayne-blue);
@@ -477,7 +459,6 @@ p {
     margin: 20px 0;
 }
 
-/* 错误列表 */
 .mistake-list {
     margin: 25px 0;
 }
@@ -519,7 +500,6 @@ p {
     color: #b0bedb;
 }
 
-/* 结论卡片 */
 .conclusion-card {
     background: linear-gradient(135deg, #0f121b, #0a0e16);
     border: 1px solid var(--zayne-blue);
@@ -536,7 +516,6 @@ p {
     color: #8a94a8;
 }
 
-/* 构建选择按钮 */
 .build-choices {
     text-align: center;
     margin: 40px 0;
@@ -565,7 +544,6 @@ p {
     color: #000;
 }
 
-/* 响应式 */
 @media (max-width: 768px) {
     .article-header h1 {
         font-size: 2rem;
