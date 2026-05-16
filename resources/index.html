@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESOURCE PLANNING | Deepspace Hunter Database</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.webp">
-    <!-- 引用根目录全局样式 -->
+    <title>RESOURCE PLANNING | Deepspace Hunter</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.webp">
     <link rel="stylesheet" href="../style.css">
-    <!-- 引用资源页专用样式 -->
     <link rel="stylesheet" href="resource-style.css">
 </head>
-<body class="resource-page">
-
-    <!-- 统一头部导航 -->
+<body>
+    <!-- 导航栏 - 与主页完全一致 -->
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
@@ -20,101 +17,500 @@
                 <li><a href="../">Home</a></li>
                 <li><a href="../operatives/">Operative Files</a></li>
                 <li><a href="../combats/">Combat Guides</a></li>
-                <li><a href="./" class="nav-active">Resource Planning</a></li>
+                <li><a href="./" style="color:var(--accent);">Resource Planning</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 亮点 1：实时物资滚动看板（未来可通过JS动态同步） -->
-    <div class="inventory-ticker">
-        <div class="ticker-wrap">
-            <div class="ticker-item"><span class="item-icon">🪙</span> GOLD: <span class="num">1,245,000</span></div>
-            <div class="ticker-item"><span class="item-icon">💎</span> crystals: <span class="num">3,400</span></div>
-            <div class="ticker-item"><span class="item-icon">🧪</span> PROTO-EXP: <span class="num">45,200</span></div>
-            <div class="ticker-item"><span class="item-icon">⚡</span> STAMINA: <span class="num">140/140</span></div>
+    <div class="resource-page">
+        <!-- 顶部汇总卡片 - 4个关键指标 -->
+        <div class="stats-summary">
+            <div class="stat-summary-card">
+                <div class="stat-icon">💎</div>
+                <div class="stat-label">TOTAL DIAMONDS</div>
+                <div class="stat-value" id="totalDiamonds">0</div>
+                <div class="stat-sub">≈ <span id="totalPulls">0</span> pulls</div>
+            </div>
+            <div class="stat-summary-card">
+                <div class="stat-icon">🎫</div>
+                <div class="stat-label">TOTAL WISHES</div>
+                <div class="stat-value" id="totalWishes">0</div>
+                <div class="stat-sub">+ <span id="wishPulls">0</span> from diamonds</div>
+            </div>
+            <div class="stat-summary-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-label">STAMINA TODAY</div>
+                <div class="stat-value" id="currentStamina">0</div>
+                <div class="stat-sub">/ 240 base + snack</div>
+            </div>
+            <div class="stat-summary-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-label">PITY READINESS</div>
+                <div class="stat-value" id="pityReadiness">0%</div>
+                <div class="stat-sub" id="pityStatus">need 0 more</div>
+            </div>
+        </div>
+
+        <!-- 双列主布局 -->
+        <div class="resource-two-col">
+            <!-- 左侧：资源管理 -->
+            <div class="info-card">
+                <div class="card-title">
+                    <span>💰 RESOURCE STOCK</span>
+                    <button class="btn-outline" id="resetBtn">Reset All</button>
+                </div>
+                <div class="card-body">
+                    <div class="resource-table">
+                        <div class="resource-item">
+                            <span class="resource-name">💎 Diamonds</span>
+                            <div class="resource-control">
+                                <input type="number" id="diamonds" class="resource-input" value="12450" step="100">
+                                <button class="quick-btn" data-field="diamonds" data-value="15000">15k</button>
+                                <button class="quick-btn" data-field="diamonds" data-value="25920">Hard</button>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">🎫 Empyrean Wishes</span>
+                            <div class="resource-control">
+                                <input type="number" id="wishes" class="resource-input" value="15" step="1">
+                                <button class="quick-btn" data-field="wishes" data-value="10">+10</button>
+                                <button class="quick-btn" data-field="wishes" data-value="70">70</button>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">🪙 Gold (Million)</span>
+                            <div class="resource-control">
+                                <input type="number" id="gold" class="resource-input" value="3.2" step="0.1">
+                                <button class="quick-btn" data-field="gold" data-value="5">5M</button>
+                                <button class="quick-btn" data-field="gold" data-value="10">10M</button>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">⚡ Stamina</span>
+                            <div class="resource-control">
+                                <input type="number" id="stamina" class="resource-input" value="240" step="10">
+                                <button class="quick-btn" data-field="stamina" data-value="240">240</button>
+                                <button class="quick-btn" data-field="stamina" data-value="300">300</button>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">📘 Purple EXP Bottle</span>
+                            <input type="number" id="expBottles" class="resource-input" value="245" style="margin-left: auto;">
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">🔮 Protocore Dust</span>
+                            <input type="number" id="protocoreDust" class="resource-input" value="1800" style="margin-left: auto;">
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="saveBtn">💾 SAVE DATA</button>
+                </div>
+            </div>
+
+            <!-- 右侧：抽卡规划 -->
+            <div class="info-card">
+                <div class="card-title">
+                    <span>🎲 PITY & PULL PLANNER</span>
+                    <button class="btn-outline" id="simulateBtn">10 Pulls</button>
+                </div>
+                <div class="card-body">
+                    <div class="resource-item">
+                        <span>🎯 Current Pity</span>
+                        <input type="range" id="pitySlider" min="0" max="70" value="25" style="width: 150px;">
+                        <span id="pityValue" style="color:#c9a063; min-width: 40px;">25</span>
+                    </div>
+                    <div class="resource-item">
+                        <span>✅ Guarantee Status</span>
+                        <select id="guaranteeSelect" style="background:#1a1f2a; border:1px solid #2a2f3d; border-radius:8px; padding:6px 12px; color:#fff;">
+                            <option value="no">50/50 Active</option>
+                            <option value="yes">Guaranteed ✅</option>
+                        </select>
+                    </div>
+                    <div class="pull-planner">
+                        <div class="pull-stat">
+                            <span>📊 Total pulls available</span>
+                            <span id="availablePulls" style="color:#c9a063; font-weight:700;">0</span>
+                        </div>
+                        <div class="pull-stat">
+                            <span>🎯 Expected pulls to 5★</span>
+                            <span id="expectedPulls" style="color:#c9a063;">0</span>
+                        </div>
+                        <div class="pull-stat">
+                            <span>💎 Diamond cost if pulling now</span>
+                            <span id="expectedCost" style="color:#c9a063;">0</span>
+                        </div>
+                        <div class="pull-progress">
+                            <div class="progress-bar"><div class="progress-fill" id="pityProgressFill" style="width:0%"></div></div>
+                        </div>
+                        <div id="pullAdvice" style="font-size:0.75rem; color:#8a94a8; text-align:center; margin-top:12px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二行：养成规划 -->
+        <div class="resource-two-col">
+            <!-- 左侧：角色养成规划 -->
+            <div class="info-card">
+                <div class="card-title">
+                    <span>⚔️ CHARACTER ASCENSION PLANNER</span>
+                    <span style="font-size:0.7rem;">target Lv.80</span>
+                </div>
+                <div class="card-body">
+                    <div class="role-selector" id="roleSelector">
+                        <button class="role-btn active" data-role="sylus">🌑 Sylus</button>
+                        <button class="role-btn" data-role="xavier">✨ Xavier</button>
+                        <button class="role-btn" data-role="zayne">❄️ Zayne</button>
+                        <button class="role-btn" data-role="rafayel">🔥 Rafayel</button>
+                    </div>
+                    
+                    <!-- 当前角色等级 -->
+                    <div class="resource-item">
+                        <span>📊 Current Level</span>
+                        <input type="range" id="currentLevel" min="1" max="80" value="40" style="width: 200px;">
+                        <span id="currentLevelValue" style="color:#c9a063; min-width: 40px;">40</span>
+                    </div>
+
+                    <!-- 养成需求 -->
+                    <div class="requirements">
+                        <div class="req-row">
+                            <span class="req-label">📘 EXP Bottles needed</span>
+                            <span class="req-value total" id="expNeed">0</span>
+                        </div>
+                        <div class="req-row">
+                            <span class="req-label">🪙 Gold needed</span>
+                            <span class="req-value total" id="goldNeed">0</span>
+                        </div>
+                        <div class="req-row">
+                            <span class="req-label">⚡ Stamina cost</span>
+                            <span class="req-value total" id="staminaCost">0</span>
+                        </div>
+                        <div class="req-row">
+                            <span class="req-label">📘 You have</span>
+                            <span class="req-value have" id="haveExp">0</span>
+                        </div>
+                        <div class="req-row">
+                            <span class="req-label">🪙 You have (M)</span>
+                            <span class="req-value have" id="haveGold">0</span>
+                        </div>
+                        <div class="gap-warning" id="resourceGap"></div>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill-custom" id="levelProgressFill" style="width:0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：效率工具 + 快速建议 -->
+            <div class="info-card">
+                <div class="card-title">
+                    <span>⚡ EFFICIENCY & TIPS</span>
+                    <span class="btn-outline" id="refreshTipsBtn" style="padding:2px 10px;">⟳</span>
+                </div>
+                <div class="card-body">
+                    <div class="resource-table">
+                        <div class="resource-item">
+                            <span>📅 Weekly free stamina</span>
+                            <span style="color:#c9a063;">1,680</span>
+                        </div>
+                        <div class="resource-item">
+                            <span>🏆 Daily recommended grind</span>
+                            <span style="color:#c9a063;">Bounty → Core → Story</span>
+                        </div>
+                        <div class="resource-item">
+                            <span>📈 Best value farm</span>
+                            <span style="color:#c9a063;">Bounty Hunt (Gold/EXP)</span>
+                        </div>
+                        <div class="resource-item">
+                            <span>💎 F2P monthly income</span>
+                            <span style="color:#c9a063;">~7,200 diamonds</span>
+                        </div>
+                    </div>
+                    <div class="pull-planner" style="margin-top:16px;">
+                        <div style="font-size:0.75rem; color:#c9a063; margin-bottom:8px;">💡 QUICK TIPS</div>
+                        <div id="tipsList" style="font-size:0.7rem; color:#8a94a8; line-height:1.6;">
+                            • Use stamina snacks before daily reset<br>
+                            • Save diamonds for limited banners<br>
+                            • Soft pity starts at 70 pulls
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <main class="container resource-container">
-        
-        <!-- 核心双栏整备布局 -->
-        <div class="planner-grid">
-            
-            <!-- 左栏：目标设定区（易于扩展新角色/新等级） -->
-            <section class="planner-box config-panel">
-                <div class="panel-title"><span>▼</span> TARGET SPECIFICATION</div>
-                
-                <div class="input-group">
-                    <label>SELECT OPERATIVE</label>
-                    <select class="cyber-input">
-                        <option>SYLUS [Relentless]</option>
-                        <option>ZAYNE [Master of Fate]</option>
-                        <option>XAVIER [Lumiere]</option>
-                        <!-- 后期推出新角色，直接在这里源源不断追加 <option> 即可 -->
-                    </select>
-                </div>
-
-                <div class="range-group">
-                    <div class="input-group">
-                        <label>CURRENT LEVEL</label>
-                        <input type="number" class="cyber-input" value="1" min="1" max="80">
-                    </div>
-                    <div class="input-arrow">➔</div>
-                    <div class="input-group">
-                        <label>TARGET LEVEL</label>
-                        <input type="number" class="cyber-input" value="80" min="1" max="80">
-                    </div>
-                </div>
-
-                <button class="exec-btn">EXECUTE INVENTORY CHECK</button>
-            </section>
-
-            <!-- 右栏：缺口计算结果与行动方针（亮点所在，高阶视觉反馈） -->
-            <section class="planner-box result-panel">
-                <div class="panel-title"><span>▼</span> MATERIAL DEFICIT LOG</div>
-                
-                <div class="deficit-list">
-                    <!-- 条目 1：金币缺口 -->
-                    <div class="deficit-item alert-active">
-                        <div class="item-meta">
-                            <span class="mat-name">Gold / 🪙</span>
-                            <span class="status-tag tag-insufficient">DEFICIT</span>
-                        </div>
-                        <div class="progress-wrapper">
-                            <div class="progress-text">Owned: 1.2M / Required: 2.0M</div>
-                            <div class="progress-bar"><div class="fill" style="width: 60%;"></div></div>
-                        </div>
-                        <div class="action-zone">
-                            <span class="deficit-num">-800,000</span>
-                            <a href="#" class="deploy-link">DEPLOY ➔</a>
-                        </div>
-                    </div>
-
-                    <!-- 条目 2：经验药水缺口 -->
-                    <div class="deficit-item">
-                        <div class="item-meta">
-                            <span class="mat-name">Protocore EXP Matrix / 🧪</span>
-                            <span class="status-tag tag-sufficient">READY</span>
-                        </div>
-                        <div class="progress-wrapper">
-                            <div class="progress-text">Owned: 45K / Required: 30K</div>
-                            <div class="progress-bar"><div class="fill sufficient" style="width: 100%;"></div></div>
-                        </div>
-                        <div class="action-zone">
-                            <span class="deficit-num cleared">CLEARED</span>
-                        </div>
-                    </div>
-
-                    <!-- 更多材料条目（如突破石、芯核升级道具）以后可以源源不断加在这里 -->
-                </div>
-            </section>
-
+    <footer class="resource-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
         </div>
-    </main>
-
-    <footer class="main-footer">
-        <p class="copyright">LOGISTICS OS V9.1 // INVENTORY SYNCHRONIZED</p>
+        <p>© 2026 Deepspace Hunter Station — Resource Planning Tool</p>
     </footer>
 
+    <script>
+        // ============ 常量 ============
+        const COST_EXP = 485;      // 1-80级需要485个紫色经验瓶
+        const COST_GOLD = 1280000; // 1-80级需要128万金币
+        
+        // 角色当前等级
+        let charLevels = {
+            sylus: 80,
+            xavier: 60,
+            zayne: 40,
+            rafayel: 20
+        };
+        let currentRole = 'sylus';
+        
+        // 计算所需资源
+        function getNeededExp(level) {
+            return Math.floor(COST_EXP * ((level - 1) / 79));
+        }
+        function getNeededGold(level) {
+            return Math.floor(COST_GOLD * ((level - 1) / 79));
+        }
+        
+        // 获取所有DOM元素的值
+        function getResources() {
+            return {
+                diamonds: parseFloat(document.getElementById('diamonds').value) || 0,
+                wishes: parseFloat(document.getElementById('wishes').value) || 0,
+                gold: parseFloat(document.getElementById('gold').value) || 0,
+                stamina: parseFloat(document.getElementById('stamina').value) || 0,
+                expBottles: parseFloat(document.getElementById('expBottles').value) || 0,
+                protocoreDust: parseFloat(document.getElementById('protocoreDust').value) || 0,
+                pity: parseInt(document.getElementById('pitySlider').value) || 0,
+                guarantee: document.getElementById('guaranteeSelect').value === 'yes'
+            };
+        }
+        
+        // 更新所有UI
+        function updateAll() {
+            updateTopStats();
+            updatePityPlanner();
+            updateAscensionPlanner();
+        }
+        
+        // 更新顶部汇总
+        function updateTopStats() {
+            const r = getResources();
+            const totalPullsRaw = Math.floor(r.diamonds / 150) + r.wishes;
+            const pity = r.pity;
+            const guarantee = r.guarantee;
+            const neededForPity = Math.max(0, (70 - pity) + (guarantee ? 0 : 35));
+            const readiness = Math.min(100, Math.floor((totalPullsRaw / neededForPity) * 100)) || 0;
+            
+            document.getElementById('totalDiamonds').innerText = Math.floor(r.diamonds).toLocaleString();
+            document.getElementById('totalWishes').innerText = r.wishes;
+            document.getElementById('totalPulls').innerText = Math.floor(r.diamonds / 150);
+            document.getElementById('wishPulls').innerText = totalPullsRaw;
+            document.getElementById('currentStamina').innerText = r.stamina;
+            document.getElementById('pityReadiness').innerText = readiness + '%';
+            document.getElementById('pityStatus').innerHTML = `need ${Math.max(0, neededForPity - totalPullsRaw)} more`;
+        }
+        
+        // 更新抽卡规划器
+        function updatePityPlanner() {
+            const r = getResources();
+            const totalPulls = Math.floor(r.diamonds / 150) + r.wishes;
+            const pity = r.pity;
+            const guarantee = r.guarantee;
+            const remainingToSoft = Math.max(0, 70 - pity);
+            const expectedPulls = remainingToSoft + (guarantee ? 0 : 35);
+            const expectedCost = expectedPulls * 150;
+            
+            document.getElementById('availablePulls').innerText = totalPulls;
+            document.getElementById('expectedPulls').innerText = expectedPulls;
+            document.getElementById('expectedCost').innerText = expectedCost.toLocaleString();
+            document.getElementById('pityProgressFill').style.width = (pity / 70 * 100) + '%';
+            document.getElementById('pityValue').innerText = pity;
+            
+            let advice = '';
+            if (totalPulls >= expectedPulls) {
+                advice = '✅ You have enough resources for guaranteed rate-up!';
+            } else if (totalPulls >= expectedPulls - 20) {
+                advice = '⚠️ Close to pity! Consider saving a bit more.';
+            } else if (pity > 60) {
+                advice = '🎯 High pity! Do single pulls to save wishes.';
+            } else {
+                advice = '📊 Keep saving. Focus on daily commissions.';
+            }
+            document.getElementById('pullAdvice').innerHTML = advice;
+        }
+        
+        // 更新养成规划器
+        function updateAscensionPlanner() {
+            const r = getResources();
+            const currentLvl = parseInt(document.getElementById('currentLevel').value) || 1;
+            document.getElementById('currentLevelValue').innerText = currentLvl;
+            
+            const expNeeded = getNeededExp(currentLvl);
+            const goldNeeded = getNeededGold(currentLvl);
+            const staminaNeeded = expNeeded * 6 + Math.floor(goldNeeded / 200);
+            
+            document.getElementById('expNeed').innerText = expNeeded;
+            document.getElementById('goldNeed').innerText = goldNeeded.toLocaleString();
+            document.getElementById('staminaCost').innerText = staminaNeeded;
+            document.getElementById('haveExp').innerText = r.expBottles;
+            document.getElementById('haveGold').innerText = r.gold;
+            
+            // 计算缺口
+            const expGap = Math.max(0, expNeeded - r.expBottles);
+            const goldGap = Math.max(0, goldNeeded - r.gold * 1000000);
+            
+            let gapMsg = '';
+            if (expGap > 0 || goldGap > 0) {
+                gapMsg = `⚠️ Shortage: ${expGap > 0 ? expGap + ' EXP bottles' : ''}${expGap > 0 && goldGap > 0 ? ' + ' : ''}${goldGap > 0 ? Math.ceil(goldGap / 1000000) + 'M gold' : ''}`;
+            } else {
+                gapMsg = '✅ You have enough resources to reach Lv.' + currentLvl;
+            }
+            document.getElementById('resourceGap').innerHTML = gapMsg;
+            
+            // 进度条
+            const progress = (currentLvl / 80) * 100;
+            document.getElementById('levelProgressFill').style.width = progress + '%';
+            
+            // 更新角色选择器的高亮
+            document.querySelectorAll('.role-btn').forEach(btn => {
+                if (btn.dataset.role === currentRole) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+        
+        // 保存数据到localStorage
+        function saveData() {
+            const data = {
+                diamonds: document.getElementById('diamonds').value,
+                wishes: document.getElementById('wishes').value,
+                gold: document.getElementById('gold').value,
+                stamina: document.getElementById('stamina').value,
+                expBottles: document.getElementById('expBottles').value,
+                protocoreDust: document.getElementById('protocoreDust').value,
+                charLevels: charLevels,
+                pity: document.getElementById('pitySlider').value,
+                guarantee: document.getElementById('guaranteeSelect').value
+            };
+            localStorage.setItem('rp_saved_data', JSON.stringify(data));
+            alert('Data saved!');
+        }
+        
+        // 加载数据
+        function loadData() {
+            const saved = localStorage.getItem('rp_saved_data');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.diamonds) document.getElementById('diamonds').value = data.diamonds;
+                if (data.wishes) document.getElementById('wishes').value = data.wishes;
+                if (data.gold) document.getElementById('gold').value = data.gold;
+                if (data.stamina) document.getElementById('stamina').value = data.stamina;
+                if (data.expBottles) document.getElementById('expBottles').value = data.expBottles;
+                if (data.protocoreDust) document.getElementById('protocoreDust').value = data.protocoreDust;
+                if (data.charLevels) charLevels = data.charLevels;
+                if (data.pity) document.getElementById('pitySlider').value = data.pity;
+                if (data.guarantee) document.getElementById('guaranteeSelect').value = data.guarantee;
+            }
+            updateAll();
+        }
+        
+        // 重置所有资源
+        function resetAll() {
+            document.getElementById('diamonds').value = '0';
+            document.getElementById('wishes').value = '0';
+            document.getElementById('gold').value = '0';
+            document.getElementById('stamina').value = '240';
+            document.getElementById('expBottles').value = '0';
+            document.getElementById('protocoreDust').value = '0';
+            document.getElementById('pitySlider').value = '0';
+            document.getElementById('guaranteeSelect').value = 'no';
+            updateAll();
+        }
+        
+        // 模拟抽卡
+        function simulatePull() {
+            let r = getResources();
+            let pity = r.pity;
+            let isGuaranteed = r.guarantee;
+            let is5Star = pity >= 70 || Math.random() < 0.006;
+            
+            if (is5Star) {
+                let isRateUp = isGuaranteed || Math.random() < 0.5;
+                if (isRateUp) {
+                    alert('🔥 5★ RATE-UP! You got the banner character!');
+                    document.getElementById('guaranteeSelect').value = 'no';
+                } else {
+                    alert('😢 5★ (lost 50/50). Next is guaranteed!');
+                    document.getElementById('guaranteeSelect').value = 'yes';
+                }
+                document.getElementById('pitySlider').value = 0;
+            } else {
+                document.getElementById('pitySlider').value = pity + 1;
+                alert('❄️ 3★ / 4★. Pity increased to ' + (pity + 1));
+            }
+            updateAll();
+        }
+        
+        // 切换角色
+        function switchRole(role) {
+            currentRole = role;
+            const currentLvl = charLevels[role] || 1;
+            document.getElementById('currentLevel').value = currentLvl;
+            document.getElementById('currentLevelValue').innerText = currentLvl;
+            updateAscensionPlanner();
+        }
+        
+        // 保存当前等级到角色
+        function saveCurrentLevel() {
+            const currentLvl = parseInt(document.getElementById('currentLevel').value);
+            charLevels[currentRole] = currentLvl;
+            localStorage.setItem('rp_saved_data', JSON.stringify({
+                ...getResources(),
+                charLevels: charLevels,
+                pity: document.getElementById('pitySlider').value,
+                guarantee: document.getElementById('guaranteeSelect').value
+            }));
+            updateAscensionPlanner();
+        }
+        
+        // 事件绑定
+        document.getElementById('saveBtn').addEventListener('click', saveData);
+        document.getElementById('resetBtn').addEventListener('click', resetAll);
+        document.getElementById('simulateBtn').addEventListener('click', simulatePull);
+        document.getElementById('refreshTipsBtn').addEventListener('click', updateAll);
+        document.getElementById('pitySlider').addEventListener('input', updateAll);
+        document.getElementById('guaranteeSelect').addEventListener('change', updateAll);
+        document.getElementById('currentLevel').addEventListener('input', updateAscensionPlanner);
+        document.getElementById('currentLevel').addEventListener('change', saveCurrentLevel);
+        
+        // 资源输入监听
+        ['diamonds', 'wishes', 'gold', 'stamina', 'expBottles', 'protocoreDust'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updateAll);
+        });
+        
+        // 快捷按钮
+        document.querySelectorAll('.quick-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const field = btn.dataset.field;
+                const value = btn.dataset.value;
+                if (field && value) {
+                    document.getElementById(field).value = value;
+                    updateAll();
+                }
+            });
+        });
+        
+        // 角色切换
+        document.querySelectorAll('.role-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const role = btn.dataset.role;
+                if (role) switchRole(role);
+            });
+        });
+        
+        // 初始化
+        loadData();
+    </script>
 </body>
 </html>
