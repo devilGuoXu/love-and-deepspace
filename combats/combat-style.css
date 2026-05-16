@@ -1,16 +1,13 @@
 /* =========================================
    COMBAT TERMINAL STYLING - 修复版
-   所有类名与 HTML 完全匹配
+   不覆盖导航栏样式，只添加页面内容样式
    ========================================= */
 
 .combat-page {
-    --accent-gold: #c9a063;
-    --danger-red: #ff4d4d;
-    --bg-deep: #05070a;
     background-color: #05070a;
 }
 
-/* 暗角效果 - 不遮挡导航栏 */
+/* 暗角效果 - 放在最底层，不遮挡导航栏 */
 .combat-vignette {
     position: fixed;
     inset: 0;
@@ -77,7 +74,7 @@
 
 .category-list-final li .code {
     color: #c9a063;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     font-weight: 600;
     font-size: 13px;
 }
@@ -92,7 +89,6 @@
 .category-list-final li.locked {
     opacity: 0.4;
     cursor: not-allowed;
-    filter: grayscale(0.2);
 }
 
 /* ========= 右侧内容流 ========= */
@@ -169,7 +165,7 @@
     gap: 16px;
     align-items: center;
     margin-bottom: 16px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     font-size: 12px;
 }
 
@@ -188,7 +184,6 @@
     border-radius: 40px;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .tag.danger-tag {
@@ -234,7 +229,6 @@
     text-decoration: none;
     color: #8a94a8;
     border-bottom: 1px solid #8a94a8;
-    letter-spacing: 0.5px;
     transition: 0.2s;
 }
 
