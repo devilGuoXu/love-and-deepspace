@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="combat-style.css">
 </head>
 <body class="combat-page">
-    <!-- 暗角特效 -->
     <div class="combat-vignette"></div>
 
-    <!-- 导航栏 - 完全使用主页样式，不加任何覆盖 -->
     <header class="main-header">
         <nav class="nav-container">
             <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
@@ -25,9 +23,7 @@
         </nav>
     </header>
 
-    <!-- 主内容区域 -->
     <main class="combat-layout-fixed">
-        <!-- 左侧边栏 -->
         <aside class="tactical-sidebar-final">
             <div class="sidebar-label">⟡ DATABASE INDEX ⟡</div>
             <ul class="category-list-final">
@@ -49,9 +45,7 @@
             </ul>
         </aside>
 
-        <!-- 右侧内容区 -->
         <section class="content-stream-final">
-            <!-- 状态仪表盘 -->
             <div class="status-dashboard-final">
                 <div class="dash-item">
                     <label>SYNC RATE</label>
@@ -67,17 +61,14 @@
                 </div>
             </div>
 
-            <!-- 动态内容容器 -->
             <div id="dynamic-content"></div>
         </section>
     </main>
 
-    <!-- 回到顶部按钮 -->
     <button id="backToTopBtn" class="back-to-top" title="Back to Top">
         <span class="arrow-up">↑</span>
     </button>
 
-    <!-- 页脚 - 使用主页样式 -->
     <footer class="main-footer">
         <div class="footer-links">
             <a href="../legal/about.html">About Us</a>
@@ -90,7 +81,6 @@
     </footer>
 
     <script>
-        // ============ 侧边栏内容数据 ============
         const categoryContent = {
             basic: {
                 title: "Basic Protocols",
@@ -209,33 +199,26 @@
             }
         };
 
-        // 计算总条目数
         const totalEntries = Object.values(categoryContent).reduce((sum, cat) => sum + cat.entries.length, 0);
         
-        // 更新 ACTIVE LOGS 显示
         document.getElementById('activeLogsValue').innerText = totalEntries;
 
-        // 用户浏览记录 - 用于计算 SYNC RATE
         let viewedEntries = JSON.parse(localStorage.getItem('combat_viewed_entries')) || {};
 
-        // 更新仪表盘数据
         function updateDashboard(categoryKey) {
             const category = categoryContent[categoryKey];
             if (!category) return;
 
-            // 1. 更新 THREAT LEVEL（根据当前分类）
             const threatElement = document.getElementById('threatLevelValue');
             if (threatElement) {
                 threatElement.innerText = category.threatLevel;
                 threatElement.style.color = category.threatColor;
-                // 移除之前的 warning class，重新添加样式
                 threatElement.classList.remove('warning');
                 if (category.threatLevel === 'CRITICAL' || category.threatLevel === 'EXTREME') {
                     threatElement.classList.add('warning');
                 }
             }
 
-            // 2. 更新 SYNC RATE（根据已查看内容比例）
             const viewedCount = Object.keys(viewedEntries).length;
             const syncRate = Math.min(100, Math.floor((viewedCount / totalEntries) * 100));
             const syncElement = document.getElementById('syncRateValue');
@@ -247,12 +230,10 @@
             }
         }
 
-        // 标记条目为已查看
         function markAsViewed(entryId) {
             if (!viewedEntries[entryId]) {
                 viewedEntries[entryId] = true;
                 localStorage.setItem('combat_viewed_entries', JSON.stringify(viewedEntries));
-                // 更新同步率显示（保持当前分类不变）
                 const currentCategory = getCurrentCategory();
                 updateDashboard(currentCategory);
                 return true;
@@ -260,13 +241,11 @@
             return false;
         }
 
-        // 获取当前激活的分类
         function getCurrentCategory() {
             const activeItem = document.querySelector('.category-list-final li.active');
             return activeItem ? activeItem.getAttribute('data-category') : 'basic';
         }
 
-        // 渲染内容
         function renderContent(categoryKey) {
             const data = categoryContent[categoryKey];
             if (!data) return;
@@ -298,16 +277,13 @@
             html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${data.entries.length} ENTRIES ⟡</div>`;
             document.getElementById('dynamic-content').innerHTML = html;
 
-            // 绑定 VIEW DETAILS 点击事件
             document.querySelectorAll('.log-link').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const entryId = this.getAttribute('data-entry-id');
                     const article = this.closest('.log-entry-final');
                     
-                    // 标记为已查看
                     if (markAsViewed(entryId)) {
-                        // 更新UI显示已读标记
                         const header = article.querySelector('.log-header');
                         if (header && !header.querySelector('.read-badge')) {
                             const badge = document.createElement('span');
@@ -323,11 +299,9 @@
                 });
             });
 
-            // 更新仪表盘
             updateDashboard(categoryKey);
         }
 
-        // 绑定侧边栏点击事件
         document.querySelectorAll('.category-list-final li').forEach(item => {
             item.addEventListener('click', function() {
                 if (this.classList.contains('locked')) {
@@ -343,7 +317,6 @@
             });
         });
 
-        // 添加重置浏览记录的功能（在控制台可用）
         window.resetCombatProgress = function() {
             if (confirm('Reset all viewed progress? SYNC RATE will return to 0%.')) {
                 viewedEntries = {};
@@ -355,16 +328,12 @@
             }
         };
 
-        // 控制台提示
         console.log('Combat Terminal loaded. Type resetCombatProgress() to reset viewed progress.');
 
-        // 初始化
         renderContent('basic');
 
-    // ============ 回到顶部功能 ============
     const backToTopBtn = document.getElementById('backToTopBtn');
 
-    // 监听滚动事件
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('show');
@@ -373,7 +342,6 @@
         }
     });
 
-    // 点击回到顶部
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
