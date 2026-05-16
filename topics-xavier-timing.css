@@ -297,10 +297,10 @@ body {
 footer {
     text-align: center;
     padding: 50px 20px;
-    border-top: 1px solid #222;
-    background: #050505;
+    border-top: 1px solid var(--f2p-border);
     color: #6a7080;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    background: #010103;
 }
 
 footer .footer-links {
@@ -317,12 +317,10 @@ footer .footer-links a {
 }
 
 footer .footer-links a:hover {
-    color: var(--xavier-gold);
+    color: var(--f2p-green);
 }
 
-footer .copyright,
-footer .disclaimer-mini {
-    color: #6a7080;
+footer p {
     margin: 5px 0;
 }
 
