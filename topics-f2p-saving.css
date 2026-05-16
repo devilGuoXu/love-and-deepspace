@@ -1,6 +1,6 @@
-/* ============================================
+/* ================================
    F2P DIAMOND SAVING STRATEGY
-   ============================================ */
+   ================================ */
 
 :root {
     --f2p-green: #2ecc71;
@@ -17,6 +17,7 @@
     margin: 0 auto;
     padding: 40px 24px 80px;
 }
+
 .hero {
     position: relative;
     background: linear-gradient(135deg, #0a0e16 0%, #020408 100%);
@@ -367,4 +368,296 @@
     border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-.check
+.checklist-item:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+.checklist-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #6a7080;
+    border: 1px solid #6a7080;
+    transition: all 0.2s;
+}
+
+.checklist-check.checked {
+    background: var(--f2p-green);
+    border-color: var(--f2p-green);
+    color: #000;
+}
+
+.checklist-text {
+    flex: 1;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.checklist-text.completed {
+    text-decoration: line-through;
+    color: #6a7080;
+}
+
+.checklist-diamonds {
+    font-size: 0.75rem;
+    color: var(--f2p-green);
+    font-family: monospace;
+}
+
+.checklist-progress {
+    padding: 12px 20px;
+    border-top: 1px solid var(--f2p-border);
+    font-size: 0.7rem;
+    color: #8a94a8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid var(--f2p-border);
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #8a94a8;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    border-color: var(--f2p-orange);
+    color: var(--f2p-orange);
+}
+
+.tips-section {
+    margin-bottom: 80px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: var(--f2p-bg-card);
+    border: 1px solid var(--f2p-border);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.2s;
+}
+
+.tip-card:hover {
+    border-color: var(--f2p-orange);
+    transform: translateX(4px);
+}
+
+.tip-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--f2p-orange);
+    opacity: 0.5;
+    margin-bottom: 12px;
+}
+
+.tip-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tip-desc {
+    font-size: 0.85rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+.faq-section {
+    margin-bottom: 80px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.faq-item {
+    background: var(--f2p-bg-card);
+    border: 1px solid var(--f2p-border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.faq-question {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--f2p-blue);
+}
+
+.faq-answer {
+    font-size: 0.85rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+/* ============================================ */
+/* 结论 */
+/* ============================================ */
+.conclusion-section {
+    margin-bottom: 60px;
+}
+
+.conclusion-box {
+    background: linear-gradient(135deg, var(--f2p-bg-card), #0a0e16);
+    border: 1px solid var(--f2p-border);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.conclusion-icon {
+    font-size: 3rem;
+}
+
+.conclusion-text {
+    flex: 1;
+}
+
+.conclusion-text p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.conclusion-signature {
+    font-style: italic;
+    color: var(--f2p-green);
+    margin-top: 16px;
+}
+
+.share-links {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--f2p-border);
+}
+
+.share-links span {
+    font-size: 0.75rem;
+    color: #8a94a8;
+    margin-right: 12px;
+}
+
+.share-links a {
+    color: var(--f2p-green);
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--f2p-green), var(--f2p-green-dark));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid var(--f2p-border);
+    color: #6a7080;
+    font-size: 0.8rem;
+    background: #010103;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+footer .footer-links a {
+    color: #9aa2b5;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    color: var(--f2p-green);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-stats {
+        gap: 30px;
+    }
+    .hero-stat-number {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .total-number {
+        font-size: 2.5rem;
+    }
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    .conclusion-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+}
