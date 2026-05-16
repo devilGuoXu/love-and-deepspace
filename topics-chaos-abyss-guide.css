@@ -10,14 +10,12 @@
     --abyss-glow: rgba(139, 92, 246, 0.3);
 }
 
-/* 容器 */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 24px 80px;
 }
 
-/* 头部 */
 .article-header {
     padding: 180px 20px 120px;
     text-align: center;
@@ -53,7 +51,6 @@
     z-index: 1;
 }
 
-/* 目录 */
 .toc {
     background: #0a0e16;
     border: 1px solid #2a2f3d;
@@ -91,7 +88,6 @@
     color: var(--abyss-purple);
 }
 
-/* 章节标记 */
 .chapter-marker {
     font-size: 0.75rem;
     color: var(--abyss-light);
@@ -100,7 +96,6 @@
     margin-bottom: 15px;
 }
 
-/* 标题 */
 h2 {
     font-size: 2rem;
     color: var(--abyss-purple);
@@ -121,7 +116,6 @@ p {
     color: #d1d1d1;
 }
 
-/* 引用框 */
 .quote-box {
     border-left: 4px solid var(--abyss-purple);
     padding: 24px 30px;
@@ -132,7 +126,6 @@ p {
     border-radius: 0 16px 16px 0;
 }
 
-/* 免责声明 */
 .disclaimer-box {
     background: rgba(139, 92, 246, 0.08);
     border: 1px solid var(--abyss-purple);
@@ -153,7 +146,6 @@ p {
     flex: 1;
 }
 
-/* 统计高亮 */
 .stat-highlight {
     background: linear-gradient(135deg, var(--abyss-dark), #0a1620);
     border-radius: 20px;
@@ -174,7 +166,6 @@ p {
     color: #8a94a8;
 }
 
-/* 楼层时间线 */
 .floor-timeline {
     margin: 30px 0;
 }
@@ -212,7 +203,6 @@ p {
 .hard { background: #e67e22; color: #000; }
 .extreme { background: #e74c3c; color: #fff; }
 
-/* 三支柱网格 */
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -252,7 +242,6 @@ p {
     margin-top: 6px;
 }
 
-/* 角色排名 */
 .role-section {
     margin: 30px 0;
 }
@@ -291,7 +280,6 @@ p {
     margin-top: 8px;
 }
 
-/* 队伍配置 */
 .team-composition {
     background: #0f121b;
     border: 1px solid #2a2f3d;
@@ -355,7 +343,6 @@ p {
     color: #b0bedb;
 }
 
-/* 敌人卡片 */
 .enemy-card {
     background: #0f121b;
     border-radius: 12px;
@@ -375,7 +362,6 @@ p {
     line-height: 1.6;
 }
 
-/* 祝福网格 */
 .blessings-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -419,7 +405,6 @@ p {
     color: var(--abyss-light);
 }
 
-/* 调整卡片 */
 .adjustment-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -454,7 +439,6 @@ p {
     color: #8a94a8;
 }
 
-/* 心理技巧 */
 .mental-tips {
     margin: 30px 0;
 }
@@ -487,7 +471,6 @@ p {
     color: var(--abyss-light);
 }
 
-/* 提示框 */
 .tip-box {
     background: rgba(139, 92, 246, 0.1);
     border: 1px solid var(--abyss-purple);
@@ -505,7 +488,6 @@ p {
     border-radius: 0 12px 12px 0;
 }
 
-/* 结论卡片 */
 .conclusion-card {
     background: linear-gradient(135deg, #0f121b, #0a0e16);
     border: 1px solid var(--abyss-purple);
@@ -522,7 +504,6 @@ p {
     color: #8a94a8;
 }
 
-/* 构建选择按钮 */
 .build-choices {
     text-align: center;
     margin: 40px 0;
@@ -551,7 +532,6 @@ p {
     color: #000;
 }
 
-/* 响应式 */
 @media (max-width: 768px) {
     .article-header h1 {
         font-size: 2rem;
