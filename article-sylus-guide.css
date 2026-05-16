@@ -4,7 +4,7 @@
     --primary-gold: #ffd700;
 }
 
-/* Xavier 标题特殊样式 */
+/* Xavier Special style for title */
 .xavier-header {
     color: var(--xavier-gold);
     border-left: 6px solid var(--primary-gold);
@@ -13,7 +13,7 @@
     border-bottom: none;
 }
 
-/* 数据盒子 */
+/* Data box */
 .data-box {
     background: var(--card-bg);
     border: 1px solid #333;
@@ -39,7 +39,7 @@
     margin-bottom: 8px;
 }
 
-/* 表格样式 */
+/* Table style */
 .stats-table-wrapper {
     overflow-x: auto;
     margin: 40px 0;
@@ -75,7 +75,7 @@
     font-weight: bold;
 }
 
-/* 结论卡片 */
+/* Conclusion card */
 .conclusion-card {
     background: linear-gradient(145deg, #1a1a1a, #0a0a0c);
     padding: 45px;
