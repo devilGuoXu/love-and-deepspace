@@ -280,3 +280,119 @@
         height: 42px;
     }
 }
+
+/* ============================================
+   文章导航栏统一样式
+   ============================================ */
+
+/* 文章顶部导航栏 */
+.article-nav {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.article-nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.article-nav-back {
+    color: var(--accent, #c9a063);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.article-nav-back:hover {
+    opacity: 0.8;
+}
+
+/* 右侧按钮组 */
+.article-nav-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* 主要按钮 - 金色 */
+.article-nav-btn-primary {
+    background: var(--accent, #c9a063);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 30px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.article-nav-btn-primary:hover {
+    background: #d4ae6e;
+    transform: translateY(-1px);
+}
+
+/* 危险按钮 - 红色（Sylus主题） */
+.article-nav-btn-danger {
+    background: #8b0000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 30px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.article-nav-btn-danger:hover {
+    background: #a00000;
+    transform: translateY(-1px);
+}
+
+/* 轮廓按钮 */
+.article-nav-btn-outline {
+    background: transparent;
+    border: 1px solid var(--accent, #c9a063);
+    color: var(--accent, #c9a063);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    border-radius: 30px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.article-nav-btn-outline:hover {
+    background: rgba(201, 160, 99, 0.15);
+    transform: translateY(-1px);
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+    .article-nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
