@@ -279,16 +279,6 @@
     opacity: 0.9;
 }
 
-/* 页脚 */
-.resource-footer {
-    background: #010103;
-    border-top: 1px solid #2a2f3d;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
-    color: #6a7080;
-    font-size: 0.7rem;
-}
 .footer-links {
     display: flex;
     justify-content: center;
