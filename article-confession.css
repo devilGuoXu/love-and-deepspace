@@ -95,6 +95,30 @@
     line-height: 1.6;
 }
 
+/* ========== 文章内图片样式 ========== */
+.article-content img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 12px;
+    margin: 35px auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.article-content img:hover {
+    transform: scale(1.02);
+}
+
+/* 投票区上方的装饰横幅 */
+.container > img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 40px 0;
+    opacity: 0.85;
+}
+
 /* 投票区 */
 .poll-section {
     background: linear-gradient(135deg, #0f0f12, #0a0a0a);
@@ -267,5 +291,9 @@
         margin-left: 0;
         width: 100%;
         margin-top: 5px;
+    }
+    .article-content img {
+        max-width: 100%;
+        margin: 25px auto;
     }
 }
