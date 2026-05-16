@@ -2,27 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer | Deepspace Hunter Station</title>
     <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Legal disclaimer for Deepspace Hunter Station. This is a fan-made site, not affiliated with Infold Games or Papergames.">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .disclaimer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .disclaimer-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .disclaimer-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 20%, var(--accent) 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+        .disclaimer-header p {
+            color: var(--text-dim);
+        }
+        .disclaimer-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.2s;
+        }
+        .disclaimer-card:hover {
+            border-color: var(--accent);
+        }
+        .disclaimer-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .disclaimer-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .disclaimer-card ul {
+            margin: 10px 0 0 20px;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+        .disclaimer-card li {
+            margin: 5px 0;
+        }
+        .warning-box {
+            background: rgba(255, 94, 107, 0.08);
+            border-left: 3px solid #ff5e6b;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .warning-box p {
+            margin: 0;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+        }
+        .back-home:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: 1px solid var(--border);
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            .disclaimer-container {
+                padding: 40px 20px;
+            }
+            .disclaimer-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container" style="display:block; max-width:800px; padding:50px 20px;">
-        <h1 style="color:var(--accent);">Disclaimer</h1>
-        
-        <h3>1. Non-Official Fan Site</h3>
-        <p>Deepspace Hunter Station is an unofficial fan-created website. We are not affiliated with, endorsed by, or sponsored by <strong>Infold Games</strong> or <strong>Papergames</strong>.</p>
 
-        <h3>2. Intellectual Property</h3>
-        <p>All game-related assets, including character designs, images, logos, and scripts, are the property of their respective owners. We use these assets under <strong>Fair Use</strong> principles for educational and analytical purposes.</p>
+<header class="main-header">
+    <nav class="nav-container">
+        <a href="/" class="logo">DEEPSPACE <span>HUNTER</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/operatives/">Operative Files</a></li>
+            <li><a href="/combats/">Combat Guides</a></li>
+            <li><a href="/resources/">Resource Planning</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <h3>3. Accuracy of Information</h3>
-        <p>Our guides are based on the current game version at the time of writing. Due to game balance updates and patches, some data may become obsolete. We do not guarantee 100% accuracy of the information provided.</p>
-
-        <h3>4. Limitation of Liability</h3>
-        <p>We are not responsible for any in-game resource loss or account issues resulting from the use of our strategies. Play responsibly.</p>
-        <hr style="border:1px solid var(--border); margin:30px 0;">
-        <a href="/" style="color:var(--accent);">← Back to Home</a>
+<div class="disclaimer-container">
+    <div class="disclaimer-header">
+        <h1>Disclaimer</h1>
+        <p>Please read this carefully before using our site.</p>
     </div>
+
+    <div class="disclaimer-card">
+        <h3>1. Non-Official Fan Site</h3>
+        <p>Deepspace Hunter Station is an unofficial fan-created website. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> Infold Games, Papergames, or any of their subsidiaries. All game-related trademarks, logos, and characters belong to their respective owners.</p>
+    </div>
+
+    <div class="disclaimer-card">
+        <h3>2. Intellectual Property</h3>
+        <p>All game-related assets — including character designs, images, logos, names, and story elements — are the exclusive property of Infold Games and Papergames. We use these assets under <strong>Fair Use</strong> principles for educational, analytical, and commentary purposes only. No copyright infringement is intended.</p>
+    </div>
+
+    <div class="disclaimer-card">
+        <h3>3. Accuracy of Information</h3>
+        <p>Our guides, builds, and strategies are based on extensive in-game testing at the time of writing. However:</p>
+        <ul>
+            <li>Game updates, patches, and balance changes may render some information outdated</li>
+            <li>Individual account progress, protocore RNG, and playstyle can affect results</li>
+            <li>We do not guarantee 100% accuracy or that our strategies will work for every player</li>
+        </ul>
+        <p>Always verify information against the current game version.</p>
+    </div>
+
+    <div class="disclaimer-card">
+        <h3>4. Limitation of Liability</h3>
+        <p>We are not responsible for:</p>
+        <ul>
+            <li>Any in-game resource loss resulting from following our guides</li>
+            <li>Account issues, bans, or technical problems</li>
+            <li>Decisions you make based on the information provided on this site</li>
+        </ul>
+        <p>Play responsibly. Use your own judgment.</p>
+    </div>
+
+    <div class="disclaimer-card">
+        <h3>5. External Links</h3>
+        <p>Our site may contain links to external websites. We are not responsible for the content, privacy policies, or practices of any third-party sites. Clicking external links is at your own risk.</p>
+    </div>
+
+    <div class="disclaimer-card">
+        <h3>6. No Warranties</h3>
+        <p>This website is provided "as is" without any warranties, express or implied. We do not warrant that the site will be available at all times, free from errors, or secure from attacks.</p>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>⚠️ Important:</strong> Love and Deepspace is a live-service game. Stats, mechanics, and meta change over time. Always check the official game client for the most up-to-date information.</p>
+    </div>
+
+    <hr>
+
+    <a href="/" class="back-home">← Back to Home</a>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-links">
+        <a href="../legal/about.html">About Us</a>
+        <a href="../legal/contact.html">Contact Us</a>
+        <a href="../legal/privacy.html">Privacy Policy</a>
+        <a href="../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+    <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+</footer>
+
 </body>
 </html>
