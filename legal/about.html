@@ -2,26 +2,614 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Deepspace Hunter Station</title>
     <link rel="icon" type="image/x-icon" href="./favicon.webp">
+    <meta name="description" content="Deepspace Hunter Station is an independent fan-made hub dedicated to Love and Deepspace. Meet the team, read our story, and understand our mission.">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ============================================
+           ABOUT PAGE STYLES
+           ============================================ */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border, #2a2f3d);
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 20%, var(--accent, #c9a063) 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim, #8a94a8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Mission Card */
+        .mission-card {
+            background: linear-gradient(135deg, rgba(201, 160, 99, 0.05), rgba(0, 0, 0, 0.3));
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .mission-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent, #c9a063);
+        }
+
+        .mission-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #d1d1d1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            background: var(--card-bg, #161a25);
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent, #c9a063);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent, #c9a063);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim, #8a94a8);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-desc {
+            font-size: 0.7rem;
+            color: #6a7080;
+            margin-top: 8px;
+        }
+
+        /* Values Grid */
+        .values-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--card-bg, #161a25);
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .value-card:hover {
+            border-color: var(--accent, #c9a063);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent, #c9a063);
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #b0bedb;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--card-bg, #161a25);
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .team-card:hover {
+            border-color: var(--accent, #c9a063);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent, #c9a063), #8b6b3a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--accent, #c9a063);
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            font-size: 0.85rem;
+            color: #b0bedb;
+            line-height: 1.5;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin-bottom: 60px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent, #c9a063);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent, #c9a063);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--accent, #c9a063);
+            margin-bottom: 8px;
+            font-family: monospace;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: #8a94a8;
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg, #161a25);
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--accent, #c9a063);
+        }
+
+        .faq-answer {
+            font-size: 0.85rem;
+            color: #b0bedb;
+            line-height: 1.5;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(201, 160, 99, 0.05), rgba(0, 0, 0, 0.3));
+            border: 1px solid var(--border, #2a2f3d);
+            border-radius: 24px;
+        }
+
+        .cta-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #8a94a8;
+            margin-bottom: 25px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .cta-btn-primary {
+            background: var(--accent, #c9a063);
+            color: #000;
+        }
+
+        .cta-btn-primary:hover {
+            background: #d4ae6e;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn-outline {
+            border: 1px solid var(--accent, #c9a063);
+            color: var(--accent, #c9a063);
+        }
+
+        .cta-btn-outline:hover {
+            background: rgba(201, 160, 99, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent, #c9a063), #8b6b3a);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container" style="display:block; max-width:800px; padding:50px 20px;">
-        <h1 style="color:var(--accent);">About Deepspace Hunter Station</h1>
-        <p>Welcome to <strong>Deepspace Hunter Station</strong>, an independent media hub dedicated to providing the most precise and in-depth tactical analysis for <em>Love and Deepspace</em>.</p>
-        
-        <h3>Our Mission</h3>
-        <p>In the ever-changing battlefield of Linkon City, data and strategy are as vital as the bonds we share. Our team consists of veteran "Hunters" who specialize in theory-crafting, data mining, and high-floor combat optimization.</p>
-        
-        <h3>Why Our Content?</h3>
-        <ul>
-            <li><strong>Authentic Testing:</strong> Every guide is based on 50+ hours of in-game testing.</li>
-            <li><strong>Data-Driven:</strong> We provide real damage scaling, crit-curve analysis, and resource efficiency reports.</li>
-            <li><strong>Community First:</strong> We write for players, ensuring F2P and low-spenders can also clear end-game content.</li>
-        </ul>
-        <hr style="border:1px solid var(--border); margin:30px 0;">
-        <a href="/" style="color:var(--accent);">← Back to Home</a>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="/" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/operatives/">Operative Files</a></li>
+                <li><a href="/combats/">Combat Guides</a></li>
+                <li><a href="/resources/">Resource Planning</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-container">
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <h1>About Deepspace<br>Hunter Station</h1>
+            <p>We're not a corporation. We're not a news outlet. We're just hunters, helping hunters.</p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="mission-card">
+            <div class="mission-icon">🎯</div>
+            <h2>Our Mission</h2>
+            <p>To provide the most accurate, data-driven, and player-friendly guides for Love and Deepspace. No fluff. No clickbait. Just what works.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Hours of Testing</div>
+                <div class="stat-desc">Every build, every protocore, every floor</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Protocore Combinations</div>
+                <div class="stat-desc">Tested and documented</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Original Guides</div>
+                <div class="stat-desc">And counting</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Abyssal Floors Cleared</div>
+                <div class="stat-desc">With F2P-friendly teams</div>
+            </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="values-section">
+            <h2 class="section-title">What We Believe</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔬</div>
+                    <h3>Data-Driven</h3>
+                    <p>Every claim in our guides is backed by real in-game testing. No theorycrafting without evidence.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Community First</h3>
+                    <p>We write for players, not algorithms. F2P, low-spender, and whale — everyone gets value.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3>Honest Advice</h3>
+                    <p>We don't shill. If a character or build isn't worth your resources, we'll tell you straight.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">K</div>
+                    <div class="team-name">Kaelen</div>
+                    <div class="team-role">Founder & Lead Tester</div>
+                    <div class="team-bio">500+ hours in Abyss. Cleared Floor 15 with every character. Obsessed with protocore optimization.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">M</div>
+                    <div class="team-name">Mira</div>
+                    <div class="team-role">Lore & Narrative Lead</div>
+                    <div class="team-bio">The one who actually reads every dialogue line. Knows more about N109 than Sylus himself.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">R</div>
+                    <div class="team-name">Ren</div>
+                    <div class="team-role">Data Analyst</div>
+                    <div class="team-bio">Spreadsheet wizard. Turned damage formulas into art. Hates RNG with a passion.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2026</div>
+                    <div class="timeline-title">🚀 Site Launched</div>
+                    <div class="timeline-desc">Deepspace Hunter Station goes live with 5 initial guides.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">February 2026</div>
+                    <div class="timeline-title">📊 First Major Data Drop</div>
+                    <div class="timeline-desc">Published comprehensive protocore testing results with 200+ combinations.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2026</div>
+                    <div class="timeline-title">🏆 Floor 15 Clear</div>
+                    <div class="timeline-desc">Finally cleared Abyssal Floor 15. Immediately wrote a guide about it.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2026</div>
+                    <div class="timeline-title">📈 50,000+ Monthly Visitors</div>
+                    <div class="timeline-desc">Humbled by the community's trust in our work.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-title">🎉 50+ Guides Published</div>
+                    <div class="timeline-desc">From combat mechanics to lore deep dives to F2P strategies.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Is this an official website?</div>
+                    <div class="faq-answer">No. Deepspace Hunter Station is a 100% fan-made project. We are not affiliated with Infold Games or Papergames.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do you test your builds?</div>
+                    <div class="faq-answer">We run each build through the same floors, same rotations, multiple times. We track damage numbers, clear times, and consistency.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are you hiring?</div>
+                    <div class="faq-answer">We're a small volunteer team. If you're passionate about Love and Deepspace and have skills in writing, data analysis, or web development, reach out!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I support the site?</div>
+                    <div class="faq-answer">Share our guides with friends. Link to us in discussions. And if you see an error, let us know — feedback makes us better.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Why no ads?</div>
+                    <div class="faq-answer">We believe guides should be free and clean. No pop-ups, no video ads, no distractions. Just the information you need.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I contribute a guide?</div>
+                    <div class="faq-answer">Maybe! Reach out via the contact page with your idea and experience. We're always looking for fresh perspectives.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h3>Ready to become a better hunter?</h3>
+            <p>Check out our guides, join the discussion, and let's clear those floors together.</p>
+            <div class="cta-buttons">
+                <a href="/combats/" class="cta-btn cta-btn-primary">📖 Browse Guides</a>
+                <a href="/resources/" class="cta-btn cta-btn-outline">📊 Plan Your Resources</a>
+                <a href="contact.html" class="cta-btn cta-btn-outline">✉️ Contact Us</a>
+            </div>
+        </div>
     </div>
+
+    <button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
 </body>
 </html>
