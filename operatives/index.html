@@ -5,31 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operative Files | Meta Analysis - Deepspace Hunter Station</title>
 	<link rel="icon" type="image/x-icon" href="../favicon.webp">
-    
-    <!-- 1. 首先引用全局样式，保持导航和基础色调统一 -->
-    <link rel="stylesheet" href="../style.css">
 
-    <!-- 2. 局部覆盖样式：只针对本页面生效，不会影响主页 -->
+    <link rel="stylesheet" href="../style.css">
     <style>
-        /* 压缩顶部间距，让内容上移 */
         .hub-content {
-            padding: 10px 20px; /* 极简内边距 */
+            padding: 10px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* 调整标题区域：减小字号和间距 */
         .category-header {
             text-align: center;
-            margin-top: 10px;    /* 距离导航栏的距离 */
-            margin-bottom: 20px; /* 距离下方图片的距离 */
+            margin-top: 10px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
         }
 
         .category-header h1 {
             color: var(--accent);
-            font-size: 1.8rem;    /* 缩小标题字号 */
+            font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
@@ -41,14 +36,13 @@
             margin-top: 5px;
         }
 
-        /* 广告位：进一步压缩高度 */
         .top-banner {
             margin: 0 auto 20px auto;
             max-width: 728px;
         }
 
         .ad-placeholder {
-            height: 50px; /* 高度从90px缩减到50px */
+            height: 50px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px dashed var(--border);
             line-height: 50px;
@@ -57,7 +51,6 @@
             font-size: 11px;
         }
 
-        /* 核心修改：缩短图片容器高度，确保首屏可见 */
         .operative-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -76,26 +69,21 @@
 		.op-image-wrapper {
 		    position: relative;
 		    width: 100%;
-		    /* 删掉固定的 height: 280px */
 		    overflow: hidden;
-		    border-radius: 12px; /* 建议加上圆角，更有卡片感 */
-		    line-height: 0;      /* 彻底消除图片下方的空白间隙 */
+		    border-radius: 12px;
+		    line-height: 0;
 		}
 		
 		.op-image {
 		    width: 100%;
-		    /* 1. 使用你建议的 3/4 比例（竖版海报感） */
 		    aspect-ratio: 3 / 4; 
 		    
-		    /* 2. 核心：裁剪模式 */
 		    object-fit: cover;
 		    
-		    /* 3. 解决“只显示下面”的问题：强制对齐到顶部 */
-		    /* 这样会优先显示秦彻的头部和上半身，而不是腿部 */
 		    object-position: top center; 
 		    
 		    display: block;
-		    transition: transform 0.5s ease; /* 为以后的悬停放大做准备 */
+		    transition: transform 0.5s ease;
 		}
 
         .tier-tag {
@@ -163,13 +151,12 @@
             <p>Classified Intelligence Database</p>
         </header>
 
-        <!-- 顶部广告位：已压缩高度 -->
         <div class="top-banner">
             <div class="ad-placeholder">Ad Space (Top Banner)</div>
         </div>
 
         <div class="operative-grid">
-            <!-- 秦彻 Sylus -->
+            <!-- Sylus -->
             <a href="sylus.html" class="op-card">
                 <div class="op-image-wrapper">
                     <span class="tier-tag">SS</span>
@@ -182,7 +169,7 @@
                 </div>
             </a>
 
-            <!-- 沈星回 Xavier -->
+            <!-- Xavier -->
             <a href="xavier.html" class="op-card">
                 <div class="op-image-wrapper">
                     <span class="tier-tag">S+</span>
@@ -195,7 +182,7 @@
                 </div>
             </a>
 
-            <!-- 黎深 Zayne -->
+            <!-- Zayne -->
             <a href="zayne.html" class="op-card">
                 <div class="op-image-wrapper">
                     <span class="tier-tag">S</span>
@@ -208,7 +195,7 @@
                 </div>
             </a>
 
-            <!-- 祁煜 Rafayel -->
+            <!-- Rafayel -->
             <a href="rafayel.html" class="op-card">
                 <div class="op-image-wrapper">
                     <span class="tier-tag">S</span>
