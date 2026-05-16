@@ -247,3 +247,18 @@
         flex-direction: column;
     }
 }
+
+/* 已查看条目标记样式 */
+.log-entry-final.viewed {
+    opacity: 0.85;
+    border-left: 1px solid #2ecc71;
+}
+
+.log-entry-final.viewed::before {
+    background: #2ecc71;
+}
+
+.log-entry-final.viewed .log-link {
+    color: #2ecc71;
+    border-bottom-color: #2ecc71;
+}
