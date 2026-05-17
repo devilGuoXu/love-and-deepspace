@@ -11,300 +11,302 @@
 </head>
 <body>
 
-<nav class="nav-bar">
-    <div class="nav-inner">
-        <a href="/combats/">&larr; BACK TO COMBAT GUIDES</a>
-    </div>
-</nav>
-
-<div class="weakness-container">
-    <div class="weakness-hero">
-        <h1>Weakness Break System</h1>
-        <p>200% stagger damage. 50% damage bonus for 8 seconds. Master the most important combat mechanic in the game.</p>
-    </div>
-
-    <div class="weakness-meta">
-        <span class="meta-id">ENTRY_#003</span>
-        <span class="meta-date">2026.05.14</span>
-        <span class="meta-tag">WEAKNESS_BREAK</span>
-    </div>
-
-    <div class="weakness-highlight">
-        <p><strong>⚔️ The Core Insight:</strong> Weakness break isn't just a damage bonus — it's a complete fight reset. When you break an enemy's weakness, you stagger them (stopping their attack), deal 200% immediate damage, and enter an 8-second window where ALL your damage is increased by 50%. This is where fights are won.</p>
-    </div>
-
-    <h2>What Is a Weakness Break?</h2>
-    <p>Every enemy in Love and Deepspace has a <strong>weakness shield</strong> — a colored bar beneath their health bar. This shield is vulnerable to specific elemental types. Hit the enemy with the correct element, and you'll see the shield bar decrease.</p>
-    <p>When the shield breaks completely, two things happen:</p>
-
-    <div class="weakness-data-card">
-        <div class="data-row">
-            <span class="data-label">💥 Stagger Damage</span>
-            <span class="data-value">200% of base damage</span>
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="/combats/">&larr; BACK TO COMBAT GUIDES</a>
         </div>
-        <div class="data-row">
-            <span class="data-label">📈 Damage Bonus Period</span>
-            <span class="data-value">8 seconds</span>
+    </nav>
+    
+    <div class="weakness-container">
+        <div class="weakness-hero">
+            <h1>Weakness Break System</h1>
+            <p>200% stagger damage. 50% damage bonus for 8 seconds. Master the most important combat mechanic in the game.</p>
         </div>
-        <div class="data-row">
-            <span class="data-label">🎯 Damage Multiplier</span>
-            <span class="data-value">+50% ALL damage</span>
+    
+        <div class="weakness-meta">
+            <span class="meta-id">ENTRY_#003</span>
+            <span class="meta-date">2026.05.14</span>
+            <span class="meta-tag">WEAKNESS_BREAK</span>
         </div>
-        <div class="data-row">
-            <span class="data-label">⏸️ Enemy State</span>
-            <span class="data-value">Staggered (cannot attack)</span>
+    
+        <div class="weakness-highlight">
+            <p><strong>⚔️ The Core Insight:</strong> Weakness break isn't just a damage bonus — it's a complete fight reset. When you break an enemy's weakness, you stagger them (stopping their attack), deal 200% immediate damage, and enter an 8-second window where ALL your damage is increased by 50%. This is where fights are won.</p>
         </div>
-    </div>
-
-    <div class="weakness-viz-block">
-        <div class="viz-title">WEAKNESS BREAK TIMELINE</div>
-        <div class="shield-viz">
-            <div class="shield-bar">
-                <div class="shield-segment full">Shield Active (100%)</div>
-                <div class="shield-segment breaking">Breaking...</div>
-                <div class="shield-segment broken">BREAK! +200% DMG</div>
-                <div class="shield-segment buff">8s Buff Window (+50% DMG)</div>
+    
+        <h2>What Is a Weakness Break?</h2>
+        <p>Every enemy in Love and Deepspace has a <strong>weakness shield</strong> — a colored bar beneath their health bar. This shield is vulnerable to specific elemental types. Hit the enemy with the correct element, and you'll see the shield bar decrease.</p>
+        <p>When the shield breaks completely, two things happen:</p>
+    
+        <div class="weakness-data-card">
+            <div class="data-row">
+                <span class="data-label">💥 Stagger Damage</span>
+                <span class="data-value">200% of base damage</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">📈 Damage Bonus Period</span>
+                <span class="data-value">8 seconds</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">🎯 Damage Multiplier</span>
+                <span class="data-value">+50% ALL damage</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">⏸️ Enemy State</span>
+                <span class="data-value">Staggered (cannot attack)</span>
+            </div>
+        </div>
+    
+        <div class="weakness-viz-block">
+            <div class="viz-title">WEAKNESS BREAK TIMELINE</div>
+            <div class="shield-viz">
+                <div class="shield-bar">
+                    <div class="shield-segment full">Shield Active (100%)</div>
+                    <div class="shield-segment breaking">Breaking...</div>
+                    <div class="shield-segment broken">BREAK! +200% DMG</div>
+                    <div class="shield-segment buff">8s Buff Window (+50% DMG)</div>
+                </div>
+            </div>
+        </div>
+    
+        <h2>The Damage Math — Why This Is Broken</h2>
+        <p>Let's do the math. Most players don't realize how powerful the weakness break window really is.</p>
+    
+        <div class="weakness-data-card">
+            <div class="data-row">
+                <span class="data-label">Normal Resonance Skill</span>
+                <span class="data-value">100,000 damage</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Resonance + Weakness Break</span>
+                <span class="data-value">100,000 × 1.5 = 150,000 damage</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">+ Ardent Oath During Window</span>
+                <span class="data-value">150,000 × 1.5 = 225,000 damage</span>
+            </div>
+            <div class="data-row highlight-row">
+                <span class="data-label">🔥 Total Potential</span>
+                <span class="data-value">125% MORE damage than normal rotation</span>
+            </div>
+        </div>
+    
+        <div class="tip-box">
+            <p><strong>📊 The Numbers Don't Lie:</strong> A full rotation during weakness break window deals more than double the damage of the same rotation outside the window. This is why speedrunners save everything for the break.</p>
+        </div>
+    
+        <h2>Elemental Matchups — What Beats What</h2>
+        <p>Each enemy has a weakness to a specific element. Here's the full chart:</p>
+    
+        <div class="weakness-table">
+            <div class="table-row header">
+                <div class="table-cell">Enemy Type</div>
+                <div class="table-cell">Weak To</div>
+                <div class="table-cell">Strong Against</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">🔥 Fire-based</div>
+                <div class="table-cell">Ice ❄️</div>
+                <div class="table-cell">Fire (resists)</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">❄️ Ice-based</div>
+                <div class="table-cell">Fire 🔥</div>
+                <div class="table-cell">Ice (resists)</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">⚡ Lightning-based</div>
+                <div class="table-cell">Light ✨</div>
+                <div class="table-cell">Lightning (resists)</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">🌑 Shadow-based</div>
+                <div class="table-cell">Light ✨</div>
+                <div class="table-cell">Shadow (resists)</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">✨ Light-based</div>
+                <div class="table-cell">Shadow 🌑</div>
+                <div class="table-cell">Light (resists)</div>
+            </div>
+        </div>
+    
+        <div class="warning-box">
+            <p><strong>⚠️ Important:</strong> Using the wrong element deals REDUCED damage to shields. A full team of mismatched elements will take 2-3x longer to break shields than a proper elemental team.</p>
+        </div>
+    
+        <h2>How to Build for Weakness Break</h2>
+        <p>Building around weakness break means sacrificing some consistent damage for massive burst potential. Here's how.</p>
+    
+        <div class="weakness-tech-card">
+            <div class="tech-title">STRATEGY 1 — ELEMENTAL DIVERSITY</div>
+            <div class="tech-text">Don't build all your characters with the same element. Spread elements across your team so you can handle any enemy type. A balanced team clears faster than a mono-element team in most content.</div>
+        </div>
+    
+        <div class="weakness-tech-card">
+            <div class="tech-title">STRATEGY 2 — SAVE YOUR ULTIMATE</div>
+            <div class="tech-text">The biggest mistake I see? Using Ardent Oath on cooldown. Save it for the weakness break window. That 8-second 50% damage bonus transforms your ultimate from "good" to "game-ending."</div>
+        </div>
+    
+        <div class="weakness-tech-card">
+            <div class="tech-title">STRATEGY 3 — SHIELD-BREAKING ROTATIONS</div>
+            <div class="tech-text">Some characters break shields faster than others. Sylus's multi-hit skills shred shields. Zayne's freeze doesn't help break shields (but sets up the window). Xavier's burst is wasted on shields — save it for AFTER the break.</div>
+        </div>
+    
+        <div class="weakness-tech-card">
+            <div class="tech-title">STRATEGY 4 — BUILD ELEMENTAL DMG%</div>
+            <div class="tech-text">Elemental Damage % (Fire DMG%, Ice DMG%, etc.) not only increases your shield-breaking speed but also boosts your damage during the weakness window. Prioritize this stat if you're building for burst.</div>
+        </div>
+    
+        <h2>Character Performance — Who Breaks Shields Fastest?</h2>
+    
+        <div class="weakness-boss-table">
+            <div class="boss-row">
+                <div class="boss-name">Sylus (Dark)</div>
+                <div class="boss-attack">Shield Break Speed</div>
+                <div class="boss-timing">S+ — Multi-hit skills shred shields</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Xavier (Light)</div>
+                <div class="boss-attack">Shield Break Speed</div>
+                <div class="boss-timing">A — Good but better saved for burst</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Zayne (Ice)</div>
+                <div class="boss-attack">Shield Break Speed</div>
+                <div class="boss-timing">B — Slower, but freeze is valuable</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Rafayel (Fire)</div>
+                <div class="boss-attack">Shield Break Speed</div>
+                <div class="boss-timing">A — Burn stacks help over time</div>
+            </div>
+        </div>
+    
+        <div class="tip-box">
+            <p><strong>💡 Pro Tip:</strong> Don't use your main DPS to break shields if they have low elemental application. Let a support character with high hit frequency handle shield breaking while your carry saves their cooldowns for the damage window.</p>
+        </div>
+    
+        <h2>Boss Weakness Windows — Timing Is Everything</h2>
+        <p>Different bosses have different shield recovery patterns. Here's what you need to know:</p>
+    
+        <div class="weakness-boss-table">
+            <div class="boss-row">
+                <div class="boss-name">Magma Golem</div>
+                <div class="boss-attack">Shield Recovery</div>
+                <div class="boss-timing">15 seconds after break — burst fast</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Shadow Vanguard</div>
+                <div class="boss-attack">Shield Recovery</div>
+                <div class="boss-timing">25 seconds — more forgiving</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Void Lord</div>
+                <div class="boss-attack">Shield Recovery</div>
+                <div class="boss-timing">10 seconds — burst or lose the window</div>
+            </div>
+            <div class="boss-row">
+                <div class="boss-name">Arcane Weaver</div>
+                <div class="boss-attack">Shield Recovery</div>
+                <div class="boss-timing">20 seconds — moderate window</div>
+            </div>
+        </div>
+    
+        <h2>Common Mistakes (I Made All of These)</h2>
+    
+        <div class="weakness-warning-box">
+            <p><strong>❌ Mistake #1: Breaking shield with your ultimate</strong> Using Ardent Oath to break the shield wastes the 50% damage bonus. Break the shield with basic attacks or resonance, THEN ultimate.</p>
+        </div>
+    
+        <div class="weakness-warning-box">
+            <p><strong>❌ Mistake #2: Ignoring elemental matchups</strong> Bringing the wrong element to a fight doubles your shield-breaking time. That's 8-10 seconds of wasted DPS. Build a balanced roster.</p>
+        </div>
+    
+        <div class="weakness-warning-box">
+            <p><strong>❌ Mistake #3: Not saving cooldowns</strong> If your resonance skill is on cooldown when the shield breaks, you lose half your burst potential. Track enemy shield HP and save skills.</p>
+        </div>
+    
+        <div class="weakness-warning-box">
+            <p><strong>❌ Mistake #4: Breaking shield too early</strong> Sometimes it's better to wait a few seconds for your ultimate to come off cooldown before breaking the shield. A delayed break with full cooldowns > an immediate break with nothing to use.</p>
+        </div>
+    
+        <div class="weakness-warning-box">
+            <p><strong>❌ Mistake #5: Not using food/potions</strong> Elemental damage food works on shield breaking. Pop a potion before a tough boss. It's free damage.</p>
+        </div>
+    
+        <h2 id="conclusion">Summary — The Golden Rules</h2>
+    
+        <div class="weakness-data-card">
+            <div class="data-row">
+                <span class="data-label">Rule 1</span>
+                <span class="data-value">Match elements — wrong element = double break time</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Rule 2</span>
+                <span class="data-value">Save Ardent Oath for the 8-second window</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Rule 3</span>
+                <span class="data-value">Save resonance skills for the window too</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Rule 4</span>
+                <span class="data-value">Don't break shield early — wait for cooldowns</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Rule 5</span>
+                <span class="data-value">Elemental DMG% buffs both shield break AND burst</span>
+            </div>
+        </div>
+    
+        <div class="weakness-highlight-box">
+            <p><strong>🎯 The Bottom Line:</strong> Weakness break is the single most important mechanic in Love and Deepspace combat. A well-timed break with saved cooldowns can deal 2-3x the damage of a normal rotation. Master this, and you'll cut your clear times in half.</p>
+        </div>
+    
+        <div class="final-stats">
+            <div class="final-stat">
+                <div class="final-number">200%</div>
+                <div class="final-label">Stagger Damage on Break</div>
+            </div>
+            <div class="final-stat">
+                <div class="final-number">50%</div>
+                <div class="final-label">Damage Bonus for 8s</div>
+            </div>
+            <div class="final-stat">
+                <div class="final-number">125%+</div>
+                <div class="final-label">Potential Damage Increase</div>
             </div>
         </div>
     </div>
 
-    <h2>The Damage Math — Why This Is Broken</h2>
-    <p>Let's do the math. Most players don't realize how powerful the weakness break window really is.</p>
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">↑</span>
+    </button>
 
-    <div class="weakness-data-card">
-        <div class="data-row">
-            <span class="data-label">Normal Resonance Skill</span>
-            <span class="data-value">100,000 damage</span>
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
         </div>
-        <div class="data-row">
-            <span class="data-label">Resonance + Weakness Break</span>
-            <span class="data-value">100,000 × 1.5 = 150,000 damage</span>
-        </div>
-        <div class="data-row">
-            <span class="data-label">+ Ardent Oath During Window</span>
-            <span class="data-value">150,000 × 1.5 = 225,000 damage</span>
-        </div>
-        <div class="data-row highlight-row">
-            <span class="data-label">🔥 Total Potential</span>
-            <span class="data-value">125% MORE damage than normal rotation</span>
-        </div>
-    </div>
-
-    <div class="tip-box">
-        <p><strong>📊 The Numbers Don't Lie:</strong> A full rotation during weakness break window deals more than double the damage of the same rotation outside the window. This is why speedrunners save everything for the break.</p>
-    </div>
-
-    <h2>Elemental Matchups — What Beats What</h2>
-    <p>Each enemy has a weakness to a specific element. Here's the full chart:</p>
-
-    <div class="weakness-table">
-        <div class="table-row header">
-            <div class="table-cell">Enemy Type</div>
-            <div class="table-cell">Weak To</div>
-            <div class="table-cell">Strong Against</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">🔥 Fire-based</div>
-            <div class="table-cell">Ice ❄️</div>
-            <div class="table-cell">Fire (resists)</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">❄️ Ice-based</div>
-            <div class="table-cell">Fire 🔥</div>
-            <div class="table-cell">Ice (resists)</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">⚡ Lightning-based</div>
-            <div class="table-cell">Light ✨</div>
-            <div class="table-cell">Lightning (resists)</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">🌑 Shadow-based</div>
-            <div class="table-cell">Light ✨</div>
-            <div class="table-cell">Shadow (resists)</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">✨ Light-based</div>
-            <div class="table-cell">Shadow 🌑</div>
-            <div class="table-cell">Light (resists)</div>
-        </div>
-    </div>
-
-    <div class="warning-box">
-        <p><strong>⚠️ Important:</strong> Using the wrong element deals REDUCED damage to shields. A full team of mismatched elements will take 2-3x longer to break shields than a proper elemental team.</p>
-    </div>
-
-    <h2>How to Build for Weakness Break</h2>
-    <p>Building around weakness break means sacrificing some consistent damage for massive burst potential. Here's how.</p>
-
-    <div class="weakness-tech-card">
-        <div class="tech-title">STRATEGY 1 — ELEMENTAL DIVERSITY</div>
-        <div class="tech-text">Don't build all your characters with the same element. Spread elements across your team so you can handle any enemy type. A balanced team clears faster than a mono-element team in most content.</div>
-    </div>
-
-    <div class="weakness-tech-card">
-        <div class="tech-title">STRATEGY 2 — SAVE YOUR ULTIMATE</div>
-        <div class="tech-text">The biggest mistake I see? Using Ardent Oath on cooldown. Save it for the weakness break window. That 8-second 50% damage bonus transforms your ultimate from "good" to "game-ending."</div>
-    </div>
-
-    <div class="weakness-tech-card">
-        <div class="tech-title">STRATEGY 3 — SHIELD-BREAKING ROTATIONS</div>
-        <div class="tech-text">Some characters break shields faster than others. Sylus's multi-hit skills shred shields. Zayne's freeze doesn't help break shields (but sets up the window). Xavier's burst is wasted on shields — save it for AFTER the break.</div>
-    </div>
-
-    <div class="weakness-tech-card">
-        <div class="tech-title">STRATEGY 4 — BUILD ELEMENTAL DMG%</div>
-        <div class="tech-text">Elemental Damage % (Fire DMG%, Ice DMG%, etc.) not only increases your shield-breaking speed but also boosts your damage during the weakness window. Prioritize this stat if you're building for burst.</div>
-    </div>
-
-    <h2>Character Performance — Who Breaks Shields Fastest?</h2>
-
-    <div class="weakness-boss-table">
-        <div class="boss-row">
-            <div class="boss-name">Sylus (Dark)</div>
-            <div class="boss-attack">Shield Break Speed</div>
-            <div class="boss-timing">S+ — Multi-hit skills shred shields</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Xavier (Light)</div>
-            <div class="boss-attack">Shield Break Speed</div>
-            <div class="boss-timing">A — Good but better saved for burst</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Zayne (Ice)</div>
-            <div class="boss-attack">Shield Break Speed</div>
-            <div class="boss-timing">B — Slower, but freeze is valuable</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Rafayel (Fire)</div>
-            <div class="boss-attack">Shield Break Speed</div>
-            <div class="boss-timing">A — Burn stacks help over time</div>
-        </div>
-    </div>
-
-    <div class="tip-box">
-        <p><strong>💡 Pro Tip:</strong> Don't use your main DPS to break shields if they have low elemental application. Let a support character with high hit frequency handle shield breaking while your carry saves their cooldowns for the damage window.</p>
-    </div>
-
-    <h2>Boss Weakness Windows — Timing Is Everything</h2>
-    <p>Different bosses have different shield recovery patterns. Here's what you need to know:</p>
-
-    <div class="weakness-boss-table">
-        <div class="boss-row">
-            <div class="boss-name">Magma Golem</div>
-            <div class="boss-attack">Shield Recovery</div>
-            <div class="boss-timing">15 seconds after break — burst fast</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Shadow Vanguard</div>
-            <div class="boss-attack">Shield Recovery</div>
-            <div class="boss-timing">25 seconds — more forgiving</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Void Lord</div>
-            <div class="boss-attack">Shield Recovery</div>
-            <div class="boss-timing">10 seconds — burst or lose the window</div>
-        </div>
-        <div class="boss-row">
-            <div class="boss-name">Arcane Weaver</div>
-            <div class="boss-attack">Shield Recovery</div>
-            <div class="boss-timing">20 seconds — moderate window</div>
-        </div>
-    </div>
-
-    <h2>Common Mistakes (I Made All of These)</h2>
-
-    <div class="weakness-warning-box">
-        <p><strong>❌ Mistake #1: Breaking shield with your ultimate</strong> Using Ardent Oath to break the shield wastes the 50% damage bonus. Break the shield with basic attacks or resonance, THEN ultimate.</p>
-    </div>
-
-    <div class="weakness-warning-box">
-        <p><strong>❌ Mistake #2: Ignoring elemental matchups</strong> Bringing the wrong element to a fight doubles your shield-breaking time. That's 8-10 seconds of wasted DPS. Build a balanced roster.</p>
-    </div>
-
-    <div class="weakness-warning-box">
-        <p><strong>❌ Mistake #3: Not saving cooldowns</strong> If your resonance skill is on cooldown when the shield breaks, you lose half your burst potential. Track enemy shield HP and save skills.</p>
-    </div>
-
-    <div class="weakness-warning-box">
-        <p><strong>❌ Mistake #4: Breaking shield too early</strong> Sometimes it's better to wait a few seconds for your ultimate to come off cooldown before breaking the shield. A delayed break with full cooldowns > an immediate break with nothing to use.</p>
-    </div>
-
-    <div class="weakness-warning-box">
-        <p><strong>❌ Mistake #5: Not using food/potions</strong> Elemental damage food works on shield breaking. Pop a potion before a tough boss. It's free damage.</p>
-    </div>
-
-    <h2 id="conclusion">Summary — The Golden Rules</h2>
-
-    <div class="weakness-data-card">
-        <div class="data-row">
-            <span class="data-label">Rule 1</span>
-            <span class="data-value">Match elements — wrong element = double break time</span>
-        </div>
-        <div class="data-row">
-            <span class="data-label">Rule 2</span>
-            <span class="data-value">Save Ardent Oath for the 8-second window</span>
-        </div>
-        <div class="data-row">
-            <span class="data-label">Rule 3</span>
-            <span class="data-value">Save resonance skills for the window too</span>
-        </div>
-        <div class="data-row">
-            <span class="data-label">Rule 4</span>
-            <span class="data-value">Don't break shield early — wait for cooldowns</span>
-        </div>
-        <div class="data-row">
-            <span class="data-label">Rule 5</span>
-            <span class="data-value">Elemental DMG% buffs both shield break AND burst</span>
-        </div>
-    </div>
-
-    <div class="weakness-highlight-box">
-        <p><strong>🎯 The Bottom Line:</strong> Weakness break is the single most important mechanic in Love and Deepspace combat. A well-timed break with saved cooldowns can deal 2-3x the damage of a normal rotation. Master this, and you'll cut your clear times in half.</p>
-    </div>
-
-    <div class="final-stats">
-        <div class="final-stat">
-            <div class="final-number">200%</div>
-            <div class="final-label">Stagger Damage on Break</div>
-        </div>
-        <div class="final-stat">
-            <div class="final-number">50%</div>
-            <div class="final-label">Damage Bonus for 8s</div>
-        </div>
-        <div class="final-stat">
-            <div class="final-number">125%+</div>
-            <div class="final-label">Potential Damage Increase</div>
-        </div>
-    </div>
-</div>
-
-<button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
-
-<footer class="main-footer">
-    <div class="footer-links">
-        <a href="../legal/about.html">About Us</a>
-        <a href="../legal/contact.html">Contact Us</a>
-        <a href="../legal/privacy.html">Privacy Policy</a>
-        <a href="../legal/disclaimer.html">Disclaimer</a>
-    </div>
-    <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
-    <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
-</footer>
-
-<script>
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+    
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
