@@ -1,13 +1,13 @@
-/* ========== RAFAYEL PAGE UNIQUE STYLES ========== */
-
 :root {
     --rafayel-blue: #1a3a5c;
     --rafayel-aqua: #2c7da0;
     --rafayel-deep: #0b2545;
     --rafayel-light: #61a5c2;
-    --text-dim: #888;
-    --card-bg: #161a25;
+    --text-dim: #8a94a8;
     --border: #2a2f3d;
+    --bg-color: #0b0d14;
+    --card-bg: #161a25;
+    --accent: #c9a063;
 }
 
 .article-container {
@@ -16,33 +16,34 @@
     padding: 60px 20px;
 }
 
-h2 {
-    font-size: 2.2rem;
+.article-container h2 {
+    font-size: 2rem;
     color: var(--rafayel-aqua);
     margin-bottom: 40px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 15px;
 }
 
-h3 {
+.article-container h3 {
     font-size: 1.5rem;
     color: var(--rafayel-light);
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-p {
+.article-container p {
     margin-bottom: 25px;
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-main);
+    text-align: justify;
 }
 
 .dropcap {
     float: left;
     font-size: 3.8rem;
     line-height: 1;
-    padding-top: 4px;
+    padding-top: 8px;
     padding-right: 10px;
     color: var(--rafayel-aqua);
     font-weight: bold;
@@ -225,6 +226,7 @@ p {
     color: var(--rafayel-light);
     font-size: 1.1rem;
 }
+
 section {
     margin-bottom: 100px;
 }
@@ -250,15 +252,15 @@ section:last-of-type {
         font-size: 1rem;
     }
     
-    h2 {
+    .article-container h2 {
         font-size: 1.6rem;
     }
     
-    h3 {
+    .article-container h3 {
         font-size: 1.3rem;
     }
     
-    p {
+    .article-container p {
         font-size: 0.95rem;
     }
     
