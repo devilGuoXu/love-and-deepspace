@@ -472,6 +472,23 @@
     renderChecklist();
     
     console.log('F2P Diamond Saving Strategy loaded. Track your progress and save those diamonds!');
+
+    // 复制链接功能
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
+    if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', function() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(function() {
+                const originalText = copyLinkBtn.innerHTML;
+                copyLinkBtn.innerHTML = '✅ Copied!';
+                setTimeout(function() {
+                    copyLinkBtn.innerHTML = originalText;
+                }, 2000);
+            }).catch(function() {
+                alert('Failed to copy link. Please copy manually.');
+            });
+        });
+    }
     </script>
 
 </body>
