@@ -2,16 +2,6 @@
    F2P DIAMOND SAVING STRATEGY
    ================================ */
 
-:root {
-    --f2p-green: #2ecc71;
-    --f2p-green-dark: #27ae60;
-    --f2p-blue: #3498db;
-    --f2p-orange: #f39c12;
-    --f2p-red: #e74c3c;
-    --f2p-bg-card: #0f121b;
-    --f2p-border: #2a2f3d;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
