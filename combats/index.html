@@ -93,7 +93,8 @@
                         tag: "BASIC_PROTOCOL",
                         title: "Combat Basics: Resonance & Ardent Oath",
                         desc: "Understanding the core combat loop: Build Resonance Energy → Trigger Resonance Skill → Charge Ardent Oath.",
-                        points: ["Resonance CD: 12s", "Oath Charge: 1000 Energy"]
+                        points: ["Resonance CD: 12s", "Oath Charge: 1000 Energy"],
+                        link: "basics-resonance.html"
                     },
                     {
                         id: "ENTRY_#002",
@@ -101,7 +102,8 @@
                         tag: "DODGE_MECHANIC",
                         title: "Perfect Dodge: Invincibility Frames",
                         desc: "Perfect dodge grants 0.8s invincibility and 30% slow-motion. Sylus gains 15% Resonance Energy refund.",
-                        points: ["i-Frames: 0.8s", "Slow Duration: 2.5s"]
+                        points: ["i-Frames: 0.8s", "Slow Duration: 2.5s"],
+                        link: "perfect-dodge-guide.html"
                     },
                     {
                         id: "ENTRY_#003",
@@ -109,7 +111,8 @@
                         tag: "WEAKNESS_BREAK",
                         title: "Weakness Break System",
                         desc: "Breaking weakness deals 200% stagger damage and increases damage by 50% for 8 seconds.",
-                        points: ["Stagger DMG: 200%", "DMG Bonus: +50%"]
+                        points: ["Stagger DMG: 200%", "DMG Bonus: +50%"],
+                        link: "weakness-break-guide.html"
                     }
                 ]
             },
@@ -270,7 +273,7 @@
                             <p>${entry.desc}</p>
                             <div class="mini-data-flex">${pointsHtml}</div>
                         </div>
-                        <a href="#" class="log-link" data-entry-id="${entry.id}">VIEW DETAILS →</a>
+                        <a href="${entry.link || '#'}" class="log-link" data-entry-id="${entry.id}">VIEW DETAILS →</a>
                     </article>
                 `;
             }
