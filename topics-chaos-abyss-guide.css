@@ -3,13 +3,6 @@
    Player perspective, long-form content
    ============================================ */
 
-:root {
-    --abyss-purple: #8b5cf6;
-    --abyss-light: #a78bfa;
-    --abyss-dark: #4c1d95;
-    --abyss-glow: rgba(139, 92, 246, 0.3);
-}
-
 .container {
     max-width: 900px;
     margin: 0 auto;
