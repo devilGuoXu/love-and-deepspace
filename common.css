@@ -277,7 +277,7 @@ p {
     color: var(--accent, #c9a063);
 }
 
-.article-copyright {
+.article-copyright .article-disclaimer-mini {
     color: #666;
     font-size: 13px;
 }
