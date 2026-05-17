@@ -267,7 +267,7 @@ p {
 }
 
 .article-footer-links a {
-    color: var(--text-muted);
+    color: #999;
     margin: 0 15px;
     text-decoration: none;
     font-size: 14px;
@@ -278,8 +278,8 @@ p {
     color: var(--accent, #c9a063);
 }
 
-.article-copyright .article-disclaimer-mini {
-    color: #666;
+.article-copyright{
+    color: #999;
     font-size: 13px;
 }
 
