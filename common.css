@@ -248,6 +248,41 @@ p {
 .footer-links a:hover {
     color: #c9a063;
 }
+
+.article-main-footer {
+    background: #000;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+}
+
+.article-main-footer .article-copyright,
+.article-main-footer .article-disclaimer-mini {
+    color: var(--text-muted, #8a94a8);
+}
+
+.article-footer-links {
+    margin-bottom: 20px;
+}
+
+.article-footer-links a {
+    color: var(--text-muted);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.article-footer-links a:hover {
+    color: var(--accent, #c9a063);
+}
+
+.article-copyright {
+    color: #666;
+    font-size: 13px;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     header {
