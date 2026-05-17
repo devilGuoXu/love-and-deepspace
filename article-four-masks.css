@@ -1,0 +1,381 @@
+.article-header {
+    padding: 160px 20px 100px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.article-header p {
+    font-size: 1.1rem;
+    color: var(--mc-gold);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.article-container {
+    max-width: 800px;
+    margin: -40px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 2;
+    background: var(--bg-dark);
+}
+
+.toc {
+    background: var(--card-bg);
+    padding: 28px 32px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 60px;
+}
+
+.toc h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--mc-gold);
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toc a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+.toc a:hover {
+    color: var(--mc-gold);
+}
+
+.chapter-marker {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--mc-gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px 0;
+    border-left: 3px solid var(--mc-gold);
+    padding-left: 18px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin: 25px 0 15px 0;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: var(--text-dim);
+}
+
+.dropcap {
+    float: left;
+    font-size: 3.5rem;
+    line-height: 1;
+    padding-top: 6px;
+    padding-right: 10px;
+    color: var(--mc-gold);
+    font-weight: bold;
+}
+
+.quote-box {
+    border-left: 4px solid var(--mc-gold);
+    padding: 20px 28px;
+    margin: 35px 0;
+    background: linear-gradient(90deg, rgba(201, 160, 99, 0.05), transparent);
+    font-style: italic;
+    color: #ddd;
+}
+
+.quote-attribution {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--mc-gold);
+    font-style: normal;
+}
+
+.analysis-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    margin: 30px 0;
+    border-radius: 12px;
+    border-top: 3px solid var(--mc-gold);
+}
+
+.analysis-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.memory-block {
+    background: linear-gradient(135deg, #0f0f18, #0a0a10);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-block::before {
+    content: "🖤";
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.memory-title {
+    font-size: 1.1rem;
+    color: var(--mc-gold);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.character-icon {
+    font-size: 2.5rem;
+    margin: 20px 0 10px;
+}
+
+.vulnerability-meter {
+    background: #0a0a10;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 25px 0;
+}
+
+.meter-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+}
+
+.meter-bar {
+    background: #2a2f3d;
+    border-radius: 20px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    background: var(--mc-gold);
+    height: 100%;
+    border-radius: 20px;
+}
+
+.meter-value {
+    font-size: 0.75rem;
+    color: var(--mc-gold);
+    margin-top: 8px;
+    text-align: right;
+}
+
+.image-placeholder {
+    margin: 40px 0;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.image-placeholder img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 30px 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table th {
+    background: #1a1f2e;
+    color: var(--mc-gold);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.comparison-table td {
+    font-size: 0.85rem;
+}
+
+.char-name {
+    font-weight: 600;
+}
+
+.char-name.xavier { color: var(--xavier-gold); }
+.char-name.zayne { color: var(--zayne-blue); }
+.char-name.rafayel { color: var(--rafayel-coral); }
+.char-name.sylus { color: var(--sylus-red); }
+
+.depth-cell {
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.depth-cell.winner {
+    color: var(--mc-gold);
+    font-size: 1rem;
+}
+
+.winner-card {
+    background: linear-gradient(135deg, #1a1f2e, #0f121b);
+    border: 1px solid var(--mc-gold);
+    border-radius: 20px;
+    padding: 28px;
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.winner-icon {
+    font-size: 3rem;
+}
+
+.winner-text {
+    flex: 1;
+}
+
+.winner-title {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--mc-gold);
+    margin-bottom: 8px;
+}
+
+.winner-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.winner-reason {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+.comparison-note {
+    margin-top: 20px;
+}
+
+.final-verdict {
+    text-align: center;
+}
+
+.final-quote {
+    margin-top: 25px;
+    font-style: italic;
+    color: var(--mc-gold);
+    font-size: 1.1rem;
+}
+
+.final-attribution {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .article-container {
+        padding: 0 20px 60px;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .toc {
+        padding: 20px;
+    }
+    .winner-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 8px;
+        font-size: 0.75rem;
+    }
+    .image-placeholder img {
+        max-width: 100%;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
