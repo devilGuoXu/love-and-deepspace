@@ -257,6 +257,10 @@ p {
     margin-top: 50px;
 }
 
+.article-main-footer p {
+    text-align: center;
+}
+
 .article-footer-links {
     margin-bottom: 20px;
 }
