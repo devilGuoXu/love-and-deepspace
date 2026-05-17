@@ -273,6 +273,10 @@ p {
     transition: color 0.2s ease;
 }
 
+.article-footer-links a:hover {
+    color: var(--accent, #c9a063);
+}
+
 .article-copyright{
     color: #999;
     font-size: 13px;
