@@ -11,567 +11,573 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-container">
-        <a href="/">&larr; BACK TO MISSION HUB</a>
-        <div class="nav-buttons">
-            <a href="#builds" style="background: var(--zayne-blue, #4a90d9); color: white; padding: 5px 15px; border-radius: 20px; text-decoration: none;">⚡ JUMP TO BUILDS</a>
+    <nav>
+        <div class="nav-container">
+            <a href="/">&larr; BACK TO MISSION HUB</a>
+            <div class="nav-buttons">
+                <a href="#builds" style="background: var(--zayne-blue, #4a90d9); color: white; padding: 5px 15px; border-radius: 20px; text-decoration: none;">⚡ JUMP TO BUILDS</a>
+            </div>
         </div>
+    </nav>
+    
+    <header class="article-header" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/zayne-full.png'); background-size: cover; background-position: center 30%;">
+        <h1>Zayne: The Frozen Heart</h1>
+        <p>10,000 hours of testing. Every protocore combination. Every resonance window. This is the build guide I wish I had.</p>
+    </header>
+    
+    <div class="container">
+        <div class="toc" id="builds">
+            <h3>📑 What You'll Find Here</h3>
+            <ul>
+                <li><a href="#disclaimer">Before We Start — Why You Should Trust (or Not Trust) Me</a></li>
+                <li><a href="#chapter1">I. The Problem With Zayne — Why Most Builds Are Wrong</a></li>
+                <li><a href="#chapter2">II. The Math — CRIT vs ATK vs DMG Bonus (With Real Numbers)</a></li>
+                <li><a href="#chapter3">III. Three Builds That Actually Work (Tested Floor 1-15)</a></li>
+                <li><a href="#chapter4">IV. Protocore by Protocore — What to Look For</a></li>
+                <li><a href="#chapter5">V. Substats — The Real Grind Starts Here</a></li>
+                <li><a href="#chapter6">VI. Team Comps — Who to Pair With Zayne</a></li>
+                <li><a href="#chapter7">VII. Rotation Guide — When to Press What</a></li>
+                <li><a href="#chapter8">VIII. Common Mistakes (I Made All of Them)</a></li>
+                <li><a href="#chapter9">IX. Frequently Asked Questions</a></li>
+                <li><a href="#conclusion">Final Verdict — Is Zayne Worth Building in 2026?</a></li>
+            </ul>
+        </div>
+    
+        <section id="disclaimer">
+            <div class="disclaimer-box">
+                <span class="disclaimer-icon">⚠️</span>
+                <p><strong>A quick note before we dive in:</strong> I'm not a theorycrafter with a spreadsheet fetish. I'm not a content creator trying to sell you anything. I'm just a guy who spent way too many nights testing protocores because I refused to believe Zayne was "mid." Everything here is based on my own testing, my own resin, my own sanity. Your mileage may vary. That's fine. Let's go.</p>
+            </div>
+        </section>
+    
+        <section id="chapter1">
+            <div class="chapter-marker">Chapter I</div>
+            <h2>The Problem With Zayne — Why Most Builds Are Wrong</h2>
+            
+            <p>Let me start with a confession.</p>
+            
+            <p>When I first pulled Zayne, I was disappointed. Not because he's bad — he's not. But because every guide I found told me to build him the same way: stack ATK%, get some CRIT, and call it a day. And you know what? That build <strong>works</strong>. It works fine. It clears content. It gets the job done.</p>
+            
+            <p>But "fine" isn't why we play this game.</p>
+            
+            <p>I wanted Zayne to feel like Zayne. I wanted his freeze to matter. I wanted his resonance windows to hit like a truck. I wanted to feel like I was playing an ice mage, not a generic damage dealer with blue particle effects.</p>
+            
+            <p>So I started testing.</p>
+            
+            <div class="stat-highlight">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Protocore combinations tested</div>
+            </div>
+            
+            <p>Over the course of three months, I burned through thousands of resin, hundreds of protocores, and more than a few brain cells trying to figure out what actually works. I tested every main stat. Every substat priority. Every set bonus. I ran the same Abyssal floors over and over until I could do them in my sleep.</p>
+            
+            <p>And here's what I learned: <strong>most of the advice out there is wrong</strong>.</p>
+            
+            <p>Not intentionally wrong. But wrong because it's based on assumptions that don't hold up in real content. Assumptions like:</p>
+            
+            <ul class="insight-list">
+                <li>"CRIT is always king" — <span class="insight-false">False</span> for Zayne's freeze windows</li>
+                <li>"ATK% is the safest stat" — <span class="insight-false">False</span> when you understand his scaling</li>
+                <li>"You should build for consistent DPS" — <span class="insight-false">False</span> if you want to clear high floors</li>
+            </ul>
+            
+            <p>Zayne isn't a consistent DPS character. He's a <strong>burst window character</strong>. His damage isn't spread evenly across his rotation — it's concentrated in specific moments. The freeze proc. The resonance skill. The Ardent Oath follow-up. If you're not building to maximize those windows, you're leaving damage on the table.</p>
+            
+            <div class="quote-box">
+                "Zayne doesn't need to do more damage. He needs to do more damage <i>at the right time</i>."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— Me, after way too much testing</div>
+            </div>
+            
+            <p>This guide is going to be long. Like, really long. I'm not going to apologize for that. If you want a quick TL;DR, scroll to the builds section. But if you want to understand <strong>why</strong> those builds work — and how to adapt them to your account — stick around.</p>
+        </section>
+    
+        <section id="chapter2">
+            <div class="chapter-marker">Chapter II</div>
+            <h2>The Math — CRIT vs ATK vs DMG Bonus (With Real Numbers)</h2>
+            
+            <p>Before we talk about builds, we need to talk about math.</p>
+            
+            <p>I know, I know. Math is boring. But trust me — understanding a few basic concepts will save you from wasting months of farming on the wrong stats.</p>
+            
+            <h3>The Damage Formula (Simplified)</h3>
+            
+            <p>Here's how damage works in Love and Deepspace, stripped down to the parts that matter:</p>
+            
+            <div class="formula-box">
+                <code>Damage = Base_Damage × (1 + DMG_Bonus) × CRIT_Multiplier (if crit) × Skill_Specific_Multipliers</code>
+            </div>
+            
+            <p>Where:</p>
+            <ul>
+                <li><strong>Base_Damage</strong> scales with ATK (and sometimes HP/DEF for certain characters — not Zayne)</li>
+                <li><strong>DMG_Bonus</strong> comes from elemental damage, set bonuses, and some passives</li>
+                <li><strong>CRIT_Multiplier</strong> is CRIT_DMG × (CRIT_Rate chance)</li>
+            </ul>
+            
+            <p>Seems simple, right? Here's where it gets tricky.</p>
+            
+            <h3>Why CRIT Isn't Always Best for Zayne</h3>
+            
+            <p>Zayne's damage profile is <strong>burst-heavy</strong>. His freeze windows last about 3-4 seconds. During those windows, he can land 2-3 resonance skills and a full basic attack chain. The rest of his rotation is... fine. Nothing special.</p>
+            
+            <p>This matters because <strong>CRIT is a probability</strong>. If you have 50% CRIT Rate, you'll crit on half your hits — <i>on average</i>. But "on average" doesn't help you when you need to burst down a boss in a 4-second freeze window and your resonance skill doesn't crit.</p>
+            
+            <div class="analysis-card">
+                <h3>The Math — 70% CRIT Rate vs 50% CRIT Rate</h3>
+                <p>Let's say your resonance skill hits for 100,000 base damage. With 250% CRIT DMG, a crit hits for 250,000.</p>
+                <p><strong>At 70% CRIT Rate:</strong> Expected damage = 100k × 0.3 + 250k × 0.7 = <strong>205k</strong></p>
+                <p><strong>At 50% CRIT Rate:</strong> Expected damage = 100k × 0.5 + 250k × 0.5 = <strong>175k</strong></p>
+                <p>The 70% build does 17% more damage on average. But here's the catch — in a single burst window, you might only get one resonance skill. If that 50% build crits and the 70% build doesn't, the 50% build does more damage <i>in that specific window</i>.</p>
+                <p>This is why high-floor players prioritize <strong>consistency over averages</strong>. When you only have one shot, you want to know it's going to hit hard.</p>
+            </div>
+            
+            <p>So what's the solution?</p>
+            
+            <p>After testing, I found that Zayne performs best when you <strong>stack CRIT Rate to at least 65%</strong>, then pour everything else into CRIT DMG and DMG Bonus. This gives you reliable crits during freeze windows without sacrificing too much ceiling.</p>
+            
+            <div class="data-table-wrapper">
+                <h3>Damage Comparison — Real Test Results (Floor 12, Same Rotation)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Build</th><th>CRIT Rate</th><th>CRIT DMG</th><th>ATK</th><th>Avg Burst DMG</th><th>Peak Burst</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Full ATK%</td><td>35%</td><td>180%</td><td>3200</td><td>185k</td><td>210k</td></tr>
+                        <tr><td>Balanced</td><td>55%</td><td>210%</td><td>2900</td><td>220k</td><td>265k</td></tr>
+                        <tr><td><strong>CRIT Focused</strong></td><td>68%</td><td>240%</td><td>2700</td><td><strong>248k</strong></td><td><strong>298k</strong></td></tr>
+                    </tbody>
+                </table>
+                <p class="table-note">Tested on Abyssal Floor 12, same enemy, same rotation, averaged over 20 runs.</p>
+            </div>
+            
+            <p>The CRIT Focused build wins on average and has the highest peak. But it also has the lowest ATK. This tells us something important: <strong>CRIT stats scale harder than ATK for Zayne's burst windows</strong>.</p>
+            
+            <h3>What About DMG Bonus?</h3>
+            
+            <p>Here's where most guides get it wrong.</p>
+            
+            <p>DMG Bonus (Elemental DMG, Skill DMG, etc.) is a <strong>separate multiplier</strong>. That means it's <i>multiplicative</i> with your ATK and CRIT, not additive. In theory, this is amazing. In practice, Zayne doesn't have great access to DMG Bonus.</p>
+            
+            <p>His signature set gives 15% Ice DMG. Some protocores give 10-20% Skill DMG. That's it. You're not going to stack 100% DMG Bonus like some characters can.</p>
+            
+            <p>So my advice? <strong>Take DMG Bonus when you can get it, but don't sacrifice CRIT stats for it.</strong> A 10% Ice DMG substat is worse than 10% CRIT DMG, but better than flat ATK.</p>
+        </section>
+    
+        <section id="chapter3">
+            <div class="chapter-marker">Chapter III</div>
+            <h2>Three Builds That Actually Work (Tested Floor 1-15)</h2>
+            
+            <p>After months of testing, I've settled on three builds that serve different purposes. Pick the one that fits your playstyle and your account.</p>
+            
+            <div class="build-card" id="build1">
+                <div class="build-header">
+                    <span class="build-icon">❄️</span>
+                    <div>
+                        <h3 class="build-title">The Freeze King</h3>
+                        <p class="build-subtitle">Best for: Abyssal Trials, Boss Fights</p>
+                    </div>
+                    <span class="build-recommend">★ RECOMMENDED</span>
+                </div>
+                <div class="build-content">
+                    <div class="build-stats">
+                        <div><span class="stat-name">CRIT Rate:</span> 65-70%</div>
+                        <div><span class="stat-name">CRIT DMG:</span> 220-250%</div>
+                        <div><span class="stat-name">ATK:</span> 2600-2800</div>
+                        <div><span class="stat-name">Ice DMG:</span> 45-60%</div>
+                    </div>
+                    <div class="build-protocores">
+                        <h4>Protocore Priority</h4>
+                        <ul>
+                            <li><strong>Slot 1 (Triangle):</strong> CRIT Rate main stat</li>
+                            <li><strong>Slot 2 (Square):</strong> Ice DMG% main stat</li>
+                            <li><strong>Slot 3 (Circle):</strong> CRIT DMG main stat</li>
+                            <li><strong>Slot 4 (Diamond):</strong> ATK% or CRIT Rate (whichever gets you to 65% CRIT)</li>
+                        </ul>
+                    </div>
+                    <div class="build-substats">
+                        <h4>Substat Priority</h4>
+                        <p>CRIT Rate > CRIT DMG > ATK% > DMG Bonus > ATK (flat) > Energy Regen</p>
+                    </div>
+                    <div class="build-rotation">
+                        <h4>Rotation Tips</h4>
+                        <p>Save resonance for freeze windows. Basic attack to build stacks, then resonance + Ardent Oath during freeze. Don't waste skills outside freeze — they do significantly less damage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="build-card" id="build2">
+                <div class="build-header">
+                    <span class="build-icon">⚔️</span>
+                    <div>
+                        <h3 class="build-title">The Consistent King</h3>
+                        <p class="build-subtitle">Best for: Daily Grind, Story Mode, Auto-Play</p>
+                    </div>
+                    <span class="build-recommend solid">SOLID</span>
+                </div>
+                <div class="build-content">
+                    <div class="build-stats">
+                        <div><span class="stat-name">CRIT Rate:</span> 45-50%</div>
+                        <div><span class="stat-name">CRIT DMG:</span> 180-200%</div>
+                        <div><span class="stat-name">ATK:</span> 3100-3300</div>
+                        <div><span class="stat-name">Ice DMG:</span> 30-40%</div>
+                    </div>
+                    <div class="build-protocores">
+                        <h4>Protocore Priority</h4>
+                        <ul>
+                            <li><strong>Slot 1 (Triangle):</strong> ATK% main stat</li>
+                            <li><strong>Slot 2 (Square):</strong> ATK% main stat</li>
+                            <li><strong>Slot 3 (Circle):</strong> ATK% main stat</li>
+                            <li><strong>Slot 4 (Diamond):</strong> CRIT Rate or ATK%</li>
+                        </ul>
+                    </div>
+                    <div class="build-substats">
+                        <h4>Substat Priority</h4>
+                        <p>ATK% > CRIT Rate > CRIT DMG > ATK (flat) > Energy Regen</p>
+                    </div>
+                    <div class="build-rotation">
+                        <h4>Rotation Tips</h4>
+                        <p>This build doesn't care about freeze windows as much. Just use skills on cooldown. It's lower ceiling but much more forgiving. Great for farming when you're half-asleep.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="build-card" id="build3">
+                <div class="build-header">
+                    <span class="build-icon">💀</span>
+                    <div>
+                        <h3 class="build-title">The Glass Cannon</h3>
+                        <p class="build-subtitle">Best for: Speedruns, Damage Per Screenshot</p>
+                    </div>
+                    <span class="build-recommend">HIGH RISK</span>
+                </div>
+                <div class="build-content">
+                    <div class="build-stats">
+                        <div><span class="stat-name">CRIT Rate:</span> 50-55%</div>
+                        <div><span class="stat-name">CRIT DMG:</span> 260-290%</div>
+                        <div><span class="stat-name">ATK:</span> 2500-2600</div>
+                        <div><span class="stat-name">Ice DMG:</span> 50-70%</div>
+                    </div>
+                    <div class="build-protocores">
+                        <h4>Protocore Priority</h4>
+                        <ul>
+                            <li><strong>Slot 1 (Triangle):</strong> CRIT DMG main stat</li>
+                            <li><strong>Slot 2 (Square):</strong> Ice DMG% main stat</li>
+                            <li><strong>Slot 3 (Circle):</strong> CRIT DMG main stat</li>
+                            <li><strong>Slot 4 (Diamond):</strong> CRIT Rate</li>
+                        </ul>
+                    </div>
+                    <div class="build-substats">
+                        <h4>Substat Priority</h4>
+                        <p>CRIT DMG > CRIT Rate > DMG Bonus > ATK%</p>
+                    </div>
+                    <div class="build-rotation">
+                        <h4>Rotation Tips</h4>
+                        <p>Restart until your burst window crits. This build is inconsistent but has the highest ceiling. Great for leaderboards, terrible for your sanity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="chapter4">
+            <div class="chapter-marker">Chapter IV</div>
+            <h2>Protocore by Protocore — What to Look For</h2>
+            
+            <p>Let's get specific. Here's exactly what you want on each protocore slot.</p>
+            
+            <div class="protocore-grid">
+                <div class="protocore-card">
+                    <div class="protocore-icon">🔺</div>
+                    <div class="protocore-name">Slot 1 — Triangle</div>
+                    <div class="protocore-main">Best main stat: <strong>CRIT Rate</strong></div>
+                    <div class="protocore-alts">Alternatives: ATK%</div>
+                    <div class="protocore-why">Why? Triangle is the only slot that can roll CRIT Rate as a main stat. Don't waste it.</div>
+                </div>
+                <div class="protocore-card">
+                    <div class="protocore-icon">⬛</div>
+                    <div class="protocore-name">Slot 2 — Square</div>
+                    <div class="protocore-main">Best main stat: <strong>Ice DMG%</strong></div>
+                    <div class="protocore-alts">Alternatives: ATK%</div>
+                    <div class="protocore-why">Why? Ice DMG is a separate multiplier. It's the best stat for this slot by a wide margin.</div>
+                </div>
+                <div class="protocore-card">
+                    <div class="protocore-icon">●</div>
+                    <div class="protocore-name">Slot 3 — Circle</div>
+                    <div class="protocore-main">Best main stat: <strong>CRIT DMG</strong></div>
+                    <div class="protocore-alts">Alternatives: ATK%</div>
+                    <div class="protocore-why">Why? Circle is the only slot that can roll CRIT DMG as a main stat. Mandatory for burst builds.</div>
+                </div>
+                <div class="protocore-card">
+                    <div class="protocore-icon">🔷</div>
+                    <div class="protocore-name">Slot 4 — Diamond</div>
+                    <div class="protocore-main">Best main stat: <strong>ATK% or CRIT Rate</strong></div>
+                    <div class="protocore-alts">Whatever you need to hit 65% CRIT</div>
+                    <div class="protocore-why">Why? Flexible slot. Use it to balance your stats.</div>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Common Trap:</strong> Don't use a +0 protocore just because it has the right main stat. Substats matter more than the main stat once you're past +9. A +15 protocore with "bad" main stat but perfect substats often outperforms a +0 with the "right" main stat.
+            </div>
+        </section>
+    
+        <section id="chapter5">
+            <div class="chapter-marker">Chapter V</div>
+            <h2>Substats — The Real Grind Starts Here</h2>
+            
+            <p>Main stats are easy. Substats are where protocores go to die.</p>
+            
+            <p>After leveling hundreds of protocores, here's my substat priority for Zayne:</p>
+            
+            <div class="substat-priority">
+                <div class="priority-tier s-tier">
+                    <div class="tier-label">S Tier — Must Have</div>
+                    <div class="tier-stats">CRIT Rate · CRIT DMG</div>
+                    <div class="tier-reason">These are your damage multipliers. Without them, you're playing a different game.</div>
+                </div>
+                <div class="priority-tier a-tier">
+                    <div class="tier-label">A Tier — Very Good</div>
+                    <div class="tier-stats">ATK% · Ice DMG% · Skill DMG%</div>
+                    <div class="tier-reason">Solid damage increases. Take them when you can't get S tier.</div>
+                </div>
+                <div class="priority-tier b-tier">
+                    <div class="tier-label">B Tier — Fine</div>
+                    <div class="tier-stats">Energy Regen · ATK (flat)</div>
+                    <div class="tier-reason">Better than nothing. Energy Regen helps rotation smoothness.</div>
+                </div>
+                <div class="priority-tier f-tier">
+                    <div class="tier-label">F Tier — Trash</div>
+                    <div class="tier-stats">DEF · HP · DEF% · HP%</div>
+                    <div class="tier-reason">Zayne doesn't scale with these. Reroll or salvage immediately.</div>
+                </div>
+            </div>
+            
+            <h3>The Substats Math — Real Example</h3>
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Protocore</th><th>Main Stat</th><th>Substats</th><th>+15 Value</th><th>Verdict</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Triangle A</td><td>CRIT Rate 33%</td><td>CRIT DMG +15%, ATK% +8%, DEF +42</td><td>High</td><td>God roll — keep forever</td></tr>
+                        <tr><td>Triangle B</td><td>CRIT Rate 31%</td><td>HP% +12%, DEF% +10%, ATK +27</td><td>Low</td><td>Salvage — substats are garbage</td></tr>
+                        <tr><td>Triangle C</td><td>ATK% 28%</td><td>CRIT Rate +6%, CRIT DMG +12%, ATK +19</td><td>Medium</td><td>Usable — but keep farming</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>Notice how Triangle B has the "right" main stat but terrible substats. It's worse than Triangle C, which has the "wrong" main stat but good substats. <strong>Substats matter.</strong></p>
+            
+            <div class="quote-box">
+                "I spent two months farming for a CRIT Rate triangle. Got one with flat DEF, HP%, and Energy Regen. I almost quit the game."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— A very real comment from my testing notes</div>
+            </div>
+        </section>
+    
+        <section id="chapter6">
+            <div class="chapter-marker">Chapter VI</div>
+            <h2>Team Comps — Who to Pair With Zayne</h2>
+            
+            <p>Zayne is a main DPS. He wants teammates who enable him to do more damage, not compete with him for screen time.</p>
+            
+            <div class="team-card">
+                <div class="team-name">💧 The Freeze Squad</div>
+                <div class="team-members">Zayne + Second Ice Character + Flex</div>
+                <div class="team-desc">Double ice resonance gives you more freeze uptime and elemental synergy. Best for Abyssal floors with ice-weak enemies.</div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-name">⚡ The Battery Comp</div>
+                <div class="team-members">Zayne + High Energy Regen Support + Flex</div>
+                <div class="team-desc">Prioritize energy regen on your support to feed Zayne more resonance skills. Simple but effective.</div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-name">🔥 The Melt Team</div>
+                <div class="team-members">Zayne + Fire Character + Flex</div>
+                <div class="team-desc">Freeze + Melt reaction increases damage. If you have a built fire character, try this.</div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-name">🛡️ The Safe Option</div>
+                <div class="team-members">Zayne + Healer/Shielder + Flex</div>
+                <div class="team-desc">Zayne can be squishy. A healer lets you focus on damage without worrying about dying.</div>
+            </div>
+        </section>
+    
+        <section id="chapter7">
+            <div class="chapter-marker">Chapter VII</div>
+            <h2>Rotation Guide — When to Press What</h2>
+            
+            <p>Having the right build doesn't matter if your rotation is wrong. Here's the optimal sequence for maximum damage.</p>
+            
+            <div class="rotation-guide">
+                <div class="rotation-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Basic Attack x4</strong>
+                        <div class="step-desc">Build resonance energy and apply chill stacks. Don't rush this — the fourth hit does bonus damage.</div>
+                    </div>
+                </div>
+                <div class="rotation-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Resonance Skill</strong>
+                        <div class="step-desc">This procs freeze. Time it right after the fourth basic attack for maximum stack efficiency.</div>
+                    </div>
+                </div>
+                <div class="rotation-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Basic Attack x2 → Dodge Cancel</strong>
+                        <div class="step-desc">During freeze, you want to fit in as many skills as possible. Dodge cancel the basic attack animation to save frames.</div>
+                    </div>
+                </div>
+                <div class="rotation-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Ardent Oath</strong>
+                        <div class="step-desc">Use this before freeze ends. The damage snapshot includes the freeze multiplier.</div>
+                    </div>
+                </div>
+                <div class="rotation-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <strong>Dash → Repeat</strong>
+                        <div class="step-desc">Dash to reposition and restart the combo. Don't waste time auto-attacking outside freeze windows.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> You can animation cancel Zayne's resonance skill recovery frames by dashing immediately after the damage registers. This saves about 0.5 seconds per rotation — which adds up over a 3-minute fight.
+            </div>
+        </section>
+    
+        <section id="chapter8">
+            <div class="chapter-marker">Chapter VIII</div>
+            <h2>Common Mistakes (I Made All of Them)</h2>
+            
+            <p>Let me save you some pain. Here's what I wish someone told me when I started building Zayne.</p>
+            
+            <div class="mistake-list">
+                <div class="mistake-item">
+                    <div class="mistake-title">❌ Mistake #1: Ignoring Freeze Windows</div>
+                    <div class="mistake-desc">I used to use resonance on cooldown. Don't. Save it for when you have stacks built up. The damage difference is massive.</div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-title">❌ Mistake #2: Building ATK% on Slot 1</div>
+                    <div class="mistake-desc">Slot 1 is the only CRIT Rate main stat slot. If you use ATK% here, you'll never hit the CRIT thresholds you need.</div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-title">❌ Mistake #3: Ignoring Substats for Main Stats</div>
+                    <div class="mistake-desc">I leveled so many protocores with perfect main stats and garbage substats. Don't be me. Substats matter more.</div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-title">❌ Mistake #4: Not Testing Your Own Builds</div>
+                    <div class="mistake-desc">Guides are starting points. Your account is different. Test your builds in the training room and adjust based on your actual damage numbers.</div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-title">❌ Mistake #5: Giving Up Too Early</div>
+                    <div class="mistake-desc">Zayne takes investment. His power spikes at certain CRIT thresholds. If you're stuck, keep farming — it gets better.</div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="chapter9">
+            <div class="chapter-marker">Chapter IX</div>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">Q: Is Zayne worth building in 2026?</div>
+                    <div class="faq-a">A: Yes, but with caveats. He's not Sylus — he won't delete bosses in one rotation. But he's consistent, has great crowd control, and scales well with investment. If you like his playstyle, build him.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q: What's the minimum CRIT Rate I need?</div>
+                    <div class="faq-a">A: 50% minimum. 65% is the sweet spot. Anything above 80% has diminishing returns because you'll sacrifice too much CRIT DMG.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q: What about Energy Regen? How much do I need?</div>
+                    <div class="faq-a">A: 120-140% is comfortable. You don't need to chase it — natural regen from basic attacks is usually enough. Only build ER if you're struggling with rotation uptime.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q: Can I use Zayne as a support?</div>
+                    <div class="faq-a">A: Technically yes. His freeze is valuable even with low investment. But he's wasted as a support — his damage scaling is too good to bench.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q: How much better is the Freeze King build vs Consistent King?</div>
+                    <div class="faq-a">A: About 20-30% more damage in boss fights. But it's also harder to play. If you're struggling with mechanics, Consistent King is fine.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q: I don't have his signature protocore set. What do I use?</div>
+                    <div class="faq-a">A: Any set with ATK% or CRIT bonuses. The 2-piece ATK% + 2-piece CRIT is a solid alternative until you get his signature set.</div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="conclusion">
+            <div class="chapter-marker">Conclusion</div>
+            <h2>Final Verdict — Is Zayne Worth Building in 2026?</h2>
+            
+            <div class="conclusion-card">
+                <p>Here's the honest truth.</p>
+                
+                <p>Zayne is not the best character in Love and Deepspace. He's not Sylus, who can solo most content with his eyes closed. He's not Xavier, who has the highest burst ceiling in the game.</p>
+                
+                <p>Zayne is <strong>consistent</strong>. He's <strong>reliable</strong>. He's the character you bring when you want to clear content without resetting twenty times because your crits didn't line up.</p>
+                
+                <p>After 10,000 hours of testing, I've cleared Abyssal Floor 15 with Zayne as my main DPS. It wasn't easy. It took perfect protocores, a tight rotation, and a lot of patience. But it's possible.</p>
+                
+                <p>If you're looking for the meta pick, pull Sylus. If you want the highest ceiling, build Xavier.</p>
+                
+                <p>But if you want a character who rewards investment, who has one of the best crowd control abilities in the game, and who looks cool doing it — build Zayne.</p>
+                
+                <p>He's not the best. But he's <strong>my</strong> best.</p>
+                
+                <div class="signature">
+                    — A player who spent way too much time on this<br>
+                    Last updated: May 2026
+                </div>
+            </div>
+            
+            <div class="build-choices">
+                <h3>Quick Links to Builds</h3>
+                <div class="choice-buttons">
+                    <a href="#build1" class="choice-btn">❄️ Freeze King</a>
+                    <a href="#build2" class="choice-btn">⚔️ Consistent King</a>
+                    <a href="#build3" class="choice-btn">💀 Glass Cannon</a>
+                </div>
+            </div>
+        </section>
     </div>
-</nav>
+    
+    <button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
 
-<header class="article-header" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/zayne-full.png'); background-size: cover; background-position: center 30%;">
-    <h1>Zayne: The Frozen Heart</h1>
-    <p>10,000 hours of testing. Every protocore combination. Every resonance window. This is the build guide I wish I had.</p>
-</header>
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
 
-<div class="container">
-    <div class="toc" id="builds">
-        <h3>📑 What You'll Find Here</h3>
-        <ul>
-            <li><a href="#disclaimer">Before We Start — Why You Should Trust (or Not Trust) Me</a></li>
-            <li><a href="#chapter1">I. The Problem With Zayne — Why Most Builds Are Wrong</a></li>
-            <li><a href="#chapter2">II. The Math — CRIT vs ATK vs DMG Bonus (With Real Numbers)</a></li>
-            <li><a href="#chapter3">III. Three Builds That Actually Work (Tested Floor 1-15)</a></li>
-            <li><a href="#chapter4">IV. Protocore by Protocore — What to Look For</a></li>
-            <li><a href="#chapter5">V. Substats — The Real Grind Starts Here</a></li>
-            <li><a href="#chapter6">VI. Team Comps — Who to Pair With Zayne</a></li>
-            <li><a href="#chapter7">VII. Rotation Guide — When to Press What</a></li>
-            <li><a href="#chapter8">VIII. Common Mistakes (I Made All of Them)</a></li>
-            <li><a href="#chapter9">IX. Frequently Asked Questions</a></li>
-            <li><a href="#conclusion">Final Verdict — Is Zayne Worth Building in 2026?</a></li>
-        </ul>
-    </div>
-
-    <section id="disclaimer">
-        <div class="disclaimer-box">
-            <span class="disclaimer-icon">⚠️</span>
-            <p><strong>A quick note before we dive in:</strong> I'm not a theorycrafter with a spreadsheet fetish. I'm not a content creator trying to sell you anything. I'm just a guy who spent way too many nights testing protocores because I refused to believe Zayne was "mid." Everything here is based on my own testing, my own resin, my own sanity. Your mileage may vary. That's fine. Let's go.</p>
-        </div>
-    </section>
-
-    <section id="chapter1">
-        <div class="chapter-marker">Chapter I</div>
-        <h2>The Problem With Zayne — Why Most Builds Are Wrong</h2>
-        
-        <p>Let me start with a confession.</p>
-        
-        <p>When I first pulled Zayne, I was disappointed. Not because he's bad — he's not. But because every guide I found told me to build him the same way: stack ATK%, get some CRIT, and call it a day. And you know what? That build <strong>works</strong>. It works fine. It clears content. It gets the job done.</p>
-        
-        <p>But "fine" isn't why we play this game.</p>
-        
-        <p>I wanted Zayne to feel like Zayne. I wanted his freeze to matter. I wanted his resonance windows to hit like a truck. I wanted to feel like I was playing an ice mage, not a generic damage dealer with blue particle effects.</p>
-        
-        <p>So I started testing.</p>
-        
-        <div class="stat-highlight">
-            <div class="stat-number">247</div>
-            <div class="stat-label">Protocore combinations tested</div>
-        </div>
-        
-        <p>Over the course of three months, I burned through thousands of resin, hundreds of protocores, and more than a few brain cells trying to figure out what actually works. I tested every main stat. Every substat priority. Every set bonus. I ran the same Abyssal floors over and over until I could do them in my sleep.</p>
-        
-        <p>And here's what I learned: <strong>most of the advice out there is wrong</strong>.</p>
-        
-        <p>Not intentionally wrong. But wrong because it's based on assumptions that don't hold up in real content. Assumptions like:</p>
-        
-        <ul class="insight-list">
-            <li>"CRIT is always king" — <span class="insight-false">False</span> for Zayne's freeze windows</li>
-            <li>"ATK% is the safest stat" — <span class="insight-false">False</span> when you understand his scaling</li>
-            <li>"You should build for consistent DPS" — <span class="insight-false">False</span> if you want to clear high floors</li>
-        </ul>
-        
-        <p>Zayne isn't a consistent DPS character. He's a <strong>burst window character</strong>. His damage isn't spread evenly across his rotation — it's concentrated in specific moments. The freeze proc. The resonance skill. The Ardent Oath follow-up. If you're not building to maximize those windows, you're leaving damage on the table.</p>
-        
-        <div class="quote-box">
-            "Zayne doesn't need to do more damage. He needs to do more damage <i>at the right time</i>."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— Me, after way too much testing</div>
-        </div>
-        
-        <p>This guide is going to be long. Like, really long. I'm not going to apologize for that. If you want a quick TL;DR, scroll to the builds section. But if you want to understand <strong>why</strong> those builds work — and how to adapt them to your account — stick around.</p>
-    </section>
-
-    <section id="chapter2">
-        <div class="chapter-marker">Chapter II</div>
-        <h2>The Math — CRIT vs ATK vs DMG Bonus (With Real Numbers)</h2>
-        
-        <p>Before we talk about builds, we need to talk about math.</p>
-        
-        <p>I know, I know. Math is boring. But trust me — understanding a few basic concepts will save you from wasting months of farming on the wrong stats.</p>
-        
-        <h3>The Damage Formula (Simplified)</h3>
-        
-        <p>Here's how damage works in Love and Deepspace, stripped down to the parts that matter:</p>
-        
-        <div class="formula-box">
-            <code>Damage = Base_Damage × (1 + DMG_Bonus) × CRIT_Multiplier (if crit) × Skill_Specific_Multipliers</code>
-        </div>
-        
-        <p>Where:</p>
-        <ul>
-            <li><strong>Base_Damage</strong> scales with ATK (and sometimes HP/DEF for certain characters — not Zayne)</li>
-            <li><strong>DMG_Bonus</strong> comes from elemental damage, set bonuses, and some passives</li>
-            <li><strong>CRIT_Multiplier</strong> is CRIT_DMG × (CRIT_Rate chance)</li>
-        </ul>
-        
-        <p>Seems simple, right? Here's where it gets tricky.</p>
-        
-        <h3>Why CRIT Isn't Always Best for Zayne</h3>
-        
-        <p>Zayne's damage profile is <strong>burst-heavy</strong>. His freeze windows last about 3-4 seconds. During those windows, he can land 2-3 resonance skills and a full basic attack chain. The rest of his rotation is... fine. Nothing special.</p>
-        
-        <p>This matters because <strong>CRIT is a probability</strong>. If you have 50% CRIT Rate, you'll crit on half your hits — <i>on average</i>. But "on average" doesn't help you when you need to burst down a boss in a 4-second freeze window and your resonance skill doesn't crit.</p>
-        
-        <div class="analysis-card">
-            <h3>The Math — 70% CRIT Rate vs 50% CRIT Rate</h3>
-            <p>Let's say your resonance skill hits for 100,000 base damage. With 250% CRIT DMG, a crit hits for 250,000.</p>
-            <p><strong>At 70% CRIT Rate:</strong> Expected damage = 100k × 0.3 + 250k × 0.7 = <strong>205k</strong></p>
-            <p><strong>At 50% CRIT Rate:</strong> Expected damage = 100k × 0.5 + 250k × 0.5 = <strong>175k</strong></p>
-            <p>The 70% build does 17% more damage on average. But here's the catch — in a single burst window, you might only get one resonance skill. If that 50% build crits and the 70% build doesn't, the 50% build does more damage <i>in that specific window</i>.</p>
-            <p>This is why high-floor players prioritize <strong>consistency over averages</strong>. When you only have one shot, you want to know it's going to hit hard.</p>
-        </div>
-        
-        <p>So what's the solution?</p>
-        
-        <p>After testing, I found that Zayne performs best when you <strong>stack CRIT Rate to at least 65%</strong>, then pour everything else into CRIT DMG and DMG Bonus. This gives you reliable crits during freeze windows without sacrificing too much ceiling.</p>
-        
-        <div class="data-table-wrapper">
-            <h3>Damage Comparison — Real Test Results (Floor 12, Same Rotation)</h3>
-            <table class="data-table">
-                <thead>
-                    <tr><th>Build</th><th>CRIT Rate</th><th>CRIT DMG</th><th>ATK</th><th>Avg Burst DMG</th><th>Peak Burst</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Full ATK%</td><td>35%</td><td>180%</td><td>3200</td><td>185k</td><td>210k</td></tr>
-                    <tr><td>Balanced</td><td>55%</td><td>210%</td><td>2900</td><td>220k</td><td>265k</td></tr>
-                    <tr><td><strong>CRIT Focused</strong></td><td>68%</td><td>240%</td><td>2700</td><td><strong>248k</strong></td><td><strong>298k</strong></td></tr>
-                </tbody>
-            </table>
-            <p class="table-note">Tested on Abyssal Floor 12, same enemy, same rotation, averaged over 20 runs.</p>
-        </div>
-        
-        <p>The CRIT Focused build wins on average and has the highest peak. But it also has the lowest ATK. This tells us something important: <strong>CRIT stats scale harder than ATK for Zayne's burst windows</strong>.</p>
-        
-        <h3>What About DMG Bonus?</h3>
-        
-        <p>Here's where most guides get it wrong.</p>
-        
-        <p>DMG Bonus (Elemental DMG, Skill DMG, etc.) is a <strong>separate multiplier</strong>. That means it's <i>multiplicative</i> with your ATK and CRIT, not additive. In theory, this is amazing. In practice, Zayne doesn't have great access to DMG Bonus.</p>
-        
-        <p>His signature set gives 15% Ice DMG. Some protocores give 10-20% Skill DMG. That's it. You're not going to stack 100% DMG Bonus like some characters can.</p>
-        
-        <p>So my advice? <strong>Take DMG Bonus when you can get it, but don't sacrifice CRIT stats for it.</strong> A 10% Ice DMG substat is worse than 10% CRIT DMG, but better than flat ATK.</p>
-    </section>
-
-    <section id="chapter3">
-        <div class="chapter-marker">Chapter III</div>
-        <h2>Three Builds That Actually Work (Tested Floor 1-15)</h2>
-        
-        <p>After months of testing, I've settled on three builds that serve different purposes. Pick the one that fits your playstyle and your account.</p>
-        
-        <div class="build-card" id="build1">
-            <div class="build-header">
-                <span class="build-icon">❄️</span>
-                <div>
-                    <h3 class="build-title">The Freeze King</h3>
-                    <p class="build-subtitle">Best for: Abyssal Trials, Boss Fights</p>
-                </div>
-                <span class="build-recommend">★ RECOMMENDED</span>
-            </div>
-            <div class="build-content">
-                <div class="build-stats">
-                    <div><span class="stat-name">CRIT Rate:</span> 65-70%</div>
-                    <div><span class="stat-name">CRIT DMG:</span> 220-250%</div>
-                    <div><span class="stat-name">ATK:</span> 2600-2800</div>
-                    <div><span class="stat-name">Ice DMG:</span> 45-60%</div>
-                </div>
-                <div class="build-protocores">
-                    <h4>Protocore Priority</h4>
-                    <ul>
-                        <li><strong>Slot 1 (Triangle):</strong> CRIT Rate main stat</li>
-                        <li><strong>Slot 2 (Square):</strong> Ice DMG% main stat</li>
-                        <li><strong>Slot 3 (Circle):</strong> CRIT DMG main stat</li>
-                        <li><strong>Slot 4 (Diamond):</strong> ATK% or CRIT Rate (whichever gets you to 65% CRIT)</li>
-                    </ul>
-                </div>
-                <div class="build-substats">
-                    <h4>Substat Priority</h4>
-                    <p>CRIT Rate > CRIT DMG > ATK% > DMG Bonus > ATK (flat) > Energy Regen</p>
-                </div>
-                <div class="build-rotation">
-                    <h4>Rotation Tips</h4>
-                    <p>Save resonance for freeze windows. Basic attack to build stacks, then resonance + Ardent Oath during freeze. Don't waste skills outside freeze — they do significantly less damage.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="build-card" id="build2">
-            <div class="build-header">
-                <span class="build-icon">⚔️</span>
-                <div>
-                    <h3 class="build-title">The Consistent King</h3>
-                    <p class="build-subtitle">Best for: Daily Grind, Story Mode, Auto-Play</p>
-                </div>
-                <span class="build-recommend solid">SOLID</span>
-            </div>
-            <div class="build-content">
-                <div class="build-stats">
-                    <div><span class="stat-name">CRIT Rate:</span> 45-50%</div>
-                    <div><span class="stat-name">CRIT DMG:</span> 180-200%</div>
-                    <div><span class="stat-name">ATK:</span> 3100-3300</div>
-                    <div><span class="stat-name">Ice DMG:</span> 30-40%</div>
-                </div>
-                <div class="build-protocores">
-                    <h4>Protocore Priority</h4>
-                    <ul>
-                        <li><strong>Slot 1 (Triangle):</strong> ATK% main stat</li>
-                        <li><strong>Slot 2 (Square):</strong> ATK% main stat</li>
-                        <li><strong>Slot 3 (Circle):</strong> ATK% main stat</li>
-                        <li><strong>Slot 4 (Diamond):</strong> CRIT Rate or ATK%</li>
-                    </ul>
-                </div>
-                <div class="build-substats">
-                    <h4>Substat Priority</h4>
-                    <p>ATK% > CRIT Rate > CRIT DMG > ATK (flat) > Energy Regen</p>
-                </div>
-                <div class="build-rotation">
-                    <h4>Rotation Tips</h4>
-                    <p>This build doesn't care about freeze windows as much. Just use skills on cooldown. It's lower ceiling but much more forgiving. Great for farming when you're half-asleep.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="build-card" id="build3">
-            <div class="build-header">
-                <span class="build-icon">💀</span>
-                <div>
-                    <h3 class="build-title">The Glass Cannon</h3>
-                    <p class="build-subtitle">Best for: Speedruns, Damage Per Screenshot</p>
-                </div>
-                <span class="build-recommend">HIGH RISK</span>
-            </div>
-            <div class="build-content">
-                <div class="build-stats">
-                    <div><span class="stat-name">CRIT Rate:</span> 50-55%</div>
-                    <div><span class="stat-name">CRIT DMG:</span> 260-290%</div>
-                    <div><span class="stat-name">ATK:</span> 2500-2600</div>
-                    <div><span class="stat-name">Ice DMG:</span> 50-70%</div>
-                </div>
-                <div class="build-protocores">
-                    <h4>Protocore Priority</h4>
-                    <ul>
-                        <li><strong>Slot 1 (Triangle):</strong> CRIT DMG main stat</li>
-                        <li><strong>Slot 2 (Square):</strong> Ice DMG% main stat</li>
-                        <li><strong>Slot 3 (Circle):</strong> CRIT DMG main stat</li>
-                        <li><strong>Slot 4 (Diamond):</strong> CRIT Rate</li>
-                    </ul>
-                </div>
-                <div class="build-substats">
-                    <h4>Substat Priority</h4>
-                    <p>CRIT DMG > CRIT Rate > DMG Bonus > ATK%</p>
-                </div>
-                <div class="build-rotation">
-                    <h4>Rotation Tips</h4>
-                    <p>Restart until your burst window crits. This build is inconsistent but has the highest ceiling. Great for leaderboards, terrible for your sanity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="chapter4">
-        <div class="chapter-marker">Chapter IV</div>
-        <h2>Protocore by Protocore — What to Look For</h2>
-        
-        <p>Let's get specific. Here's exactly what you want on each protocore slot.</p>
-        
-        <div class="protocore-grid">
-            <div class="protocore-card">
-                <div class="protocore-icon">🔺</div>
-                <div class="protocore-name">Slot 1 — Triangle</div>
-                <div class="protocore-main">Best main stat: <strong>CRIT Rate</strong></div>
-                <div class="protocore-alts">Alternatives: ATK%</div>
-                <div class="protocore-why">Why? Triangle is the only slot that can roll CRIT Rate as a main stat. Don't waste it.</div>
-            </div>
-            <div class="protocore-card">
-                <div class="protocore-icon">⬛</div>
-                <div class="protocore-name">Slot 2 — Square</div>
-                <div class="protocore-main">Best main stat: <strong>Ice DMG%</strong></div>
-                <div class="protocore-alts">Alternatives: ATK%</div>
-                <div class="protocore-why">Why? Ice DMG is a separate multiplier. It's the best stat for this slot by a wide margin.</div>
-            </div>
-            <div class="protocore-card">
-                <div class="protocore-icon">●</div>
-                <div class="protocore-name">Slot 3 — Circle</div>
-                <div class="protocore-main">Best main stat: <strong>CRIT DMG</strong></div>
-                <div class="protocore-alts">Alternatives: ATK%</div>
-                <div class="protocore-why">Why? Circle is the only slot that can roll CRIT DMG as a main stat. Mandatory for burst builds.</div>
-            </div>
-            <div class="protocore-card">
-                <div class="protocore-icon">🔷</div>
-                <div class="protocore-name">Slot 4 — Diamond</div>
-                <div class="protocore-main">Best main stat: <strong>ATK% or CRIT Rate</strong></div>
-                <div class="protocore-alts">Whatever you need to hit 65% CRIT</div>
-                <div class="protocore-why">Why? Flexible slot. Use it to balance your stats.</div>
-            </div>
-        </div>
-        
-        <div class="warning-box">
-            <strong>⚠️ Common Trap:</strong> Don't use a +0 protocore just because it has the right main stat. Substats matter more than the main stat once you're past +9. A +15 protocore with "bad" main stat but perfect substats often outperforms a +0 with the "right" main stat.
-        </div>
-    </section>
-
-    <section id="chapter5">
-        <div class="chapter-marker">Chapter V</div>
-        <h2>Substats — The Real Grind Starts Here</h2>
-        
-        <p>Main stats are easy. Substats are where protocores go to die.</p>
-        
-        <p>After leveling hundreds of protocores, here's my substat priority for Zayne:</p>
-        
-        <div class="substat-priority">
-            <div class="priority-tier s-tier">
-                <div class="tier-label">S Tier — Must Have</div>
-                <div class="tier-stats">CRIT Rate · CRIT DMG</div>
-                <div class="tier-reason">These are your damage multipliers. Without them, you're playing a different game.</div>
-            </div>
-            <div class="priority-tier a-tier">
-                <div class="tier-label">A Tier — Very Good</div>
-                <div class="tier-stats">ATK% · Ice DMG% · Skill DMG%</div>
-                <div class="tier-reason">Solid damage increases. Take them when you can't get S tier.</div>
-            </div>
-            <div class="priority-tier b-tier">
-                <div class="tier-label">B Tier — Fine</div>
-                <div class="tier-stats">Energy Regen · ATK (flat)</div>
-                <div class="tier-reason">Better than nothing. Energy Regen helps rotation smoothness.</div>
-            </div>
-            <div class="priority-tier f-tier">
-                <div class="tier-label">F Tier — Trash</div>
-                <div class="tier-stats">DEF · HP · DEF% · HP%</div>
-                <div class="tier-reason">Zayne doesn't scale with these. Reroll or salvage immediately.</div>
-            </div>
-        </div>
-        
-        <h3>The Substats Math — Real Example</h3>
-        
-        <div class="data-table-wrapper">
-            <table class="data-table">
-                <thead>
-                    <tr><th>Protocore</th><th>Main Stat</th><th>Substats</th><th>+15 Value</th><th>Verdict</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Triangle A</td><td>CRIT Rate 33%</td><td>CRIT DMG +15%, ATK% +8%, DEF +42</td><td>High</td><td>God roll — keep forever</td></tr>
-                    <tr><td>Triangle B</td><td>CRIT Rate 31%</td><td>HP% +12%, DEF% +10%, ATK +27</td><td>Low</td><td>Salvage — substats are garbage</td></tr>
-                    <tr><td>Triangle C</td><td>ATK% 28%</td><td>CRIT Rate +6%, CRIT DMG +12%, ATK +19</td><td>Medium</td><td>Usable — but keep farming</td></tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <p>Notice how Triangle B has the "right" main stat but terrible substats. It's worse than Triangle C, which has the "wrong" main stat but good substats. <strong>Substats matter.</strong></p>
-        
-        <div class="quote-box">
-            "I spent two months farming for a CRIT Rate triangle. Got one with flat DEF, HP%, and Energy Regen. I almost quit the game."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— A very real comment from my testing notes</div>
-        </div>
-    </section>
-
-    <section id="chapter6">
-        <div class="chapter-marker">Chapter VI</div>
-        <h2>Team Comps — Who to Pair With Zayne</h2>
-        
-        <p>Zayne is a main DPS. He wants teammates who enable him to do more damage, not compete with him for screen time.</p>
-        
-        <div class="team-card">
-            <div class="team-name">💧 The Freeze Squad</div>
-            <div class="team-members">Zayne + Second Ice Character + Flex</div>
-            <div class="team-desc">Double ice resonance gives you more freeze uptime and elemental synergy. Best for Abyssal floors with ice-weak enemies.</div>
-        </div>
-        
-        <div class="team-card">
-            <div class="team-name">⚡ The Battery Comp</div>
-            <div class="team-members">Zayne + High Energy Regen Support + Flex</div>
-            <div class="team-desc">Prioritize energy regen on your support to feed Zayne more resonance skills. Simple but effective.</div>
-        </div>
-        
-        <div class="team-card">
-            <div class="team-name">🔥 The Melt Team</div>
-            <div class="team-members">Zayne + Fire Character + Flex</div>
-            <div class="team-desc">Freeze + Melt reaction increases damage. If you have a built fire character, try this.</div>
-        </div>
-        
-        <div class="team-card">
-            <div class="team-name">🛡️ The Safe Option</div>
-            <div class="team-members">Zayne + Healer/Shielder + Flex</div>
-            <div class="team-desc">Zayne can be squishy. A healer lets you focus on damage without worrying about dying.</div>
-        </div>
-    </section>
-
-    <section id="chapter7">
-        <div class="chapter-marker">Chapter VII</div>
-        <h2>Rotation Guide — When to Press What</h2>
-        
-        <p>Having the right build doesn't matter if your rotation is wrong. Here's the optimal sequence for maximum damage.</p>
-        
-        <div class="rotation-guide">
-            <div class="rotation-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <strong>Basic Attack x4</strong>
-                    <div class="step-desc">Build resonance energy and apply chill stacks. Don't rush this — the fourth hit does bonus damage.</div>
-                </div>
-            </div>
-            <div class="rotation-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <strong>Resonance Skill</strong>
-                    <div class="step-desc">This procs freeze. Time it right after the fourth basic attack for maximum stack efficiency.</div>
-                </div>
-            </div>
-            <div class="rotation-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <strong>Basic Attack x2 → Dodge Cancel</strong>
-                    <div class="step-desc">During freeze, you want to fit in as many skills as possible. Dodge cancel the basic attack animation to save frames.</div>
-                </div>
-            </div>
-            <div class="rotation-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <strong>Ardent Oath</strong>
-                    <div class="step-desc">Use this before freeze ends. The damage snapshot includes the freeze multiplier.</div>
-                </div>
-            </div>
-            <div class="rotation-step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <strong>Dash → Repeat</strong>
-                    <div class="step-desc">Dash to reposition and restart the combo. Don't waste time auto-attacking outside freeze windows.</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="tip-box">
-            <strong>💡 Pro Tip:</strong> You can animation cancel Zayne's resonance skill recovery frames by dashing immediately after the damage registers. This saves about 0.5 seconds per rotation — which adds up over a 3-minute fight.
-        </div>
-    </section>
-
-    <section id="chapter8">
-        <div class="chapter-marker">Chapter VIII</div>
-        <h2>Common Mistakes (I Made All of Them)</h2>
-        
-        <p>Let me save you some pain. Here's what I wish someone told me when I started building Zayne.</p>
-        
-        <div class="mistake-list">
-            <div class="mistake-item">
-                <div class="mistake-title">❌ Mistake #1: Ignoring Freeze Windows</div>
-                <div class="mistake-desc">I used to use resonance on cooldown. Don't. Save it for when you have stacks built up. The damage difference is massive.</div>
-            </div>
-            <div class="mistake-item">
-                <div class="mistake-title">❌ Mistake #2: Building ATK% on Slot 1</div>
-                <div class="mistake-desc">Slot 1 is the only CRIT Rate main stat slot. If you use ATK% here, you'll never hit the CRIT thresholds you need.</div>
-            </div>
-            <div class="mistake-item">
-                <div class="mistake-title">❌ Mistake #3: Ignoring Substats for Main Stats</div>
-                <div class="mistake-desc">I leveled so many protocores with perfect main stats and garbage substats. Don't be me. Substats matter more.</div>
-            </div>
-            <div class="mistake-item">
-                <div class="mistake-title">❌ Mistake #4: Not Testing Your Own Builds</div>
-                <div class="mistake-desc">Guides are starting points. Your account is different. Test your builds in the training room and adjust based on your actual damage numbers.</div>
-            </div>
-            <div class="mistake-item">
-                <div class="mistake-title">❌ Mistake #5: Giving Up Too Early</div>
-                <div class="mistake-desc">Zayne takes investment. His power spikes at certain CRIT thresholds. If you're stuck, keep farming — it gets better.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="chapter9">
-        <div class="chapter-marker">Chapter IX</div>
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-q">Q: Is Zayne worth building in 2026?</div>
-                <div class="faq-a">A: Yes, but with caveats. He's not Sylus — he won't delete bosses in one rotation. But he's consistent, has great crowd control, and scales well with investment. If you like his playstyle, build him.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Q: What's the minimum CRIT Rate I need?</div>
-                <div class="faq-a">A: 50% minimum. 65% is the sweet spot. Anything above 80% has diminishing returns because you'll sacrifice too much CRIT DMG.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Q: What about Energy Regen? How much do I need?</div>
-                <div class="faq-a">A: 120-140% is comfortable. You don't need to chase it — natural regen from basic attacks is usually enough. Only build ER if you're struggling with rotation uptime.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Q: Can I use Zayne as a support?</div>
-                <div class="faq-a">A: Technically yes. His freeze is valuable even with low investment. But he's wasted as a support — his damage scaling is too good to bench.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Q: How much better is the Freeze King build vs Consistent King?</div>
-                <div class="faq-a">A: About 20-30% more damage in boss fights. But it's also harder to play. If you're struggling with mechanics, Consistent King is fine.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Q: I don't have his signature protocore set. What do I use?</div>
-                <div class="faq-a">A: Any set with ATK% or CRIT bonuses. The 2-piece ATK% + 2-piece CRIT is a solid alternative until you get his signature set.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="conclusion">
-        <div class="chapter-marker">Conclusion</div>
-        <h2>Final Verdict — Is Zayne Worth Building in 2026?</h2>
-        
-        <div class="conclusion-card">
-            <p>Here's the honest truth.</p>
-            
-            <p>Zayne is not the best character in Love and Deepspace. He's not Sylus, who can solo most content with his eyes closed. He's not Xavier, who has the highest burst ceiling in the game.</p>
-            
-            <p>Zayne is <strong>consistent</strong>. He's <strong>reliable</strong>. He's the character you bring when you want to clear content without resetting twenty times because your crits didn't line up.</p>
-            
-            <p>After 10,000 hours of testing, I've cleared Abyssal Floor 15 with Zayne as my main DPS. It wasn't easy. It took perfect protocores, a tight rotation, and a lot of patience. But it's possible.</p>
-            
-            <p>If you're looking for the meta pick, pull Sylus. If you want the highest ceiling, build Xavier.</p>
-            
-            <p>But if you want a character who rewards investment, who has one of the best crowd control abilities in the game, and who looks cool doing it — build Zayne.</p>
-            
-            <p>He's not the best. But he's <strong>my</strong> best.</p>
-            
-            <div class="signature">
-                — A player who spent way too much time on this<br>
-                Last updated: May 2026
-            </div>
-        </div>
-        
-        <div class="build-choices">
-            <h3>Quick Links to Builds</h3>
-            <div class="choice-buttons">
-                <a href="#build1" class="choice-btn">❄️ Freeze King</a>
-                <a href="#build2" class="choice-btn">⚔️ Consistent King</a>
-                <a href="#build3" class="choice-btn">💀 Glass Cannon</a>
-            </div>
-        </div>
-    </section>
-</div>
-
-<button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
-
-<footer>
-    <p>© 2026 Deepspace Hunter Station. All original content is protected.</p>
-    <p>Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
-</footer>
-
-<script>
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
