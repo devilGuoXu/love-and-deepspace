@@ -6,11 +6,6 @@
     padding: 60px 24px 80px;
 }
 
-.article-header {
-    padding: 200px 20px 140px;
-    text-align: center;
-}
-
 .article-header h1 {
     font-size: 3rem;
     color: #fff;
@@ -235,12 +230,6 @@ nav {
 @media (max-width: 768px) {
     .article-container {
         padding: 30px 20px;
-    }
-    .article-header {
-        padding: 140px 20px 100px;
-    }
-    .article-header h1 {
-        font-size: 2rem;
     }
     h2 {
         font-size: 1.4rem;
