@@ -1,15 +1,5 @@
 /* article-mc.css */
 
-:root {
-    --mc-gold: #c9a063;
-    --mc-warm: #d4a574;
-    --mc-deep: #2a2f3d;
-    --text-dim: #8a94a8;
-    --border: #2a2f3d;
-    --bg-dark: #0b0d14;
-    --card-bg: #161a25;
-}
-
 .article-container {
     max-width: 800px;
     margin: 0 auto;
