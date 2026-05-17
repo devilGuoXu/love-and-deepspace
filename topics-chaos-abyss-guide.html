@@ -11,570 +11,576 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-container">
-        <a href="/">&larr; BACK TO MISSION HUB</a>
-        <div class="nav-buttons">
-            <a href="#teams" style="background: var(--abyss-purple, #8b5cf6); color: white; padding: 5px 15px; border-radius: 20px; text-decoration: none;">⚔️ JUMP TO TEAMS</a>
+    <nav>
+        <div class="nav-container">
+            <a href="/">&larr; BACK TO MISSION HUB</a>
+            <div class="nav-buttons">
+                <a href="#teams" style="background: var(--abyss-purple, #8b5cf6); color: white; padding: 5px 15px; border-radius: 20px; text-decoration: none;">⚔️ JUMP TO TEAMS</a>
+            </div>
         </div>
+    </nav>
+    
+    <header class="article-header" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/chaos-abyss-cover.png'); background-size: cover; background-position: center 30%;">
+        <h1>Chaos Abyss: Floor 15 and Beyond</h1>
+        <p>500+ runs. Countless resets. Tears, rage, and finally success. Here's what I learned.</p>
+    </header>
+    
+    <div class="container">
+    
+        <div class="toc" id="teams">
+            <h3>📑 What You'll Find Here</h3>
+            <ul>
+                <li><a href="#disclaimer">Before We Start — My Credentials (Or Lack Thereof)</a></li>
+                <li><a href="#chapter1">I. What Is Chaos Abyss? (And Why It Hates You)</a></li>
+                <li><a href="#chapter2">II. Floor by Floor — What to Expect (1-15)</a></li>
+                <li><a href="#chapter3">III. The Three Pillars — Damage, Survivability, CC</a></li>
+                <li><a href="#chapter4">IV. Best Characters for Each Role (Tested, Not Theory)</a></li>
+                <li><a href="#chapter5">V. Team Compositions That Actually Work (Floor 10-15)</a></li>
+                <li><a href="#chapter6">VI. Enemy Patterns — When to Dodge, When to Commit</a></li>
+                <li><a href="#chapter7">VII. Blessings — Which to Pick, Which to Reroll</a></li>
+                <li><a href="#chapter8">VIII. Protocore Adjustments for Abyss</a></li>
+                <li><a href="#chapter9">IX. The Mental Game — How to Not Lose Your Sanity</a></li>
+                <li><a href="#conclusion">Final Verdict — Is Floor 15 Worth The Pain?</a></li>
+            </ul>
+        </div>
+    
+        <section id="disclaimer">
+            <div class="disclaimer-box">
+                <span class="disclaimer-icon">⚠️</span>
+                <p><strong>Before we start:</strong> I'm not a whale. I'm not a streamer with perfect artifacts. I'm a guy who spent way too many nights slamming his head against the same floors because I refused to accept that I couldn't clear them. This guide is based on pain. Real pain. Your mileage may vary.</p>
+            </div>
+        </section>
+    
+        <section id="chapter1">
+            <div class="chapter-marker">Chapter I</div>
+            <h2>What Is Chaos Abyss? (And Why It Hates You)</h2>
+            
+            <p>Let me paint you a picture.</p>
+            
+            <p>You've built your characters. You've farmed protocores for weeks. You think you're ready. You walk into Chaos Abyss Floor 1, breeze through it, and think "this isn't so bad."</p>
+            
+            <p>Then Floor 6 happens.</p>
+            
+            <p>Then Floor 10.</p>
+            
+            <p>Then Floor 14.</p>
+            
+            <p>And suddenly you understand. Chaos Abyss isn't a dungeon. It's a <strong>personality test</strong>. It's designed to break you. Not through unfair mechanics — but through attrition. Through forcing you to make split-second decisions. Through making you fight the same boss fifty times until your fingers know the patterns better than your brain.</p>
+            
+            <div class="stat-highlight">
+                <div class="stat-number">142</div>
+                <div class="stat-label">Attempts on Floor 12 alone</div>
+            </div>
+            
+            <p>I'm not proud of that number. But I'm also not ashamed. Because every failed attempt taught me something. Every reset showed me a mistake I was making. Every time I wanted to throw my phone across the room, I learned a little more about patience.</p>
+            
+            <p>Here's what Chaos Abyss actually is:</p>
+            
+            <ul class="insight-list">
+                <li><strong>A DPS check</strong> — Can you kill the boss before the enrage timer?</li>
+                <li><strong>A mechanics check</strong> — Do you know when to dodge, when to stand still, when to burst?</li>
+                <li><strong>A resource management test</strong> — Are you saving your Ardent Oath for the right moment?</li>
+                <li><strong>A mental endurance exam</strong> — Can you keep your cool after failing at 1% boss health?</li>
+            </ul>
+            
+            <div class="quote-box">
+                "Chaos Abyss isn't hard. It's <i>punishing</i>. There's a difference. Hard content tests your skill. Punishing content tests your patience."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— Me, after attempt #87</div>
+            </div>
+            
+            <p>This guide is going to help you with all of it. The builds. The rotations. The enemy patterns. But most importantly, the mental game. Because if you're not mentally prepared, no amount of protocores will save you.</p>
+        </section>
+    
+        <section id="chapter2">
+            <div class="chapter-marker">Chapter II</div>
+            <h2>Floor by Floor — What to Expect (1-15)</h2>
+            
+            <p>Let's break down every floor. Not in excruciating detail — but enough that you know what's coming.</p>
+            
+            <div class="floor-timeline">
+                <div class="floor-group">
+                    <div class="floor-range">Floors 1-5</div>
+                    <div class="floor-desc">The tutorial. If you're struggling here, you're not ready. Go farm more protocores.</div>
+                    <div class="floor-difficulty easy">Difficulty: Easy</div>
+                </div>
+                <div class="floor-group">
+                    <div class="floor-range">Floors 6-8</div>
+                    <div class="floor-desc">First real check. Enemies hit harder. Bosses have actual mechanics now. Pay attention.</div>
+                    <div class="floor-difficulty medium">Difficulty: Medium</div>
+                </div>
+                <div class="floor-group">
+                    <div class="floor-range">Floors 9-11</div>
+                    <div class="floor-desc">Welcome to the pain zone. Multiple elites spawn together. You need crowd control.</div>
+                    <div class="floor-difficulty hard">Difficulty: Hard</div>
+                </div>
+                <div class="floor-group">
+                    <div class="floor-range">Floors 12-13</div>
+                    <div class="floor-desc">Boss floors with adds. This is where most players get stuck. Learn the patterns.</div>
+                    <div class="floor-difficulty hard">Difficulty: Very Hard</div>
+                </div>
+                <div class="floor-group">
+                    <div class="floor-range">Floors 14</div>
+                    <div class="floor-desc">Two bosses. Simultaneously. This floor made me question my life choices.</div>
+                    <div class="floor-difficulty extreme">Difficulty: Extreme</div>
+                </div>
+                <div class="floor-group">
+                    <div class="floor-range">Floor 15</div>
+                    <div class="floor-desc">The final boss. Three phases. Each phase adds new mechanics. Don't choke.</div>
+                    <div class="floor-difficulty extreme">Difficulty: Nightmare</div>
+                </div>
+            </div>
+            
+            <h3>Floor 12 Deep Dive — The Wall</h3>
+            
+            <p>Floor 12 is where most players hit their first real wall. Let me tell you why.</p>
+            
+            <p>The boss has three attacks you need to memorize:</p>
+            
+            <ul>
+                <li><strong>Slam:</strong> Ground AoE. Dodge backward, not sideways. The hitbox is wider than it looks.</li>
+                <li><strong>Charge:</strong> Boss rushes forward. Dodge perpendicular. I-frames matter here.</li>
+                <li><strong>Roar:</strong> Summons adds. Kill them immediately or they'll overwhelm you.</li>
+            </ul>
+            
+            <p>The key to Floor 12 is <strong>add management</strong>. If you ignore the little guys, they'll stack buffs on the boss. Kill them within 5 seconds of spawn.</p>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Save your Ardent Oath for when adds spawn. A well-timed ultimate can clear adds AND damage the boss at the same time.
+            </div>
+            
+            <h3>Floor 14 Deep Dive — The Nightmare</h3>
+            
+            <p>Two bosses. One arena. Your tears.</p>
+            
+            <p>The left boss (Shadow Vanguard) is aggressive. It will chase you non-stop. The right boss (Arcane Weaver) is ranged. It will spam projectiles from across the room.</p>
+            
+            <p>The strategy: <strong>separate them</strong>. Kite the melee boss away from the ranged one. Focus down the ranged boss first — it has less HP but more annoying attacks. Once it's dead, the melee boss is manageable.</p>
+            
+            <div class="quote-box">
+                "I spent three weeks on Floor 14. Three. Weeks. My girlfriend asked if I was okay. I was not okay."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— A very real comment</div>
+            </div>
+        </section>
+    
+        <section id="chapter3">
+            <div class="chapter-marker">Chapter III</div>
+            <h2>The Three Pillars — Damage, Survivability, CC</h2>
+            
+            <p>Every successful Abyss run balances three things. If you're weak in any of them, you'll fail.</p>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">⚔️</div>
+                    <div class="pillar-name">Damage</div>
+                    <div class="pillar-desc">Can you kill the boss before enrage? This is about your build, your rotation, and your crit luck.</div>
+                    <div class="pillar-check">✓ 65%+ CRIT Rate</div>
+                    <div class="pillar-check">✓ 220%+ CRIT DMG</div>
+                    <div class="pillar-check">✓ Level 80 weapons</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🛡️</div>
+                    <div class="pillar-name">Survivability</div>
+                    <div class="pillar-desc">Can you stay alive? This is about dodging, positioning, and knowing enemy patterns.</div>
+                    <div class="pillar-check">✓ Learn attack tells</div>
+                    <div class="pillar-check">✓ Save dodges for big hits</div>
+                    <div class="pillar-check">✓ Healer support optional</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">❄️</div>
+                    <div class="pillar-name">Crowd Control</div>
+                    <div class="pillar-desc">Can you handle multiple enemies? This is about freeze, stun, and positioning.</div>
+                    <div class="pillar-check">✓ Zayne freeze</div>
+                    <div class="pillar-check">✓ Group enemies together</div>
+                    <div class="pillar-check">✓ Kill adds quickly</div>
+                </div>
+            </div>
+            
+            <p>Most guides focus on Damage. That's a mistake. I've seen players with insane builds fail Floor 12 because they couldn't dodge. I've seen players with mediocre builds clear Floor 15 because they understood positioning.</p>
+            
+            <p><strong>Damage gets you through the door. Survivability and CC keep you alive inside.</strong></p>
+        </section>
+    
+        <section id="chapter4">
+            <div class="chapter-marker">Chapter IV</div>
+            <h2>Best Characters for Each Role (Tested, Not Theory)</h2>
+            
+            <p>Let's talk characters. I've tested every combination. Here's what works.</p>
+            
+            <div class="role-section">
+                <h3>🔥 Main DPS (Carry)</h3>
+                <div class="character-rankings">
+                    <div class="char-rank s-tier">
+                        <span class="char-name">Sylus (Shadow)</span>
+                        <span class="char-rating">S+</span>
+                        <p class="char-reason">Infinite energy loop. Self-sustain. High burst. He's the best, no contest.</p>
+                    </div>
+                    <div class="char-rank a-tier">
+                        <span class="char-name">Xavier (Light)</span>
+                        <span class="char-rating">A+</span>
+                        <p class="char-reason">Highest burst ceiling. Requires perfect timing. High skill floor.</p>
+                    </div>
+                    <div class="char-rank a-tier">
+                        <span class="char-name">Zayne (Ice)</span>
+                        <span class="char-rating">A</span>
+                        <p class="char-reason">Consistent. Good CC. Lower ceiling but more forgiving.</p>
+                    </div>
+                    <div class="char-rank b-tier">
+                        <span class="char-name">Rafayel (Fire)</span>
+                        <span class="char-rating">B+</span>
+                        <p class="char-reason">DOT focused. Good for long fights. Squishy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="role-section">
+                <h3>🛡️ Support / Sub-DPS</h3>
+                <div class="character-rankings">
+                    <div class="char-rank s-tier">
+                        <span class="char-name">Any Healer</span>
+                        <span class="char-rating">S</span>
+                        <p class="char-reason">If you're struggling to survive, bring a healer. It's that simple.</p>
+                    </div>
+                    <div class="char-rank a-tier">
+                        <span class="char-name">Zayne (Support)</span>
+                        <span class="char-rating">A</span>
+                        <p class="char-reason">Freeze is invaluable. Build him for energy regen.</p>
+                    </div>
+                    <div class="char-rank b-tier">
+                        <span class="char-name">Shield Characters</span>
+                        <span class="char-rating">B</span>
+                        <p class="char-reason">Situational. Good for specific bosses.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Your main DPS should be your best-built character. Don't spread resources thin. One strong carry is better than two mediocre ones.
+            </div>
+        </section>
+    
+        <section id="chapter5">
+            <div class="chapter-marker">Chapter V</div>
+            <h2>Team Compositions That Actually Work (Floor 10-15)</h2>
+            
+            <p>After hundreds of runs, here are the team comps that got me through each floor range.</p>
+            
+            <div class="team-composition">
+                <div class="team-header">
+                    <div class="team-icon">👑</div>
+                    <div class="team-info">
+                        <div class="team-name">The Hypercarry</div>
+                        <div class="team-desc">Best for: Floors where you can brute force</div>
+                    </div>
+                    <div class="team-difficulty">Any Floor</div>
+                </div>
+                <div class="team-members">
+                    <span class="member">Sylus (Main DPS)</span> + 
+                    <span class="member">Xavier (Sub DPS)</span> + 
+                    <span class="member">Zayne (CC/Heal)</span>
+                </div>
+                <div class="team-strategy">
+                    <strong>Strategy:</strong> Pour everything into Sylus. Xavier provides burst windows. Zayne freezes for setup. Simple but effective.
+                </div>
+            </div>
+            
+            <div class="team-composition">
+                <div class="team-header">
+                    <div class="team-icon">❄️</div>
+                    <div class="team-info">
+                        <div class="team-name">The Freeze Lock</div>
+                        <div class="team-desc">Best for: Floors 9-11 (add-heavy)</div>
+                    </div>
+                    <div class="team-difficulty">Medium</div>
+                </div>
+                <div class="team-members">
+                    <span class="member">Zayne (Main DPS)</span> + 
+                    <span class="member">Second Ice</span> + 
+                    <span class="member">Flex</span>
+                </div>
+                <div class="team-strategy">
+                    <strong>Strategy:</strong> Double ice = more freeze uptime. Keep enemies locked down while you kill them one by one.
+                </div>
+            </div>
+            
+            <div class="team-composition">
+                <div class="team-header">
+                    <div class="team-icon">⚡</div>
+                    <div class="team-info">
+                        <div class="team-name">The Battery</div>
+                        <div class="team-desc">Best for: Floors 12-14 (boss fights)</div>
+                    </div>
+                    <div class="team-difficulty">Hard</div>
+                </div>
+                <div class="team-members">
+                    <span class="member">Sylus/Xavier (Main DPS)</span> + 
+                    <span class="member">High ER Support</span> + 
+                    <span class="member">Healer</span>
+                </div>
+                <div class="team-strategy">
+                    <strong>Strategy:</strong> Feed energy to your main DPS. Use Ardent Oath on cooldown. Sustain through healer.
+                </div>
+            </div>
+            
+            <div class="team-composition">
+                <div class="team-header">
+                    <div class="team-icon">💀</div>
+                    <div class="team-info">
+                        <div class="team-name">The Glass Cannon</div>
+                        <div class="team-desc">Best for: Floor 15 (if you're confident)</div>
+                    </div>
+                    <div class="team-difficulty">Extreme</div>
+                </div>
+                <div class="team-members">
+                    <span class="member">Xavier (Main DPS)</span> + 
+                    <span class="member">Sylus (Sub DPS)</span> + 
+                    <span class="member">Zayne (CC only)</span>
+                </div>
+                <div class="team-strategy">
+                    <strong>Strategy:</strong> No healer. No safety. All damage. Restart until your burst window crits. Not for the faint of heart.
+                </div>
+            </div>
+        </section>
+    
+        <section id="chapter6">
+            <div class="chapter-marker">Chapter VI</div>
+            <h2>Enemy Patterns — When to Dodge, When to Commit</h2>
+            
+            <p>Knowing enemy attack patterns is worth more than 20% CRIT DMG. I'm serious.</p>
+            
+            <h3>Common Enemy Types</h3>
+            
+            <div class="enemy-card">
+                <div class="enemy-name">⚔️ Melee Bruiser</div>
+                <div class="enemy-pattern">
+                    <strong>Attack pattern:</strong> Swing → Swing → Slam (AoE)
+                    <br>
+                    <strong>Dodge timing:</strong> Dodge the slam. The first two swings you can tank or outrange.
+                    <br>
+                    <strong>Burst window:</strong> Right after the slam. 2-3 second recovery.
+                </div>
+            </div>
+            
+            <div class="enemy-card">
+                <div class="enemy-name">🏹 Ranged Caster</div>
+                <div class="enemy-pattern">
+                    <strong>Attack pattern:</strong> Orb → Orb → Homing Missile
+                    <br>
+                    <strong>Dodge timing:</strong> The missile is the only dangerous attack. Dodge toward the caster, not away.
+                    <br>
+                    <strong>Burst window:</strong> After the missile. Caster stands still to recharge.
+                </div>
+            </div>
+            
+            <div class="enemy-card">
+                <div class="enemy-name">👑 Elite Boss</div>
+                <div class="enemy-pattern">
+                    <strong>Attack pattern:</strong> Varies by boss, but all have a "tell" before big attacks.
+                    <br>
+                    <strong>Dodge timing:</strong> Watch for the glow. Red glow = big attack incoming.
+                    <br>
+                    <strong>Burst window:</strong> After stagger. Use resonance to break stance, then go all in.
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 The Golden Rule:</strong> If you don't know the pattern, don't commit. Spend a run just dodging. Learn the timing. Then add damage.
+            </div>
+        </section>
+    
+        <section id="chapter7">
+            <div class="chapter-marker">Chapter VII</div>
+            <h2>Blessings — Which to Pick, Which to Reroll</h2>
+            
+            <p>Blessings can make or break a run. Here's my priority list.</p>
+            
+            <div class="blessings-grid">
+                <div class="blessing-card s">
+                    <div class="blessing-tier">S Tier — Always Pick</div>
+                    <div class="blessing-name">Critical Surge</div>
+                    <div class="blessing-effect">+30% CRIT Rate after using Ardent Oath</div>
+                    <div class="blessing-reason">Insane uptime. Best blessing in the game.</div>
+                </div>
+                <div class="blessing-card s">
+                    <div class="blessing-tier">S Tier — Always Pick</div>
+                    <div class="blessing-name">Elemental Fury</div>
+                    <div class="blessing-effect">+50% Elemental DMG for 10s after resonance</div>
+                    <div class="blessing-reason">Huge damage spike during your burst window.</div>
+                </div>
+                <div class="blessing-card a">
+                    <div class="blessing-tier">A Tier — Very Good</div>
+                    <div class="blessing-name">Unbroken Will</div>
+                    <div class="blessing-effect">+20% ATK when HP above 80%</div>
+                    <div class="blessing-reason">Free damage if you can stay healthy.</div>
+                </div>
+                <div class="blessing-card a">
+                    <div class="blessing-tier">A Tier — Very Good</div>
+                    <div class="blessing-name">Second Wind</div>
+                    <div class="blessing-effect">Auto-revive once per run</div>
+                    <div class="blessing-reason">Safety net. Invaluable for learning floors.</div>
+                </div>
+                <div class="blessing-card b">
+                    <div class="blessing-tier">B Tier — Situational</div>
+                    <div class="blessing-name">Energy Overflow</div>
+                    <div class="blessing-effect">+50% Energy Regen</div>
+                    <div class="blessing-reason">Good for battery comps. Otherwise meh.</div>
+                </div>
+                <div class="blessing-card f">
+                    <div class="blessing-tier">F Tier — Skip</div>
+                    <div class="blessing-name">Survival Instinct</div>
+                    <div class="blessing-effect">+30% DEF when below 50% HP</div>
+                    <div class="blessing-reason">If you're that low, you're probably dead anyway.</div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                "I once got Critical Surge + Elemental Fury on the same run. I cleared Floor 14 in 90 seconds. It was the most beautiful thing I've ever seen."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— A blessed memory</div>
+            </div>
+        </section>
+    
+        <section id="chapter8">
+            <div class="chapter-marker">Chapter VIII</div>
+            <h2>Protocore Adjustments for Abyss</h2>
+            
+            <p>Your normal build might not be optimal for Abyss. Here's what to change.</p>
+            
+            <div class="adjustment-grid">
+                <div class="adjustment-card">
+                    <div class="adjustment-name">More CRIT Rate</div>
+                    <div class="adjustment-change">Normal: 50-60% → Abyss: 65-75%</div>
+                    <div class="adjustment-reason">You get fewer chances to burst. Consistency matters more than ceiling.</div>
+                </div>
+                <div class="adjustment-card">
+                    <div class="adjustment-name">Energy Regen Substats</div>
+                    <div class="adjustment-change">Normal: Ignore → Abyss: 120-140%</div>
+                    <div class="adjustment-reason">Longer fights mean more rotations. More ults = more damage.</div>
+                </div>
+                <div class="adjustment-card">
+                    <div class="adjustment-name">HP/DEF (for supports)</div>
+                    <div class="adjustment-change">Normal: Ignore → Abyss: Some</div>
+                    <div class="adjustment-reason">Your support dying means losing CC and buffs. Keep them alive.</div>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Don't gut your damage for survivability.</strong> You still need to kill the boss before enrage. Find a balance.
+            </div>
+        </section>
+    
+        <section id="chapter9">
+            <div class="chapter-marker">Chapter IX</div>
+            <h2>The Mental Game — How to Not Lose Your Sanity</h2>
+            
+            <p>This is the most important section. I'm not joking.</p>
+            
+            <p>Chaos Abyss will test you. It will make you angry. It will make you want to quit. Here's how I survived.</p>
+            
+            <div class="mental-tips">
+                <div class="mental-tip">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <strong>Take breaks.</strong> If you fail three times in a row, step away. Get water. Walk around. Come back in 10 minutes. Tilt is real.
+                    </div>
+                </div>
+                <div class="mental-tip">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <strong>One floor at a time.</strong> Don't think about Floor 15 when you're on Floor 12. Focus on the current fight.
+                    </div>
+                </div>
+                <div class="mental-tip">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <strong>Learn from deaths.</strong> Every time you die, ask: "Why?" Bad dodge? Bad positioning? Wrong blessing? Fix it.
+                    </div>
+                </div>
+                <div class="mental-tip">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <strong>Don't compare to whales.</strong> That guy clearing Floor 15 in 60 seconds has spent 10x what you have. Your journey is yours.
+                    </div>
+                </div>
+                <div class="mental-tip">
+                    <div class="tip-number">5</div>
+                    <div class="tip-content">
+                        <strong>Celebrate small wins.</strong> Got to Phase 2 for the first time? That's progress. Acknowledge it.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                "I almost quit after failing Floor 14 at 2% boss health. I didn't. Two days later, I cleared it. Don't give up."
+                <div style="margin-top: 8px; font-size: 0.85rem;">—— Someone who almost quit</div>
+            </div>
+        </section>
+    
+        <section id="conclusion">
+            <div class="chapter-marker">Conclusion</div>
+            <h2>Is Floor 15 Worth The Pain?</h2>
+            
+            <div class="conclusion-card">
+                <p>Here's the honest truth.</p>
+                
+                <p>Clearing Chaos Abyss Floor 15 doesn't give you anything life-changing. The rewards are nice, sure. But they won't transform your account.</p>
+                
+                <p>So why do it?</p>
+                
+                <p>Because it's there. Because you want to prove to yourself that you can. Because every time you failed, you learned something. Because the person who clears Floor 15 is not the same person who walked into Floor 1.</p>
+                
+                <p>Chaos Abyss changed how I play this game. It made me better at dodging. Better at positioning. Better at understanding my characters. It made me more patient. More persistent. Less likely to rage-quit when things go wrong.</p>
+                
+                <p>That's the real reward. Not the protocores. Not the gems. The growth.</p>
+                
+                <p>So is Floor 15 worth it?</p>
+                
+                <p><strong>Yes.</strong> But not for the reasons you think.</p>
+                
+                <div class="signature">
+                    — A player who finally saw the credits roll<br>
+                    Last updated: May 2026<br>
+                    Attempts: 500+<br>
+                    Tears: Many
+                </div>
+            </div>
+            
+            <div class="build-choices">
+                <h3>Quick Links</h3>
+                <div class="choice-buttons">
+                    <a href="#chapter5" class="choice-btn">⚔️ Jump to Team Comps</a>
+                    <a href="#chapter6" class="choice-btn">👾 Enemy Patterns</a>
+                    <a href="#chapter7" class="choice-btn">✨ Blessings Tier List</a>
+                    <a href="#chapter9" class="choice-btn">🧠 Mental Game</a>
+                </div>
+            </div>
+        </section>
     </div>
-</nav>
+    
+    <button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
 
-<header class="article-header" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/chaos-abyss-cover.png'); background-size: cover; background-position: center 30%;">
-    <h1>Chaos Abyss: Floor 15 and Beyond</h1>
-    <p>500+ runs. Countless resets. Tears, rage, and finally success. Here's what I learned.</p>
-</header>
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
 
-<div class="container">
-
-    <div class="toc" id="teams">
-        <h3>📑 What You'll Find Here</h3>
-        <ul>
-            <li><a href="#disclaimer">Before We Start — My Credentials (Or Lack Thereof)</a></li>
-            <li><a href="#chapter1">I. What Is Chaos Abyss? (And Why It Hates You)</a></li>
-            <li><a href="#chapter2">II. Floor by Floor — What to Expect (1-15)</a></li>
-            <li><a href="#chapter3">III. The Three Pillars — Damage, Survivability, CC</a></li>
-            <li><a href="#chapter4">IV. Best Characters for Each Role (Tested, Not Theory)</a></li>
-            <li><a href="#chapter5">V. Team Compositions That Actually Work (Floor 10-15)</a></li>
-            <li><a href="#chapter6">VI. Enemy Patterns — When to Dodge, When to Commit</a></li>
-            <li><a href="#chapter7">VII. Blessings — Which to Pick, Which to Reroll</a></li>
-            <li><a href="#chapter8">VIII. Protocore Adjustments for Abyss</a></li>
-            <li><a href="#chapter9">IX. The Mental Game — How to Not Lose Your Sanity</a></li>
-            <li><a href="#conclusion">Final Verdict — Is Floor 15 Worth The Pain?</a></li>
-        </ul>
-    </div>
-
-    <section id="disclaimer">
-        <div class="disclaimer-box">
-            <span class="disclaimer-icon">⚠️</span>
-            <p><strong>Before we start:</strong> I'm not a whale. I'm not a streamer with perfect artifacts. I'm a guy who spent way too many nights slamming his head against the same floors because I refused to accept that I couldn't clear them. This guide is based on pain. Real pain. Your mileage may vary.</p>
-        </div>
-    </section>
-
-    <section id="chapter1">
-        <div class="chapter-marker">Chapter I</div>
-        <h2>What Is Chaos Abyss? (And Why It Hates You)</h2>
-        
-        <p>Let me paint you a picture.</p>
-        
-        <p>You've built your characters. You've farmed protocores for weeks. You think you're ready. You walk into Chaos Abyss Floor 1, breeze through it, and think "this isn't so bad."</p>
-        
-        <p>Then Floor 6 happens.</p>
-        
-        <p>Then Floor 10.</p>
-        
-        <p>Then Floor 14.</p>
-        
-        <p>And suddenly you understand. Chaos Abyss isn't a dungeon. It's a <strong>personality test</strong>. It's designed to break you. Not through unfair mechanics — but through attrition. Through forcing you to make split-second decisions. Through making you fight the same boss fifty times until your fingers know the patterns better than your brain.</p>
-        
-        <div class="stat-highlight">
-            <div class="stat-number">142</div>
-            <div class="stat-label">Attempts on Floor 12 alone</div>
-        </div>
-        
-        <p>I'm not proud of that number. But I'm also not ashamed. Because every failed attempt taught me something. Every reset showed me a mistake I was making. Every time I wanted to throw my phone across the room, I learned a little more about patience.</p>
-        
-        <p>Here's what Chaos Abyss actually is:</p>
-        
-        <ul class="insight-list">
-            <li><strong>A DPS check</strong> — Can you kill the boss before the enrage timer?</li>
-            <li><strong>A mechanics check</strong> — Do you know when to dodge, when to stand still, when to burst?</li>
-            <li><strong>A resource management test</strong> — Are you saving your Ardent Oath for the right moment?</li>
-            <li><strong>A mental endurance exam</strong> — Can you keep your cool after failing at 1% boss health?</li>
-        </ul>
-        
-        <div class="quote-box">
-            "Chaos Abyss isn't hard. It's <i>punishing</i>. There's a difference. Hard content tests your skill. Punishing content tests your patience."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— Me, after attempt #87</div>
-        </div>
-        
-        <p>This guide is going to help you with all of it. The builds. The rotations. The enemy patterns. But most importantly, the mental game. Because if you're not mentally prepared, no amount of protocores will save you.</p>
-    </section>
-
-    <section id="chapter2">
-        <div class="chapter-marker">Chapter II</div>
-        <h2>Floor by Floor — What to Expect (1-15)</h2>
-        
-        <p>Let's break down every floor. Not in excruciating detail — but enough that you know what's coming.</p>
-        
-        <div class="floor-timeline">
-            <div class="floor-group">
-                <div class="floor-range">Floors 1-5</div>
-                <div class="floor-desc">The tutorial. If you're struggling here, you're not ready. Go farm more protocores.</div>
-                <div class="floor-difficulty easy">Difficulty: Easy</div>
-            </div>
-            <div class="floor-group">
-                <div class="floor-range">Floors 6-8</div>
-                <div class="floor-desc">First real check. Enemies hit harder. Bosses have actual mechanics now. Pay attention.</div>
-                <div class="floor-difficulty medium">Difficulty: Medium</div>
-            </div>
-            <div class="floor-group">
-                <div class="floor-range">Floors 9-11</div>
-                <div class="floor-desc">Welcome to the pain zone. Multiple elites spawn together. You need crowd control.</div>
-                <div class="floor-difficulty hard">Difficulty: Hard</div>
-            </div>
-            <div class="floor-group">
-                <div class="floor-range">Floors 12-13</div>
-                <div class="floor-desc">Boss floors with adds. This is where most players get stuck. Learn the patterns.</div>
-                <div class="floor-difficulty hard">Difficulty: Very Hard</div>
-            </div>
-            <div class="floor-group">
-                <div class="floor-range">Floors 14</div>
-                <div class="floor-desc">Two bosses. Simultaneously. This floor made me question my life choices.</div>
-                <div class="floor-difficulty extreme">Difficulty: Extreme</div>
-            </div>
-            <div class="floor-group">
-                <div class="floor-range">Floor 15</div>
-                <div class="floor-desc">The final boss. Three phases. Each phase adds new mechanics. Don't choke.</div>
-                <div class="floor-difficulty extreme">Difficulty: Nightmare</div>
-            </div>
-        </div>
-        
-        <h3>Floor 12 Deep Dive — The Wall</h3>
-        
-        <p>Floor 12 is where most players hit their first real wall. Let me tell you why.</p>
-        
-        <p>The boss has three attacks you need to memorize:</p>
-        
-        <ul>
-            <li><strong>Slam:</strong> Ground AoE. Dodge backward, not sideways. The hitbox is wider than it looks.</li>
-            <li><strong>Charge:</strong> Boss rushes forward. Dodge perpendicular. I-frames matter here.</li>
-            <li><strong>Roar:</strong> Summons adds. Kill them immediately or they'll overwhelm you.</li>
-        </ul>
-        
-        <p>The key to Floor 12 is <strong>add management</strong>. If you ignore the little guys, they'll stack buffs on the boss. Kill them within 5 seconds of spawn.</p>
-        
-        <div class="tip-box">
-            <strong>💡 Pro Tip:</strong> Save your Ardent Oath for when adds spawn. A well-timed ultimate can clear adds AND damage the boss at the same time.
-        </div>
-        
-        <h3>Floor 14 Deep Dive — The Nightmare</h3>
-        
-        <p>Two bosses. One arena. Your tears.</p>
-        
-        <p>The left boss (Shadow Vanguard) is aggressive. It will chase you non-stop. The right boss (Arcane Weaver) is ranged. It will spam projectiles from across the room.</p>
-        
-        <p>The strategy: <strong>separate them</strong>. Kite the melee boss away from the ranged one. Focus down the ranged boss first — it has less HP but more annoying attacks. Once it's dead, the melee boss is manageable.</p>
-        
-        <div class="quote-box">
-            "I spent three weeks on Floor 14. Three. Weeks. My girlfriend asked if I was okay. I was not okay."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— A very real comment</div>
-        </div>
-    </section>
-
-    <section id="chapter3">
-        <div class="chapter-marker">Chapter III</div>
-        <h2>The Three Pillars — Damage, Survivability, CC</h2>
-        
-        <p>Every successful Abyss run balances three things. If you're weak in any of them, you'll fail.</p>
-        
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <div class="pillar-icon">⚔️</div>
-                <div class="pillar-name">Damage</div>
-                <div class="pillar-desc">Can you kill the boss before enrage? This is about your build, your rotation, and your crit luck.</div>
-                <div class="pillar-check">✓ 65%+ CRIT Rate</div>
-                <div class="pillar-check">✓ 220%+ CRIT DMG</div>
-                <div class="pillar-check">✓ Level 80 weapons</div>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">🛡️</div>
-                <div class="pillar-name">Survivability</div>
-                <div class="pillar-desc">Can you stay alive? This is about dodging, positioning, and knowing enemy patterns.</div>
-                <div class="pillar-check">✓ Learn attack tells</div>
-                <div class="pillar-check">✓ Save dodges for big hits</div>
-                <div class="pillar-check">✓ Healer support optional</div>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">❄️</div>
-                <div class="pillar-name">Crowd Control</div>
-                <div class="pillar-desc">Can you handle multiple enemies? This is about freeze, stun, and positioning.</div>
-                <div class="pillar-check">✓ Zayne freeze</div>
-                <div class="pillar-check">✓ Group enemies together</div>
-                <div class="pillar-check">✓ Kill adds quickly</div>
-            </div>
-        </div>
-        
-        <p>Most guides focus on Damage. That's a mistake. I've seen players with insane builds fail Floor 12 because they couldn't dodge. I've seen players with mediocre builds clear Floor 15 because they understood positioning.</p>
-        
-        <p><strong>Damage gets you through the door. Survivability and CC keep you alive inside.</strong></p>
-    </section>
-
-    <section id="chapter4">
-        <div class="chapter-marker">Chapter IV</div>
-        <h2>Best Characters for Each Role (Tested, Not Theory)</h2>
-        
-        <p>Let's talk characters. I've tested every combination. Here's what works.</p>
-        
-        <div class="role-section">
-            <h3>🔥 Main DPS (Carry)</h3>
-            <div class="character-rankings">
-                <div class="char-rank s-tier">
-                    <span class="char-name">Sylus (Shadow)</span>
-                    <span class="char-rating">S+</span>
-                    <p class="char-reason">Infinite energy loop. Self-sustain. High burst. He's the best, no contest.</p>
-                </div>
-                <div class="char-rank a-tier">
-                    <span class="char-name">Xavier (Light)</span>
-                    <span class="char-rating">A+</span>
-                    <p class="char-reason">Highest burst ceiling. Requires perfect timing. High skill floor.</p>
-                </div>
-                <div class="char-rank a-tier">
-                    <span class="char-name">Zayne (Ice)</span>
-                    <span class="char-rating">A</span>
-                    <p class="char-reason">Consistent. Good CC. Lower ceiling but more forgiving.</p>
-                </div>
-                <div class="char-rank b-tier">
-                    <span class="char-name">Rafayel (Fire)</span>
-                    <span class="char-rating">B+</span>
-                    <p class="char-reason">DOT focused. Good for long fights. Squishy.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="role-section">
-            <h3>🛡️ Support / Sub-DPS</h3>
-            <div class="character-rankings">
-                <div class="char-rank s-tier">
-                    <span class="char-name">Any Healer</span>
-                    <span class="char-rating">S</span>
-                    <p class="char-reason">If you're struggling to survive, bring a healer. It's that simple.</p>
-                </div>
-                <div class="char-rank a-tier">
-                    <span class="char-name">Zayne (Support)</span>
-                    <span class="char-rating">A</span>
-                    <p class="char-reason">Freeze is invaluable. Build him for energy regen.</p>
-                </div>
-                <div class="char-rank b-tier">
-                    <span class="char-name">Shield Characters</span>
-                    <span class="char-rating">B</span>
-                    <p class="char-reason">Situational. Good for specific bosses.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="warning-box">
-            <strong>⚠️ Important:</strong> Your main DPS should be your best-built character. Don't spread resources thin. One strong carry is better than two mediocre ones.
-        </div>
-    </section>
-
-    <section id="chapter5">
-        <div class="chapter-marker">Chapter V</div>
-        <h2>Team Compositions That Actually Work (Floor 10-15)</h2>
-        
-        <p>After hundreds of runs, here are the team comps that got me through each floor range.</p>
-        
-        <div class="team-composition">
-            <div class="team-header">
-                <div class="team-icon">👑</div>
-                <div class="team-info">
-                    <div class="team-name">The Hypercarry</div>
-                    <div class="team-desc">Best for: Floors where you can brute force</div>
-                </div>
-                <div class="team-difficulty">Any Floor</div>
-            </div>
-            <div class="team-members">
-                <span class="member">Sylus (Main DPS)</span> + 
-                <span class="member">Xavier (Sub DPS)</span> + 
-                <span class="member">Zayne (CC/Heal)</span>
-            </div>
-            <div class="team-strategy">
-                <strong>Strategy:</strong> Pour everything into Sylus. Xavier provides burst windows. Zayne freezes for setup. Simple but effective.
-            </div>
-        </div>
-        
-        <div class="team-composition">
-            <div class="team-header">
-                <div class="team-icon">❄️</div>
-                <div class="team-info">
-                    <div class="team-name">The Freeze Lock</div>
-                    <div class="team-desc">Best for: Floors 9-11 (add-heavy)</div>
-                </div>
-                <div class="team-difficulty">Medium</div>
-            </div>
-            <div class="team-members">
-                <span class="member">Zayne (Main DPS)</span> + 
-                <span class="member">Second Ice</span> + 
-                <span class="member">Flex</span>
-            </div>
-            <div class="team-strategy">
-                <strong>Strategy:</strong> Double ice = more freeze uptime. Keep enemies locked down while you kill them one by one.
-            </div>
-        </div>
-        
-        <div class="team-composition">
-            <div class="team-header">
-                <div class="team-icon">⚡</div>
-                <div class="team-info">
-                    <div class="team-name">The Battery</div>
-                    <div class="team-desc">Best for: Floors 12-14 (boss fights)</div>
-                </div>
-                <div class="team-difficulty">Hard</div>
-            </div>
-            <div class="team-members">
-                <span class="member">Sylus/Xavier (Main DPS)</span> + 
-                <span class="member">High ER Support</span> + 
-                <span class="member">Healer</span>
-            </div>
-            <div class="team-strategy">
-                <strong>Strategy:</strong> Feed energy to your main DPS. Use Ardent Oath on cooldown. Sustain through healer.
-            </div>
-        </div>
-        
-        <div class="team-composition">
-            <div class="team-header">
-                <div class="team-icon">💀</div>
-                <div class="team-info">
-                    <div class="team-name">The Glass Cannon</div>
-                    <div class="team-desc">Best for: Floor 15 (if you're confident)</div>
-                </div>
-                <div class="team-difficulty">Extreme</div>
-            </div>
-            <div class="team-members">
-                <span class="member">Xavier (Main DPS)</span> + 
-                <span class="member">Sylus (Sub DPS)</span> + 
-                <span class="member">Zayne (CC only)</span>
-            </div>
-            <div class="team-strategy">
-                <strong>Strategy:</strong> No healer. No safety. All damage. Restart until your burst window crits. Not for the faint of heart.
-            </div>
-        </div>
-    </section>
-
-    <section id="chapter6">
-        <div class="chapter-marker">Chapter VI</div>
-        <h2>Enemy Patterns — When to Dodge, When to Commit</h2>
-        
-        <p>Knowing enemy attack patterns is worth more than 20% CRIT DMG. I'm serious.</p>
-        
-        <h3>Common Enemy Types</h3>
-        
-        <div class="enemy-card">
-            <div class="enemy-name">⚔️ Melee Bruiser</div>
-            <div class="enemy-pattern">
-                <strong>Attack pattern:</strong> Swing → Swing → Slam (AoE)
-                <br>
-                <strong>Dodge timing:</strong> Dodge the slam. The first two swings you can tank or outrange.
-                <br>
-                <strong>Burst window:</strong> Right after the slam. 2-3 second recovery.
-            </div>
-        </div>
-        
-        <div class="enemy-card">
-            <div class="enemy-name">🏹 Ranged Caster</div>
-            <div class="enemy-pattern">
-                <strong>Attack pattern:</strong> Orb → Orb → Homing Missile
-                <br>
-                <strong>Dodge timing:</strong> The missile is the only dangerous attack. Dodge toward the caster, not away.
-                <br>
-                <strong>Burst window:</strong> After the missile. Caster stands still to recharge.
-            </div>
-        </div>
-        
-        <div class="enemy-card">
-            <div class="enemy-name">👑 Elite Boss</div>
-            <div class="enemy-pattern">
-                <strong>Attack pattern:</strong> Varies by boss, but all have a "tell" before big attacks.
-                <br>
-                <strong>Dodge timing:</strong> Watch for the glow. Red glow = big attack incoming.
-                <br>
-                <strong>Burst window:</strong> After stagger. Use resonance to break stance, then go all in.
-            </div>
-        </div>
-        
-        <div class="tip-box">
-            <strong>💡 The Golden Rule:</strong> If you don't know the pattern, don't commit. Spend a run just dodging. Learn the timing. Then add damage.
-        </div>
-    </section>
-
-    <section id="chapter7">
-        <div class="chapter-marker">Chapter VII</div>
-        <h2>Blessings — Which to Pick, Which to Reroll</h2>
-        
-        <p>Blessings can make or break a run. Here's my priority list.</p>
-        
-        <div class="blessings-grid">
-            <div class="blessing-card s">
-                <div class="blessing-tier">S Tier — Always Pick</div>
-                <div class="blessing-name">Critical Surge</div>
-                <div class="blessing-effect">+30% CRIT Rate after using Ardent Oath</div>
-                <div class="blessing-reason">Insane uptime. Best blessing in the game.</div>
-            </div>
-            <div class="blessing-card s">
-                <div class="blessing-tier">S Tier — Always Pick</div>
-                <div class="blessing-name">Elemental Fury</div>
-                <div class="blessing-effect">+50% Elemental DMG for 10s after resonance</div>
-                <div class="blessing-reason">Huge damage spike during your burst window.</div>
-            </div>
-            <div class="blessing-card a">
-                <div class="blessing-tier">A Tier — Very Good</div>
-                <div class="blessing-name">Unbroken Will</div>
-                <div class="blessing-effect">+20% ATK when HP above 80%</div>
-                <div class="blessing-reason">Free damage if you can stay healthy.</div>
-            </div>
-            <div class="blessing-card a">
-                <div class="blessing-tier">A Tier — Very Good</div>
-                <div class="blessing-name">Second Wind</div>
-                <div class="blessing-effect">Auto-revive once per run</div>
-                <div class="blessing-reason">Safety net. Invaluable for learning floors.</div>
-            </div>
-            <div class="blessing-card b">
-                <div class="blessing-tier">B Tier — Situational</div>
-                <div class="blessing-name">Energy Overflow</div>
-                <div class="blessing-effect">+50% Energy Regen</div>
-                <div class="blessing-reason">Good for battery comps. Otherwise meh.</div>
-            </div>
-            <div class="blessing-card f">
-                <div class="blessing-tier">F Tier — Skip</div>
-                <div class="blessing-name">Survival Instinct</div>
-                <div class="blessing-effect">+30% DEF when below 50% HP</div>
-                <div class="blessing-reason">If you're that low, you're probably dead anyway.</div>
-            </div>
-        </div>
-        
-        <div class="quote-box">
-            "I once got Critical Surge + Elemental Fury on the same run. I cleared Floor 14 in 90 seconds. It was the most beautiful thing I've ever seen."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— A blessed memory</div>
-        </div>
-    </section>
-
-    <section id="chapter8">
-        <div class="chapter-marker">Chapter VIII</div>
-        <h2>Protocore Adjustments for Abyss</h2>
-        
-        <p>Your normal build might not be optimal for Abyss. Here's what to change.</p>
-        
-        <div class="adjustment-grid">
-            <div class="adjustment-card">
-                <div class="adjustment-name">More CRIT Rate</div>
-                <div class="adjustment-change">Normal: 50-60% → Abyss: 65-75%</div>
-                <div class="adjustment-reason">You get fewer chances to burst. Consistency matters more than ceiling.</div>
-            </div>
-            <div class="adjustment-card">
-                <div class="adjustment-name">Energy Regen Substats</div>
-                <div class="adjustment-change">Normal: Ignore → Abyss: 120-140%</div>
-                <div class="adjustment-reason">Longer fights mean more rotations. More ults = more damage.</div>
-            </div>
-            <div class="adjustment-card">
-                <div class="adjustment-name">HP/DEF (for supports)</div>
-                <div class="adjustment-change">Normal: Ignore → Abyss: Some</div>
-                <div class="adjustment-reason">Your support dying means losing CC and buffs. Keep them alive.</div>
-            </div>
-        </div>
-        
-        <div class="warning-box">
-            <strong>⚠️ Don't gut your damage for survivability.</strong> You still need to kill the boss before enrage. Find a balance.
-        </div>
-    </section>
-
-    <section id="chapter9">
-        <div class="chapter-marker">Chapter IX</div>
-        <h2>The Mental Game — How to Not Lose Your Sanity</h2>
-        
-        <p>This is the most important section. I'm not joking.</p>
-        
-        <p>Chaos Abyss will test you. It will make you angry. It will make you want to quit. Here's how I survived.</p>
-        
-        <div class="mental-tips">
-            <div class="mental-tip">
-                <div class="tip-number">1</div>
-                <div class="tip-content">
-                    <strong>Take breaks.</strong> If you fail three times in a row, step away. Get water. Walk around. Come back in 10 minutes. Tilt is real.
-                </div>
-            </div>
-            <div class="mental-tip">
-                <div class="tip-number">2</div>
-                <div class="tip-content">
-                    <strong>One floor at a time.</strong> Don't think about Floor 15 when you're on Floor 12. Focus on the current fight.
-                </div>
-            </div>
-            <div class="mental-tip">
-                <div class="tip-number">3</div>
-                <div class="tip-content">
-                    <strong>Learn from deaths.</strong> Every time you die, ask: "Why?" Bad dodge? Bad positioning? Wrong blessing? Fix it.
-                </div>
-            </div>
-            <div class="mental-tip">
-                <div class="tip-number">4</div>
-                <div class="tip-content">
-                    <strong>Don't compare to whales.</strong> That guy clearing Floor 15 in 60 seconds has spent 10x what you have. Your journey is yours.
-                </div>
-            </div>
-            <div class="mental-tip">
-                <div class="tip-number">5</div>
-                <div class="tip-content">
-                    <strong>Celebrate small wins.</strong> Got to Phase 2 for the first time? That's progress. Acknowledge it.
-                </div>
-            </div>
-        </div>
-        
-        <div class="quote-box">
-            "I almost quit after failing Floor 14 at 2% boss health. I didn't. Two days later, I cleared it. Don't give up."
-            <div style="margin-top: 8px; font-size: 0.85rem;">—— Someone who almost quit</div>
-        </div>
-    </section>
-
-    <section id="conclusion">
-        <div class="chapter-marker">Conclusion</div>
-        <h2>Is Floor 15 Worth The Pain?</h2>
-        
-        <div class="conclusion-card">
-            <p>Here's the honest truth.</p>
-            
-            <p>Clearing Chaos Abyss Floor 15 doesn't give you anything life-changing. The rewards are nice, sure. But they won't transform your account.</p>
-            
-            <p>So why do it?</p>
-            
-            <p>Because it's there. Because you want to prove to yourself that you can. Because every time you failed, you learned something. Because the person who clears Floor 15 is not the same person who walked into Floor 1.</p>
-            
-            <p>Chaos Abyss changed how I play this game. It made me better at dodging. Better at positioning. Better at understanding my characters. It made me more patient. More persistent. Less likely to rage-quit when things go wrong.</p>
-            
-            <p>That's the real reward. Not the protocores. Not the gems. The growth.</p>
-            
-            <p>So is Floor 15 worth it?</p>
-            
-            <p><strong>Yes.</strong> But not for the reasons you think.</p>
-            
-            <div class="signature">
-                — A player who finally saw the credits roll<br>
-                Last updated: May 2026<br>
-                Attempts: 500+<br>
-                Tears: Many
-            </div>
-        </div>
-        
-        <div class="build-choices">
-            <h3>Quick Links</h3>
-            <div class="choice-buttons">
-                <a href="#chapter5" class="choice-btn">⚔️ Jump to Team Comps</a>
-                <a href="#chapter6" class="choice-btn">👾 Enemy Patterns</a>
-                <a href="#chapter7" class="choice-btn">✨ Blessings Tier List</a>
-                <a href="#chapter9" class="choice-btn">🧠 Mental Game</a>
-            </div>
-        </div>
-    </section>
-</div>
-
-<button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
-
-<footer>
-    <p>© 2026 Deepspace Hunter Station. All original content is protected.</p>
-    <p>Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
-</footer>
-
-<script>
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
