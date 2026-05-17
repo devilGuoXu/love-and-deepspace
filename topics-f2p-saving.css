@@ -590,3 +590,19 @@
         font-size: 20px;
     }
 }
+
+.copy-link-btn {
+    background: transparent;
+    border: 1px solid var(--f2p-green, #2ecc71);
+    padding: 6px 16px;
+    border-radius: 30px;
+    color: var(--f2p-green, #2ecc71);
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+}
+
+.copy-link-btn:hover {
+    background: var(--f2p-green, #2ecc71);
+    color: #000;
+}
