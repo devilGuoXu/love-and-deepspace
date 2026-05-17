@@ -126,8 +126,8 @@ p {
 }
 
 .sylus-highlight {
-    border-left-color: #8b0000;
-    background: rgba(139, 0, 0, 0.08);
+    border-left-color: #ff5e6b;
+    background: rgba(255, 94, 107, 0.08);
 }
 
 .sylus-highlight strong {
@@ -214,6 +214,7 @@ p {
     border: 1px solid #222;
     padding: 20px 24px;
     margin: 20px 0;
+    border-radius: 12px;
 }
 
 .tech-title {
@@ -308,16 +309,15 @@ p {
     transform: translateY(-3px);
 }
 
-footer {
+.main-footer {
+    background: #000;
+    padding: 40px 20px;
     text-align: center;
-    padding: 50px 20px;
     border-top: 1px solid #2a2f3d;
-    background: #010103;
-    color: #6a7080;
-    font-size: 0.75rem;
+    margin-top: 50px;
 }
 
-.footer-links {
+.main-footer .footer-links {
     display: flex;
     justify-content: center;
     gap: 28px;
@@ -325,13 +325,21 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-links a {
-    color: #9aa2b5;
+.main-footer .footer-links a {
+    color: #8a94a8;
     text-decoration: none;
+    font-size: 0.8rem;
 }
 
-.footer-links a:hover {
+.main-footer .footer-links a:hover {
     color: #c9a063;
+}
+
+.main-footer .copyright,
+.main-footer .disclaimer-mini {
+    color: #6a7080;
+    margin: 5px 0;
+    font-size: 0.75rem;
 }
 
 @media (max-width: 700px) {
@@ -347,5 +355,8 @@ footer {
     .boss-row {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .main-footer .footer-links {
+        gap: 16px;
     }
 }
