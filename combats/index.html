@@ -127,7 +127,8 @@
                         tag: "ELITE_BOSS",
                         title: "Target: Magma Golem — Pattern Alpha",
                         desc: "Frost-type operatives achieve 42% higher shield break. Perfect dodge window: 0.4s reaction.",
-                        points: ["Thermal Resist: 70%", "Frost Bonus: +38%"]
+                        points: ["Thermal Resist: 70%", "Frost Bonus: +38%"],
+                        link: "#"
                     },
                     {
                         id: "ENTRY_#098",
@@ -135,7 +136,8 @@
                         tag: "VOID_LORD",
                         title: "Void Lord: Phase Transition Guide",
                         desc: "Phase 2 triggers at 40% HP. Collect 5 light orbs to disable invincibility shield.",
-                        points: ["Phase HP: 40%", "Required DPS: 45k"]
+                        points: ["Phase HP: 40%", "Required DPS: 45k"],
+                        link: "#"
                     }
                 ]
             },
@@ -150,7 +152,8 @@
                         tag: "FLOOR_12",
                         title: "Abyssal Floor 12: Clear Guide",
                         desc: "Recommended: Sylus + Xavier. Break left add first. Use Ardent Oath on add spawn.",
-                        points: ["Clear Time: 3:30", "Req Power: 85k+"]
+                        points: ["Clear Time: 3:30", "Req Power: 85k+"],
+                        link: "#"
                     },
                     {
                         id: "ENTRY_#115",
@@ -158,7 +161,8 @@
                         tag: "FLOOR_9",
                         title: "Abyssal Floor 9: Double Elite",
                         desc: "Two elites spawn simultaneously. Crowd control is essential. Zayne's freeze is extremely valuable.",
-                        points: ["CC Required: Yes", "Burst Window: 5s"]
+                        points: ["CC Required: Yes", "Burst Window: 5s"],
+                        link: "#"
                     }
                 ]
             },
@@ -173,7 +177,8 @@
                         tag: "CORE_SYSTEM",
                         title: "Protocore Shielding Analysis",
                         desc: "Elemental Resonance reduces resistance by 60% during weakness break window.",
-                        points: ["Resist Reduction: 60%", "Break Bonus: +50%"]
+                        points: ["Resist Reduction: 60%", "Break Bonus: +50%"],
+                        link: "#"
                     },
                     {
                         id: "ENTRY_#088",
@@ -181,7 +186,8 @@
                         tag: "ENERGY_REGEN",
                         title: "Energy Regen Breakpoints",
                         desc: "Sylus benefits from 145% Energy Recharge for perfect loops. Xavier needs Crit Rate > 65%.",
-                        points: ["Sylus ER: 145%", "Xavier CR: 65%"]
+                        points: ["Sylus ER: 145%", "Xavier CR: 65%"],
+                        link: "#"
                     }
                 ]
             },
@@ -196,7 +202,8 @@
                         tag: "RESTRICTED",
                         title: "Restricted Access",
                         desc: "Requires Level 5 clearance. Contact Deepspace Hunter HQ.",
-                        points: ["Clearance: Level 5", "Status: Locked"]
+                        points: ["Clearance: Level 5", "Status: Locked"],
+                        link: "#"
                     }
                 ]
             }
@@ -259,6 +266,7 @@
                 const viewedClass = isViewed ? ' viewed' : '';
                 const pointsHtml = entry.points.map(p => `<div class="data-point">${p}</div>`).join('');
                 const criticalClass = entry.tag === 'ELITE_BOSS' ? ' critical-card' : '';
+                const entryLink = entry.link || '#';
                 
                 html += `
                     <article class="log-entry-final${criticalClass}${viewedClass}" data-entry-id="${entry.id}">
@@ -273,7 +281,7 @@
                             <p>${entry.desc}</p>
                             <div class="mini-data-flex">${pointsHtml}</div>
                         </div>
-                        <a href="${entry.link || '#'}" class="log-link" data-entry-id="${entry.id}">VIEW DETAILS →</a>
+                        <a href="${entryLink}" class="log-link" data-entry-id="${entry.id}">VIEW DETAILS →</a>
                     </article>
                 `;
             }
@@ -282,11 +290,11 @@
 
             document.querySelectorAll('.log-link').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
                     const entryId = this.getAttribute('data-entry-id');
-                    const article = this.closest('.log-entry-final');
+                    const targetLink = this.getAttribute('href');
                     
                     if (markAsViewed(entryId)) {
+                        const article = this.closest('.log-entry-final');
                         const header = article.querySelector('.log-header');
                         if (header && !header.querySelector('.read-badge')) {
                             const badge = document.createElement('span');
@@ -298,7 +306,9 @@
                         article.classList.add('viewed');
                     }
                     
-                    alert(`Opening: ${entryId}\nFull guide content will be available soon.`);
+                    if (targetLink && targetLink !== '#') {
+                        window.location.href = targetLink;
+                    }
                 });
             });
 
@@ -335,22 +345,22 @@
 
         renderContent('basic');
 
-    const backToTopBtn = document.getElementById('backToTopBtn');
+        const backToTopBtn = document.getElementById('backToTopBtn');
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
         });
-    });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
