@@ -247,6 +247,10 @@ p {
     margin-top: 10px;
 }
 
+.main-footer p {
+    text-align: center !important;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     header {
