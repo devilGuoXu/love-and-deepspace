@@ -39,7 +39,7 @@
                 <li data-category="protocore">
                     <span class="code">03</span> Protocore Builds
                 </li>
-                <li class="locked" data-category="classified">
+                <li data-category="classified">
                     <span class="code">XX</span> Classified · N109
                 </li>
             </ul>
@@ -193,16 +193,34 @@
             },
             classified: {
                 title: "Classified N109",
-                threatLevel: "UNKNOWN",
-                threatColor: "#555555",
+                threatLevel: "RESTRICTED",
+                threatColor: "#9b59b6",
                 entries: [
                     {
-                        id: "ENTRY_#XXX",
-                        date: "CLASSIFIED",
-                        tag: "RESTRICTED",
-                        title: "Restricted Access",
-                        desc: "Requires Level 5 clearance. Contact Deepspace Hunter HQ.",
-                        points: ["Clearance: Level 5", "Status: Locked"],
+                        id: "ENTRY_#N109_01",
+                        date: "2026.05.01",
+                        tag: "CLASSIFIED",
+                        title: "N109 Zone: The Lawless Land",
+                        desc: "An overview of the N109 Zone — where Onychinus rules and Sylus became its king. Lore analysis of the most dangerous region in Love and Deepspace.",
+                        points: ["Region: Lawless Zone", "Ruler: Sylus", "Danger Level: Extreme"],
+                        link: "n109-lore.html"
+                    },
+                    {
+                        id: "ENTRY_#N109_02",
+                        date: "2026.04.28",
+                        tag: "ONYCHINUS",
+                        title: "Onychinus: Structure and Power",
+                        desc: "Understanding the criminal organization that controls N109. How Sylus rose to power and what it means for the story.",
+                        points: ["Leader: Sylus", "Territory: N109 Zone", "Status: Active"],
+                        link: "#"
+                    },
+                    {
+                        id: "ENTRY_#N109_03",
+                        date: "2026.04.25",
+                        tag: "MEPHISTO",
+                        title: "Mephisto: The Crow's Symbolism",
+                        desc: "What Sylus's mechanical crow represents. Faustian themes and the meaning behind the name.",
+                        points: ["Symbol: The Devil's Witness", "Role: Sentinel", "Lore: Deep"],
                         link: "#"
                     }
                 ]
@@ -317,10 +335,6 @@
 
         document.querySelectorAll('.category-list-final li').forEach(item => {
             item.addEventListener('click', function() {
-                if (this.classList.contains('locked')) {
-                    alert('Higher clearance required. This section is classified.');
-                    return;
-                }
                 document.querySelectorAll('.category-list-final li').forEach(li => li.classList.remove('active'));
                 this.classList.add('active');
                 const category = this.getAttribute('data-category');
