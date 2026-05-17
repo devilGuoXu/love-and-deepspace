@@ -257,11 +257,6 @@ p {
     margin-top: 50px;
 }
 
-.article-main-footer .article-copyright,
-.article-main-footer .article-disclaimer-mini {
-    color: var(--text-muted, #8a94a8);
-}
-
 .article-footer-links {
     margin-bottom: 20px;
 }
