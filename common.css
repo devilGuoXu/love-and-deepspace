@@ -259,7 +259,6 @@ p {
 .article-main-footer p {
     text-align: center;
     color: #999;
-    font-size: 16px;
 }
 
 .article-footer-links {
@@ -281,6 +280,10 @@ p {
 .article-copyright{
     color: #999;
     font-size: 13px;
+}
+
+.article-disclaimer-mini{
+    font-size: 16px;
 }
 
 /* ========== RESPONSIVE ========== */
