@@ -1,0 +1,167 @@
+.article-header {
+    padding: 140px 20px 100px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--confession-bg));
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-transform: lowercase;
+}
+
+.article-header .subhead {
+    font-size: 0.9rem;
+    color: var(--confession-dim);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.article-container {
+    max-width: 680px;
+    margin: -40px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 2;
+    background: var(--confession-bg);
+}
+
+.intro-block {
+    margin: 40px 0 60px;
+    text-align: center;
+}
+
+.intro-block p {
+    font-size: 1rem;
+    color: var(--confession-dim);
+    margin-bottom: 16px;
+}
+
+.intro-block .small-note {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+.what-if {
+    margin-bottom: 60px;
+}
+
+.number {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--confession-accent);
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.what-if h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #fff;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.content p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+.content .question {
+    font-style: italic;
+    color: var(--confession-accent);
+    margin: 24px 0 18px;
+    padding-left: 16px;
+    border-left: 2px solid var(--confession-accent);
+}
+
+.content .dont-ask, 
+.content .dont-do, 
+.content .dont-want, 
+.content .dont-know,
+.content .dont-think {
+    color: #777;
+    font-style: italic;
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px dashed #2a2f3d;
+}
+
+.content .but {
+    color: #c9a063;
+    margin-top: 12px;
+}
+
+.content .secret {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 16px;
+    font-style: italic;
+    text-align: right;
+}
+
+.divider {
+    text-align: center;
+    color: #2a2f3d;
+    margin: 40px 0 20px;
+    font-size: 0.8rem;
+}
+
+.outro-block {
+    margin: 80px 0 40px;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #2a2f3d;
+}
+
+.outro-block p {
+    font-size: 0.9rem;
+    color: var(--confession-dim);
+    margin-bottom: 16px;
+}
+
+.outro-block .small-note {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+    .article-container {
+        padding: 0 20px 60px;
+    }
+    .what-if h2 {
+        font-size: 1.3rem;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
