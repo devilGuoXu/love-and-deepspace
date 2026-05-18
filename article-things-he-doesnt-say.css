@@ -1,0 +1,249 @@
+:root {
+    --unsaid-gold: #c9a063;
+    --unsaid-dim: #8a94a8;
+    --unsaid-bg: #05070c;
+    --unsaid-card: #0f121b;
+    --unsaid-border: #2a2f3d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--unsaid-bg);
+    color: #e0e0e0;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7;
+}
+
+.article-header {
+    padding: 200px 20px 120px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--unsaid-bg));
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.article-header .subhead {
+    font-size: 0.9rem;
+    color: var(--unsaid-dim);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.article-container {
+    max-width: 800px;
+    margin: -40px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 2;
+    background: var(--unsaid-bg);
+}
+
+.intro-block {
+    margin: 40px 0 60px;
+    text-align: center;
+}
+
+.intro-block p {
+    font-size: 1rem;
+    color: var(--unsaid-dim);
+    margin-bottom: 16px;
+}
+
+.intro-block .small-note {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+.what-if {
+    margin-bottom: 70px;
+}
+
+.number {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--unsaid-gold);
+    margin-bottom: 12px;
+    opacity: 0.6;
+    text-transform: lowercase;
+}
+
+.what-if h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 28px;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.content p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+.content .question {
+    font-style: italic;
+    color: var(--unsaid-gold);
+    margin: 24px 0 18px;
+    padding-left: 16px;
+    border-left: 2px solid var(--unsaid-gold);
+}
+
+.content .but {
+    color: var(--unsaid-gold);
+    margin-top: 12px;
+}
+
+.divider {
+    text-align: center;
+    color: #2a2f3d;
+    margin: 50px 0 20px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.outro-block {
+    margin: 80px 0 40px;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #2a2f3d;
+}
+
+.outro-block p {
+    font-size: 0.9rem;
+    color: var(--unsaid-dim);
+    margin-bottom: 16px;
+}
+
+.outro-block .small-note {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 30px;
+}
+
+.image-left {
+    float: left;
+    width: 35%;
+    margin: 8px 24px 16px 0;
+}
+
+.image-right {
+    float: right;
+    width: 35%;
+    margin: 8px 0 16px 24px;
+}
+
+.image-inline {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.image-fullwidth {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-wide {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-square {
+    width: 30%;
+}
+
+.image-circle img {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.image-small {
+    width: 25%;
+}
+
+.image-left img,
+.image-right img,
+.image-square img,
+.image-small img,
+.image-circle img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.image-inline img,
+.image-fullwidth img,
+.image-wide img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.image-caption {
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+.content-full {
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .article-container {
+        padding: 0 20px 60px;
+    }
+    .what-if h2 {
+        font-size: 1.4rem;
+    }
+    .image-left, .image-right, .image-square, .image-small, .image-circle {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .image-circle img {
+        border-radius: 50%;
+        width: 60%;
+        margin: 0 auto;
+        display: block;
+    }
+}
