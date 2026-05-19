@@ -1,0 +1,122 @@
+.energy-viz {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 30px 0;
+}
+
+.energy-bar-bg {
+    background: #1e232e;
+    border-radius: 20px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.energy-bar-fill {
+    background: linear-gradient(90deg, #c9a063, #f39c12);
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: width 0.3s;
+}
+
+.energy-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-bottom: 12px;
+}
+
+.energy-note {
+    font-size: 0.75rem;
+    color: #8a94a8;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.char-energy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.char-energy-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.char-name {
+    font-weight: 700;
+    color: #c9a063;
+    margin-bottom: 8px;
+}
+
+.char-desc {
+    font-size: 0.8rem;
+    color: #b0bedb;
+    line-height: 1.4;
+}
+
+.training-box {
+    background: linear-gradient(135deg, #0f121b, #0a0e16);
+    border: 1px solid #c9a063;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.training-title {
+    font-weight: 700;
+    color: #c9a063;
+    margin-bottom: 12px;
+}
+
+.training-text {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.5;
+}
+
+.summary-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.summary-section ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.summary-section li {
+    margin: 8px 0;
+    font-size: 0.85rem;
+    color: #b0bedb;
+}
+
+.summary-title {
+    font-weight: 700;
+    color: #c9a063;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .char-energy-grid {
+        grid-template-columns: 1fr;
+    }
+    .summary-card {
+        grid-template-columns: 1fr;
+    }
+}
