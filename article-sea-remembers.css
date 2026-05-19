@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f2eb;
+    color: #2c2a2a;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+}
+
+.main-header {
+    background: rgba(245, 242, 235, 0.95);
+    border-bottom: 1px solid #e0dbd0;
+}
+
+.logo {
+    color: #8b6b3a !important;
+}
+
+.travel-header {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.travel-header-content {
+    max-width: 700px;
+    padding: 40px 24px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
+}
+
+.travel-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.travel-header h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.travel-subhead {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.travel-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.travel-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    background: #f5f2eb;
+}
+
+.travel-part {
+    margin-bottom: 48px;
+}
+
+.travel-part-number {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #8b6b3a;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.travel-first {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2c2a2a;
+}
+
+.travel-part p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+.travel-image-full {
+    margin: 48px 0;
+    text-align: center;
+}
+
+.travel-image-full img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.travel-image-right {
+    float: right;
+    width: 45%;
+    margin: 8px 0 16px 24px;
+}
+
+.travel-image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.travel-image-left {
+    float: left;
+    width: 45%;
+    margin: 8px 24px 16px 0;
+}
+
+.travel-image-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.travel-image-caption {
+    font-size: 0.7rem;
+    color: #9a9a9a;
+    margin-top: 8px;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+.travel-outro {
+    text-align: center;
+    margin: 80px 0 40px;
+    padding: 40px 0;
+    border-top: 1px solid #e0dbd0;
+    border-bottom: 1px solid #e0dbd0;
+}
+
+.travel-outro-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #8b6b3a;
+    margin-bottom: 16px;
+}
+
+.travel-outro-signature {
+    font-size: 0.8rem;
+    color: #9a9a9a;
+}
+
+.travel-polaroid {
+    margin: 60px auto 20px;
+    width: 280px;
+    background: #fff;
+    padding: 12px 12px 24px 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    transform: rotate(-1deg);
+    transition: transform 0.2s;
+}
+
+.travel-polaroid:hover {
+    transform: rotate(0deg);
+}
+
+.polaroid-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid-caption {
+    font-size: 0.7rem;
+    color: #6a6a6a;
+    text-align: center;
+    margin-top: 12px;
+    font-family: monospace;
+}
+
+@media (max-width: 700px) {
+    .travel-header h1 {
+        font-size: 2rem;
+    }
+    .travel-container {
+        padding: 40px 20px 60px;
+    }
+    .travel-image-right,
+    .travel-image-left {
+        float: none;
+        width: 100%;
+        margin: 24px 0;
+    }
+    .travel-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .travel-polaroid {
+        width: 90%;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
