@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage Types and Scaling: What Actually Matters | Deepspace Hub</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="ATK% vs CRIT vs DMG Bonus. Flat stats vs percentages. Learn what actually increases your damage and what's a trap.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="basics-damage-scaling.css">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="/combats/">&larr; BACK TO COMBAT GUIDES</a>
+        </div>
+    </nav>
+    
+    <div class="basics-container">
+        <div class="basics-hero">
+            <h1>Damage Types and Scaling: What Actually Matters</h1>
+            <p>ATK% vs CRIT vs DMG Bonus. Flat stats vs percentages. Learn what actually increases your damage.</p>
+        </div>
+    
+        <div class="basics-entry-meta">
+            <span class="entry-id">ENTRY_#005</span>
+            <span class="entry-date">2026.05.22</span>
+            <span class="entry-tag">DAMAGE_SCALING</span>
+        </div>
+    
+        <div class="basics-highlight-box">
+            <p><strong>📊 The Core Insight:</strong> Not all damage stats are equal. ATK% sounds good. CRIT sounds better. But the math doesn't always agree. This guide breaks down what each stat actually does — and when to prioritize it.</p>
+        </div>
+    
+        <h2>The Damage Formula — Simplified</h2>
+        <p>Before we talk about stats, let's look at how damage is calculated:</p>
+    
+        <div class="formula-box">
+            <code>Final Damage = Base ATK × (1 + ATK%) × Skill Multiplier × (1 + DMG Bonus) × CRIT Multiplier (if crit)</code>
+        </div>
+    
+        <p>Each multiplier is <strong>multiplicative</strong> with the others. That means 10% ATK is worth the same as 10% DMG Bonus in isolation — but they scale differently with your gear.</p>
+    
+        <div class="tip-box">
+            <p><strong>💡 The Golden Rule:</strong> Spread your stats evenly. 100% ATK + 0% DMG Bonus is worse than 50% ATK + 50% DMG Bonus. Diminishing returns are real.</p>
+        </div>
+    
+        <h2>Stat Breakdown — What Each One Does</h2>
+    
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">⚔️</div>
+                <div class="stat-name">ATK (Flat)</div>
+                <div class="stat-value">Base: 800-1200</div>
+                <div class="stat-effect">The foundation. Every damage calculation starts here.</div>
+                <div class="stat-priority">Priority: Medium</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-name">ATK%</div>
+                <div class="stat-value">Increases base ATK by %</div>
+                <div class="stat-effect">Scales with your weapon and artifacts. Gets weaker if you already have too much.</div>
+                <div class="stat-priority">Priority: High (until 120-150%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-name">CRIT Rate</div>
+                <div class="stat-value">Chance to deal bonus damage</div>
+                <div class="stat-effect">Probability-based. Inconsistent at low values. 65%+ recommended for burst characters.</div>
+                <div class="stat-priority">Priority: High (to 65-75%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💥</div>
+                <div class="stat-name">CRIT DMG</div>
+                <div class="stat-value">Bonus damage on crit (150% base)</div>
+                <div class="stat-effect">Multiplies your damage when you crit. Prioritize after reaching CRIT Rate breakpoint.</div>
+                <div class="stat-priority">Priority: High (after CRIT Rate)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-name">Elemental DMG%</div>
+                <div class="stat-value">Ice/Fire/Light/Shadow DMG</div>
+                <div class="stat-effect">Separate multiplier. Very valuable. Get it on Slot 2 protocore.</div>
+                <div class="stat-priority">Priority: Very High</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-name">Energy Regen</div>
+                <div class="stat-value">Increases energy gain</div>
+                <div class="stat-effect">Not damage directly, but more ults = more damage. Essential for Sylus/Zayne.</div>
+                <div class="stat-priority">Priority: Character-dependent</div>
+            </div>
+        </div>
+    
+        <h2>Flat ATK vs ATK% — The Trap</h2>
+        <p>Many players think flat ATK is useless. That's not entirely true — but it's also not great.</p>
+    
+        <div class="comparison-box">
+            <div class="comparison bad">
+                <div class="comparison-title">❌ Flat ATK +50</div>
+                <div class="comparison-value">+50 damage before multipliers</div>
+                <div class="comparison-desc">After CRIT and DMG Bonus, maybe +150 total. Negligible.</div>
+            </div>
+            <div class="comparison good">
+                <div class="comparison-title">✅ ATK% +10%</div>
+                <div class="comparison-value">+100-120 damage before multipliers</div>
+                <div class="comparison-desc">After CRIT and DMG Bonus, maybe +300-400 total. Much better.</div>
+            </div>
+        </div>
+    
+        <div class="warning-box">
+            <p><strong>⚠️ The Math:</strong> A flat ATK substat (like +40) is worth about 3-4% ATK% on most characters. Always prioritize % stats over flat stats.</p>
+        </div>
+    
+        <h2>ATK% — How Much Is Too Much?</h2>
+        <p>ATK% has diminishing returns. Here's why:</p>
+    
+        <div class="data-card">
+            <div class="data-row">
+                <span class="data-label">0% ATK → 50% ATK</span>
+                <span class="data-value">+50% damage (huge gain)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">50% ATK → 100% ATK</span>
+                <span class="data-value">+33% damage (still good)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">100% ATK → 150% ATK</span>
+                <span class="data-value">+25% damage (decreasing)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">150% ATK → 200% ATK</span>
+                <span class="data-value">+20% damage (diminishing returns)</span>
+            </div>
+        </div>
+    
+        <div class="tip-box">
+            <p><strong>💡 Recommendation:</strong> Aim for 120-150% ATK from substats and main stats. Beyond that, invest in CRIT or DMG Bonus instead.</p>
+        </div>
+    
+        <h2>CRIT Rate vs CRIT DMG — The Balance</h2>
+        <p>This is the most common question. Here's the answer:</p>
+    
+        <div class="crit-chart">
+            <div class="crit-bar-container">
+                <div class="crit-bar">
+                    <span>40% CR / 150% CD</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 30%; background: #ff5e6b;"></div></div>
+                    <span class="crit-value">~60% effective damage</span>
+                </div>
+                <div class="crit-bar">
+                    <span>60% CR / 180% CD</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 55%; background: #f39c12;"></div></div>
+                    <span class="crit-value">~108% effective damage</span>
+                </div>
+                <div class="crit-bar">
+                    <span>70% CR / 220% CD</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 77%; background: #2ecc71;"></div></div>
+                    <span class="crit-value">~154% effective damage</span>
+                </div>
+                <div class="crit-bar">
+                    <span>85% CR / 200% CD</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 85%; background: #2ecc71;"></div></div>
+                    <span class="crit-value">~170% effective damage</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="highlight-box">
+            <p><strong>📊 The Sweet Spot:</strong> 65-75% CRIT Rate, then stack CRIT DMG as high as possible. The 1:2 ratio (CRIT Rate : CRIT DMG) is a good guideline, but CRIT Rate has higher value until you hit 65%.</p>
+        </div>
+    
+        <h2>Elemental DMG% — The Underrated Stat</h2>
+        <p>Elemental DMG% (Ice DMG%, Fire DMG%, etc.) is a <strong>separate multiplier</strong>. That means it's multiplicative with ATK and CRIT, not additive.</p>
+    
+        <div class="damage-example">
+            <div class="example-title">📈 Real Example</div>
+            <div class="example-row">
+                <span>Base Damage: 10,000</span>
+                <span>100% ATK: 20,000</span>
+            </div>
+            <div class="example-row">
+                <span>+ 50% Ice DMG:</span>
+                <span>30,000 (not 25,000!)</span>
+            </div>
+            <div class="example-row highlight">
+                <span>+ 200% CRIT DMG:</span>
+                <span>90,000 damage</span>
+            </div>
+        </div>
+    
+        <div class="tip-box">
+            <p><strong>💡 Always run Elemental DMG% on Slot 2 protocore.</strong> It's the only slot that can roll it as a main stat. This is non-negotiable for DPS characters.</p>
+        </div>
+    
+        <h2>Character-Specific Scaling Priorities</h2>
+    
+        <div class="priority-grid">
+            <div class="priority-card">
+                <div class="priority-name">🌑 Sylus</div>
+                <div class="priority-stats">ER (to 145%) > CRIT Rate > CRIT DMG > ATK% > Elemental</div>
+                <div class="priority-note">Energy Recharge is mandatory until breakpoint. After that, full CRIT.</div>
+            </div>
+            <div class="priority-card">
+                <div class="priority-name">✨ Xavier</div>
+                <div class="priority-stats">CRIT Rate > CRIT DMG > ATK% > Elemental > ER</div>
+                <div class="priority-note">Burst damage focused. ER is low priority.</div>
+            </div>
+            <div class="priority-card">
+                <div class="priority-name">❄️ Zayne</div>
+                <div class="priority-stats">ER (to 140%) > CRIT Rate > CRIT DMG > ATK%</div>
+                <div class="priority-note">Freeze uptime > damage. Hit ER breakpoint first.</div>
+            </div>
+            <div class="priority-card">
+                <div class="priority-name">🔥 Rafayel</div>
+                <div class="priority-stats">ER (to 120%) > ATK% > CRIT Rate > CRIT DMG</div>
+                <div class="priority-note">DOT focused. Consistent damage over burst.</div>
+            </div>
+        </div>
+    
+        <h2>Damage Per Screenshot — The Trap</h2>
+        <p>It's tempting to stack everything into one number. A 300k crit looks amazing. But if you only crit 30% of the time, your average damage is lower than a 200k crit at 70% CR.</p>
+    
+        <div class="comparison-box">
+            <div class="comparison">
+                <div class="comparison-title">💀 Glass Cannon Build</div>
+                <div class="comparison-stats">30% CR / 280% CD</div>
+                <div class="comparison-damage">Average: 30,000 × 0.3 + 84,000 × 0.7 = <strong>67,800</strong></div>
+                <div class="comparison-note">Looks good on screenshots. Inconsistent in practice.</div>
+            </div>
+            <div class="comparison good">
+                <div class="comparison-title">✅ Consistent Build</div>
+                <div class="comparison-stats">70% CR / 200% CD</div>
+                <div class="comparison-damage">Average: 30,000 × 0.3 + 60,000 × 0.7 = <strong>51,000</strong></div>
+                <div class="comparison-note">Lower peak, higher average. Better for clear times.</div>
+            </div>
+        </div>
+    
+        <div class="warning-box">
+            <p><strong>⚠️ The Truth:</strong> Consistent damage clears content faster than inconsistent peak damage. Don't chase the big number — chase the reliable number.</p>
+        </div>
+    
+        <h2 id="conclusion">Summary — Stat Priority Cheat Sheet</h2>
+    
+        <div class="basics-summary-card">
+            <div class="basics-summary-section">
+                <div class="basics-summary-title">🏆 General Priority (DPS)</div>
+                <ul>
+                    <li>1. Elemental DMG% (Slot 2 main stat)</li>
+                    <li>2. CRIT Rate (to 65-75%)</li>
+                    <li>3. CRIT DMG (200%+ target)</li>
+                    <li>4. ATK% (to 120-150%)</li>
+                    <li>5. Flat ATK (avoid)</li>
+                </ul>
+            </div>
+            <div class="basics-summary-section">
+                <div class="basics-summary-title">⚡ Character-Specific</div>
+                <ul>
+                    <li>Sylus: ER to 145% first</li>
+                    <li>Zayne: ER to 140% first</li>
+                    <li>Rafayel: ER to 120% first</li>
+                    <li>Xavier: Ignore ER, full CRIT</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="quick-reference">
+            <div class="ref-title">📋 Quick Reference</div>
+            <div class="ref-row"><span>Best main stat (Slot 1)</span><span>CRIT Rate</span></div>
+            <div class="ref-row"><span>Best main stat (Slot 2)</span><span>Elemental DMG%</span></div>
+            <div class="ref-row"><span>Best main stat (Slot 3)</span><span>CRIT DMG</span></div>
+            <div class="ref-row"><span>Best main stat (Slot 4)</span><span>ATK% or CRIT Rate</span></div>
+            <div class="ref-row"><span>Worst stat to stack</span><span>Flat ATK / Flat DEF / Flat HP</span></div>
+        </div>
+    
+        <div class="basics-highlight-box final">
+            <p><strong>🎯 The Bottom Line:</strong> Damage isn't about one big number — it's about consistent, reliable output. Spread your stats evenly. Hit your CRIT Rate breakpoint. Don't ignore Elemental DMG%. And remember: ATK% has diminishing returns.</p>
+            <p style="margin-top: 16px;">A balanced build will always outperform a min-maxed glass cannon over 100 runs. Build for consistency. Clear faster.</p>
+        </div>
+    </div>
+    
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">↑</span>
+    </button>
+    
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+    
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
