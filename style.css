@@ -242,6 +242,12 @@ body {
     line-height: 1;
 }
 
+.sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
 @media (max-width: 768px) {
     .back-to-top {
         bottom: 20px;
