@@ -1,0 +1,213 @@
+.valentine-header {
+    padding: 400px 20px 140px;
+    text-align: center;
+    position: relative;
+}
+
+.valentine-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #0a0a0c);
+    pointer-events: none;
+}
+
+.valentine-header-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.header-stamp {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #ff6b8a;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.valentine-header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.header-sub {
+    font-size: 0.9rem;
+    color: #b0bedb;
+    margin-bottom: 24px;
+}
+
+.header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-family: monospace;
+}
+
+.valentine-container {
+    max-width: 700px;
+    margin: -60px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 2;
+    background: #0a0a0c;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: #0f121b;
+    border-radius: 24px;
+    border: 1px solid #2a2f3d;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    color: #b0bedb;
+}
+
+.intro-divider {
+    margin-top: 24px;
+    color: #c9a063;
+    letter-spacing: 4px;
+}
+
+.story {
+    margin-bottom: 60px;
+}
+
+.story-number {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #c9a063;
+    margin-bottom: 8px;
+    font-family: monospace;
+}
+
+.story-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0bedb;
+}
+
+.story-quote {
+    margin-top: 28px;
+    padding: 16px 20px;
+    background: rgba(201, 160, 99, 0.08);
+    border-left: 3px solid #c9a063;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.story-image-left {
+    float: left;
+    width: 40%;
+    margin: 8px 28px 20px 0;
+}
+
+.story-image-right {
+    float: right;
+    width: 40%;
+    margin: 8px 0 20px 28px;
+}
+
+.story-image-left img,
+.story-image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption {
+    font-size: 0.65rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+.divider {
+    text-align: center;
+    color: #2a2f3d;
+    margin: 48px 0;
+    letter-spacing: 4px;
+}
+
+.epilogue {
+    margin-top: 60px;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, #0f121b, #0a0e16);
+    border: 1px solid #ff6b8a;
+    border-radius: 32px;
+    text-align: center;
+}
+
+.epilogue-text p {
+    margin-bottom: 20px;
+    color: #b0bedb;
+}
+
+.epilogue-signature {
+    margin-top: 32px;
+    font-style: italic;
+    color: #c9a063;
+}
+
+.epilogue-stamp {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #2a2f3d;
+    font-size: 0.7rem;
+    color: #ff6b8a;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .valentine-header h1 {
+        font-size: 2rem;
+    }
+    .valentine-container {
+        padding: 40px 16px 60px;
+    }
+    .story-name {
+        font-size: 1.5rem;
+    }
+    .story-image-left,
+    .story-image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .epilogue {
+        padding: 32px 20px;
+    }
+    .header-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
