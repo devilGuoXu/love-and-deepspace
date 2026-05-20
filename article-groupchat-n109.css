@@ -1,0 +1,245 @@
+.groupchat-header {
+    padding: 200px 20px 140px;
+    text-align: center;
+    position: relative;
+}
+
+.groupchat-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #0a0a0c);
+    pointer-events: none;
+}
+
+.groupchat-header-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.header-stamp {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #ff5e6b;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.groupchat-header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.header-sub {
+    font-size: 0.9rem;
+    color: #b0bedb;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-family: monospace;
+}
+
+.groupchat-container {
+    max-width: 700px;
+    margin: -60px auto 0;
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 2;
+    background: #0a0a0c;
+}
+
+.prologue {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.prologue-stamp {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #c9a063;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.prologue-text p {
+    margin-bottom: 16px;
+    color: #b0bedb;
+    font-size: 0.9rem;
+}
+
+.prologue-warning {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2f3d;
+    font-size: 0.7rem;
+    color: #ff5e6b;
+    letter-spacing: 0.5px;
+}
+
+.chat-container {
+    background: #0f121b;
+    border-radius: 24px;
+    border: 1px solid #2a2f3d;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.chat-day-marker {
+    background: #0a0e16;
+    padding: 12px 20px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    text-align: center;
+    font-family: monospace;
+    border-bottom: 1px solid #2a2f3d;
+    border-top: 1px solid #2a2f3d;
+}
+
+.message {
+    display: flex;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(42, 47, 61, 0.3);
+}
+
+.message:last-child {
+    border-bottom: none;
+}
+
+.msg-avatar {
+    width: 36px;
+    height: 36px;
+    background: #1a1f2e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.sylus-avatar { background: rgba(139, 0, 0, 0.2); color: #ff5e6b; }
+.xavier-avatar { background: rgba(232, 226, 199, 0.15); color: #e8e2c7; }
+.zayne-avatar { background: rgba(74, 144, 217, 0.15); color: #4a90d9; }
+.rafayel-avatar { background: rgba(255, 126, 103, 0.15); color: #ff7e67; }
+
+.msg-content {
+    flex: 1;
+}
+
+.msg-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.message .sylus-avatar + .msg-content .msg-name { color: #ff5e6b; }
+.message .xavier-avatar + .msg-content .msg-name { color: #e8e2c7; }
+.message .zayne-avatar + .msg-content .msg-name { color: #4a90d9; }
+.message .rafayel-avatar + .msg-content .msg-name { color: #ff7e67; }
+
+.msg-text {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.4;
+}
+
+.msg-voice {
+    font-size: 0.7rem;
+    color: #c9a063;
+    font-family: monospace;
+    margin-bottom: 4px;
+}
+
+.msg-image {
+    font-size: 0.7rem;
+    color: #8a94a8;
+    font-family: monospace;
+    margin-bottom: 4px;
+}
+
+.msg-time {
+    font-size: 0.6rem;
+    color: #5a6070;
+    margin-top: 4px;
+}
+
+.system {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.msg-system-text {
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-style: italic;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.epilogue {
+    text-align: center;
+    padding: 32px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 20px;
+}
+
+.epilogue-stamp {
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-family: monospace;
+    margin-bottom: 12px;
+}
+
+.epilogue-signature {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #c9a063;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .groupchat-header h1 {
+        font-size: 2rem;
+    }
+    .groupchat-container {
+        padding: 40px 16px 60px;
+    }
+    .message {
+        padding: 10px 12px;
+    }
+    .msg-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    .header-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
