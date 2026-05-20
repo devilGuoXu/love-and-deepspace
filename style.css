@@ -120,13 +120,36 @@ body {
 .post-thumb {
     flex-shrink: 0;
     line-height: 0;
+    position: relative;
+    background: #1a1f2e;
 }
 
-.post-thumb img { 
-    width: 300px; 
-    height: 180px; 
-    object-fit: cover; 
+.post-thumb img {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
     display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post-thumb img.loaded {
+    opacity: 1;
+}
+
+.post-thumb:not(:has(img.loaded)) {
+    background: linear-gradient(90deg, #1a1f2e 0%, #222838 50%, #1a1f2e 100%);
+    background-size: 200% 100%;
+    animation: skeleton-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-wave {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 .post-info { 
@@ -259,4 +282,3 @@ body {
         font-size: 20px;
     }
 }
-
