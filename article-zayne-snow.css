@@ -1,0 +1,176 @@
+.snow-header {
+    padding: 400px 20px 140px;
+    text-align: center;
+    position: relative;
+}
+
+.snow-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #0a0a0c);
+    pointer-events: none;
+}
+
+.snow-header-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.snow-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #4a90d9;
+}
+
+.snow-header h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.snow-subhead {
+    font-size: 0.9rem;
+    color: #b0bedb;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.snow-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-family: monospace;
+}
+
+.snow-container {
+    max-width: 700px;
+    margin: -60px auto 0;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 2;
+    background: #0a0a0c;
+}
+
+.snow-part {
+    margin-bottom: 48px;
+}
+
+.snow-part-number {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #4a90d9;
+    margin-bottom: 16px;
+    font-family: monospace;
+}
+
+.snow-first {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.snow-part p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0bedb;
+}
+
+.snow-image-full {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.snow-image-right {
+    float: right;
+    width: 45%;
+    margin: 8px 0 20px 28px;
+}
+
+.snow-image-left {
+    float: left;
+    width: 45%;
+    margin: 8px 28px 20px 0;
+}
+
+.snow-image-full img,
+.snow-image-right img,
+.snow-image-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.snow-image-caption {
+    font-size: 0.65rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+.snow-outro {
+    margin-top: 60px;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, #0f121b, #0a0e16);
+    border: 1px solid #4a90d9;
+    border-radius: 32px;
+    text-align: center;
+}
+
+.snow-outro-quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #4a90d9;
+    margin-bottom: 20px;
+}
+
+.snow-outro-signature {
+    font-size: 0.75rem;
+    color: #6a7080;
+}
+
+@media (max-width: 700px) {
+    .snow-header h1 {
+        font-size: 2rem;
+    }
+    .snow-container {
+        padding: 40px 16px 60px;
+    }
+    .snow-image-right,
+    .snow-image-left {
+        float: none;
+        width: 100%;
+        margin: 24px 0;
+    }
+    .snow-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .snow-outro {
+        padding: 32px 20px;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    .main-footer .footer-links {
+        gap: 16px;
+    }
+}
