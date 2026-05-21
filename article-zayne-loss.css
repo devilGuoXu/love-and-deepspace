@@ -42,36 +42,6 @@
     font-style: italic;
 }
 
-/* Navigation */
-nav {
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #2a2f3d;
-}
-
-.nav-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    color: var(--zayne-blue);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.85rem;
-}
-
-nav a:hover {
-    opacity: 0.8;
-}
-
 /* Table of Contents */
 .toc {
     background: #0f121b;
