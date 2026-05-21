@@ -54,15 +54,6 @@
     font-family: monospace;
 }
 
-.snow-container {
-    max-width: 700px;
-    margin: -60px auto 0;
-    padding: 0 24px 80px;
-    position: relative;
-    z-index: 2;
-    background: #0a0a0c;
-}
-
 .snow-part {
     margin-bottom: 48px;
 }
