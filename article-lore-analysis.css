@@ -34,13 +34,6 @@
     z-index: 1;
 }
 
-.container {
-    max-width: 800px;
-    margin: -60px auto 0;
-    padding: 0 24px 80px;
-    background: #0a0e0c;
-}
-
 .toc {
     background: #0f121b;
     padding: 25px 30px;
