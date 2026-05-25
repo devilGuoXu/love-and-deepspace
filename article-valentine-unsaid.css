@@ -1,43 +1,3 @@
-.valentine-header {
-    padding: 400px 20px 140px;
-    text-align: center;
-    position: relative;
-}
-
-.valentine-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, #0a0a0c);
-    pointer-events: none;
-}
-
-.valentine-header-content {
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.header-stamp {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: #ff6b8a;
-    margin-bottom: 20px;
-    font-family: monospace;
-}
-
-.valentine-header h1 {
-    font-size: 2.8rem;
-    font-weight: 600;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-    color: #fff;
-}
-
 .header-sub {
     font-size: 0.9rem;
     color: #b0bedb;
@@ -51,15 +11,6 @@
     font-size: 0.7rem;
     color: #6a7080;
     font-family: monospace;
-}
-
-.valentine-container {
-    max-width: 700px;
-    margin: -60px auto 0;
-    padding: 0 24px 80px;
-    position: relative;
-    z-index: 2;
-    background: #0a0a0c;
 }
 
 .intro {
