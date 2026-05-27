@@ -1,0 +1,138 @@
+/* Psychology header style (soft pink/purple theme) */
+.psych-header {
+    color: var(--psych-lavender);
+    border-left: 6px solid var(--psych-pink);
+    padding-left: 20px;
+    background: linear-gradient(90deg, #1e1020, transparent);
+    border-bottom: none;
+}
+
+/* Data box with pink border */
+.data-box {
+    background: var(--card-bg);
+    border: 1px solid #4a2a3a;
+    border-left: 4px solid var(--psych-pink);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.data-box strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.data-box ul, .data-box ol {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.data-box li {
+    margin-bottom: 8px;
+}
+
+/* Tables */
+.stats-table-wrapper {
+    overflow-x: auto;
+    margin: 40px 0;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    font-size: 1rem;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 18px;
+    border: 1px solid #333;
+    text-align: left;
+    vertical-align: top;
+}
+
+.stats-table th {
+    background: #1e1020;
+    color: var(--psych-lavender);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-table tr:nth-child(even) {
+    background: #161016;
+}
+
+.highlight {
+    color: var(--psych-pink);
+    font-weight: bold;
+}
+
+/* Image placeholders */
+.image-placeholder {
+    margin: 40px 0;
+    background: #0f0c0e;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #4a2a3a;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    border-radius: 12px;
+    background: #1a1418;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.image-placeholder p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Conclusion card */
+.conclusion-card {
+    background: linear-gradient(145deg, #1e1020, #0a060a);
+    padding: 45px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #4a2a3a;
+    margin-top: 60px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: var(--psych-pink);
+    color: #fff;
+    padding: 18px 36px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background: #be185d;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-table th, .stats-table td {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    .conclusion-card {
+        padding: 25px;
+    }
+    .article-header h1 {
+        font-size: 2rem;
+    }
+}
