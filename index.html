@@ -7,6 +7,60 @@
     <link rel="icon" type="image/x-icon" href="./favicon.webp">
     <meta name="description" content="The ultimate source for Love and Deepspace: expert combat guides, Core meta-analysis, character builds, and Chaos Abyss walkthroughs.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========== SEARCH BAR STYLES (additional) ========== */
+        .section-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        .section-title {
+            margin-bottom: 0;
+        }
+        .search-wrapper {
+            flex-shrink: 0;
+            width: 280px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 18px;
+            background: #1a1a22;
+            border: 1px solid #333;
+            border-radius: 40px;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--accent, #e94560);
+            box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.2);
+        }
+        .search-input::placeholder {
+            color: #666;
+        }
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            background: #0f0f14;
+            border-radius: 20px;
+            color: #aaa;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrapper {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -31,14 +85,14 @@
     <main class="container">
         <!-- Main Content Area -->
         <section class="content-area">
-            <h2 class="section-title">Latest Original Analysis</h2>
-            
-            <div id="postsGrid">
-
+            <div class="section-header">
+                <h2 class="section-title">Latest Original Analysis</h2>
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search by title, category, or description...">
+                </div>
             </div>
             
-            <div id="loadTrigger" style="height: 20px;"></div>
-            
+            <div id="postsGrid"></div>
         </section>
 
         <!-- Sidebar -->
@@ -78,508 +132,49 @@
     </footer>
 
     <script>
-    // ============ Back to top function ============
-    const backToTopBtn = document.getElementById('backToTopBtn');
-
-    if (backToTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    (function() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.dataset.src;
-                        if (src) {
-                            img.src = src;
-                            img.classList.add('loaded');
-                        }
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '100px',
-                threshold: 0.01
-            });
-            
-            window.observeLazyImages = function() {
-                document.querySelectorAll('.post-thumb img:not(.loaded)').forEach(img => {
-                    if (!img.src || img.src.includes('data:image')) {
-                        imageObserver.observe(img);
-                    }
-                });
-            };
-        }
-        
+        // ============ FULL ARTICLES DATABASE ============
         const articles = [
-            {
-                href: "article-bird-returns-lore.html",
-                img: "images/bird-returns-banner.webp",
-                alt: "Birds Returning Day lore analysis cover",
-                category: "Lore Analysis · Main Story · Xia Yizhou",
-                title: "Birds Returning Day",
-                desc: "Death, resurrection, and the promise hidden in the ashes.",
-                date: "May 27, 2026",
-                readTime: "22 min read"
-            },
-            {
-                href: "article-rafayel-tidal-guide.html",
-                img: "images/rafayel-tidal-banner.webp",
-                alt: "Rafayel tidal wrath guide cover",
-                category: "Combat Guide · Rafayel · DOT Mastery",
-                title: "Rafayel: Tidal Wrath",
-                desc: "DoT stacking mechanics, Vaporize thresholds, and the art of drowning your enemies in sustained damage — a complete 10k+ word deep dive.",
-                date: "May 27, 2026",
-                readTime: "19 min read"
-            },
-            {
-                href: "article-zayne-ice-guide.html",
-                img: "images/zayne-banner-guide.webp",
-                alt: "Zayne ice combat guide cover",
-                category: "Combat Guide · Zayne · Advanced",
-                title: "Zayne: Permafrost Sovereign",
-                desc: "Frame-perfect freeze windows, energy refund loops, and the math behind the immortal ice mage — a complete 10k+ word deep dive.",
-                date: "May 27, 2026",
-                readTime: "18 min read"
-            },
-            {
-                href: "article-zayne-waited.html",
-                img: "images/zayne-waited-cover.webp",
-                alt: "the first time someone waited for him",
-                category: "Short Story · Zayne · Healing",
-                title: "The First Time Someone Waited For Him",
-                desc: "zayne was always the last to leave the hospital. he never minded the empty halls.",
-                date: "May 26, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-zayne-first-medicine.html",
-                img: "images/zayne-first-medicine-cover.webp",
-                alt: "the first time someone brought him medicine",
-                category: "Short Story · Zayne · Healing",
-                title: "The First Time Someone Brought Him Medicine",
-                desc: "zayne was always the one giving medicine. prescriptions. advice. care. he never took any himself.",
-                date: "May 26, 2026",
-                readTime: "15 min read"
-            },
-            {
-                href: "article-rafayel-first-saw.html",
-                img: "images/rafayel-first-saw-cover.webp",
-                alt: "the first time someone saw his painting",
-                category: "Short Story · Rafayel · Art",
-                title: "The First Time Someone Saw His Painting",
-                desc: "no one understood his paintings. they asked 'what is it.' he stopped explaining. then she came. she didn't ask.",
-                date: "May 26, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-amusement-park.html",
-                img: "images/amusement-park-cover.webp",
-                alt: "amusement park disaster",
-                category: "Humor · Group Chat · Short Story",
-                title: "Amusement Park Disaster",
-                desc: "rafayel wanted to go to an amusement park. sylus said roller coasters were inefficient. zayne cited safety statistics.",
-                date: "May 25, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-zayne-left-early.html",
-                img: "images/zayne-left-early-thumb.webp",
-                alt: "the first time he left on time",
-                category: "Short Story · Zayne · Healing",
-                title: "The First Time He Left On Time",
-                desc: "zayne never left work on time. there was always another patient. always another surgery. always another reason to stay. until her.",
-                date: "May 24, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-zayne-after-snow.html",
-                img: "images/zayne-after-snow-cover.webp",
-                alt: "after the snow",
-                category: "Short Story · Zayne · Healing",
-                title: "After The Snow",
-                desc: "the snow melted. she kept coming back. he still didn't know why. but he stopped asking.",
-                date: "May 24, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-xavier-nights.html",
-                img: "images/xavier-nights-cover.webp",
-                alt: "two hundred years of nights",
-                category: "Poetry · Xavier · Short Story",
-                title: "Two Hundred Years Of Nights",
-                desc: "seventy-three thousand nights. some nights he slept. most nights he didn't. every night he waited.",
-                date: "May 24, 2026",
-                readTime: "8 min read"
-            },
-            {
-                href: "article-rafayel-rain.html",
-                img: "images/rafayel-rain-cover.webp",
-                alt: "the rain that wouldn't stop",
-                category: "Short Story · Rafayel · Romance",
-                title: "The Rain That Wouldn't Stop",
-                desc: "she came to his studio to escape the rain. she stayed because he was painting something she couldn't look away from.",
-                date: "May 23, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-karaoke-disaster.html",
-                img: "images/karaoke-cover.webp",
-                alt: "karaoke disaster",
-                category: "Humor · Group Chat · Short Story",
-                title: "Karaoke Disaster",
-                desc: "Four people go to sing karaoke together.",
-                date: "May 23, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-stamina-optimization-guide.html",
-                img: "images/stamina-guide-cover.webp",
-                alt: "Stamina Optimization Guide",
-                category: "Guide · Resource Management",
-                title: "Stamina Optimization",
-                desc: "Where to spend your energy. Complete daily allocation guide for F2P, monthly card players, and whales.",
-                date: "May 23, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-sylus-first-throne.html",
-                img: "images/sylus-first-throne-cover.webp",
-                alt: "the first time he sat on the throne",
-                category: "Prequel · Sylus · Short Story",
-                title: "The First Time He Sat On The Throne",
-                desc: "he wasn't always the king of n109. once, he was just a man with nothing to lose. this is how sylus became the shadow everyone fears.",
-                date: "May 23, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-camping-catastrophe.html",
-                img: "images/camping-cover.webp",
-                alt: "camping catastrophe",
-                category: "Humor · Group Chat · Short Story",
-                title: "Camping Catastrophe",
-                desc: "sylus proposed camping. rafayel was excited. zayne brought a medical kit. xavier brought snacks. the tent didn't go up.",
-                date: "May 23, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-bond-guide.html",
-                img: "images/bond-guide-thumb.webp",
-                alt: "Bond Level Fast Track",
-                category: "Guide · Home System",
-                title: "Bond Level Fast Track",
-                desc: "Daily routine, gift priorities, furniture interactions, and the fastest way to increase affinity with Sylus, Xavier, Zayne, and Rafayel.",
-                date: "May 23, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-mall-disaster.html",
-                img: "images/mall-disaster-cover.webp",
-                alt: "mall disaster",
-                category: "Humor · Group Chat · Short Story",
-                title: "Mall Disaster",
-                desc: "Sylus proposed to go to the mall. Rafayel was excited. Zayne refused. Xavier had already fallen asleep.",
-                date: "May 22, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-rafayel-flower.html",
-                img: "images/rafayel-flower-cover.webp",
-                alt: "the flower on the windowsill",
-                category: "Short Story · Rafayel · Healing",
-                title: "The Flower On The Windowsill",
-                desc: "no one knows who put it there. no one waters it. but it keeps coming back. a story about waiting, blooming.",
-                date: "May 22, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-mephisto-speaks.html",
-                img: "images/mephisto-thumb.webp",
-                alt: "mephisto speaks",
-                category: "Short Story · Sylus · Mephisto",
-                title: "Mephisto Speaks",
-                desc: "i remember everything. the rain. the repairs. the things he says when no one else is listening.",
-                date: "May 21, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-xavier-guestbook.html",
-                img: "images/xavier-guestbook-cover.webp",
-                alt: "the observatory guestbook",
-                category: "Short Story · Xavier",
-                title: "The Observatory Guestbook",
-                desc: "two hundred years of visitors. one guestbook. and one entry he never expected to find.",
-                date: "May 21, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-zayne-loss.html",
-                img: "images/zayne-loss-thumb.webp",
-                alt: "the one he couldn't save",
-                category: "Short Story · Zayne",
-                title: "The One He Couldn't Save",
-                desc: "every doctor has a patient they can't forget. zayne's was a child. the surgery worked. the complication didn't wait.",
-                date: "May 21, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-rafayel-exhibition.html",
-                img: "images/rafayel-exhibition-cover.webp",
-                alt: "the exhibition of forgotten things",
-                category: "Short Story",
-                title: "The Exhibition Of Forgotten Things",
-                desc: "his first exhibition. all the paintings were of her. and she didn't even know his name.",
-                date: "May 21, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-valentine-unsaid.html",
-                img: "images/article-valentine-thumb.webp",
-                alt: "things she doesn't know",
-                category: "Valentine's Day · Short Story",
-                title: "Things She Doesn't Know",
-                desc: "four men. one day. five things she never found out. a valentine's story about the things left unsaid.",
-                date: "May 20, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-sylus-lore.html",
-                img: "images/sylus-lore-cover.webp",
-                alt: "The Paradox of Sylus",
-                category: "Optimization",
-                title: "The Paradox of Sylus",
-                desc: '"To survive the N109 Zone, you must become the monster. But to love within it, you must remember the human."',
-                date: "May 20, 2026",
-                readTime: "7 min read"
-            },
-            {
-                href: "article-zayne-snow.html",
-                img: "images/article-zayne-snow.webp",
-                alt: "the night it snowed",
-                category: "Short Story · Zayne",
-                title: "The Night It Snowed",
-                desc: "outside, snow. inside, a hospital waiting room. and her, sitting there for no reason at all.",
-                date: "May 20, 2026",
-                readTime: "5 min read"
-            },
-            {
-                href: "article-groupchat-n109.html",
-                img: "images/article-groupchat-n109-thumb.webp",
-                alt: "group chat: the n109 incident",
-                category: "Chat Log · Humor",
-                title: "Group Chat: The N109 Incident",
-                desc: "four men, one group chat, zero survival instincts. classified chat logs intercepted by mephisto.",
-                date: "May 19, 2026",
-                readTime: "8 min read"
-            },
-            {
-                href: "article-who-to-main.html",
-                img: "images/article-who-to-main.webp",
-                alt: "who should you main guide",
-                category: "Guide",
-                title: "Who Should You Main?",
-                desc: "sylus, xavier, zayne, rafayel — strengths, weaknesses, playstyles, and who they're for.",
-                date: "May 18, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-things-theyll-never-do.html",
-                img: "images/things-theyll-never-do-thumb.webp",
-                alt: "things they'll never do",
-                category: "Humor · Character Analysis",
-                title: "Things They'll Never Do",
-                desc: "xavier won't confess. zayne won't admit he needs help. rafayel won't show you his unfinished sketches.",
-                date: "May 17, 2026",
-                readTime: "8 min read"
-            },
-            {
-                href: "article-monologue-sylus.html",
-                img: "images/monologue-sylus.webp",
-                alt: "what they don't see",
-                category: "Monologue",
-                title: "What They Don't See",
-                desc: "the things sylus says to mephisto when no one else is listening.",
-                date: "May 17, 2026",
-                readTime: "15 min read"
-            },
-            {
-                href: "article-sylus-emotion.html",
-                img: "images/sylus-emotion.webp",
-                alt: "Sylus Broke Me: A Player's Honest Confession",
-                category: "💭 Player Confessions",
-                title: "Sylus Broke Me: A Player's Honest Confession",
-                desc: "From hating him to falling for him — why the N109 storyline hit harder than I ever expected. A personal reflection.",
-                date: "May 17, 2026",
-                readTime: "6 min read"
-            },
-            {
-                href: "article-sea-remembers.html",
-                img: "images/travel-sea-cover.webp",
-                alt: "the sea remembers",
-                category: "Travelogue",
-                title: "The Sea Remembers",
-                desc: "i went back to the coast. i didn't expect to find him there.",
-                date: "May 16, 2026",
-                readTime: "6 min read"
-            },
-            {
-                href: "article-au-ordinary-days.html",
-                img: "images/au-ordinary-cover.webp",
-                alt: "ordinary days - an alternate universe story",
-                category: "Alternate Universe",
-                title: "Ordinary Days",
-                desc: "what if they weren't hunters. what if there were no wanderers. what if they just... met. an alternate universe story.",
-                date: "May 15, 2026",
-                readTime: "15 min read"
-            },
-            {
-                href: "article-things-he-doesnt-say.html",
-                img: "images/xavier-unsaid-thumb.webp",
-                alt: "the things he doesn't say",
-                category: "Observations",
-                title: "The Things He Doesn't Say",
-                desc: "the silence between words. the way he looks at me when he thinks i'm asleep. the one thing he said once.",
-                date: "May 15, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-xavier-voyage-outcast.html",
-                img: "images/xavier-voyage-cover.webp",
-                alt: "The Voyage of the Outcast",
-                category: "Tomorrow's Prelude · Lore Analysis",
-                title: "The Voyage of the Outcast",
-                desc: "A promise made under dying stars. A planet he couldn't save. A wait across two hundred years.",
-                date: "May 15, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-things-i-dont-think.html",
-                img: "images/xavier-confession-cover.webp",
-                alt: "things i don't let myself think about",
-                category: "Confessions",
-                title: "Things I Don't Let Myself Think About",
-                desc: "what if he's not human. what if i just kissed him. what if he's been lying. things i don't let myself think about.",
-                date: "May 15, 2026",
-                readTime: "8 min read"
-            },
-            {
-                href: "article-four-masks.html",
-                img: "images/four-masks-cover.webp",
-                alt: "Four Masks, One Truth",
-                category: "Comparative Analysis",
-                title: "Four Masks, One Truth",
-                desc: "Xavier's silence. Zayne's walls. Rafayel's performance. Sylus's armor. Who hides the deepest?",
-                date: "May 14, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-rafayel-tidal-boiling.html",
-                img: "images/rafayel-tidal-cover.webp",
-                alt: "Tidal Boiling Land",
-                category: "Tomorrow's Prelude · Lore Analysis",
-                title: "Tidal Boiling Land | Rafayel Branch Complete Analysis",
-                desc: "A promise made on the day the tide reversed. A thousand years of waiting.",
-                date: "May 14, 2026",
-                readTime: "14 min read"
-            },
-            {
-                href: "article-xavier-weight.html",
-                img: "images/xavier-weight-cover.webp",
-                alt: "Xavier Character Analysis",
-                category: "Character Deep Dive",
-                title: "The Weight of Silence: Xavier's Hidden Pain",
-                desc: "Xavier has lived for over two centuries. He has watched civilizations rise and fall. He has outlived everyone he ever loved.",
-                date: "May 14, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-mc.html",
-                img: "images/mc-cover.webp",
-                alt: "She Was Never a Prize to Be Won",
-                category: "📖 Character Analysis",
-                title: "She Was Never a Prize to Be Won",
-                desc: "The quiet rebellion of being the one who chooses — why MC is not a damsel, not a trophy, but the woman holding the sword.",
-                date: "May 13, 2026",
-                readTime: "10 min read"
-            },
-            {
-                href: "article-rafayel-camouflager.html",
-                img: "images/rafayel-camouflager.webp",
-                alt: "Rafayel: The Drowning Prince",
-                category: "📖 Character Lore",
-                title: "Rafayel: The Drowning Prince",
-                desc: "The artist, the liar, the prince of a kingdom that no longer exists.",
-                date: "May 13, 2026",
-                readTime: "13 min read"
-            },
-            {
-                href: "article-mc-evol.html",
-                img: "images/mc-thumb.webp",
-                alt: "MC's Evol: The Hidden Power",
-                category: "Lore Analysis",
-                title: "MC's Evol: The Hidden Power",
-                desc: "The Resonance ability that connects her to Sylus, Xavier, Zayne, and Rafayel. What is she really capable of?",
-                date: "May 13, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-lore-analysis.html",
-                img: "images/li-shen-moon-thorns-cover.webp",
-                alt: "Moonlit Black Thorns",
-                category: "Tomorrow's Prelude · Lore Analysis",
-                title: "Moonlit Black Thorns | Zayne Branch Complete Analysis",
-                desc: "Dreams and reality intertwine. The healer's obsession and redemption.",
-                date: "May 12, 2026",
-                readTime: "12 min read"
-            },
-            {
-                href: "article-last-bus.html",
-                img: "images/last-bus-thumb.webp",
-                alt: "the last bus",
-                category: "Short Story",
-                title: "The Last Bus",
-                desc: "two strangers. rain on the windows. and a conversation that never happened.",
-                date: "May 12, 2026",
-                readTime: "6 min read"
-            },
-            {
-                href: "article-sylus-guide.html",
-                img: "images/sylus-banner.webp",
-                alt: "Xavier vs. Sylus: Combat Rhythm",
-                category: "Combat Analysis",
-                title: "Xavier vs. Sylus: Combat Rhythm",
-                desc: "A Deep Dive into Light Burst Mechanics, Energy Circulation, and the 'Infinite Dark Energy' Loop",
-                date: "May 12, 2026",
-                readTime: "8 min read"
-            }
+            { href: "article-zayne-ice-guide.html", img: "images/zayne-banner-guide.webp", alt: "Zayne ice combat guide cover", category: "Combat Guide · Zayne · Advanced", title: "Zayne: Permafrost Sovereign", desc: "Frame-perfect freeze windows, energy refund loops, and the math behind the immortal ice mage — a complete 10k+ word deep dive.", date: "May 27, 2026", readTime: "18 min read" },
+            { href: "article-rafayel-tidal-guide.html", img: "images/rafayel-tidal-banner.webp", alt: "Rafayel tidal wrath guide cover", category: "Combat Guide · Rafayel · DOT Mastery", title: "Rafayel: Tidal Wrath", desc: "DoT stacking mechanics, Vaporize thresholds, and the art of drowning your enemies in sustained damage — a complete 10k+ word deep dive.", date: "May 27, 2026", readTime: "19 min read" },
+            { href: "article-bird-returns-lore.html", img: "images/bird-returns-banner.webp", alt: "Birds Returning Day lore analysis cover", category: "Lore Analysis · Main Story · Xia Yizhou", title: "Birds Returning Day", desc: "Death, resurrection, and the promise hidden in the ashes — complete lore deep dive into Xia Yizhou's return and EVER's 'Fountain of Atei' conspiracy.", date: "May 28, 2026", readTime: "22 min read" },
+            { href: "article-rafayel-rain.html", img: "images/rafayel-rain-cover.webp", alt: "the rain that wouldn't stop", category: "Short Story · Rafayel · Romance", title: "The Rain That Wouldn't Stop", desc: "she came to his studio to escape the rain. she stayed because he was painting something she couldn't look away from.", date: "May 23, 2026", readTime: "12 min read" },
+            { href: "article-karaoke-disaster.html", img: "images/karaoke-cover.webp", alt: "karaoke disaster", category: "Humor · Group Chat · Short Story", title: "Karaoke Disaster", desc: "Four people go to sing karaoke together.", date: "May 23, 2026", readTime: "10 min read" },
+            { href: "article-stamina-optimization-guide.html", img: "images/stamina-guide-cover.webp", alt: "Stamina Optimization Guide", category: "Guide · Resource Management", title: "Stamina Optimization", desc: "Where to spend your energy. Complete daily allocation guide for F2P, monthly card players, and whales. Value rankings, weekly planning, and efficiency tables.", date: "May 23, 2026", readTime: "12 min read" },
+            { href: "article-sylus-first-throne.html", img: "images/sylus-first-throne-cover.webp", alt: "the first time he sat on the throne", category: "Prequel · Sylus · Short Story", title: "The First Time He Sat On The Throne", desc: "he wasn't always the king of n109. once, he was just a man with nothing to lose. this is how sylus became the shadow everyone fears.", date: "May 23, 2026", readTime: "12 min read" },
+            { href: "article-camping-catastrophe.html", img: "images/camping-cover.webp", alt: "camping catastrophe", category: "Humor · Group Chat · Short Story", title: "Camping Catastrophe", desc: "sylus proposed camping. rafayel was excited. zayne brought a medical kit. xavier brought snacks. the tent didn't go up. sylus called it team building.", date: "May 23, 2026", readTime: "12 min read" },
+            { href: "article-bond-guide.html", img: "images/bond-guide-thumb.webp", alt: "Bond Level Fast Track", category: "Guide · Home System", title: "Bond Level Fast Track", desc: "Daily routine, gift priorities, furniture interactions, and the fastest way to increase affinity with Sylus, Xavier, Zayne, and Rafayel.", date: "May 23, 2026", readTime: "12 min read" },
+            { href: "article-mall-disaster.html", img: "images/mall-disaster-cover.webp", alt: "mall disaster", category: "Humor · Group Chat · Short Story", title: "Mall Disaster", desc: "Sylus proposed to go to the mall. Rafayel was excited. Zayne refused. Xavier had already fallen asleep. The group chat was noisy all night again.", date: "May 22, 2026", readTime: "12 min read" },
+            { href: "article-rafayel-flower.html", img: "images/rafayel-flower-cover.webp", alt: "the flower on the windowsill", category: "Short Story · Rafayel · Healing", title: "The Flower On The Windowsill", desc: "no one knows who put it there. no one waters it. but it keeps coming back. a story about waiting, blooming, and the things that survive without being taken care of.", date: "May 22, 2026", readTime: "10 min read" },
+            { href: "article-mephisto-speaks.html", img: "images/mephisto-thumb.webp", alt: "mephisto speaks", category: "Short Story · Sylus · Mephisto", title: "Mephisto Speaks", desc: "i remember everything. the rain. the repairs. the things he says when no one else is listening.", date: "May 21, 2026", readTime: "10 min read" },
+            { href: "article-xavier-guestbook.html", img: "images/xavier-guestbook-cover.webp", alt: "the observatory guestbook", category: "Short Story · Xavier", title: "The Observatory Guestbook", desc: "two hundred years of visitors. one guestbook. and one entry he never expected to find.", date: "May 21, 2026", readTime: "12 min read" },
+            { href: "article-zayne-loss.html", img: "images/zayne-loss-thumb.webp", alt: "the one he couldn't save", category: "Short Story · Zayne", title: "The One He Couldn't Save", desc: "every doctor has a patient they can't forget. zayne's was a child. the surgery worked. the complication didn't wait.", date: "May 21, 2026", readTime: "12 min read" },
+            { href: "article-rafayel-exhibition.html", img: "images/rafayel-exhibition-cover.webp", alt: "the exhibition of forgotten things", category: "Short Story", title: "The Exhibition Of Forgotten Things", desc: "his first exhibition. all the paintings were of her. and she didn't even know his name.", date: "May 21, 2026", readTime: "12 min read" },
+            { href: "article-valentine-unsaid.html", img: "images/article-valentine-thumb.webp", alt: "things she doesn't know", category: "Valentine's Day · Short Story", title: "Things She Doesn't Know", desc: "four men. one day. five things she never found out. a valentine's story about the things left unsaid.", date: "May 20, 2026", readTime: "10 min read" },
+            { href: "article-sylus-lore.html", img: "images/sylus-lore-cover.webp", alt: "The Paradox of Sylus", category: "Optimization", title: "The Paradox of Sylus", desc: '"To survive the N109 Zone, you must become the monster. But to love within it, you must remember the human."', date: "May 20, 2026", readTime: "7 min read" },
+            { href: "article-zayne-snow.html", img: "images/article-zayne-snow.webp", alt: "the night it snowed", category: "Short Story · Zayne", title: "The Night It Snowed", desc: "outside, snow. inside, a hospital waiting room. and her, sitting there for no reason at all.", date: "May 20, 2026", readTime: "5 min read" },
+            { href: "article-groupchat-n109.html", img: "images/article-groupchat-n109-thumb.webp", alt: "group chat: the n109 incident", category: "Chat Log · Humor", title: "Group Chat: The N109 Incident", desc: "four men, one group chat, zero survival instincts. classified chat logs intercepted by mephisto. proceed with caution.", date: "May 19, 2026", readTime: "8 min read" },
+            { href: "article-who-to-main.html", img: "images/article-who-to-main.webp", alt: "who should you main guide", category: "Guide", title: "Who Should You Main?", desc: "sylus, xavier, zayne, rafayel — strengths, weaknesses, playstyles, and who they're for. the complete character guide.", date: "May 18, 2026", readTime: "12 min read" },
+            { href: "article-things-theyll-never-do.html", img: "images/things-theyll-never-do-thumb.webp", alt: "things they'll never do", category: "Humor · Character Analysis", title: "Things They'll Never Do", desc: "xavier won't confess. zayne won't admit he needs help. rafayel won't show you his unfinished sketches. sylus won't say please.", date: "May 17, 2026", readTime: "8 min read" },
+            { href: "article-monologue-sylus.html", img: "images/monologue-sylus.webp", alt: "what they don't see", category: "Monologue", title: "What They Don't See", desc: "the things sylus says to mephisto when no one else is listening. a深夜 monologue about thrones, masks, and the woman who saw through both.", date: "May 17, 2026", readTime: "15 min read" },
+            { href: "article-sylus-emotion.html", img: "images/sylus-emotion.webp", alt: "Sylus Broke Me: A Player's Honest Confession", category: "💭 Player Confessions", title: "Sylus Broke Me: A Player's Honest Confession", desc: "From hating him to falling for him — why the N109 storyline hit harder than I ever expected. A personal reflection.", date: "May 17, 2026", readTime: "6 min read" },
+            { href: "article-sea-remembers.html", img: "images/travel-sea-cover.webp", alt: "the sea remembers", category: "Travelogue", title: "The Sea Remembers", desc: "i went back to the coast. i didn't expect to find him there. a story about salt air, unfinished conversations, and the things the ocean keeps.", date: "May 16, 2026", readTime: "6 min read" },
+            { href: "article-au-ordinary-days.html", img: "images/au-ordinary-cover.webp", alt: "ordinary days - an alternate universe story", category: "Alternate Universe", title: "Ordinary Days", desc: "what if they weren't hunters. what if there were no wanderers. what if they just... met. an alternate universe story.", date: "May 15, 2026", readTime: "15 min read" },
+            { href: "article-things-he-doesnt-say.html", img: "images/xavier-unsaid-thumb.webp", alt: "the things he doesn't say", category: "Observations", title: "The Things He Doesn't Say", desc: "the silence between words. the way he looks at me when he thinks i'm asleep. the one thing he said once. just once. i've been listening.", date: "May 15, 2026", readTime: "10 min read" },
+            { href: "article-xavier-voyage-outcast.html", img: "images/xavier-voyage-cover.webp", alt: "The Voyage of the Outcast", category: "Tomorrow's Prelude · Lore Analysis", title: "The Voyage of the Outcast", desc: "A promise made under dying stars. A planet he couldn't save. A wait across two hundred years.", date: "May 15, 2026", readTime: "12 min read" },
+            { href: "article-things-i-dont-think.html", img: "images/xavier-confession-cover.webp", alt: "things i don't let myself think about", category: "Confessions", title: "Things I Don't Let Myself Think About", desc: "what if he's not human. what if i just kissed him. what if he's been lying. things i don't let myself think about. but do anyway. at 2am.", date: "May 15, 2026", readTime: "8 min read" },
+            { href: "article-four-masks.html", img: "images/four-masks-cover.webp", alt: "Four Masks, One Truth", category: "Comparative Analysis", title: "Four Masks, One Truth", desc: "Xavier's silence. Zayne's walls. Rafayel's performance. Sylus's armor. Who hides the deepest?", date: "May 14, 2026", readTime: "12 min read" },
+            { href: "article-rafayel-tidal-boiling.html", img: "images/rafayel-tidal-cover.webp", alt: "Tidal Boiling Land", category: "Tomorrow's Prelude · Lore Analysis", title: "Tidal Boiling Land | Rafayel Branch Complete Analysis", desc: "A promise made on the day the tide reversed. A thousand years of waiting. Rafayel's branch — story summary, deep analysis, viewing guide, and personal rating.", date: "May 14, 2026", readTime: "14 min read" },
+            { href: "article-xavier-weight.html", img: "images/xavier-weight-cover.webp", alt: "Xavier Character Analysis", category: "Character Deep Dive", title: "The Weight of Silence: Xavier's Hidden Pain", desc: "Xavier has lived for over two centuries. He has watched civilizations rise and fall. He has outlived everyone he ever loved. And he never told anyone.", date: "May 14, 2026", readTime: "12 min read" },
+            { href: "article-mc.html", img: "images/mc-cover.webp", alt: "She Was Never a Prize to Be Won", category: "📖 Character Analysis", title: "She Was Never a Prize to Be Won", desc: "The quiet rebellion of being the one who chooses — why MC is not a damsel, not a trophy, but the woman holding the sword.", date: "May 13, 2026", readTime: "10 min read" },
+            { href: "article-rafayel-camouflager.html", img: "images/rafayel-camouflager.webp", alt: "Rafayel: The Drowning Prince", category: "📖 Character Lore", title: "Rafayel: The Drowning Prince", desc: "The artist, the liar, the prince of a kingdom that no longer exists. A deep dive into the thousand-year wait and the fragile soul beneath the performance.", date: "May 13, 2026", readTime: "13 min read" },
+            { href: "article-mc-evol.html", img: "images/mc-thumb.webp", alt: "MC's Evol: The Hidden Power", category: "Lore Analysis", title: "MC's Evol: The Hidden Power", desc: "The Resonance ability that connects her to Sylus, Xavier, Zayne, and Rafayel. What is she really capable of?", date: "May 13, 2026", readTime: "12 min read" },
+            { href: "article-lore-analysis.html", img: "images/li-shen-moon-thorns-cover.webp", alt: "Moonlit Black Thorns", category: "Tomorrow's Prelude · Lore Analysis", title: "Moonlit Black Thorns | Zayne Branch Complete Analysis", desc: "Dreams and reality intertwine. The healer's obsession and redemption. Zayne's branch — story summary, deep analysis, viewing guide, and personal rating.", date: "May 12, 2026", readTime: "12 min read" },
+            { href: "article-last-bus.html", img: "images/last-bus-thumb.webp", alt: "the last bus", category: "Short Story", title: "The Last Bus", desc: "two strangers. rain on the windows. and a conversation that never happened.", date: "May 12, 2026", readTime: "6 min read" },
+            { href: "article-sylus-guide.html", img: "images/sylus-banner.webp", alt: "Xavier vs. Sylus: Combat Rhythm", category: "Combat Analysis", title: "Xavier vs. Sylus: Combat Rhythm", desc: "A Deep Dive into Light Burst Mechanics, Energy Circulation, and the 'Infinite Dark Energy' Loop", date: "May 12, 2026", readTime: "8 min read" }
         ];
-        
-        const postsGrid = document.getElementById('postsGrid');
-        const loadTrigger = document.getElementById('loadTrigger');
-        
-        let loadedCount = 0;
-        let isLoading = false;
-        let allLoaded = false;
-        
-        const INITIAL_COUNT = 6;
-        const BATCH_SIZE = 4;
-        
-        function renderArticle(article) {
+
+        // Helper: render article card HTML
+        function renderArticleCard(article) {
             return `
                 <article class="post-card">
                     <a href="${article.href}" class="full-card-link"></a>
@@ -595,66 +190,87 @@
                 </article>
             `;
         }
-        
-        function loadNextBatch(count) {
-            if (isLoading) return;
-            if (allLoaded) return;
+
+        // Lazy load images observer
+        let lazyObserver = null;
+        function initLazyLoading() {
+            if ('IntersectionObserver' in window) {
+                if (lazyObserver) lazyObserver.disconnect();
+                lazyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.dataset.src;
+                            if (src) {
+                                img.src = src;
+                                img.classList.add('loaded');
+                            }
+                            lazyObserver.unobserve(img);
+                        }
+                    });
+                }, { rootMargin: '100px', threshold: 0.01 });
+                document.querySelectorAll('#postsGrid img[data-src]').forEach(img => {
+                    lazyObserver.observe(img);
+                });
+            } else {
+                // Fallback: load all images directly
+                document.querySelectorAll('#postsGrid img[data-src]').forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            }
+        }
+
+        // Render filtered articles
+        function renderArticles(filterText = '') {
+            const grid = document.getElementById('postsGrid');
+            if (!grid) return;
             
-            isLoading = true;
+            const lowerFilter = filterText.toLowerCase().trim();
+            let filtered = articles;
+            if (lowerFilter) {
+                filtered = articles.filter(article => 
+                    article.title.toLowerCase().includes(lowerFilter) ||
+                    article.desc.toLowerCase().includes(lowerFilter) ||
+                    article.category.toLowerCase().includes(lowerFilter)
+                );
+            }
             
-            const nextBatch = articles.slice(loadedCount, loadedCount + count);
-            if (nextBatch.length === 0) {
-                allLoaded = true;
-                isLoading = false;
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-results">✨ No matching articles found. Try a different keyword.</div>`;
                 return;
             }
             
             let html = '';
-            for (const article of nextBatch) {
-                html += renderArticle(article);
+            for (const article of filtered) {
+                html += renderArticleCard(article);
             }
-            postsGrid.insertAdjacentHTML('beforeend', html);
+            grid.innerHTML = html;
             
-            loadedCount += nextBatch.length;
-            isLoading = false;
-            
-            // 观察新图片
-            if (window.observeLazyImages) {
-                window.observeLazyImages();
-            }
-            
-            if (loadedCount >= articles.length) {
-                allLoaded = true;
-            }
+            // Re-init lazy loading for newly added images
+            initLazyLoading();
         }
-    
-        let ticking = false;
-        function checkScroll() {
-            if (ticking) return;
-            if (allLoaded) return;
-            if (isLoading) return;
-            
-            ticking = true;
-            requestAnimationFrame(() => {
-                const triggerRect = loadTrigger.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (triggerRect.top <= windowHeight + 200) {
-                    loadNextBatch(BATCH_SIZE);
-                }
-                ticking = false;
+
+        // Search input handler
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                renderArticles(e.target.value);
             });
         }
         
-        if (postsGrid) {
-            loadNextBatch(INITIAL_COUNT);
-            window.addEventListener('scroll', checkScroll);
-            if (window.observeLazyImages) {
-                setTimeout(window.observeLazyImages, 100);
-            }
-        }
-    })();
-    </script>
+        // Initial render (all articles)
+        renderArticles();
 
+        // Back to top button logic
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                backToTopBtn.classList.toggle('show', window.scrollY > 300);
+            });
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
 </html>
