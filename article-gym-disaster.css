@@ -1,0 +1,174 @@
+/* intro */
+.intro-block {
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.intro-block p {
+    margin-bottom: 16px;
+}
+
+.divider {
+    margin: 30px 0;
+    letter-spacing: 4px;
+    color: #555;
+}
+
+/* chapter */
+.chapter {
+    margin-bottom: 60px;
+}
+
+.chapter-number {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--gym-red);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.chapter h2 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: var(--gym-gold);
+    border-left: 4px solid var(--gym-gold);
+    padding-left: 20px;
+}
+
+.chapter p {
+    margin-bottom: 16px;
+}
+
+/* chat container */
+.chat-container {
+    background: #0f0f12;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 30px 0;
+    border: 1px solid #2a2a2a;
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 0.85rem;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.chat-name {
+    font-weight: bold;
+    min-width: 70px;
+}
+
+.chat-text {
+    color: #ddd;
+}
+
+.chat-time {
+    color: #666;
+    font-size: 0.7rem;
+    margin-left: auto;
+}
+
+.sylus .chat-name { color: var(--gym-red); }
+.rafayel .chat-name { color: var(--gym-purple); }
+.zayne .chat-name { color: var(--gym-blue); }
+.xavier .chat-name { color: var(--gym-gold); }
+.system .chat-text { color: #666; font-style: italic; font-size: 0.8rem; }
+
+.chat-note {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* images */
+.image-right, .image-left {
+    margin: 25px 0;
+}
+
+.image-right img, .image-left img {
+    width: 100%;
+    border-radius: 16px;
+    background: #1a1a1a;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.image-left {
+    float: left;
+    width: 250px;
+    margin-right: 25px;
+}
+
+.image-right {
+    float: right;
+    width: 250px;
+    margin-left: 25px;
+}
+
+/* clearfix for float images */
+.chapter::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* colophon */
+.colophon {
+    background: #0f0f12;
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 60px;
+    border: 1px solid #2a2a2a;
+    text-align: center;
+}
+
+.colophon-text {
+    font-weight: bold;
+    color: var(--gym-gold);
+    margin-bottom: 16px;
+}
+
+.colophon-entry {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.colophon-signature {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .chat-message {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .chat-time {
+        margin-left: 0;
+    }
+    .image-left, .image-right {
+        float: none;
+        width: 100%;
+        margin: 25px 0;
+    }
+}
