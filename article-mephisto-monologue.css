@@ -1,0 +1,145 @@
+.chapter {
+    margin-bottom: 70px;
+}
+
+.chapter-number {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--mephisto-red);
+    margin-bottom: 20px;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.chapter h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 28px;
+    color: var(--mephisto-gold);
+    letter-spacing: -0.3px;
+    border-left: 3px solid var(--mephisto-red);
+    padding-left: 20px;
+}
+
+.chapter p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    color: #c0c0c0;
+}
+
+.divider {
+    text-align: center;
+    color: #3a3a3a;
+    margin: 50px 0;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+.image-left {
+    float: left;
+    width: 180px;
+    margin: 8px 28px 20px 0;
+}
+
+.image-right {
+    float: right;
+    width: 180px;
+    margin: 8px 0 20px 28px;
+}
+
+.image-left img,
+.image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2a2a2a;
+}
+
+.image-caption {
+    font-size: 0.65rem;
+    color: #6a6a6a;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+.chapter::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.letter {
+    background: #0f0f12;
+    border-left: 3px solid var(--mephisto-red);
+    padding: 30px;
+    margin: 30px 0;
+    font-style: italic;
+    border-radius: 0 12px 12px 0;
+}
+
+.letter p {
+    margin-bottom: 16px;
+}
+
+.letter p:first-child {
+    font-weight: 500;
+    color: var(--mephisto-gold);
+}
+
+.colophon {
+    margin-top: 80px;
+    padding: 30px;
+    background: #0f0f12;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+}
+
+.colophon-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--mephisto-red);
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.colophon-entry {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    border-left: 1px solid var(--mephisto-red);
+}
+
+.colophon-signature {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: #6a6a6a;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .chapter h2 {
+        font-size: 1.4rem;
+    }
+    .image-left,
+    .image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
