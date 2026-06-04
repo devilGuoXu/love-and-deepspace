@@ -1,0 +1,160 @@
+/* Frame styles */
+.frame {
+    margin-bottom: 56px;
+    clear: both;
+    overflow: hidden;
+}
+
+.frame-number {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--frame-rose);
+    margin-bottom: 12px;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.frame-content p {
+    margin-bottom: 0;
+    line-height: 1.85;
+    color: #d0d0d0;
+}
+
+.frame-image-left {
+    float: left;
+    width: 140px;
+    margin: 4px 24px 16px 0;
+}
+
+.frame-image-right {
+    float: right;
+    width: 140px;
+    margin: 4px 0 16px 24px;
+}
+
+.frame-image-left img,
+.frame-image-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease;
+}
+
+.frame-image-left img:hover,
+.frame-image-right img:hover {
+    transform: scale(1.02);
+}
+
+.frame::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    color: #3a3a3a;
+    margin: 50px 0 56px;
+    font-size: 0.75rem;
+    letter-spacing: 6px;
+}
+
+/* Epilogue */
+.epilogue {
+    margin: 70px 0 40px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #0f0f12, #0a0a0a);
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+}
+
+.epilogue p {
+    margin-bottom: 18px;
+    color: #c0c0c0;
+}
+
+.epilogue-signature {
+    margin-top: 24px;
+    font-style: italic;
+    color: var(--frame-gold);
+    font-size: 0.9rem;
+}
+
+/* Colophon */
+.colophon {
+    margin-top: 50px;
+    padding: 32px 28px;
+    background: #0f0f12;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+}
+
+.colophon-text {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--frame-rose);
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.colophon-entry {
+    font-size: 0.7rem;
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    padding-left: 18px;
+    border-left: 1px solid var(--frame-rose);
+    line-height: 1.5;
+}
+
+.colophon-signature {
+    margin-top: 20px;
+    font-size: 0.65rem;
+    color: #6a6a6a;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+    .article-header h1 {
+        font-size: 2.2rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .frame-number {
+        font-size: 0.6rem;
+    }
+    .frame-image-left,
+    .frame-image-right {
+        float: none;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 20px;
+    }
+    .frame-image-left img,
+    .frame-image-right img {
+        max-width: 180px;
+        display: block;
+        margin: 0 auto;
+    }
+    .frame-content p {
+        text-align: center;
+    }
+    .epilogue {
+        padding: 30px 20px;
+    }
+    .colophon-entry {
+        font-size: 0.65rem;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
