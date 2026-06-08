@@ -1,0 +1,225 @@
+/* Cooking Disaster - specific styles */
+.intro-block {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.intro-block p {
+    margin-bottom: 12px;
+    color: #b0bedb;
+}
+
+.divider {
+    text-align: center;
+    color: #2a2f3d;
+    margin: 30px 0;
+    letter-spacing: 2px;
+}
+
+.chapter {
+    margin-bottom: 60px;
+}
+
+.chapter::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.chapter-number {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #ff8c6b;
+    margin-bottom: 16px;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.chapter h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.chapter p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: #b0bedb;
+}
+
+/* Chat container */
+.chat-container {
+    background: #0f121b;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #2a2f3d;
+}
+
+.chat-message {
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 85%;
+}
+
+.chat-message.rafayel {
+    background: rgba(255, 140, 107, 0.15);
+    border-left: 3px solid #ff8c6b;
+    margin-left: auto;
+}
+
+.chat-message.sylus {
+    background: rgba(177, 62, 62, 0.15);
+    border-left: 3px solid #b13e3e;
+    margin-right: auto;
+}
+
+.chat-message.zayne {
+    background: rgba(91, 140, 187, 0.15);
+    border-left: 3px solid #5b8cbb;
+    margin-right: auto;
+}
+
+.chat-message.xavier {
+    background: rgba(232, 226, 199, 0.1);
+    border-left: 3px solid #e8e2c7;
+    margin-left: auto;
+}
+
+.chat-message.system {
+    background: rgba(42, 47, 61, 0.5);
+    text-align: center;
+    font-style: italic;
+    margin: 12px 0;
+    max-width: 100%;
+}
+
+.chat-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #c9a063;
+}
+
+.chat-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.chat-time {
+    font-size: 0.6rem;
+    color: #6a7080;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.chat-note {
+    font-size: 0.7rem;
+    color: #6a7080;
+    text-align: center;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* Image styles */
+.image-left {
+    float: left;
+    width: 40%;
+    margin: 8px 28px 20px 0;
+}
+
+.image-right {
+    float: right;
+    width: 40%;
+    margin: 8px 0 20px 28px;
+}
+
+.image-full {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-left img,
+.image-right img,
+.image-full img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: #1a1a2a;
+}
+
+.image-caption {
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Colophon / Field Notes */
+.colophon {
+    margin-top: 60px;
+    padding: 30px;
+    background: #0f121b;
+    border: 1px solid #ff8c6b;
+    border-radius: 16px;
+}
+
+.colophon-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ff8c6b;
+    margin-bottom: 12px;
+}
+
+.colophon-entry {
+    font-size: 0.75rem;
+    color: #b0bedb;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    border-left: 2px solid #ff8c6b;
+}
+
+.colophon-signature {
+    margin-top: 16px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .chapter h2 {
+        font-size: 1.3rem;
+    }
+    .image-left,
+    .image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .chat-message {
+        max-width: 95%;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    .article-footer-links {
+        gap: 16px;
+    }
+}
