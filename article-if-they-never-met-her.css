@@ -1,0 +1,273 @@
+/* If They Never Met Her - parallel universe story styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.article-header {
+    padding: 600px 20px 100px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark, #0a0a0c));
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.article-header p {
+    font-size: 1rem;
+    color: #c9a063;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Intro quote */
+.intro-quote {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    border-top: 1px solid #2a2f3d;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.intro-quote p {
+    font-size: 1rem;
+    color: #b0bedb;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.intro-sigil {
+    margin-top: 20px;
+    color: #c9a063;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+
+/* Vignette sections */
+.vignette {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.vignette-number {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #c9a063;
+    margin-bottom: 16px;
+    font-family: monospace;
+}
+
+.vignette-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.vignette p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0bedb;
+}
+
+.vignette-closing {
+    margin-top: 30px;
+    padding: 20px 0 0;
+    font-style: italic;
+    color: #c9a063;
+    border-top: 1px dashed #2a2f3d;
+}
+
+/* Color themes for each character */
+.sylus-vignette .vignette-number { color: #b13e3e; }
+.sylus-vignette .vignette-title { border-left: 3px solid #b13e3e; padding-left: 18px; }
+.sylus-vignette .vignette-closing { color: #b13e3e; }
+
+.zayne-vignette .vignette-number { color: #5b8cbb; }
+.zayne-vignette .vignette-title { border-left: 3px solid #5b8cbb; padding-left: 18px; }
+.zayne-vignette .vignette-closing { color: #5b8cbb; }
+
+.rafayel-vignette .vignette-number { color: #ff8c6b; }
+.rafayel-vignette .vignette-title { border-left: 3px solid #ff8c6b; padding-left: 18px; }
+.rafayel-vignette .vignette-closing { color: #ff8c6b; }
+
+.xavier-vignette .vignette-number { color: #e8e2c7; }
+.xavier-vignette .vignette-title { border-left: 3px solid #e8e2c7; padding-left: 18px; }
+.xavier-vignette .vignette-closing { color: #e8e2c7; }
+
+/* Divider sigils */
+.divider-sigil {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3a3f4e;
+    margin: 40px 0;
+    letter-spacing: 8px;
+}
+
+/* Image styles */
+.image-left {
+    float: left;
+    width: 45%;
+    margin: 8px 28px 20px 0;
+}
+
+.image-right {
+    float: right;
+    width: 45%;
+    margin: 8px 0 20px 28px;
+}
+
+.image-full {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-left img,
+.image-right img,
+.image-full img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: #1a1a2a;
+}
+
+.image-caption {
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Epilogue */
+.epilogue {
+    padding: 60px 0 40px;
+    margin-top: 40px;
+    border-top: 1px solid #2a2f3d;
+}
+
+.epilogue-number {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #c9a063;
+    margin-bottom: 16px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.epilogue-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.epilogue p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0bedb;
+    text-align: center;
+}
+
+.epilogue-closing {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(201, 160, 99, 0.05);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.epilogue-closing p {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+/* Colophon */
+.colophon {
+    margin-top: 70px;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, #0f121b, #0a0e16);
+    border: 1px solid #c9a063;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.colophon-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #c9a063;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.colophon-entry {
+    font-size: 0.8rem;
+    color: #b0bedb;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.colophon-signature {
+    margin-top: 24px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .article-header p {
+        font-size: 0.9rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .vignette-title {
+        font-size: 1.4rem;
+    }
+    .image-left,
+    .image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .epilogue-title {
+        font-size: 1.3rem;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    .article-footer-links {
+        gap: 16px;
+    }
+}
