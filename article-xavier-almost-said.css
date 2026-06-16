@@ -244,4 +244,81 @@
 
 .conclusion-title {
     font-size: 1.3rem;
-   
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #c9a063;
+}
+
+.conclusion p {
+    margin-bottom: 16px;
+    color: #b0bedb;
+    line-height: 1.7;
+}
+
+.conclusion-attribution {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Colophon */
+.colophon {
+    margin-top: 50px;
+    padding: 25px 30px;
+    background: #0f121b;
+    border: 1px solid #e8e2c7;
+    border-radius: 16px;
+}
+
+.colophon-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #e8e2c7;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.colophon-entry {
+    font-size: 0.75rem;
+    color: #b0bedb;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    border-left: 2px solid #e8e2c7;
+}
+
+.colophon-signature {
+    margin-top: 16px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .fragment-title {
+        font-size: 1.3rem;
+    }
+    .image-left,
+    .image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    .article-footer-links {
+        gap: 16px;
+    }
+}
