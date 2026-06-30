@@ -63,6 +63,13 @@
                 </div>
             </div>
 
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search entries..." class="search-field">
+                <select id="tagFilter" class="tag-select">
+                    <option value="">All Tags</option>
+                </select>
+                <span id="filterCount" class="filter-count"></span>
+            </div>
             <div id="dynamic-content"></div>
         </section>
     </main>
@@ -367,6 +374,24 @@
                         desc: "Role assignment, team coordination, communication tips, and co-op etiquette for team play.",
                         points: ["Role System", "Ping Etiquette", "Team Coordination"],
                         link: "basics-coop-guide.html"
+                    },
+                    {
+                        id: "ENTRY_#032",
+                        date: "2026.06.30",
+                        tag: "PRIORITY",
+                        title: "Memory Upgrade Priority",
+                        desc: "Which memories to upgrade first. Main stat > substats > set bonus. Be picky, salvage aggressively.",
+                        points: ["Level 60 Sweet Spot", "Skill 6 Baseline", "Salvage Wrong Stats"],
+                        link: "basics-memory-priority.html"
+                    },
+                    {
+                        id: "ENTRY_#033",
+                        date: "2026.06.30",
+                        tag: "FARMING",
+                        title: "Weekly Boss & Domain Guide",
+                        desc: "Efficient farming routes, weekly boss priority, domain rotation, and stamina optimization.",
+                        points: ["Weekly Boss First", "Gold on Friday", "Never Cap Stamina"],
+                        link: "basics-weekly-boss.html"
                     }
                 ]
             },
@@ -678,6 +703,15 @@
                         link: "protocore-energy-regen.html"
                     },
                     {
+                        id: "ENTRY_#089",
+                        date: "2026.06.30",
+                        tag: "CORE_SYSTEM",
+                        title: "Protocore Enhancement Guide",
+                        desc: "How to roll substats, when to lock, when to salvage, and how to maximize enhancement materials.",
+                        points: ["+3 Filter", "+9 Lock", "Salvage Bad Rolls"],
+                        link: "protocore-enhance-guide.html"
+                    },
+                    {
                         id: "ENTRY_#091",
                         date: "2026.05.20",
                         tag: "PROTOCORE_OPTIMIZATION",
@@ -792,6 +826,49 @@
         document.getElementById('activeLogsValue').innerText = totalEntries;
 
         let viewedEntries = JSON.parse(localStorage.getItem('combat_viewed_entries')) || {};
+        let currentFilter = { text: '', tag: '' };
+
+        function getUniqueTags(categoryKey) {
+            const data = categoryContent[categoryKey];
+            if (!data) return [];
+            const tags = new Set();
+            data.entries.forEach(e => tags.add(e.tag));
+            return [...tags].sort();
+        }
+
+        function updateTagOptions(categoryKey) {
+            const select = document.getElementById('tagFilter');
+            const currentVal = select.value;
+            select.innerHTML = '<option value="">All Tags</option>';
+            const tags = getUniqueTags(categoryKey);
+            tags.forEach(t => {
+                const opt = document.createElement('option');
+                opt.value = t;
+                opt.textContent = t;
+                select.appendChild(opt);
+            });
+            select.value = currentVal && tags.includes(currentVal) ? currentVal : '';
+        }
+
+        function filterEntries(entries) {
+            const text = currentFilter.text.toLowerCase().trim();
+            const tag = currentFilter.tag;
+            return entries.filter(e => {
+                if (text && !e.title.toLowerCase().includes(text) && !e.desc.toLowerCase().includes(text) && !e.id.toLowerCase().includes(text)) return false;
+                if (tag && e.tag !== tag) return false;
+                return true;
+            });
+        }
+
+        function updateFilterCount(visible, total) {
+            const el = document.getElementById('filterCount');
+            if (visible < total) {
+                el.textContent = `Showing ${visible} of ${total}`;
+                el.style.display = 'inline';
+            } else {
+                el.style.display = 'none';
+            }
+        }
 
         function updateDashboard(categoryKey) {
             const category = categoryContent[categoryKey];
@@ -838,8 +915,12 @@
             const data = categoryContent[categoryKey];
             if (!data) return;
 
+            updateTagOptions(categoryKey);
+            const filtered = filterEntries(data.entries);
+            updateFilterCount(filtered.length, data.entries.length);
+
             let html = '';
-            for (const entry of data.entries) {
+            for (const entry of filtered) {
                 const isViewed = viewedEntries[entry.id];
                 const viewedClass = isViewed ? ' viewed' : '';
                 const pointsHtml = entry.points.map(p => `<div class="data-point">${p}</div>`).join('');
@@ -863,7 +944,11 @@
                     </article>
                 `;
             }
-            html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${data.entries.length} ENTRIES ⟡</div>`;
+            if (filtered.length === 0) {
+                html += `<div class="end-of-data">⟡ NO MATCHING ENTRIES ⟡</div>`;
+            } else {
+                html += `<div class="end-of-data">⟡ ${data.title.toUpperCase()} — ${filtered.length} ENTRIES ⟡</div>`;
+            }
             document.getElementById('dynamic-content').innerHTML = html;
 
             document.querySelectorAll('.log-link').forEach(link => {
@@ -899,9 +984,25 @@
                 this.classList.add('active');
                 const category = this.getAttribute('data-category');
                 if (category && categoryContent[category]) {
+                    currentFilter.text = '';
+                    currentFilter.tag = '';
+                    document.getElementById('searchInput').value = '';
+                    document.getElementById('tagFilter').value = '';
                     renderContent(category);
                 }
             });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            currentFilter.text = this.value;
+            const cat = getCurrentCategory();
+            renderContent(cat);
+        });
+
+        document.getElementById('tagFilter').addEventListener('change', function() {
+            currentFilter.tag = this.value;
+            const cat = getCurrentCategory();
+            renderContent(cat);
         });
 
         window.resetCombatProgress = function() {
