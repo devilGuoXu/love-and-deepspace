@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocore Deep Dive: Stats, Sets & Substats | Deepspace Hub</title>
+    <meta name="description" content="Complete protocore guide for Love and Deepspace — main stats, substat rolling, set bonuses, character recommendations, and how to evaluate a perfect protocore.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="protocore-deep-dive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="/combats/">&larr; BACK TO COMBAT GUIDES</a>
+        </div>
+    </nav>
+    
+    <div class="pcore-container">
+        <div class="pcore-hero">
+            <div class="pcore-badge">PROTOCORE BUILDS — ADVANCED</div>
+            <h1>Protocore Deep Dive</h1>
+            <p>Main stats, substat rolls, set bonuses, and the difference between a good protocore and a perfect one.</p>
+        </div>
+    
+        <div class="pcore-meta">
+            <span class="meta-id">ENTRY_#083</span>
+            <span class="meta-date">2026.06.29</span>
+            <span class="meta-tag">CORE_SYSTEM</span>
+        </div>
+    
+        <div class="pcore-highlight">
+            <p><strong>One Sentence:</strong> Protocores are the single biggest damage multiplier in the game — a perfectly rolled set can increase your damage by 40%+ compared to an unoptimized one.</p>
+        </div>
+    
+        <h2>Protocore Basics</h2>
+        <p>Each operative has 6 protocore slots. Each protocore has a main stat (fixed per slot), a set bonus (2-piece), and up to 4 substats (randomly rolled at +3/+6/+9/+12). Understanding what each slot does is the first step to optimization.</p>
+    
+        <div class="pcore-table">
+            <div class="trow header">
+                <span class="tl">Slot</span>
+                <span class="tv">Main Stat Options</span>
+                <span class="tv">Priority</span>
+            </div>
+            <div class="trow">
+                <span class="tl">Slot 1</span>
+                <span class="tv">ATK (fixed)</span>
+                <span class="tv prio-high">Always ATK</span>
+            </div>
+            <div class="trow alt">
+                <span class="tl">Slot 2</span>
+                <span class="tv">HP / DEF / ATK%</span>
+                <span class="tv prio-high">ATK% for DPS</span>
+            </div>
+            <div class="trow">
+                <span class="tl">Slot 3</span>
+                <span class="tv">CRIT Rate / CRIT DMG / Elemental Mastery</span>
+                <span class="tv prio-high">CRIT Rate (until 60%)</span>
+            </div>
+            <div class="trow alt">
+                <span class="tl">Slot 4</span>
+                <span class="tv">CRIT DMG / ATK% / Skill DMG%</span>
+                <span class="tv prio-high">CRIT DMG (if CRIT > 60%)</span>
+            </div>
+            <div class="trow">
+                <span class="tl">Slot 5</span>
+                <span class="tv">Elemental DMG% / ATK%</span>
+                <span class="tv prio-high">Elemental DMG% (matching operative)</span>
+            </div>
+            <div class="trow alt">
+                <span class="tl">Slot 6</span>
+                <span class="tv">Energy Regen / Healing Bonus / ATK%</span>
+                <span class="tv prio-high">ATK% (Energy Regen if support)</span>
+            </div>
+        </div>
+    
+        <h2>Set Bonuses</h2>
+        <p>A 2-piece set bonus activates when you equip two protocores of the same set on the same operative. You can mix two different sets for two bonuses, or use 4 of one set for an enhanced bonus.</p>
+    
+        <div class="pcore-set-card">
+            <div class="set-name">Solar Set</div>
+            <div class="set-effect">2-piece: ATK +12%. 4-piece: ATK +25% and skill damage +10%.</div>
+            <div class="set-use">Best for: Xavier, Sylus (general DPS). Universal set — works on every DPS operative.</div>
+        </div>
+    
+        <div class="pcore-set-card">
+            <div class="set-name">Permafrost Set</div>
+            <div class="set-effect">2-piece: Frost DMG +15%. 4-piece: Freeze duration +1s and frozen targets take +15% damage.</div>
+            <div class="set-use">Best for: Zayne. Only useful on Frost element. Synergizes with Zayne's CC kit.</div>
+        </div>
+    
+        <div class="pcore-set-card">
+            <div class="set-name">Tidal Set</div>
+            <div class="set-effect">2-piece: Water DMG +15%. 4-piece: Healing received +20% and water element shields absorb 30% more.</div>
+            <div class="set-use">Best for: Water-element memories. Niche — only use if building a water-focused support.</div>
+        </div>
+    
+        <div class="pcore-set-card">
+            <div class="set-name">Shadow Set</div>
+            <div class="set-effect">2-piece: Dark DMG +15%. 4-piece: Below 50% HP, DMG +25% and DEF +15%.</div>
+            <div class="set-use">Best for: Sylus. The below-50% bonus directly amplifies Sylus's execute phase. Excellent synergy.</div>
+        </div>
+    
+        <h2>Substat Priority</h2>
+        <p>Substats are randomly rolled when you level a protocore to +3, +6, +9, and +12. Here's the priority order:</p>
+    
+        <div class="pcore-priority">
+            <div class="pitem"><span class="prank">1</span> CRIT Rate — Most valuable substat. Caps at 60% for most builds.</div>
+            <div class="pitem"><span class="prank">2</span> CRIT DMG — Second most valuable. Scales with CRIT Rate.</div>
+            <div class="pitem"><span class="prank">3</span> ATK% — Flat percentage increase. Always useful.</div>
+            <div class="pitem"><span class="prank">4</span> Elemental Mastery — Only if your build relies on elemental damage.</div>
+            <div class="pitem"><span class="prank">5</span> ATK (flat) — Better than nothing, worse than percentage.</div>
+            <div class="pitem"><span class="prank">6</span> HP% / DEF% — Only for support builds.</div>
+        </div>
+    
+        <div class="pcore-tip-box">
+            <p><strong>The 60/120 Rule:</strong> Aim for 60% CRIT Rate and 120% CRIT DMG as your baseline for any DPS operative. Below 60% CRIT Rate, you're losing damage to non-crits. Every point of CRIT Rate below 60% should be your top priority to fix.</p>
+        </div>
+    
+        <h2>Substat Rolling Strategy</h2>
+        <p>When leveling a protocore, you don't know which substat will be upgraded at +3/+6/+9/+12. Here's the optimal strategy:</p>
+    
+        <div class="pcore-strat-card">
+            <div class="sicon">①</div>
+            <div class="stext"><strong>Level to +3:</strong> Reveals the first substat. If it's CRIT Rate or CRIT DMG, continue. If it's flat DEF, salvage.</div>
+        </div>
+        <div class="pcore-strat-card">
+            <div class="sicon">②</div>
+            <div class="stext"><strong>Level to +6:</strong> Reveals the second substat. If both are useful (CRIT, ATK%, Elemental Mastery), keep going. If either is flat/percent HP or DEF for a DPS, salvage.</div>
+        </div>
+        <div class="pcore-strat-card">
+            <div class="sicon">③</div>
+            <div class="stext"><strong>Level to +9:</strong> Third substat revealed. If you have 3+ useful substats, this is a keeper. Otherwise salvage.</div>
+        </div>
+        <div class="pcore-strat-card">
+            <div class="sicon">④</div>
+            <div class="stext"><strong>Level to +12:</strong> Final substat. If 3+ rolls went into CRIT Rate or CRIT DMG, this is a god-tier protocore. Lock it immediately.</div>
+        </div>
+    
+        <div class="pcore-insight-box">
+            <p><strong>Expected Rolls:</strong> On average, you will need 8-12 protocores to get one with 3+ useful substats. Farming protocores is a long-term game — don't expect perfect rolls quickly. A "good enough" protocore (2 useful substats with 1-2 rolls each) is fine for clearing all content.</p>
+        </div>
+    
+        <h2>Character-Specific Recommendations</h2>
+    
+        <div class="pcore-char-card">
+            <div class="cname" style="color:#f1c40f;">Xavier — Full ATK</div>
+            <div class="cdesc">Slot 3: CRIT Rate. Slot 4: CRIT DMG. Slot 5: Light DMG%. Slot 6: ATK%. Set: 4-piece Solar. Xavier's damage is front-loaded burst. Stack ATK and CRIT equally. Stellar Contract memory gives ATK buff — CRIT becomes more valuable to multiply that buff.</div>
+        </div>
+    
+        <div class="pcore-char-card">
+            <div class="cname" style="color:#8e44ad;">Sylus — Execute Specialist</div>
+            <div class="cdesc">Slot 3: CRIT Rate. Slot 4: CRIT DMG. Slot 5: Dark DMG%. Slot 6: ATK%. Set: 4-piece Shadow. Sylus's execute can CRIT. Prioritize CRIT DMG over ATK% — the execute multiplier already gives huge base damage, and CRIT DMG multiplies it further.</div>
+        </div>
+    
+        <div class="pcore-char-card">
+            <div class="cname" style="color:#3498db;">Zayne — CC Support</div>
+            <div class="cdesc">Slot 3: CRIT Rate or HP%. Slot 4: ATK% or HP%. Slot 5: Frost DMG% or DEF%. Slot 6: Energy Regen. Set: 4-piece Permafrost. Zayne's damage is secondary to his CC. Energy Regen for faster ultimates is often better than raw damage stats.</div>
+        </div>
+    
+        <div class="pcore-char-card">
+            <div class="cname" style="color:#e74c3c;">Rafayel — Burn Stacker</div>
+            <div class="cdesc">Slot 3: Elemental Mastery. Slot 4: CRIT DMG. Slot 5: Flame DMG%. Slot 6: ATK%. Set: 2 Solar + 2 Permafrost (mix). Rafayel's burn damage scales with Elemental Mastery — prioritize this over CRIT Rate. Elemental Mastery increases burn tick damage and explosion damage.</div>
+        </div>
+    
+        <h2>Common Mistakes</h2>
+    
+        <div class="pcore-warning-box">
+            <p><strong>Mistake #1: Ignoring main stat.</strong> A gold protocore with perfect substats but wrong main stat is useless. Slot 5 Elemental DMG% is worth more than any substat combination. Always get the right main stat first, then worry about substats.</p>
+        </div>
+    
+        <div class="pcore-warning-box">
+            <p><strong>Mistake #2: Over-investing in purple (4-star) protocores.</strong> Purple protocores have lower stat ranges than gold (5-star). Leveling a purple to +12 is fine as a temporary measure, but don't spend your best substat rolls on purples. Save gold protocores for your main DPS.</p>
+        </div>
+    
+        <div class="pcore-warning-box">
+            <p><strong>Mistake #3: Not checking substat ranges.</strong> Gold protocores have stat ranges (e.g., CRIT Rate can roll 2.5%-4.2%). A "low roll" protocore with 4 useful substats is worse than a "high roll" protocore with 3. Check whether your substat rolls are near the maximum before building around them.</p>
+        </div>
+    
+        <div class="pcore-warning-box">
+            <p><strong>Mistake #4: Salvaging too aggressively.</strong> A protocore with 2 correct substats and 2 wrong ones is still usable. The "perfect" protocore (4 correct substats with high rolls) is a 1-in-1000 drop. "Good enough" clears all content. Don't salvage usable protocores chasing perfection.</p>
+        </div>
+    
+        <div class="pcore-final-box">
+            <p><strong>The Bottom Line:</strong> Protocores are the deepest optimization system in Love and Deepspace. Get the right main stat first. Aim for CRIT Rate (60%) and CRIT DMG (120%) baseline. Use set bonuses that match your operative. Level protocores strategically — salvage early if substats are bad. And remember: a "good enough" protocore clears all content. Perfect ones are for leaderboard chasing, not Abyss clearing.</p>
+        </div>
+    
+    </div>
+  
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">↑</span>
+    </button>
+  
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+  
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

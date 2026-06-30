@@ -1,0 +1,39 @@
+.social-container { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; display: block; }
+.social-hero { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #2a2f3d; }
+.social-badge { display: inline-block; background: rgba(46,204,113,0.2); border: 1px solid #2ecc71; padding: 6px 20px; border-radius: 20px; font-size: 0.7rem; letter-spacing: 2px; color: #2ecc71; margin-bottom: 20px; }
+.social-hero h1 { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #fff, #2ecc71); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 16px; }
+.social-hero p { color: #8a94a8; font-size: 0.9rem; }
+.social-meta { display: flex; justify-content: space-between; align-items: center; background: #0f121b; border: 1px solid #2a2f3d; border-radius: 12px; padding: 12px 20px; margin-bottom: 40px; }
+.social-meta .meta-id { font-family: monospace; color: #c9a063; font-weight: 600; }
+.social-meta .meta-date { color: #6a7080; font-size: 0.8rem; }
+.social-meta .meta-tag { background: rgba(46,204,113,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; color: #2ecc71; }
+.social-highlight { background: #0f121b; border-left: 3px solid #2ecc71; padding: 20px 24px; margin: 30px 0; border-radius: 0 12px 12px 0; }
+.social-highlight strong { color: #2ecc71; }
+h2 { font-size: 1.6rem; color: #2ecc71; margin: 40px 0 20px 0; border-left: 3px solid #2ecc71; padding-left: 16px; }
+p { color: #b0bedb; margin-bottom: 20px; line-height: 1.7; }
+.social-crew-card { background: #0f121b; border: 1px solid #2a2f3d; border-radius: 16px; padding: 20px; margin: 20px 0; }
+.crew-feature { padding: 10px 0; border-bottom: 1px solid #2a2f3d; font-size: 0.9rem; color: #b0bedb; line-height: 1.5; }
+.crew-feature:last-child { border-bottom: none; }
+.crew-feature strong { color: #fff; }
+.social-checklist { background: #0f121b; border: 1px dashed #c9a063; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+.check-item { padding: 6px 0; font-size: 0.9rem; color: #b0bedb; }
+.social-friend-card { background: #0f121b; border: 1px solid #2a2f3d; border-radius: 16px; padding: 20px; margin: 20px 0; }
+.friend-feat { padding: 10px 0; border-bottom: 1px solid #2a2f3d; font-size: 0.9rem; color: #b0bedb; line-height: 1.5; }
+.friend-feat:last-child { border-bottom: none; }
+.friend-feat strong { color: #fff; }
+.social-strat-card { background: #0f121b; border: 1px solid #2a2f3d; border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
+.strat-step { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; font-size: 0.9rem; color: #b0bedb; }
+.snum { font-weight: 800; color: #c9a063; min-width: 24px; }
+.strat-step strong { color: #fff; }
+.social-coop-box { background: #0f121b; border: 1px solid #2a2f3d; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+.social-coop-box p { margin-bottom: 8px; font-size: 0.9rem; }
+.social-coop-box strong { color: #fff; }
+.social-warning-box { background: rgba(255,94,107,0.08); border-left: 3px solid #ff5e6b; padding: 16px 20px; margin: 25px 0; border-radius: 0 12px 12px 0; }
+.social-warning-box strong { color: #ff5e6b; }
+.social-final-box { background: #0f121b; border-left: 3px solid #2ecc71; padding: 20px 24px; margin: 30px 0; border-radius: 0 12px 12px 0; }
+.social-final-box strong { color: #2ecc71; }
+@media (max-width: 700px) {
+    .social-container { padding: 40px 20px; }
+    .social-hero h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+}
