@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Mechanics Deep Dive | Deepspace Hub</title>
+    <meta name="description" content="Advanced combat mechanics explained: iframes, stagger thresholds, energy management, animation cancels, and combo optimization.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="basics-advanced-mechanics.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container">
+        <div class="gb-hero"><div class="gb-badge">BASIC PROTOCOLS — ADVANCED</div><h1>Combat Mechanics Deep Dive</h1><p>Master the hidden mechanics that separate good players from great ones.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#037</span><span class="meta-date">2026.06.30</span><span class="meta-tag">GAMEPLAY</span></div>
+        <div class="gb-highlight"><p><strong>Prerequisite:</strong> This guide assumes you understand basic controls, resonance skills, and memory swapping. If you haven't read the Basic Combat Guide (ENTRY_#001), start there.</p></div>
+        <h2>Invincibility Frames (Iframes)</h2>
+        <p>Every resonance skill, ultimate, and swap-in animation grants iframes — brief windows where you cannot take damage. Mastering iframe timing is the single highest-impact skill you can develop. The iframe window starts on frame 1 of the animation and lasts approximately 0.5-0.8 seconds depending on the skill. Some skills have longer iframes than others. Xavier's Light Seeker resonance has the longest iframe window at 0.9s. Swap-in animations always grant 0.5s of iframes regardless of which operative you swap to.</p>
+        <p>Use iframes to negate boss attacks instead of dodging. This conserves you dodge gauge and lets you maintain DPS. Reactive dodging is a DPS loss — proactive iframe usage is a DPS gain.</p>
+        <h2>Stagger Mechanics</h2>
+        <p>Every enemy has a stagger gauge (hidden). Deals enough damage in a short window to fill the gauge, and the enemy staggers. While staggered, all incoming damage is increased by 20% and the enemy cannot act. Each operative's resonance skill deals bonus stagger damage: Xavier +40%, Rafayel +35%, Zayne +25%, Sylus +30%. This is why opening with resonance skills is the standard rotation.</p>
+        <p>Stagger lasts 2 seconds base. The 4-piece Energy Burst set extends stagger duration to 3 seconds. Against bosses, stagger can be triggered at most once every 12 seconds. Against elites, once every 8 seconds. Regular enemies have no cooldown.</p>
+        <h2>Energy Management</h2>
+        <p>Energy regenerates at 1 unit per second base. Each auto-attack generates +3 energy. Each resonance skill generates +15 energy. Taking damage generates +8 energy per hit (once per second max). Energy recharge bonuses from memories are additive with base regen. A +18% energy recharge bonus means 1.18 units/sec instead of 1.0. The energy cost for ultimate varies by operative: Xavier 80, Zayne 90, Rafayel 85, Sylus 75.</p>
+        <p>Optimal rotation to fill energy: Auto-attack x3 → Resonance → Auto-attack x3 → Resonance. This fills roughly 60% of your bar. Then swap to your second operative and repeat. By the time you swap back, your first operative's resonance is off cooldown. This sustain loop is the standard DPS rotation.</p>
+        <h2>Animation Cancels</h2>
+        <p>Swap-cancelling is the most important tech in the game. After any auto-attack landing, you can swap to the next operative to cancel the recovery animation. This effectively increases your attack speed by roughly 30% when rotating properly. The timing window is tight — you must input the swap command within 6 frames (0.1s) of the attack landing.</p>
+        <p>Dodge-cancelling works similarly: dodge during the recovery frames of any attack to cancel the animation. Use this when you need to reposition without committing to a full swap.</p>
+        <div class="gb-tip-box"><p><strong>Practice Drill:</strong> Go into a low-level bounty map. Practice the rotation: Auto x3 → Resonance → Swap (cancel) → Auto x3 → Resonance on next operative. Repeat for 5 minutes until the timing feels natural. This single drill will improve your clear times more than any gear upgrade.</p></div>
+        <div class="gb-final-box"><p><strong>Summary:</strong> Iframes > dodging. Stagger is a damage multiplier. Energy management is a rotation rhythm. Animation cancels are the highest skill ceiling mechanic. Master these four mechanics and you will outperform most players with better gear.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

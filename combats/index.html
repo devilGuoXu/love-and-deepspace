@@ -68,7 +68,18 @@
                 <select id="tagFilter" class="tag-select">
                     <option value="">All Tags</option>
                 </select>
+                <select id="sortSelect" class="sort-select">
+                    <option value="id">Sort: ID</option>
+                    <option value="date-desc">Sort: Newest</option>
+                    <option value="date-asc">Sort: Oldest</option>
+                    <option value="alpha">Sort: A-Z</option>
+                </select>
+                <button id="favFilterBtn" class="fav-filter-btn" title="Show bookmarked only">☆</button>
                 <span id="filterCount" class="filter-count"></span>
+            </div>
+            <div id="recent-viewed-section" class="recent-section" style="display:none">
+                <div class="recent-header"><span>⟡ RECENTLY VIEWED</span><button id="recentToggle" class="recent-toggle">–</button></div>
+                <div id="recentList" class="recent-list"></div>
             </div>
             <div id="dynamic-content"></div>
         </section>
@@ -392,6 +403,51 @@
                         desc: "Efficient farming routes, weekly boss priority, domain rotation, and stamina optimization.",
                         points: ["Weekly Boss First", "Gold on Friday", "Never Cap Stamina"],
                         link: "basics-weekly-boss.html"
+                    },
+                    {
+                        id: "ENTRY_#034",
+                        date: "2026.06.30",
+                        tag: "PVP",
+                        title: "Hunter Contest: Beginner Guide",
+                        desc: "PvP basics, weekly rewards, scoring system, and how to get started in the Hunter Contest arena.",
+                        points: ["Weekly Rewards", "Scoring System", "Entry Requirements"],
+                        link: "basics-pvp-beginner.html"
+                    },
+                    {
+                        id: "ENTRY_#035",
+                        date: "2026.06.30",
+                        tag: "PVP",
+                        title: "Hunter Contest: Meta & Team Building",
+                        desc: "Current PvP meta, top team compositions, memory synergy, and counter-picks.",
+                        points: ["Meta Rankings", "Team Synergy", "Counter Strategy"],
+                        link: "basics-pvp-meta.html"
+                    },
+                    {
+                        id: "ENTRY_#036",
+                        date: "2026.06.30",
+                        tag: "PVP",
+                        title: "Hunter Contest: Advanced Tactics",
+                        desc: "Frame traps, energy denial, bait-and-punish, and match-up specific strategies for PvP.",
+                        points: ["Frame Traps", "Energy Denial", "Match-Up Guide"],
+                        link: "basics-pvp-advanced.html"
+                    },
+                    {
+                        id: "ENTRY_#037",
+                        date: "2026.06.30",
+                        tag: "MECHANICS",
+                        title: "Combat Mechanics Deep Dive",
+                        desc: "Iframes, stagger thresholds, energy management, animation cancels, and combo optimization.",
+                        points: ["Iframe Timing", "Stagger Gauge", "Animation Cancel"],
+                        link: "basics-advanced-mechanics.html"
+                    },
+                    {
+                        id: "ENTRY_#038",
+                        date: "2026.06.30",
+                        tag: "FARMING",
+                        title: "Resource Efficiency Guide",
+                        desc: "Stamina allocation, event efficiency, material conversion rates, and long-term planning.",
+                        points: ["Stamina Priority", "Event Shop", "Pre-Farm Strategy"],
+                        link: "basics-farming-optimization.html"
                     }
                 ]
             },
@@ -676,6 +732,24 @@
                         desc: "Positioning, aggro management, wave control, and animation cancels for 3-star clears.",
                         points: ["Wall Hugging", "Aggro Swap", "Animation Cancel"],
                         link: "abyssal-advanced-tech.html"
+                    },
+                    {
+                        id: "ENTRY_#128",
+                        date: "2026.06.30",
+                        tag: "FLOOR_4",
+                        title: "Abyssal Floor 4: Elemental Shields",
+                        desc: "First two-team floor. Shield rotation requires 3+ elements. Phase 1 sentry, Phase 2 Colossus.",
+                        points: ["Required: 18k", "Dual Teams", "Element Rotation"],
+                        link: "abyssal-floor-4.html"
+                    },
+                    {
+                        id: "ENTRY_#129",
+                        date: "2026.06.30",
+                        tag: "FLOOR_5",
+                        title: "Abyssal Floor 5: Crystalline Wyrm",
+                        desc: "Hard DPS check with 3min enrage. Shatter 4 limbs to remove 50% damage reduction.",
+                        points: ["Required: 22k", "3-Min Enrage", "Limb Priority"],
+                        link: "abyssal-floor-5.html"
                     }
                 ]
             },
@@ -764,6 +838,33 @@
                         desc: "AoE burn specialist. High CRIT enables burn tick CRITs and spread mechanics.",
                         points: ["CRIT 75%+", "Inferno Blaze 4-pc", "Burn Spread"],
                         link: "protocore-build-rafayel.html"
+                    },
+                    {
+                        id: "ENTRY_#090",
+                        date: "2026.06.30",
+                        tag: "CORE_SYSTEM",
+                        title: "SSR Memory Review: Offensive Sets",
+                        desc: "Deep analysis of Light Seeker, Dark Champion, Inferno Blaze, and Frostguard — which SSRs are worth pulling and why.",
+                        points: ["S-Tier: Light/Dark", "A-Tier: Inferno/Frost", "Set Value > Stats"],
+                        link: "protocore-memory-review-1.html"
+                    },
+                    {
+                        id: "ENTRY_#092",
+                        date: "2026.06.30",
+                        tag: "CORE_SYSTEM",
+                        title: "SSR Memory Review: Support Sets",
+                        desc: "Support and hybrid SSR memories — Solar Flare, Void Walker, Icebreaker, and Wildfire analysis.",
+                        points: ["Solar Flare: Universal", "Transitional Sets", "Build Priority"],
+                        link: "protocore-memory-review-2.html"
+                    },
+                    {
+                        id: "ENTRY_#093",
+                        date: "2026.06.30",
+                        tag: "CORE_SYSTEM",
+                        title: "SSR Memory Tier List",
+                        desc: "Updated tier list for all SSR memory sets, pull priority, and long-term investment value.",
+                        points: ["S/A/B/C Tiers", "Pull Priority", "Substats > Set Tier"],
+                        link: "protocore-memory-tiers.html"
                     }
                 ]
             },
@@ -826,7 +927,12 @@
         document.getElementById('activeLogsValue').innerText = totalEntries;
 
         let viewedEntries = JSON.parse(localStorage.getItem('combat_viewed_entries')) || {};
+        let favEntries = JSON.parse(localStorage.getItem('combat_fav_entries')) || {};
+        let recentEntries = JSON.parse(localStorage.getItem('combat_recent_entries')) || [];
         let currentFilter = { text: '', tag: '' };
+        let currentSort = 'id';
+        let currentSortDir = 1;
+        let favFilterActive = false;
 
         function getUniqueTags(categoryKey) {
             const data = categoryContent[categoryKey];
@@ -850,20 +956,71 @@
             select.value = currentVal && tags.includes(currentVal) ? currentVal : '';
         }
 
-        function filterEntries(entries) {
-            const text = currentFilter.text.toLowerCase().trim();
-            const tag = currentFilter.tag;
-            return entries.filter(e => {
-                if (text && !e.title.toLowerCase().includes(text) && !e.desc.toLowerCase().includes(text) && !e.id.toLowerCase().includes(text)) return false;
-                if (tag && e.tag !== tag) return false;
-                return true;
+        function toggleFav(entryId) {
+            if (favEntries[entryId]) { delete favEntries[entryId]; }
+            else { favEntries[entryId] = true; }
+            localStorage.setItem('combat_fav_entries', JSON.stringify(favEntries));
+            const cat = getCurrentCategory();
+            renderContent(cat);
+        }
+
+        function trackRecent(entryId, title) {
+            recentEntries = recentEntries.filter(e => e.id !== entryId);
+            recentEntries.unshift({ id: entryId, title: title });
+            if (recentEntries.length > 10) recentEntries = recentEntries.slice(0, 10);
+            localStorage.setItem('combat_recent_entries', JSON.stringify(recentEntries));
+            renderRecent();
+        }
+
+        function renderRecent() {
+            const section = document.getElementById('recent-viewed-section');
+            const list = document.getElementById('recentList');
+            if (!section || !list || recentEntries.length === 0) {
+                if (section) section.style.display = 'none';
+                return;
+            }
+            section.style.display = 'block';
+            let html = '';
+            recentEntries.forEach(e => {
+                html += `<span class="recent-chip" data-id="${e.id}">${e.id} ${e.title}</span>`;
+            });
+            list.innerHTML = html;
+            list.querySelectorAll('.recent-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const allEntries = Object.values(categoryContent).flatMap(c => c.entries);
+                    const entry = allEntries.find(en => en.id === id);
+                    if (entry && entry.link) window.location.href = entry.link;
+                });
             });
         }
 
-        function updateFilterCount(visible, total) {
+        function filterEntries(entries) {
+            const text = currentFilter.text.toLowerCase().trim();
+            const tag = currentFilter.tag;
+            let result = entries.filter(e => {
+                if (text && !e.title.toLowerCase().includes(text) && !e.desc.toLowerCase().includes(text) && !e.id.toLowerCase().includes(text)) return false;
+                if (tag && e.tag !== tag) return false;
+                if (favFilterActive && !favEntries[e.id]) return false;
+                return true;
+            });
+            result.sort((a, b) => {
+                if (currentSort === 'id') return a.id.localeCompare(b.id);
+                if (currentSort === 'date-desc') return b.date.localeCompare(a.date);
+                if (currentSort === 'date-asc') return a.date.localeCompare(b.date);
+                if (currentSort === 'alpha') return a.title.localeCompare(b.title);
+                return 0;
+            });
+            return result;
+        }
+
+        function updateFilterCount(visible, total, favOnly) {
             const el = document.getElementById('filterCount');
-            if (visible < total) {
-                el.textContent = `Showing ${visible} of ${total}`;
+            const parts = [];
+            if (visible < total) parts.push(`Showing ${visible} of ${total}`);
+            if (favOnly) parts.push('★ FILTER');
+            if (parts.length) {
+                el.textContent = parts.join(' · ');
                 el.style.display = 'inline';
             } else {
                 el.style.display = 'none';
@@ -917,15 +1074,17 @@
 
             updateTagOptions(categoryKey);
             const filtered = filterEntries(data.entries);
-            updateFilterCount(filtered.length, data.entries.length);
+            updateFilterCount(filtered.length, data.entries.length, favFilterActive);
 
             let html = '';
             for (const entry of filtered) {
                 const isViewed = viewedEntries[entry.id];
+                const isFav = favEntries[entry.id];
                 const viewedClass = isViewed ? ' viewed' : '';
                 const pointsHtml = entry.points.map(p => `<div class="data-point">${p}</div>`).join('');
                 const criticalClass = entry.tag === 'ELITE_BOSS' ? ' critical-card' : '';
                 const entryLink = entry.link || '#';
+                const favStar = isFav ? '★' : '☆';
                 
                 html += `
                     <article class="log-entry-final${criticalClass}${viewedClass}" data-entry-id="${entry.id}">
@@ -933,6 +1092,7 @@
                             <span class="log-id">${entry.id}</span>
                             <span class="log-date">${entry.date}</span>
                             <span class="tag ${entry.tag === 'ELITE_BOSS' ? 'danger-tag' : ''}">${entry.tag}</span>
+                            <span class="fav-star" data-entry-id="${entry.id}">${favStar}</span>
                             ${isViewed ? '<span class="read-badge">✓ READ</span>' : ''}
                         </div>
                         <div class="log-body">
@@ -955,9 +1115,13 @@
                 link.addEventListener('click', function(e) {
                     const entryId = this.getAttribute('data-entry-id');
                     const targetLink = this.getAttribute('href');
+                    const article = this.closest('.log-entry-final');
+                    const titleEl = article?.querySelector('h3');
+                    const entryTitle = titleEl ? titleEl.textContent : entryId;
+                    
+                    trackRecent(entryId, entryTitle);
                     
                     if (markAsViewed(entryId)) {
-                        const article = this.closest('.log-entry-final');
                         const header = article.querySelector('.log-header');
                         if (header && !header.querySelector('.read-badge')) {
                             const badge = document.createElement('span');
@@ -972,6 +1136,14 @@
                     if (targetLink && targetLink !== '#') {
                         window.location.href = targetLink;
                     }
+                });
+            });
+
+            document.querySelectorAll('.fav-star').forEach(star => {
+                star.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const entryId = this.getAttribute('data-entry-id');
+                    toggleFav(entryId);
                 });
             });
 
@@ -1005,6 +1177,31 @@
             renderContent(cat);
         });
 
+        document.getElementById('sortSelect').addEventListener('change', function() {
+            currentSort = this.value;
+            const cat = getCurrentCategory();
+            renderContent(cat);
+        });
+
+        document.getElementById('favFilterBtn').addEventListener('click', function() {
+            favFilterActive = !favFilterActive;
+            this.textContent = favFilterActive ? '★' : '☆';
+            this.classList.toggle('active', favFilterActive);
+            const cat = getCurrentCategory();
+            renderContent(cat);
+        });
+
+        document.getElementById('recentToggle').addEventListener('click', function() {
+            const list = document.getElementById('recentList');
+            if (list.style.display === 'none') {
+                list.style.display = 'flex';
+                this.textContent = '–';
+            } else {
+                list.style.display = 'none';
+                this.textContent = '+';
+            }
+        });
+
         window.resetCombatProgress = function() {
             if (confirm('Reset all viewed progress? SYNC RATE will return to 0%.')) {
                 viewedEntries = {};
@@ -1019,6 +1216,7 @@
         console.log('Combat Terminal loaded. Type resetCombatProgress() to reset viewed progress.');
 
         renderContent('basic');
+        renderRecent();
 
         const backToTopBtn = document.getElementById('backToTopBtn');
 
