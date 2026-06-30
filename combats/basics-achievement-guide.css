@@ -1,0 +1,27 @@
+.ach-container { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; display: block; }
+.ach-hero { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #2a2f3d; }
+.ach-badge { display: inline-block; background: rgba(241,196,15,0.2); border: 1px solid #f1c40f; padding: 6px 20px; border-radius: 20px; font-size: 0.7rem; letter-spacing: 2px; color: #f1c40f; margin-bottom: 20px; }
+.ach-hero h1 { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #fff, #f1c40f); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 16px; }
+.ach-hero p { color: #8a94a8; font-size: 0.9rem; }
+.ach-meta { display: flex; justify-content: space-between; align-items: center; background: #0f121b; border: 1px solid #2a2f3d; border-radius: 12px; padding: 12px 20px; margin-bottom: 40px; }
+.ach-meta .meta-id { font-family: monospace; color: #c9a063; font-weight: 600; }
+.ach-meta .meta-date { color: #6a7080; font-size: 0.8rem; }
+.ach-meta .meta-tag { background: rgba(241,196,15,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; color: #f1c40f; }
+.ach-highlight { background: #0f121b; border-left: 3px solid #f1c40f; padding: 20px 24px; margin: 30px 0; border-radius: 0 12px 12px 0; }
+.ach-highlight strong { color: #f1c40f; }
+h2 { font-size: 1.6rem; color: #f1c40f; margin: 40px 0 20px 0; border-left: 3px solid #f1c40f; padding-left: 16px; }
+p { color: #b0bedb; margin-bottom: 20px; line-height: 1.7; }
+.ach-cat-card { background: #0f121b; border: 1px solid #2a2f3d; border-radius: 12px; padding: 14px 20px; margin: 10px 0; }
+.cat-name { font-weight: 700; color: #c9a063; font-size: 0.9rem; margin-bottom: 4px; }
+.cat-info { color: #8a94a8; font-size: 0.85rem; line-height: 1.5; }
+.ach-hidden-list { background: #0f121b; border: 1px dashed #c9a063; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+.hidden-item { padding: 8px 0; border-bottom: 1px solid #2a2f3d; font-size: 0.88rem; color: #b0bedb; }
+.hidden-item:last-child { border-bottom: none; }
+.hidden-item strong { color: #fff; }
+.ach-final-box { background: #0f121b; border-left: 3px solid #2ecc71; padding: 20px 24px; margin: 30px 0; border-radius: 0 12px 12px 0; }
+.ach-final-box strong { color: #2ecc71; }
+@media (max-width: 700px) {
+    .ach-container { padding: 40px 20px; }
+    .ach-hero h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+}
