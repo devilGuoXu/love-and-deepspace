@@ -374,6 +374,19 @@
 }
 .fav-filter-btn:hover { border-color: #c9a063; }
 .fav-filter-btn.active { background: rgba(201,160,99,0.15); border-color: #c9a063; }
+.random-btn {
+    background: #05070a;
+    border: 1px solid #2a2f3d;
+    border-radius: 8px;
+    color: #c9a063;
+    font-size: 1rem;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.4;
+}
+.random-btn:hover { border-color: #c9a063; background: rgba(201,160,99,0.1); }
+.random-btn:active { transform: scale(0.95); }
 .fav-star {
     cursor: pointer;
     font-size: 1.1rem;

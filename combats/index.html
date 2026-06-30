@@ -75,6 +75,7 @@
                     <option value="alpha">Sort: A-Z</option>
                 </select>
                 <button id="favFilterBtn" class="fav-filter-btn" title="Show bookmarked only">☆</button>
+                <button id="randomBtn" class="random-btn" title="Random guide">🎲</button>
                 <span id="filterCount" class="filter-count"></span>
             </div>
             <div id="recent-viewed-section" class="recent-section" style="display:none">
@@ -1225,6 +1226,12 @@
             this.classList.toggle('active', favFilterActive);
             const cat = getCurrentCategory();
             renderContent(cat);
+        });
+
+        document.getElementById('randomBtn').addEventListener('click', function() {
+            const allEntries = Object.values(categoryContent).flatMap(c => c.entries).filter(e => e.link);
+            const pick = allEntries[Math.floor(Math.random() * allEntries.length)];
+            if (pick && pick.link) window.location.href = pick.link;
         });
 
         document.getElementById('recentToggle').addEventListener('click', function() {
