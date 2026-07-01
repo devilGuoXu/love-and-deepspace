@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage Calculation & Optimization Guide | Deepspace Hub</title>
+    <meta name="description" content="Learn to calculate your actual damage output — formulas, stat breakpoints, diminishing returns, and optimization math.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="basics-damage-calc.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container">
+        <div class="gb-hero"><div class="gb-badge">BASIC PROTOCOLS — MATH</div><h1>Damage Calculation Guide</h1><p>Understand the numbers behind your damage — formulas, breakpoints, and optimization math.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#050</span><span class="meta-date">2026.07.01</span><span class="meta-tag">MATH</span></div>
+        <div class="gb-highlight"><p><strong>Why Math Matters:</strong> Most players build by feel — "this set feels strong" or "I need more CRIT." Math removes guesswork. A 10% damage optimization from understanding formulas is equivalent to two breakthrough tiers or one full memory set. Knowledge is the most efficient resource.</p></div>
+        <h2>Core Damage Formula</h2>
+        <p>Final Damage = ATK × Skill Multiplier × (1 + DMG Bonus) × (1 + CRIT DMG if crit) × (1 + Element Bonus) × Enemy DEF Multiplier × (1 + Stagger Bonus). Each multiplier is multiplicative with the others. This means buffs of different types are more valuable than stacking the same type.</p>
+        <p>Example: +20% ATK and +20% DMG Bonus = 1.2 × 1.2 = 1.44x (44% gain). +40% ATK (no DMG Bonus) = 1.4x (40% gain). The different-type buffs are 4% stronger. Small differences, but they compound across your entire build.</p>
+        <h2>Stat Breakpoints</h2>
+        <p><strong>ATK%:</strong> Diminishing returns after +100% ATK (from base ATK). Optimal range: 80-120% bonus ATK. <strong>CRIT Rate:</strong> Optimal range 65-80%. Below 65%, your damage is inconsistent. Above 80%, you're over-investing — switch to CRIT DMG. <strong>CRIT DMG:</strong> Optimal range 140-180%. At 65% CRIT Rate and 160% CRIT DMG, your average damage multiplier from crits is 1.65 × 0.65 + 1 × 0.35 = 1.4225 (42% average gain). <strong>DMG Bonus:</strong> No diminishing returns in practice — stack as high as possible, but don't sacrifice ATK% or CRIT for it.</p>
+        <h2>Substat Value</h2>
+        <p>Each substat roll has a range. One roll: ATK% 4-6%, CRIT Rate 2.5-4%, CRIT DMG 5-8%, Flat ATK 25-40. Convert everything to "effective substat value" (ESV). 1 ESV = 1% ATK = 0.5% CRIT Rate = 1% CRIT DMG = 10 Flat ATK. A memory with 8 ESV across 4 substats is good. 12+ ESV is exceptional. 16+ ESV is god roll.</p>
+        <p>Enhancement strategy: Enhance to +3. If you get a bad substat roll, salvage. If good, enhance to +6. If second roll is bad, salvage. If both good, enhance to +9 and lock. Never take a memory to +12 without locking at +9 first — the +9 to +12 cost is very high for one more roll.</p>
+        <h2>Team Damage Math</h2>
+        <p>Team DPS = Main DPS DPS + Sub-DPS DPS × (field time ratio) + Support DPS × (field time ratio). In a hypercarry setup: Main DPS has 80% field time, Sub-DPS 15%, Support 5%. Optimizing the main DPS is 80% of team damage. A 10% improvement on main DPS = 8% team DPS gain. A 10% improvement on support = 0.5% team DPS gain.</p>
+        <div class="gb-tip-box"><p><strong>Key Insight:</strong> Use the "1% rule" — if changing one substat or piece improves your calculated DPS by 1% or more, it's worth the resource investment. Below 1%, the improvement is negligible and resources are better spent elsewhere. This prevents perfectionism waste.</p></div>
+        <div class="gb-final-box"><p><strong>Summary:</strong> Damage = ATK × DMG Bonus × CRIT × Element × DEF × Stagger. ATK% 80-120%, CRIT 65-80%, CRIT DMG 140-180%. ESV system to evaluate substats. Enhance to +3/+6, salvage bad rolls. Main DPS optimization is 80% of team DPS.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
