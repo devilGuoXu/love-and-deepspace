@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Calculation Framework | Deepspace Hub</title>
+    <meta name="description" content="The complete DPS calculation model — damage formula, stat multipliers, rotation DPS, and how to evaluate a build before testing it.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container">
+        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — DPS MODEL</div><h1>DPS Calculation Framework</h1><p>The math behind every number that appears on screen. Understand this framework and you can evaluate any build, any rotation, any team composition without testing it.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_01</span><span class="meta-date">2026.07.02</span><span class="meta-tag">DPS</span></div>
+        <div class="gb-highlight"><p><strong>Core Formula:</strong> Final Damage = Base ATK × Skill Multiplier × (1 + DMG Bonus%) × CRIT Multiplier × Element Multiplier × Defense Factor. Every DPS question reduces to: which variable in this formula can I increase the most with the least investment? The answer changes per operative and per content type.</p></div>
+        <h2>Damage Formula Breakdown</h2>
+        <p><strong>Base ATK:</strong> Operative base ATK (level-dependent) + memory flat ATK + protocore flat ATK. Multiplied by (1 + total ATK% from all sources). ATK% has diminishing returns above +100% because it saturates the multiplier bracket. Rule: 1 point of ATK% before +100% is worth ~2x more than 1 point after +100%.</p>
+        <p><strong>Skill Multiplier:</strong> Each skill has a fixed multiplier (e.g., Xavier's Light Slash = 180% ATK at level 6). Skill levels increase this multiplier. Leveling a skill from 6 to 7 increases the multiplier by ~8-12%. This is the single most stamina-efficient damage increase — one skill level up beats 5 protocore upgrades.</p>
+        <p><strong>DMG Bonus%:</strong> Elemental damage bonus, skill type bonus, set bonus. This bracket is additive with itself (30% Light DMG + 20% skill DMG = 50% total). It is multiplicative with ATK%. DMG Bonus% is the least saturated bracket for most builds — getting 30% elemental DMG is often a bigger increase than 30% ATK.</p>
+        <p><strong>CRIT Multiplier:</strong> 1 + (CRIT Rate × CRIT DMG). If you have 60% CRIT Rate and 150% CRIT DMG, your CRIT multiplier is 1 + (0.6 × 1.5) = 1.9x average. Improving CRIT Rate from 60% to 70% at the same CRIT DMG increases this to 2.05x — an 8% damage increase. The CRIT multiplier is the most tunable bracket but has the highest opportunity cost (you sacrifice ATK% or ER to stack it).</p>
+        <p><strong>Element Multiplier:</strong> 1.5x if the enemy is weak to your element. 0.5x if resistant. 1.0x neutral. This is a hard multiplier that cannot be modified by stats. It is the single biggest damage factor in the game — a 1.5x multiplier is worth more than any single substat roll. Always match elements.</p>
+        <p><strong>Defense Factor:</strong> 1 / (1 + enemy DEF / (ATK × penetration)). Enemy DEF scales with floor level. At Abyss floor 10, enemy DEF reduces damage by ~35%. At floor 12, ~50%. Defense penetration stats (if available) are more valuable at higher floors. Flat DEF penetration > DEF% penetration against high-DEF enemies.</p>
+        <h2>Rotation DPS Model</h2>
+        <p>Rotation DPS = (Skill 1 DMG + Skill 2 DMG + Ardent Oath DMG + Auto-attack DMG during cooldowns) / Rotation duration. A standard rotation cycle is 12-15 seconds (skill cooldown window). <strong>Key insight:</strong> Auto-attack damage during cooldowns accounts for 25-35% of total DPS. Protocores that boost auto-attack damage (if available) are undervalued by the community. A 15% auto-attack DMG bonus is worth approximately 5% total DPS increase — equivalent to a CRIT Rate substat roll.</p>
+        <div class="gb-tip-box"><p><strong>Formula in practice:</strong> To estimate your DPS without testing: Take your highest skill's damage number (from a training dummy or domain run). Multiply by 3.5 (average skills per rotation). Add 30% for auto-attack fill. Divide by 13 (seconds per rotation). This gives a rough Rotation DPS. Example: Xavier Light Slash hits for 15k → 15k × 3.5 = 52.5k → +30% = 68.25k → /13s = 5,250 Rotation DPS. Compare this number across builds — the build with higher Rotation DPS wins regardless of peak damage numbers.</p></div>
+        <h2>Practical Application</h2>
+        <p>When comparing two protocore builds: (1) Calculate your CRIT Multiplier for both builds. (2) Calculate your ATK% bracket. (3) Multiply CRIT Multiplier × ATK multiplier × DMG Bonus multiplier. (4) The build with the higher product is better. This calculation takes 30 seconds and is more accurate than "feeling" which build is stronger. <strong>Spreadsheet recommendation:</strong> Keep a simple DPS calculator in a spreadsheet with your operative's stats. Update it whenever you change protocores. Do not trust "bigger number = better" — burst damage and sustained DPS are different metrics.</p>
+        <div class="gb-final-box"><p><strong>Summary:</strong> Final DMG = Base ATK × Skill Mult × (1+DMG Bonus) × CRIT Mult × Element × DEF Factor. ATK% saturates after +100%. Skill level up is the most efficient upgrade. Element match = 1.5x, bigger than any substat. Rotation DPS = total damage / 13s. Use the multiplier product method to compare builds. Test with math, not feelings.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
