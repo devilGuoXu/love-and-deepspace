@@ -329,7 +329,7 @@
         const pulls = Math.floor(diamonds / 150);
         const expectedFiveStar = Math.floor(pulls / 65);
         const pityChance = Math.min(100, Math.floor((pulls / 70) * 100));
-        const daysToGuarantee = Math.ceil((150 - pulls) / 4.4); // 平均每天约4.4抽
+        const daysToGuarantee = Math.ceil((150 - pulls) / 4.4); // average ~4.4 pulls per day
         
         document.getElementById('totalPullsCalc').innerText = pulls;
         document.getElementById('expectedFiveStar').innerText = expectedFiveStar;
@@ -475,7 +475,7 @@
     
     console.log('F2P Diamond Saving Strategy loaded. Track your progress and save those diamonds!');
 
-    // 复制链接功能
+    // Copy link function
     const copyLinkBtn = document.getElementById('copyLinkBtn');
     if (copyLinkBtn) {
         copyLinkBtn.addEventListener('click', function() {

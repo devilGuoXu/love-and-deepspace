@@ -248,7 +248,7 @@ body::before {
 .rank-circle {
     width: 45px; height: 45px;
     background: var(--accent);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); /* 八角形 */
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); /* Octagon */
     display: flex; align-items: center; justify-content: center;
     font-weight: bold; color: #000; margin-right: 20px;
 }
