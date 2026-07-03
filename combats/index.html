@@ -2191,9 +2191,7 @@
                     }
                 ]
             }
-        };
-
-        const totalEntries = Object.values(categoryContent).reduce((sum, cat) => sum + cat.entries.length, 0);
+        }; = Object.values(categoryContent).reduce((sum, cat) => sum + cat.entries.length, 0);
         
         document.getElementById('activeLogsValue').innerText = totalEntries;
 
