@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLS | Deepspace Hunter</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Interactive tools for Love and Deepspace — stamina calculator, daily checklist, pull calculator, and more.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="../combats/">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
+                <li><a href="./" style="color:var(--accent);">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tools-page">
+        <h1>INTERACTIVE TOOLS</h1>
+        <p class="subtitle">Calculator tools and trackers to optimize your Love and Deepspace gameplay.</p>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <div class="tool-icon">⚡</div>
+                <h2>Stamina & Material Calculator</h2>
+                <p>Calculate how much stamina you need for materials, plan your farming routes, and optimize your energy usage.</p>
+                <a href="stamina-calculator.html" class="tool-link">Open Tool →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">✅</div>
+                <h2>Daily & Weekly Checklist</h2>
+                <p>Track your daily and weekly tasks with auto-saving checklists. Never miss a reset again.</p>
+                <a href="daily-checklist.html" class="tool-link">Open Tool →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🎲</div>
+                <h2>Pull & Pity Calculator</h2>
+                <p>Calculate how many pulls you need for a guaranteed SSR, track pity, and plan your diamond spending.</p>
+                <a href="pull-calculator.html" class="tool-link">Open Tool →</a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All rights reserved.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

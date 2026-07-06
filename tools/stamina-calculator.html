@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamina & Material Calculator | Deepspace Tools</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Calculate stamina costs for materials, plan farming routes, and optimize energy usage in Love and Deepspace.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="../combats/">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
+                <li><a href="./">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tool-container">
+        <h1>⚡ Stamina & Material Calculator</h1>
+        <p class="subtitle">Calculate how much stamina you need for any farming goal. Plan your week efficiently.</p>
+        <div class="stats-bar" id="dailyStats">
+            <div class="stat-card"><div class="stat-num">480</div><div class="stat-label">Free Stamina/Day</div></div>
+            <div class="stat-card"><div class="stat-num" id="staminaNeeded">0</div><div class="stat-label">Stamina Needed</div></div>
+            <div class="stat-card"><div class="stat-num" id="daysNeeded">0</div><div class="stat-label">Days to Farm</div></div>
+            <div class="stat-card"><div class="stat-num" id="diamondCost">0</div><div class="stat-label">Diamond Refill Cost</div></div>
+        </div>
+        <div class="tool-section">
+            <h2>Select Materials to Farm</h2>
+            <div id="materialList"></div>
+        </div>
+        <div class="tool-section">
+            <h2>Your Stamina Settings</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Daily Stamina Budget</label>
+                    <select id="staminaBudget">
+                        <option value="480">480 (Free only)</option>
+                        <option value="540" selected>540 (Free + daily mission)</option>
+                        <option value="600">600 (+1 refresh)</option>
+                        <option value="660">660 (+2 refresh)</option>
+                        <option value="720">720 (+3 refresh)</option>
+                        <option value="960">960 (+max refresh)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Double Drop Event Active?</label>
+                    <select id="doubleDrop">
+                        <option value="1">No</option>
+                        <option value="2">Yes (2x drops)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="resultArea" class="result-box" style="display:none;"></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All rights reserved.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const MATERIALS = [
+            {id:'boss', name:'Weekly Boss Materials', stamina:60, icon:'⚔️', perRun:2, desc:'Heartbreaker + SSR protocore chance'},
+            {id:'proto70', name:'Protocore Domain (Lv70+)', stamina:60, icon:'💎', perRun:2, desc:'Best protocore farming'},
+            {id:'proto60', name:'Protocore Domain (Lv60)', stamina:40, icon:'💎', perRun:1.5, desc:'Less efficient, use Lv70+'},
+            {id:'blue', name:'Ascension Gems (Blue)', stamina:40, icon:'🔷', perRun:2, desc:'For level 30-50 ascension'},
+            {id:'purple', name:'Ascension Gems (Purple)', stamina:60, icon:'🔶', perRun:1.5, desc:'For level 50-70 ascension'},
+            {id:'goldgem', name:'Ascension Gems (Gold)', stamina:60, icon:'🏆', perRun:1, desc:'For level 70+ ascension — rare'},
+            {id:'exp', name:'EXP Books (Red)', stamina:20, icon:'📚', perRun:3, desc:'Memory EXP material'},
+            {id:'gold', name:'Gold', stamina:20, icon:'🪙', perRun:15000, desc:'Gold per run (Lv60+)'},
+            {id:'awakenG', name:'Awakening Gems (Green)', stamina:30, icon:'🟢', perRun:2, desc:'Basic awakening material'},
+            {id:'awakenB', name:'Awakening Gems (Blue)', stamina:40, icon:'🔵', perRun:1.5, desc:'Mid-tier awakening material'},
+            {id:'awakenP', name:'Awakening Gems (Purple)', stamina:60, icon:'🟣', perRun:1, desc:'High-tier — major bottleneck'},
+            {id:'shard', name:'Memory Shards', stamina:40, icon:'🧩', perRun:1, desc:'From bounty board'},
+        ];
+
+        function buildMaterialList() {
+            const list = document.getElementById('materialList');
+            MATERIALS.forEach(m => {
+                const div = document.createElement('div');
+                div.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #1a1a22;flex-wrap:wrap;';
+                div.innerHTML = `<span style="font-size:1.2rem;min-width:30px;">${m.icon}</span>
+                    <span style="flex:1;min-width:140px;"><strong style="color:#e0e0e0;font-size:.9rem;">${m.name}</strong><br><span style="color:#6a7080;font-size:.75rem;">${m.desc} — ${m.stamina} stamina/run</span></span>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <button class="mat-minus" data-id="${m.id}" style="width:32px;height:32px;border:1px solid #2a2f3d;background:#0b0d14;color:#e0e0e0;border-radius:6px;cursor:pointer;">−</button>
+                        <input type="number" id="mat_${m.id}" class="mat-qty" data-id="${m.id}" value="0" min="0" style="width:60px;padding:6px;background:#0b0d14;border:1px solid #2a2f3d;border-radius:6px;color:#e0e0e0;text-align:center;font-size:.9rem;">
+                        <button class="mat-plus" data-id="${m.id}" style="width:32px;height:32px;border:1px solid #2a2f3d;background:#0b0d14;color:#e0e0e0;border-radius:6px;cursor:pointer;">+</button>
+                    </div>
+                    <span style="color:#6a7080;font-size:.8rem;min-width:60px;text-align:right;" id="stam_${m.id}">0 stam</span>`;
+                list.appendChild(div);
+            });
+            document.querySelectorAll('.mat-plus').forEach(b => b.addEventListener('click', function(){ const inp = document.getElementById('mat_'+this.dataset.id); inp.value = parseInt(inp.value||0)+1; inp.dispatchEvent(new Event('input')); }));
+            document.querySelectorAll('.mat-minus').forEach(b => b.addEventListener('click', function(){ const inp = document.getElementById('mat_'+this.dataset.id); inp.value = Math.max(0, parseInt(inp.value||0)-1); inp.dispatchEvent(new Event('input')); }));
+            document.querySelectorAll('.mat-qty').forEach(inp => inp.addEventListener('input', calculate));
+            document.getElementById('staminaBudget').addEventListener('change', calculate);
+            document.getElementById('doubleDrop').addEventListener('change', calculate);
+        }
+
+        function calculate() {
+            const budget = parseInt(document.getElementById('staminaBudget').value);
+            const dd = parseInt(document.getElementById('doubleDrop').value);
+            let total = 0;
+            const breakdown = [];
+            MATERIALS.forEach(m => {
+                const qty = parseInt(document.getElementById('mat_'+m.id).value) || 0;
+                if (qty > 0) {
+                    const runsNeeded = Math.ceil(qty / (m.perRun * dd));
+                    const stamina = runsNeeded * m.stamina;
+                    total += stamina;
+                    document.getElementById('stam_'+m.id).textContent = stamina + ' stam (' + runsNeeded + ' runs)';
+                    breakdown.push({name:m.icon+' '+m.name, qty, runs:runsNeeded, stamina});
+                } else {
+                    document.getElementById('stam_'+m.id).textContent = '0 stam';
+                }
+            });
+            document.getElementById('staminaNeeded').textContent = total;
+            const days = Math.ceil(total / budget);
+            document.getElementById('daysNeeded').textContent = days;
+            const refreshNeeded = Math.max(0, total - 480);
+            const diamondCost = Math.ceil(refreshNeeded / 60) * 20;
+            document.getElementById('diamondCost').textContent = diamondCost;
+
+            const ra = document.getElementById('resultArea');
+            if (total > 0) {
+                let html = '<h3 style="margin:0 0 12px;color:#c9a063;">📋 Farming Plan</h3>';
+                breakdown.forEach(b => {
+                    html += `<div class="result-row"><span class="label">${b.name} (x${b.qty})</span><span class="value">${b.runs} runs — ${b.stamina} stamina</span></div>`;
+                });
+                html += `<div class="result-row" style="border-top:2px solid #c9a063;margin-top:8px;padding-top:8px;"><span class="label" style="font-weight:700;">Total</span><span class="value" style="font-weight:700;color:#c9a063;">${total} stamina — ${days} day(s)</span></div>`;
+                if (diamondCost > 0) {
+                    html += `<div class="result-row"><span class="label">💎 Diamond refill cost</span><span class="value" style="color:#ff6b6b;">${diamondCost} diamonds</span></div>`;
+                }
+                ra.innerHTML = html;
+                ra.style.display = 'block';
+            } else {
+                ra.style.display = 'none';
+            }
+        }
+
+        buildMaterialList();
+        calculate();
+    </script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

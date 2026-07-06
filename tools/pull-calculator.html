@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull & Pity Calculator | Deepspace Tools</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Calculate pity, pull probability, and diamond requirements for Love and Deepspace banners.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="../combats/">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
+                <li><a href="./">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tool-container">
+        <h1>🎲 Pull & Pity Calculator</h1>
+        <p class="subtitle">Track your pity, calculate your odds, and plan your diamond spending for limited banners.</p>
+        <div class="stats-bar" id="pullStats">
+            <div class="stat-card"><div class="stat-num" id="currentPulls">0</div><div class="stat-label">Current Pulls</div></div>
+            <div class="stat-card"><div class="stat-num" id="pullsToHard">70</div><div class="stat-label">Pulls to Hard Pity</div></div>
+            <div class="stat-card"><div class="stat-num" id="diamondsNeeded">0</div><div class="stat-label">Diamonds Needed</div></div>
+            <div class="stat-card"><div class="stat-num" id="prob50">0%</div><div class="stat-label">50/50 Win Chance</div></div>
+        </div>
+        <div class="tool-section">
+            <h2>Your Current Status</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Current Pity Count</label>
+                    <input type="number" id="pityCount" value="0" min="0" max="70">
+                </div>
+                <div class="form-group">
+                    <label>Current Diamonds</label>
+                    <input type="number" id="currentDiamonds" value="0" min="0" step="100">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Current Empyrean Wishes</label>
+                    <input type="number" id="currentWishes" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Is this a 50/50?</label>
+                    <select id="is5050">
+                        <option value="1">Yes — 50/50 chance</option>
+                        <option value="0">No — guaranteed rate-up</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="tool-section">
+            <h2>Pity Progress</h2>
+            <div class="pull-bar">
+                <div class="pull-bar-fill" id="pityFill" style="width:0%;"></div>
+                <div class="pull-bar-label" id="pityLabel">0 / 70</div>
+                <div class="pull-soft" style="left:63%;" title="Soft pity starts at 63"></div>
+                <div class="pull-hard" style="left:100%;" title="Hard pity at 70"></div>
+            </div>
+            <div class="pull-milestones">
+                <div class="pull-milestone"><div class="ms-value">63</div><div class="ms-label">Soft Pity</div></div>
+                <div class="pull-milestone"><div class="ms-value">70</div><div class="ms-label">Hard Pity</div></div>
+                <div class="pull-milestone"><div class="ms-value" id="msCurrent">0</div><div class="ms-label">You Are Here</div></div>
+                <div class="pull-milestone"><div class="ms-value" id="msToGuarantee">70</div><div class="ms-label">To Guarantee</div></div>
+            </div>
+        </div>
+        <div id="pullResult" class="result-box" style="display:none;"></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All rights reserved.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        function calculatePity() {
+            const pity = parseInt(document.getElementById('pityCount').value) || 0;
+            const diamonds = parseInt(document.getElementById('currentDiamonds').value) || 0;
+            const wishes = parseInt(document.getElementById('currentWishes').value) || 0;
+            const is5050 = parseInt(document.getElementById('is5050').value);
+            const totalPulls = Math.floor(diamonds / 150) + wishes;
+            const toHard = 70 - pity;
+            const toGuarantee = is5050 ? (toHard * 2) : toHard;
+            const neededDiamonds = Math.max(0, toHard * 150 - diamonds);
+            const neededForGuarantee = Math.max(0, toGuarantee * 150 - diamonds - wishes * 150);
+            let prob = 0;
+            if (pity < 63) {
+                prob = Math.min(0.994, 0.006 * (63 - pity));
+            } else {
+                prob = Math.min(1, 0.006 + 0.07 * (pity - 62));
+            }
+            const winProb = is5050 ? prob * 0.5 : prob;
+            document.getElementById('currentPulls').textContent = totalPulls;
+            document.getElementById('pullsToHard').textContent = toHard;
+            document.getElementById('diamondsNeeded').textContent = Math.max(0, toHard * 150 - diamonds);
+            document.getElementById('prob50').textContent = Math.round(winProb * 100) + '%';
+            const pct = Math.round((pity / 70) * 100);
+            document.getElementById('pityFill').style.width = Math.min(100, pct) + '%';
+            document.getElementById('pityLabel').textContent = pity + ' / 70';
+            document.getElementById('msCurrent').textContent = pity;
+            document.getElementById('msToGuarantee').textContent = toGuarantee;
+            const pr = document.getElementById('pullResult');
+            if (pity > 0 || diamonds > 0 || wishes > 0) {
+                let html = '<h3 style="margin:0 0 12px;color:#c9a063;">📊 Summary</h3>';
+                html += `<div class="result-row"><span class="label">🎫 Total pulls available</span><span class="value">${totalPulls}</span></div>`;
+                html += `<div class="result-row"><span class="label">🎯 Pulls to hard pity</span><span class="value">${toHard}</span></div>`;
+                html += `<div class="result-row"><span class="label">💎 Diamond shortfall (to pity)</span><span class="value">${Math.max(0, toHard * 150 - diamonds)}</span></div>`;
+                if (is5050) {
+                    html += `<div class="result-row"><span class="label">🔄 Pulls for guaranteed (lose 50/50)</span><span class="value">${toGuarantee}</span></div>`;
+                    html += `<div class="result-row"><span class="label">💎 Diamonds for guarantee</span><span class="value">${neededForGuarantee > 0 ? neededForGuarantee : '✅ Already enough'}</span></div>`;
+                }
+                if (pity >= 63) {
+                    html += `<div class="result-row"><span class="label" style="color:#2ecc71;">⚡ Soft pity active!</span><span class="value" style="color:#2ecc71;">${Math.round(prob*100)}% SSR chance per pull</span></div>`;
+                }
+                html += `<div style="margin-top:12px;padding:12px;background:#0b0d14;border-radius:8px;text-align:center;">
+                    <span style="color:#8a94a8;">Base rate: 0.6% → Soft pity starts at 63 → Hard pity at 70</span></div>`;
+                pr.innerHTML = html;
+                pr.style.display = 'block';
+            } else {
+                pr.style.display = 'none';
+            }
+        }
+        document.getElementById('pityCount').addEventListener('input', calculatePity);
+        document.getElementById('currentDiamonds').addEventListener('input', calculatePity);
+        document.getElementById('currentWishes').addEventListener('input', calculatePity);
+        document.getElementById('is5050').addEventListener('change', calculatePity);
+        calculatePity();
+    </script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

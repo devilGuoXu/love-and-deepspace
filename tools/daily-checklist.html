@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily & Weekly Checklist | Deepspace Tools</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Interactive daily and weekly task tracker for Love and Deepspace — auto-saves to your browser.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="../combats/">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
+                <li><a href="./">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tool-container">
+        <h1>✅ Daily & Weekly Checklist</h1>
+        <p class="subtitle">Track your tasks. Your progress is saved automatically in your browser.</p>
+        <div class="stats-bar" id="checklistStats">
+            <div class="stat-card"><div class="stat-num" id="dailyDone">0</div><div class="stat-label">Daily Done</div></div>
+            <div class="stat-card"><div class="stat-num" id="dailyTotal">0</div><div class="stat-label">Daily Total</div></div>
+            <div class="stat-card"><div class="stat-num" id="weeklyDone">0</div><div class="stat-label">Weekly Done</div></div>
+            <div class="stat-card"><div class="stat-num" id="weeklyTotal">0</div><div class="stat-label">Weekly Total</div></div>
+        </div>
+        <div class="tool-section">
+            <div class="checklist-header">
+                <h3>📅 Daily Tasks (resets every day)</h3>
+                <button id="resetDailyBtn" class="btn-reset">Reset Daily</button>
+            </div>
+            <div id="dailyTasks"></div>
+        </div>
+        <div class="tool-section">
+            <div class="checklist-header">
+                <h3>📆 Weekly Tasks (resets Monday)</h3>
+                <button id="resetWeeklyBtn" class="btn-reset">Reset Weekly</button>
+            </div>
+            <div id="weeklyTasks"></div>
+        </div>
+        <div class="tool-section">
+            <div class="checklist-header">
+                <h3>🎯 Monthly Goals</h3>
+                <button id="resetMonthlyBtn" class="btn-reset">Reset Monthly</button>
+            </div>
+            <div id="monthlyTasks"></div>
+        </div>
+        <small style="color:#4a4f5e;display:block;text-align:center;margin-top:20px;">Progress saved to your browser (localStorage). Clearing your browser data will reset all checklists.</small>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All rights reserved.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const DAILY_TASKS = [
+            {id:'daily_login', text:'Login & claim daily rewards', desc:'+50 stamina, login rewards'},
+            {id:'daily_missions', text:'Complete 5 daily missions', desc:'60 stamina, gold, materials'},
+            {id:'daily_home', text:'Visit Home — collect & interact', desc:'Affinity XP, crafting energy'},
+            {id:'daily_bounty', text:'Complete bounty board', desc:'3 bounties (Mon/Fri reset)'},
+            {id:'daily_stamina', text:'Use all stamina before cap', desc:'Don\'t let it hit 480/480'},
+            {id:'daily_shop', text:'Check shop for free items', desc:'Free wishes, gold, materials'},
+            {id:'daily_friend', text:'Send/receive friend gifts', desc:'Free stamina from friends'},
+            {id:'daily_abyss', text:'Run 1 Abyss floor (if unlocked)', desc:'Diamond rewards'},
+        ];
+        const WEEKLY_TASKS = [
+            {id:'weekly_boss', text:'Defeat 3 weekly bosses', desc:'9 total runs, 3 per boss'},
+            {id:'weekly_abyss', text:'Clear Abyss rewards', desc:'~500 diamonds, reset Monday'},
+            {id:'weekly_shc', text:'Attempt Senior Hunter Contest', desc:'Score resets weekly'},
+            {id:'weekly_bp', text:'Reach weekly BP level cap', desc:'BP XP caps weekly'},
+            {id:'weekly_event', text:'Check event shop & dailies', desc:'Event-limited rewards'},
+            {id:'weekly_protocore', text:'Farm protocore domains', desc:'Focus on needed sets'},
+            {id:'weekly_coop', text:'Complete co-op boss runs', desc:'Co-op rewards reset'},
+            {id:'weekly_crew', text:'Claim crew rewards', desc:'Crew login/activity rewards'},
+        ];
+        const MONTHLY_TASKS = [
+            {id:'monthly_bp', text:'Complete Battle Pass track', desc:'Claim all BP tier rewards'},
+            {id:'monthly_shop', text:'Clear monthly shop items', desc:'Wishes, SSR crate if available'},
+            {id:'monthly_pity', text:'Track pity on current banner', desc:'Review pull strategy'},
+            {id:'monthly_plan', text:'Plan next month\'s resources', desc:'Diamond farm targets'},
+        ];
+        const STORAGE_KEY = 'deepspace_checklist';
+
+        function loadState() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
+        }
+        function saveState(state) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function renderGroup(containerId, tasks, groupKey, state, statDoneId, statTotalId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            let done = 0;
+            tasks.forEach(t => {
+                const key = groupKey + '_' + t.id;
+                const checked = state[key] || false;
+                if (checked) done++;
+                const div = document.createElement('div');
+                div.className = 'checklist-day';
+                div.innerHTML = `<label><input type="checkbox" data-key="${key}" ${checked?'checked':''}><span class="task-text">${t.text}</span><span class="task-desc">${t.desc}</span></label>`;
+                container.appendChild(div);
+            });
+            document.getElementById(statDoneId).textContent = done;
+            document.getElementById(statTotalId).textContent = tasks.length;
+            container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const s = loadState();
+                    s[this.dataset.key] = this.checked;
+                    saveState(s);
+                    renderAll();
+                });
+            });
+        }
+
+        function renderAll() {
+            const state = loadState();
+            renderGroup('dailyTasks', DAILY_TASKS, 'daily', state, 'dailyDone', 'dailyTotal');
+            renderGroup('weeklyTasks', WEEKLY_TASKS, 'weekly', state, 'weeklyDone', 'weeklyTotal');
+            renderGroup('monthlyTasks', MONTHLY_TASKS, 'monthly', state, 'monthlyDone', 'monthlyTotal');
+        }
+
+        function resetGroup(groupKey, tasks) {
+            const state = loadState();
+            tasks.forEach(t => delete state[groupKey + '_' + t.id]);
+            saveState(state);
+            renderAll();
+        }
+
+        renderAll();
+        document.getElementById('resetDailyBtn').addEventListener('click', function(){ resetGroup('daily', DAILY_TASKS); });
+        document.getElementById('resetWeeklyBtn').addEventListener('click', function(){ resetGroup('weekly', WEEKLY_TASKS); });
+        document.getElementById('resetMonthlyBtn').addEventListener('click', function(){ resetGroup('monthly', MONTHLY_TASKS); });
+    </script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
