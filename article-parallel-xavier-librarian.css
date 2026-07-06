@@ -1,0 +1,289 @@
+/* Parallel Professions - Xavier: The Librarian Who Always Fell Asleep */
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.article-header {
+    padding: 500px 20px 100px;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark, #0a0a0c));
+    pointer-events: none;
+}
+
+.article-header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.article-header p {
+    font-size: 1rem;
+    color: #e8e2c7;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* Intro box */
+.intro-box {
+    margin: 40px 0 50px;
+    padding: 30px;
+    background: #0f121b;
+    border-radius: 20px;
+    border: 1px solid #2a2f3d;
+    text-align: center;
+}
+
+.intro-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #c9a063;
+    margin-bottom: 12px;
+}
+
+.intro-attribution {
+    font-size: 0.75rem;
+    color: #6a7080;
+    margin-bottom: 25px;
+}
+
+.intro-text p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: #b0bedb;
+    text-align: left;
+}
+
+.divider {
+    text-align: center;
+    color: #2a2f3d;
+    margin: 30px 0 0;
+    letter-spacing: 2px;
+}
+
+/* Chapters */
+.chapter {
+    margin-bottom: 70px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.chapter:last-of-type {
+    border-bottom: none;
+}
+
+.chapter-number {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #e8e2c7;
+    margin-bottom: 12px;
+    font-family: monospace;
+}
+
+.chapter h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #fff;
+    border-left: 3px solid #e8e2c7;
+    padding-left: 18px;
+}
+
+.chapter p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: #b0bedb;
+}
+
+/* Analysis cards */
+.analysis-card {
+    background: rgba(232, 226, 199, 0.04);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+}
+
+.analysis-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #e8e2c7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.analysis-card p {
+    font-size: 0.9rem;
+    color: #b0bedb;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.analysis-card p:last-child {
+    margin-bottom: 0;
+}
+
+.silent-analysis {
+    background: rgba(201, 160, 99, 0.06);
+    border-left: 3px solid #c9a063;
+}
+
+.silent-analysis .analysis-label {
+    color: #c9a063;
+}
+
+/* Footnotes */
+.footnote {
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-top: 15px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Images */
+.image-left {
+    float: left;
+    width: 40%;
+    margin: 8px 28px 20px 0;
+}
+
+.image-right {
+    float: right;
+    width: 40%;
+    margin: 8px 0 20px 28px;
+}
+
+.image-full {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-left img,
+.image-right img,
+.image-full img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: #1a1a2a;
+}
+
+.image-caption {
+    font-size: 0.65rem;
+    color: #6a7080;
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Conclusion */
+.conclusion {
+    text-align: center;
+    padding: 50px 30px;
+    margin: 50px 0 30px;
+    background: linear-gradient(145deg, #0f121b, #0a0e16);
+    border-radius: 24px;
+    border: 1px solid #e8e2c7;
+}
+
+.conclusion-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.conclusion-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #c9a063;
+}
+
+.conclusion p {
+    margin-bottom: 16px;
+    color: #b0bedb;
+    line-height: 1.7;
+}
+
+.conclusion-attribution {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Colophon */
+.colophon {
+    margin-top: 50px;
+    padding: 25px 30px;
+    background: #0f121b;
+    border: 1px solid #e8e2c7;
+    border-radius: 16px;
+}
+
+.colophon-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #e8e2c7;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.colophon-entry {
+    font-size: 0.75rem;
+    color: #b0bedb;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    border-left: 2px solid #e8e2c7;
+}
+
+.colophon-signature {
+    margin-top: 16px;
+    font-size: 0.7rem;
+    color: #6a7080;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 40px 20px 60px;
+    }
+    .chapter h2 {
+        font-size: 1.3rem;
+    }
+    .image-left,
+    .image-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    .article-footer-links {
+        gap: 16px;
+    }
+}
