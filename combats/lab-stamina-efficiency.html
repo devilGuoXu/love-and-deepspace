@@ -15,19 +15,127 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — STAMINA MATH</div><h1>Stamina Efficiency by Content</h1><p>Not all stamina is created equal. Spending 45 stamina on a protocore domain gives different long-term value than 45 stamina on a gold domain. Here is exactly how much each activity is worth.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — STAMINA MATH</div><h1>Stamina Efficiency by Content</h1><p>Not all stamina is created equal. Spending 45 stamina on a protocore domain gives different long-term value than 45 stamina on a gold domain. Here is exactly how much each activity is worth.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_05</span><span class="meta-date">2026.07.02</span><span class="meta-tag">STAMINA</span></div>
-        <div class="gb-highlight"><p><strong>Core Metric:</strong> Stamina efficiency = (reward value in diamonds) / (stamina cost). Every activity in Deepspace can be converted to a diamond-equivalent value. This lets you compare farming protocore dust vs farming event currency vs farming gold — and choose the most efficient option every time.</p></div>
-        <h2>Diamond-Equivalent Value Table</h2>
-        <p><strong>Limited Pull (1 wish):</strong> 150 diamonds (shop price). <strong>Stamina Pot (Medium, 60 stam):</strong> 30 diamonds (daily pack price). <strong>SSR Memory:</strong> 14,000 diamonds (worst-case pity). <strong>SR Memory:</strong> 3,000 diamonds (estimated from gacha value). <strong>SSR Protocore (correct main stat):</strong> 500 diamonds (estimated from domain farming). <strong>Large XP Crystal (30k XP):</strong> 15 diamonds (estimated from domain). <strong>10k Gold:</strong> 5 diamonds (estimated from gold domain). <strong>Protocore Dust (1 roll):</strong> 20 diamonds (estimated from domain).</p>
-        <h2>Activity Efficiency Ranking</h2>
-        <p><strong>#1 — Event Shop (SSR Memory):</strong> 14,000 diamond value for ~3,600 stamina (14 days of farming). Efficiency: 3.9 diamonds/stamina. The best value in the game by a wide margin. <strong>#2 — Event Shop (Guaranteed Protocore):</strong> 500 diamond value for ~1,200 stamina. Efficiency: 0.42 diamonds/stamina. Still better than domains. <strong>#3 — Story Event (Hidden Objectives):</strong> 400-600 free diamonds for ~120 stamina. Efficiency: 4+ diamonds/stamina (one-time only). <strong>#4 — Protocore Dust Domain (Double Drop):</strong> One run = 2x dust = ~40 diamond value for 45 stamina. Efficiency: 0.89 diamonds/stamina. <strong>#5 — Protocore Dust Domain (Normal):</strong> 20 diamond value for 45 stamina. Efficiency: 0.44 diamonds/stamina. <strong>#6 — XP Crystal Domain (Double Drop):</strong> ~30 diamond value for 45 stamina. Efficiency: 0.67 diamonds/stamina. <strong>#7 — XP Crystal Domain (Normal):</strong> ~15 diamond value for 45 stamina. Efficiency: 0.33 diamonds/stamina. <strong>#8 — Gold Domain:</strong> ~10 diamond value for 45 stamina. Efficiency: 0.22 diamonds/stamina. Worst value. Only farm gold if you are literally broke.</p>
-        <h2>Optimal Stamina Allocation</h2>
-        <p><strong>During story events:</strong> 100% stamina → event currency (unless you have already bought all SSR shards + protocore). The event shop is 5-10x more efficient than domains. <strong>Between events (normal week):</strong> 70% → Protocore Dust Domain. 30% → XP Crystal Domain. 0% → Gold Domain. <strong>Double drop weekends:</strong> 100% → the boosted domain. Double drops are the only time domains beat event shops in efficiency. <strong>When you need gold:</strong> Use the "sell protocores" method instead. Sell all blue and purple protocores with bad substats. One day of domain farming gives ~10k gold from selling vs ~5k gold from the gold domain directly. Selling is 2x more efficient.</p>
-        <div class="gb-tip-box"><p><strong>The 60 Stamina Rule:</strong> Never let your stamina sit at 60/120 or above. Stamina regeneration stops when you are capped. 60 wasted stamina = 20 diamond value lost. If you cannot play, log in for 2 minutes, spend your stamina on ANYTHING (even the worst domain), and log out. Letting stamina cap is the single biggest resource loss in the game — worse than any bad purchase decision.</p></div>
-        <h2>Long-Term Value Calculation</h2>
-        <p>Over one month (30 days): Natural stamina = 7,200. If you spend it at optimal efficiency (0.44 diamonds/stamina on protocore dust), you generate ~3,168 diamond value. If you spend it poorly (0.22 on gold domain), you generate ~1,584 diamond value. The difference is 1,584 diamonds per month — equivalent to 10 limited pulls. <strong>Over one year:</strong> The efficiency gap is 19,008 diamonds = ~127 pulls. That is a guaranteed rate-up SSR. All from choosing the right domain. Efficiency matters.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> Event shop (SSR) > Double Drops > Protocore Dust > XP Crystals > Gold. Event shop is 5-10x more efficient than domains. Never farm gold — sell bad protocores instead. Never let stamina cap. The efficiency difference between optimal and suboptimal farming is 127 pulls per year.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#core-metric">Core Metric</a></li>
+                <li><a href="#diamond-value">Diamond-Equivalent Value Table</a></li>
+                <li><a href="#efficiency-ranking">Activity Efficiency Ranking</a></li>
+                <li><a href="#optimal-allocation">Optimal Stamina Allocation</a></li>
+                <li><a href="#stamina-rule">The 60 Stamina Rule</a></li>
+                <li><a href="#long-term">Long-Term Value Calculation</a></li>
+                <li><a href="#gold-alternative">Gold Farming Alternatives</a></li>
+            </ul>
+        </div>
+
+        <section id="core-metric">
+            <h2>Core Metric</h2>
+            <div class="gb-highlight"><p><strong>Core Metric:</strong> Stamina efficiency = (reward value in diamonds) / (stamina cost). Every activity in Deepspace can be converted to a diamond-equivalent value. This lets you compare farming protocore dust vs farming event currency vs farming gold — and choose the most efficient option every time.</p></div>
+            <p>By converting everything to diamonds, we remove the confusion of comparing different resource types. A protocore dust run gives "dust" and a gold domain gives "gold" — which is better? Convert both to diamonds and the answer is clear. This system works because diamonds are the universal currency: they can buy stamina, pulls, and shop items.</p>
+        </section>
+
+        <section id="diamond-value">
+            <h2>Diamond-Equivalent Value Table</h2>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">150</div><div class="stat-label">1 Limited Pull</div><div class="stat-desc">Shop price per wish</div></div>
+                <div class="stat-card"><div class="stat-number">30</div><div class="stat-label">60 Stamina</div><div class="stat-desc">Stamina Pot (Medium) value</div></div>
+                <div class="stat-card"><div class="stat-number">14,000</div><div class="stat-label">SSR Memory</div><div class="stat-desc">Worst-case pity value</div></div>
+                <div class="stat-card"><div class="stat-number">500</div><div class="stat-label">SSR Protocore</div><div class="stat-desc">Correct main stat estimate</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">Limited Pull (1 wish)</span><span class="data-value">150 diamonds</span></div>
+            <div class="data-row"><span class="data-label">Stamina Pot (Medium, 60 stam)</span><span class="data-value">30 diamonds</span></div>
+            <div class="data-row"><span class="data-label">SSR Memory</span><span class="data-value">14,000 diamonds (worst-case pity)</span></div>
+            <div class="data-row"><span class="data-label">SR Memory</span><span class="data-value">3,000 diamonds (estimated from gacha)</span></div>
+            <div class="data-row"><span class="data-label">SSR Protocore (correct main stat)</span><span class="data-value">500 diamonds (domain farming estimate)</span></div>
+            <div class="data-row"><span class="data-label">Large XP Crystal (30k XP)</span><span class="data-value">15 diamonds</span></div>
+            <div class="data-row"><span class="data-label">10k Gold</span><span class="data-value">5 diamonds</span></div>
+            <div class="data-row"><span class="data-label">Protocore Dust (1 enhancement roll)</span><span class="data-value">20 diamonds</span></div>
+
+            <div class="article-info-box"><p><strong>Note on valuations:</strong> These values are estimates based on domain drop rates, shop prices, and farming data. They are not official values from the game. Use them as relative comparisons — the exact numbers matter less than the ranking they produce. Event shop items are valued at their "if you had to buy them with diamonds" price, which makes event shops look extremely efficient (as they should be).</p></div>
+        </section>
+
+        <section id="efficiency-ranking">
+            <h2>Activity Efficiency Ranking</h2>
+            <p>Ranked from best to worst diamond-per-stamina value. Higher is better.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">#1 — EVENT SHOP (SSR MEMORY)</div><div class="team-comp">3.9 diamonds/stamina</div><div class="team-reason">14,000 diamond value for ~3,600 stamina (14 days of farming). The best value in the game by a wide margin. Always prioritize buying all SSR shards from the event shop before spending event currency on anything else.</div></div>
+                <div class="team-card"><div class="team-rank">#2 — EVENT SHOP (GUARANTEED PROTOCORE)</div><div class="team-comp">0.42 diamonds/stamina</div><div class="team-reason">500 diamond value for ~1,200 stamina. Still better than domains. Buy this after SSR shards.</div></div>
+                <div class="team-card"><div class="team-rank">#3 — STORY EVENT (HIDDEN OBJECTIVES)</div><div class="team-comp">~4+ diamonds/stamina</div><div class="team-reason">400–600 free diamonds for ~120 stamina. One-time only per event, but extremely efficient.</div></div>
+                <div class="team-card"><div class="team-rank">#4 — PROTOCORE DUST (DOUBLE DROP)</div><div class="team-comp">0.89 diamonds/stamina</div><div class="team-reason">One run = 2x dust = ~40 diamond value for 45 stamina. Best domain during double drop events.</div></div>
+                <div class="team-card"><div class="team-rank">#5 — PROTOCORE DUST (NORMAL)</div><div class="team-comp">0.44 diamonds/stamina</div><div class="team-reason">20 diamond value for 45 stamina. The default best domain during normal weeks.</div></div>
+                <div class="team-card"><div class="team-rank">#6 — XP CRYSTAL (DOUBLE DROP)</div><div class="team-comp">0.67 diamonds/stamina</div><div class="team-reason">~30 diamond value for 45 stamina. Farm during double drop weekends only.</div></div>
+                <div class="team-card"><div class="team-rank">#7 — XP CRYSTAL (NORMAL)</div><div class="team-comp">0.33 diamonds/stamina</div><div class="team-reason">~15 diamond value for 45 stamina. Acceptable when you need XP for new memories.</div></div>
+                <div class="team-card"><div class="team-rank">#8 — GOLD DOMAIN</div><div class="team-comp">0.22 diamonds/stamina</div><div class="team-reason">~10 diamond value for 45 stamina. Worst value in the game. Only farm gold if you are literally broke and cannot level a single memory.</div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Key takeaway:</strong> The event shop (SSR memory) is 10–18x more efficient than the gold domain. This means one day of event farming is worth more than two weeks of gold domain farming. Never skip events. Never prioritize domains over events. During an event, your stamina belongs to the event shop until all high-value items are purchased.</p></div>
+        </section>
+
+        <section id="optimal-allocation">
+            <h2>Optimal Stamina Allocation</h2>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">DURING STORY EVENTS</div><div class="team-comp">100% stamina → Event Currency</div><div class="team-reason">Unless you have already bought all SSR shards + guaranteed protocore from the event shop. The event shop is 5–10x more efficient than domains. Every stamina not spent on events is a loss.</div></div>
+                <div class="team-card"><div class="team-rank">BETWEEN EVENTS (NORMAL WEEK)</div><div class="team-comp">70% Protocore Dust / 30% XP Crystals / 0% Gold</div><div class="team-reason">Protocore dust is the highest-value domain. XP crystals when you need them. Never farm gold directly — use the sell method instead (see below).</div></div>
+                <div class="team-card"><div class="team-rank">DOUBLE DROP WEEKENDS</div><div class="team-comp">100% → The boosted domain</div><div class="team-reason">Double drops are the only time domains beat event shops in efficiency. If double drop weekend coincides with an event, spend your stamina on double drops first and use stamina pots on the event.</div></div>
+                <div class="team-card"><div class="team-rank">WHEN YOU NEED GOLD</div><div class="team-comp">Sell bad protocores instead</div><div class="team-reason">Sell all blue and purple protocores with bad substats. One day of domain farming gives ~10k gold from selling vs ~5k gold from the gold domain directly. Selling is 2x more efficient.</div></div>
+            </div>
+        </section>
+
+        <section id="stamina-rule">
+            <h2>The 60 Stamina Rule</h2>
+            <div class="gb-highlight"><p><strong>The 60 Stamina Rule:</strong> Never let your stamina sit at 60/120 or above. Stamina regeneration stops when you are capped. 60 wasted stamina = 20 diamond value lost. If you cannot play, log in for 2 minutes, spend your stamina on ANYTHING (even the worst domain), and log out. Letting stamina cap is the single biggest resource loss in the game — worse than any bad purchase decision.</p></div>
+
+            <p>Let us quantify the loss: If you cap stamina once per day (wasting 60 stamina), that is 20 diamonds lost per day. Over a month = 600 diamonds = 4 limited pulls. Over a year = 7,300 diamonds = 48 pulls. That is nearly half a pity timer — lost because you did not log in for 2 minutes to spend stamina. Set a phone notification if you need to. The 60 stamina rule is non-negotiable for efficient play.</p>
+
+            <div class="data-row"><span class="data-label">1 cap per day</span><span class="data-value">600 diamonds lost per month (4 pulls)</span></div>
+            <div class="data-row"><span class="data-label">2 caps per day</span><span class="data-value">1,200 diamonds lost per month (8 pulls)</span></div>
+            <div class="data-row"><span class="data-label">1 cap per day (yearly)</span><span class="data-value">7,300 diamonds lost (48 pulls — nearly hard pity)</span></div>
+        </section>
+
+        <section id="long-term">
+            <h2>Long-Term Value Calculation</h2>
+            <p>Over one month (30 days): Natural stamina = 7,200 (240 per day). How you spend it determines your account growth rate.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">7,200</div><div class="stat-label">Monthly Stamina</div><div class="stat-desc">Natural regen (240/day × 30)</div></div>
+                <div class="stat-card"><div class="stat-number">3,168</div><div class="stat-label">Optimal Value</div><div class="stat-desc">Diamond-equivalent at 0.44 eff</div></div>
+                <div class="stat-card"><div class="stat-number">1,584</div><div class="stat-label">Poor Value</div><div class="stat-desc">Diamond-equivalent at 0.22 eff (gold)</div></div>
+                <div class="stat-card"><div class="stat-number">1,584</div><div class="stat-label">Monthly Gap</div><div class="stat-desc">Diamonds lost = 10 pulls</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">Optimal farming (0.44 eff)</span><span class="data-value">3,168 diamond value per month</span></div>
+            <div class="data-row"><span class="data-label">Poor farming (0.22 eff)</span><span class="data-value">1,584 diamond value per month</span></div>
+            <div class="data-row"><span class="data-label">Monthly difference</span><span class="data-value">1,584 diamonds = 10 limited pulls</span></div>
+            <div class="data-row"><span class="data-label">Yearly difference</span><span class="data-value">19,008 diamonds = ~127 pulls = guaranteed rate-up SSR</span></div>
+
+            <div class="gb-tip-box"><p><strong>The bottom line:</strong> Over one year, the efficiency gap between optimal and suboptimal farming is 127 pulls. That is a guaranteed rate-up SSR. All from choosing the right domain. Efficiency matters — not because it makes a difference today, but because the compound effect over months is enormous. Every stamina decision is a pull decision in disguise.</p></div>
+        </section>
+
+        <section id="gold-alternative">
+            <h2>Gold Farming Alternatives</h2>
+            <p>Never farm the gold domain directly. Instead, use the "sell protocores" method:</p>
+            <p>Farm the protocore dust domain (efficiency: 0.44). Sell all blue and purple protocores with bad substats. Blue protocore = ~500 gold. Purple = ~1,000 gold. After a week of dust farming, you will have accumulated 20–30 sellable protocores = 15k–30k gold. This is equivalent to 3–6 gold domain runs but costs you 0 extra stamina — you were going to farm dust anyway.</p>
+            <p><strong>Bonus tip:</strong> During double drop weekends for protocore dust, the sell value increases proportionally because you get more protocores per run. A double drop weekend effectively gives you double gold from selling, making it 4x more efficient than the gold domain.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Event shop (SSR) > Double Drops > Protocore Dust > XP Crystals > Gold. Event shop is 5–10x more efficient than domains. Never farm gold — sell bad protocores instead (2x more efficient). Never let stamina cap — one cap per day = 48 pulls lost per year. The efficiency difference between optimal and suboptimal farming is 127 pulls per year — a guaranteed SSR. Every stamina decision is a pull decision.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Memory Set Comparison</span></a>
+                <a href="lab-team-synergy.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">Team DPS Synergy Math</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-roll-value.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Protocore Roll Value</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

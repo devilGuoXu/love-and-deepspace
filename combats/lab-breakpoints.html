@@ -15,21 +15,148 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — BREAKPOINTS</div><h1>Breakpoint Calculator</h1><p>Specific stat thresholds that change how your operative performs — CRIT Rate breakpoints for consistent nuking, ER breakpoints for rotation cycles, HP breakpoints for survival.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — BREAKPOINTS</div><h1>Breakpoint Calculator</h1><p>Specific stat thresholds that change how your operative performs — CRIT Rate breakpoints for consistent nuking, ER breakpoints for rotation cycles, HP breakpoints for survival.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_07</span><span class="meta-date">2026.07.02</span><span class="meta-tag">BREAKPOINTS</span></div>
-        <div class="gb-highlight"><p><strong>What Is a Breakpoint:</strong> A specific stat value where your operative's performance qualitatively changes. Crossing a breakpoint does not give a gradual improvement — it enables a new rotation, unlocks a new clear threshold, or changes your protocore priority. Breakpoints are more important than raw stat increases.</p></div>
-        <h2>CRIT Rate Breakpoints</h2>
-        <p><strong>30% CRIT Rate:</strong> Minimum viable. Without 30%, your CRITs are too inconsistent for any content above Abyss floor 6. Below this threshold, you should not bother with CRIT DMG — stack ATK% instead. <strong>50% CRIT Rate:</strong> Comfortable for all content up to Abyss floor 9. At 50%, roughly every other hit crits. Most F2P players plateau here. <strong>65% CRIT Rate:</strong> Optimal for Abyss floors 10-12 with consistent damage. At 65%, you crit 2 out of 3 hits. This is the recommended minimum for endgame content. <strong>80% CRIT Rate:</strong> Diminishing returns territory. Only worth pursuing if you have a CRIT DMG of 170%+ to match. <strong>95-100% CRIT Rate:</strong> Over-investment territory for most operatives. Only Sylus or operatives with "on crit" passives should push this high.</p>
-        <h2>ATK Breakpoints</h2>
-        <p><strong>1,500 ATK:</strong> Minimum for Abyss floor 5. Below 1,500, your skills tickle enemies even with correct element. <strong>2,000 ATK:</strong> Comfortable for Abyss floor 7-8. Most level 50 operatives with +9 protocores reach this. <strong>2,400 ATK:</strong> Recommended for Abyss floor 10+. This is the breakpoint where your skills start doing meaningful damage through enemy DEF reduction. <strong>3,000+ ATK:</strong> Whale territory. Requires level 60+ memories with perfect ATK% rolls on every protocore. The difference between 2,400 and 3,000 ATK is approximately 18% more damage before DEF calculation. <strong>Important:</strong> ATK breakpoints are affected by enemy DEF. At Abyss floor 12, enemy DEF reduces your effective ATK by ~50%. Your displayed ATK is not your real ATK — account for DEF reduction when evaluating your stats.</p>
-        <h2>Energy Recharge Breakpoints</h2>
-        <p><strong>100% ER (base):</strong> One Ardent Oath per 60s of combat (assuming zero perfect dodges). Not enough for any rotation-dependent team. <strong>120% ER:</strong> One Ardent Oath per ~45s. Minimum for DPS operatives. At 120%, you can use Oath every other rotation cycle. <strong>140% ER:</strong> One Ardent Oath per ~35s. Ideal for most DPS operatives. Your Oath is available every 2nd or 3rd skill rotation. <strong>160% ER:</strong> One Ardent Oath per ~28s. Support operative target (Zayne). Your Oath is up every other rotation. <strong>180-200% ER:</strong> One Ardent Oath per ~20-22s. Over-investment for most content. Only useful in speedrun compositions where you need Oath every rotation. <strong>Breakpoint rule:</strong> Add ER until your Ardent Oath is available exactly when your main DPS's skill rotation finishes. No earlier, no later. Extra ER beyond alignment is wasted.</p>
-        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> You can check if you hit a breakpoint by testing against the Abyss floor 10 training dummy (the first enemy of floor 10). If Xavier's Light Slash crits for 18k+ with correct element, you have crossed the 2,400 ATK / 65% CRIT breakpoint. If it crits for less than 12k, you need more ATK before more CRIT. Use training dummies to validate your breakpoints — do not trust spreadsheets alone.</p></div>
-        <h2>HP & Defense Breakpoints (Zayne)</h2>
-        <p><strong>25k HP:</strong> Minimum for Zayne support. Your shield absorbs ~3 hits from Abyss floor 8 enemies. <strong>30k HP:</strong> Comfortable for Abyss floor 10. Shield absorbs ~5 hits. <strong>35k HP:</strong> Recommended for Abyss floor 12. Shield absorbs ~7 hits. Your healing (15% of max HP per shield) heals for 5,250 per cast. <strong>40k+ HP:</strong> Whale territory. The shield value increase past 35k drops by 50% due to diminishing returns. Only worth pursuing if you have BiS protocores everywhere else. <strong>DEF breakpoints:</strong> Do not worry about DEF. 1,000 DEF = ~20% damage reduction at Abyss floor 10. 2,000 DEF = ~30% damage reduction. The gain from 1,000 to 2,000 DEF is only 10% — this is 3-4 protocore rolls that could have gone into HP% instead. Never build DEF.</p>
-        <h2>Practical Breakpoint Cheat Sheet</h2>
-        <p><strong>Minimum for Abyss floor 7:</strong> 1,800 ATK / 40% CRIT Rate / 100% CRIT DMG / 100% ER. <strong>Target for Abyss floor 10:</strong> 2,200 ATK / 60% CRIT Rate / 130% CRIT DMG / 120% ER. <strong>Target for Abyss floor 12:</strong> 2,600 ATK / 65% CRIT Rate / 150% CRIT DMG / 130% ER. <strong>Zayne target:</strong> 32k HP / 150% ER at minimum. <strong>Speedrun target:</strong> 2,800+ ATK / 70%+ CRIT Rate / 170%+ CRIT DMG / 140% ER — this is the point where Abyss floors 9-10 become 30-second clears.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> CRIT: 50% comfortable, 65% endgame, 80% over-investment. ATK: 2,000 comfortable, 2,400 endgame, 3,000 whale. ER: 120% DPS min, 140% DPS target, 160% support target. HP: 30k Zayne min, 35k Zayne target. Never build DEF. Use Abyss floor 10 dummy to validate breakpoints.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#what-is-breakpoint">What Is a Breakpoint</a></li>
+                <li><a href="#crit-breakpoints">CRIT Rate Breakpoints</a></li>
+                <li><a href="#atk-breakpoints">ATK Breakpoints</a></li>
+                <li><a href="#er-breakpoints">Energy Recharge Breakpoints</a></li>
+                <li><a href="#hp-def-breakpoints">HP & Defense Breakpoints</a></li>
+                <li><a href="#cheat-sheet">Practical Cheat Sheet</a></li>
+                <li><a href="#breakpoint-validation">Validating Your Breakpoints</a></li>
+            </ul>
+        </div>
+
+        <section id="what-is-breakpoint">
+            <h2>What Is a Breakpoint</h2>
+            <div class="gb-highlight"><p><strong>What Is a Breakpoint:</strong> A specific stat value where your operative's performance qualitatively changes. Crossing a breakpoint does not give a gradual improvement — it enables a new rotation, unlocks a new clear threshold, or changes your protocore priority. Breakpoints are more important than raw stat increases.</p></div>
+            <p>Think of breakpoints as gates. Below a 50% CRIT Rate, you cannot rely on crits to kill tough enemies. At 50%, roughly half your hits crit, making damage predictable. At 65%, you can plan rotations around crits. Each gate changes how you play, not just how much damage you deal.</p>
+            <p>There are five major stat categories with distinct breakpoints: CRIT Rate, ATK, Energy Recharge, HP, and (rarely) DEF. Every operative type prioritizes these differently. DPS operatives live or die by their CRIT and ATK breakpoints. Supports chase ER and HP thresholds. Understanding which breakpoints matter for your operative is the first step to efficient gearing.</p>
+        </section>
+
+        <section id="crit-breakpoints">
+            <h2>CRIT Rate Breakpoints</h2>
+            <p>CRIT Rate is the most impactful offensive stat because it gates your CRIT DMG. Without sufficient Rate, your CRIT DMG is wasted — you cannot crit consistently enough for it to matter.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">30%</div><div class="stat-label">Minimum Viable</div><div class="stat-desc">Below 30% — stack ATK% instead of CRIT DMG</div></div>
+                <div class="stat-card"><div class="stat-number">50%</div><div class="stat-label">Comfortable</div><div class="stat-desc">F2P plateau — Abyss floor 9 viable</div></div>
+                <div class="stat-card"><div class="stat-number">65%</div><div class="stat-label">Endgame</div><div class="stat-desc">Optimal for Abyss floors 10–12</div></div>
+                <div class="stat-card"><div class="stat-number">80%+</div><div class="stat-label">Over-Investment</div><div class="stat-desc">Only if CRIT DMG ≥ 170%</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">Below 30% CRIT Rate</span><span class="data-value">Inconsistent crits — ignore CRIT DMG entirely</span></div>
+            <div class="data-row"><span class="data-label">30–50% CRIT Rate</span><span class="data-value">Viable for story content and Abyss floors 1–6</span></div>
+            <div class="data-row"><span class="data-label">50–65% CRIT Rate</span><span class="data-value">Sweet spot for most F2P and dolphin builds</span></div>
+            <div class="data-row"><span class="data-label">65–80% CRIT Rate</span><span class="data-value">Endgame range — needs >140% CRIT DMG to justify</span></div>
+            <div class="data-row"><span class="data-label">95–100% CRIT Rate</span><span class="data-value">Over-investment except Sylus or "on crit" passive operatives</span></div>
+
+            <div class="article-info-box"><p><strong>Edge Case — Sylus:</strong> Sylus's execute mechanic benefits from high CRIT Rate because the execute window is short (boss below 30% HP). Every non-crit during execute is a lost opportunity. Sylus players should target 70%+ CRIT Rate even if it means sacrificing some CRIT DMG. For other DPS operatives, 65% is the ceiling.</p></div>
+        </section>
+
+        <section id="atk-breakpoints">
+            <h2>ATK Breakpoints</h2>
+            <p>ATK is your base damage stat, but it is deceptive — enemy DEF at higher floors reduces your effective ATK significantly. The displayed ATK number on your stat screen is not the real damage you deal.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">1,500</div><div class="stat-label">Minimum</div><div class="stat-desc">Barely adequate for Abyss floor 5</div></div>
+                <div class="stat-card"><div class="stat-number">2,000</div><div class="stat-label">Comfortable</div><div class="stat-desc">Lv50 +9 protocores — Abyss 7–8</div></div>
+                <div class="stat-card"><div class="stat-number">2,400</div><div class="stat-label">Endgame</div><div class="stat-desc">Damage penetrates DEF at floor 10+</div></div>
+                <div class="stat-card"><div class="stat-number">3,000+</div><div class="stat-label">Whale</div><div class="stat-desc">Lv60+ with perfect ATK% rolls</div></div>
+            </div>
+
+            <p><strong>Important:</strong> ATK breakpoints are affected by enemy DEF. At Abyss floor 12, enemy DEF reduces your effective ATK by ~50%. Your displayed ATK is not your real ATK — account for DEF reduction when evaluating your stats. A character with 2,400 displayed ATK has roughly 1,200 effective ATK against floor 12 enemies.</p>
+
+            <div class="gb-tip-box"><p><strong>The 2,400 Rule:</strong> Once you reach 2,400 ATK with correct element matching, your skills start doing meaningful damage through enemy DEF at Abyss floors 10+. Below 2,400, even perfect CRITs will feel weak because the DEF reduction eats too much of your damage. Prioritize ATK% substats on all protocores until you cross 2,400.</p></div>
+
+            <div class="data-row"><span class="data-label">1,500 ATK vs Floor 10 enemy</span><span class="data-value">~975 effective ATK (35% reduction)</span></div>
+            <div class="data-row"><span class="data-label">2,000 ATK vs Floor 10 enemy</span><span class="data-value">~1,300 effective ATK</span></div>
+            <div class="data-row"><span class="data-label">2,400 ATK vs Floor 10 enemy</span><span class="data-value">~1,560 effective ATK — breakpoint crossed</span></div>
+            <div class="data-row"><span class="data-label">3,000 ATK vs Floor 10 enemy</span><span class="data-value">~1,950 effective ATK — ~18% more than 2,400 before DEF</span></div>
+        </section>
+
+        <section id="er-breakpoints">
+            <h2>Energy Recharge Breakpoints</h2>
+            <p>Energy Recharge controls how often you can use Ardent Oath — your biggest burst damage or support window. The breakpoints here are about rotation alignment, not raw DPS.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Base</div><div class="stat-desc">One Oath per 60s — not viable for rotations</div></div>
+                <div class="stat-card"><div class="stat-number">120%</div><div class="stat-label">DPS Minimum</div><div class="stat-desc">One Oath per ~45s — every other rotation</div></div>
+                <div class="stat-card"><div class="stat-number">140%</div><div class="stat-label">DPS Target</div><div class="stat-desc">One Oath per ~35s — ideal cadence</div></div>
+                <div class="stat-card"><div class="stat-number">160%+</div><div class="stat-label">Support Target</div><div class="stat-desc">Zayne range — Oath every rotation cycle</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">100–120% ER</span><span class="data-value">Insufficient for rotation-dependent teams</span></div>
+            <div class="data-row"><span class="data-label">120–140% ER</span><span class="data-value">Comfortable DPS zone — most F2P builds</span></div>
+            <div class="data-row"><span class="data-label">140–160% ER</span><span class="data-value">Ideal DPS — Oath available every 2nd–3rd skill cycle</span></div>
+            <div class="data-row"><span class="data-label">160–180% ER</span><span class="data-value">Support territory — 50% energy gain reduction past 150%</span></div>
+            <div class="data-row"><span class="data-label">180–200% ER</span><span class="data-value">Over-investment — speedrun niche only</span></div>
+
+            <div class="article-info-box"><p><strong>Breakpoint Rule:</strong> Add ER until your Ardent Oath is available exactly when your main DPS's skill rotation finishes. No earlier, no later. Extra ER beyond alignment is wasted. To find your target: time your rotation (skills 1→2→3→auto-fill). If Oath is not ready when rotation ends, add ER. If Oath is ready 5+ seconds before rotation ends, remove ER in favor of other stats.</p></div>
+
+            <p><strong>Speedrun breakpoint:</strong> 180–200% ER enables Oath-per-rotation, which is only useful in speedrun compositions where you need Oath available every skill rotation cycle. For normal play, this is wasted investment — those substat rolls should go into ATK% or CRIT instead.</p>
+        </section>
+
+        <section id="hp-def-breakpoints">
+            <h2>HP & Defense Breakpoints</h2>
+            <p>HP and defense matter almost exclusively for Zayne (support build). For DPS operatives, any HP or DEF roll is a dead roll.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">25k</div><div class="stat-label">Zayne Minimum</div><div class="stat-desc">Shield absorbs ~3 hits at floor 8</div></div>
+                <div class="stat-card"><div class="stat-number">30k</div><div class="stat-label">Comfortable</div><div class="stat-desc">Shield absorbs ~5 hits at floor 10</div></div>
+                <div class="stat-card"><div class="stat-number">35k</div><div class="stat-label">Target</div><div class="stat-desc">Shield absorbs ~7 hits — healing 5,250 per cast</div></div>
+                <div class="stat-card"><div class="stat-number">40k+</div><div class="stat-label">Over-Investment</div><div class="stat-desc">Diminishing cuts gain by 50% past 35k</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">1,000 DEF</span><span class="data-value">~20% damage reduction at Abyss floor 10</span></div>
+            <div class="data-row"><span class="data-label">2,000 DEF</span><span class="data-value">~30% damage reduction — only 10% more than 1k</span></div>
+            <div class="data-row"><span class="data-label">3,000 DEF</span><span class="data-value">~35% damage reduction — steeply diminishing</span></div>
+
+            <div class="warning-box"><p><strong>Never Build DEF.</strong> The gain from 1,000 to 2,000 DEF is only 10% damage reduction. That is 3–4 protocore rolls that could have gone into HP% instead. On Zayne, HP% gives both survivability AND healing output. On DPS, any DEF roll is a completely wasted stat. If a protocore rolls DEF% more than once on a DPS-oriented piece, salvage it.</p></div>
+
+            <p><strong>HP healing math for Zayne:</strong> At 35k HP, each shield cast heals the active operative for 15% of max HP = 5,250 HP over 4 seconds. At 40k HP, that becomes 6,000 HP — a 750 HP increase for 5k more HP investment. The extra 5k HP costs you 3–4 protocore rolls that could instead go into Energy Recharge for faster Oath generation. For most content, 35k HP + 150% ER is better than 40k HP + 130% ER.</p>
+        </section>
+
+        <section id="cheat-sheet">
+            <h2>Practical Breakpoint Cheat Sheet</h2>
+
+            <div class="data-row"><span class="data-label">Abyss floor 7 minimum</span><span class="data-value">1,800 ATK / 40% CRIT / 100% CRIT DMG / 100% ER</span></div>
+            <div class="data-row"><span class="data-label">Abyss floor 10 target</span><span class="data-value">2,200 ATK / 60% CRIT / 130% CRIT DMG / 120% ER</span></div>
+            <div class="data-row"><span class="data-label">Abyss floor 12 target</span><span class="data-value">2,600 ATK / 65% CRIT / 150% CRIT DMG / 130% ER</span></div>
+            <div class="data-row"><span class="data-label">Zayne target</span><span class="data-value">32k HP / 150% ER (minimum)</span></div>
+            <div class="data-row"><span class="data-label">Speedrun target</span><span class="data-value">2,800+ ATK / 70%+ CRIT / 170%+ CRIT DMG / 140% ER</span></div>
+
+            <div class="gb-tip-box"><p><strong>Quick Decision Tree:</strong> (1) Is CRIT Rate ≥ 50%? If no → farm CRIT Rate protocores before anything else. (2) Is ATK ≥ 2,000? If no → level memories to 50+ before upgrading protocores further. (3) Is ER ≥ 120% for DPS / 150% for Zayne? If no → replace ER-less protocores. (4) Is CRIT DMG ≥ 130%? If yes → you are ready for Abyss floor 10. Follow this order and you will never waste resources on the wrong stat.</p></div>
+        </section>
+
+        <section id="breakpoint-validation">
+            <h2>Validating Your Breakpoints</h2>
+            <p>Spreadsheets are useful, but real testing beats theory. Use the Abyss floor 10 training dummy (the first enemy of floor 10) to validate your breakpoints.</p>
+
+            <div class="data-row"><span class="data-label">Xavier Light Slash crits for 18k+</span><span class="data-value">2,400 ATK / 65% CRIT breakpoint crossed ✓</span></div>
+            <div class="data-row"><span class="data-label">Xavier Light Slash crits for 12k–18k</span><span class="data-value">Need more ATK before more CRIT</span></div>
+            <div class="data-row"><span class="data-label">Xavier Light Slash crits below 12k</span><span class="data-value">ATK severely lacking — prioritize ATK% first</span></div>
+
+            <div class="article-info-box"><p><strong>How to test:</strong> Enter Abyss floor 10. Use your main skill on the first enemy (the training dummy). Record the crit damage number. Repeat 5 times. Take the average. Compare against known breakpoint benchmarks for your operative. Do not trust spreadsheets alone — real damage numbers account for all the hidden variables (DEF, elemental resistance, skill-specific multipliers) that calculators may miss.</p></div>
+
+            <p><strong>Common validation trap:</strong> Testing in open-world content instead of Abyss. Open-world enemies have lower DEF than Abyss enemies. A build that feels strong in the overworld may be weak in Abyss. Always validate against Abyss floor 10+ enemies for endgame accuracy.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> CRIT: 50% comfortable, 65% endgame, 80% over-investment. ATK: 2,000 comfortable, 2,400 endgame, 3,000 whale. ER: 120% DPS min, 140% DPS target, 160% support target. HP: 30k Zayne min, 35k Zayne target. Never build DEF. Use Abyss floor 10 dummy to validate breakpoints. Follow the decision tree: CRIT Rate → ATK → ER → CRIT DMG in that order.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-roll-value.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Protocore Roll Value Calculator</span></a>
+                <a href="lab-stamina-efficiency.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Stamina Efficiency Analysis</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

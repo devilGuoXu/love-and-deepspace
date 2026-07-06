@@ -15,22 +15,155 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — DPS MODEL</div><h1>DPS Calculation Framework</h1><p>The math behind every number that appears on screen. Understand this framework and you can evaluate any build, any rotation, any team composition without testing it.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — DPS MODEL</div><h1>DPS Calculation Framework</h1><p>The math behind every number that appears on screen. Understand this framework and you can evaluate any build, any rotation, any team composition without testing it.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_01</span><span class="meta-date">2026.07.02</span><span class="meta-tag">DPS</span></div>
-        <div class="gb-highlight"><p><strong>Core Formula:</strong> Final Damage = Base ATK × Skill Multiplier × (1 + DMG Bonus%) × CRIT Multiplier × Element Multiplier × Defense Factor. Every DPS question reduces to: which variable in this formula can I increase the most with the least investment? The answer changes per operative and per content type.</p></div>
-        <h2>Damage Formula Breakdown</h2>
-        <p><strong>Base ATK:</strong> Operative base ATK (level-dependent) + memory flat ATK + protocore flat ATK. Multiplied by (1 + total ATK% from all sources). ATK% has diminishing returns above +100% because it saturates the multiplier bracket. Rule: 1 point of ATK% before +100% is worth ~2x more than 1 point after +100%.</p>
-        <p><strong>Skill Multiplier:</strong> Each skill has a fixed multiplier (e.g., Xavier's Light Slash = 180% ATK at level 6). Skill levels increase this multiplier. Leveling a skill from 6 to 7 increases the multiplier by ~8-12%. This is the single most stamina-efficient damage increase — one skill level up beats 5 protocore upgrades.</p>
-        <p><strong>DMG Bonus%:</strong> Elemental damage bonus, skill type bonus, set bonus. This bracket is additive with itself (30% Light DMG + 20% skill DMG = 50% total). It is multiplicative with ATK%. DMG Bonus% is the least saturated bracket for most builds — getting 30% elemental DMG is often a bigger increase than 30% ATK.</p>
-        <p><strong>CRIT Multiplier:</strong> 1 + (CRIT Rate × CRIT DMG). If you have 60% CRIT Rate and 150% CRIT DMG, your CRIT multiplier is 1 + (0.6 × 1.5) = 1.9x average. Improving CRIT Rate from 60% to 70% at the same CRIT DMG increases this to 2.05x — an 8% damage increase. The CRIT multiplier is the most tunable bracket but has the highest opportunity cost (you sacrifice ATK% or ER to stack it).</p>
-        <p><strong>Element Multiplier:</strong> 1.5x if the enemy is weak to your element. 0.5x if resistant. 1.0x neutral. This is a hard multiplier that cannot be modified by stats. It is the single biggest damage factor in the game — a 1.5x multiplier is worth more than any single substat roll. Always match elements.</p>
-        <p><strong>Defense Factor:</strong> 1 / (1 + enemy DEF / (ATK × penetration)). Enemy DEF scales with floor level. At Abyss floor 10, enemy DEF reduces damage by ~35%. At floor 12, ~50%. Defense penetration stats (if available) are more valuable at higher floors. Flat DEF penetration > DEF% penetration against high-DEF enemies.</p>
-        <h2>Rotation DPS Model</h2>
-        <p>Rotation DPS = (Skill 1 DMG + Skill 2 DMG + Ardent Oath DMG + Auto-attack DMG during cooldowns) / Rotation duration. A standard rotation cycle is 12-15 seconds (skill cooldown window). <strong>Key insight:</strong> Auto-attack damage during cooldowns accounts for 25-35% of total DPS. Protocores that boost auto-attack damage (if available) are undervalued by the community. A 15% auto-attack DMG bonus is worth approximately 5% total DPS increase — equivalent to a CRIT Rate substat roll.</p>
-        <div class="gb-tip-box"><p><strong>Formula in practice:</strong> To estimate your DPS without testing: Take your highest skill's damage number (from a training dummy or domain run). Multiply by 3.5 (average skills per rotation). Add 30% for auto-attack fill. Divide by 13 (seconds per rotation). This gives a rough Rotation DPS. Example: Xavier Light Slash hits for 15k → 15k × 3.5 = 52.5k → +30% = 68.25k → /13s = 5,250 Rotation DPS. Compare this number across builds — the build with higher Rotation DPS wins regardless of peak damage numbers.</p></div>
-        <h2>Practical Application</h2>
-        <p>When comparing two protocore builds: (1) Calculate your CRIT Multiplier for both builds. (2) Calculate your ATK% bracket. (3) Multiply CRIT Multiplier × ATK multiplier × DMG Bonus multiplier. (4) The build with the higher product is better. This calculation takes 30 seconds and is more accurate than "feeling" which build is stronger. <strong>Spreadsheet recommendation:</strong> Keep a simple DPS calculator in a spreadsheet with your operative's stats. Update it whenever you change protocores. Do not trust "bigger number = better" — burst damage and sustained DPS are different metrics.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> Final DMG = Base ATK × Skill Mult × (1+DMG Bonus) × CRIT Mult × Element × DEF Factor. ATK% saturates after +100%. Skill level up is the most efficient upgrade. Element match = 1.5x, bigger than any substat. Rotation DPS = total damage / 13s. Use the multiplier product method to compare builds. Test with math, not feelings.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#core-formula">Core Damage Formula</a></li>
+                <li><a href="#base-atk">Base ATK</a></li>
+                <li><a href="#skill-multiplier">Skill Multiplier</a></li>
+                <li><a href="#dmg-bonus">DMG Bonus%</a></li>
+                <li><a href="#crit-multiplier">CRIT Multiplier</a></li>
+                <li><a href="#element-multiplier">Element Multiplier</a></li>
+                <li><a href="#defense-factor">Defense Factor</a></li>
+                <li><a href="#rotation-dps">Rotation DPS Model</a></li>
+                <li><a href="#practical">Practical Application</a></li>
+            </ul>
+        </div>
+
+        <section id="core-formula">
+            <h2>Core Damage Formula</h2>
+            <div class="gb-highlight"><p><strong>Core Formula:</strong> Final Damage = Base ATK × Skill Multiplier × (1 + DMG Bonus%) × CRIT Multiplier × Element Multiplier × Defense Factor. Every DPS question reduces to: which variable in this formula can I increase the most with the least investment? The answer changes per operative and per content type.</p></div>
+            <p>This formula is the foundation of everything in this guide. Every variable is a multiplier. Increasing any one variable by 10% increases your final damage by 10% — but only if you increase the <em>right</em> variable for your current build state. The art of build optimization is identifying which variable is the lowest and raising it.</p>
+        </section>
+
+        <section id="base-atk">
+            <h2>Base ATK</h2>
+            <p>Base ATK = Operative base ATK (level-dependent) + memory flat ATK + protocore flat ATK. This sum is then multiplied by (1 + total ATK% from all sources).</p>
+
+            <div class="data-row"><span class="data-label">Lv50 Xavier base ATK</span><span class="data-value">~850 (varies by memory and breakthroughs)</span></div>
+            <div class="data-row"><span class="data-label">Lv60 Xavier base ATK</span><span class="data-value">~1,050 (max base)</span></div>
+            <div class="data-row"><span class="data-label">Flat ATK from 6 memories</span><span class="data-value">~300–500 depending on memory levels</span></div>
+            <div class="data-row"><span class="data-label">Flat ATK from protocores</span><span class="data-value">~100–300 from substat rolls</span></div>
+            <div class="data-row"><span class="data-label">Total ATK% target</span><span class="data-value">+80% to +100% before diminishing returns</span></div>
+
+            <div class="article-info-box"><p><strong>Rule:</strong> 1 point of ATK% before +100% is worth ~2x more than 1 point after +100%. The ATK% bracket saturates above +100% because it becomes an additive multiplier on an already-large base. If you have +80% ATK and add +20% more, your ATK multiplier goes from 1.8 to 2.0 — an 11% increase. But if you have +120% ATK and add +20% more, it goes from 2.2 to 2.4 — only a 9% increase. The same 20% ATK roll is worth less when you already have high ATK%.</p></div>
+        </section>
+
+        <section id="skill-multiplier">
+            <h2>Skill Multiplier</h2>
+            <p>Each skill has a fixed multiplier (e.g., Xavier's Light Slash = 180% ATK at level 6). Skill levels increase this multiplier. Leveling a skill from 6 to 7 increases the multiplier by ~8–12%.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">180%</div><div class="stat-label">Lv6 Skill</div><div class="stat-desc">Xavier Light Slash base</div></div>
+                <div class="stat-card"><div class="stat-number">198%</div><div class="stat-label">Lv7 Skill</div><div class="stat-desc">+10% multiplier increase</div></div>
+                <div class="stat-card"><div class="stat-number">216%</div><div class="stat-label">Lv8 Skill</div><div class="stat-desc">+20% over base</div></div>
+                <div class="stat-card"><div class="stat-number">~230%</div><div class="stat-label">Lv9 Skill</div><div class="stat-desc">~+28% over base</div></div>
+            </div>
+
+            <p><strong>Key insight:</strong> This is the single most stamina-efficient damage increase. One skill level up beats 5 protocore upgrades. Priority order: (1) Level your main DPS's primary skill to max. (2) Level their secondary skill. (3) Level support skills (Zayne shield). (4) Protocore upgrades. Most players invest in protocores before skills — this is backwards. Skills are guaranteed damage; protocores are RNG.</p>
+
+            <div class="gb-tip-box"><p><strong>Skill Leveling Priority:</strong> For Xavier: Light Slash (main DPS) → Resonance → Auto-attack. For Zayne: Shield → Healing skill → anything else. For Sylus: Execute passive → everything else. For Rafayel: Burn DoT enabler → Fire skill. A level 8 main skill on a level 50 operative out-damages a level 6 main skill on a level 60 operative in most content.</p></div>
+        </section>
+
+        <section id="dmg-bonus">
+            <h2>DMG Bonus%</h2>
+            <p>Elemental damage bonus, skill type bonus, set bonus — all go into the same additive bracket. 30% Light DMG + 20% skill DMG = 50% total DMG Bonus. This bracket is multiplicative with ATK%.</p>
+
+            <div class="data-row"><span class="data-label">Typical F2P DMG Bonus</span><span class="data-value">15–30% (from set bonus + element matching)</span></div>
+            <div class="data-row"><span class="data-label">Typical Dolphin DMG Bonus</span><span class="data-value">30–50% (set + element + some substat rolls)</span></div>
+            <div class="data-row"><span class="data-label">Whale DMG Bonus</span><span class="data-value">50–70% (everything + signature memory bonuses)</span></div>
+
+            <p>DMG Bonus% is the least saturated bracket for most builds. Getting 30% elemental DMG is often a bigger increase than 30% ATK, because most players already have +80%+ ATK but only +15–20% DMG Bonus. Check your own stats — if your DMG Bonus is below 20% and your ATK% is above +80%, you should prioritize DMG Bonus sources over more ATK%.</p>
+        </section>
+
+        <section id="crit-multiplier">
+            <h2>CRIT Multiplier</h2>
+            <p>CRIT Multiplier = 1 + (CRIT Rate × CRIT DMG). If you have 60% CRIT Rate and 150% CRIT DMG, your CRIT multiplier is 1 + (0.6 × 1.5) = 1.9x average damage.</p>
+
+            <div class="data-row"><span class="data-label">50% Rate / 100% DMG</span><span class="data-value">1.50x — minimum viable</span></div>
+            <div class="data-row"><span class="data-label">60% Rate / 130% DMG</span><span class="data-value">1.78x — comfortable</span></div>
+            <div class="data-row"><span class="data-label">65% Rate / 150% DMG</span><span class="data-value">1.975x — endgame target</span></div>
+            <div class="data-row"><span class="data-label">70% Rate / 170% DMG</span><span class="data-value">2.19x — min-maxed</span></div>
+            <div class="data-row"><span class="data-label">80% Rate / 200% DMG</span><span class="data-value">2.60x — whale territory</span></div>
+
+            <p>Improving CRIT Rate from 60% to 70% at the same CRIT DMG (150%) increases the multiplier from 1.9 to 2.05 — an 8% damage increase. The CRIT multiplier is the most tunable bracket but has the highest opportunity cost (you sacrifice ATK% or ER to stack it). Every CRIT roll is a roll not spent on ATK% or ER.</p>
+        </section>
+
+        <section id="element-multiplier">
+            <h2>Element Multiplier</h2>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">1.5x</div><div class="stat-label">Weak</div><div class="stat-desc">Enemy weak to your element</div></div>
+                <div class="stat-card"><div class="stat-number">1.0x</div><div class="stat-label">Neutral</div><div class="stat-desc">No affinity</div></div>
+                <div class="stat-card"><div class="stat-number">0.5x</div><div class="stat-label">Resist</div><div class="stat-desc">Enemy resists your element</div></div>
+                <div class="stat-card"><div class="stat-number">~3x</div><div class="stat-label">Weak vs Resist</div><div class="stat-desc">Effective difference</div></div>
+            </div>
+
+            <p>This is a hard multiplier that cannot be modified by stats. A 1.5x multiplier is worth more than any single substat roll. Matching elements is the single most impactful decision you make before entering combat. An off-element Xavier (1.0x) with perfect stats will deal less damage than an on-element Xavier (1.5x) with mediocre stats.</p>
+
+            <div class="warning-box"><p><strong>Always match elements.</strong> The difference between weak (1.5x) and resistant (0.5x) is a 3x damage gap. No amount of protocore farming can close a 3x gap. If your only built DPS is Xavier (Light) and the boss resists Light, you need to build a second DPS of a different element. This is why endgame players have 2–3 fully built DPS operatives of different elements.</p></div>
+        </section>
+
+        <section id="defense-factor">
+            <h2>Defense Factor</h2>
+            <p>Defense Factor = 1 / (1 + enemy DEF / (ATK × penetration)). Enemy DEF scales with floor level.</p>
+
+            <div class="data-row"><span class="data-label">Abyss floor 5</span><span class="data-value">~20% damage reduction from DEF</span></div>
+            <div class="data-row"><span class="data-label">Abyss floor 7</span><span class="data-value">~30% damage reduction</span></div>
+            <div class="data-row"><span class="data-label">Abyss floor 10</span><span class="data-value">~35% damage reduction</span></div>
+            <div class="data-row"><span class="data-label">Abyss floor 12</span><span class="data-value">~50% damage reduction</span></div>
+
+            <p>Defense penetration stats (if available) are more valuable at higher floors. Flat DEF penetration > DEF% penetration against high-DEF enemies. At floor 12, a 10% DEF penetration substat can increase your effective damage by ~8–10% — more than a similar investment in ATK% would give, because DEF penetration reduces the impact of the steep DEF curve at high floors.</p>
+
+            <div class="gb-tip-box"><p><strong>DEF Penetration Note:</strong> Currently, DEF penetration is rare and mostly tied to specific memory set bonuses or limited-time events. If you have access to DEF penetration (e.g., from a set bonus), prioritize it highly for Abyss floors 10+. It becomes more valuable the higher the floor. For most players, simply having high ATK (2,400+) is sufficient to overcome DEF at floor 10 — DEF penetration becomes relevant when pushing floor 12+.</p></div>
+        </section>
+
+        <section id="rotation-dps">
+            <h2>Rotation DPS Model</h2>
+            <p>Rotation DPS = (Skill 1 DMG + Skill 2 DMG + Ardent Oath DMG + Auto-attack DMG during cooldowns) / Rotation duration. A standard rotation cycle is 12–15 seconds (skill cooldown window).</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">12–15s</div><div class="stat-label">Rotation Cycle</div><div class="stat-desc">Standard skill cooldown window</div></div>
+                <div class="stat-card"><div class="stat-number">25–35%</div><div class="stat-label">Auto-Attack Share</div><div class="stat-desc">Of total rotation DPS</div></div>
+                <div class="stat-card"><div class="stat-number">3.5x</div><div class="stat-label">Skill Multiplier</div><div class="stat-desc">Average skills per rotation</div></div>
+                <div class="stat-card"><div class="stat-number">13s</div><div class="stat-label">Avg Duration</div><div class="stat-desc">Used for rough DPS estimation</div></div>
+            </div>
+
+            <p><strong>Key insight:</strong> Auto-attack damage during cooldowns accounts for 25–35% of total DPS. Protocores that boost auto-attack damage (if available) are undervalued by the community. A 15% auto-attack DMG bonus is worth approximately 5% total DPS increase — equivalent to a CRIT Rate substat roll. Do not ignore auto-attack bonuses when evaluating protocores.</p>
+
+            <div class="article-info-box"><p><strong>Quick DPS Estimator:</strong> Take your highest skill's damage number (from a training dummy or domain run). Multiply by 3.5 (average skills per rotation). Add 30% for auto-attack fill. Divide by 13 (seconds per rotation). Example: Xavier Light Slash hits for 15k → 15k × 3.5 = 52.5k → +30% = 68.25k → /13s = 5,250 Rotation DPS. Compare this number across builds — the build with higher Rotation DPS wins regardless of peak damage numbers. This takes 10 seconds and is more reliable than "it feels stronger."</p></div>
+        </section>
+
+        <section id="practical">
+            <h2>Practical Application</h2>
+            <p>When comparing two protocore builds, follow this process:</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Calculate CRIT Multiplier</strong><div class="step-desc">CRIT Mult = 1 + (CRIT Rate × CRIT DMG). Do this for both builds.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Calculate ATK% bracket</strong><div class="step-desc">ATK Mult = 1 + (total ATK% / 100). Include set bonuses.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Calculate DMG Bonus bracket</strong><div class="step-desc">DMG Mult = 1 + (total DMG Bonus% / 100). Include elemental and skill bonuses.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Multiply all three</strong><div class="step-desc">Total = CRIT Mult × ATK Mult × DMG Mult. Higher product = better build.</div></div></div>
+            </div>
+
+            <p>This calculation takes 30 seconds and is more accurate than "feeling" which build is stronger. Keep a simple DPS calculator in a spreadsheet with your operative's stats. Update it whenever you change protocores. Do not trust "bigger number = better" — burst damage and sustained DPS are different metrics.</p>
+
+            <div class="gb-tip-box"><p><strong>Spreadsheet recommendation:</strong> Create a Google Sheet with columns: Build Name | ATK% | CRIT Rate | CRIT DMG | DMG Bonus | CRIT Mult | ATK Mult | DMG Mult | Total Product. For each protocore change, update the sheet. The sheet removes all subjectivity from build evaluation. If you share your sheet with the community, use the standard template from the Workshop tools article.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Final DMG = Base ATK × Skill Mult × (1+DMG Bonus) × CRIT Mult × Element × DEF Factor. ATK% saturates after +100%. Skill level up is the most efficient upgrade (out-damages protocore investment early). Element match = 1.5x, bigger than any substat. DEF at floor 12 = 50% reduction. Rotation DPS = total damage / 13s. Use the multiplier product method to compare builds. Test with math, not feelings.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-roll-value.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">Protocore Roll Value Calculator</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Memory Set Comparison</span></a>
+                <a href="lab-stamina-efficiency.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Stamina Efficiency Analysis</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

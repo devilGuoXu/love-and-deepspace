@@ -15,19 +15,149 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — TEAM SYNERGY</div><h1>Team DPS Synergy Math</h1><p>Three strong operatives do not make a strong team. Synergy — how their skills interact and how their rotations align — is the difference between a team that clears floor 12 and a team that wipes at floor 8.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — TEAM SYNERGY</div><h1>Team DPS Synergy Math</h1><p>Three strong operatives do not make a strong team. Synergy — how their skills interact and how their rotations align — is the difference between a team that clears floor 12 and a team that wipes at floor 8.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_06</span><span class="meta-date">2026.07.02</span><span class="meta-tag">TEAM_SYNERGY</span></div>
-        <div class="gb-highlight"><p><strong>Core Concept:</strong> Team DPS is not the sum of three individual DPS values. It is the product of three factors: (1) Individual operative DPS. (2) Rotation alignment (how well their skill cycles overlap). (3) Synergy multiplier (how much one operative's skills amplify another's). A well-synergized team can deal 2x the damage of a poorly-synergized team with the same total power.</p></div>
-        <h2>Synergy Multiplier Framework</h2>
-        <p><strong>Type A — Buff Stacking:</strong> One operative buffs another's damage. Example: Zayne's shield gives ATK% buff → Switched operative deals 20% more damage for 8 seconds. Value: 1.2x multiplier on the switched operative's damage during that window. <strong>Type B — Rotation Alignment:</strong> Two operatives whose skill cooldowns end at the same time, enabling simultaneous burst windows. Example: Xavier's 12s cooldown + Sylus's 12s cooldown = both burst at the same time. Value: Tight rotations compress damage into shorter windows, reducing exposure to boss mechanics. <strong>Type C — Element Chain:</strong> One operative's element application enables another's passive. Example: Rafayel's burn (Fire DoT) enables Sylus's Dark execution bonus against burning targets (if such a passive exists). Value: Variable — check specific passive interactions. <strong>Type D — Energy Battery:</strong> One operative generates energy faster, enabling the team to use Ardent Oath more frequently. Value: Each extra Ardent Oath per fight = one extra burst rotation = ~30% damage increase for that fight segment.</p>
-        <h2>Team Archetype Analysis</h2>
-        <p><strong>Hypercarry (Xavier + Zayne + Flex):</strong> Xavier deals 70%+ of total team damage. Zayne provides shield + ATK buff. Flex (Sylus or Rafayel) provides utility. This team has the highest theoretical single-target DPS because all buffs stack on one operative. <strong>Synergy math:</strong> Zayne's ATK buff (1.2x) × Xavier's 70% damage share = 14% total team damage increase. Flex's 15% damage share + 14% from buff = 29% total team damage. This beats a "balanced" team by ~5-8% in single-target fights.</p>
-        <p><strong>Balanced Dual DPS (Xavier + Sylus + Zayne):</strong> Two DPS operatives each deal ~40% of damage. Zayne provides sustain. This team has the highest consistent DPS because two DPS operatives can rotate their burst windows — when Xavier's skills are on cooldown, Sylus is active, and vice versa. <strong>Synergy math:</strong> No single operative is the bottleneck. DPS uptime is higher because you always have an active skill rotation. This team is 10-15% better in multi-target or prolonged fights where hypercarry cooldown windows would be wasted.</p>
-        <p><strong>Full AoE (Rafayel + Xavier + Sylus):</strong> Three DPS operatives, no sustain. This team only works in content where you can kill enemies before they damage you (Abyss floors 1-6, resource domains). <strong>Synergy math:</strong> Three individual DPS values add directly but there is no buff multiplier. Total team DPS = sum of three individual DPS. Without sustain, this team has zero error margin. One mistake = death. This team is 20% stronger on paper than hypercarry but 50% less consistent in practice.</p>
-        <div class="gb-tip-box"><p><strong>Rotation Alignment Principle:</strong> The most important synergy factor is cooldown alignment. If your main DPS has a 12s cooldown on their best skill, and your support's buff lasts 8s with a 15s cooldown, you have a 3s gap where the support's buff expires before the DPS's skill is ready. This gap reduces team efficiency by ~15%. Solution: Adjust protocores to add Energy Recharge on the support until their cooldown cycle matches the DPS's cooldown cycle perfectly. The goal is to have all three operatives' burst windows overlap within the same 3-second window every 12-15 seconds.</p></div>
-        <h2>Team DPS Formula</h2>
-        <p>Team DPS = (DPS × Rotations per fight × Synergy Multiplier) / Fight duration. <strong>Synergy Multiplier</strong> = 1 + (Buff Value × Uptime) + (Rotation Alignment bonus) + (Element Chain bonus). For a hypercarry team with perfect alignment: Synergy Multiplier = 1 + (0.2 × 0.66) + (0.1) + (0) = 1.23. For an unoptimized team with zero synergy: Synergy Multiplier = 1.0. The difference between a 1.23 and a 1.0 multiplier is 23% total team damage — more than any individual protocore or memory upgrade can provide.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> Team DPS = individual DPS × synergy multiplier. Hypercarry = best single-target (buff stacking). Balanced Dual DPS = best sustained (rotation overlap). Full AoE = fastest clear (zero margin). Cooldown alignment is the single most important synergy factor. Aim for all three burst windows to overlap every 12-15s. The 23% synergy gap between optimized and unoptimized teams is bigger than any gear upgrade.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#core-concept-team">Core Concept</a></li>
+                <li><a href="#synergy-types">Synergy Multiplier Types</a></li>
+                <li><a href="#hypercarry">Hypercarry Archetype</a></li>
+                <li><a href="#balanced-dual">Balanced Dual DPS</a></li>
+                <li><a href="#full-aoe">Full AoE Archetype</a></li>
+                <li><a href="#rotation-alignment">Rotation Alignment Principle</a></li>
+                <li><a href="#team-formula">Team DPS Formula</a></li>
+                <li><a href="#team-building">Team Building Guide</a></li>
+            </ul>
+        </div>
+
+        <section id="core-concept-team">
+            <h2>Core Concept</h2>
+            <div class="gb-highlight"><p><strong>Core Concept:</strong> Team DPS is not the sum of three individual DPS values. It is the product of three factors: (1) Individual operative DPS. (2) Rotation alignment (how well their skill cycles overlap). (3) Synergy multiplier (how much one operative's skills amplify another's). A well-synergized team can deal 2x the damage of a poorly-synergized team with the same total power.</p></div>
+            <p>This is the most misunderstood concept in Deepspace team building. Players see three high-DPS operatives and assume the team is strong. But if those operatives have no interaction between their kits — no buffs, no alignment, no energy generation — they are just three individuals fighting separately. The synergy multiplier is what turns individuals into a team.</p>
+        </section>
+
+        <section id="synergy-types">
+            <h2>Synergy Multiplier Types</h2>
+            <p>There are four types of synergy in Deepspace. A good team combines multiple types.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">TYPE A — BUFF STACKING</div><div class="team-comp">One operative buffs another's damage directly</div><div class="team-reason">Example: Zayne's shield gives ATK% buff → Switched operative deals 20% more damage for 8 seconds. Value: 1.2x multiplier on the switched operative's damage during that window. This is the most straightforward and reliable synergy type.</div></div>
+                <div class="team-card"><div class="team-rank">TYPE B — ROTATION ALIGNMENT</div><div class="team-comp">Cooldowns synchronized for simultaneous burst</div><div class="team-reason">Example: Xavier's 12s cooldown + Sylus's 12s cooldown = both burst at the same time. Value: Tight rotations compress damage into shorter windows, reducing exposure to boss mechanics. This is the most impactful synergy type for speed and safety.</div></div>
+                <div class="team-card"><div class="team-rank">TYPE C — ELEMENT CHAIN</div><div class="team-comp">One element enables another's passive</div><div class="team-reason">Example: Rafayel's burn (Fire DoT) may enable Sylus's Dark execution bonus against burning targets. Value: Variable — check specific passive interactions. Some elements have hidden interactions that multiply damage beyond their individual contributions.</div></div>
+                <div class="team-card"><div class="team-rank">TYPE D — ENERGY BATTERY</div><div class="team-comp">Faster energy generation for the team</div><div class="team-reason">One operative generates energy faster, enabling the team to use Ardent Oath more frequently. Value: Each extra Ardent Oath per fight = one extra burst rotation = ~30% damage increase for that fight segment.</div></div>
+            </div>
+        </section>
+
+        <section id="hypercarry">
+            <h2>Hypercarry Archetype (Xavier + Zayne + Flex)</h2>
+            <p>Xavier deals 70%+ of total team damage. Zayne provides shield + ATK buff. Flex (Sylus or Rafayel) provides utility. This team has the highest theoretical single-target DPS because all buffs stack on one operative.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">14%</div><div class="stat-label">Team Increase</div><div class="stat-desc">From Zayne's buff on Xavier</div></div>
+                <div class="stat-card"><div class="stat-number">29%</div><div class="stat-label">Total Team Value</div><div class="stat-desc">Buff + Flex damage contribution</div></div>
+                <div class="stat-card"><div class="stat-number">+5–8%</div><div class="stat-label">vs Balanced</div><div class="stat-desc">Better in single-target</div></div>
+                <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">Xavier Share</div><div class="stat-desc">Of total team damage</div></div>
+            </div>
+
+            <p><strong>Synergy math:</strong> Zayne's ATK buff (1.2x) × Xavier's 70% damage share = 14% total team damage increase. Flex's 15% damage share + 14% from buff = 29% total team damage. This beats a "balanced" team by ~5–8% in single-target fights where Xavier's burst window aligns with Zayne's buff.</p>
+
+            <div class="article-info-box"><p><strong>Weakness:</strong> If Xavier goes down, the team's damage plummets by 70%. Hypercarry is high-risk, high-reward. It excels in fights where you can avoid damage entirely (dodge-heavy content) but struggles in content where the main DPS takes unavoidable damage. Against bosses with DoT mechanics, the hypercarry archetype underperforms.</p></div>
+        </section>
+
+        <section id="balanced-dual">
+            <h2>Balanced Dual DPS (Xavier + Sylus + Zayne)</h2>
+            <p>Two DPS operatives each deal ~40% of damage. Zayne provides sustain. This team has the highest consistent DPS because two DPS operatives can rotate their burst windows — when Xavier's skills are on cooldown, Sylus is active, and vice versa.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">40/40/20</div><div class="stat-label">Damage Split</div><div class="stat-desc">Dual DPS + Support</div></div>
+                <div class="stat-card"><div class="stat-number">+10–15%</div><div class="stat-label">vs Hypercarry</div><div class="stat-desc">Better in multi-target</div></div>
+                <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">DPS Uptime</div><div class="stat-desc">Always an active skill rotation</div></div>
+                <div class="stat-card"><div class="stat-number">Low</div><div class="stat-label">Risk</div><div class="stat-desc">No single point of failure</div></div>
+            </div>
+
+            <p><strong>Synergy math:</strong> No single operative is the bottleneck. DPS uptime is higher because you always have an active skill rotation. When Xavier's skills are on cooldown, Sylus takes over. When both are on cooldown, Zayne provides sustain. This team is 10–15% better in multi-target or prolonged fights where hypercarry cooldown windows would be wasted.</p>
+
+            <div class="gb-tip-box"><p><strong>Best for:</strong> Abyss floors 7–12 general clearing. The dual DPS archetype has no hard counters — it works in every content type. It is also the most forgiving archetype because losing one DPS operand still leaves the other at full effectiveness. For newer players building their first endgame team, balanced dual DPS is recommended over hypercarry.</p></div>
+        </section>
+
+        <section id="full-aoe">
+            <h2>Full AoE (Rafayel + Xavier + Sylus)</h2>
+            <p>Three DPS operatives, no sustain. This team only works in content where you can kill enemies before they damage you (Abyss floors 1–6, resource domains).</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">+20%</div><div class="stat-label">Paper DPS</div><div class="stat-desc">vs hypercarry on paper</div></div>
+                <div class="stat-card"><div class="stat-number">-50%</div><div class="stat-label">Consistency</div><div class="stat-desc">In practice — no error margin</div></div>
+                <div class="stat-card"><div class="stat-number">0</div><div class="stat-label">Synergy Mult</div><div class="stat-desc">No buff interactions</div></div>
+                <div class="stat-card"><div class="stat-number">High</div><div class="stat-label">Risk</div><div class="stat-desc">One mistake = death</div></div>
+            </div>
+
+            <p><strong>Synergy math:</strong> Three individual DPS values add directly but there is no buff multiplier. Total team DPS = sum of three individual DPS. Without sustain, this team has zero error margin. One mistake = death. This team is 20% stronger on paper than hypercarry but 50% less consistent in practice. Use only for speed-clearing content you have already beaten with safer teams.</p>
+
+            <div class="warning-box"><p><strong>Not recommended for:</strong> Abyss floors 10+, co-op, boss rush, or any content where enemies can deal damage. The full AoE archetype is a "win more" composition — it accelerates already-easy content but fails in challenging content. If you are struggling with a fight, switching from full AoE to a balanced or hypercarry team will often solve the problem.</p></div>
+        </section>
+
+        <section id="rotation-alignment">
+            <h2>Rotation Alignment Principle</h2>
+            <div class="gb-highlight"><p><strong>The most important synergy factor</strong> is cooldown alignment. If your main DPS has a 12s cooldown on their best skill, and your support's buff lasts 8s with a 15s cooldown, you have a 3s gap where the support's buff expires before the DPS's skill is ready. This gap reduces team efficiency by ~15%.</p></div>
+
+            <p><strong>Solution:</strong> Adjust protocores to add Energy Recharge on the support until their cooldown cycle matches the DPS's cooldown cycle perfectly. The goal is to have all three operatives' burst windows overlap within the same 3-second window every 12–15 seconds. This requires:</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Measure cooldowns</strong><div class="step-desc">Note the cooldown of each operative's main skill. Xavier Light Slash = 12s. Zayne Shield = 15s. Sylus Execute = 12s.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Identify the bottleneck</strong><div class="step-desc">The operative with the longest cooldown determines the rotation window. Shorten it with ER protocores.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Add ER to align</strong><div class="step-desc">For a support with 15s cooldown, adding ER (120% → 140%) can reduce effective cooldown to ~12s through faster Oath generation.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Test the alignment</strong><div class="step-desc">In combat, watch all three skill cooldown timers. They should all end within 3s of each other. If there is a 5s+ gap, adjust ER further.</div></div></div>
+            </div>
+        </section>
+
+        <section id="team-formula">
+            <h2>Team DPS Formula</h2>
+            <p>Team DPS = (DPS × Rotations per fight × Synergy Multiplier) / Fight duration.</p>
+
+            <div class="data-row"><span class="data-label">Synergy Multiplier</span><span class="data-value">1 + (Buff Value × Uptime) + (Rotation Alignment) + (Element Chain)</span></div>
+            <div class="data-row"><span class="data-label">Hypercarry (perfect alignment)</span><span class="data-value">1 + (0.2 × 0.66) + 0.1 + 0 = 1.23x synergy multiplier</span></div>
+            <div class="data-row"><span class="data-label">Unoptimized team</span><span class="data-value">1.0x synergy multiplier (no interactions)</span></div>
+            <div class="data-row"><span class="data-label">Difference</span><span class="data-value">23% total team damage — more than any gear upgrade</span></div>
+
+            <div class="article-info-box"><p><strong>The 23% gap:</strong> The difference between a 1.23 and a 1.0 synergy multiplier is 23% total team damage. To put that in perspective, 23% more damage is equivalent to: +500 ATK, or +12% CRIT Rate with matching CRIT DMG, or two full protocore upgrades on your main DPS. Synergy optimization is the most impactful upgrade available — and it costs zero stamina, zero diamonds, and zero pulls. It only requires changing your team composition and ER tuning.</p></div>
+        </section>
+
+        <section id="team-building">
+            <h2>Team Building Guide</h2>
+            <div class="summary-card">
+                <div class="summary-section"><div class="summary-title">✓ DO</div><ul>
+                    <li>Check cooldown alignment before building a team</li>
+                    <li>Use ER protocores to synchronize burst windows</li>
+                    <li>Pair supports with DPS operatives they can buff</li>
+                    <li>Build 2+ DPS operatives of different elements</li>
+                    <li>Test team synergy in Abyss before committing resources</li>
+                    <li>Consider the fight duration when choosing archetype</li>
+                </ul></div>
+                <div class="summary-section"><div class="summary-title">✗ DON'T</div><ul>
+                    <li>Don't assume three strong operatives = strong team</li>
+                    <li>Don't ignore ER on supports — alignment matters more than HP</li>
+                    <li>Don't run full AoE without checking if you need sustain</li>
+                    <li>Don't hypercarry in AoE-heavy content</li>
+                    <li>Don't invest in a team before checking synergy math</li>
+                </ul></div>
+            </div>
+
+            <p><strong>Final tip:</strong> The best team for a specific Abyss floor depends on the enemies, not your strongest operatives. Check the enemy lineup before choosing your team. If the floor has multiple waves, balanced dual DPS is best. If it has one big boss, hypercarry excels. If it has many weak enemies, full AoE can speed-clear. Adapt your team to the content, not the other way around.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Team DPS = individual DPS × synergy multiplier. Hypercarry = best single-target (buff stacking). Balanced Dual DPS = best sustained (rotation overlap). Full AoE = fastest clear (zero margin). Cooldown alignment is the single most important synergy factor. Aim for all three burst windows to overlap every 12–15s. The 23% synergy gap between optimized and unoptimized teams is bigger than any gear upgrade. Synergy is free — use it.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-stamina-efficiency.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stamina Efficiency</span></a>
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">ALL LABS →</span><span class="rel-title">Breakpoint Calculator</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Memory Set Comparison</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculation Framework</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

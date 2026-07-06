@@ -15,22 +15,134 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — ROLL VALUE</div><h1>Protocore Roll Value Calculator</h1><p>Not all protocore substat rolls are equal. A "CRIT Rate 3%" roll is not the same as a "CRIT Rate 10%" roll, even though both are CRIT Rate. Learn to evaluate rolls by their value range, not their stat name.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — ROLL VALUE</div><h1>Protocore Roll Value Calculator</h1><p>Not all protocore substat rolls are equal. A "CRIT Rate 3%" roll is not the same as a "CRIT Rate 10%" roll, even though both are CRIT Rate. Learn to evaluate rolls by their value range, not their stat name.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_04</span><span class="meta-date">2026.07.02</span><span class="meta-tag">PROTOCORE_MATH</span></div>
-        <div class="gb-highlight"><p><strong>Core Concept:</strong> Each protocore substat has a roll range (minimum to maximum). A "low roll" is the minimum possible value. A "high roll" is the maximum. A protocore with 4 low rolls is worse than a protocore with 2 high rolls. Most players keep garbage protocores because they see "CRIT Rate" and ignore the number. Stop doing that.</p></div>
-        <h2>Substat Roll Ranges</h2>
-        <p><strong>CRIT Rate:</strong> 2.5% (min) — 10.0% (max) per roll. A high roll (8%+) is worth 3x more than a low roll (3%). <strong>CRIT DMG:</strong> 5.0% (min) — 20% (max) per roll. <strong>ATK%:</strong> 3.0% (min) — 12% (max) per roll. <strong>HP%:</strong> 3.0% (min) — 12% (max) per roll. <strong>DEF%:</strong> 3.0% (min) — 12% (max) per roll. <strong>Energy Recharge:</strong> 3.0% (min) — 12% (max) per roll. <strong>Flat ATK:</strong> 20 (min) — 80 (max) per roll. <strong>Flat HP:</strong> 200 (min) — 800 (max) per roll. <strong>Flat DEF:</strong> 15 (min) — 60 (max) per roll. Note: When a protocore says "+X% CRIT Rate," that number is the SUM of all rolls into that substat. A "+6% CRIT Rate" could be one high roll (6%) or two low rolls (3% + 3%). The source does not matter — only the total matters.</p>
-        <h2>Roll Value Scoring System</h2>
-        <p>Use this scoring system to evaluate any protocore: <strong>Perfect substat + high roll (8-10% Rate):</strong> 10 points. <strong>Perfect substat + medium roll (5-7%):</strong> 6 points. <strong>Perfect substat + low roll (2-4%):</strong> 3 points. <strong>Usable substat + high roll:</strong> 7 points. <strong>Usable substat + medium:</strong> 4 points. <strong>Usable substat + low:</strong> 2 points. <strong>Bad substat (DEF% on Xavier):</strong> 0 points regardless of roll. <strong>Thresholds:</strong> Total score > 25 = god tier (keep forever). 18-24 = very good (keep). 12-17 = decent (use until you find better). 8-11 = cope (use for now, salvage later). Below 8 = salvage immediately.</p>
-        <h2>Stat Value Weights by Operative</h2>
-        <p><strong>Xavier (DPS):</strong> CRIT Rate (weight 1.0), CRIT DMG (0.9), ATK% (0.7), ER (0.3), Flat ATK (0.2). Everything else = 0. <strong>Sylus (DPS):</strong> ATK% (1.0), CRIT DMG (0.85), CRIT Rate (0.7), ER (0.5), Flat ATK (0.3). <strong>Rafayel (Burn):</strong> ATK% (1.0), CRIT Rate (0.85), CRIT DMG (0.7), ER (0.6), Flat ATK (0.2). <strong>Zayne (Support):</strong> HP% (1.0), ER (0.9), Healing Bonus (0.8), DEF% (0.4). CRIT stats = 0. <strong>How to use weights:</strong> Multiply the substat's score by the operative's weight. A 10% CRIT Rate roll on Xavier: 10 points × 1.0 weight = 10 weighted points. The same roll on Zayne: 10 × 0 = 0. A 12% HP% roll on Zayne: 10 points × 1.0 = 10 weighted points. The same roll on Xavier: 10 × 0 = 0. Use weighted scores to compare protocores across different operatives — a "Zayne god protocore" has high HP% and ER rolls, not CRIT stats.</p>
-        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> When leveling a protocore from 0 to 15, you get 4 substat rolls (at +3, +6, +9, +12). Each roll can go into any existing substat or create a new one if there are empty slots. Strategy: Level to +3 first. If the roll goes into a bad substat (DEF%, flat DEF), stop and salvage. If it goes into a good substat, continue to +6. If the second roll is also bad, salvage. A protocore with 2 good rolls by +6 is worth taking to +15. A protocore with 0 good rolls by +6 is garbage — salvage immediately and save your enhancement materials.</p></div>
-        <h2>Salvage vs Keep Decision Matrix</h2>
-        <p><strong>Keep (level to +15):</strong> All 4 rolls into perfect substats OR 3 rolls into perfect + 1 into usable. Main stat is correct for the operative. <strong>Keep (level to +9, use as filler):</strong> 2 perfect + 2 usable rolls. Main stat is correct. Use until you find a better one. <strong>Salvage:</strong> 0-1 perfect rolls. Main stat is wrong for the operative. Any roll into DEF% or Flat DEF on a DPS. Any roll into CRIT% on Zayne. <strong>Important:</strong> Enhancement materials (dust) are a limited resource. Every protocore you take to +15 with bad rolls is dust you cannot use on a good protocore later. Be ruthless with salvaging. A good protocore at +9 is better than a bad protocore at +15.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> CRIT Rate roll range: 2.5-10%. CRIT DMG: 5-20%. ATK%: 3-12%. Score system: high roll on perfect substat = 10 points. Weights by operative. Stop leveling at +3 if the first roll is bad. Level to +15 only if you have 2+ good rolls by +6. Salvage ruthlessly — dust is the real bottleneck. A +9 good protocore > +15 bad protocore.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#core-roll">Core Concept</a></li>
+                <li><a href="#roll-ranges">Substat Roll Ranges</a></li>
+                <li><a href="#scoring">Roll Value Scoring System</a></li>
+                <li><a href="#weights">Stat Value Weights by Operative</a></li>
+                <li><a href="#enhancing">How to Level Protocores</a></li>
+                <li><a href="#decision-matrix">Salvage vs Keep Decision Matrix</a></li>
+                <li><a href="#advanced-tips">Advanced Roll Evaluation Tips</a></li>
+            </ul>
+        </div>
+
+        <section id="core-roll">
+            <h2>Core Concept</h2>
+            <div class="gb-highlight"><p><strong>Core Concept:</strong> Each protocore substat has a roll range (minimum to maximum). A "low roll" is the minimum possible value. A "high roll" is the maximum. A protocore with 4 low rolls is worse than a protocore with 2 high rolls. Most players keep garbage protocores because they see "CRIT Rate" and ignore the number. Stop doing that.</p></div>
+            <p>The number you see on a protocore ("+6% CRIT Rate") is the SUM of all rolls into that substat. A "+6% CRIT Rate" could be one high roll (6%) or two low rolls (3% + 3%). The source does not matter — only the total matters. But understanding the roll range tells you how much potential that protocore had and whether it is worth keeping for future rolls.</p>
+        </section>
+
+        <section id="roll-ranges">
+            <h2>Substat Roll Ranges</h2>
+            <p>Every substat has a minimum and maximum value per roll. A protocore gets 4 substat rolls as it levels from 0 to 15 (at +3, +6, +9, +12). Each roll adds to one of the existing substats (or creates a new one if slots are empty).</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">2.5–10%</div><div class="stat-label">CRIT Rate</div><div class="stat-desc">Per roll</div></div>
+                <div class="stat-card"><div class="stat-number">5–20%</div><div class="stat-label">CRIT DMG</div><div class="stat-desc">Per roll</div></div>
+                <div class="stat-card"><div class="stat-number">3–12%</div><div class="stat-label">ATK% / HP% / DEF%</div><div class="stat-desc">Per roll</div></div>
+                <div class="stat-card"><div class="stat-number">3–12%</div><div class="stat-label">Energy Recharge</div><div class="stat-desc">Per roll</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">CRIT Rate</span><span class="data-value">2.5% (min) — 10.0% (max) per roll. High roll (8%+) worth 3x low roll (3%).</span></div>
+            <div class="data-row"><span class="data-label">CRIT DMG</span><span class="data-value">5.0% (min) — 20% (max) per roll.</span></div>
+            <div class="data-row"><span class="data-label">ATK% / HP% / DEF%</span><span class="data-value">3.0% (min) — 12% (max) per roll.</span></div>
+            <div class="data-row"><span class="data-label">Energy Recharge</span><span class="data-value">3.0% (min) — 12% (max) per roll.</span></div>
+            <div class="data-row"><span class="data-label">Flat ATK</span><span class="data-value">20 (min) — 80 (max) per roll.</span></div>
+            <div class="data-row"><span class="data-label">Flat HP</span><span class="data-value">200 (min) — 800 (max) per roll.</span></div>
+            <div class="data-row"><span class="data-label">Flat DEF</span><span class="data-value">15 (min) — 60 (max) per roll.</span></div>
+
+            <div class="gb-tip-box"><p><strong>Note on flat stats:</strong> Flat ATK (20–80) is inferior to ATK% (3–12%) in almost every scenario. At level 60, 80 flat ATK is roughly equivalent to 6–8% ATK% — so a high flat ATK roll is comparable to a medium ATK% roll. Flat HP and flat DEF are similarly inferior to their percentage counterparts. Only consider flat stats if the percentage version is not available.</p></div>
+        </section>
+
+        <section id="scoring">
+            <h2>Roll Value Scoring System</h2>
+            <p>Use this scoring system to evaluate any protocore. Assign points per substat, then sum for a total score.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Perfect + High Roll</div><div class="stat-desc">8–10% Rate, 16–20% DMG</div></div>
+                <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Perfect + Medium</div><div class="stat-desc">5–7% Rate, 10–15% DMG</div></div>
+                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Perfect + Low</div><div class="stat-desc">2–4% Rate, 5–9% DMG</div></div>
+                <div class="stat-card"><div class="stat-number">0</div><div class="stat-label">Bad Substat</div><div class="stat-desc">DEF% on DPS = 0 always</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">Perfect substat + high roll</span><span class="data-value">10 points (e.g., CRIT Rate 9%)</span></div>
+            <div class="data-row"><span class="data-label">Perfect substat + medium roll</span><span class="data-value">6 points (e.g., CRIT Rate 6%)</span></div>
+            <div class="data-row"><span class="data-label">Perfect substat + low roll</span><span class="data-value">3 points (e.g., CRIT Rate 3%)</span></div>
+            <div class="data-row"><span class="data-label">Usable substat + high roll</span><span class="data-value">7 points (e.g., ATK% 10%)</span></div>
+            <div class="data-row"><span class="data-label">Usable substat + medium roll</span><span class="data-value">4 points (e.g., ATK% 6%)</span></div>
+            <div class="data-row"><span class="data-label">Usable substat + low roll</span><span class="data-value">2 points (e.g., ATK% 3%)</span></div>
+            <div class="data-row"><span class="data-label">Bad substat (DEF% on DPS)</span><span class="data-value">0 points regardless of roll value</span></div>
+
+            <div class="article-info-box"><p><strong>Thresholds:</strong> Total score > 25 = god tier (keep forever). 18–24 = very good (keep). 12–17 = decent (use until you find better). 8–11 = cope (use for now, salvage later). Below 8 = salvage immediately. These thresholds assume 4 substats total (a fully leveled +15 protocore with all 4 rolls distributed). For partially leveled protocores, adjust expectations proportionally.</p></div>
+        </section>
+
+        <section id="weights">
+            <h2>Stat Value Weights by Operative</h2>
+            <p>Different operatives value different stats. Multiply the substat's raw score by the operative's weight to get weighted points.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">XAVIER (DPS)</div><div class="team-comp">CRIT Rate 1.0 / CRIT DMG 0.9 / ATK% 0.7 / ER 0.3 / Flat ATK 0.2</div><div class="team-reason">Standard DPS weights. CRIT Rate is king because it gates CRIT DMG. Everything else = 0 weight.</div></div>
+                <div class="team-card"><div class="team-rank">SYLUS (DPS)</div><div class="team-comp">ATK% 1.0 / CRIT DMG 0.85 / CRIT Rate 0.7 / ER 0.5 / Flat ATK 0.3</div><div class="team-reason">ATK% is Sylus's highest weight because his execute deals bonus damage based on ATK. CRIT is still important but secondary.</div></div>
+                <div class="team-card"><div class="team-rank">RAFAYEL (BURN)</div><div class="team-comp">ATK% 1.0 / CRIT Rate 0.85 / CRIT DMG 0.7 / ER 0.6 / Flat ATK 0.2</div><div class="team-reason">Burn DoT scales with ATK%, making ATK% his top priority. CRIT still matters for his direct damage skills.</div></div>
+                <div class="team-card"><div class="team-rank">ZAYNE (SUPPORT)</div><div class="team-comp">HP% 1.0 / ER 0.9 / Healing Bonus 0.8 / DEF% 0.4</div><div class="team-reason">CRIT stats = 0 weight for Zayne. HP% and ER are the only stats that matter. Healing Bonus if available.</div></div>
+            </div>
+
+            <p><strong>How to use weights:</strong> A 10% CRIT Rate roll on Xavier: 10 points × 1.0 weight = 10 weighted points. The same roll on Zayne: 10 × 0 = 0. A 12% HP% roll on Zayne: 10 points × 1.0 = 10 weighted points. The same roll on Xavier: 10 × 0 = 0. Use weighted scores to compare protocores across different operatives — a "Zayne god protocore" has high HP% and ER rolls, not CRIT stats.</p>
+
+            <div class="warning-box"><p><strong>Common mistake:</strong> Keeping a protocore with 3 perfect CRIT rolls for Zayne because "the rolls are good." No — those rolls are worthless on Zayne. Either transfer that protocore to a DPS operative or salvage it. A protocore with high CRIT rolls but low HP% is a DPS protocore, not a Zayne protocore. Evaluate protocores in the context of the operative who will use them.</p></div>
+        </section>
+
+        <section id="enhancing">
+            <h2>How to Level Protocores</h2>
+            <p>When leveling a protocore from 0 to 15, you get 4 substat rolls (at +3, +6, +9, +12). Each roll can go into any existing substat or create a new one if there are empty slots.</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Level to +3</strong><div class="step-desc">Get the first substat roll. If it goes into a bad substat (DEF%, flat DEF), stop and salvage immediately. Do not invest further.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Level to +6</strong><div class="step-desc">If the first roll was good, level to +6. If the second roll is also good (perfect or usable substat with decent value), continue. If it is bad, salvage.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Level to +9</strong><div class="step-desc">With 2 good rolls by +6, the protocore has potential. Level to +9. If the third roll is good, the protocore is worth taking to +15. If it is bad, evaluate: is 2 out of 3 good enough for a temporary piece?</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Level to +15</strong><div class="step-desc">Only take a protocore to +15 if you have 3+ good rolls by +9. A protocore with 2 good rolls by +6 and 3 by +9 is a safe +15. A protocore with only 2 good rolls total is not worth the dust to reach +15.</div></div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Pro Tip:</strong> A protocore with 2 good rolls by +6 is worth taking to +9. If the third roll is also good (3/3), take it to +15. If not, use it at +9 as a temporary filler and salvage when you find a better one. A +9 protocore costs far less dust than a +15 but gives ~80% of the stats. For F2P players, having four +9 protocores is better than one +15 and three +0.</p></div>
+        </section>
+
+        <section id="decision-matrix">
+            <h2>Salvage vs Keep Decision Matrix</h2>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">KEEP — LEVEL TO +15</div><div class="team-comp">All 4 rolls into perfect substats OR 3 perfect + 1 usable</div><div class="team-reason">Main stat must be correct for the operative. These are your long-term keepers. Example: Xavier protocore with CRIT Rate 8% / CRIT DMG 15% / ATK% 10% / ER 6%.</div></div>
+                <div class="team-card"><div class="team-rank">KEEP — LEVEL TO +9 (FILLER)</div><div class="team-comp">2 perfect + 2 usable rolls, main stat correct</div><div class="team-reason">Use these as temporary pieces while farming for replacements. Do not take them past +9. Salvage once you find a better option.</div></div>
+                <div class="team-card"><div class="team-rank">SALVAGE IMMEDIATELY</div><div class="team-comp">0–1 perfect rolls, wrong main stat, any DEF% on DPS, any CRIT on Zayne</div><div class="team-reason">Do not level these at all. Salvage at +0 for dust. Every level on a bad protocore is wasted dust you could use on a good one.</div></div>
+            </div>
+
+            <div class="article-info-box"><p><strong>Dust is the real bottleneck.</strong> Enhancement materials (dust) are a limited resource. Every protocore you take to +15 with bad rolls is dust you cannot use on a good protocore later. Be ruthless with salvaging. A good protocore at +9 is better than a bad protocore at +15. Most players keep too many protocores "just in case" — do not be that player. If a protocore does not meet the "keep" criteria, salvage it.</p></div>
+        </section>
+
+        <section id="advanced-tips">
+            <h2>Advanced Roll Evaluation Tips</h2>
+            <p><strong>Flat vs Percentage:</strong> A high flat ATK roll (60–80) is roughly equivalent to a medium ATK% roll (5–6%) for a level 60 operative. If you already have +80%+ ATK from percentage sources, flat ATK becomes slightly more valuable because percentage ATK has diminishing returns. However, flat ATK does not benefit from ATK% multipliers — so it is always worse than ATK% in builds with high ATK% bonuses.</p>
+            <p><strong>ER for Supports:</strong> Energy Recharge is often undervalued on support builds. For Zayne, a 12% ER high roll is worth more than a 12% HP% high roll in most content, because ER enables more frequent Oath casts (which provide both healing and shield). Weight ER at 0.9 for Zayne — almost as important as HP%.</p>
+            <p><strong>DEF% Trap:</strong> DEF% is never worth keeping on any operative. Even on Zayne, the weight is 0.4 — and that is generous. The damage reduction from DEF is so small that DEF% rolls are effectively dead stats. Salvage any protocore that rolls DEF% more than once, regardless of the other substats.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> CRIT Rate roll range: 2.5–10%. CRIT DMG: 5–20%. ATK%: 3–12%. Score system: high roll on perfect substat = 10 points. Weights by operative. Stop leveling at +3 if the first roll is bad. Level to +15 only if you have 2+ good rolls by +6. Salvage ruthlessly — dust is the real bottleneck. A +9 good protocore > +15 bad protocore. Evaluate by operative context, not by raw roll quality.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">Memory Set Comparison</span></a>
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-stamina-efficiency.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Stamina Efficiency Analysis</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
-    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></div>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
     <script>
         const backToTopBtn = document.getElementById('backToTopBtn');

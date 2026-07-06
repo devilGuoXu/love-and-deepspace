@@ -15,19 +15,140 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-lab">
-        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — DIMINISHING RETURNS</div><h1>Stat Diminishing Returns</h1><p>Every stat in Deepspace follows the law of diminishing returns. The first 30% of CRIT Rate is worth more than the second 30%. Know where the breakpoints are and stop investing past them.</p></div>
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — DIMINISHING RETURNS</div><h1>Stat Diminishing Returns</h1><p>Every stat in Deepspace follows the law of diminishing returns. The first 30% of CRIT Rate is worth more than the second 30%. Know where the breakpoints are and stop investing past them.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_02</span><span class="meta-date">2026.07.02</span><span class="meta-tag">MATH</span></div>
-        <div class="gb-highlight"><p><strong>Core Concept:</strong> Diminishing returns in Deepspace is not a mechanic — it is a mathematical inevitability. Every additive stat bracket has a saturation point where adding more of the same stat yields less percentage increase than adding a different stat. The optimal build is the one that balances all brackets, not one that maxes a single stat.</p></div>
-        <h2>ATK% Diminishing Returns</h2>
-        <p><strong>Formula:</strong> 1 + (total ATK% from all sources). Base ATK is the operative's ATK at level 60 with no protocores. Each 10% ATK bonus adds 10% of base ATK as flat ATK. <strong>Breakpoints:</strong> 0-50% ATK: Each 10% ATK = +7-8% total damage increase (high value). 50-100% ATK: Each 10% ATK = +5-6% total damage (medium value). 100-150% ATK: Each 10% ATK = +3-4% total damage (low value). 150%+ ATK: Each 10% ATK = +2% or less (very low value — stop here). <strong>Rule:</strong> Once you have +100% ATK from all sources (memories, protocores, set bonuses), switch to investing in other brackets. The 100% ATK breakpoint is the single most important threshold in the game.</p>
-        <h2>CRIT Rate Diminishing Returns</h2>
-        <p><strong>Formula:</strong> CRIT Multiplier = 1 + (CRIT Rate × CRIT DMG). This is a product, not a sum — the relationship between Rate and DMG is multiplicative, which creates a different kind of diminishing return. <strong>Breakpoints:</strong> 0-50% CRIT Rate: Each 10% Rate gives +5-8% total damage (assuming 100%+ CRIT DMG). Very high value. 50-70% CRIT Rate: Each 10% Rate gives +3-5% total damage. Medium value. 70-85% CRIT Rate: Each 10% Rate gives +2-3% total damage. Low value. 85%+ CRIT Rate: Each 10% Rate gives +1-2% total damage. Very low value. <strong>Rule:</strong> Stop investing in CRIT Rate at 70% for most operatives. Beyond 70%, the rolls are better spent on CRIT DMG or ATK%. The optimal CRIT Rate:CRIT DMG ratio is approximately 1:2 (e.g., 70% Rate : 140% DMG).</p>
-        <h2>Energy Recharge Diminishing Returns</h2>
-        <p><strong>Formula:</strong> Energy Recharge affects how quickly you charge your Ardent Oath. The relationship is not linear — ER has a hard cap and a soft cap. <strong>Soft cap (120% ER):</strong> Enough for one Ardent Oath per rotation cycle. Most DPS operatives need 120% ER minimum. <strong>Medium zone (120-150% ER):</strong> Provides a comfortable energy buffer if you miss a few perfect dodges. Worth investing in for supports. <strong>Hard cap (150-180% ER):</strong> Beyond 150% ER, the energy gain per point drops by 50%. Only Zayne (support build) needs to go to 160%+ ER. <strong>Hard cap limit (200% ER):</strong> Absolute maximum. Any ER beyond 200% gives zero benefit. Never build ER on a DPS past 130% — every ER roll past 130% is a wasted damage roll.</p>
-        <div class="gb-tip-box"><p><strong>The Golden Rule of Build Optimization:</strong> Your damage is the product of (ATK bracket) × (CRIT bracket) × (DMG Bonus bracket) × (Element bracket). To maximize the product, you need all brackets to be roughly equal. A build with +80% ATK / 60% CRIT Rate / 120% CRIT DMG / 30% DMG Bonus has a multiplier product of 1.8 × 1.72 × 1.3 = 4.02. A build with +120% ATK / 40% CRIT Rate / 100% CRIT DMG / 10% DMG Bonus has a product of 2.2 × 1.4 × 1.1 = 3.39. The first build is 18% stronger despite having lower ATK. Balance > peak stats.</p></div>
-        <h2>Defense & HP Diminishing Returns</h2>
-        <p>For support builds (Zayne): HP% has a similar curve to ATK% for DPS. 0-50% HP: Each 10% HP = +7% shield value. 50-80% HP: Each 10% HP = +5% shield value. 80%+ HP: Each 10% HP = +3% shield value. <strong>Zayne breakpoint:</strong> 35k HP (approximately +70% HP from base). Past 35k, invest in Energy Recharge instead. DEF% has even steeper diminishing returns — past 30% DEF from gear, each point gives less than 2% effective HP increase. Do not build DEF on anyone.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> ATK% soft cap at +100%. CRIT Rate soft cap at 70% (1:2 ratio with CRIT DMG). ER soft cap at 120% for DPS, 160% for supports. Hard cap 200% ER. Build balance: ATK bracket × CRIT bracket × DMG Bonus bracket = damage. Balance beats peak stat stacking every time.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#core-concept">Core Concept</a></li>
+                <li><a href="#atk-diminishing">ATK% Diminishing Returns</a></li>
+                <li><a href="#crit-diminishing">CRIT Rate Diminishing Returns</a></li>
+                <li><a href="#er-diminishing">Energy Recharge Diminishing Returns</a></li>
+                <li><a href="#def-hp-diminishing">Defense & HP Diminishing Returns</a></li>
+                <li><a href="#golden-rule">Golden Rule of Build Optimization</a></li>
+                <li><a href="#dmg-formula">Damage Formula Walkthrough</a></li>
+            </ul>
+        </div>
+
+        <section id="core-concept">
+            <h2>Core Concept</h2>
+            <div class="gb-highlight"><p><strong>Core Concept:</strong> Diminishing returns in Deepspace is not a mechanic — it is a mathematical inevitability. Every additive stat bracket has a saturation point where adding more of the same stat yields less percentage increase than adding a different stat. The optimal build is the one that balances all brackets, not one that maxes a single stat.</p></div>
+            <p>Imagine you are pouring water into three buckets. If you pour all the water into one bucket, you get one full bucket and two empty ones. If you distribute the water evenly, you get three partially full buckets — more total water capacity used. Stats work the same way. ATK%, CRIT, DMG Bonus, and Element are the four buckets. Your goal is to fill them evenly, not to overflow one while the others stay empty.</p>
+            <p>The key insight: <strong>multiplication punishes imbalance.</strong> Your final damage is the product of several brackets. If one bracket is very high and another is very low, the product suffers. Raising the low bracket by a small amount often gives a bigger total increase than raising the high bracket by a large amount.</p>
+        </section>
+
+        <section id="atk-diminishing">
+            <h2>ATK% Diminishing Returns</h2>
+            <p><strong>Formula:</strong> 1 + (total ATK% from all sources). Base ATK is the operative's ATK at level 60 with no protocores. Each 10% ATK bonus adds 10% of base ATK as flat ATK.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">0–50%</div><div class="stat-label">High Value</div><div class="stat-desc">+7–8% damage per 10% ATK</div></div>
+                <div class="stat-card"><div class="stat-number">50–100%</div><div class="stat-label">Medium Value</div><div class="stat-desc">+5–6% damage per 10% ATK</div></div>
+                <div class="stat-card"><div class="stat-number">100–150%</div><div class="stat-label">Low Value</div><div class="stat-desc">+3–4% damage per 10% ATK</div></div>
+                <div class="stat-card"><div class="stat-number">150%+</div><div class="stat-label">Very Low</div><div class="stat-desc">+2% or less per 10% ATK</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">0% → 50% ATK</span><span class="data-value">1.0 → 1.5 multiplier = 50% damage increase from base</span></div>
+            <div class="data-row"><span class="data-label">50% → 100% ATK</span><span class="data-value">1.5 → 2.0 multiplier = 33% damage increase (still good)</span></div>
+            <div class="data-row"><span class="data-label">100% → 150% ATK</span><span class="data-value">2.0 → 2.5 multiplier = 25% damage increase (diminishing)</span></div>
+            <div class="data-row"><span class="data-label">150% → 200% ATK</span><span class="data-value">2.5 → 3.0 multiplier = 20% damage increase (poor value)</span></div>
+
+            <div class="gb-tip-box"><p><strong>The 100% Rule:</strong> Once you have +100% ATK from all sources (memories, protocores, set bonuses), switch to investing in other brackets. The 100% ATK breakpoint is the single most important threshold in the game. Every ATK% roll after +100% is worth roughly half of what it was worth before +100%. At +150%, it is worth a quarter. Stop at +100% and diversify.</p></div>
+        </section>
+
+        <section id="crit-diminishing">
+            <h2>CRIT Rate Diminishing Returns</h2>
+            <p><strong>Formula:</strong> CRIT Multiplier = 1 + (CRIT Rate × CRIT DMG). This is a product, not a sum — the relationship between Rate and DMG is multiplicative, which creates a different kind of diminishing return.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">0–50%</div><div class="stat-label">High Value</div><div class="stat-desc">+5–8% damage per 10% Rate (with 100%+ DMG)</div></div>
+                <div class="stat-card"><div class="stat-number">50–70%</div><div class="stat-label">Medium Value</div><div class="stat-desc">+3–5% damage per 10% Rate</div></div>
+                <div class="stat-card"><div class="stat-number">70–85%</div><div class="stat-label">Low Value</div><div class="stat-desc">+2–3% damage per 10% Rate</div></div>
+                <div class="stat-card"><div class="stat-number">85%+</div><div class="stat-label">Very Low</div><div class="stat-desc">+1–2% damage per 10% Rate</div></div>
+            </div>
+
+            <p><strong>Rate vs DMG relationship:</strong> The optimal ratio is approximately 1:2 (e.g., 70% Rate : 140% DMG). At this ratio, your CRIT multiplier is 1 + (0.7 × 1.4) = 1.98x. If you shift to 80% Rate / 120% DMG, the multiplier becomes 1 + (0.8 × 1.2) = 1.96x — slightly worse, even though Rate is higher. The ratio matters more than the individual numbers.</p>
+
+            <div class="data-row"><span class="data-label">70% Rate / 140% DMG</span><span class="data-value">1.98x CRIT multiplier (optimal ratio)</span></div>
+            <div class="data-row"><span class="data-label">50% Rate / 180% DMG</span><span class="data-value">1.90x CRIT multiplier (too much DMG, not enough Rate)</span></div>
+            <div class="data-row"><span class="data-label">90% Rate / 100% DMG</span><span class="data-value">1.90x CRIT multiplier (too much Rate, not enough DMG)</span></div>
+            <div class="data-row"><span class="data-label">60% Rate / 150% DMG</span><span class="data-value">1.90x CRIT multiplier (balanced but suboptimal)</span></div>
+
+            <div class="article-info-box"><p><strong>Rule:</strong> Stop investing in CRIT Rate at 70% for most operatives. Beyond 70%, the rolls are better spent on CRIT DMG or ATK%. The only exception is Sylus with execute passive — he benefits from higher Rate to guarantee crits during the short execute window. For everyone else, 70% is the ceiling.</p></div>
+        </section>
+
+        <section id="er-diminishing">
+            <h2>Energy Recharge Diminishing Returns</h2>
+            <p>Energy Recharge affects how quickly you charge your Ardent Oath. The relationship is not linear — ER has a soft cap at 120% and a hard cap at 200%.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">100–120%</div><div class="stat-label">Soft Cap</div><div class="stat-desc">Minimum for DPS — one Oath per rotation</div></div>
+                <div class="stat-card"><div class="stat-number">120–150%</div><div class="stat-label">Medium Zone</div><div class="stat-desc">Comfortable buffer — worth for supports</div></div>
+                <div class="stat-card"><div class="stat-number">150–180%</div><div class="stat-label">Hard Cap</div><div class="stat-desc">50% energy gain reduction after 150%</div></div>
+                <div class="stat-card"><div class="stat-number">180–200%</div><div class="stat-label">Absolute Cap</div><div class="stat-desc">Zero benefit past 200%</div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">DPS ER target</span><span class="data-value">120–130% — every roll past 130% is a wasted damage roll</span></div>
+            <div class="data-row"><span class="data-label">Support ER target (Zayne)</span><span class="data-value">150–160% — worth going past soft cap for Oath uptime</span></div>
+            <div class="data-row"><span class="data-label">Speedrun ER target</span><span class="data-value">160–180% — only if every second counts</span></div>
+            <div class="data-row"><span class="data-label">Never exceed</span><span class="data-value">200% — hard cap, any ER beyond is completely wasted</span></div>
+
+            <div class="warning-box"><p><strong>Never build ER on a DPS past 130%.</strong> Every ER roll past 130% on a DPS operative is a roll that could have been ATK%, CRIT Rate, or CRIT DMG. The damage loss from missing those offensive substats is greater than the gain from having Oath available slightly earlier. On DPS, 130% ER is the absolute ceiling. On supports, 160% is the ceiling. Only speedrunners need more.</p></div>
+        </section>
+
+        <section id="def-hp-diminishing">
+            <h2>Defense & HP Diminishing Returns</h2>
+            <p>For support builds (Zayne): HP% has a similar curve to ATK% for DPS. DEF% has even steeper diminishing returns and should be avoided entirely.</p>
+
+            <div class="data-row"><span class="data-label">0–50% HP (Zayne)</span><span class="data-value">+7% shield value per 10% HP — high value</span></div>
+            <div class="data-row"><span class="data-label">50–80% HP (Zayne)</span><span class="data-value">+5% shield value per 10% HP — medium value</span></div>
+            <div class="data-row"><span class="data-label">80%+ HP (Zayne)</span><span class="data-value">+3% shield value per 10% HP — low value</span></div>
+            <div class="data-row"><span class="data-label">Zayne breakpoint</span><span class="data-value">35k HP (~+70% HP) — past this, invest in ER instead</span></div>
+            <div class="data-row"><span class="data-label">DEF soft cap</span><span class="data-value">Past 30% DEF from gear, <2% effective HP per point</span></div>
+
+            <div class="gb-tip-box"><p><strong>Zayne HP Optimization:</strong> The ideal Zayne build reaches exactly 35k HP and then stops. Every HP roll past 35k gives diminishing shield value. At 35k HP, switch all remaining substat investment to Energy Recharge (target 150%+). A 35k HP / 150% ER Zayne contributes more to team survivability and DPS than a 40k HP / 120% ER Zayne because the extra Oath uptime from ER gives more frequent healing and shield casts.</p></div>
+        </section>
+
+        <section id="golden-rule">
+            <h2>Golden Rule of Build Optimization</h2>
+            <div class="gb-highlight"><p><strong>The Golden Rule of Build Optimization:</strong> Your damage is the product of (ATK bracket) × (CRIT bracket) × (DMG Bonus bracket) × (Element bracket). To maximize the product, you need all brackets to be roughly equal. A build with +80% ATK / 60% CRIT Rate / 120% CRIT DMG / 30% DMG Bonus has a multiplier product of 1.8 × 1.72 × 1.3 = 4.02. A build with +120% ATK / 40% CRIT Rate / 100% CRIT DMG / 10% DMG Bonus has a product of 2.2 × 1.4 × 1.1 = 3.39. The first build is 18% stronger despite having lower ATK. Balance over peak stats.</p></div>
+
+            <p>Here is a step-by-step way to evaluate your own build balance:</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Calculate your ATK multiplier</strong><div class="step-desc">Take your total ATK% from all sources (memories + protocores + set bonuses). ATK multiplier = 1 + (total ATK% / 100). Example: +80% ATK = 1.8x.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Calculate your CRIT multiplier</strong><div class="step-desc">CRIT multiplier = 1 + (CRIT Rate% × CRIT DMG%). Example: 60% Rate × 120% DMG = 0.72. CRIT multiplier = 1.72x.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Calculate your DMG Bonus multiplier</strong><div class="step-desc">Total all additive DMG bonuses: elemental DMG + skill type DMG + set bonuses. DMG multiplier = 1 + (total DMG Bonus% / 100). Example: +30% = 1.3x.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Multiply all three</strong><div class="step-desc">Total multiplier = ATK × CRIT × DMG. Compare across builds — the higher product wins. A build with 1.8 × 1.72 × 1.3 = 4.02 beats a build with 2.2 × 1.4 × 1.1 = 3.39 every time.</div></div></div>
+            </div>
+        </section>
+
+        <section id="dmg-formula">
+            <h2>Damage Formula Walkthrough</h2>
+            <p>Let us apply the golden rule to a real example. Consider two Xavier builds:</p>
+
+            <div class="data-row"><span class="data-label">Build A — ATK% focused</span><span class="data-value">+120% ATK / 45% CRIT / 100% CRIT DMG / 15% Light DMG</span></div>
+            <div class="data-row"><span class="data-label">Build B — Balanced</span><span class="data-value">+85% ATK / 65% CRIT / 130% CRIT DMG / 25% Light DMG</span></div>
+
+            <p><strong>Build A:</strong> ATK = 2.2, CRIT = 1 + (0.45 × 1.0) = 1.45, DMG = 1.15. Product = 2.2 × 1.45 × 1.15 = <strong>3.67</strong></p>
+            <p><strong>Build B:</strong> ATK = 1.85, CRIT = 1 + (0.65 × 1.3) = 1.845, DMG = 1.25. Product = 1.85 × 1.845 × 1.25 = <strong>4.27</strong></p>
+            <p>Build B is 16% stronger than Build A, even though Build A has 35% more ATK. The balanced distribution of stats creates a higher total product. This is why chasing one stat (ATK%) while neglecting others (CRIT, DMG Bonus) is a trap.</p>
+
+            <div class="article-info-box"><p><strong>Practical application:</strong> When comparing two protocore builds, this calculation takes 30 seconds and is more accurate than "feeling" which build is stronger. Keep a simple DPS calculator in a spreadsheet with your operative's stats. Update it whenever you change protocores. Do not trust "bigger number = better" — burst damage and sustained DPS are different metrics, and the multiplier product method accounts for sustained performance.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> ATK% soft cap at +100%. CRIT Rate soft cap at 70% (1:2 ratio with CRIT DMG). ER soft cap at 120% for DPS, 160% for supports. Hard cap 200% ER. Build balance: ATK bracket × CRIT bracket × DMG Bonus bracket = damage. Balance beats peak stat stacking every time. The Build B approach (balanced) is 16% stronger than the Build A approach (ATK-stacked) in our example.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Breakpoint Calculator</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Memory Set Comparison</span></a>
+                <a href="lab-roll-value.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Protocore Roll Value Calculator</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

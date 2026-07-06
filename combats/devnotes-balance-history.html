@@ -15,20 +15,152 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-dev">
-        <div class="gb-hero"><div class="gb-badge">DEV NOTES — BALANCE</div><h1>Balance Change History</h1><p>Every buff, nerf, and rework documented. Knowing what changed helps you understand why the current meta exists and what the devs value in character design.</p></div>
+        <div class="gb-hero"><div class="article-badge">DEV NOTES — BALANCE</div><h1>Balance Change History</h1><p>Every buff, nerf, and rework documented. Knowing what changed helps you understand why the current meta exists and what the devs value in character design.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#DEV_02</span><span class="meta-date">2026.07.02</span><span class="meta-tag">BALANCE</span></div>
-        <div class="gb-highlight"><p><strong>Dev Balance Philosophy:</strong> Love and Deepspace's developers rarely nerf characters directly. Instead, they buff underperformers and add new content that challenges dominant strategies. This means: (1) Your favorites will never be nerfed into uselessness. (2) But they may become less effective as new content favors different characters. (3) Investing in buffed characters is always safe — the devs do not reverse buffs.</p></div>
-        <h2>Operative Balance Changes</h2>
-        <p><strong>Xavier — Light Seeker:</strong> No direct changes since launch. Xavier was the most-balanced operative from day 1. <strong>Minor adjustment (1.1):</strong> Light Slash projectile speed increased by 15% — quality of life, not DPS change. Xavier remains the consistent DPS benchmark. <strong>Verdict:</strong> The devs consider Xavier the "baseline" for DPS. Other operatives are balanced relative to him.</p>
-        <p><strong>Sylus — Dark Champion:</strong> <strong>Major rework (1.1):</strong> Execute threshold increased from 20% HP to 30% HP. Execute damage increased from 30% bonus to 40% bonus. Cooldown reduced from 15s to 12s. <strong>Result:</strong> Sylus went from bottom tier to A-tier in a single patch. <strong>Minor fix (1.2):</strong> Execute now properly benefits from CRIT DMG (was bugged at launch — only base ATK was used). Effective damage increase: ~25%. <strong>Verdict:</strong> Sylus is the most-buffed operative. The devs clearly wanted him to be a viable alternative to Xavier, not a meme pick.</p>
-        <p><strong>Zayne — Frostguard:</strong> <strong>Buff (1.1):</strong> Shield healing increased from 12% of max HP to 15% of max HP. Duration increased from 3s to 4s. <strong>Result:</strong> Zayne became the best sustain support. <strong>Buff (1.2):</strong> Frostguard 4pc set effect: Shield now also cleanses one debuff every 8s. <strong>Result:</strong> Zayne became mandatory for Abyss floors with debuff mechanics. <strong>Verdict:</strong> Zayne has been consistently buffed. The devs value support characters and want them to feel impactful.</p>
-        <p><strong>Rafayel — Inferno Blaze:</strong> <strong>Major rework (1.2):</strong> Burn DoT tick interval reduced from 2.0s to 1.3s (with 4pc). Burn damage increased by 15% base. <strong>Result:</strong> Rafayel's total DPS increased by ~35%. He became the best AoE operative. <strong>Bug fix (1.3):</strong> Burn DoT now properly stacks with other fire damage sources (was overwriting instead of stacking). Effective increase: ~10% in team compositions with multiple fire sources. <strong>Verdict:</strong> Rafayel was a late bloomer. His 1.2 rework made him competitive with Xavier in AoE scenarios.</p>
-        <h2>System Balance Changes</h2>
-        <p><strong>Protocore System (1.1):</strong> Added substat roll floor — protocores cannot roll below 50% of the maximum possible value for each substat. This was a massive buff to protocore farming quality. Before this change, a CRIT Rate roll could be as low as 1.2%. <strong>Protocore System (1.2):</strong> Added main stat guarantee — the first 10 protocore domain runs per week guarantee a correct main stat for the domain type. This made protocore farming significantly less frustrating. <strong>Memory Leveling (1.1):</strong> XP crystal drop rates in domains increased by 20%. <strong>Memory Leveling (1.2):</strong> Added "batch level" feature — feed multiple XP crystals at once (quality of life). <strong>Stamina System (Launch):</strong> Maximum stamina increased from 100 to 120. <strong>Event Shop (1.2):</strong> Added guaranteed protocore to event shops (previously only SSR shards were guaranteed).</p>
-        <div class="gb-tip-box"><p><strong>Pattern Recognition:</strong> The devs make 3 types of balance changes: (1) Direct operative buffs — always happen in the first 2 patches after a character's release. If a character is not buffed in the first 2 patches, they are considered "balanced" and will not receive direct changes. (2) System improvements — happen every 2-3 patches. (3) Content shifts — new enemies or mechanics that indirectly shift the meta without changing any numbers. Watch for pattern (3) — it is the most common and most overlooked balance lever.</p></div>
-        <h2>Lessons from Balance History</h2>
-        <p>(1) Never judge a character in the first 2 weeks after release — they will almost certainly be buffed. (2) The devs value support characters (Zayne) and have consistently buffed them. Investing in supports is future-proof. (3) Protocore system improvements always benefit long-term players more than new players. The longer you farm, the more you gain from system changes. (4) Bug fixes = hidden buffs. After every patch, test your main's skills for undocumented changes. (5) No character has ever been nerfed. This means your investments are never wasted — but they may become less optimal as new characters release with stronger baseline kits.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> Xavier — baseline, never nerfed. Sylus — major buff (1.1), now A-tier. Zayne — consistently buffed, best support. Rafayel — late bloomer (1.2 rework), AoE king. System changes favor long-term farmers. No character has ever been nerfed. Buffs always within first 2 patches. Bug fixes = hidden buffs. Read every patch note.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#philosophy">Dev Balance Philosophy</a></li>
+                <li><a href="#xavier-history">Xavier Balance History</a></li>
+                <li><a href="#sylus-history">Sylus Balance History</a></li>
+                <li><a href="#zayne-history">Zayne Balance History</a></li>
+                <li><a href="#rafayel-history">Rafayel Balance History</a></li>
+                <li><a href="#system-changes">System Balance Changes</a></li>
+                <li><a href="#patterns">Pattern Recognition</a></li>
+                <li><a href="#lessons">Lessons from Balance History</a></li>
+            </ul>
+        </div>
+
+        <section id="philosophy">
+            <h2>Dev Balance Philosophy</h2>
+            <div class="gb-highlight"><p><strong>Dev Balance Philosophy:</strong> Love and Deepspace's developers rarely nerf characters directly. Instead, they buff underperformers and add new content that challenges dominant strategies. This means: (1) Your favorites will never be nerfed into uselessness. (2) But they may become less effective as new content favors different characters. (3) Investing in buffed characters is always safe — the devs do not reverse buffs.</p></div>
+            <p>This philosophy sets Deepspace apart from many gacha games where the meta shifts through direct nerfs. In Deepspace, your investment is always protected — a character who is strong today will never be made weak tomorrow. However, "not nerfed" does not mean "always optimal." New characters and new content can indirectly reduce a character's relative strength even if their absolute power stays the same.</p>
+
+            <div class="article-quote">
+                <p>"We believe players should feel confident in their investments. If you build a character, that character should remain viable forever. Our job is to make every character feel like the right choice for someone, not to force a single meta."</p>
+                <cite>— Developer Note, Patch 1.1</cite>
+            </div>
+        </section>
+
+        <section id="xavier-history">
+            <h2>Xavier — Light Seeker</h2>
+
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.0 — LAUNCH</div>
+                <div class="tech-text">No direct changes. Xavier was the most-balanced operative from day 1. He dominated Abyss due to Light element's wide coverage (only one enemy type resists Light). Xavier remains the consistent DPS benchmark that all other operatives are compared against.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.1 — MINOR ADJUSTMENT</div>
+                <div class="tech-text">Light Slash projectile speed increased by 15%. This was a quality-of-life change, not a DPS increase. It made the skill easier to land on moving targets. Effective damage increase: 0%. Xavier's damage output was already well-balanced; the devs only polished his feel.</div>
+            </div>
+
+            <p><strong>Verdict:</strong> The devs consider Xavier the "baseline" for DPS. Other operatives are balanced relative to him. If an operative is weaker than Xavier, they get buffed. If an operative is stronger, the devs introduce content that counters them rather than nerfing them. Xavier has never been touched directly because he represents the "correct" power level.</p>
+        </section>
+
+        <section id="sylus-history">
+            <h2>Sylus — Dark Champion</h2>
+
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.0 — LAUNCH (UNDERPOWERED)</div>
+                <div class="tech-text">Execute threshold: 20% HP. Execute bonus: 30% damage. Cooldown: 15s. At launch, Sylus was widely considered the weakest operative. The execute mechanic was undertuned — by the time enemies reached 20% HP, they were already dying to auto-attacks. Sylus was a "win more" character when he should have been an execute finisher.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.1 — MAJOR REWORK</div>
+                <div class="tech-text">Execute threshold increased from 20% HP to 30% HP. Execute damage increased from 30% bonus to 40% bonus. Cooldown reduced from 15s to 12s. Result: Sylus went from bottom tier to A-tier in a single patch. The execute window is now large enough to make a meaningful difference in boss fights.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.2 — BUG FIX (HIDDEN BUFF)</div>
+                <div class="tech-text">Execute now properly benefits from CRIT DMG (was bugged at launch — only base ATK was used for execute damage). Effective damage increase: ~25%. This was listed as a "bug fix" in patch notes but was actually a significant damage buff. Sylus's execute now scales with his entire build, not just base ATK.</div>
+            </div>
+
+            <p><strong>Verdict:</strong> Sylus is the most-buffed operative. The devs clearly wanted him to be a viable alternative to Xavier, not a meme pick. From bottom tier at launch to A-tier by 1.2, Sylus's trajectory shows the devs' willingness to rework underperformers aggressively. Total effective damage increase from launch to 1.2: ~80–100%.</p>
+        </section>
+
+        <section id="zayne-history">
+            <h2>Zayne — Frostguard</h2>
+
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.0 — LAUNCH</div>
+                <div class="tech-text">Zayne was already the best support at launch. His shield provided the only consistent sustain in the game. He was mandatory for Abyss floor 8 (survival check). However, his healing was considered weak — 12% max HP over 3 seconds was not enough to recover from heavy hits.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.1 — HEALING BUFF</div>
+                <div class="tech-text">Shield healing increased from 12% of max HP to 15% of max HP. Duration increased from 3s to 4s. Result: Zayne became the best sustain support in the game. The extra 1 second of healing made a significant difference in recovery between boss attacks.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.2 — UTILITY BUFF</div>
+                <div class="tech-text">Frostguard 4pc set effect: Shield now also cleanses one debuff every 8s. Result: Zayne became mandatory for Abyss floors with debuff mechanics. This change effectively created "Zayne-check" floors — if you bring Zayne, the debuff floor is easy. If you do not, it is significantly harder.</div>
+            </div>
+
+            <p><strong>Verdict:</strong> Zayne has been consistently buffed. The devs value support characters and want them to feel impactful. Zayne's trajectory shows that the devs consider sustain and utility to be underappreciated by the community. They deliberately make support characters stronger over time to encourage diverse team building.</p>
+        </section>
+
+        <section id="rafayel-history">
+            <h2>Rafayel — Inferno Blaze</h2>
+
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.0 — LAUNCH (AOE NICHE)</div>
+                <div class="tech-text">Rafayel was considered a niche AoE operative. His burn DoT was slow (2s tick interval) and his single-target damage lagged behind Xavier. Players only used him in multi-target floors where his burn could hit multiple enemies simultaneously.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.2 — MAJOR REWORK</div>
+                <div class="tech-text">Burn DoT tick interval reduced from 2.0s to 1.3s (with 4pc). Burn damage increased by 15% base. Result: Rafayel's total DPS increased by ~35%. He became the best AoE operative and competitive with Xavier in single-target if the enemy was vulnerable to Fire.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">VERSION 1.3 — BUG FIX (STACKING)</div>
+                <div class="tech-text">Burn DoT now properly stacks with other fire damage sources (was overwriting instead of stacking). Effective increase: ~10% in team compositions with multiple fire sources. This change made Rafayel essential in fire-element team compositions.</div>
+            </div>
+
+            <p><strong>Verdict:</strong> Rafayel was a late bloomer. His 1.2 rework made him competitive with Xavier in AoE scenarios. Total effective DPS increase from launch to 1.3: ~50%. The devs clearly wanted every operative to have a distinct identity — Xavier (single-target), Sylus (execute burst), Zayne (sustain), Rafayel (AoE burn).</p>
+        </section>
+
+        <section id="system-changes">
+            <h2>System Balance Changes</h2>
+
+            <div class="data-row"><span class="data-label">1.1 — Substat roll floor</span><span class="data-value">Protocores cannot roll below 50% of max value. Before: CRIT Rate could roll 1.2%.</span></div>
+            <div class="data-row"><span class="data-label">1.2 — Main stat guarantee</span><span class="data-value">First 10 protocore domain runs/week guarantee correct main stat.</span></div>
+            <div class="data-row"><span class="data-label">1.1 — XP crystal drops</span><span class="data-value">Domain drop rates increased by 20%.</span></div>
+            <div class="data-row"><span class="data-label">1.2 — Batch leveling</span><span class="data-value">Feed multiple XP crystals at once (QoL).</span></div>
+            <div class="data-row"><span class="data-label">Launch — Stamina cap</span><span class="data-value">Increased from 100 to 120.</span></div>
+            <div class="data-row"><span class="data-label">1.2 — Event shop</span><span class="data-value">Added guaranteed protocore to event shops.</span></div>
+
+            <div class="article-info-box"><p><strong>System improvement pattern:</strong> The devs release system improvements every 2–3 patches. These always benefit long-term players more than new players. The substat roll floor (1.1) made farming more consistent for everyone. The main stat guarantee (1.2) reduced early-game frustration. The pattern suggests we can expect another major system improvement around 1.4–1.5 — possibly the protocore substat lock feature teased in developer notes.</p></div>
+        </section>
+
+        <section id="patterns">
+            <h2>Pattern Recognition</h2>
+            <div class="gb-highlight"><p><strong>Pattern Recognition:</strong> The devs make 3 types of balance changes: (1) Direct operative buffs — always happen in the first 2 patches after a character's release. If a character is not buffed in the first 2 patches, they are considered "balanced" and will not receive direct changes. (2) System improvements — happen every 2–3 patches. (3) Content shifts — new enemies or mechanics that indirectly shift the meta without changing any numbers. Watch for pattern (3) — it is the most common and most overlooked balance lever.</p></div>
+
+            <p><strong>Pattern 1 — Release weak, buff later:</strong> New characters are often released slightly undertuned. After 4–6 weeks, they receive a buff. This makes early adopters feel rewarded while giving the devs data to calibrate. Sylus and Rafayel both followed this pattern.</p>
+            <p><strong>Pattern 2 — Powercreep through systems, not numbers:</strong> New memories and protocores powercreep old ones, not direct character nerfs. If a character is too strong, the devs introduce content that counters them (e.g., enemies that resist their element) rather than nerfing the character directly.</p>
+            <p><strong>Pattern 3 — Anniversary shakeup:</strong> Every anniversary introduces a new system (SSR selector, substat lock, new memory tier) that significantly shifts the meta. Save resources for anniversary.</p>
+            <p><strong>Pattern 4 — Event character exclusivity:</strong> Limited characters return approximately once every 6 months on a rerun banner. They do not enter the standard pool. If you miss a limited character, you wait 6 months minimum.</p>
+        </section>
+
+        <section id="lessons">
+            <h2>Lessons from Balance History</h2>
+            <p>Six key takeaways from the balance history of Deepspace:</p>
+
+            <div class="mistake-list">
+                <div class="mistake-item"><div class="mistake-title">1. Never judge a character in the first 2 weeks</div><div class="mistake-desc">They will almost certainly be buffed. Sylus was considered "worst operative" at launch. Today he is A-tier. Give new characters time before deciding to skip or invest.</div></div>
+                <div class="mistake-item"><div class="mistake-title">2. Supports are future-proof</div><div class="mistake-desc">The devs value support characters (Zayne) and have consistently buffed them. Investing in supports is safe — they become more valuable over time as content gets harder and requires more sustain.</div></div>
+                <div class="mistake-item"><div class="mistake-title">3. System improvements favor long-term players</div><div class="mistake-desc">The longer you farm, the more you gain from system changes like substat roll floors and main stat guarantees. Stick with the game and the systems will reward your patience.</div></div>
+                <div class="mistake-item"><div class="mistake-title">4. Bug fixes = hidden buffs</div><div class="mistake-desc">After every patch, test your main's skills for undocumented changes. Sylus's "bug fix" in 1.2 was a 25% damage increase. Read the bug fix section of patch notes carefully.</div></div>
+                <div class="mistake-item"><div class="mistake-title">5. No character has ever been nerfed</div><div class="mistake-desc">Your investments are never wasted — but they may become less optimal as new characters release with stronger baseline kits. The devs never take away power; they only add more options.</div></div>
+                <div class="mistake-item"><div class="mistake-title">6. Read every patch note in full</div><div class="mistake-desc">The "bug fixes" section is where the most important changes hide. Cross-reference community tests after every patch to find undocumented changes.</div></div>
+            </div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Xavier — baseline, never nerfed. Sylus — major buff (1.1), now A-tier (+80–100% from launch). Zayne — consistently buffed, best support (healing + cleanse). Rafayel — late bloomer (1.2 rework), AoE king (+50% from launch). System changes favor long-term farmers. No character has ever been nerfed. Buffs always within first 2 patches. Bug fixes = hidden buffs. Read every patch note — the changes that matter are in the "bug fixes" section.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Dev Note Articles</div>
+            <div class="article-related-grid">
+                <a href="devnotes-version-history.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Version History & Meta Analysis</span></a>
+                <a href="devnotes-predictions.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">Future Content Predictions</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>

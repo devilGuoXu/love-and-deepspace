@@ -15,19 +15,125 @@
 <body>
     <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
     <div class="gb-container article-theme-workshop">
-        <div class="gb-hero"><div class="gb-badge">WORKSHOP — BUILD TOOLS</div><h1>Build Templates & Tools</h1><p>Standardized templates for sharing your builds, recommended theorycrafting tools, and how to get feedback on your setups from the community.</p></div>
+        <div class="gb-hero"><div class="article-badge">WORKSHOP — BUILD TOOLS</div><h1>Build Templates & Tools</h1><p>Standardized templates for sharing your builds, recommended theorycrafting tools, and how to get feedback on your setups from the community.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#WRK_02</span><span class="meta-date">2026.07.02</span><span class="meta-tag">TOOLS</span></div>
-        <div class="gb-highlight"><p><strong>Why Templates Matter:</strong> When you ask "is my Xavier build good?" without sharing your stats, nobody can help you. A standardized build template makes it easy for others to evaluate your build and give specific advice. Use the template below whenever you ask for build feedback on community platforms.</p></div>
-        <h2>Build Share Template</h2>
-        <p><strong>Operative:</strong> [Name] — [Level/Rank]. <strong>Memory Set:</strong> [4pc Name / 2+2 Sets]. <strong>Memory Levels:</strong> Slot 1: 60 — Slot 2: 50 — Slot 3: 50 — Slot 4: 50 — Slot 5: 50 — Slot 6: 40. <strong>Protocore Main Stats:</strong> Slot 1: ATK% +12 — Slot 2: ER% +12 — Slot 3: ATK% +15 — Slot 4: CRIT Rate +15 — Slot 5: CRIT DMG +12 — Slot 6: ATK% +9. <strong>Final Stats:</strong> ATK: [number] | CRIT Rate: [%] | CRIT DMG: [%] | ER: [%]. <strong>Content Goal:</strong> [Abyss Floor X / Co-op / Domain]. <strong>Issue:</strong> [What you feel is wrong]. <strong>Example:</strong> Xavier Lv60/R1 — 4pc Light Seeker — ATK 2,410 | CRIT 58% | CRIT DMG 132% | ER 118% — Struggling on Abyss Floor 10 boss phase. This template gives the community everything they need to diagnose your build in 10 seconds.</p>
-        <h2>Recommended Theorycrafting Tools</h2>
-        <p><strong>Spreadsheet (Personal):</strong> Keep a personal build tracker. Columns: Operative, Memory Set, Memory Levels, Protocore Main Stats, Final Stats (ATK/CRIT/DMG/ER), Content Cleared. Update this sheet whenever you change a protocore or level a memory. A personal tracker reveals your weak spots over time. <strong>Google Sheets Community Build Database:</strong> Several community-maintained sheets track optimal builds for each operative. These are updated every patch. Search for "Deepspace [Operative Name] Build Sheet" to find the latest version. <strong>Screenshot Journal:</strong> Take screenshots of your protocore substats before enhancing. If a protocore rolls poorly, you can review the before/after and learn which protocores to skip enhancing in the future. This is the best way to improve your protocore evaluation skills.</p>
-        <h2>How to Get Build Feedback</h2>
-        <p><strong>Step 1 — Use the template above:</strong> Post your build in the format shown. Include your content goal. <strong>Step 2 — Share specific screenshots:</strong> Screenshot your stat screen (press C in combat) and your protocore enhancement screens (all 6 slots). Do not ask "is this good?" without screenshots. <strong>Step 3 — State your budget:</strong> Are you F2P, dolphin, or whale? A build that is good for F2P may be bad for a whale (who has access to better protocores). <strong>Step 4 — Listen to consensus:</strong> If 3 people tell you your CRIT rate is too low, it is too low. Do not argue with feedback you asked for. <strong>Step 5 — Iterate:</strong> Post your updated build after making changes. Community members who helped you will appreciate seeing the improvement and will be more likely to help you again in the future.</p>
-        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> When sharing screenshots on Discord/Reddit, use the "hide UID" option in settings. Your account UID is visible in screenshots and can be used to look up your account. Privacy first — hide your UID, hide your friend list, hide your purchase history. Share only what is necessary for build evaluation.</p></div>
-        <h2>Build Feedback Checklist</h2>
-        <p>Before asking for feedback, check these common issues yourself: (1) Is your main stat correct for your operative? (Xavier Slot 4 = CRIT Rate, not HP%). (2) Are your memory set bonuses active? (3 are required for 4pc, 2 for 2pc). (3) Are all 6 memories at level 40+? (4) Is your CRIT Rate above 50% for DPS? (5) Is your ER above 120% for DPS / 150% for support? If you identify the issue yourself, you do not need to ask — and you learn faster.</p>
-        <div class="gb-final-box"><p><strong>Summary:</strong> Use the build template when asking for feedback — include operative, set, levels, main stats, final stats, and goal. Keep a personal spreadsheet. Screenshot protocores before enhancing. Hide your UID in screenshots. Check the 5 common issues before asking. Community feedback is a gift — respond to it with gratitude, not defensiveness.</p></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <ul class="article-toc-list">
+                <li><a href="#why-templates">Why Templates Matter</a></li>
+                <li><a href="#build-template">Build Share Template</a></li>
+                <li><a href="#tools">Recommended Theorycrafting Tools</a></li>
+                <li><a href="#feedback">How to Get Build Feedback</a></li>
+                <li><a href="#checklist">Build Feedback Checklist</a></li>
+                <li><a href="#community">Community Etiquette</a></li>
+            </ul>
+        </div>
+
+        <section id="why-templates">
+            <h2>Why Templates Matter</h2>
+            <div class="gb-highlight"><p><strong>Why Templates Matter:</strong> When you ask "is my Xavier build good?" without sharing your stats, nobody can help you. A standardized build template makes it easy for others to evaluate your build and give specific advice. Use the template below whenever you ask for build feedback on community platforms.</p></div>
+            <p>Build evaluation is a skill that requires complete information. Without knowing your ATK, CRIT Rate, CRIT DMG, ER, memory sets, and content goals, any advice is guesswork. The template below captures all essential information in a format that experienced players can evaluate in 10 seconds. Using it shows that you respect the community's time and are serious about improving.</p>
+        </section>
+
+        <section id="build-template">
+            <h2>Build Share Template</h2>
+            <p>Copy and paste this template when asking for build feedback. Fill in your actual numbers.</p>
+
+            <div class="tech-card">
+                <div class="tech-title">BUILD SHARE TEMPLATE</div>
+                <div class="tech-text">
+                    <strong>Operative:</strong> [Name] — [Level/Rank]<br>
+                    <strong>Memory Set:</strong> [4pc Name / 2+2 Sets]<br>
+                    <strong>Memory Levels:</strong> Slot 1: 60 — Slot 2: 50 — Slot 3: 50 — Slot 4: 50 — Slot 5: 50 — Slot 6: 40<br>
+                    <strong>Protocore Main Stats:</strong> Slot 1: ATK% +12 — Slot 2: ER% +12 — Slot 3: ATK% +15 — Slot 4: CRIT Rate +15 — Slot 5: CRIT DMG +12 — Slot 6: ATK% +9<br>
+                    <strong>Final Stats:</strong> ATK: [number] | CRIT Rate: [%] | CRIT DMG: [%] | ER: [%]<br>
+                    <strong>Content Goal:</strong> [Abyss Floor X / Co-op / Domain]<br>
+                    <strong>Issue:</strong> [What you feel is wrong]
+                </div>
+            </div>
+
+            <div class="article-info-box"><p><strong>Example:</strong> Xavier Lv60/R1 — 4pc Light Seeker — ATK 2,410 | CRIT 58% | CRIT DMG 132% | ER 118% — Struggling on Abyss Floor 10 boss phase. This template gives the community everything they need to diagnose your build in 10 seconds. The first thing they will check: your CRIT Rate (58% is below the 60% floor 10 target) and your ER (118% is below the 120% DPS minimum). Two easy fixes.</p></div>
+        </section>
+
+        <section id="tools">
+            <h2>Recommended Theorycrafting Tools</h2>
+            <p>Three tools will dramatically improve your ability to evaluate and optimize builds.</p>
+
+            <div class="tech-card">
+                <div class="tech-title">TOOL 1 — PERSONAL SPREADSHEET</div>
+                <div class="tech-text">Keep a personal build tracker. Columns: Operative, Memory Set, Memory Levels, Protocore Main Stats, Final Stats (ATK/CRIT/DMG/ER), Content Cleared. Update this sheet whenever you change a protocore or level a memory. A personal tracker reveals your weak spots over time. For example, if all your operatives have low CRIT DMG, you know to prioritize CRIT DMG protocores across the board.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">TOOL 2 — COMMUNITY BUILD DATABASE</div>
+                <div class="tech-text">Several community-maintained sheets track optimal builds for each operative. These are updated every patch. Search for "Deepspace [Operative Name] Build Sheet" to find the latest version. Cross-reference 2–3 sources before trusting a build — community consensus is more reliable than any individual guide. Check the last updated date — a build from 3 patches ago may be outdated.</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-title">TOOL 3 — SCREENSHOT JOURNAL</div>
+                <div class="tech-text">Take screenshots of your protocore substats before enhancing. If a protocore rolls poorly, you can review the before/after and learn which protocores to skip enhancing in the future. This is the best way to improve your protocore evaluation skills. After 20–30 documented enhances, you will instinctively know which protocores are worth the dust investment.</div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Pro Tip:</strong> When sharing screenshots on Discord/Reddit, use the "hide UID" option in settings. Your account UID is visible in screenshots and can be used to look up your account. Privacy first — hide your UID, hide your friend list, hide your purchase history. Share only what is necessary for build evaluation. Some malicious actors can use your UID to target your account.</p></div>
+        </section>
+
+        <section id="feedback">
+            <h2>How to Get Build Feedback</h2>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Use the template above</strong><div class="step-desc">Post your build in the format shown. Include your content goal. The more specific you are about your issue, the better the advice you will receive.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Share specific screenshots</strong><div class="step-desc">Screenshot your stat screen (press C in combat) and your protocore enhancement screens (all 6 slots). Do not ask "is this good?" without screenshots. Text alone misses subtle details like roll quality.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>State your budget</strong><div class="step-desc">Are you F2P, dolphin, or whale? A build that is good for F2P may be bad for a whale (who has access to better protocores). Budget determines the advice you need. An F2P player should not be told to "get more CRIT DMG from limited memories" — that advice is useless without the spending capacity.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Listen to consensus</strong><div class="step-desc">If 3 people tell you your CRIT rate is too low, it is too low. Do not argue with feedback you asked for. Thank the responders and try their suggestions before pushing back.</div></div></div>
+                <div class="rotation-step"><div class="step-num">5</div><div class="step-content"><strong>Iterate and follow up</strong><div class="step-desc">Post your updated build after making changes. Community members who helped you will appreciate seeing the improvement and will be more likely to help you again in the future. A simple "updated based on your advice, here are the new stats" goes a long way.</div></div></div>
+            </div>
+        </section>
+
+        <section id="checklist">
+            <h2>Build Feedback Checklist</h2>
+            <p>Before asking for feedback, check these common issues yourself. If you identify the issue yourself, you do not need to ask — and you learn faster.</p>
+
+            <div class="mistake-list">
+                <div class="mistake-item"><div class="mistake-title">☐ Is your main stat correct?</div><div class="mistake-desc">Xavier Slot 4 should be CRIT Rate, not HP%. Each slot has an optimal main stat — check the community database if unsure.</div></div>
+                <div class="mistake-item"><div class="mistake-title">☐ Are set bonuses active?</div><div class="mistake-desc">3 memories required for 4pc, 2 for 2pc. Count your equipped memories — common mistake is having only 2 of a 4pc set.</div></div>
+                <div class="mistake-item"><div class="mistake-title">☐ Are all memories level 40+?</div><div class="mistake-desc">A level 20 memory is missing 30%+ of its stat potential. Level all 6 slots to at least 40 before optimizing substats.</div></div>
+                <div class="mistake-item"><div class="mistake-title">☐ Is CRIT Rate above 50%?</div><div class="mistake-desc">For DPS operatives, 50% is the minimum viable. If below 50%, farm CRIT Rate protocores before anything else.</div></div>
+                <div class="mistake-item"><div class="mistake-title">☐ Is ER above 120% (DPS) / 150% (support)?</div><div class="mistake-desc">Energy Recharge is often the forgotten stat. Check your ER — if it is below the threshold, that explains rotation issues.</div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Before posting:</strong> Run through this checklist. If you find and fix 2–3 issues, your build will already be noticeably stronger. The checklist catches 80% of common build problems. Most feedback requests are answered with "fix your CRIT Rate" or "level your memories" — you can fix these before asking.</p></div>
+        </section>
+
+        <section id="community">
+            <h2>Community Etiquette</h2>
+            <p>Getting build feedback is a privilege, not a right. Community members volunteer their time to help you. Respect that.</p>
+
+            <div class="summary-card">
+                <div class="summary-section"><div class="summary-title">✓ DO</div><ul>
+                    <li>Use the template — make it easy for others to help</li>
+                    <li>Say thank you after receiving advice</li>
+                    <li>Follow up with results after making changes</li>
+                    <li>Help others when you learn enough to do so</li>
+                    <li>Upvote/thank posts that helped you</li>
+                </ul></div>
+                <div class="summary-section"><div class="summary-title">✗ DON'T</div><ul>
+                    <li>Don't argue with feedback you asked for</li>
+                    <li>Don't ask "is this good?" without any context</li>
+                    <li>Don't post the same question in multiple channels</li>
+                    <li>Don't demand instant answers — people have lives</li>
+                    <li>Don't share your UID or personal account info</li>
+                </ul></div>
+            </div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Use the build template when asking for feedback — include operative, set, levels, main stats, final stats, and goal. Keep a personal spreadsheet to track your builds. Screenshot protocores before enhancing to learn from roll patterns. Hide your UID in screenshots. Check the 5 common issues before asking (main stat, set bonus, levels, CRIT Rate, ER). Community feedback is a gift — respond to it with gratitude, not defensiveness. Pay it forward when you can.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Workshop Articles</div>
+            <div class="article-related-grid">
+                <a href="workshop-resources.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Community Resource Directory</span></a>
+                <a href="workshop-resources.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Community Resource Directory</span></a>
+            </div>
+        </div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
     <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
