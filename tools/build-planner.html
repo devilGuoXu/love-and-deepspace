@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Planner | Deepspace Tools</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <meta name="description" content="Plan your Love and Deepspace character builds — select operative, memory sets, and protocores to estimate final stats.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../" class="logo">DEEPSPACE <span>HUNTER</span></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../operatives/">Operative Files</a></li>
+                <li><a href="../combats/">Combat Guides</a></li>
+                <li><a href="../resources/">Resource Planning</a></li>
+                <li><a href="./">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tool-container">
+        <h1>🛠️ Build Planner</h1>
+        <p class="subtitle">Design a build for any operative — select sets, protocores, and see estimated final stats.</p>
+        <div class="stats-bar" id="buildStats">
+            <div class="stat-card"><div class="stat-num" id="estATK">0</div><div class="stat-label">Est. ATK</div></div>
+            <div class="stat-card"><div class="stat-num" id="estHP">0</div><div class="stat-label">Est. HP</div></div>
+            <div class="stat-card"><div class="stat-num" id="estCR">0%</div><div class="stat-label">Est. CRIT Rate</div></div>
+            <div class="stat-card"><div class="stat-num" id="estCD">0%</div><div class="stat-label">Est. CRIT DMG</div></div>
+        </div>
+        <div class="tool-section">
+            <h2>Select Operative</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Operative</label>
+                    <select id="operativeSelect">
+                        <option value="xavier">Xavier</option>
+                        <option value="zayne">Zayne</option>
+                        <option value="rafayel">Rafayel</option>
+                        <option value="sylus">Sylus</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Level</label>
+                    <select id="levelSelect">
+                        <option value="1">Lv 1</option>
+                        <option value="30">Lv 30</option>
+                        <option value="50">Lv 50</option>
+                        <option value="70" selected>Lv 70 (Recommended)</option>
+                        <option value="80">Lv 80 (Max)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="tool-section">
+            <h2>Memory Set</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>4-Piece Set</label>
+                    <select id="set4pc">
+                        <option value="none">None (use 2+2)</option>
+                        <option value="lightning">Lightning Assault (Xavier)</option>
+                        <option value="frost">Frostguard (Zayne)</option>
+                        <option value="inferno">Inferno Blaze (Rafayel)</option>
+                        <option value="void">Void Walker (Sylus)</option>
+                        <option value="adamant">Adamant Wall (Universal DEF)</option>
+                        <option value="sage">Sage's Blessing (Universal Heal)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>2-Piece Set (if no 4pc)</label>
+                    <select id="set2pc">
+                        <option value="none">None</option>
+                        <option value="atk">ATK +15%</option>
+                        <option value="hp">HP +15%</option>
+                        <option value="def">DEF +15%</option>
+                        <option value="crit">CRIT +12%</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="tool-section">
+            <h2>Protocore Main Stats</h2>
+            <div class="form-row">
+                <div class="form-group"><label>Solar (ATK% main)</label><select id="pcSolar"><option value="atkp">ATK%</option><option value="atk">Flat ATK</option><option value="hpp">HP%</option></select></div>
+                <div class="form-group"><label>Lunar (ATK% main)</label><select id="pcLunar"><option value="atkp">ATK%</option><option value="atk">Flat ATK</option><option value="hpp">HP%</option></select></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Slot 3</label><select id="pcS3"><option value="atkp">ATK%</option><option value="hpp">HP%</option><option value="defp">DEF%</option><option value="er">Energy Regen</option></select></div>
+                <div class="form-group"><label>Slot 4</label><select id="pcS4"><option value="cr">CRIT Rate</option><option value="cd">CRIT DMG</option><option value="atkp">ATK%</option></select></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Slot 5</label><select id="pcS5"><option value="cd">CRIT DMG</option><option value="cr">CRIT Rate</option><option value="atkp">ATK%</option><option value="hpp">HP%</option></select></div>
+                <div class="form-group"><label>Slot 6</label><select id="pcS6"><option value="atkp">ATK%</option><option value="hpp">HP%</option><option value="er">Energy Regen</option></select></div>
+            </div>
+        </div>
+        <div class="tool-section">
+            <h2>Protocore Substats Quality</h2>
+            <div class="form-group">
+                <label>Average substat rolls per piece</label>
+                <select id="substatQuality">
+                    <option value="0">None (main stat only)</option>
+                    <option value="2">Low (2 useful substats)</option>
+                    <option value="4" selected>Medium (3-4 useful rolls)</option>
+                    <option value="6">High (4+ perfect rolls)</option>
+                    <option value="8">God roll (all perfect)</option>
+                </select>
+            </div>
+        </div>
+        <div class="tool-section">
+            <h2>Estimated Final Stats</h2>
+            <div id="buildResult" class="result-box"></div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All rights reserved.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const BASE_STATS = {
+            xavier: {atk:1200, hp:8500, def:800, cr:0.05, cd:0.50},
+            zayne:  {atk:1000, hp:10500, def:1000, cr:0.08, cd:0.45},
+            rafayel:{atk:1100, hp:9500, def:700, cr:0.06, cd:0.55},
+            sylus:  {atk:1300, hp:9000, def:900, cr:0.04, cd:0.60},
+        };
+        const LEVEL_MULT = {1:1, 30:1.5, 50:2.2, 70:3.0, 80:3.5};
+        const SET_BONUS = {
+            lightning:{atkp:0.30, cr:0.12, name:'Lightning Assault'},
+            frost:{hpp:0.30, defp:0.20, name:'Frostguard'},
+            inferno:{atkp:0.25, cd:0.20, name:'Inferno Blaze'},
+            void:{atkp:0.20, er:0.25, name:'Void Walker'},
+            adamant:{defp:0.40, hpp:0.15, name:'Adamant Wall'},
+            sage:{hpp:0.25, er:0.15, name:'Sage\'s Blessing'},
+        };
+        const PC_STATS = {
+            atkp:{atkp:0.466, label:'ATK% +46.6%'},
+            atk:{flatAtk:450, label:'ATK +450'},
+            hpp:{hpp:0.466, label:'HP% +46.6%'},
+            defp:{defp:0.466, label:'DEF% +46.6%'},
+            cr:{cr:0.233, label:'CRIT Rate +23.3%'},
+            cd:{cd:0.466, label:'CRIT DMG +46.6%'},
+            er:{er:0.233, label:'Energy Regen +23.3%'},
+        };
+        const SUBSTAT_VALUE = {0:0, 2:0.08, 4:0.15, 6:0.25, 8:0.35};
+
+        function calculate() {
+            const op = document.getElementById('operativeSelect').value;
+            const base = BASE_STATS[op];
+            const level = LEVEL_MULT[document.getElementById('levelSelect').value];
+            const set4 = document.getElementById('set4pc').value;
+            const set2 = document.getElementById('set2pc').value;
+            const subQ = parseInt(document.getElementById('substatQuality').value);
+            const subMult = SUBSTAT_VALUE[subQ];
+
+            const pcSlots = ['pcSolar','pcLunar','pcS3','pcS4','pcS5','pcS6'];
+            let totalAtk = base.atk * level;
+            let totalHp = base.hp * level;
+            let totalDef = base.def * level;
+            let totalCr = base.cr;
+            let totalCd = base.cd;
+            let totalEr = 1.0;
+            let flatAtk = 0;
+            let atkPMult = 0;
+            let hpPMult = 0;
+            let defPMult = 0;
+
+            // Apply set bonuses
+            if (set4 !== 'none' && SET_BONUS[set4]) {
+                const s = SET_BONUS[set4];
+                if (s.atkp) atkPMult += s.atkp;
+                if (s.cr) totalCr += s.cr;
+                if (s.cd) totalCd += s.cd;
+                if (s.hpp) hpPMult += s.hpp;
+                if (s.defp) defPMult += s.defp;
+                if (s.er) totalEr += s.er;
+                if (s.name) {} // name used for display
+            } else if (set2 !== 'none') {
+                if (set2 === 'atk') atkPMult += 0.15;
+                else if (set2 === 'hp') hpPMult += 0.15;
+                else if (set2 === 'def') defPMult += 0.15;
+                else if (set2 === 'crit') totalCr += 0.12;
+            }
+
+            // Apply protocore main stats
+            pcSlots.forEach(id => {
+                const val = PC_STATS[document.getElementById(id).value];
+                if (!val) return;
+                if (val.atkp) atkPMult += val.atkp;
+                if (val.flatAtk) flatAtk += val.flatAtk;
+                if (val.hpp) hpPMult += val.hpp;
+                if (val.defp) defPMult += val.defp;
+                if (val.cr) totalCr += val.cr;
+                if (val.cd) totalCd += val.cd;
+                if (val.er) totalEr += val.er;
+            });
+
+            // Apply substat quality bonus to main relevant stat
+            const subAtk = flatAtk > 0 ? flatAtk * subMult * 0.5 : base.atk * level * subMult * 0.3;
+            const subCr = totalCr * subMult * 0.15;
+            const subCd = totalCd * subMult * 0.15;
+
+            const finalAtk = Math.round((totalAtk + flatAtk + subAtk) * (1 + atkPMult));
+            const finalHp = Math.round(totalHp * (1 + hpPMult));
+            const finalDef = Math.round(totalDef * (1 + defPMult));
+            const finalCr = Math.min(1, totalCr + subCr);
+            const finalCd = totalCd + subCd;
+            const finalEr = totalEr;
+
+            document.getElementById('estATK').textContent = finalAtk.toLocaleString();
+            document.getElementById('estHP').textContent = finalHp.toLocaleString();
+            document.getElementById('estCR').textContent = Math.round(finalCr * 100) + '%';
+            document.getElementById('estCD').textContent = Math.round(finalCd * 100) + '%';
+
+            const set = set4 !== 'none' ? SET_BONUS[set4]?.name || 'Custom' : (set2 !== 'none' ? '2pc Bonus' : 'None');
+            const ra = document.getElementById('buildResult');
+            ra.innerHTML = `<h3 style="margin:0 0 12px;color:#c9a063;">📊 Build Summary</h3>
+                <div class="result-row"><span class="label">Set</span><span class="value">${set}</span></div>
+                <div class="result-row"><span class="label">Level</span><span class="value">Lv ${document.getElementById('levelSelect').value}</span></div>
+                <div class="result-row"><span class="label">⚔️ ATK</span><span class="value">${finalAtk.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label">❤️ HP</span><span class="value">${finalHp.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label">🛡️ DEF</span><span class="value">${finalDef.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label">🎯 CRIT Rate</span><span class="value">${Math.round(finalCr*100)}%</span></div>
+                <div class="result-row"><span class="label">💥 CRIT DMG</span><span class="value">${Math.round(finalCd*100)}%</span></div>
+                <div class="result-row"><span class="label">⚡ Energy Regen</span><span class="value">${Math.round(finalEr*100)}%</span></div>
+                <div style="margin-top:12px;padding:12px;background:#0b0d14;border-radius:8px;font-size:.8rem;color:#8a94a8;">
+                    <strong>Note:</strong> These are estimates. Actual stats depend on memory base stats, resonance bonuses, and substat variance. Use this as a planning reference, not exact math.
+                </div>`;
+        }
+
+        document.querySelectorAll('.tool-section select').forEach(s => s.addEventListener('change', calculate));
+        calculate();
+    </script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
