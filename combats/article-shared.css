@@ -4,6 +4,16 @@
    Uses CSS custom properties for per-category theming.
    ========================================= */
 
+/* --- Author Attribution --- */
+.gb-author {
+    font-size: 0.85rem;
+    color: var(--text-dim, #8a94a8);
+    margin-top: 4px;
+    padding: 4px 0 8px;
+    border-bottom: 1px solid var(--border, #2a2f3d);
+    margin-bottom: 20px;
+}
+
 /* --- Category Theme Variables --- */
 .article-theme-basic  { --accent: #c9a063; --accent-rgb: 201, 160, 99; --accent-dim: rgba(201, 160, 99, 0.15); }
 .article-theme-boss   { --accent: #e74c3c; --accent-rgb: 231, 76, 60; --accent-dim: rgba(231, 76, 60, 0.15); }

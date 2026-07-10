@@ -27,25 +27,25 @@
     <div class="resource-page">
         <div class="stats-summary">
             <div class="stat-summary-card">
-                <div class="stat-icon">💎</div>
+                <div class="stat-icon"></div>
                 <div class="stat-label">TOTAL DIAMONDS</div>
                 <div class="stat-value" id="totalDiamonds">0</div>
                 <div class="stat-sub">≈ <span id="totalPulls">0</span> pulls</div>
             </div>
             <div class="stat-summary-card">
-                <div class="stat-icon">🎫</div>
+                <div class="stat-icon"></div>
                 <div class="stat-label">TOTAL WISHES</div>
                 <div class="stat-value" id="totalWishes">0</div>
                 <div class="stat-sub">+ <span id="wishPulls">0</span> from diamonds</div>
             </div>
             <div class="stat-summary-card">
-                <div class="stat-icon">⚡</div>
+                <div class="stat-icon"></div>
                 <div class="stat-label">STAMINA TODAY</div>
                 <div class="stat-value" id="currentStamina">0</div>
                 <div class="stat-sub">/ 240 base + snack</div>
             </div>
             <div class="stat-summary-card">
-                <div class="stat-icon">🎯</div>
+                <div class="stat-icon"></div>
                 <div class="stat-label">PITY READINESS</div>
                 <div class="stat-value" id="pityReadiness">0%</div>
                 <div class="stat-sub" id="pityStatus">need 0 more</div>
@@ -55,13 +55,13 @@
         <div class="resource-two-col">
             <div class="info-card">
                 <div class="card-title">
-                    <span>💰 RESOURCE STOCK</span>
+                    <span> RESOURCE STOCK</span>
                     <button class="btn-outline" id="resetBtn">Reset All</button>
                 </div>
                 <div class="card-body">
                     <div class="resource-table">
                         <div class="resource-item">
-                            <span class="resource-name">💎 Diamonds</span>
+                            <span class="resource-name"> Diamonds</span>
                             <div class="resource-control">
                                 <input type="number" id="diamonds" class="resource-input" value="12450" step="100">
                                 <button class="quick-btn" data-field="diamonds" data-value="15000">15k</button>
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="resource-item">
-                            <span class="resource-name">🎫 Empyrean Wishes</span>
+                            <span class="resource-name"> Empyrean Wishes</span>
                             <div class="resource-control">
                                 <input type="number" id="wishes" class="resource-input" value="15" step="1">
                                 <button class="quick-btn" data-field="wishes" data-value="10">+10</button>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="resource-item">
-                            <span class="resource-name">⚡ Stamina</span>
+                            <span class="resource-name"> Stamina</span>
                             <div class="resource-control">
                                 <input type="number" id="stamina" class="resource-input" value="240" step="10">
                                 <button class="quick-btn" data-field="stamina" data-value="240">240</button>
@@ -93,47 +93,47 @@
                             </div>
                         </div>
                         <div class="resource-item">
-                            <span class="resource-name">📘 Purple EXP Bottle</span>
+                            <span class="resource-name"> Purple EXP Bottle</span>
                             <input type="number" id="expBottles" class="resource-input" value="245" style="margin-left: auto;">
                         </div>
                         <div class="resource-item">
-                            <span class="resource-name">🔮 Protocore Dust</span>
+                            <span class="resource-name"> Protocore Dust</span>
                             <input type="number" id="protocoreDust" class="resource-input" value="1800" style="margin-left: auto;">
                         </div>
                     </div>
-                    <button class="btn-primary" id="saveBtn">💾 SAVE DATA</button>
+                    <button class="btn-primary" id="saveBtn"> SAVE DATA</button>
                 </div>
             </div>
 
             <div class="info-card">
                 <div class="card-title">
-                    <span>🎲 PITY & PULL PLANNER</span>
+                    <span> PITY & PULL PLANNER</span>
                     <button class="btn-outline" id="simulateBtn">10 Pulls</button>
                 </div>
                 <div class="card-body">
                     <div class="resource-item">
-                        <span>🎯 Current Pity</span>
+                        <span> Current Pity</span>
                         <input type="range" id="pitySlider" min="0" max="70" value="25" style="width: 150px;">
                         <span id="pityValue" style="color:#c9a063; min-width: 40px;">25</span>
                     </div>
                     <div class="resource-item">
-                        <span>✅ Guarantee Status</span>
+                        <span> Guarantee Status</span>
                         <select id="guaranteeSelect" style="background:#1a1f2a; border:1px solid #2a2f3d; border-radius:8px; padding:6px 12px; color:#fff;">
                             <option value="no">50/50 Active</option>
-                            <option value="yes">Guaranteed ✅</option>
+                            <option value="yes">Guaranteed </option>
                         </select>
                     </div>
                     <div class="pull-planner">
                         <div class="pull-stat">
-                            <span>📊 Total pulls available</span>
+                            <span> Total pulls available</span>
                             <span id="availablePulls" style="color:#c9a063; font-weight:700;">0</span>
                         </div>
                         <div class="pull-stat">
-                            <span>🎯 Expected pulls to 5★</span>
+                            <span> Expected pulls to 5</span>
                             <span id="expectedPulls" style="color:#c9a063;">0</span>
                         </div>
                         <div class="pull-stat">
-                            <span>💎 Diamond cost if pulling now</span>
+                            <span> Diamond cost if pulling now</span>
                             <span id="expectedCost" style="color:#c9a063;">0</span>
                         </div>
                         <div class="pull-progress">
@@ -148,26 +148,26 @@
         <div class="resource-two-col">
             <div class="info-card">
                 <div class="card-title">
-                    <span>⚔️ CHARACTER ASCENSION PLANNER</span>
+                    <span> CHARACTER ASCENSION PLANNER</span>
                     <span style="font-size:0.7rem;">target Lv.80</span>
                 </div>
                 <div class="card-body">
                     <div class="role-selector" id="roleSelector">
-                        <button class="role-btn active" data-role="sylus">🌑 Sylus</button>
-                        <button class="role-btn" data-role="xavier">✨ Xavier</button>
-                        <button class="role-btn" data-role="zayne">❄️ Zayne</button>
-                        <button class="role-btn" data-role="rafayel">🔥 Rafayel</button>
+                        <button class="role-btn active" data-role="sylus"> Sylus</button>
+                        <button class="role-btn" data-role="xavier"> Xavier</button>
+                        <button class="role-btn" data-role="zayne"> Zayne</button>
+                        <button class="role-btn" data-role="rafayel"> Rafayel</button>
                     </div>
                     
                     <div class="resource-item">
-                        <span>📊 Current Level</span>
+                        <span> Current Level</span>
                         <input type="range" id="currentLevel" min="1" max="80" value="40" style="width: 200px;">
                         <span id="currentLevelValue" style="color:#c9a063; min-width: 40px;">40</span>
                     </div>
 
                     <div class="requirements">
                         <div class="req-row">
-                            <span class="req-label">📘 EXP Bottles needed</span>
+                            <span class="req-label"> EXP Bottles needed</span>
                             <span class="req-value total" id="expNeed">0</span>
                         </div>
                         <div class="req-row">
@@ -175,11 +175,11 @@
                             <span class="req-value total" id="goldNeed">0</span>
                         </div>
                         <div class="req-row">
-                            <span class="req-label">⚡ Stamina cost</span>
+                            <span class="req-label"> Stamina cost</span>
                             <span class="req-value total" id="staminaCost">0</span>
                         </div>
                         <div class="req-row">
-                            <span class="req-label">📘 You have</span>
+                            <span class="req-label"> You have</span>
                             <span class="req-value have" id="haveExp">0</span>
                         </div>
                         <div class="req-row">
@@ -196,30 +196,30 @@
 
             <div class="info-card">
                 <div class="card-title">
-                    <span>⚡ EFFICIENCY & TIPS</span>
+                    <span> EFFICIENCY & TIPS</span>
                     <span class="btn-outline" id="refreshTipsBtn" style="padding:2px 10px;">⟳</span>
                 </div>
                 <div class="card-body">
                     <div class="resource-table">
                         <div class="resource-item">
-                            <span>📅 Weekly free stamina</span>
+                            <span> Weekly free stamina</span>
                             <span style="color:#c9a063;">1,680</span>
                         </div>
                         <div class="resource-item">
-                            <span>🏆 Daily recommended grind</span>
+                            <span> Daily recommended grind</span>
                             <span style="color:#c9a063;">Bounty → Core → Story</span>
                         </div>
                         <div class="resource-item">
-                            <span>📈 Best value farm</span>
+                            <span> Best value farm</span>
                             <span style="color:#c9a063;">Bounty Hunt (Gold/EXP)</span>
                         </div>
                         <div class="resource-item">
-                            <span>💎 F2P monthly income</span>
+                            <span> F2P monthly income</span>
                             <span style="color:#c9a063;">~7,200 diamonds</span>
                         </div>
                     </div>
                     <div class="pull-planner" style="margin-top:16px;">
-                        <div style="font-size:0.75rem; color:#c9a063; margin-bottom:8px;">💡 QUICK TIPS</div>
+                        <div style="font-size:0.75rem; color:#c9a063; margin-bottom:8px;"> QUICK TIPS</div>
                         <div id="tipsList" style="font-size:0.7rem; color:#8a94a8; line-height:1.6;">
                             • Use stamina snacks before daily reset<br>
                             • Save diamonds for limited banners<br>
@@ -314,13 +314,13 @@
             
             let advice = '';
             if (totalPulls >= expectedPulls) {
-                advice = '✅ You have enough resources for guaranteed rate-up!';
+                advice = ' You have enough resources for guaranteed rate-up!';
             } else if (totalPulls >= expectedPulls - 20) {
-                advice = '⚠️ Close to pity! Consider saving a bit more.';
+                advice = ' Close to pity! Consider saving a bit more.';
             } else if (pity > 60) {
-                advice = '🎯 High pity! Do single pulls to save wishes.';
+                advice = ' High pity! Do single pulls to save wishes.';
             } else {
-                advice = '📊 Keep saving. Focus on daily commissions.';
+                advice = ' Keep saving. Focus on daily commissions.';
             }
             document.getElementById('pullAdvice').innerHTML = advice;
         }
@@ -345,9 +345,9 @@
             
             let gapMsg = '';
             if (expGap > 0 || goldGap > 0) {
-                gapMsg = `⚠️ Shortage: ${expGap > 0 ? expGap + ' EXP bottles' : ''}${expGap > 0 && goldGap > 0 ? ' + ' : ''}${goldGap > 0 ? Math.ceil(goldGap / 1000000) + 'M gold' : ''}`;
+                gapMsg = ` Shortage: ${expGap > 0 ? expGap + ' EXP bottles' : ''}${expGap > 0 && goldGap > 0 ? ' + ' : ''}${goldGap > 0 ? Math.ceil(goldGap / 1000000) + 'M gold' : ''}`;
             } else {
-                gapMsg = '✅ You have enough resources to reach Lv.' + currentLvl;
+                gapMsg = ' You have enough resources to reach Lv.' + currentLvl;
             }
             document.getElementById('resourceGap').innerHTML = gapMsg;
             
@@ -417,16 +417,16 @@
             if (is5Star) {
                 let isRateUp = isGuaranteed || Math.random() < 0.5;
                 if (isRateUp) {
-                    alert('🔥 5★ RATE-UP! You got the banner character!');
+                    alert(' 5 RATE-UP! You got the banner character!');
                     document.getElementById('guaranteeSelect').value = 'no';
                 } else {
-                    alert('😢 5★ (lost 50/50). Next is guaranteed!');
+                    alert(' 5 (lost 50/50). Next is guaranteed!');
                     document.getElementById('guaranteeSelect').value = 'yes';
                 }
                 document.getElementById('pitySlider').value = 0;
             } else {
                 document.getElementById('pitySlider').value = pity + 1;
-                alert('❄️ 3★ / 4★. Pity increased to ' + (pity + 1));
+                alert(' 3 / 4. Pity increased to ' + (pity + 1));
             }
             updateAll();
         }

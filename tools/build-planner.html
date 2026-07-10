@@ -25,7 +25,7 @@
         </nav>
     </header>
     <div class="tool-container">
-        <h1>🛠️ Build Planner</h1>
+        <h1> Build Planner</h1>
         <p class="subtitle">Design a build for any operative — select sets, protocores, and see estimated final stats.</p>
         <div class="stats-bar" id="buildStats">
             <div class="stat-card"><div class="stat-num" id="estATK">0</div><div class="stat-label">Est. ATK</div></div>
@@ -216,15 +216,15 @@
 
             const set = set4 !== 'none' ? SET_BONUS[set4]?.name || 'Custom' : (set2 !== 'none' ? '2pc Bonus' : 'None');
             const ra = document.getElementById('buildResult');
-            ra.innerHTML = `<h3 style="margin:0 0 12px;color:#c9a063;">📊 Build Summary</h3>
+            ra.innerHTML = `<h3 style="margin:0 0 12px;color:#c9a063;"> Build Summary</h3>
                 <div class="result-row"><span class="label">Set</span><span class="value">${set}</span></div>
                 <div class="result-row"><span class="label">Level</span><span class="value">Lv ${document.getElementById('levelSelect').value}</span></div>
-                <div class="result-row"><span class="label">⚔️ ATK</span><span class="value">${finalAtk.toLocaleString()}</span></div>
-                <div class="result-row"><span class="label">❤️ HP</span><span class="value">${finalHp.toLocaleString()}</span></div>
-                <div class="result-row"><span class="label">🛡️ DEF</span><span class="value">${finalDef.toLocaleString()}</span></div>
-                <div class="result-row"><span class="label">🎯 CRIT Rate</span><span class="value">${Math.round(finalCr*100)}%</span></div>
-                <div class="result-row"><span class="label">💥 CRIT DMG</span><span class="value">${Math.round(finalCd*100)}%</span></div>
-                <div class="result-row"><span class="label">⚡ Energy Regen</span><span class="value">${Math.round(finalEr*100)}%</span></div>
+                <div class="result-row"><span class="label"> ATK</span><span class="value">${finalAtk.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label"> HP</span><span class="value">${finalHp.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label"> DEF</span><span class="value">${finalDef.toLocaleString()}</span></div>
+                <div class="result-row"><span class="label"> CRIT Rate</span><span class="value">${Math.round(finalCr*100)}%</span></div>
+                <div class="result-row"><span class="label"> CRIT DMG</span><span class="value">${Math.round(finalCd*100)}%</span></div>
+                <div class="result-row"><span class="label"> Energy Regen</span><span class="value">${Math.round(finalEr*100)}%</span></div>
                 <div style="margin-top:12px;padding:12px;background:#0b0d14;border-radius:8px;font-size:.8rem;color:#8a94a8;">
                     <strong>Note:</strong> These are estimates. Actual stats depend on memory base stats, resonance bonuses, and substat variance. Use this as a planning reference, not exact math.
                 </div>`;

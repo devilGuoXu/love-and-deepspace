@@ -18,6 +18,7 @@
         <div class="gb-hero"><div class="gb-badge">BASIC PROTOCOLS — MATH</div><h1>Damage Calculation Guide</h1><p>Understand the numbers behind your damage — formulas, breakpoints, and optimization math.</p></div>
         <div class="gb-meta"><span class="meta-id">ENTRY_#050</span><span class="meta-date">2026.07.01</span><span class="meta-tag">MATH</span></div>
         <div class="gb-highlight"><p><strong>Why Math Matters:</strong> Most players build by feel — "this set feels strong" or "I need more CRIT." Math removes guesswork. A 10% damage optimization from understanding formulas is equivalent to two breakthrough tiers or one full memory set. Knowledge is the most efficient resource.</p></div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
         <h2>Core Damage Formula</h2>
         <p>Final Damage = ATK × Skill Multiplier × (1 + DMG Bonus) × (1 + CRIT DMG if crit) × (1 + Element Bonus) × Enemy DEF Multiplier × (1 + Stagger Bonus). Each multiplier is multiplicative with the others. This means buffs of different types are more valuable than stacking the same type.</p>
         <p>Example: +20% ATK and +20% DMG Bonus = 1.2 × 1.2 = 1.44x (44% gain). +40% ATK (no DMG Bonus) = 1.4x (40% gain). The different-type buffs are 4% stronger. Small differences, but they compound across your entire build.</p>
@@ -28,7 +29,12 @@
         <p>Enhancement strategy: Enhance to +3. If you get a bad substat roll, salvage. If good, enhance to +6. If second roll is bad, salvage. If both good, enhance to +9 and lock. Never take a memory to +12 without locking at +9 first — the +9 to +12 cost is very high for one more roll.</p>
         <h2>Team Damage Math</h2>
         <p>Team DPS = Main DPS DPS + Sub-DPS DPS × (field time ratio) + Support DPS × (field time ratio). In a hypercarry setup: Main DPS has 80% field time, Sub-DPS 15%, Support 5%. Optimizing the main DPS is 80% of team damage. A 10% improvement on main DPS = 8% team DPS gain. A 10% improvement on support = 0.5% team DPS gain.</p>
+        
+        <p>Enemy DEF values vary by enemy type and level. Standard Wanderers at level 60 have approximately 800 DEF. Elite enemies have 1,200 DEF. Boss enemies have 1,600 DEF. DEF penetration stats become more valuable as enemy DEF increases. A DEF penetration substat that reduces enemy DEF by 5% provides 3% more damage against standard enemies but 6% against bosses.</p>
         <div class="gb-tip-box"><p><strong>Key Insight:</strong> Use the "1% rule" — if changing one substat or piece improves your calculated DPS by 1% or more, it's worth the resource investment. Below 1%, the improvement is negligible and resources are better spent elsewhere. This prevents perfectionism waste.</p></div>
+        
+        <h2>Damage Calculation Formula</h2>
+        <p>Understanding how damage is calculated helps you make better build decisions. The base formula is: ATK x Skill Multiplier x (1 + Elemental DMG Bonus) x (1 + CRIT DMG if CRIT) x Enemy DEF Reduction. ATK is the most universally valuable stat because it appears in every damage calculation. Elemental DMG Bonus is additive with itself but multiplicative with ATK. CRIT DMG only applies when you CRIT, making CRIT Rate a gatekeeping stat for CRIT DMG. Enemy DEF Reduction is a separate multiplier that makes DEF-penetration stats valuable against high-DEF targets like boss enemies.</p>
         <div class="gb-final-box"><p><strong>Summary:</strong> Damage = ATK × DMG Bonus × CRIT × Element × DEF × Stagger. ATK% 80-120%, CRIT 65-80%, CRIT DMG 140-180%. ESV system to evaluate substats. Enhance to +3/+6, salvage bad rolls. Main DPS optimization is 80% of team DPS.</p></div>
     </div>
     <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>

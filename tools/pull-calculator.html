@@ -25,7 +25,7 @@
         </nav>
     </header>
     <div class="tool-container">
-        <h1>🎲 Pull & Pity Calculator</h1>
+        <h1> Pull & Pity Calculator</h1>
         <p class="subtitle">Track your pity, calculate your odds, and plan your diamond spending for limited banners.</p>
         <div class="stats-bar" id="pullStats">
             <div class="stat-card"><div class="stat-num" id="currentPulls">0</div><div class="stat-label">Current Pulls</div></div>
@@ -107,16 +107,16 @@
             document.getElementById('msToGuarantee').textContent = toGuarantee;
             const pr = document.getElementById('pullResult');
             if (pity > 0 || diamonds > 0 || wishes > 0) {
-                let html = '<h3 style="margin:0 0 12px;color:#c9a063;">📊 Summary</h3>';
-                html += `<div class="result-row"><span class="label">🎫 Total pulls available</span><span class="value">${totalPulls}</span></div>`;
-                html += `<div class="result-row"><span class="label">🎯 Pulls to hard pity</span><span class="value">${toHard}</span></div>`;
-                html += `<div class="result-row"><span class="label">💎 Diamond shortfall (to pity)</span><span class="value">${Math.max(0, toHard * 150 - diamonds)}</span></div>`;
+                let html = '<h3 style="margin:0 0 12px;color:#c9a063;"> Summary</h3>';
+                html += `<div class="result-row"><span class="label"> Total pulls available</span><span class="value">${totalPulls}</span></div>`;
+                html += `<div class="result-row"><span class="label"> Pulls to hard pity</span><span class="value">${toHard}</span></div>`;
+                html += `<div class="result-row"><span class="label"> Diamond shortfall (to pity)</span><span class="value">${Math.max(0, toHard * 150 - diamonds)}</span></div>`;
                 if (is5050) {
-                    html += `<div class="result-row"><span class="label">🔄 Pulls for guaranteed (lose 50/50)</span><span class="value">${toGuarantee}</span></div>`;
-                    html += `<div class="result-row"><span class="label">💎 Diamonds for guarantee</span><span class="value">${neededForGuarantee > 0 ? neededForGuarantee : '✅ Already enough'}</span></div>`;
+                    html += `<div class="result-row"><span class="label"> Pulls for guaranteed (lose 50/50)</span><span class="value">${toGuarantee}</span></div>`;
+                    html += `<div class="result-row"><span class="label"> Diamonds for guarantee</span><span class="value">${neededForGuarantee > 0 ? neededForGuarantee : ' Already enough'}</span></div>`;
                 }
                 if (pity >= 63) {
-                    html += `<div class="result-row"><span class="label" style="color:#2ecc71;">⚡ Soft pity active!</span><span class="value" style="color:#2ecc71;">${Math.round(prob*100)}% SSR chance per pull</span></div>`;
+                    html += `<div class="result-row"><span class="label" style="color:#2ecc71;"> Soft pity active!</span><span class="value" style="color:#2ecc71;">${Math.round(prob*100)}% SSR chance per pull</span></div>`;
                 }
                 html += `<div style="margin-top:12px;padding:12px;background:#0b0d14;border-radius:8px;text-align:center;">
                     <span style="color:#8a94a8;">Base rate: 0.6% → Soft pity starts at 63 → Hard pity at 70</span></div>`;

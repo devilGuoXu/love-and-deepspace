@@ -28,7 +28,7 @@
         <div class="article-content">
             <p>Let me start with a confession: I'm not a lore expert or a hardcore theory-crafter. I'm just someone who plays a couple of hours after work, chasing dailies and slowly chipping away at the story.</p>
             <p>When Sylus first dropped, I was... unimpressed. Dark, brooding, "bad boy" archetype? Felt a bit cliché. Plus he literally kidnaps the protagonist? I rolled my eyes and thought: "Here we go again."</p>
-            <p>I was wrong. So wrong. 😭</p>
+            <p>I was wrong. So wrong. </p>
             <img src="images/first-encounter.webp" alt="First meeting with Sylus">
             <p>A few days ago, I finally finished the entire N109 storyline. I sat in front of my screen for a solid ten minutes, just staring. Eyes stinging. Heart pounding.</p>
     
@@ -45,7 +45,7 @@
             <p>It was around Chapter 3. The protagonist gets hurt. Sylus walks over. I braced myself for another sarcastic remark.</p>
             
             <div class="dialogue-card">
-                <div class="dialogue-speaker">🎭 SYLUS</div>
+                <div class="dialogue-speaker"> SYLUS</div>
                 <div class="dialogue-text">"Your heartbeat... it's too fast. Are you scared? Or just excited to be with me?"</div>
                 <div class="dialogue-context">—— Chapter 3, N109 Main Story</div>
             </div>
@@ -55,7 +55,7 @@
             <h2>03 · The breaking point: Mephisto's secret</h2>
             
             <div class="dialogue-card">
-                <div class="dialogue-speaker">🎭 SYLUS</div>
+                <div class="dialogue-speaker"> SYLUS</div>
                 <div class="dialogue-text">"Mephisto isn't just a bird. He's the part of me that died a long time ago. Still watching. Still waiting for a reason to come back."</div>
                 <div class="dialogue-context">—— Hidden dialogue, N109 Zone</div>
             </div>
@@ -91,7 +91,7 @@
             </div>
     
             <div class="heartfelt-block">
-                <div class="quote-icon">❤️</div>
+                <div class="quote-icon"></div>
                 <p>"I don't force. I choose."<br>That choice... is yours.</p>
                 <div style="margin-top: 12px; font-size: 0.85rem;">—— And it's mine too.</div>
             </div>
@@ -103,45 +103,45 @@
     
         <!-- Voting area -->
         <div class="poll-section">
-            <div class="poll-title">💬 Which Sylus moment stole your heart?</div>
+            <div class="poll-title"> Which Sylus moment stole your heart?</div>
             <div class="poll-options">
-                <button class="poll-btn" data-vote="a">🖤 "Your heartbeat is too fast"</button>
-                <button class="poll-btn" data-vote="b">🐦 Mephisto's secret</button>
-                <button class="poll-btn" data-vote="c">⚔️ Fighting side by side</button>
-                <button class="poll-btn" data-vote="d">💔 When his mask slips</button>
+                <button class="poll-btn" data-vote="a"> "Your heartbeat is too fast"</button>
+                <button class="poll-btn" data-vote="b"> Mephisto's secret</button>
+                <button class="poll-btn" data-vote="c"> Fighting side by side</button>
+                <button class="poll-btn" data-vote="d"> When his mask slips</button>
             </div>
-            <div class="poll-result" id="pollResult">👥 1,247 votes · Click to vote</div>
+            <div class="poll-result" id="pollResult"> 1,247 votes · Click to vote</div>
         </div>
     
         <!-- Comment section -->
         <div class="comments-section" id="comments">
-            <div class="comments-title">💬 Player Comments</div>
+            <div class="comments-title"> Player Comments</div>
             <div class="comment-item">
                 <div class="comment-author">
-                    <div class="comment-avatar">✨</div>
+                    <div class="comment-avatar"></div>
                     <div class="comment-name">starry_night</div>
                     <div class="comment-time">2 hours ago</div>
                 </div>
-                <div class="comment-text">SAME. I hated him at first but by the end I was SOBBING. Mephisto's backstory broke me 😭😭😭</div>
-                <div class="comment-like">❤️ 342</div>
+                <div class="comment-text">SAME. I hated him at first but by the end I was SOBBING. Mephisto's backstory broke me </div>
+                <div class="comment-like"> 342</div>
             </div>
             <div class="comment-item">
                 <div class="comment-author">
-                    <div class="comment-avatar">🌙</div>
+                    <div class="comment-avatar"></div>
                     <div class="comment-name">n109_wanderer</div>
                     <div class="comment-time">5 hours ago</div>
                 </div>
                 <div class="comment-text">"I don't force. I choose." That line lives rent-free in my head. He respects her agency above everything else.</div>
-                <div class="comment-like">❤️ 287</div>
+                <div class="comment-like"> 287</div>
             </div>
             <div class="comment-item">
                 <div class="comment-author">
-                    <div class="comment-avatar">🖤</div>
+                    <div class="comment-avatar"></div>
                     <div class="comment-name">mephisto_girl</div>
                     <div class="comment-time">Yesterday</div>
                 </div>
                 <div class="comment-text">Finally someone put it into words! Sylus isn't a bad boy — he's a wounded wolf waiting for someone worth trusting.</div>
-                <div class="comment-like">❤️ 156</div>
+                <div class="comment-like"> 156</div>
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@
         
         function updatePollDisplay() {
             const total = Object.values(voteCount).reduce((a, b) => a + b, 0);
-            document.getElementById('pollResult').innerHTML = `👥 ${total} votes · A:${voteCount.a} B:${voteCount.b} C:${voteCount.c} D:${voteCount.d}`;
+            document.getElementById('pollResult').innerHTML = ` ${total} votes · A:${voteCount.a} B:${voteCount.b} C:${voteCount.c} D:${voteCount.d}`;
         }
         
         document.querySelectorAll('.poll-btn').forEach(btn => {
@@ -187,7 +187,7 @@
                 voteCount[vote]++;
                 localStorage.setItem('sylus_votes', JSON.stringify(voteCount));
                 updatePollDisplay();
-                alert('Voted! Thanks for sharing your favorite moment 💕');
+                alert('Voted! Thanks for sharing your favorite moment ');
             });
         });
         
