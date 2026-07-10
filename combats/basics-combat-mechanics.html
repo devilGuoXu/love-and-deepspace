@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combat Mechanics: Damage Formula & System | Deepspace Hub</title>
-    <meta name="description" content="Deep dive into Love and Deepspace combat mechanics — damage formula, defense calculations, shield breaking, elemental reactions, and hidden systems explained.">
+    <meta name="description" content="Deep dive into Love and Deepspace combat mechanics 閳?damage formula, defense calculations, shield breaking, elemental reactions, and hidden systems explained.">
     <link rel="icon" type="image/x-icon" href="../favicon.webp">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="basics-combat-mechanics.css">
@@ -20,20 +20,20 @@
         </div>
     </nav>
     
-    <div class="mech-container article-theme-basic">
-        <div class="mech-hero">
-            <div class="mech-badge">BASIC PROTOCOLS — THEORY</div>
+    <div class="guide-container article-theme-basic">
+        <div class="guide-hero">
+            <div class="article-badge">BASIC PROTOCOLS 閳?THEORY</div>
             <h1>Combat Mechanics</h1>
             <p>Damage formulas, defense penetration, shield breaking, and every hidden system that determines how much damage you actually deal.</p>
         </div>
     
-        <div class="mech-meta">
+        <div class="guide-meta">
             <span class="meta-id">ENTRY_#020</span>
             <span class="meta-date">2026.06.29</span>
             <span class="meta-tag">MECHANICS</span>
         </div>
     
-        <div class="mech-highlight">
+        <div class="guide-highlight">
             <p><strong>Why This Matters:</strong> "Why did that hit deal 50k when my other hit dealt only 12k?" The answer is in the damage formula. Understanding how damage is calculated lets you optimize your build mathematically instead of guessing. This guide covers the confirmed formulas and community-tested mechanics.</p>
         </div>
     
@@ -42,16 +42,16 @@
         <p>The simplified damage formula (community-verified):</p>
     
         <div class="mech-formula-box">
-            <p><strong>Final Damage = Base ATK × Skill Multiplier × (1 + CRIT DMG if CRIT) × Element Modifier × (1 + All Damage Bonuses) × Defense Factor × Level Factor</strong></p>
+            <p><strong>Final Damage = Base ATK 鑴?Skill Multiplier 鑴?(1 + CRIT DMG if CRIT) 鑴?Element Modifier 鑴?(1 + All Damage Bonuses) 鑴?Defense Factor 鑴?Level Factor</strong></p>
         </div>
     
         <div class="mech-breakdown">
-            <p><strong>Base ATK:</strong> Operative base ATK + memory ATK + protocore ATK (main stat + substat). This is the foundation — every other multiplier multiplies this number.</p>
+            <p><strong>Base ATK:</strong> Operative base ATK + memory ATK + protocore ATK (main stat + substat). This is the foundation 閳?every other multiplier multiplies this number.</p>
             <p><strong>Skill Multiplier:</strong> Each skill has a fixed % value (e.g., Stellar Burst = 280% ATK). This is the largest single multiplier per hit.</p>
             <p><strong>CRIT DMG:</strong> Only applies when you CRIT. Base CRIT DMG = 150%. Protocores and memories can increase this to 200%+.</p>
             <p><strong>Element Modifier:</strong> +30% if your element matches boss weakness, -20% if resisted, 0% if neutral. This is a separate multiplicative layer.</p>
-            <p><strong>Defense Factor:</strong> Enemy DEF reduces incoming damage. Formula: Damage Reduction = DEF / (DEF + ATK × 5). Higher enemy level = more DEF.</p>
-            <p><strong>Level Factor:</strong> If your level is lower than the enemy's, you deal reduced damage (~2% per level difference). This is why Abyss Floor 12 is harder — the level gap punishes underleveled operatives.</p>
+            <p><strong>Defense Factor:</strong> Enemy DEF reduces incoming damage. Formula: Damage Reduction = DEF / (DEF + ATK 鑴?5). Higher enemy level = more DEF.</p>
+            <p><strong>Level Factor:</strong> If your level is lower than the enemy's, you deal reduced damage (~2% per level difference). This is why Abyss Floor 12 is harder 閳?the level gap punishes underleveled operatives.</p>
         </div>
     
         <h2>CRIT Mechanics</h2>
@@ -65,7 +65,7 @@
         <h2>Defense & Penetration</h2>
     
         <div class="mech-def-box">
-            <p><strong>Defense Formula:</strong> Enemy DEF reduces incoming damage by up to 50% at extreme levels. The formula is: Damage Reduction = DEF / (DEF + ATK × 5). For example, an enemy with 1,000 DEF against your 2,000 ATK: 1,000 / (1,000 + 10,000) = 9.1% reduction. Against 500 ATK: 1,000 / (1,000 + 2,500) = 28.6% reduction.</p>
+            <p><strong>Defense Formula:</strong> Enemy DEF reduces incoming damage by up to 50% at extreme levels. The formula is: Damage Reduction = DEF / (DEF + ATK 鑴?5). For example, an enemy with 1,000 DEF against your 2,000 ATK: 1,000 / (1,000 + 10,000) = 9.1% reduction. Against 500 ATK: 1,000 / (1,000 + 2,500) = 28.6% reduction.</p>
             <p><strong>Defense Shred:</strong> Skills that reduce enemy DEF (Crystal Resonance, some memory effects) are extremely valuable because they increase the entire team's damage multiplicatively. A 30% DEF shred against a high-DEF boss can increase damage by 15-20%.</p>
         </div>
     
@@ -73,51 +73,51 @@
     
         <div class="mech-shield-box">
             <p>Some bosses (Phantom Zayne, Magma Golem) generate shields. Here's how shield breaking works:</p>
-            <p><strong>Shield HP:</strong> Shields have their own HP bar (e.g., 300% of the boss's ATK). Damage to shields is calculated using the same formula but with a 0.5× multiplier on damage that matches the shield's element resistance.</p>
-            <p><strong>Element Advantage on Shields:</strong> Matching the element that the shield is weak to deals 2× damage to the shield. For example, Phantom Zayne's Frost shield takes 2× damage from Flame attacks.</p>
-            <p><strong>DoT vs Shields:</strong> Damage-over-time effects (Rafayel's burn) deal full damage to shields regardless of the 0.5× penalty on mismatched elements. DoT is the most efficient shield-breaking mechanism in the game.</p>
+            <p><strong>Shield HP:</strong> Shields have their own HP bar (e.g., 300% of the boss's ATK). Damage to shields is calculated using the same formula but with a 0.5鑴?multiplier on damage that matches the shield's element resistance.</p>
+            <p><strong>Element Advantage on Shields:</strong> Matching the element that the shield is weak to deals 2鑴?damage to the shield. For example, Phantom Zayne's Frost shield takes 2鑴?damage from Flame attacks.</p>
+            <p><strong>DoT vs Shields:</strong> Damage-over-time effects (Rafayel's burn) deal full damage to shields regardless of the 0.5鑴?penalty on mismatched elements. DoT is the most efficient shield-breaking mechanism in the game.</p>
         </div>
     
         <h2>Elemental Reaction Mechanics</h2>
     
         <div class="mech-reaction-box">
-            <p><strong>Twilight Resonance (Light + Dark):</strong> 3 alternating hits → 200% ATK True Damage (ignores DEF). True Damage is not reduced by defense or resistances. This is the highest value resonance in the game for high-DEF bosses.</p>
-            <p><strong>Permafrost Resonance (Frost + Water):</strong> 3 hits → Freeze 3s + +25% damage taken. The +25% damage taken is a separate multiplier layer — it multiplies ALL damage the enemy takes from ALL sources, including your partner's attacks.</p>
-            <p><strong>Voltaic Resonance (Flame + Lightning):</strong> 3 hits → Conduction (15% splash). Conduction damage is calculated from the triggering hit's damage, meaning a CRIT hit causes a bigger splash. Synergizes with AoE situations.</p>
-            <p><strong>Crystal Resonance (Light + Frost):</strong> 3 hits → DEF -30% for 4s. DEF shred is multiplicative with other bonuses. A 30% DEF shred against a DEF-heavy boss effectively increases the entire team's damage by 12-15%.</p>
-            <p><strong>Infernal Resonance (Dark + Flame):</strong> 3 hits → 300% DoT over 6s + 10% healing. The DoT is calculated from the triggering operative's ATK and can CRIT independently. Healing applies to both operatives.</p>
+            <p><strong>Twilight Resonance (Light + Dark):</strong> 3 alternating hits 閳?200% ATK True Damage (ignores DEF). True Damage is not reduced by defense or resistances. This is the highest value resonance in the game for high-DEF bosses.</p>
+            <p><strong>Permafrost Resonance (Frost + Water):</strong> 3 hits 閳?Freeze 3s + +25% damage taken. The +25% damage taken is a separate multiplier layer 閳?it multiplies ALL damage the enemy takes from ALL sources, including your partner's attacks.</p>
+            <p><strong>Voltaic Resonance (Flame + Lightning):</strong> 3 hits 閳?Conduction (15% splash). Conduction damage is calculated from the triggering hit's damage, meaning a CRIT hit causes a bigger splash. Synergizes with AoE situations.</p>
+            <p><strong>Crystal Resonance (Light + Frost):</strong> 3 hits 閳?DEF -30% for 4s. DEF shred is multiplicative with other bonuses. A 30% DEF shred against a DEF-heavy boss effectively increases the entire team's damage by 12-15%.</p>
+            <p><strong>Infernal Resonance (Dark + Flame):</strong> 3 hits 閳?300% DoT over 6s + 10% healing. The DoT is calculated from the triggering operative's ATK and can CRIT independently. Healing applies to both operatives.</p>
         </div>
     
         <h2>AI & Enemy Behavior</h2>
     
         <div class="mech-ai-box">
             <p><strong>Aggro Priority:</strong> Bosses target the operative that dealt the most damage in the last 5 seconds. If you need to control aggro, have your support stop attacking briefly. The boss will switch to the other operative.</p>
-            <p><strong>Stagger Threshold:</strong> Most bosses have a stagger threshold — after taking X% of their max HP in damage within 3 seconds, they stagger (interrupt their current action). The threshold varies by boss but is typically 8-12% of max HP.</p>
-            <p><strong>Enrage Behavior:</strong> Enraged bosses ignore aggro priority and attack randomly. They also gain attack speed and damage. Kiting (running in circles) is less effective — you need to survive through sustained damage reduction, not avoidance.</p>
+            <p><strong>Stagger Threshold:</strong> Most bosses have a stagger threshold 閳?after taking X% of their max HP in damage within 3 seconds, they stagger (interrupt their current action). The threshold varies by boss but is typically 8-12% of max HP.</p>
+            <p><strong>Enrage Behavior:</strong> Enraged bosses ignore aggro priority and attack randomly. They also gain attack speed and damage. Kiting (running in circles) is less effective 閳?you need to survive through sustained damage reduction, not avoidance.</p>
         </div>
     
         <h2>Common Misconceptions</h2>
     
-        <div class="mech-warning-box">
-            <p><strong>Misconception #1: "ATK% is always better than flat ATK."</strong> Not at low levels. Flat ATK substats on protocores can outperform ATK% when your base ATK is below 2,000. The crossover point is around 2,000 base ATK — below that, flat ATK wins.</p>
+        <div class="guide-warning">
+            <p><strong>Misconception #1: "ATK% is always better than flat ATK."</strong> Not at low levels. Flat ATK substats on protocores can outperform ATK% when your base ATK is below 2,000. The crossover point is around 2,000 base ATK 閳?below that, flat ATK wins.</p>
         </div>
     
-        <div class="mech-warning-box">
+        <div class="guide-warning">
             <p><strong>Misconception #2: "CRIT Rate is useless without CRIT DMG."</strong> False. Base CRIT DMG is 150%. Even without any CRIT DMG investment, a CRIT deals 50% more damage than a non-CRIT. CRIT Rate is always valuable.</p>
         </div>
     
-        <div class="mech-warning-box">
+        <div class="guide-warning">
             <p><strong>Misconception #3: "Element advantage is just +30%."</strong> +30% is the BASE advantage. When combined with Elemental Resonance (+25% damage taken debuff) and defense shred (-30% DEF), the effective damage increase from matching element can exceed 80%. Element is the single most important damage modifier.</p>
         </div>
     
-        <div class="mech-final-box">
-            <p><strong>The Bottom Line:</strong> Combat in Love and Deepspace is a multiplication game. Base ATK × Skill % × CRIT × Element × Resonance × DEF × Level. Each layer multiplies the previous one. The optimal build doesn't maximize one layer — it balances them. 60% CRIT Rate, 120%+ CRIT DMG, matching element, active resonance, and DEF shred all working together will always outperform a lopsided build that focuses on one stat. Balance > Peak.</p>
+        <div class="guide-final-box">
+            <p><strong>The Bottom Line:</strong> Combat in Love and Deepspace is a multiplication game. Base ATK 鑴?Skill % 鑴?CRIT 鑴?Element 鑴?Resonance 鑴?DEF 鑴?Level. Each layer multiplies the previous one. The optimal build doesn't maximize one layer 閳?it balances them. 60% CRIT Rate, 120%+ CRIT DMG, matching element, active resonance, and DEF shred all working together will always outperform a lopsided build that focuses on one stat. Balance > Peak.</p>
         </div>
     
     </div>
   
     <button id="backToTopBtn" class="back-to-top">
-        <span class="arrow-up">↑</span>
+        <span class="arrow-up">閳?/span>
     </button>
   
     <footer class="main-footer">
@@ -127,7 +127,7 @@
             <a href="../legal/privacy.html">Privacy Policy</a>
             <a href="../legal/disclaimer.html">Disclaimer</a>
         </div>
-        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="copyright">婕?2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
         <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
     </footer>
   
