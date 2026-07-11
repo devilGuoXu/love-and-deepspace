@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>套装叠加原理：Memory与Protocore的交互 | Deepspace Hub</title>
+    <meta name="description" content="How Memory set bonuses and Protocore set bonuses stack (additive vs multiplicative), the ATK% double-stacking trap, CRIT caps, and optimal combos per operative.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="protocore-all.css">
+    <link rel="stylesheet" href="protocore-set-stacking.css?v=1">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a>
+        </div>
+    </nav>
+
+    <div class="pcore-container article-theme-pcore">
+
+        <div class="pcore-hero">
+            <span class="pcore-badge">PROTOCORE</span>
+            <h1>套装叠加原理：Memory与Protocore的交互</h1>
+            <p>How Memory set bonuses and Protocore set bonuses interact — which stats stack additively, which multiply between systems, and how to avoid the ATK% double-stacking trap.</p>
+        </div>
+
+        <div class="pcore-meta">
+            <span class="meta-date">2026.07.11</span>
+            <span class="meta-tag">ENTRY_#138</span>
+            <span class="meta-tag">SET_STACKING</span>
+        </div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <div class="pcore-highlight">
+            <p><strong>One Sentence:</strong> Memory set bonuses (e.g., Light Seeker ATK+18%) and Protocore set bonuses (e.g., Solar ATK+12%) stack additively <em>within</em> each stat type, but multiply <em>between</em> different stat types — understanding this distinction is the difference between a good build and a wasted one.</p>
+        </div>
+
+        <h2>两套独立系统</h2>
+        <p>Love and Deepspace has two completely independent set bonus systems: <strong>Memory Sets</strong> (equipped on memories — Light Seeker, Dark Champion, Frostguard, Inferno Blaze, etc.) and <strong>Protocore Sets</strong> (equipped on protocores — Solar, Permafrost, Shadow, Tidal). Each system provides its own stat bonuses when you complete 2-piece or 4-piece requirements. Many players optimise each system in isolation, but the true power comes from understanding how they interact across systems.</p>
+        <p>Memory set bonuses are fixed per memory and cannot be changed. Protocore set bonuses depend on which protocores you equip. The key insight: a Memory giving ATK+18% and a Protocore set giving ATK+12% do <strong>not</strong> give 1.18 &times; 1.12 = 32.2% more damage. They give 1.30 &times; (other multipliers). The additive stacking within the same stat type means the effective gain is lower than a naive multiplication would suggest.</p>
+        <p>The two systems also differ in how their 4-piece bonuses work. Memory 4-piece bonuses tend to be unique mechanics (e.g., Light Seeker triggers a follow-up attack), while Protocore 4-piece bonuses are raw stat increases (e.g., Solar 4-piece: ATK+25% and skill damage +10%). This difference matters when deciding whether to complete a 4-piece or mix sets.</p>
+
+        <div class="pcore-tip-box">
+            <p><strong>Analogy:</strong> Think of Memory sets as <em>talents</em> (unique effects) and Protocore sets as <em>stat sticks</em> (raw numbers). You need both, but you evaluate them differently. A powerful Memory set effect can justify weaker Protocore synergy — but only if you understand how the stats overlap.</p>
+        </div>
+
+        <h2>加法叠加 vs 乘法叠加</h2>
+        <p>The single most important concept in set stacking: <strong>same stat type stacks additively; different stat types stack multiplicatively</strong>. Here is the breakdown for every common stat:</p>
+
+        <div class="pcore-set-stacking-table">
+            <div class="pss-row pss-header">
+                <span class="pss-stat">Stat Type</span>
+                <span class="pss-behavior">Stacking Rule</span>
+                <span class="pss-example">Example</span>
+            </div>
+            <div class="pss-row">
+                <span class="pss-stat">ATK%</span>
+                <span class="pss-behavior">Additive within &amp; across systems</span>
+                <span class="pss-example">Memory ATK+18% + Protocore ATK+12% = +30%</span>
+            </div>
+            <div class="pss-row pss-alt">
+                <span class="pss-stat">CRIT Rate %</span>
+                <span class="pss-behavior">Additive across all sources</span>
+                <span class="pss-example">Memory 8% + Protocore 12% + base 5% = 25%</span>
+            </div>
+            <div class="pss-row">
+                <span class="pss-stat">CRIT DMG %</span>
+                <span class="pss-behavior">Additive across all sources</span>
+                <span class="pss-example">Memory 15% + Protocore 25% + base 50% = 90%</span>
+            </div>
+            <div class="pss-row pss-alt">
+                <span class="pss-stat">Elemental DMG%</span>
+                <span class="pss-behavior">Additive within same element</span>
+                <span class="pss-example">Memory Frost+12% + Protocore Permafrost+15% = +27%</span>
+            </div>
+            <div class="pss-row">
+                <span class="pss-stat">Skill DMG%</span>
+                <span class="pss-behavior">Additive within type</span>
+                <span class="pss-example">Solar 4-piece +10% Skill DMG + any other Skill DMG% sources</span>
+            </div>
+            <div class="pss-row pss-alt">
+                <span class="pss-stat">ATK% &times; CRIT DMG</span>
+                <span class="pss-behavior">Multiplicative between types</span>
+                <span class="pss-example">1.30 ATK multiplier &times; 1.90 CRIT multiplier = 2.47x</span>
+            </div>
+        </div>
+
+        <p>The critical row is the last one: ATK% and CRIT DMG multiply each other. This is why a mix of ATK% and CRIT stats almost always outperforms stacking only ATK% — even if the individual numbers look smaller, the multiplicative interaction yields higher total damage.</p>
+
+        <div class="pcore-highlight">
+            <p><strong>数学公式 (Simplified):</strong> Total Damage &asymp; Base_ATK &times; (1 + ATK%) &times; (1 + CRIT_Rate &times; CRIT_DMG) &times; (1 + Elemental_DMG%) &times; Skill_Multiplier. Every stat type is its own multiplicative bucket. Set bonuses that fill different buckets are worth more than set bonuses that pile into the same bucket.</p>
+        </div>
+
+        <h2>ATK%双重叠加陷阱</h2>
+        <p>This is the most common mistake in the game. A player equips <strong>Solar Flare</strong> memory set (ATK+18%) + <strong>Solar</strong> protocore set (ATK+12%) and thinks they have 1.18 &times; 1.12 = 1.3216x damage. In reality, they have 1.30x damage — because both bonuses add into the same ATK% bucket.</p>
+
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Assumed (multiplicative):</span>
+            <span class="pss-stat-value faded">1.18 &times; 1.12 = 1.3216x (32.16% gain)</span>
+        </div>
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Actual (additive):</span>
+            <span class="pss-stat-value actual">1 + (0.18 + 0.12) = 1.30x (30.00% gain)</span>
+        </div>
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Lost value:</span>
+            <span class="pss-stat-value lost">2.16% effective damage — small per pair, but multiplies across 3+ ATK% sources</span>
+        </div>
+
+        <p>Now consider a realistic endgame scenario. You have:</p>
+        <ul>
+            <li>Memory set bonus: ATK+18% (Solar Flare 4-piece)</li>
+            <li>Protocore set bonus: ATK+12% (Solar 2-piece)</li>
+            <li>Protocore substats: ATK+8% (spread across 3 substat rolls)</li>
+            <li>Memory substats: ATK+6% (spread across resonance/substat boards)</li>
+            <li>Base ATK from levels/ascension: effectively 100%</li>
+        </ul>
+
+        <p>Total ATK% = 18 + 12 + 8 + 6 = 44% bonus. If these were multiplicative: 1.18 &times; 1.12 &times; 1.08 &times; 1.06 = 1.515x (51.5% gain). Actual: 1.44x (44% gain). You lost <strong>7.5% relative damage</strong> — and that is just from ATK% alone. The same trap repeats with CRIT stats if you only stack one bucket.</p>
+
+        <div class="pcore-tip-box">
+            <p><strong>The Fix:</strong> When your Memory set already gives ATK%, consider a Protocore set that gives Elemental DMG% or CRIT DMG instead of more ATK%. The set bonuses will fill different multiplicative buckets and give you more total damage. Rule of thumb: if two set bonuses target the same stat, one of them is being partially wasted.</p>
+        </div>
+
+        <h2>CRIT率叠加与上限</h2>
+        <p>CRIT Rate has a hard cap of 100%. Any CRIT Rate beyond 100% provides zero benefit. This makes CRIT Rate the most important stat to <em>not</em> over-stack — yet many players waste substats and set bonuses by exceeding the cap.</p>
+
+        <p>CRIT Rate sources across both systems:</p>
+        <ul>
+            <li><strong>Base:</strong> 5% (all operatives)</li>
+            <li><strong>Memory set bonus:</strong> Up to 8-12% (varies by set)</li>
+            <li><strong>Protocore set bonus:</strong> None directly — but Solar 4-piece gives skill damage, indirectly benefiting from CRIT</li>
+            <li><strong>Protocore main stat (Slot 3):</strong> Up to 33% at +15</li>
+            <li><strong>Protocore substats:</strong> Up to ~4.2% per roll, up to 5 rolls = ~21%</li>
+            <li><strong>Memory bond bonuses:</strong> Typically 2-5%</li>
+            <li><strong>Resonance chains:</strong> Varies by operative</li>
+        </ul>
+
+        <p>Assume a typical endgame build: 5% base + 33% Slot 3 main stat + 8% memory set + 12% from substats (3 rolls at ~4% each) + 3% from bonds = 61% CRIT Rate. This is already comfortable. Adding more CRIT from a second set bonus or additional protocore substats risks hitting the 100% cap — especially when Resonance or Abyss buffs grant extra CRIT.</p>
+
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Optimal CRIT Rate range:</span>
+            <span class="pss-stat-value optimal">60-80% in base stats (allows room for buffs)</span>
+        </div>
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Warning zone:</span>
+            <span class="pss-stat-value warning">85%+ without buffs — you will overcap with any team buff</span>
+        </div>
+        <div class="pss-stat-row">
+            <span class="pss-stat-label">Wasted stat penalty:</span>
+            <span class="pss-stat-value lost">Every 1% over cap = a dead substat roll that could have been ATK% or CDMG</span>
+        </div>
+
+        <div class="pcore-highlight">
+            <p><strong>CRIT DMG has no hard cap.</strong> Unlike CRIT Rate, CRIT DMG can scale indefinitely. Once your CRIT Rate is in the 60-80% range, every subsequent upgrade should go into CRIT DMG or ATK% — never more CRIT Rate unless your specific build has unusually low base CRIT (e.g., no Slot 3 CRIT main stat).</p>
+        </div>
+
+        <h2>各角色最佳组合表</h2>
+        <p>The table below shows the best combined Memory Set + Protocore Set combinations for each operative. Priority is based on total damage output, rotation smoothness, and content versatility.</p>
+
+        <div class="pss-combo-table">
+            <div class="pss-combo-header">
+                <span class="pss-combo-op">Operative</span>
+                <span class="pss-combo-mem">Memory Set</span>
+                <span class="pss-combo-pro">Protocore Set</span>
+                <span class="pss-combo-syn">Synergy</span>
+                <span class="pss-combo-pri">Priority</span>
+            </div>
+
+            <div class="pss-combo-row">
+                <span class="pss-combo-op" style="color:#f1c40f;">Xavier</span>
+                <span class="pss-combo-mem">Light Seeker (4)</span>
+                <span class="pss-combo-pro">Solar (4)</span>
+                <span class="pss-combo-syn">Pure ATK stacking with follow-up burst. Light Seeker bonus ATK% + Solar ATK% additive, but Light Seeker's unique follow-up attack is unaffected by additive stacking — it is a separate damage instance.</span>
+                <span class="pss-combo-pri pss-pri-s">S</span>
+            </div>
+            <div class="pss-combo-row pss-combo-alt">
+                <span class="pss-combo-op" style="color:#f1c40f;">Xavier</span>
+                <span class="pss-combo-mem">Lightning Assault (4)</span>
+                <span class="pss-combo-pro">Shadow (4)</span>
+                <span class="pss-combo-syn">CRIT hybrid build. Lightning Assault gives CRIT DMG; Shadow adds execute damage below 50% HP. Multiplicative with Xavier's high base ATK.</span>
+                <span class="pss-combo-pri pss-pri-a">A</span>
+            </div>
+
+            <div class="pss-combo-row">
+                <span class="pss-combo-op" style="color:#8e44ad;">Sylus</span>
+                <span class="pss-combo-mem">Dark Champion (4)</span>
+                <span class="pss-combo-pro">Shadow (4)</span>
+                <span class="pss-combo-syn">Execute specialist. Dark Champion boosts skill damage on low-HP targets; Shadow adds +25% DMG below 50% HP. Both bonuses target the same HP threshold — multiplicative with Sylus's execute.</span>
+                <span class="pss-combo-pri pss-pri-s">S</span>
+            </div>
+            <div class="pss-combo-row pss-combo-alt">
+                <span class="pss-combo-op" style="color:#8e44ad;">Sylus</span>
+                <span class="pss-combo-mem">Void Walker (4)</span>
+                <span class="pss-combo-pro">Solar (4)</span>
+                <span class="pss-combo-syn">ER rotation build. Void Walker gives Energy Regen for faster Oath; Solar provides ATK% to compensate for the ER focus.</span>
+                <span class="pss-combo-pri pss-pri-a">A</span>
+            </div>
+
+            <div class="pss-combo-row">
+                <span class="pss-combo-op" style="color:#3498db;">Zayne</span>
+                <span class="pss-combo-mem">Frostguard (4)</span>
+                <span class="pss-combo-pro">Permafrost (4)</span>
+                <span class="pss-combo-syn">HP shield tank. Frostguard gives HP% and shield; Permafrost extends freeze duration and increases damage on frozen targets. Elemental DMG% from Permafrost is multiplicative with Zayne's Frost damage.</span>
+                <span class="pss-combo-pri pss-pri-s">S</span>
+            </div>
+            <div class="pss-combo-row pss-combo-alt">
+                <span class="pss-combo-op" style="color:#3498db;">Zayne</span>
+                <span class="pss-combo-mem">Icebreaker (4)</span>
+                <span class="pss-combo-pro">Permafrost (4)</span>
+                <span class="pss-combo-syn">Frost DPS. Icebreaker boosts resonance damage; Permafrost adds Frost DMG% and frozen-target bonus. Both target Frost element — Permafrost's +15% Frost DMG is additive with Icebreaker's Frost DMG% if present, but multiplicative with Icebreaker's resonance damage effect.</span>
+                <span class="pss-combo-pri pss-pri-s">S</span>
+            </div>
+
+            <div class="pss-combo-row">
+                <span class="pss-combo-op" style="color:#e74c3c;">Rafayel</span>
+                <span class="pss-combo-mem">Inferno Blaze (4)</span>
+                <span class="pss-combo-pro">Solar (4)</span>
+                <span class="pss-combo-syn">Burn hybrid. Inferno Blaze applies burn stacks; Solar gives raw ATK% and Skill DMG. Burn tick damage scales off ATK, so ATK% from both sets stacks additively — acceptable because the burn mechanic is a separate damage source that benefits from any ATK increase.</span>
+                <span class="pss-combo-pri pss-pri-a">A</span>
+            </div>
+            <div class="pss-combo-row pss-combo-alt">
+                <span class="pss-combo-op" style="color:#e74c3c;">Rafayel</span>
+                <span class="pss-combo-mem">Solar Flare (4)</span>
+                <span class="pss-combo-pro">2 Permafrost + 2 Solar</span>
+                <span class="pss-combo-syn">Stat stick hybrid. Uses two 2-piece protocore bonuses instead of a 4-piece. Permafrost gives Frost DMG% (multiplicative with ATK), Solar gives ATK%. Maximises bucket diversity when no single 4-piece effect is critical.</span>
+                <span class="pss-combo-pri pss-pri-b">B</span>
+            </div>
+        </div>
+
+        <div class="pcore-tip-box">
+            <p><strong>Reading the Priority column:</strong> S = optimal for the operative's best playstyle and content. A = strong alternative with different strengths. B = usable but suboptimal — only use if you lack the S-rank set pieces.</p>
+        </div>
+
+        <h2>决策框架</h2>
+        <p>When building a set combination, follow this decision flow. It will save you from the most common optimisation mistakes.</p>
+
+        <div class="pss-flow">
+            <div class="pss-flow-step">
+                <span class="pss-flow-num">1</span>
+                <span class="pss-flow-text">Identify your operative's primary damage stat (ATK%, HP%, Elemental DMG%)</span>
+            </div>
+            <div class="pss-flow-arrow">&rarr;</div>
+            <div class="pss-flow-step">
+                <span class="pss-flow-num">2</span>
+                <span class="pss-flow-text">Check what your Memory set already provides (ATK%, CRIT, ER, unique effect)</span>
+            </div>
+            <div class="pss-flow-arrow">&rarr;</div>
+            <div class="pss-flow-step">
+                <span class="pss-flow-num">3</span>
+                <span class="pss-flow-text">Choose a Protocore set that fills a <strong>different</strong> stat bucket</span>
+            </div>
+            <div class="pss-flow-arrow">&rarr;</div>
+            <div class="pss-flow-step">
+                <span class="pss-flow-num">4</span>
+                <span class="pss-flow-text">Evaluate: does the 4-piece bonus give &gt;15% unconditional damage boost?</span>
+            </div>
+        </div>
+
+        <div class="pcore-highlight">
+            <p><strong>Rule of Thumb:</strong> If a 4-piece set bonus gives more than 15% unconditional damage boost, complete the 4-piece. Otherwise, mix 2+2 sets for better stat diversity. This applies to both Memory and Protocore systems independently. For example, Solar 4-piece (ATK+25% + Skill DMG+10%) easily clears this threshold. Permafrost 2-piece (Frost DMG+15%) — the 2-piece alone is already at the threshold, so the 4-piece bonus (freeze duration + frozen damage) is evaluated on its utility, not raw damage.</p>
+        </div>
+
+        <p>Examples of applying the framework:</p>
+        <ul>
+            <li><strong>Xavier + Light Seeker:</strong> Light Seeker 4-piece gives ATK+18% and a follow-up attack. The follow-up is a unique mechanic that cannot be replaced by stats. Complete the 4-piece. For protocores, Solar 4-piece gives ATK+25% + Skill DMG+10% — solid threshold, complete it. But if you lack Solar pieces, 2 Solar + 2 Shadow also works because CRIT DMG multiplies with ATK.</li>
+            <li><strong>Sylus + Dark Champion:</strong> Dark Champion 4-piece gives execute damage. This is Sylus's core mechanic. Always complete. For protocores, Shadow 4-piece gives conditional +25% DMG below 50% HP — also exceeds 15% threshold. But the condition (below 50% HP) means the effective uptime is ~40-50% of a fight. If you value consistency, 2 Solar + 2 Shadow may be better.</li>
+            <li><strong>Zayne + Icebreaker:</strong> Icebreaker 4-piece boosts resonance damage — core to Zayne's rotation. Complete. Permafrost 4-piece extends freeze duration — utility, not pure damage. If the content does not need extended freeze (e.g., boss immune to CC), 2 Permafrost + 2 Solar may outperform.</li>
+        </ul>
+
+        <div class="pcore-tip-box">
+            <p><strong>Quick Check:</strong> Open your current build. List each set bonus and its stat. Mark any two bonuses that target the same stat (e.g., both are ATK%). If you find a pair, ask: can I replace one with a set that gives a different stat? If yes, you likely have a free damage upgrade waiting in your inventory.</p>
+        </div>
+
+        <div class="pcore-final-box">
+            <p><strong>Summary — 套装叠加终极指南:</strong></p>
+            <table class="pss-summary-table">
+                <tr>
+                    <th>Operative</th>
+                    <th>Memory Set</th>
+                    <th>Protocore Set</th>
+                    <th>Priority</th>
+                    <th>Style</th>
+                </tr>
+                <tr>
+                    <td style="color:#f1c40f;">Xavier</td>
+                    <td>Light Seeker (4)</td>
+                    <td>Solar (4)</td>
+                    <td><span class="pss-pri-s">S</span></td>
+                    <td>Pure ATK burst</td>
+                </tr>
+                <tr class="pss-summary-alt">
+                    <td style="color:#f1c40f;">Xavier</td>
+                    <td>Lightning Assault (4)</td>
+                    <td>Shadow (4)</td>
+                    <td><span class="pss-pri-a">A</span></td>
+                    <td>CRIT execute hybrid</td>
+                </tr>
+                <tr>
+                    <td style="color:#8e44ad;">Sylus</td>
+                    <td>Dark Champion (4)</td>
+                    <td>Shadow (4)</td>
+                    <td><span class="pss-pri-s">S</span></td>
+                    <td>Execute specialist</td>
+                </tr>
+                <tr class="pss-summary-alt">
+                    <td style="color:#8e44ad;">Sylus</td>
+                    <td>Void Walker (4)</td>
+                    <td>Solar (4)</td>
+                    <td><span class="pss-pri-a">A</span></td>
+                    <td>ER rotation</td>
+                </tr>
+                <tr>
+                    <td style="color:#3498db;">Zayne</td>
+                    <td>Frostguard (4)</td>
+                    <td>Permafrost (4)</td>
+                    <td><span class="pss-pri-s">S</span></td>
+                    <td>HP shield / CC</td>
+                </tr>
+                <tr class="pss-summary-alt">
+                    <td style="color:#3498db;">Zayne</td>
+                    <td>Icebreaker (4)</td>
+                    <td>Permafrost (4)</td>
+                    <td><span class="pss-pri-s">S</span></td>
+                    <td>Frost DPS</td>
+                </tr>
+                <tr>
+                    <td style="color:#e74c3c;">Rafayel</td>
+                    <td>Inferno Blaze (4)</td>
+                    <td>Solar (4)</td>
+                    <td><span class="pss-pri-a">A</span></td>
+                    <td>Burn hybrid</td>
+                </tr>
+                <tr class="pss-summary-alt">
+                    <td style="color:#e74c3c;">Rafayel</td>
+                    <td>Solar Flare (4)</td>
+                    <td>2Permafrost+2Solar</td>
+                    <td><span class="pss-pri-b">B</span></td>
+                    <td>Stat stick</td>
+                </tr>
+            </table>
+            <p style="margin-top:16px;"><strong>The Bottom Line:</strong> Memory and Protocore set bonuses are two independent systems that share the same additive stacking rules when they target the same stat. Always check what your Memory set gives before choosing your Protocore set. Fill different multiplicative buckets for maximum damage. Avoid stacking more than two ATK% bonuses. Keep CRIT Rate between 60-80% before buffs. And remember the 15% rule: if the 4-piece bonus unconditionally boosts damage by more than 15%, take it — otherwise mix for variety. Master these principles and you will out-damage players who have better raw gear but worse set synergy.</p>
+        </div>
+
+    </div>
+
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

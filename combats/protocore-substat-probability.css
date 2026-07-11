@@ -1,0 +1,288 @@
+/* =========================================
+   PROTOCORE SUBSTAT PROBABILITY
+   Custom classes use pcore-prob-* prefix
+   ========================================= */
+
+/* --- Stat Pool Display --- */
+.pcore-prob-stat-pool {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.pcore-prob-stat-group {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.pcore-prob-stat-group-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #6a7080;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pcore-prob-stat-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pcore-prob-stat-tag {
+    display: inline-block;
+    background: rgba(155, 89, 182, 0.12);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.78rem;
+    color: #e0e6f0;
+}
+
+/* --- Probability Table --- */
+.probability-table {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.pcore-prob-trow {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 12px;
+    padding: 12px 18px;
+    align-items: center;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.pcore-prob-trow:last-child {
+    border-bottom: none;
+}
+
+.pcore-prob-trow:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.pcore-prob-theader {
+    background: rgba(155, 89, 182, 0.1);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #9b59b6;
+    text-transform: uppercase;
+}
+
+.pcore-prob-tcol-stat {
+    font-size: 0.85rem;
+    color: #e0e6f0;
+    font-weight: 500;
+}
+
+.pcore-prob-tcol-prob {
+    font-size: 0.85rem;
+    color: #9b59b6;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+.pcore-prob-tcol-note {
+    font-size: 0.78rem;
+    color: #6a7080;
+    text-align: right;
+}
+
+.pcore-prob-theader .pcore-prob-tcol-note {
+    color: #9b59b6;
+}
+
+/* --- Stamina Grid --- */
+.stamina-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.stamina-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 14px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.stamina-card:hover {
+    border-color: #9b59b6;
+    transform: translateY(-2px);
+}
+
+.stamina-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #8a94a8;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.stamina-time {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #9b59b6;
+    margin-bottom: 8px;
+}
+
+.stamina-desc {
+    font-size: 0.72rem;
+    color: #6a7080;
+    line-height: 1.4;
+}
+
+/* --- Threshold Box --- */
+.threshold-box {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 4px 0;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.threshold-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.threshold-item:last-child {
+    border-bottom: none;
+}
+
+.threshold-role {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #e0e6f0;
+    margin-bottom: 10px;
+}
+
+.threshold-levels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.threshold-level {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.t-best {
+    background: rgba(155, 89, 182, 0.2);
+    border: 1px solid #9b59b6;
+    color: #9b59b6;
+}
+
+.t-good {
+    background: rgba(46, 204, 113, 0.15);
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.t-minimum {
+    background: rgba(52, 152, 219, 0.12);
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+/* --- Milestone Cards --- */
+.milestone-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    transition: border-color 0.2s;
+}
+
+.milestone-card:hover {
+    border-color: #9b59b6;
+}
+
+.milestone-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #9b59b6;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.milestone-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.mstat {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    padding-left: 14px;
+    position: relative;
+}
+
+.mstat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #9b59b6;
+}
+
+.milestone-desc {
+    font-size: 0.8rem;
+    color: #6a7080;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* --- Inline Stat Highlight --- */
+.highlight-stat {
+    color: #9b59b6;
+    font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .pcore-prob-stat-pool {
+        grid-template-columns: 1fr;
+    }
+
+    .pcore-prob-trow {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .pcore-prob-tcol-note {
+        text-align: left;
+    }
+
+    .stamina-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .threshold-levels {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

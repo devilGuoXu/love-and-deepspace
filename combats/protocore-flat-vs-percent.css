@@ -1,0 +1,499 @@
+/* =========================================
+   FLAT VS PERCENT ARTICLE — Custom Styles
+   Prefix: .pcore-flat-*
+   ========================================= */
+
+/* --- Formula Block --- */
+.pcore-flat-formula {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #9b59b6;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* --- Crossover Display --- */
+.pcore-flat-crossover {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+}
+
+.pcore-flat-crossover-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: #b0bedb;
+}
+
+.pcore-flat-crossover-item.highlight {
+    border-top: 1px solid #2a2f3d;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-weight: 700;
+}
+
+.crossover-label {
+    color: #8a94a8;
+    min-width: 120px;
+    text-align: right;
+}
+
+.crossover-eq {
+    color: #6a7080;
+    font-size: 1rem;
+}
+
+.crossover-value {
+    color: #e0e6f0;
+    min-width: 180px;
+}
+
+.pcore-flat-crossover-item.highlight .crossover-value {
+    color: #9b59b6;
+}
+
+/* --- Crossover Note --- */
+.pcore-flat-crossover-note {
+    background: rgba(155, 89, 182, 0.08);
+    border: 1px solid rgba(155, 89, 182, 0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    color: #b0bedb;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.pcore-flat-crossover-note strong {
+    color: #9b59b6;
+}
+
+/* --- Tables (crossover-table, hp-crossover, def-table) --- */
+.pcore-flat-table-wrapper {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    background: #0f121b;
+}
+
+.pcore-flat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.pcore-flat-table thead th {
+    background: #05070a;
+    color: #6a7080;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: center;
+    border-bottom: 1px solid #2a2f3d;
+    font-weight: 600;
+}
+
+.pcore-flat-table thead th:first-child {
+    text-align: left;
+}
+
+.pcore-flat-table tbody td {
+    padding: 12px 16px;
+    text-align: center;
+    color: #b0bedb;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.pcore-flat-table tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #e0e6f0;
+}
+
+.pcore-flat-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pcore-flat-table tbody tr:hover {
+    background: rgba(155, 89, 182, 0.05);
+}
+
+.pcore-flat-table .op-name {
+    color: #9b59b6;
+}
+
+.pcore-flat-table .verdict-good {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.pcore-flat-table .verdict-ok {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.pcore-flat-table .verdict-weak {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* --- Zayne Note --- */
+.pcore-flat-zayne-note {
+    background: rgba(52, 152, 219, 0.08);
+    border-left: 3px solid #3498db;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.pcore-flat-zayne-note p {
+    color: #b0bedb;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.pcore-flat-zayne-note strong {
+    color: #3498db;
+}
+
+/* --- Decision Flow --- */
+.pcore-flat-decision-flow {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.pcore-flat-flow-node {
+    background: #05070a;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 14px 24px;
+    text-align: center;
+    min-width: 200px;
+    max-width: 320px;
+}
+
+.pcore-flat-flow-node .node-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #e0e6f0;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.pcore-flat-flow-node .node-desc {
+    font-size: 0.75rem;
+    color: #6a7080;
+    line-height: 1.4;
+}
+
+.pcore-flat-flow-node.start {
+    border-color: #9b59b6;
+    background: rgba(155, 89, 182, 0.1);
+}
+
+.pcore-flat-flow-node.start .node-label {
+    color: #9b59b6;
+    font-size: 1rem;
+}
+
+.pcore-flat-flow-node.question {
+    border-color: #f39c12;
+}
+
+.pcore-flat-flow-node.question .node-label {
+    color: #f39c12;
+}
+
+.pcore-flat-flow-node.result-good {
+    border-color: #2ecc71;
+    background: rgba(46, 204, 113, 0.08);
+}
+
+.pcore-flat-flow-node.result-good .node-label {
+    color: #2ecc71;
+    font-size: 1rem;
+}
+
+.pcore-flat-flow-node.result-ok {
+    border-color: #f39c12;
+    background: rgba(243, 156, 18, 0.08);
+}
+
+.pcore-flat-flow-node.result-ok .node-label {
+    color: #f39c12;
+    font-size: 1rem;
+}
+
+.pcore-flat-flow-node.result-bad {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.08);
+}
+
+.pcore-flat-flow-node.result-bad .node-label {
+    color: #e74c3c;
+    font-size: 1rem;
+}
+
+.pcore-flat-flow-arrow {
+    color: #6a7080;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.pcore-flat-flow-branches {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pcore-flat-flow-branches.sub {
+    gap: 16px;
+}
+
+.pcore-flat-flow-branches.sub2 {
+    gap: 8px;
+}
+
+.pcore-flat-flow-branches.sub3 {
+    gap: 8px;
+}
+
+.branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.branch-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #6a7080;
+    padding: 2px 12px;
+    border-radius: 10px;
+    border: 1px solid #2a2f3d;
+    background: #05070a;
+}
+
+/* --- Comparison Grid --- */
+.pcore-flat-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.pcore-flat-vs {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #9b59b6;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.pcore-flat-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.pcore-flat-card:hover {
+    border-color: #9b59b6;
+}
+
+.comparison-card-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.comparison-card-header.bad {
+    background: rgba(231, 76, 60, 0.06);
+}
+
+.comparison-card-header.good {
+    background: rgba(46, 204, 113, 0.06);
+}
+
+.card-type {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #6a7080;
+    margin-bottom: 4px;
+}
+
+.card-mainstat {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #e0e6f0;
+}
+
+.comparison-card-body {
+    padding: 16px 18px;
+}
+
+.card-substats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.substat {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #05070a;
+    border-left: 2px solid #2a2f3d;
+}
+
+.substat.dead {
+    color: #6a7080;
+    border-left-color: #e74c3c;
+}
+
+.substat.good {
+    color: #e0e6f0;
+    border-left-color: #2ecc71;
+}
+
+.card-verdict {
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card-verdict.bad {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.card-verdict.good {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.card-reason {
+    font-size: 0.78rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+/* --- Golden Rules --- */
+.pcore-flat-golden-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.rule-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: border-color 0.2s;
+}
+
+.rule-card:hover {
+    border-color: #9b59b6;
+}
+
+.rule-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(155, 89, 182, 0.2);
+    border: 1px solid #9b59b6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #9b59b6;
+}
+
+.rule-text {
+    font-size: 0.88rem;
+    color: #b0bedb;
+    line-height: 1.6;
+    padding-top: 4px;
+}
+
+.rule-text strong {
+    color: #9b59b6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .pcore-flat-comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    .pcore-flat-vs {
+        font-size: 1rem;
+        padding: 4px 0;
+    }
+    .pcore-flat-crossover-item {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+    .crossover-label {
+        text-align: center;
+        min-width: auto;
+    }
+    .crossover-value {
+        min-width: auto;
+    }
+    .pcore-flat-flow-branches {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pcore-flat-decision-flow {
+        padding: 20px 12px;
+    }
+    .pcore-flat-flow-node {
+        min-width: 160px;
+        max-width: 260px;
+    }
+    .pcore-flat-table {
+        font-size: 0.78rem;
+    }
+    .pcore-flat-table thead th,
+    .pcore-flat-table tbody td {
+        padding: 10px 8px;
+    }
+}

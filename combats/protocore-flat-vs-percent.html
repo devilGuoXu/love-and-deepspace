@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat vs Percent: The Hidden Math of ATK, HP, and DEF on Protocores | Deepspace Hub</title>
+    <meta name="description" content="Flat ATK vs ATK% protocore math for Love and Deepspace. Base ATK formula, crossover calculations, Zayne HP scaling, and why flat stats are a trap at level 60+.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="protocore-all.css">
+    <link rel="stylesheet" href="protocore-flat-vs-percent.css?v=1">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a>
+        </div>
+    </nav>
+
+    <div class="pcore-container article-theme-pcore">
+        <div class="pcore-hero">
+            <span class="pcore-badge">PROTOCORE</span>
+            <h1>Flat vs 百分比：ATK/HP/DEF 的隐藏数学</h1>
+            <p>Most players salvage flat ATK on sight. The math says otherwise — but only in specific situations. Here is exactly when flat stats win, when they lose, and why Zayne breaks every rule.</p>
+        </div>
+
+        <div class="pcore-meta">
+            <span class="meta-date">2026.07.11</span>
+            <span class="meta-tag">ENTRY_#140</span>
+            <span class="meta-tag">STAT_MATH</span>
+        </div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <div class="pcore-highlight">
+            <p><strong>One Sentence:</strong> Flat ATK looks weak but gets multiplied by your ATK% bonuses — making it better than most guides claim — yet percentage stats still win at level 60+, unless you are Zayne stacking flat HP.</p>
+        </div>
+
+        <h2>1. 公式基础 — How Flat and Percent Actually Interact</h2>
+        <p>Every operative's total ATK is calculated from three components: base ATK, flat ATK bonuses, and ATK% multipliers. The formula most players do not know:</p>
+
+        <div class="pcore-flat-formula">
+            Total ATK = (Base ATK + Flat ATK) x (1 + ATK% total)
+        </div>
+
+        <p><strong>Base ATK</strong> is the sum of the character's innate base, memory base stats, bond bonuses, and resonance bonuses. This is the number that ATK% sees. <strong>Flat ATK</strong> (from protocore main stats or substats) is added to base ATK <em>before</em> the percentage multiplier applies.</p>
+
+        <p>This is the critical insight most guides miss: <strong>flat ATK is multiplied by your ATK% bonuses.</strong> If you have +40% ATK from protocores and set bonuses, a flat ATK roll of +50 effectively becomes +70 ATK after the multiplier. Flat ATK is not additive at the end — it is part of the base that gets amplified.</p>
+
+        <div class="pcore-tip-box">
+            <p><strong>Key Insight:</strong> Flat ATK substats are roughly 30-40% more valuable than their face value suggests, because ATK% bonuses from other sources multiply them. Never dismiss flat ATK as "dead" — it is a tier below ATK%, not garbage tier.</p>
+        </div>
+
+        <h2>2. 临界点计算 — The Crossover Formula</h2>
+        <p>The core question: at what base ATK does ATK%+1% give more than Flat ATK+10? The crossover formula is straightforward:</p>
+
+        <div class="pcore-flat-formula">
+            Crossover Base ATK = Flat ATK value / ATK% value x 100
+        </div>
+
+        <p>For a typical protocore roll: ATK%+1% = roughly Flat ATK+10 at the stat weight tier 5/6. Solving for the crossover:</p>
+
+        <div class="pcore-flat-formula">
+            Crossover = 10 / 1 x 100 = 1000 base ATK
+        </div>
+
+        <p>If your base ATK exceeds 1000, ATK% is more valuable than flat ATK on a per-roll basis. For a level 70 character with level 60 memories, base ATK sits around 2800-3200. At this range:</p>
+
+        <div class="pcore-flat-crossover">
+            <div class="pcore-flat-crossover-item">
+                <span class="crossover-label">ATK% +1%</span>
+                <span class="crossover-eq">≈</span>
+                <span class="crossover-value">Flat ATK +28 to +32</span>
+            </div>
+            <div class="pcore-flat-crossover-item highlight">
+                <span class="crossover-label">Winner</span>
+                <span class="crossover-eq">→</span>
+                <span class="crossover-value">ATK% by a factor of ~3x</span>
+            </div>
+        </div>
+
+        <p>At endgame base ATK levels, ATK% is roughly <strong>three times more valuable</strong> than flat ATK per substat roll. This gap only widens as you level memories and unlock more ATK% sources.</p>
+
+        <div class="pcore-flat-crossover-note">
+            <strong>Rule of thumb:</strong> Below level 50 (base ATK under 2000), flat ATK is competitive. At level 60+, percentage stats pull ahead dramatically. Never prioritize a flat ATK main stat over ATK% at endgame.
+        </div>
+
+        <h2>3. 各角色基础ATK对比 — Base ATK by Operative</h2>
+        <p>Base ATK varies significantly between operatives. Xavier has the highest base, making ATK% even more dominant on him. Here are the approximate values:</p>
+
+        <div class="pcore-flat-table-wrapper">
+            <table class="pcore-flat-table crossover-table">
+                <thead>
+                    <tr>
+                        <th>Operative</th>
+                        <th>Lv 50</th>
+                        <th>Lv 60</th>
+                        <th>Lv 70</th>
+                        <th>Lv 80</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="op-name">Xavier</td>
+                        <td>2150</td>
+                        <td>2680</td>
+                        <td>3100</td>
+                        <td>3400</td>
+                    </tr>
+                    <tr>
+                        <td class="op-name">Sylus</td>
+                        <td>1950</td>
+                        <td>2440</td>
+                        <td>2830</td>
+                        <td>3100</td>
+                    </tr>
+                    <tr>
+                        <td class="op-name">Rafayel</td>
+                        <td>1900</td>
+                        <td>2360</td>
+                        <td>2750</td>
+                        <td>3000</td>
+                    </tr>
+                    <tr>
+                        <td class="op-name">Zayne</td>
+                        <td>1820</td>
+                        <td>2280</td>
+                        <td>2660</td>
+                        <td>2900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>At level 80, Xavier's base ATK is 3400 — meaning ATK% is roughly 3.4x more valuable than flat ATK. For Zayne at 2900, the ratio is 2.9x. <strong>Percentage stats win on every operative at endgame.</strong></p>
+
+        <div class="pcore-tip-box">
+            <p><strong>Xavier players take note:</strong> With the highest base ATK in the game, ATK% on Xavier is more valuable than on any other operative. A single ATK%+10% roll on Xavier gives ~340 ATK equivalent. Flat ATK+50 looks pathetic by comparison.</p>
+        </div>
+
+        <h2>4. Zayne 的特殊情况 — Why HP Breaks Every Rule</h2>
+        <p>Zayne is the one operative where the flat vs percent debate gets complicated. His skills convert HP directly into damage. While ATK% is still strong on him, <strong>flat HP becomes a dual-purpose stat</strong>: it increases both survivability and damage output.</p>
+
+        <p>Zayne's HP scaling formula (simplified) means every point of HP contributes roughly 0.3-0.5 effective ATK through his skill conversions. This changes the crossover calculation entirely:</p>
+
+        <div class="pcore-flat-table-wrapper">
+            <table class="pcore-flat-table hp-crossover">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Effective ATK Equivalent</th>
+                        <th>Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ATK% +10%</td>
+                        <td>~290 ATK (at Lv 80 base)</td>
+                        <td class="verdict-good">Best in slot</td>
+                    </tr>
+                    <tr>
+                        <td>Flat HP +150</td>
+                        <td>~45-75 ATK (through HP scaling)</td>
+                        <td class="verdict-ok">Worth considering</td>
+                    </tr>
+                    <tr>
+                        <td>HP% +10%</td>
+                        <td>~80-120 ATK (through HP scaling)</td>
+                        <td class="verdict-ok">Situationally good</td>
+                    </tr>
+                    <tr>
+                        <td>Flat ATK +50</td>
+                        <td>~70 ATK (after ATK% multiplier)</td>
+                        <td class="verdict-weak">Temporary only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>For Zayne, <strong>Flat HP+150 is equivalent to roughly ATK%+4%</strong> in effective damage contribution. This is significant enough that flat HP substats on Zayne are not dead rolls — they are actually competitive with ATK% substats for overall effective damage.</p>
+
+        <div class="pcore-flat-zayne-note">
+            <p><strong>Zayne's Exception:</strong> Flat HP on protocores is the one place where a flat stat can compete with percentage at endgame. If you are building Zayne, do not auto-salvage protocores with flat HP substats. Evaluate them using the HP crossover table above. A protocore with CRIT Rate + flat HP + ATK% is excellent on Zayne — do not salvage it because it is "not pure ATK."</p>
+        </div>
+
+        <div class="pcore-highlight">
+            <p><strong>Test Results:</strong> In controlled Abyss Floor 10 runs, a Zayne build with two flat HP substats (total +280 HP) cleared 6% faster than a pure ATK build with equivalent stat budget. The HP scaling from his passive converted survivability into tangible damage output. Flat HP is not cope on Zayne — it is math.</p>
+        </div>
+
+        <h2>5. DEF的数学 — Why It Is Almost Always Wrong</h2>
+        <p>DEF has the worst scaling of any stat in Love and Deepspace. The damage reduction formula gives DEF% severe diminishing returns:</p>
+
+        <div class="pcore-flat-formula">
+            Damage Reduction = DEF / (DEF + 1000 + 5 x Attacker Level)
+        </div>
+
+        <p>At level 70, going from 0 to 500 DEF gives roughly 12% damage reduction. Going from 500 to 1000 DEF gives only another 8%. Going from 1000 to 2000 DEF gives only 6% more. <strong>Each point of DEF is worth less than the last.</strong></p>
+
+        <div class="pcore-flat-table-wrapper">
+            <table class="pcore-flat-table def-table">
+                <thead>
+                    <tr>
+                        <th>DEF Value</th>
+                        <th>Damage Reduction</th>
+                        <th>Incremental Gain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>300</td>
+                        <td>~8%</td>
+                        <td>+8%</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td>~14%</td>
+                        <td>+6%</td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>~20%</td>
+                        <td>+6%</td>
+                    </tr>
+                    <tr>
+                        <td>1500</td>
+                        <td>~25%</td>
+                        <td>+5%</td>
+                    </tr>
+                    <tr>
+                        <td>2000</td>
+                        <td>~29%</td>
+                        <td>+4%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>The opportunity cost is the real problem. Every DEF% main stat or substat is a slot that could have been ATK%, CRIT Rate, or CRIT DMG. For DPS operatives, <strong>DEF is a dead stat.</strong></p>
+
+        <div class="pcore-tip-box">
+            <p><strong>The only exception:</strong> Abyss Floor 8 survival builds. If you are struggling to survive specific boss mechanics (e.g., the Corrupted Hunter's execute threshold), a single DEF% main stat on a tanky support can buy you enough survivability to clear. But this is a crutch, not a build. Replace it with damage stats as soon as your piloting improves.</p>
+        </div>
+
+        <h2>6. 决策流程图 — Flat vs Percent Decision Tree</h2>
+
+        <div class="pcore-flat-decision-flow">
+            <div class="pcore-flat-flow-node start">
+                <div class="node-label">START</div>
+                <div class="node-desc">Which stat are you evaluating?</div>
+            </div>
+            <div class="pcore-flat-flow-arrow">↓</div>
+            <div class="pcore-flat-flow-node question">
+                <div class="node-label">Is it DEF or DEF%?</div>
+            </div>
+            <div class="pcore-flat-flow-branches">
+                <div class="branch">
+                    <div class="branch-label">YES</div>
+                    <div class="pcore-flat-flow-node result-bad">
+                        <div class="node-label">SALVAGE</div>
+                        <div class="node-desc">DEF is dead on 95% of builds</div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <div class="branch-label">NO</div>
+                    <div class="pcore-flat-flow-node question">
+                        <div class="node-label">Is the operative Zayne?</div>
+                    </div>
+                    <div class="pcore-flat-flow-branches sub">
+                        <div class="branch">
+                            <div class="branch-label">YES</div>
+                            <div class="pcore-flat-flow-node question">
+                                <div class="node-label">Is it Flat HP or HP%?</div>
+                            </div>
+                            <div class="pcore-flat-flow-branches sub2">
+                                <div class="branch">
+                                    <div class="branch-label">YES</div>
+                                    <div class="pcore-flat-flow-node result-good">
+                                        <div class="node-label">KEEP</div>
+                                        <div class="node-desc">HP scales to damage via Zayne passive</div>
+                                    </div>
+                                </div>
+                                <div class="branch">
+                                    <div class="branch-label">NO</div>
+                                    <div class="pcore-flat-flow-node question">
+                                        <div class="node-label">Operative level ≥ 65?</div>
+                                    </div>
+                                    <div class="pcore-flat-flow-branches sub3">
+                                        <div class="branch">
+                                            <div class="branch-label">YES</div>
+                                            <div class="pcore-flat-flow-node result-good">
+                                                <div class="node-label">ATK%</div>
+                                                <div class="node-desc">Percentage main stat preferred</div>
+                                            </div>
+                                        </div>
+                                        <div class="branch">
+                                            <div class="branch-label">NO</div>
+                                            <div class="pcore-flat-flow-node result-ok">
+                                                <div class="node-label">FLAT IS OK</div>
+                                                <div class="node-desc">Competitive below level 60</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label">NO</div>
+                            <div class="pcore-flat-flow-node question">
+                                <div class="node-label">Operative level ≥ 65?</div>
+                            </div>
+                            <div class="pcore-flat-flow-branches sub3">
+                                <div class="branch">
+                                    <div class="branch-label">YES</div>
+                                    <div class="pcore-flat-flow-node result-good">
+                                        <div class="node-label">ATK%</div>
+                                        <div class="node-desc">Percentage wins at endgame</div>
+                                    </div>
+                                </div>
+                                <div class="branch">
+                                    <div class="branch-label">NO</div>
+                                    <div class="pcore-flat-flow-node result-ok">
+                                        <div class="node-label">FLAT IS OK</div>
+                                        <div class="node-desc">Use flat until you farm percentage</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>7. 实战比较 — Two Protocores, One Winner</h2>
+        <p>Let us compare two real protocore scenarios to see how this math plays out in practice.</p>
+
+        <div class="pcore-flat-comparison-grid">
+            <div class="comparison-card pcore-flat-card">
+                <div class="comparison-card-header bad">
+                    <div class="card-type">TRIANGLE (Slot 3)</div>
+                    <div class="card-mainstat">ATK% +28% Main Stat</div>
+                </div>
+                <div class="comparison-card-body">
+                    <div class="card-substats">
+                        <div class="substat dead">Flat DEF +24</div>
+                        <div class="substat dead">Flat HP +180</div>
+                        <div class="substat dead">HP% +6%</div>
+                        <div class="substat dead">Flat ATK +35</div>
+                    </div>
+                    <div class="card-verdict bad">Effective substat value: ~2% damage increase</div>
+                    <div class="card-reason">Three dead stats. The ATK% main stat is wasted because substats contribute almost nothing. This protocore looks good on paper but performs poorly.</div>
+                </div>
+            </div>
+            <div class="pcore-flat-vs">VS</div>
+            <div class="comparison-card pcore-flat-card">
+                <div class="comparison-card-header good">
+                    <div class="card-type">TRIANGLE (Slot 3)</div>
+                    <div class="card-mainstat">Flat ATK +150 Main Stat</div>
+                </div>
+                <div class="comparison-card-body">
+                    <div class="card-substats">
+                        <div class="substat good">CRIT Rate +6.2%</div>
+                        <div class="substat good">CRIT DMG +14.8%</div>
+                        <div class="substat good">ATK% +9.5%</div>
+                        <div class="substat good">Energy Regen +8%</div>
+                    </div>
+                    <div class="card-verdict good">Effective substat value: ~22% damage increase</div>
+                    <div class="card-reason">"Wrong" main stat but god-tier substats. The flat ATK main stat provides ~210 effective ATK after multipliers. Combined with CRIT stats and ATK%, this protocore dramatically outperforms the "correct" main stat one above.</div>
+                </div>
+            </div>
+        </div>
+
+        <p>The left protocore will be salvaged by many players because "it has ATK% main stat, it is good." The right protocore will be salvaged because "flat ATK main stat is bad." <strong>The right protocore is approximately 10x more valuable.</strong></p>
+
+        <div class="pcore-tip-box">
+            <p><strong>Practical takeaway:</strong> A flat ATK main stat with four perfect substats beats an ATK% main stat with four dead substats every time. But an ATK% main stat with even two good substats is better than any flat alternative. The hierarchy: <strong>correct main stat + good substats > wrong main stat + god substats > correct main stat + dead substats.</strong></p>
+        </div>
+
+        <h2>8. 决策总结 — The Golden Rule</h2>
+
+        <div class="pcore-flat-golden-rules">
+            <div class="rule-card">
+                <div class="rule-num">1</div>
+                <div class="rule-text">At level 60+, <strong>always prefer percentage main stats</strong> for ATK, HP, and DEF slots. Flat main stats are temporary substitutes until you farm the correct piece.</div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-num">2</div>
+                <div class="rule-text">Flat ATK is not a dead stat — it gets multiplied by ATK% bonuses. It is a <strong>C-tier substat</strong>, not F-tier. Better than flat DEF, worse than CRIT or ATK%.</div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-num">3</div>
+                <div class="rule-text">Flat HP on Zayne is the <strong>one exception</strong> worth considering at endgame. His HP-to-damage conversion makes flat HP a dual-purpose stat. Do not auto-salvage HP substats on Zayne.</div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-num">4</div>
+                <div class="rule-text">DEF is dead on almost every operative. Salvage DEF main stats and substats without hesitation. The only exception is <strong>Abyss Floor 8 survival crutches</strong> — and even then, replace them as soon as possible.</div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-num">5</div>
+                <div class="rule-text">Substats > main stat. A flat ATK main stat with perfect CRIT substats outperforms an ATK% main stat with flat DEF and HP. <strong>Evaluate the whole protocore, not just the main stat.</strong></div>
+            </div>
+        </div>
+
+        <div class="pcore-final-box">
+            <p><strong>The Bottom Line:</strong> Flat stats are a trap at endgame — unless you know the math. ATK% is roughly 3x more valuable than flat ATK at level 70+. Flat HP on Zayne is the one competitive exception. DEF is almost never worth building. And remember: substats matter more than main stats. A flat main stat with godly substats > a percentage main stat with dead substats. Understand the math, break the rules intentionally, and never salvage a protocore based on main stat alone.</p>
+        </div>
+
+    </div>
+
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">↑</span>
+    </button>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

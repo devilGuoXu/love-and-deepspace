@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>副词条概率分布：刷出完美原型的期望时间 | Deepspace Hub</title>
+    <meta name="description" content="Love and Deepspace 原型副词条概率全解析 — 各槽位可用副词条、权重分布、四词条完美原型出现概率、期望体力消耗及何时该收手的决策框架。">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="protocore-all.css">
+    <link rel="stylesheet" href="protocore-substat-probability.css?v=1">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+
+    <div class="pcore-container article-theme-pcore">
+
+        <div class="pcore-hero">
+            <span class="pcore-badge">PROTOCORE</span>
+            <h1>副词条概率分布：刷出完美原型的期望时间</h1>
+            <p>每个副词条出现的概率是多少？刷到一个四词条全对的完美原型需要多少体力？本文用概率论告诉你什么时候该收手。</p>
+        </div>
+
+        <div class="pcore-meta">
+            <span class="meta-date">2026.07.11</span>
+            <span class="meta-tag">ENTRY_#141</span>
+            <span class="meta-tag">PROBABILITY</span>
+        </div>
+
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <div class="pcore-highlight">
+            <p><strong>一句话总结：</strong>刷出一个完美的四词条原型（正确主词条 + 四个有效副词条 + 所有强化都加在关键属性上）的概率大约在百万分之一到十万分之一之间。本文帮你建立合理的预期，避免陷入"完美装备"的无底洞。</p>
+        </div>
+
+        <h2>一、各槽位可用副词条</h2>
+        <p>在 Love and Deepspace 中，原型（Protocore）的副词条池在三角、方块、圆形三个槽位上基本一致。与主词条不同，副词条没有槽位专属限制。这意味着你在任何槽位上都可能刷到以下任意副词条：</p>
+
+        <div class="pcore-prob-stat-pool">
+            <div class="pcore-prob-stat-group">
+                <div class="pcore-prob-stat-group-label">百分比属性</div>
+                <div class="pcore-prob-stat-tags">
+                    <span class="pcore-prob-stat-tag">ATK%</span>
+                    <span class="pcore-prob-stat-tag">DEF%</span>
+                    <span class="pcore-prob-stat-tag">HP%</span>
+                </div>
+            </div>
+            <div class="pcore-prob-stat-group">
+                <div class="pcore-prob-stat-group-label">暴击相关</div>
+                <div class="pcore-prob-stat-tags">
+                    <span class="pcore-prob-stat-tag">暴击率 CRIT Rate</span>
+                    <span class="pcore-prob-stat-tag">暴击伤害 CRIT DMG</span>
+                </div>
+            </div>
+            <div class="pcore-prob-stat-group">
+                <div class="pcore-prob-stat-group-label">功能属性</div>
+                <div class="pcore-prob-stat-tags">
+                    <span class="pcore-prob-stat-tag">元素精通 Elemental Mastery</span>
+                    <span class="pcore-prob-stat-tag">元素充能 Energy Regen%</span>
+                </div>
+            </div>
+            <div class="pcore-prob-stat-group">
+                <div class="pcore-prob-stat-group-label">固定值</div>
+                <div class="pcore-prob-stat-tags">
+                    <span class="pcore-prob-stat-tag">固定攻击力 Flat ATK</span>
+                    <span class="pcore-prob-stat-tag">固定防御力 Flat DEF</span>
+                    <span class="pcore-prob-stat-tag">固定生命值 Flat HP</span>
+                </div>
+            </div>
+        </div>
+
+        <p>总共 10 种可能的副词条。需要注意的是，主词条和副词条的限制是独立的 — 例如，即使主词条已经是 ATK%，副词条仍然可以出现 ATK%。三角槽的主词条池最小（固定攻击力），而圆形槽的主词条池最大（包含所有百分比属性和固定值），但副词条池在所有槽位上是完全一致的。</p>
+
+        <h2>二、副词条权重分布</h2>
+        <p>每次新获得一个副词条（+3、+6、+9、+12）时，系统从可用池中随机选择一个。根据社区统计和实测数据，各副词条的权重基本均等。在 10 种副词条中，每种的出现概率约为 10%。</p>
+
+        <div class="probability-table">
+            <div class="pcore-prob-trow pcore-prob-theader">
+                <span class="pcore-prob-tcol-stat">副词条</span>
+                <span class="pcore-prob-tcol-prob">出现概率</span>
+                <span class="pcore-prob-tcol-note">评价</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">ATK%</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">泛用有效</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">DEF%</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">对输出无用</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">HP%</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">辅助可用</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">暴击率</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">最高价值</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">暴击伤害</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">最高价值</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">元素精通</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">特定角色</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">元素充能%</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">特定角色</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">固定攻击力</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">过渡可用</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">固定防御力</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">无用</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">固定生命值</span>
+                <span class="pcore-prob-tcol-prob">~10%</span>
+                <span class="pcore-prob-tcol-note">过渡可用</span>
+            </div>
+        </div>
+
+        <p>强化时，每次升级会随机选择一个已有的副词条进行强化（如果已有 4 个词条，则从 4 个中选择一个提升数值）。这意味着即使你的原型初始 4 词条全对，后续每次强化也只有 25% 的概率加到目标属性上。</p>
+
+        <h2>三、四词条完美原型概率</h2>
+        <p>让我们一步步计算刷出一个"完美原型"的概率。所谓完美，定义为：正确的主词条 + 4 个副词条全部有效 + 所有 4 次强化都加到最有价值的属性上。</p>
+
+        <div class="probability-table">
+            <div class="pcore-prob-trow pcore-prob-theader">
+                <span class="pcore-prob-tcol-stat">条件</span>
+                <span class="pcore-prob-tcol-prob">概率</span>
+                <span class="pcore-prob-tcol-note">说明</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">正确主词条</span>
+                <span class="pcore-prob-tcol-prob">~1/7 至 ~1/10</span>
+                <span class="pcore-prob-tcol-note">取决于槽位</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">4 词条全有效</span>
+                <span class="pcore-prob-tcol-prob">~6.25% (0.5^4)</span>
+                <span class="pcore-prob-tcol-note">假设一半副词条有效</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">4 次强化全中目标</span>
+                <span class="pcore-prob-tcol-prob">~0.39% (0.25^4)</span>
+                <span class="pcore-prob-tcol-note">从 4 词条中选 1</span>
+            </div>
+            <div class="pcore-prob-trow">
+                <span class="pcore-prob-tcol-stat">综合概率</span>
+                <span class="pcore-prob-tcol-prob">~0.0004% 至 ~0.00001%</span>
+                <span class="pcore-prob-tcol-note">约 1/250,000 至 1/10,000,000</span>
+            </div>
+        </div>
+
+        <p>换一种更直观的说法：如果你每天刷满体力（约 240 体力 = 6 次副本），每次副本有约 20% 概率掉落 SSR 原型，你需要大约：</p>
+
+        <ul>
+            <li><strong>正确的 SSR 主词条：</strong>约 35-50 次副本（1.5-2 天）</li>
+            <li><strong>加上 3 个有效副词条：</strong>约 100-200 次副本（1-2 周）</li>
+            <li><strong>加上 4 个有效副词条：</strong>约 800-1600 次副本（2-4 个月）</li>
+            <li><strong>加上完美强化分配：</strong>超过 5000 次副本（1 年以上）</li>
+        </ul>
+
+        <p>这个计算说明了为什么追求完美原型是不现实的。即使是最核心的玩家，想要一个完美原型也需要数月甚至数年的专注刷取。</p>
+
+        <h2>四、期望体力消耗</h2>
+        <p>以下是在持续刷取特定槽位原型时，达到不同质量目标的期望时间（基于自然体力恢复，每天约 240 可用体力）：</p>
+
+        <div class="stamina-grid">
+            <div class="stamina-card">
+                <div class="stamina-label">1 个有效副词条</div>
+                <div class="stamina-time">~2 天</div>
+                <div class="stamina-desc">几乎任何掉落都能满足</div>
+            </div>
+            <div class="stamina-card">
+                <div class="stamina-label">2 个有效副词条</div>
+                <div class="stamina-time">~1 周</div>
+                <div class="stamina-desc">可接受的下限</div>
+            </div>
+            <div class="stamina-card">
+                <div class="stamina-label">3 个有效副词条</div>
+                <div class="stamina-time">~1 个月</div>
+                <div class="stamina-desc">优秀的毕业品质</div>
+            </div>
+            <div class="stamina-card">
+                <div class="stamina-label">4 个有效副词条</div>
+                <div class="stamina-time">~3-6 个月</div>
+                <div class="stamina-desc">准完美，可遇不可求</div>
+            </div>
+            <div class="stamina-card">
+                <div class="stamina-label">完美强化分配</div>
+                <div class="stamina-time">1 年以上</div>
+                <div class="stamina-desc">真正意义的完美原型</div>
+            </div>
+        </div>
+
+        <div class="pcore-tip-box">
+            <p><strong>关键洞察：</strong>如果你追求的是一个特定槽位、特定套装、正确主词条 + 四个有效副词条 + 所有强化都加到暴击率上的原型，概率之低接近于买彩票中奖。正常玩家不应该以"完美原型"为目标。</p>
+        </div>
+
+        <h2>五、什么时候该收手</h2>
+        <p>大多数玩家把过多资源浪费在追求"更好"的原型上，而忽略了边际效益递减的规律。以下是一个实用的决策框架：</p>
+
+        <div class="threshold-box">
+            <div class="threshold-item">
+                <div class="threshold-role">主 C (Main DPS)</div>
+                <div class="threshold-levels">
+                    <span class="threshold-level t-best">3 有效词条 = 优秀</span>
+                    <span class="threshold-level t-good">2 有效词条 = 良好</span>
+                    <span class="threshold-level t-minimum">1 有效词条 = 最低可用</span>
+                </div>
+            </div>
+            <div class="threshold-item">
+                <div class="threshold-role">副 C (Sub-DPS)</div>
+                <div class="threshold-levels">
+                    <span class="threshold-level t-good">2 有效词条 = 良好</span>
+                    <span class="threshold-level t-minimum">1 有效词条 = 可用</span>
+                </div>
+            </div>
+            <div class="threshold-item">
+                <div class="threshold-role">辅助 (Support)</div>
+                <div class="threshold-levels">
+                    <span class="threshold-level t-minimum">1 有效词条（充能或 HP%） = 足够</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pcore-highlight">
+            <p><strong>80/20 法则：</strong>最后 20% 的优化（从 3 有效词条到 4 有效词条 + 完美强化）需要消耗 80% 的总体力投入。对于绝大多数内容，3 个有效副词条的原型已经完全够用。将多出来的体力投入到角色突破、技能升级、记忆觉醒等其他养成系统上，收益更高。</p>
+        </div>
+
+        <p>具体决策建议：</p>
+        <ul>
+            <li><strong>步骤一：</strong>确认主词条正确。错误的主词条直接分解或作为强化材料。</li>
+            <li><strong>步骤二：</strong>+3 开第一个副词条。如果是有效属性，继续；如果是无效属性（如固定防御），直接分解。</li>
+            <li><strong>步骤三：</strong>+6/+9 开第二、第三个副词条。如果已有 2+ 个有效词条，保留；如果没有，分解。</li>
+            <li><strong>步骤四：</strong>+12 后评估。如果有 3+ 次强化进入有效属性，锁定并强化到 +15。</li>
+        </ul>
+
+        <h2>六、模拟示例</h2>
+        <p>以下是通过概率模拟得出的实际预期产出：</p>
+
+        <div class="milestone-card">
+            <div class="milestone-title">刷取 1 周后</div>
+            <div class="milestone-stats">
+                <span class="mstat">0-1 件极品（3+ 有效词条）</span>
+                <span class="mstat">3-5 件可用（2 有效词条）</span>
+                <span class="mstat">10+ 件过渡品（1 有效词条）</span>
+            </div>
+            <div class="milestone-desc">可以凑出一套主 C 可用的 2+2 散件，但套装效果不完整。</div>
+        </div>
+
+        <div class="milestone-card">
+            <div class="milestone-title">刷取 1 个月后</div>
+            <div class="milestone-stats">
+                <span class="mstat">1-2 件优秀（3+ 有效词条，含高强化）</span>
+                <span class="mstat">8-10 件可用</span>
+                <span class="mstat">可组成 1 套完整套装</span>
+            </div>
+            <div class="milestone-desc">主 C 已经可以穿上 4 件套且副词条基本合格。副 C 可以吃到 2 件套效果。</div>
+        </div>
+
+        <div class="milestone-card">
+            <div class="milestone-title">刷取 3 个月后</div>
+            <div class="milestone-stats">
+                <span class="mstat">1 件极品（接近完美）</span>
+                <span class="mstat">15+ 件可用原型</span>
+                <span class="mstat">2 队完整套装</span>
+            </div>
+            <div class="milestone-desc">两队角色都可以穿上合适的 4 件套。此时继续刷取的边际收益急剧下降。</div>
+        </div>
+
+        <div class="pcore-tip-box">
+            <p><strong>建议：</strong>一旦你的两队主 C 都穿上了 3+ 有效词条的原型套装，就应该停止专门刷取原型，转而将体力投入到其他养成系统中。只有在版本更新、抽到新角色或冲击排名时，才重新考虑原型优化。</p>
+        </div>
+
+        <h2>七、常见误区</h2>
+
+        <p><strong>误区一："我一定要刷到完美原型才停。"</strong> 完美原型是一个统计上的极端值。追求完美意味着你可能把 3-6 个月的体力全部投入到一个槽位，而你的其他角色全部处于原始状态。这种策略的总伤害提升远低于均衡发展。</p>
+
+        <p><strong>误区二："紫色原型不值得强化。"</strong> 对于早期玩家，紫色 4 星原型的主词条正确 + 2 个有效副词条，比根本没有原型要强得多。紫色原型强化到 +9 的成本很低，可以作为过渡装备使用。当你刷到更好的金色原型后，紫色原型可以作为强化材料喂掉。</p>
+
+        <p><strong>误区三："副词条比主词条更重要。"</strong> 不对。主词条提供了该位置最大头的属性。一个主词条正确、副词条全废的原型，输出通常高于一个主词条错误、副词条完美的原型。主词条优先级永远高于副词条。</p>
+
+        <div class="pcore-final-box">
+            <p><strong>总结：</strong>完美是好的敌人。在 Love and Deepspace 中，一个"够好"的原型（正确主词条 + 2-3 个有效副词条）足以通过所有现有内容。将你的原型强化到"够用"的阈值后，把多余的体力投入到其他养成系统中。只有在你的全部角色都已经基本成型后，才去追求那最后 1% 的完美强化。记住：一个 80 分的原型套装的玩家，如果均衡发展所有系统，通常比一个追求 100 分原型的玩家在总战力上更强。</p>
+        </div>
+
+    </div>
+
+    <button id="backToTopBtn" class="back-to-top">
+        <span class="arrow-up">&uarr;</span>
+    </button>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
