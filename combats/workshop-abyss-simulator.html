@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abyss Simulator & Clear Threshold Guide | Deepspace Hub</title>
+    <meta name="description" content="Community simulators, DPS thresholds, enemy wave patterns, and budget clear path planning for Abyss floors in Love and Deepspace.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="workshop-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="workshop-abyss-simulator.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-workshop">
+        <div class="gb-hero"><div class="article-badge">WORKSHOP — TOOLS</div><h1>Abyss Simulator & Clear Threshold Guide</h1><p>Before you enter an Abyss floor, know whether your build can clear it. This guide covers community simulators, DPS thresholds, enemy wave patterns, budget clear path planners, and how to evaluate your chances without wasting stamina.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WRK_11</span><span class="meta-date">2026.07.11</span><span class="meta-tag">TOOLS</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#dps-thresholds">DPS Thresholds by Floor</a></li>
+                <li><a href="#wave-pattern">Enemy Wave Pattern Database</a></li>
+                <li><a href="#simulator-tools">Simulator Tools Guide</a></li>
+                <li><a href="#budget-clear">Budget Clear Path Planning</a></li>
+                <li><a href="#scoring-matrix">Team Scoring Matrix</a></li>
+                <li><a href="#common-mistakes">Common Scoring Mistakes</a></li>
+            </ul>
+        </div>
+
+        <section id="dps-thresholds">
+            <h2>DPS Thresholds by Floor</h2>
+            <div class="gb-highlight"><p><strong>Know Before You Go.</strong> Every Abyss floor has a hidden DPS requirement. If your build deals less than the threshold, no amount of skill will save you. These numbers are community-verified across thousands of clears and account for typical enemy DEF values, wave timers, and 3-star time windows. Use them as your baseline before spending stamina.</p></div>
+            <p>Each floor demands a minimum sustained DPS to clear within the 3-star time limit. The values below assume a single-target rotation against the floor boss with no external buffs. If you run double DPS or co-op support, adjust expectations accordingly. The threshold increases by roughly 20% for 3-star clears versus 1-star clears because the time window is tighter.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">3,000</div><div class="stat-label">DPS FLOOR 1-4</div><div class="stat-desc">Entry-level threshold, reachable with base memories</div></div>
+                <div class="stat-card"><div class="stat-number">4,500</div><div class="stat-label">DPS FLOOR 5-6</div><div class="stat-desc">Early mid-game, requires leveled protocores</div></div>
+                <div class="stat-card"><div class="stat-number">6,000</div><div class="stat-label">DPS FLOOR 7-8</div><div class="stat-desc">Mid-game wall, optimized substats needed</div></div>
+                <div class="stat-card"><div class="stat-number">8,000</div><div class="stat-label">DPS FLOOR 9-10</div><div class="stat-desc">Endgame territory, full build optimization</div></div>
+            </div>
+
+            <div class="wrk11-threshold-bar">
+                <div class="wrk11-bar-label"><span>Floor 1-4</span><span>3,000 DPS</span></div>
+                <div class="wrk11-bar-track"><div class="wrk11-bar-fill wrk11-bar-f1" style="width:30%"></div></div>
+            </div>
+            <div class="wrk11-threshold-bar">
+                <div class="wrk11-bar-label"><span>Floor 5-6</span><span>4,500 DPS</span></div>
+                <div class="wrk11-bar-track"><div class="wrk11-bar-fill wrk11-bar-f2" style="width:45%"></div></div>
+            </div>
+            <div class="wrk11-threshold-bar">
+                <div class="wrk11-bar-label"><span>Floor 7-8</span><span>6,000 DPS</span></div>
+                <div class="wrk11-bar-track"><div class="wrk11-bar-fill wrk11-bar-f3" style="width:60%"></div></div>
+            </div>
+            <div class="wrk11-threshold-bar">
+                <div class="wrk11-bar-label"><span>Floor 9-10</span><span>8,000 DPS</span></div>
+                <div class="wrk11-bar-track"><div class="wrk11-bar-fill wrk11-bar-f4" style="width:80%"></div></div>
+            </div>
+            <div class="wrk11-threshold-bar">
+                <div class="wrk11-bar-label"><span>Floor 11-12</span><span>10,000+ DPS</span></div>
+                <div class="wrk11-bar-track"><div class="wrk11-bar-fill wrk11-bar-f5" style="width:100%"></div></div>
+            </div>
+
+            <p><strong>3-star thresholds</strong> are approximately 20% higher: Floor 1-4 needs ~3,600 DPS, Floor 5-6 needs ~5,400, Floor 7-8 needs ~7,200, Floor 9-10 needs ~9,600, and Floor 11-12 needs ~12,000+. If your build barely meets the 1-star threshold, do not expect to 3-star without significant upgrades. The 20% gap represents the difference between a comfortable clear and a desperate race against the timer.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">FLOOR 10 — DOUBLE ELITE</div><div class="team-comp">Boss: Corrupted Hunter + Frost Tyrant (Spawns: 0:00 / 0:45)</div><div class="team-reason">Requires 8,000 DPS for 1-star, 9,600 for 3-star. Two elites spawn 45 seconds apart. You must kill the first elite before the second spawns to avoid being overwhelmed. Recommended AoE burst window at 0:30 to clip both health bars. Main DPS check is sustained single-target after both elites are active.</div></div>
+                <div class="team-card"><div class="team-rank">FLOOR 11 — VOID CORRUPTOR</div><div class="team-comp">Boss: Void Corruptor + Shadow Adds (Spawns: continuous)</div><div class="team-reason">Requires 10,000 DPS for 1-star, 12,000 for 3-star. The boss spawns shadow adds every 20 seconds that must be killed within 8 seconds or they buff the boss. DPS requirement spikes during add phases. Recommended: save ultimate for add spawn windows. Elemental weakness is Luminous — using off-element reduces effective DPS below the threshold.</div></div>
+                <div class="team-card"><div class="team-rank">FLOOR 12 — INFERNO COLOSSUS</div><div class="team-comp">Boss: Inferno Colossus (Single phase, enrage at 1:30)</div><div class="team-reason">Requires 10,000+ DPS for 1-star, 12,000+ for 3-star. Pure single-target DPS check with no adds. The boss enrages at 1:30, doubling its damage and forcing a wipe shortly after. You have 90 seconds to deal ~1.5M damage. Every substat point matters here. Recommended: CRIT Rate 60%+ and CRIT DMG 160%+ to ensure consistent damage.</div></div>
+            </div>
+        </section>
+
+        <section id="wave-pattern">
+            <h2>Enemy Wave Pattern Database</h2>
+            <p>Each floor's enemy composition, spawn timing, and elemental weakness determines how you should build and rotate. Knowing the wave pattern lets you optimize your rotation timing and avoid wasting damage on invulnerable phases. Below are the key wave patterns for floors 8-12.</p>
+
+            <div class="attack-card">
+                <div class="attack-name">Floor 8 — Crystal Monarch</div>
+                <div class="attack-desc">Wave 1: Crystal Monarch + 2 Crystal Adds. Adds spawn at 0:00 and respawn at 0:30 if not killed. Wave 2: Crystal Monarch enrages at 1:00. Weakness: Luminous (x2 damage). Strategy: Kill adds immediately when they spawn. Save burst for the enrage window. The Monarch gains 50% DEF during enrage — bring DEF-shred effects if possible.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Floor 9 — Arcane Weaver</div>
+                <div class="attack-desc">Wave 1: Arcane Weaver single spawn at 0:00. Wave 2: Two Shadow Weavers spawn at 0:35. Weakness: Inferno (x2 damage). Strategy: Single-target burn the main Weaver. When Shadow Weavers spawn, switch to AoE. The Weavers apply a stacking silence debuff — use cleanse if available. Recommended to have at least one cleanse support in the team.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Floor 10 — Double Elite</div>
+                <div class="attack-desc">Wave 1: Corrupted Hunter spawns at 0:00. Wave 2: Frost Tyrant spawns at 0:45. Both elites remain active until killed. Weakness: Frost for Hunter, Luminous for Tyrant. Strategy: Kill the Hunter before the Tyrant spawns. If both are alive simultaneously, the Hunter gains a 30% ATK buff. Recommended AoE damage check to cleave both. Rotation optimization is critical here.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Floor 11 — Void Corruptor Swarm</div>
+                <div class="attack-desc">Wave 1: Void Corruptor at 0:00. Adds spawn every 20 seconds: 2 Shadow Wisps. Adds must die within 8 seconds. Weakness: Luminous. Strategy: Keep an AoE skill ready for add spawns. If adds survive 8 seconds, the Corruptor gains a stacking damage reduction buff. At 3 stacks, the Corruptor becomes immune. This is an execution check, not a raw DPS check.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Floor 12 — Inferno Colossus</div>
+                <div class="attack-desc">Single boss, no adds. Enrage at 1:30. Boss has 3 phases: Phase 1 (0:00-0:45) normal, Phase 2 (0:45-1:30) empowered attacks, Phase 3 (1:30+) enrage = wipe. Weakness: Frost. Strategy: Pure DPS race. Maximize uptime. Save ultimate for Phase 2 to skip or shorten it. Every second of downtime reduces your clear probability by ~5%.</div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Wave Pattern Tip:</strong> Memorize spawn timers for your target floor. Set a mental timer at 0:00 and count down to each spawn. Anticipating spawns lets you pre-position and start damaging the moment the enemy becomes targetable. This awareness alone can improve your clear time by 10-15 seconds per floor — equivalent to a 1,000 DPS upgrade for free.</p></div>
+        </section>
+
+        <section id="simulator-tools">
+            <h2>Simulator Tools Guide</h2>
+            <p>Several community-built simulators now combine DPS calculation with floor-specific enemy DEF and RES values. Instead of guessing whether your build is ready, you can input your stats and get a clear prediction with 90%+ accuracy. Here is how to use them effectively.</p>
+
+            <div class="wrk11-simulator-mock">
+                <div class="wrk11-sim-header">Abyss Clear Simulator v2.4</div>
+                <div class="wrk11-sim-body">
+                    <div class="wrk11-sim-row"><span class="wrk11-sim-label">Character ATK</span><span class="wrk11-sim-value">2,450</span></div>
+                    <div class="wrk11-sim-row"><span class="wrk11-sim-label">CRIT Rate</span><span class="wrk11-sim-value">58%</span></div>
+                    <div class="wrk11-sim-row"><span class="wrk11-sim-label">CRIT DMG</span><span class="wrk11-sim-value">155%</span></div>
+                    <div class="wrk11-sim-row"><span class="wrk11-sim-label">Target Floor</span><span class="wrk11-sim-value">Floor 10</span></div>
+                    <div class="wrk11-sim-divider"></div>
+                    <div class="wrk11-sim-result">
+                        <div class="wrk11-sim-result-label">Predicted Clear Time</div>
+                        <div class="wrk11-sim-result-value">1:28</div>
+                        <div class="wrk11-sim-result-label">3-Star Probability</div>
+                        <div class="wrk11-sim-result-value wrk11-sim-high">87%</div>
+                        <div class="wrk11-sim-result-label">Bottleneck</div>
+                        <div class="wrk11-sim-result-value">Team 2 DPS too low (3,200 / 4,500 needed)</div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>How to use the simulator:</strong> Input your character stats (ATK, CRIT Rate, CRIT DMG, DMG Bonus, ER), team composition (all equipped memories and protocores), and target floor. The simulator applies the floor's enemy DEF and RES values, simulates your rotation, and outputs a predicted clear time, 3-star probability, and bottleneck analysis. Most simulators also show which substat upgrade gives the largest time improvement.</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Input character stats</strong><div class="step-desc">Open your character sheet and enter ATK, CRIT Rate, CRIT DMG, DMG Bonus, and Energy Recharge. Do not estimate — use exact values from the in-game stat screen.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Select team composition</strong><div class="step-desc">Choose your main DPS, support, and healer. The simulator accounts for team synergy buffs. If your support provides ATK buffs, the simulator applies them automatically.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Choose target floor</strong><div class="step-desc">The simulator loads the floor's enemy DEF, RES, elemental weakness, and wave pattern. Each floor has unique parameters that affect your effective DPS.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Review prediction</strong><div class="step-desc">The output shows predicted clear time, 3-star probability, and bottleneck analysis. The bottleneck identifies exactly which stat or team member is holding you back.</div></div></div>
+                <div class="rotation-step"><div class="step-num">5</div><div class="step-content"><strong>Optimize with what-if mode</strong><div class="step-desc">Add hypothetical upgrades (+5% CRIT Rate, +200 ATK) to see the impact on clear time. This tells you whether farming for a specific substat is worth the stamina investment.</div></div></div>
+            </div>
+
+            <div class="data-row"><span class="data-label">Input Required</span><span class="data-value">Character stats, team composition, target floor, memory set bonuses, protocore main stats and substats</span></div>
+            <div class="data-row"><span class="data-label">Output Provided</span><span class="data-value">Predicted clear time, 3-star probability, bottleneck analysis, recommended substat upgrades</span></div>
+            <div class="data-row"><span class="data-label">Accuracy</span><span class="data-value">90%+ for single-target floors, 75-85% for multi-wave or AoE-heavy floors</span></div>
+            <div class="data-row"><span class="data-label">Time to Use</span><span class="data-value">3-5 minutes per build, including data entry and interpretation</span></div>
+        </section>
+
+        <section id="budget-clear">
+            <h2>Budget Clear Path Planning</h2>
+            <p>Not every player has two maxed teams. Budget clear path planning is about optimizing your gem income by choosing which floors to 3-star and which to settle for 1-star. The wrong approach wastes weeks of farming. The right approach maximizes your monthly income while minimizing the investment required.</p>
+
+            <p><strong>Example scenario:</strong> Your main team hits 9,000 DPS (Floor 10 ready). Your second team hits 4,000 DPS (Floor 6 level). You have two options:</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">STRATEGY A: SPREAD THIN</div><div class="team-comp">Attempt to 3-star Floor 10 with both teams</div><div class="team-reason">You spend 4-6 weeks farming for your second team to reach the Floor 10 threshold. During this time, your main team's advantage is wasted because you are not pushing higher floors. Total gem income during farm period: ~1,200 gems per cycle from floors 1-6 with 3 stars.</div></div>
+                <div class="team-card"><div class="team-rank">STRATEGY B: OPTIMAL PATH</div><div class="team-comp">3-star floors 1-8, 1-star floors 9-10</div><div class="team-reason">Your main team carries floors 1-8 with 3 stars (2,400 gems). Your second team barely passes floor 9-10 with 1 star (600 gems). Total: 3,000 gems per cycle with zero additional farming. Use the extra gems to pull for memories that benefit both teams simultaneously.</div></div>
+                <div class="team-card"><div class="team-rank">STRATEGY C: LONG-TERM INVESTMENT</div><div class="team-comp">3-star floors 1-6, 1-star floors 7-8, skip 9-10</div><div class="team-reason">If your second team is extremely weak (below 3,000 DPS), it may not clear floor 7 at all. In this case, accept 1-star on floor 7-8 with your main team only. Total: 1,800 gems. Use the stamina savings to power-level your second team. This is the slowest path but the most honest about your current progression.</div></div>
+            </div>
+
+            <p>The optimal path depends on your second team's DPS relative to the floor threshold. A general rule: if your second team is within 80% of the threshold, it is worth farming to close the gap. If it is below 60%, settle for 1-star and focus on your main team's advancement. Each point of DPS on your main team benefits all floors; each point on your second team benefits only half the floors.</p>
+
+            <div class="gb-tip-box"><p><strong>Gem Income Optimization:</strong> Floors 1-8 with 3 stars yield 2,400 gems per cycle. Adding floors 9-10 with 1 star adds 600 gems (25% more income). Adding floors 11-12 with 1 star adds another 600 gems. The jump from 2,400 to 3,600 gems (floors 1-10) is worth significantly more per stamina invested than pushing past floor 10. Target floor 10 1-star before attempting floor 11 or 12.</p></div>
+        </section>
+
+        <section id="scoring-matrix">
+            <h2>Team Scoring Matrix</h2>
+            <p>Use this four-step evaluation matrix to score your teams against each Abyss floor. The matrix accounts for DPS, team depth, elemental coverage, and survivability — giving you a single yes-or-no answer per floor. Run this evaluation before spending stamina.</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Team 1 DPS Check</strong><div class="step-desc">Does your main team's calculated DPS meet or exceed the floor threshold? If no, farming this floor is not productive. Your main team should be able to solo-carry at least floors 1-8. If your main team fails floor 8, spend stamina on domains, not Abyss.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Team 2 Viability</strong><div class="step-desc">Does your second team exist and meet the minimum threshold? Many players "have" a second team on paper but the DPS is 40% lower than they estimate. Run the simulator on team 2. If it is below 60% of the threshold, plan for 1-star clears.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Element Coverage</strong><div class="step-desc">Do your teams match the floor's elemental weakness? Using the correct element gives a 2x effective damage multiplier. Using off-element reduces effective DPS by 25% because of increased enemy RES. Check the wave pattern database for each floor's weakness before entering.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Survivability Check</strong><div class="step-desc">Can your healer or shielder survive the floor mechanics? Some floors have unavoidable damage patterns (Floor 10 double elite AoE, Floor 11 add swarms). If your support dies in the first 30 seconds, your DPS drops to zero. Test survivability by running the floor once — if your support dies, invest in HP/DEF substats before trying again.</div></div></div>
+            </div>
+
+            <p><strong>Scoring example:</strong> Xavier main team at 8,500 DPS = passes check for floor 10 (step 1). Zayne support team at 3,800 DPS = below 60% threshold = plan for 1-star (step 2). Xavier is Luminous and floor 10 Tyrant weakness is Luminous = full element advantage (step 3). Zayne has 12,000 HP healer = survives floor mechanics (step 4). Verdict: 3-star floor 10 with Xavier, 1-star with Zayne. Total floor 10 income: 500 gems — acceptable.</p>
+        </section>
+
+        <section id="common-mistakes">
+            <h2>Common Scoring Mistakes</h2>
+
+            <div class="mistake-list">
+                <div class="mistake-item"><div class="mistake-title">Mistake 1: Overestimating second team</div><div class="mistake-desc">Most players' second team is 40% weaker than they think. The second team typically uses leftover protocores, lower-level memories, and suboptimal set bonuses. Run the simulator with exact stats — do not assume. The gap between "usable" and "threshold-ready" is larger than most players realize. If your second team's DPS is below 60% of the floor requirement, it is not viable for 3-star clears.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 2: Ignoring floor mechanics</div><div class="mistake-desc">Some floors need shield break, not raw DPS. Floor 9's Arcane Weaver has a 50% damage reduction shield that must be broken with 10 hits within 5 seconds. If your team has low hit-count skills, you cannot break the shield regardless of DPS. Check the mechanic requirement before building. Bring fast-hitting characters or multi-hit skills for shield break floors.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 3: Wrong element penalty</div><div class="mistake-desc">Using off-element reduces effective DPS by approximately 25%. This is because enemy elemental RES is 50% against neutral elements versus -50% against the weakness element. The difference between matching weakness and going neutral is a 1.5x multiplier swing. Many players use their favorite character regardless of element and wonder why their damage is low. Match the floor's weakness — it is worth building a second DPS of a different element.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 4: Reset abuse</div><div class="mistake-desc">Relying on lucky CRITs instead of consistent clears is not a strategy. If your build has 40% CRIT Rate, you will CRIT less than half the time. Restarting 20 times to get good RNG is not efficient — you could have farmed better protocores in that time. Aim for 55%+ CRIT Rate on your main DPS and 50%+ on your second DPS. Consistent 3-star clears are better than occasional 3-star clears with 15 resets.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 5: Ignoring energy recharge</div><div class="mistake-desc">Many players build for pure damage and end up with 100% ER. Without enough ER, your ultimate is not available for key damage windows. Each floor has specific ultimate timing requirements — Floor 10 needs ultimate at 0:45 for the second elite spawn. If your ER is below 130%, you will not have ultimate ready. Check the floor's rotation timeline and adjust ER to match.</div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Scoring Mistake Fix:</strong> Run the simulator before each Abyss cycle. The simulator catches all five mistakes automatically: it shows you your true second-team DPS (mistake 1), flags shield-break requirements (mistake 2), applies elemental multipliers correctly (mistake 3), computes expected clear probability instead of lucky-run probability (mistake 4), and accounts for ER-based ultimate uptime (mistake 5). Using the simulator eliminates guesswork.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Abyss clear planning starts with knowing your DPS thresholds: 3,000 (floors 1-4), 4,500 (5-6), 6,000 (7-8), 8,000 (9-10), 10,000+ (11-12). 3-star thresholds are 20% higher. Use community simulators with floor-specific DEF/RES values to predict clear times. Plan budget clear routes based on second team strength — settle for 1-star if below 60% threshold. Evaluate teams using the four-step matrix: DPS check, team depth, element coverage, survivability. Avoid overestimating second team power, ignoring mechanics, using wrong elements, relying on CRIT resets, and neglecting ER. The simulator catches all these mistakes automatically.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Workshop Articles</div>
+            <div class="article-related-grid">
+                <a href="workshop-dps-calculator.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculator Guide</span></a>
+                <a href="workshop-team-builder.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Team Builder Guide</span></a>
+                <a href="workshop-build-tools.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Build Templates & Tools</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">&uarr;</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

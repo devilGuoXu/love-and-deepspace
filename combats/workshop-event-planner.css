@@ -1,0 +1,211 @@
+/* =========================================
+   WRK_13 — Event Reward Optimizer & Planner
+   Per-article custom styles
+   ========================================= */
+
+/* --- Stamina Conversion Card --- */
+.wrk13-conversion {
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(0, 188, 212, 0.02));
+    border: 1px solid rgba(0, 188, 212, 0.25);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.wrk13-conv-title {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #00bcd4;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.wrk13-conv-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #1a1f2e;
+    gap: 12px;
+}
+
+.wrk13-conv-row:last-child {
+    border-bottom: none;
+}
+
+.wrk13-conv-item {
+    color: #e0e6f0;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.wrk13-conv-stam {
+    color: #00bcd4;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* --- Shop Tier Badges --- */
+.wrk13-tier {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.wrk13-tier-s {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.1));
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.wrk13-tier-a {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.wrk13-tier-b {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+.wrk13-tier-c {
+    background: rgba(142, 142, 147, 0.2);
+    color: #8e8e93;
+    border: 1px solid #8e8e93;
+}
+
+/* --- Event Timeline Steps (override accent to cyan) --- */
+.wrk13-timeline .rotation-step {
+    border-color: rgba(0, 188, 212, 0.3);
+}
+
+.wrk13-timeline .rotation-step:hover {
+    border-color: #00bcd4;
+}
+
+.wrk13-timeline .step-num {
+    background: rgba(0, 188, 212, 0.15);
+    border-color: #00bcd4;
+    color: #00bcd4;
+}
+
+/* --- Preparation Checklist --- */
+.wrk13-prep .attack-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wrk13-prep-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(0, 188, 212, 0.15);
+    border: 1px solid #00bcd4;
+    color: #00bcd4;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* --- Event Type Info Grid (custom colors) --- */
+.wrk13-type .info-item {
+    border-color: rgba(0, 188, 212, 0.2);
+}
+
+.wrk13-type .info-item:hover {
+    border-color: #00bcd4;
+}
+
+/* --- Historical Data Table --- */
+.wrk13-hist-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.wrk13-hist-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 90px 1.2fr;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+    font-size: 0.78rem;
+}
+
+.wrk13-hist-row:last-child {
+    border-bottom: none;
+}
+
+.wrk13-hist-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.wrk13-hist-header {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: #6a7080;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.wrk13-hist-type {
+    color: #00bcd4;
+    font-weight: 600;
+}
+
+.wrk13-hist-dur,
+.wrk13-hist-stam,
+.wrk13-hist-gems {
+    color: #e0e6f0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wrk13-hist-rewards {
+    color: #b0bedb;
+    text-align: right;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .wrk13-hist-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 12px;
+        padding: 12px 14px;
+    }
+    .wrk13-hist-header {
+        display: none;
+    }
+    .wrk13-hist-row > * {
+        text-align: left;
+    }
+    .wrk13-hist-dur::before { content: "Dur: "; color: #6a7080; font-size: 0.65rem; }
+    .wrk13-hist-stam::before { content: "Stam: "; color: #6a7080; font-size: 0.65rem; }
+    .wrk13-hist-gems::before { content: "Gems: "; color: #6a7080; font-size: 0.65rem; }
+    .wrk13-hist-rewards { grid-column: 1 / -1; text-align: left; }
+    .wrk13-hist-rewards::before { content: "Top Rewards: "; color: #6a7080; font-size: 0.65rem; }
+
+    .wrk13-conv-row {
+        flex-wrap: wrap;
+    }
+}

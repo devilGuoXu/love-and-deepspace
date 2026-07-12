@@ -1,0 +1,235 @@
+/* =========================================
+   PROTOCORE FARMING & UPGRADE PLANNER
+   Custom classes use wrk10-* prefix.
+   Dark theme: #0f121b bg, #2a2f3d borders,
+   #b0bedb text, #00bcd4 cyan accent.
+   ========================================= */
+
+/* --- Stamina Budget Visual Bar --- */
+.wrk10-budget-container {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.wrk10-budget-total {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrk10-budget-unit {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6a7080;
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 2px;
+}
+
+.wrk10-budget-bar {
+    display: flex;
+    height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.wrk10-budget-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    transition: opacity 0.2s;
+}
+
+.wrk10-budget-segment:hover {
+    opacity: 0.85;
+}
+
+.wrk10-budget-pcore {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+.wrk10-budget-memory {
+    background: linear-gradient(135deg, #7c4dff, #651fff);
+}
+
+.wrk10-budget-credit {
+    background: linear-gradient(135deg, #ffab00, #ff8f00);
+}
+
+.wrk10-budget-reserve {
+    background: linear-gradient(135deg, #546e7a, #37474f);
+}
+
+.wrk10-budget-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.wrk10-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: #8a94a8;
+}
+
+.wrk10-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.wrk10-dot-pcore {
+    background: #00bcd4;
+}
+
+.wrk10-dot-memory {
+    background: #7c4dff;
+}
+
+.wrk10-dot-credit {
+    background: #ffab00;
+}
+
+.wrk10-dot-reserve {
+    background: #546e7a;
+}
+
+/* --- Priority Matrix Grid --- */
+.wrk10-priority-grid {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wrk10-priority-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.wrk10-priority-card:hover {
+    transform: translateY(-2px);
+}
+
+.wrk10-priority-tier {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.wrk10-priority-target {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 8px;
+}
+
+.wrk10-priority-desc {
+    font-size: 0.82rem;
+    color: #8a94a8;
+    line-height: 1.6;
+}
+
+/* Tier coloring */
+.wrk10-tier-s {
+    border-top: 3px solid #00bcd4;
+}
+
+.wrk10-tier-s .wrk10-priority-tier {
+    color: #00bcd4;
+}
+
+.wrk10-tier-s:hover {
+    border-color: #00bcd4;
+}
+
+.wrk10-tier-a {
+    border-top: 3px solid #2ecc71;
+}
+
+.wrk10-tier-a .wrk10-priority-tier {
+    color: #2ecc71;
+}
+
+.wrk10-tier-a:hover {
+    border-color: #2ecc71;
+}
+
+.wrk10-tier-b {
+    border-top: 3px solid #3498db;
+}
+
+.wrk10-tier-b .wrk10-priority-tier {
+    color: #3498db;
+}
+
+.wrk10-tier-b:hover {
+    border-color: #3498db;
+}
+
+.wrk10-tier-c {
+    border-top: 3px solid #f39c12;
+}
+
+.wrk10-tier-c .wrk10-priority-tier {
+    color: #f39c12;
+}
+
+.wrk10-tier-c:hover {
+    border-color: #f39c12;
+}
+
+/* --- Data row overrides for drop rates --- */
+.gb-container .data-row .data-value {
+    font-family: 'Courier New', monospace;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .wrk10-budget-total {
+        font-size: 1.5rem;
+    }
+
+    .wrk10-budget-bar {
+        height: 28px;
+    }
+
+    .wrk10-budget-segment {
+        font-size: 0.65rem;
+    }
+
+    .wrk10-budget-legend {
+        gap: 10px;
+    }
+
+    .wrk10-legend-item {
+        font-size: 0.72rem;
+    }
+
+    .wrk10-priority-card {
+        padding: 16px 18px;
+    }
+
+    .wrk10-priority-target {
+        font-size: 0.9rem;
+    }
+}

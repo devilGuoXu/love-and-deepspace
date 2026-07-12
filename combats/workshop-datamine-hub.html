@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datamine & Data Aggregation Hub | Deepspace Hub</title>
+    <meta name="description" content="Curated datamine sources and data aggregation for Love and Deepspace — skill multipliers, drop rates, hidden stats, and community data projects.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="workshop-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="workshop-datamine-hub.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-workshop">
+        <div class="gb-hero"><div class="article-badge">WORKSHOP — COMMUNITY</div><h1>Datamine & Data Aggregation Hub</h1><p>Curated sources and guides for understanding datamined Love and Deepspace data — from skill multipliers and drop tables to community data projects.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WRK_12</span><span class="meta-date">2026.07.11</span><span class="meta-tag">COMMUNITY</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#overview">What Dataminers Find</a></li>
+                <li><a href="#categories">Categories of Data</a></li>
+                <li><a href="#sources">Trusted Sources</a></li>
+                <li><a href="#reading">How to Read Datamine Outputs</a></li>
+                <li><a href="#builds">Using Data for Builds</a></li>
+                <li><a href="#projects">Community Data Projects</a></li>
+                <li><a href="#ethics">Responsible Use Guidelines</a></li>
+            </ul>
+        </div>
+
+        <section id="overview">
+            <h2>What Dataminers Find</h2>
+            <div class="gb-highlight"><p><strong>Why Datamine?</strong> The Love and Deepspace community does extensive datamining to uncover hidden game mechanics that the UI does not display. Exact skill multipliers, hitbox data, enemy stats, protocore drop tables, and soon-to-release content are all buried in the game files. This hub aggregates the most trusted sources and explains how to use their findings.</p></div>
+            <p>Official patch notes give you direction. Datamined data gives you precision. When a patch note says "increased Xavier's skill damage," the datamine tells you the old multiplier was 185% and the new one is 210%. That 25% difference translates to specific DPS changes you can calculate before logging in. Players who follow datamine sources consistently make better build decisions because they base their choices on exact numbers rather than vague descriptions.</p>
+            <p>The game client ships with data files that contain every number the game engine uses: damage formulas, drop probabilities, enemy stat blocks, memory growth curves, and even unreleased content flagged for future patches. Dataminers extract and decode these files using tools that parse Unity asset bundles and reverse-engineer the serialized data structures. The result is raw, unfiltered game information that the developers never intended players to see directly.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">12+</div><div class="stat-label">ACTIVE DATAMINERS</div><div class="stat-desc">Regularly publishing verified findings</div></div>
+                <div class="stat-card"><div class="stat-number">400+</div><div class="stat-label">SKILL DATAPOINTS</div><div class="stat-desc">Multipliers logged per patch cycle</div></div>
+                <div class="stat-card"><div class="stat-number">95%</div><div class="stat-label">ACCURACY RATE</div><div class="stat-desc">Verified datamine vs in-game values</div></div>
+                <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">DATA CATEGORIES</div><div class="stat-desc">From skill data to drop tables</div></div>
+            </div>
+
+            <p>Not all datamined information is equally useful. Some categories — like skill multipliers and protocore stat ranges — are directly applicable to build optimization. Others — like future content leaks — are interesting but speculative until the patch ships. This hub grades each category by reliability and practical value so you know where to focus your attention.</p>
+        </section>
+
+        <section id="categories">
+            <h2>Categories of Data</h2>
+            <p>Datamined information falls into several distinct categories. Each requires different tools to extract and different knowledge to interpret. Here is what the community regularly discovers.</p>
+
+            <div class="attack-card">
+                <div class="attack-name">Skill Multipliers</div>
+                <div class="attack-desc">Exact damage percentages for every skill at every level. The game stores base multiplier, scaling stat coefficient, and per-level growth rate in structured JSON files. This data reveals which skills scale best with ATK, which have hidden breakpoints, and how rank bonuses actually modify damage.</div>
+                <div class="attack-details"><span class="detail"><span class="detail-label">Format:</span> JSON with nested skill trees</span><span class="detail"><span class="detail-label">Reliability:</span> 99% — confirmed against in-game testing</span></div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Hidden Stats</div>
+                <div class="attack-desc">Enemy DEF, elemental RES, stagger thresholds, poise values, and hitbox dimensions. The UI shows none of these. Datamining reveals that weekly bosses have specific elemental resistances that change how you should build your team. For example, the Frost Tyrant has 40% bonus Ice RES, making raw ATK builds better than Ice DMG builds against it.</div>
+                <div class="attack-details"><span class="detail"><span class="detail-label">Format:</span> Binary asset tables</span><span class="detail"><span class="detail-label">Reliability:</span> 90% — some values confirmed, others extrapolated</span></div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Drop Rates</div>
+                <div class="attack-desc">Exact probabilities for domain drops, event rewards, and protocore stat distributions. The game weight system assigns different probabilities to each substat and main stat combination. Dataminers have shown that CRIT Rate and CRIT DMG have lower weight than flat DEF, confirming what players suspected — the game weights desirable stats lower.</div>
+                <div class="attack-details"><span class="detail"><span class="detail-label">Format:</span> Weight tables with probability entries</span><span class="detail"><span class="detail-label">Reliability:</span> 85% — confirmed with large sample crowd-sourced data</span></div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Future Content</div>
+                <div class="attack-desc">Unreleased memories, outfits, events, and story chapters flagged in asset bundles. These entries appear when assets are added to the client before their official release. Dataminers find placeholder text, model files, and skill descriptions for content that will ship 1-2 patches ahead. This data is useful for planning gem savings but always subject to change.</div>
+                <div class="attack-details"><span class="detail"><span class="detail-label">Format:</span> Asset bundle filenames + partial descriptors</span><span class="detail"><span class="detail-label">Reliability:</span> 70% — content often changes before release</span></div>
+            </div>
+
+            <div class="wrk12-data-preview">
+                <div class="wrk12-preview-header">SAMPLE DATAMINE OUTPUT</div>
+                <div class="wrk12-preview-body"><span class="wrk12-preview-line"><span class="wrk12-key">"skill_id":</span> <span class="wrk12-string">"xavier_resonance_3"</span></span><span class="wrk12-preview-line"><span class="wrk12-key">"base_multiplier":</span> <span class="wrk12-number">2.85</span></span><span class="wrk12-preview-line"><span class="wrk12-key">"scaling_stat":</span> <span class="wrk12-string">"atk"</span></span><span class="wrk12-preview-line"><span class="wrk12-key">"scaling_ratio":</span> <span class="wrk12-number">0.65</span></span><span class="wrk12-preview-line"><span class="wrk12-key">"level_growth":</span> <span class="wrk12-number">0.12</span></span><span class="wrk12-preview-line"><span class="wrk12-key">"hit_count":</span> <span class="wrk12-number">3</span></span></div>
+            </div>
+        </section>
+
+        <section id="sources">
+            <h2>Trusted Sources</h2>
+            <p>Not all dataminers are equally reliable. Some have years of experience decoding game files; others post unverified extracts that turn out to be wrong. Here are the most trusted sources in the Love and Deepspace community, vetted by accuracy and consistency across multiple patch cycles.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">SOURCE A <span class="wrk12-badge wrk12-badge-verified">VERIFIED</span></div><div class="team-comp">Skill Data & Rotation Lab</div><div class="team-reason">Specializes in extracting and validating skill multipliers, animation frame data, and optimal rotation DPS. Maintains a public spreadsheet of every character's skill values across all ranks. Cross-references every datamine point with in-game recording analysis. Reliability: 98%.</div></div>
+                <div class="team-card"><div class="team-rank">SOURCE B <span class="wrk12-badge wrk12-badge-verified">VERIFIED</span></div><div class="team-comp">Drop Rates & Economy</div><div class="team-reason">Focuses on protocore drop tables, domain reward probabilities, and gem economy projections. Uses both client-side weight extraction and large-scale crowd-sourced drop logging. Published the definitive study on substat weight distribution. Reliability: 95%.</div></div>
+                <div class="team-card"><div class="team-rank">SOURCE C <span class="wrk12-badge wrk12-badge-leak">LEAKS</span></div><div class="team-comp">Future Content & Lore</div><div class="team-reason">Tracks unreleased assets, memory descriptions, outfit models, and story text found in patch preloads. Provides early warning of banner schedules and event types. Content is subject to change; cross-reference with official announcements. Reliability: 75% for specifics, 90% for general direction.</div></div>
+                <div class="team-card"><div class="team-rank">SOURCE D <span class="wrk12-badge wrk12-badge-technical">TECHNICAL</span></div><div class="team-comp">Game Files & Technical Data</div><div class="team-reason">Extracts and documents the underlying game engine parameters: enemy stat blocks, stagger thresholds, AI behavior flags, and networking data. Publishes raw file extracts with detailed annotations. Essential for understanding game mechanics that the UI completely hides. Reliability: 92%.</div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>How to Evaluate a New Source:</strong> Check their track record across at least two patch cycles. Do they post raw data alongside their conclusions? Do they correct errors publicly? A trustworthy dataminer admits when they were wrong. Avoid sources that only post hype-worthy leaks without showing their work. The best dataminers also explain their methodology so you can verify the results yourself.</p></div>
+        </section>
+
+        <section id="reading">
+            <h2>How to Read Datamine Outputs</h2>
+            <p>Raw datamine data looks intimidating but follows predictable patterns. Once you understand the structure, you can extract the information you need without a technical background.</p>
+
+            <div class="data-row"><span class="data-label">JSON Skill Data</span><span class="data-value">Base multiplier = skill damage before ATK scaling. Multiply by (1 + scaling_ratio * total_ATK) for base hit. Add level_growth per skill level. Example: base 2.85x, 0.65 scaling, 2000 ATK = 2.85 * (1 + 0.65 * 2000/100) = 2.85 * 14 = 39.9x ATK at level 1.</span></div>
+            <div class="data-row"><span class="data-label">Protocore Stat Ranges</span><span class="data-value">Each rarity (R, SR, SSR) has min/max values for every stat. SSR CRIT Rate main stat rolls between 8.5% and 12.4% at level 0, growing to 18-26% at +15. Substats roll 60-100% of the max possible for their rarity. Higher rarity = higher floor and ceiling.</span></div>
+            <div class="data-row"><span class="data-label">Enemy Stat Blocks</span><span class="data-value">HP, ATK, DEF, elemental RES, stagger threshold, poise recovery rate. Elemental RES values are percentages applied after DEF reduction. A boss with 30% Fire RES takes 30% less Fire damage, making elemental choice a 30% damage swing.</span></div>
+            <div class="data-row"><span class="data-label">Memory Growth Curves</span><span class="data-value">Each memory has base stats and per-level stat growth coefficients. Flat ATK, HP, and DEF growth is linear. Percentage bonuses from set effects apply after base + level scaling. This data tells you which memories give the best stat-per-level ratio.</span></div>
+            <div class="data-row"><span class="data-label">Stagger Thresholds</span><span class="data-value">Enemies have hidden stagger HP pools that refill over time. Each hit depletes a percentage based on the skill's stagger modifier. Heavy attacks deal 3x stagger damage compared to light attacks. Datamined threshold values let you calculate exactly how many hits to stagger.</span></div>
+
+            <div class="article-info-box"><p><strong>Reading Tip:</strong> Most datamine JSON files use the same naming conventions. "base_multiplier" or "base_ratio" is always the skill's damage coefficient. "scaling_stat" points to the character stat used for bonus damage. "level_growth" or "per_level" is the additive increase per skill level. Once you learn these six key fields, you can read any skill datamine in the game.</p></div>
+        </section>
+
+        <section id="builds">
+            <h2>Using Datamined Data for Builds</h2>
+            <p>Data without application is trivia. Here is how to turn datamine outputs into concrete build decisions that improve your gameplay.</p>
+
+            <div class="wrk12-use-case">
+                <div class="wrk12-use-num">1</div>
+                <div class="wrk12-use-content"><strong>Skill Multiplier Optimization</strong><div class="wrk12-use-desc">Compare exact damage per animation frame using datamined multipliers and frame data from Source A. A skill might show 250% in the UI but has a 2-second animation, while another shows 180% with a 1-second animation. The second skill has higher DPS. Use multiplier data to build your rotation around the skills with the best damage-per-frame ratio.</div></div>
+            </div>
+            <div class="wrk12-use-case">
+                <div class="wrk12-use-num">2</div>
+                <div class="wrk12-use-content"><strong>Farming Efficiency Planning</strong><div class="wrk12-use-desc">Source B's drop rate data tells you that CRIT Rate planetary protocores have a 4.2% drop chance per run. Expected stamina per usable piece: 1,200 stamina. Plan your weekly domain farming around the protocores you actually need. Do not farm on days when the rotating domain does not drop the set you want — wait for the correct rotation.</div></div>
+            </div>
+            <div class="wrk12-use-case">
+                <div class="wrk12-use-num">3</div>
+                <div class="wrk12-use-content"><strong>Elemental vs Raw ATK Decision</strong><div class="wrk12-use-desc">Enemy RES values from Source D tell you which element each boss resists. Against the Frost Tyrant (40% Ice RES), a pure Ice DMG build loses 40% of its damage. Raw ATK with neutral element outperforms elemental stacking. Against the Inferno Colossus (0% Fire RES, 25% Ice weakness), elemental stacking is optimal. Check the RES table before building for a specific boss.</div></div>
+            </div>
+            <div class="wrk12-use-case">
+                <div class="wrk12-use-num">4</div>
+                <div class="wrk12-use-content"><strong>Pre-Farming for Future Content</strong><div class="wrk12-use-desc">Source C's future content leaks reveal upcoming memory sets and their stat profiles. If a leaked memory favors CRIT DMG over CRIT Rate, you can start farming CRIT DMG protocores now. Leak-based preparation gives you a 2-3 week head start on new metas. Always keep your existing gear — leaks can change before release.</div></div>
+            </div>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Identify your target</strong><div class="step-desc">Choose which boss, Abyss floor, or domain you want to optimize for. Different content requires different data.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Pull the relevant data</strong><div class="step-desc">From this hub's trusted sources: skill multipliers for your operative, RES values for the boss, drop rates for the domain.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Calculate and compare</strong><div class="step-desc">Plug exact numbers into the DPS calculator or your own spreadsheet. Compare element stacking vs raw ATK, different skill rotations, different protocore main stat combinations.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Build and test</strong><div class="step-desc">Equip your theoretical optimal build and run the content. Datamine data gets you 90% of the way. The last 10% is player skill and execution.</div></div></div>
+                <div class="rotation-step"><div class="step-num">5</div><div class="step-content"><strong>Contribute your results</strong><div class="step-desc">Share your real-world results back to the community. Your data helps validate or refine the datamines for everyone.</div></div></div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Community Data Projects</h2>
+            <p>The best datamined data is validated by community crowd-sourcing. These ongoing projects need your contribution to improve their accuracy and completeness.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">PROTOCORE DISTRIBUTION SPREADSHEET</div><div class="team-comp">12,000+ drops logged</div><div class="team-reason">A shared spreadsheet where players log every protocore drop: domain, set, slot, main stat, substats, and enhancement results. The aggregated data confirms (and sometimes contradicts) the datamined weight tables. Current dataset: 12,400 entries from 340 contributors. Goal: 20,000 entries for statistical significance.</div></div>
+                <div class="team-card"><div class="team-rank">DOMAIN DROP LOG</div><div class="team-comp">Crowd-sourced reward tracker</div><div class="team-reason">Logs every domain run reward: protocore rarity, set type, and quantity. Tracks domain rotation schedules and identifies the most efficient farming days. Latest finding: Tuesday's domain rotation drops 8% more SSR protocores than Sunday's rotation, based on 5,200 logged runs.</div></div>
+                <div class="team-card"><div class="team-rank">ROTATION DPS DATABASE</div><div class="team-comp">Community-recorded rotation times</div><div class="team-reason">Players submit video recordings of their optimal rotations against the training dummy. The database calculates time-to-kill, DPS, and skill usage frequency. Used to validate datamined skill multipliers against real in-game performance. Over 800 rotation recordings analyzed.</div></div>
+                <div class="team-card"><div class="team-rank">ENEMY STAT COMPENDIUM</div><div class="team-comp">Every enemy in the game cataloged</div><div class="team-reason">Combines datamined enemy stat blocks with player-sourced observations. Includes HP values per difficulty level, elemental RES values, stagger thresholds, and attack pattern notes. The compendium covers all 47 enemy types across all difficulty tiers.</div></div>
+            </div>
+
+            <div class="gb-highlight"><p><strong>How to Contribute:</strong> Most projects accept submissions through Discord bots or Google Forms. Record your domain runs with a screenshot of the reward screen, log your protocore drops with the in-game details visible, and submit your rotation videos to the DPS database. Even 10 entries help. The more data the community collects, the more accurate the aggregate results become for everyone.</p></div>
+        </section>
+
+        <section id="ethics">
+            <h2>Responsible Use Guidelines</h2>
+            <p>Datamining is a powerful tool that requires responsible handling. The Love and Deepspace community has developed norms around how datamined information should be shared and used. Following these guidelines keeps the community healthy and respectful.</p>
+
+            <div class="data-row"><span class="data-label">Gameplay Optimization</span><span class="data-value">Allowed. Using datamined skill multipliers and drop rates to make better build decisions is the primary purpose of this hub. The developers have not objected to gameplay-focused datamining.</span></div>
+            <div class="data-row"><span class="data-label">Content Theft</span><span class="data-value">Not allowed. Extracting and redistributing game assets — models, textures, voice lines, story text — as your own content is copyright infringement and damages the developers' work.</span></div>
+            <div class="data-row"><span class="data-label">Future Content Spoilers</span><span class="data-value">Always warn before sharing. Use spoiler tags, clearly label leak content, and give readers the choice to see or skip. Not everyone wants to know about upcoming banners before the official announcement.</span></div>
+            <div class="data-row"><span class="data-label">Respect Hidden Mechanics</span><span class="data-value">Some mechanics are intentionally hidden by the developers to preserve discovery and mystery. Sharing that an enemy has a specific stagger threshold is fine. Extracting and distributing unreleased story text crosses a line.</span></div>
+            <div class="data-row"><span class="data-label">Prepare, Don't Complain</span><span class="data-value">Use leaked data to prepare for upcoming content, not to complain that content is "too easy" because you pre-farmed, or that banner announcements are "boring" because you saw them three weeks ago.</span></div>
+
+            <div class="wrk12-ethics-box">
+                <div class="wrk12-ethics-line"><strong>DO</strong> use datamined data to optimize your builds and farming</div>
+                <div class="wrk12-ethics-line"><strong>DO</strong> credit the dataminers who extracted the data</div>
+                <div class="wrk12-ethics-line"><strong>DO</strong> warn before sharing future content information</div>
+                <div class="wrk12-ethics-line"><strong>DO NOT</strong> redistribute game assets as your own work</div>
+                <div class="wrk12-ethics-line"><strong>DO NOT</strong> post unmarked spoilers in community spaces</div>
+                <div class="wrk12-ethics-line"><strong>DO NOT</strong> harass developers about leaked content</div>
+            </div>
+
+            <p>The datamining community and the developers exist in an unspoken truce. Dataminers focus on gameplay data that helps players. Developers focus on creating content. As long as both sides respect each other's boundaries, the truce holds. Breaking these guidelines risks souring the relationship and could lead to technical countermeasures that make datamining harder for everyone.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> The datamine hub aggregates trusted sources that extract skill multipliers (99% accuracy), enemy stats (90%), drop rates (85%), and future content (70%). Use multiplier data to optimize rotations and farm efficiency. Check enemy RES values to choose elemental vs raw ATK builds. Validate datamines by contributing to community crowd-sourcing projects. Always use datamined data responsibly — optimize your gameplay, respect the developers, and warn before sharing spoilers. The best build decisions are informed by data, validated by community testing, and tempered by ethical judgment.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Workshop Articles</div>
+            <div class="article-related-grid">
+                <a href="workshop-dps-calculator.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculator Guide</span></a>
+                <a href="workshop-build-tools.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Build Templates & Tools</span></a>
+                <a href="workshop-resources.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Community Resource Directory</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">&uarr;</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

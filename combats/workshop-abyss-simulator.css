@@ -1,0 +1,138 @@
+/* =========================================
+   WORKSHOP — ABYSS SIMULATOR (WRK_11)
+   Per-article styles for Abyss Simulator & Clear Threshold Guide
+   Prefix: .wrk11-*
+   Theme: Dark workshop (#0f121b, #2a2f3d, #b0bedb, #00bcd4)
+   ========================================= */
+
+/* --- DPS Threshold Progress Bars --- */
+.wrk11-threshold-bar {
+    margin: 12px 0;
+}
+
+.wrk11-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: #8a94a8;
+    margin-bottom: 4px;
+}
+
+.wrk11-bar-track {
+    height: 10px;
+    background: #1a1f2e;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.wrk11-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00bcd4, #4dd0e1);
+    transition: width 0.6s ease;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+}
+
+.wrk11-bar-f1 { background: linear-gradient(90deg, #2ecc71, #58d68d); }
+.wrk11-bar-f2 { background: linear-gradient(90deg, #27ae60, #52c77a); }
+.wrk11-bar-f3 { background: linear-gradient(90deg, #f39c12, #f7c948); }
+.wrk11-bar-f4 { background: linear-gradient(90deg, #e67e22, #f0a55a); }
+.wrk11-bar-f5 { background: linear-gradient(90deg, #e74c3c, #f06a5e); }
+
+/* --- Simulator Output Mockup --- */
+.wrk11-simulator-mock {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 24px 0;
+}
+
+.wrk11-sim-header {
+    background: #141a26;
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #00bcd4;
+    border-bottom: 1px solid #2a2f3d;
+    text-transform: uppercase;
+}
+
+.wrk11-sim-body {
+    padding: 16px 20px;
+}
+
+.wrk11-sim-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.wrk11-sim-label {
+    color: #8a94a8;
+    font-size: 0.85rem;
+}
+
+.wrk11-sim-value {
+    color: #e0e6f0;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.wrk11-sim-divider {
+    height: 1px;
+    background: #2a2f3d;
+    margin: 12px 0;
+}
+
+.wrk11-sim-result {
+    background: #05070a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+}
+
+.wrk11-sim-result-label {
+    color: #6a7080;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.wrk11-sim-result-value {
+    color: #e0e6f0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.wrk11-sim-high {
+    color: #2ecc71;
+}
+
+.wrk11-sim-result .wrk11-sim-result-label:nth-child(5),
+.wrk11-sim-result .wrk11-sim-result-value:nth-child(6) {
+    grid-column: 1 / -1;
+}
+
+.wrk11-sim-result .wrk11-sim-result-value:nth-child(6) {
+    text-align: left;
+    font-size: 0.82rem;
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 700px) {
+    .wrk11-sim-result {
+        grid-template-columns: 1fr;
+    }
+    .wrk11-sim-result .wrk11-sim-result-value {
+        text-align: left;
+    }
+}

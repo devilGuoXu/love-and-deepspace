@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocore Farming & Upgrade Planner | Deepspace Hub</title>
+    <meta name="description" content="Plan your protocore farming efficiently with drop rate tables, stamina budgets, and upgrade priority matrices for Love and Deepspace.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="workshop-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="workshop-protocore-planner.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-workshop">
+        <div class="gb-hero"><div class="article-badge">WORKSHOP — TOOLS</div><h1>Protocore Farming & Upgrade Planner</h1><p>Protocore farming isn't random if you plan it. This guide provides tools and frameworks to plan your protocore farming efficiently — drop rate tables, stamina budgets, and upgrade priority matrices.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WRK_10</span><span class="meta-date">2026.07.11</span><span class="meta-tag">TOOLS</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+            <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#drop-rates">Drop Rate Reference</a></li>
+                <li><a href="#farming-routes">Farming Route Planner</a></li>
+                <li><a href="#stamina-budget">Stamina Budget Template</a></li>
+                <li><a href="#priority-matrix">Upgrade Priority Matrix</a></li>
+                <li><a href="#milestones">Milestone Planner</a></li>
+                <li><a href="#mistakes">Common Planning Mistakes</a></li>
+            </ul>
+        </div>
+
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Most players treat protocore farming as an endless grind — run the highest domain available, hope for good drops, repeat. This approach wastes stamina and delays your progression. A structured plan transforms farming from luck-based gambling into a predictable resource pipeline. When you know exactly which domain to run, which stats to target, and when to stop farming a given slot, you cut your time-to-target by more than half.</p>
+
+            <div class="gb-highlight"><p><strong>Core Principle:</strong> 90% of protocore farming results come from planning, not grinding. The 10% that requires grinding goes toward targeted substat refinement, not random main stat fishing. A player with a plan who runs Domain 6 thirty times will have a better team than a player who runs Domain 6 one hundred times without direction.</p></div>
+
+            <p>This planner covers every aspect of protocore farming optimization: the actual drop probabilities so you know what you are rolling for, domain routing based on your account stage, a stamina budget template to allocate your weekly energy, a priority matrix for upgrade order, and milestone checkpoints to track progress. Use the sections below to build your personal farming roadmap.</p>
+        </section>
+
+        <section id="drop-rates">
+            <h2>Drop Rate Reference</h2>
+            <p>Understanding the underlying probabilities helps you make informed decisions. Every protocore domain run follows fixed drop tables. Here is the breakdown per SSR protocore drop.</p>
+
+            <div class="data-row"><span class="data-label">SSR Base Drop Rate</span><span class="data-value" style="color:#00bcd4;font-weight:700;">8% per run</span></div>
+            <div class="data-row"><span class="data-label">SR Base Drop Rate</span><span class="data-value">35% per run</span></div>
+            <div class="data-row"><span class="data-label">R Base Drop Rate</span><span class="data-value">57% per run</span></div>
+
+            <p><strong>Slot Distribution (SSR only)</strong> — Each slot has equal probability when a protocore drops:</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">33%</div><div class="stat-label">TRIANGLE</div><div class="stat-desc">Slot 1 or Slot 2</div></div>
+                <div class="stat-card"><div class="stat-number">33%</div><div class="stat-label">SQUARE</div><div class="stat-desc">Slot 3 or Slot 4</div></div>
+                <div class="stat-card"><div class="stat-number">33%</div><div class="stat-label">CIRCLE</div><div class="stat-desc">Slot 5 or Slot 6</div></div>
+            </div>
+
+            <p><strong>Main Stat Probabilities</strong> — Not all main stats are equally likely. Here are the approximate rates when a SSR protocore of a given slot drops:</p>
+
+            <div class="data-row"><span class="data-label">ATK% (Slot 1/6)</span><span class="data-value">~20%</span></div>
+            <div class="data-row"><span class="data-label">HP% (Slot 1/6)</span><span class="data-value">~20%</span></div>
+            <div class="data-row"><span class="data-label">DEF% (Slot 1/6)</span><span class="data-value">~20%</span></div>
+            <div class="data-row"><span class="data-label">CRIT Rate (Slot 4)</span><span class="data-value">~8%</span></div>
+            <div class="data-row"><span class="data-label">CRIT DMG (Slot 4)</span><span class="data-value">~8%</span></div>
+            <div class="data-row"><span class="data-label">Energy Recharge (Slot 6)</span><span class="data-value">~10%</span></div>
+            <div class="data-row"><span class="data-label">DMG Bonus (Slot 3)</span><span class="data-value">~12%</span></div>
+            <div class="data-row"><span class="data-label">Flat ATK (Any)</span><span class="data-value">~15%</span></div>
+            <div class="data-row"><span class="data-label">Flat HP/DEF (Any)</span><span class="data-value">~25% each</span></div>
+
+            <div class="gb-tip-box"><p><strong>Planning Insight:</strong> A CRIT Rate main stat on Slot 4 has only ~8% probability per SSR drop. On average, you need 12-15 SSR protocore drops of Slot 4 shape to see one CRIT Rate piece. Do not get discouraged — this is expected. Budget approximately 360-450 stamina per desired CRIT main stat piece.</p></div>
+        </section>
+
+        <section id="farming-routes">
+            <h2>Farming Route Planner</h2>
+            <p>Not all domains are equal. The optimal domain for your account depends on your progression stage. Here is the routing framework.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">EARLY</div><div class="stat-label">DOMAIN 3</div><div class="stat-desc">Best stamina-to-value ratio before level 45. Drops balanced slot mix with decent SSR rate.</div></div>
+                <div class="stat-card"><div class="stat-number">MID</div><div class="stat-label">DOMAIN 5</div><div class="stat-desc">Highest average substat roll value. Farm here while building your core 6-slot set.</div></div>
+                <div class="stat-card"><div class="stat-number">END</div><div class="stat-label">DOMAIN 6</div><div class="stat-desc">Best for specific slot targeting. Run this when you need one specific shape to complete a set.</div></div>
+                <div class="stat-card"><div class="stat-number">FARM</div><div class="stat-label">DOMAIN 4</div><div class="stat-desc">Dedicated support piece domain. Run when your support team needs HP/ER/DEF main stats.</div></div>
+            </div>
+
+            <div class="attack-card">
+                <div class="attack-name">Early Game (Account Level 1-44)</div>
+                <div class="attack-desc">Run Domain 3 exclusively. It drops all three shapes evenly and has the lowest stamina cost per run. Your goal at this stage is to get any SSR protocore with a correct main stat on each of the 6 slots. Do not worry about substats yet. Focus on clearing the domain quickly with the units you have leveled.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">Mid Game (Account Level 45-59)</div>
+                <div class="attack-desc">Transition to Domain 5. The substat pool is weighted toward offensive rolls — ATK%, CRIT Rate, CRIT DMG appear more frequently in upgrade rolls. Farm Domain 5 until all six DPS slots have usable main stats AND at least two substat upgrades that are not flat DEF or flat HP. Domain 5 is your home for approximately 3-4 weeks.</div>
+            </div>
+            <div class="attack-card">
+                <div class="attack-name">End Game (Account Level 60+)</div>
+                <div class="attack-desc">Domain 6 becomes your primary domain when you need specific slot shapes. Want a Triangle for Slot 2? Domain 6 has weighted Triangle drops. Use Domain 6 for targeted shape farming and Domain 5 for general substat improvement. Alternate between them based on your immediate need.</div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Efficiency Rule:</strong> Do not farm Domain 6 until your main DPS has all six slots at +12. Domain 6 is for refinement, not foundation. Premature Domain 6 farming slows your overall progression because you miss the substat value that Domain 5 provides in bulk.</p></div>
+        </section>
+
+        <section id="stamina-budget">
+            <h2>Stamina Budget Template</h2>
+            <p>Your weekly stamina is finite. Here is the recommended allocation to maximize account growth without burning out. Natural stamina regeneration gives you 1560 stamina per week (180/day plus the 60 lunch/dinner stamina).</p>
+
+            <div class="wrk10-budget-container">
+                <div class="wrk10-budget-total">1,560 <span class="wrk10-budget-unit">WEEKLY STAMINA</span></div>
+                <div class="wrk10-budget-bar">
+                    <div class="wrk10-budget-segment wrk10-budget-pcore" style="width:38%"><span>600</span></div>
+                    <div class="wrk10-budget-segment wrk10-budget-memory" style="width:29%"><span>450</span></div>
+                    <div class="wrk10-budget-segment wrk10-budget-credit" style="width:23%"><span>360</span></div>
+                    <div class="wrk10-budget-segment wrk10-budget-reserve" style="width:10%"><span>150</span></div>
+                </div>
+                <div class="wrk10-budget-legend">
+                    <div class="wrk10-legend-item"><span class="wrk10-legend-dot wrk10-dot-pcore"></span> Protocore Domains</div>
+                    <div class="wrk10-legend-item"><span class="wrk10-legend-dot wrk10-dot-memory"></span> Memory Domains</div>
+                    <div class="wrk10-legend-item"><span class="wrk10-legend-dot wrk10-dot-credit"></span> Credit / EXP Domains</div>
+                    <div class="wrk10-legend-item"><span class="wrk10-legend-dot wrk10-dot-reserve"></span> Event Reserve</div>
+                </div>
+            </div>
+
+            <p><strong>Protocore Domains (600 stamina / ~39%)</strong> — This is your primary investment. Run 8-9 protocore domains per day. Focus on the domain stage appropriate for your progression level (see Farming Route Planner above). This allocation guarantees at least 75 runs per week, yielding approximately 6 SSR protocores on average.</p>
+
+            <p><strong>Memory Domains (450 stamina / ~29%)</strong> — Memory experience and upgrade materials. Running memory domains every other day ensures your equipped memories stay leveled. Neglecting memory levels is a common mistake — a well-leveled memory with bad protocores outperforms a max-level protocore set on level 1 memories.</p>
+
+            <p><strong>Credit / EXP Domains (360 stamina / ~23%)</strong> — Gold and hunter EXP. You will always need more credits than you think. Leveling protocores from 0 to 15 costs approximately 270,000 credits per piece — over 1.6 million for a full team of 6. Run credit domains at least every third day.</p>
+
+            <p><strong>Event Reserve (150 stamina / ~10%)</strong> — Keep this buffer for limited-time events, double-drop campaigns, or emergency upgrade needs. If events are quiet, funnel this into protocore domains instead. Never let your stamina cap overflow.</p>
+
+            <div class="gb-highlight"><p><strong>Budget Adjustment:</strong> If you are in an active event week, swap the reserve allocation with credit allocation — events usually provide enough credits. Conversely, during double-drop protocore events, push protocore allocation up to 50% and reduce memory domains. The template is a baseline, not a rule — adjust based on the current event calendar.</p></div>
+        </section>
+
+        <section id="priority-matrix">
+            <h2>Upgrade Priority Matrix</h2>
+            <p>Not all protocore slots are equal. Upgrading in the wrong order wastes resources. Use this priority matrix to decide which slot to upgrade next on each team member.</p>
+
+            <div class="wrk10-priority-grid">
+                <div class="wrk10-priority-card wrk10-tier-s">
+                    <div class="wrk10-priority-tier">S-TIER</div>
+                    <div class="wrk10-priority-target">DPS Slot 4 (CRIT) + Slot 6 (ATK%)</div>
+                    <div class="wrk10-priority-desc">These two slots determine 60% of your total DPS. Slot 4 CRIT main stat (Rate or DMG) and Slot 6 ATK% are the highest-impact upgrades in the entire game. Prioritize getting both to +12 before touching any other protocore upgrade on your DPS.</div>
+                </div>
+                <div class="wrk10-priority-card wrk10-tier-a">
+                    <div class="wrk10-priority-tier">A-TIER</div>
+                    <div class="wrk10-priority-target">DPS Slot 1 (ATK)</div>
+                    <div class="wrk10-priority-desc">Slot 1 is pure ATK main stat. Every upgrade level adds raw attack power. After your Slot 4 and Slot 6 are +12, bring Slot 1 to +12. This is your third-highest priority for any DPS character.</div>
+                </div>
+                <div class="wrk10-priority-card wrk10-tier-b">
+                    <div class="wrk10-priority-tier">B-TIER</div>
+                    <div class="wrk10-priority-target">DPS Slot 2, 3, 5 (Substats)</div>
+                    <div class="wrk10-priority-desc">Slots 2, 3, and 5 provide main stats that are less impactful (HP%, DEF%, DMG Bonus, flat stats). Their value comes from substat rolls. Upgrade these to +9 first, then push to +12 only after your S and A tier pieces are at +15. The substat rolls at +3, +6, +9 matter more than the main stat on these slots.</div>
+                </div>
+                <div class="wrk10-priority-card wrk10-tier-c">
+                    <div class="wrk10-priority-tier">C-TIER</div>
+                    <div class="wrk10-priority-target">Sub-DPS & Support Slots</div>
+                    <div class="wrk10-priority-desc">Sub-DPS characters follow the same priority as DPS but two tiers lower — get Slot 4/6 to +9, everything else to +6. Support characters should have HP% or ER main stats on Slot 6 at +6, and all other slots at +3. Support protocores are for enabling — they do not need high levels to function.</div>
+                </div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Upgrade Order for a New DPS:</strong> Slot 4 to +12 > Slot 6 to +12 > Slot 1 to +12 > Slot 3 to +9 > Slot 2 to +9 > Slot 5 to +9 > all six to +15 in the same order. This sequence gives you the highest DPS return per credit spent at every step.</p></div>
+        </section>
+
+        <section id="milestones">
+            <h2>Milestone Planner</h2>
+            <p>Track your protocore progression against these milestones. Each milestone represents a tangible power gain that unlocks harder content.</p>
+
+            <div class="rotation-guide">
+                <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Week 1 — Foundation</strong><div class="step-desc">Correct main stat on all 6 DPS slots. Do not worry about set bonuses or rarity. Even SR protocores with the right main stat are acceptable at this stage. Your goal is to have a functioning stat layout. Recommended domain: Domain 3 for fastest SSR rate vs stamina.</div></div></div>
+                <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Week 2-3 — Core Upgrade</strong><div class="step-desc">DPS slots 4, 6, and 1 at +9. Support slots at +6. Start replacing SR pieces with SSR pieces as they drop. At this stage, your DPS should have approximately 1,800 ATK, 45% CRIT Rate, 100% CRIT DMG. This is enough to clear Domain 5 comfortably.</div></div></div>
+                <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Month 1 — Full +12</strong><div class="step-desc">All six slots on your main DPS at +12. Sub-DPS at +9. Support at +6. Your main team is now ready for Abyss floors 1-8. At this milestone, stop farming your main DPS protocores and shift focus to your second team. The second team only needs to reach the Week 2-3 standard to be Abyss-viable.</div></div></div>
+                <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Month 2 — Substats Refinement</strong><div class="step-desc">Return to your main DPS and start refining substats. Goal: at least 2 useful substat rolls (CRIT Rate, CRIT DMG, ATK%) on slots 4, 6, and 1. Slots 2, 3, 5 should have at least 1 useful roll. Average DPS CRIT Rate should be 55%+. Average CRIT DMG 130%+.</div></div></div>
+                <div class="rotation-step"><div class="step-num">5</div><div class="step-content"><strong>Month 3+ — God-Roll Chasing</strong><div class="step-desc">Now you are in the endgame. Target: triple or quad-roll CRIT substats on slots 4 and 6. Slot 1 with ATK% + CRIT Rate + CRIT DMG. This is the 80/20 zone — the last 20% of optimization takes 80% of the time. Only chase these if you are clearing all current content comfortably.</div></div></div>
+            </div>
+
+            <div class="gb-highlight"><p><strong>Progression Tip:</strong> Do not linger on milestone 1. Getting correct main stats is the quickest power spike in the game. You can go from zero to full correct main stats in one focused farming session (approximately 400 stamina). The real time gate starts at milestone 3 when you need upgrade materials and credits. Budget your stamina accordingly.</p></div>
+        </section>
+
+        <section id="mistakes">
+            <h2>Common Planning Mistakes</h2>
+
+            <div class="mistake-list">
+                <div class="mistake-item"><div class="mistake-title">Mistake 1: Farming Without a Target</div><div class="mistake-desc">The most common mistake is running domains without knowing what you need. You do Domain 6 because it is the highest unlocked, get random protocores, and check if they are good. This is aimless grinding. Always enter a domain knowing exactly which slot and main stat you are targeting. If you need Slot 4 CRIT Rate, count how many runs you are willing to dedicate before pivoting. Unplanned farming is the largest stamina sink in the game.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 2: Over-Farming Early</div><div class="mistake-desc">Players below level 45 who spend 100% of their stamina on protocore domains are delaying their account progression. Memory levels, character ascension, and skill upgrades all multiply your protocore effectiveness. A level 60 character with +9 protocores outperforms a level 40 character with +15 protocores. Level your account first, then optimize protocores.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 3: Ignoring Support Protocores</div><div class="mistake-desc">Support protocores are treated as an afterthought by most players. This is a mistake. A support with HP% Slot 6 at +12 enables your DPS to stay on field longer. A support with Energy Recharge main stat on Slot 6 feeds your DPS ultimate uptime. Investing 200 stamina into support protocores can increase your team DPS by 15-20% simply by keeping your DPS alive and ulting more often.</div></div>
+                <div class="mistake-item"><div class="mistake-title">Mistake 4: Chasing Perfect Pieces</div><div class="mistake-desc">The 80/20 rule applies brutally to protocore farming. Getting a usable piece takes 1-2 domain sessions. Getting a great piece takes 1-2 weeks. Getting a perfect piece (correct main stat, triple-roll CRIT, matching set) can take months. The time cost of perfection is rarely worth it. Settle for "great" on your main DPS and "good" on everyone else. The content does not require perfect pieces — it requires consistent, planned farming.</div></div>
+            </div>
+
+            <div class="gb-final-box"><p><strong>Summary:</strong> Protocore farming efficiency comes from planning, not grinding. Key rates: SSR 8% baseline, CRIT main stats ~8% per slot-4 drop. Domain routing: Domain 3 early, Domain 5 mid, Domain 6 end. Weekly stamina budget: 600 protocore, 450 memory, 360 credit, 150 reserve. Upgrade priority: DPS Slot 4/6 (S-tier), Slot 1 (A-tier), Slots 2/3/5 (B-tier), support slots (C-tier). Milestones: Week 1 (main stats), Week 2-3 (+9 core), Month 1 (all +12), Month 2 (substat refinement), Month 3+ (god-rolls). Avoid aimless farming, early over-farming, support neglect, and perfection chasing. Follow the plan, adjust for events, and your protocore progression will outpace players who grind without direction.</p></div>
+
+            <div class="article-related">
+                <div class="article-related-title">Related Workshop Articles</div>
+                <div class="article-related-grid">
+                    <a href="workshop-dps-calculator.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculator Guide</span></a>
+                    <a href="workshop-build-tools.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Build Templates & Tools</span></a>
+                    <a href="workshop-team-builder.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Team Builder Guide</span></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
