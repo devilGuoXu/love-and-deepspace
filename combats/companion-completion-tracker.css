@@ -1,0 +1,289 @@
+/* =========================================
+   COMPLETION TRACKER & MISSABLE CONTENT
+   Prefix: cct-
+   ========================================= */
+
+/* --- Urgency Badges --- */
+.cct-urgent-limited {
+    display: inline-block;
+    background: rgba(231, 76, 60, 0.15);
+    border: 1px solid #e74c3c;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #e74c3c;
+    text-transform: uppercase;
+}
+
+.cct-urgent-window {
+    display: inline-block;
+    background: rgba(243, 156, 18, 0.15);
+    border: 1px solid #f39c12;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f39c12;
+    text-transform: uppercase;
+}
+
+.cct-urgent-permanent {
+    display: inline-block;
+    background: rgba(46, 204, 113, 0.15);
+    border: 1px solid #2ecc71;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2ecc71;
+    text-transform: uppercase;
+}
+
+/* --- Status Labels (used inside operative cards) --- */
+.cct-status-lost {
+    display: inline-block;
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid rgba(231, 76, 60, 0.4);
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #e74c3c;
+    margin-right: 4px;
+}
+
+.cct-status-active {
+    display: inline-block;
+    background: rgba(46, 204, 113, 0.12);
+    border: 1px solid rgba(46, 204, 113, 0.4);
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2ecc71;
+    margin-right: 4px;
+}
+
+/* --- Per-Operative Missable Grid --- */
+.cct-operatives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.cct-op-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+
+.cct-op-card:hover {
+    border-color: #ffd700;
+}
+
+.cct-op-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.cct-op-item {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.cct-op-item:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Tier Comparison Cards --- */
+.cct-tier-comparison {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.cct-tier-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.cct-tier-card:hover {
+    transform: translateY(-3px);
+}
+
+.cct-tier-casual:hover {
+    border-color: #2ecc71;
+}
+
+.cct-tier-dedicated:hover {
+    border-color: #ffd700;
+}
+
+.cct-tier-collector:hover {
+    border-color: #e74c3c;
+}
+
+.cct-tier-header {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cct-tier-casual .cct-tier-header {
+    color: #2ecc71;
+}
+
+.cct-tier-dedicated .cct-tier-header {
+    color: #ffd700;
+}
+
+.cct-tier-collector .cct-tier-header {
+    color: #e74c3c;
+}
+
+.cct-tier-req {
+    font-size: 0.75rem;
+    color: #8a94a8;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1a1f2e;
+    line-height: 1.4;
+}
+
+.cct-tier-desc {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+}
+
+.cct-tier-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid #1a1f2e;
+}
+
+.cct-stat {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+/* --- Urgency Table --- */
+.cct-urgency-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f121b;
+}
+
+.cct-urgency-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+}
+
+.cct-urgency-row:last-child {
+    border-bottom: none;
+}
+
+.cct-urgency-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.cct-urgency-header {
+    background: rgba(255, 215, 0, 0.06);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #8a94a8;
+    text-transform: uppercase;
+}
+
+.cct-urgency-col {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    line-height: 1.5;
+}
+
+.cct-urgency-header .cct-urgency-col {
+    color: #8a94a8;
+}
+
+/* --- Urgency Legend --- */
+.cct-urgency-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.cct-legend-item {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 0.8rem;
+    color: #8a94a8;
+    line-height: 1.6;
+}
+
+.cct-legend-item .cct-urgent-limited,
+.cct-legend-item .cct-urgent-window,
+.cct-legend-item .cct-urgent-permanent {
+    margin-bottom: 6px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .cct-operatives-grid {
+        grid-template-columns: 1fr;
+    }
+    .cct-tier-comparison {
+        grid-template-columns: 1fr;
+    }
+    .cct-urgency-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+    .cct-urgency-col:last-child {
+        grid-column: 1 / -1;
+    }
+    .cct-urgency-legend {
+        grid-template-columns: 1fr;
+    }
+}

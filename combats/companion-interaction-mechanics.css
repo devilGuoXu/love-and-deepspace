@@ -1,0 +1,272 @@
+/* =========================================
+   COMPANION INTERACTION MECHANICS
+   Prefix: cim-
+   ========================================= */
+
+/* --- Zone Cards (Touch) --- */
+.cim-zone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.cim-zone-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px 16px 20px;
+    text-align: center;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    cursor: default;
+}
+
+.cim-zone-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffd700;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.1);
+}
+
+.cim-zone-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.12);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffd700;
+    transition: background 0.25s, border-color 0.25s;
+}
+
+.cim-zone-card:hover .cim-zone-icon {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+}
+
+.cim-zone-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 6px;
+}
+
+.cim-zone-reaction {
+    font-size: 0.78rem;
+    color: #b0bedb;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.cim-zone-detail {
+    font-size: 0.7rem;
+    color: #6a7080;
+    padding-top: 8px;
+    border-top: 1px solid #1a1f2e;
+}
+
+/* --- Flavor Preference Table --- */
+.cim-flavor-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f121b;
+}
+
+.cim-flavor-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+}
+
+.cim-flavor-row:last-child {
+    border-bottom: none;
+}
+
+.cim-flavor-header {
+    background: rgba(255, 215, 0, 0.08);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffd700;
+    text-transform: uppercase;
+}
+
+.cim-flavor-cell {
+    font-size: 0.85rem;
+    color: #b0bedb;
+}
+
+.cim-flavor-header .cim-flavor-cell {
+    color: #ffd700;
+}
+
+.cim-pref-sweet {
+    color: #ff9ff3;
+    font-weight: 600;
+}
+
+.cim-pref-savory {
+    color: #feca57;
+    font-weight: 600;
+}
+
+.cim-pref-spicy {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+/* --- Mood Meter --- */
+.cim-mood-meter {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 24px 0;
+    text-align: center;
+}
+
+.cim-meter-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #6a7080;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.cim-meter-bar {
+    display: flex;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.cim-meter-segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cim-meter-low {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    border-right: 1px solid #1a1f2e;
+}
+
+.cim-meter-mid {
+    background: rgba(255, 215, 0, 0.12);
+    color: #ffd700;
+    border-right: 1px solid #1a1f2e;
+}
+
+.cim-meter-high {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+}
+
+.cim-meter-desc {
+    font-size: 0.78rem;
+    color: #8a94a8;
+}
+
+/* --- Daily Routine Flow --- */
+.cim-routine-flow {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cim-routine-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    padding: 16px 24px;
+    width: 100%;
+    max-width: 500px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.cim-routine-step:hover {
+    border-color: #ffd700;
+    transform: translateX(4px);
+}
+
+.cim-rstep-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.12);
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.cim-rstep-content {
+    flex: 1;
+}
+
+.cim-rstep-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 2px;
+}
+
+.cim-rstep-desc {
+    font-size: 0.78rem;
+    color: #8a94a8;
+    line-height: 1.4;
+}
+
+.cim-routine-arrow {
+    color: #ffd700;
+    font-size: 1.4rem;
+    font-weight: 700;
+    opacity: 0.5;
+    line-height: 1;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .cim-zone-grid {
+        grid-template-columns: 1fr;
+    }
+    .cim-flavor-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+    .cim-routine-step {
+        padding: 12px 16px;
+    }
+    .cim-rstep-num {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+}
