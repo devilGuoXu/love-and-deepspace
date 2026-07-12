@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Steal DPS: Positioning, Hitstop, Frame Efficiency | Deepspace Combat Manual | Deepspace Hub</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.webp">
+    <meta name="description" content="You press buttons fast. You still lose on damage. The secret isn't speed — it's knowing when not to press. A deep dive into combat efficiency in Love and Deepspace.">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="article-combat-steal-dps.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="/">&larr; BACK TO MISSION HUB</a>
+        </div>
+    </nav>
+    
+    <header class="article-header" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('images/combat-stealdps-cover.webp'); background-size: cover; background-position: center 30%;">
+        <h1>How to Steal DPS</h1>
+        <p>Positioning. Hitstop. Frame efficiency. Why you're slow when you think you're fast.</p>
+    </header>
+    
+    <div class="container">
+        
+        <!-- INTRO -->
+        <div class="intro-box">
+            <p>You press buttons fast. You spam attacks. Your fingers are moving constantly.</p>
+            <p>And you still lose on damage.</p>
+            <p>Here's the thing: speed doesn't win fights. <span class="highlight">Efficiency</span> wins fights.</p>
+            <p>The difference between a good player and a great player isn't APM (actions per minute). It's knowing when <span class="highlight">not</span> to press. When to wait. When to let the animation breathe. When to steal an extra hit that someone else would miss.</p>
+            <p>This guide is about that stolen damage. The invisible DPS that nobody talks about. The difference between "I'm doing fine" and "I just cleared 30 seconds faster."</p>
+            <div class="divider">✦ ✦ ✦</div>
+        </div>
+
+        <!-- SECTION 1: THE PROBLEM -->
+        <section class="chapter">
+            <div class="chapter-number">01</div>
+            <h2>Why You're Not As Fast As You Think</h2>
+            
+            <div class="image-right">
+                <img src="images/combat-stealdps-problem.webp" alt="Player mashing buttons vs efficient player">
+                <div class="image-caption">Mashing = busy. Efficient = effective.</div>
+            </div>
+            
+            <p>You've probably done this before: you finish a fight, you feel like you were pressing buttons the whole time, and then you look at the time — or worse, the damage numbers — and you realize something is off.</p>
+            <p>You were fast. But you were wasting frames.</p>
+            <p>The combat engine in Love and Deepspace rewards intentionality, not frequency. Every button press initiates a sequence: animation start, hitbox active, hitstop, animation recovery, next action.</p>
+            <p>Most players spam through this entire sequence. They press the next button before the previous one has finished its job. They interrupt their own damage windows. They cancel recovery frames that could have been used for something else.</p>
+            <p>Speed isn't speed. <span class="highlight">Timing</span> is speed.</p>
+            
+            <div class="analysis-card">
+                <div class="analysis-label">The Frame Tax</div>
+                <p>Every action costs frames. The start-up frames (wind-up), the active frames (the actual hit), the recovery frames (putting your weapon back).</p>
+                <p>When you spam, you're not reducing the cost — you're interrupting active windows and creating new start-up frames. You're <span class="highlight">paying the tax multiple times</span> for the same attack.</p>
+                <p>An efficient player pays once. A spammer pays twice. Sometimes three times.</p>
+                <p>Over a three-minute fight, that's minutes of wasted time.</p>
+            </div>
+            
+            <div class="footnote">You're pressing buttons, but you're not getting value from them. That's the problem.</div>
+        </section>
+
+        <!-- SECTION 2: HITSTOP -->
+        <section class="chapter">
+            <div class="chapter-number">02</div>
+            <h2>Hitstop: The Free Frames Nobody Uses</h2>
+            
+            <div class="image-left">
+                <img src="images/combat-stealdps-hitstop.webp" alt="Hitstop animation freeze frame">
+                <div class="image-caption">That freeze frame is not a pause. It's an opportunity.</div>
+            </div>
+            
+            <p>You've seen it. Every time your attack lands on an enemy, the game freezes — for a split second — and the screen flashes. That brief pause is called <span class="highlight">hitstop</span>.</p>
+            <p>Most players treat it as a visual effect. They wait for it to end. They resume pressing buttons.</p>
+            <p>That's a mistake.</p>
+            <p>Hitstop is not a punishment. It's a <span class="highlight">gift</span>. During hitstop, the enemy is stunned. You are stunned. The game is frozen — but <span class="highlight">your button inputs are being queued</span>.</p>
+            <p>In that split second of freeze, you can input your next command. Not just any command — the <span class="highlight">optimal</span> command. By the time the game unfreezes, your next action is already registered. No delay. No gap. No wasted frames.</p>
+            
+            <div class="analysis-card">
+                <div class="analysis-label">How to Use Hitstop</div>
+                <p>Step 1: Land an attack. The freeze happens. Do not wait for it to end.</p>
+                <p>Step 2: During the freeze, input your next action. Attack again. Dodge. Skill. Whatever is optimal.</p>
+                <p>Step 3: The game unfreezes. Your input executes immediately. You just saved 3-5 frames.</p>
+                <p>Do this consistently across a fight. Save 3 frames per hit. Multiply by 50 hits. That's 150 frames — 2.5 seconds of real time. Free. For doing nothing except not waiting.</p>
+            </div>
+            
+            <div class="footnote">Hitstop freezes the game. It doesn't freeze your inputs. Use it.</div>
+        </section>
+
+        <!-- SECTION 3: POSITIONING -->
+        <section class="chapter">
+            <div class="chapter-number">03</div>
+            <h2>Positioning: The Silent Defense</h2>
+            
+            <div class="image-right">
+                <img src="images/combat-stealdps-position.webp" alt="Positioning diagram">
+                <div class="image-caption">Where you stand determines how much you can steal.</div>
+            </div>
+            
+            <p>This is the most underrated skill in the game. Not parrying. Not perfect dodging. <span class="highlight">Where you stand.</span></p>
+            <p>Stand in the wrong place, and you spend the entire fight dodging. Stand in the right place, and you never need to dodge at all.</p>
+            <p>That's the secret. Positioning is proactive defense. It's dodging before the attack even starts. It's standing where the enemy's attack isn't going to hit.</p>
+            <p>Most enemies in Love and Deepspace telegraph their attacks not just with animation, but with their <span class="highlight">body positioning</span>. They lean. They shift weight. They turn. They give you 10-15 frames of warning before the attack even starts.</p>
+            <p>If you're paying attention, you can <span class="highlight">walk</span> out of the attack zone. Not dodge. <span class="highlight">Walk</span>. And keep attacking while you do it.</p>
+            
+            <div class="analysis-card">
+                <div class="analysis-label">How to Read Enemy Positioning</div>
+                <ul>
+                    <li><b>Shoulder drop</b> → attack is coming from that side. Move to the opposite side.</li>
+                    <li><b>Weight shift to back foot</b> → lunge incoming. Move sideways, not backward.</li>
+                    <li><b>Head tilt</b> → ranged attack. Move diagonally forward, not sideways.</li>
+                    <li><b>Pivot</b> → sweeping attack. Move in. Not out. In.</li>
+                </ul>
+                <p>Each of these gives you time to reposition while maintaining your attack rhythm. You don't need to dodge. You don't need to break your combo. You just need to <span class="highlight">be somewhere else</span>.</p>
+            </div>
+            
+            <div class="footnote">Walk, don't dodge. Steal frames, not health.</div>
+        </section>
+
+        <!-- SECTION 4: WHEN NOT TO PRESS -->
+        <section class="chapter">
+            <div class="chapter-number">04</div>
+            <h2>The Art of Not Pressing</h2>
+            
+            <div class="image-left">
+                <img src="images/combat-stealdps-wait.webp" alt="Player holding still as enemy attacks">
+                <div class="image-caption">Sometimes, the best input is no input.</div>
+            </div>
+            
+            <p>This is the hardest thing to learn. The most counterintuitive skill in the game:</p>
+            <p><span class="highlight">Sometimes, you need to stop pressing buttons.</span></p>
+            <p>Here's why: certain enemy attacks have <span class="highlight">tracking</span>. They adjust their trajectory based on your position. If you dodge early, they follow you. If you sprint, they catch you.</p>
+            <p>But if you <span class="highlight">wait</span> — just for a fraction of a second — the tracking locks. The attack commits to a direction. And then you can avoid it with a single input.</p>
+            <p>That waiting is the difference between spending 20 frames of dodging and spending 5 frames of movement.</p>
+            <p>It's also the difference between interrupting your own combo and maintaining it.</p>
+            
+            <div class="analysis-card">
+                <div class="analysis-label">When to Hold</div>
+                <ul>
+                    <li><b>You see an enemy wind up</b>. Don't react immediately. Wait for the commit. Then move.</li>
+                    <li><b>You just landed a heavy hit</b>. Don't spam the next attack. Wait for the hitstop to end naturally. Use that time to reposition.</li>
+                    <li><b>An enemy is about to recover from stagger</b>. Don't attack into hyper armor. Wait for the parry window.</li>
+                    <li><b>You're at max range</b>. Don't chase. Let them come to you. The charge is easier to punish than the retreat.</li>
+                </ul>
+                <p>These aren't "do nothing" moments. They're "gather information" moments. They're "prepare for the next cycle" moments. They're <span class="highlight">efficiency</span>.</p>
+            </div>
+            
+            <div class="footnote">Press when you need to. Hold when you can. The difference is stolen DPS.</div>
+        </section>
+
+        <!-- SECTION 5: PRACTICAL CYCLE -->
+        <section class="chapter">
+            <div class="chapter-number">05</div>
+            <h2>A Practical "Steal DPS" Cycle</h2>
+            
+            <div class="image-full">
+                <img src="images/combat-stealdps-cycle.webp" alt="Full combat cycle diagram">
+                <div class="image-caption">One cycle. All the steals. The invisible DPS.</div>
+            </div>
+            
+            <p>Let's put everything together into one actionable cycle:</p>
+            
+            <div class="analysis-card">
+                <div class="analysis-label">Cycle: Aggressive Stagger Punish</div>
+                <ol>
+                    <li><b>Position</b> yourself at a 45-degree angle to the enemy's dominant hand side. (Your damage is safer here. Their attacks have less coverage.)</li>
+                    <li><b>Initiate</b> with a light attack to bait a response. Land the hit. The hitstop triggers.</li>
+                    <li><b>During hitstop</b>, input your heavy attack. Do not wait. Input it immediately.</li>
+                    <li><b>The heavy hits</b>. More hitstop. More freeze frames. Input your skill during this freeze.</li>
+                    <li><b>The skill lands</b>. The enemy staggers. While they stagger, take one step to the side. (You don't need to run. One step. Maintain your angle.)</li>
+                    <li><b>Input</b> your light attack sequence. The enemy is still staggered. The hitstop from the stagger + your attack = extended freeze. Input your combo finisher.</li>
+                    <li><b>The combo ends</b>. You've stolen 4-5 frames per hit. You've maintained position. You've avoided incoming damage by walking, not dodging.</li>
+                    <li><b>Now hold</b>. Wait for the enemy to decide its next action. You're already in position. You're already ready. Let them commit. Then move.</li>
+                </ol>
+                <p>This cycle takes about 4-5 seconds in real time. In that time, you've landed 4-5 hits, maintained safety, saved 2-3 dodges, and stolen about 20-30 frames of animation time.</p>
+                <p>That stolen time adds up. Over a full fight, that's <span class="highlight">10-15 seconds of extra damage opportunity</span>. That's the difference between a boss kill and a "almost got it."</p>
+            </div>
+            
+            <div class="footnote">Steal frames. Steal position. Steal the win. One cycle at a time.</div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion">
+            <div class="conclusion-icon">⚡</div>
+            <div class="conclusion-title">Steal the Game</div>
+            <p>Most players think combat is about speed. It's not. It's about efficiency.</p>
+            <p>Hitstop is free frames. Use them.</p>
+            <p>Positioning is free defense. Use it.</p>
+            <p>Waiting is free information. Use it.</p>
+            <p>The difference between winning and losing, between 30 seconds and 45 seconds, between "good enough" and "actually good," is not about pressing more buttons. It's about pressing <span class="highlight">the right buttons at the right time</span>.</p>
+            <p>And sometimes, not pressing them at all.</p>
+            <div class="conclusion-attribution">— recorded by Mephisto, who has seen the difference between busy and effective</div>
+        </div>
+
+        <!-- COLOPHON -->
+        <div class="colophon">
+            <div class="colophon-text">mephisto's archival note</div>
+            <div class="colophon-entry">The good players don't press more. They press less, but they press better.</div>
+            <div class="colophon-entry">I've watched them. They stand still while the enemy winds up. They move exactly when the attack commits. They steal frames like it's nothing.</div>
+            <div class="colophon-entry">You can be that player. Just wait. Just move. Just steal.</div>
+            <div class="colophon-signature">— mephisto, who observes the difference</div>
+        </div>
+    </div>
+    
+    <button id="backToTopBtn" class="back-to-top" title="Back to Top">↑</button>
+    
+    <footer class="article-main-footer">
+        <div class="article-footer-links">
+            <a href="../legal/about.html">About Us</a>
+            <a href="../legal/contact.html">Contact Us</a>
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="article-copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p>
+        <p class="article-disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p>
+    </footer>
+    
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
