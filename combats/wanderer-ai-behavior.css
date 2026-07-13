@@ -1,0 +1,283 @@
+/* =========================================
+   WDR_19 — Wanderer AI Behavior & Aggro
+   Prefix: .wdr19-*
+   ========================================= */
+
+/* --- Detection Range Table --- */
+.wdr19-range-table {
+    margin: 24px 0;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.wdr19-range-row {
+    display: grid;
+    grid-template-columns: 140px 64px 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.wdr19-range-row:last-child {
+    border-bottom: none;
+}
+
+.wdr19-range-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #e0e6f0;
+}
+
+.wdr19-range-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent, #e67e22);
+    text-align: center;
+}
+
+.wdr19-range-bar {
+    height: 8px;
+    background: #1a1f2e;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.wdr19-range-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent, #e67e22), #f39c12);
+    transition: width 0.3s;
+}
+
+.wdr19-range-desc {
+    font-size: 0.75rem;
+    color: #6a7080;
+    line-height: 1.4;
+}
+
+/* Color coding for range categories */
+.wdr19-range-normal .wdr19-range-fill { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+.wdr19-range-elite .wdr19-range-fill  { background: linear-gradient(90deg, #e67e22, #f39c12); }
+.wdr19-range-long .wdr19-range-fill   { background: linear-gradient(90deg, #e74c3c, #ff6b6b); }
+.wdr19-range-extreme .wdr19-range-fill { background: linear-gradient(90deg, #8e44ad, #9b59b6); }
+
+/* --- Note Box (info variant) --- */
+.wdr19-note {
+    background: rgba(52, 152, 219, 0.08);
+    border-left: 3px solid #3498db;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.wdr19-note strong {
+    color: #3498db;
+}
+
+/* --- Leash Distance Bars --- */
+.wdr19-leash-container {
+    margin: 24px 0;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 8px 20px;
+}
+
+.wdr19-leash-item {
+    display: grid;
+    grid-template-columns: 150px 50px 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.wdr19-leash-item:last-child {
+    border-bottom: none;
+}
+
+.wdr19-leash-label {
+    font-size: 0.82rem;
+    color: #e0e6f0;
+    font-weight: 500;
+}
+
+.wdr19-leash-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent, #e67e22);
+    text-align: center;
+}
+
+.wdr19-leash-bar {
+    height: 8px;
+    background: #1a1f2e;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.wdr19-leash-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #3498db, #5dade2);
+    transition: width 0.3s;
+}
+
+/* --- Leash Threshold Cards --- */
+.wdr19-threshold-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.wdr19-threshold-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+.wdr19-threshold-card:hover {
+    border-color: var(--accent, #e67e22);
+}
+
+.wdr19-threshold-pct {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent, #e67e22);
+    margin-bottom: 8px;
+}
+
+.wdr19-threshold-desc {
+    font-size: 0.78rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+/* --- Group Behavior Cards --- */
+.wdr19-group-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    transition: border-color 0.2s;
+}
+
+.wdr19-group-card:hover {
+    border-color: var(--accent, #e67e22);
+}
+
+.wdr19-group-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 8px;
+}
+
+.wdr19-group-desc {
+    font-size: 0.85rem;
+    color: #8a94a8;
+    line-height: 1.6;
+}
+
+.wdr19-group-desc strong {
+    color: #e0e6f0;
+}
+
+/* --- Summary Do/Don't Grid --- */
+.wdr19-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.wdr19-summary-do,
+.wdr19-summary-dont {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.wdr19-summary-do strong {
+    color: #2ecc71;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wdr19-summary-dont strong {
+    color: #e74c3c;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wdr19-summary-do ul,
+.wdr19-summary-dont ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wdr19-summary-do ul li,
+.wdr19-summary-dont ul li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.82rem;
+    color: #b0bedb;
+}
+
+.wdr19-summary-do ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2ecc71;
+}
+
+.wdr19-summary-dont ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e74c3c;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .wdr19-range-row {
+        grid-template-columns: 1fr 50px;
+        gap: 8px;
+    }
+    .wdr19-range-desc {
+        grid-column: 1 / -1;
+    }
+    .wdr19-leash-item {
+        grid-template-columns: 1fr 50px;
+        gap: 8px;
+    }
+    .wdr19-threshold-grid {
+        grid-template-columns: 1fr;
+    }
+    .wdr19-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}

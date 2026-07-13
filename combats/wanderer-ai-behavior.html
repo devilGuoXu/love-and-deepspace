@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderer AI Behavior & Aggro Mechanics | Deepspace Hub</title>
+    <meta name="description" content="Master wanderer AI aggro mechanics including detection radius, threat priority, leash distances, group behavior, and exploitable pathing patterns for efficient combat.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="wanderer-ai-behavior.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-wander">
+        <div class="gb-hero"><div class="gb-badge">WANDERER ENCYCLOPEDIA — AI</div><h1>Wanderer AI Behavior & Aggro Mechanics</h1><p>Every wanderer follows a hidden rulebook. Learn how they detect, target, chase, and coordinate — then use that knowledge to control every engagement.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WDR_19</span><span class="meta-date">2026.07.11</span><span class="meta-tag">AI</span></div>
+        <div class="gb-highlight"><p><strong>Core Identity:</strong> Understanding AI behavior lets you control the battlefield. Aggro is not random — wanderers use consistent detection ranges, threat tables, and leash mechanics. Once you internalize these rules, you can pull exactly which enemies you want, hold them at a safe distance, and reset fights that go wrong without wasting stamina.</p></div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <h2>1. Aggro Range & Detection Radius</h2>
+        <p>Every wanderer has a static detection radius that determines when it transitions from idle to hostile. This radius varies by type and directly dictates your safe approach distance. Wanderers do not detect the player through line-of-sight checks alone — they use a spherical detection volume centered on the wanderer's origin point.</p>
+
+        <div class="wdr19-range-table">
+            <div class="wdr19-range-row wdr19-range-normal"><span class="wdr19-range-label">Normal (Standard)</span><span class="wdr19-range-val">8 units</span><div class="wdr19-range-bar"><div class="wdr19-range-fill" style="width:25%"></div></div><span class="wdr19-range-desc">Slasher, Spitter, Charger, Burster — all basic variants</span></div>
+            <div class="wdr19-range-row wdr19-range-elite"><span class="wdr19-range-label">Medium (Elite/Commander)</span><span class="wdr19-range-val">14 units</span><div class="wdr19-range-bar"><div class="wdr19-range-fill" style="width:45%"></div></div><span class="wdr19-range-desc">Void Sentinels, Frost Commanders, Pyro Leaders</span></div>
+            <div class="wdr19-range-row wdr19-range-long"><span class="wdr19-range-label">Long (Ranged / Artillery)</span><span class="wdr19-range-val">20 units</span><div class="wdr19-range-bar"><div class="wdr19-range-fill" style="width:65%"></div></div><span class="wdr19-range-desc">Spitters (elite variants), Arcane Casters, Orbital Mages</span></div>
+            <div class="wdr19-range-row wdr19-range-extreme"><span class="wdr19-range-label">Extreme (Boss / Alert)</span><span class="wdr19-range-val">28 units</span><div class="wdr19-range-bar"><div class="wdr19-range-fill" style="width:90%"></div></div><span class="wdr19-range-desc">Boss wanderers, patrol leaders in Abyss</span></div>
+        </div>
+
+        <p><strong>Visual cue:</strong> When you enter detection range, the wanderer's eyes glow brighter and it rotates to face you. This 0.5s "alert" animation is your window to stop, reposition, or cancel approach. Normal wanderers only detect in their forward 180° arc; elites and commanders detect in 360°. Rogues and assassins have reduced forward detection (120°) but can detect from behind if you pass within 4 units — a trap for careless repositioning.</p>
+
+        <p><strong>Stealth trick:</strong> Crouch-walking (toggle with Ctrl) halves your detection footprint. Normal wanderers need to be within 4 units to detect a crouching operative. Elites still detect at 10 units — do not rely on crouch against commanders. Using Xavier's Light Cloak reduces detection to zero for 3s if you time it before entering the radius.</p>
+
+        <div class="wdr19-note"><p><strong>Field Note:</strong> Detection radius is checked every 0.25s by the game engine. If you sprint through a detection zone faster than that tick rate, you can technically bypass a wanderer without triggering aggro. In practice this requires frame-perfect movement — consistent only on PC at 60+ FPS.</p></div>
+
+        <h2>2. Threat Priority — Who Wanderers Target</h2>
+        <p>Once aggroed, a wanderer selects its target using a weighted threat table updated every 0.5s. The table assigns threat points for each operative and the wanderer attacks the highest-threat target. Understanding this table lets you control exactly who takes damage.</p>
+
+        <div class="attack-card">
+            <div class="attack-name">Rule #1 — Nearest Operative</div>
+            <div class="attack-desc">Base threat formula: <strong>+10 points per unit of proximity</strong> (closer = higher threat). This is the default state for most engagements. The wanderer attacks whoever is physically closest.</div>
+        </div>
+
+        <div class="attack-card">
+            <div class="attack-name">Rule #2 — Lowest HP Operative</div>
+            <div class="attack-desc">When any operative drops below 40% HP, they receive a <strong>+25 threat bonus</strong>. If two operatives are equally close, the wanderer always targets the wounded one. This is why healers (Zayne, passive heal supports) are critical — keeping everyone above 40% removes this modifier entirely.</div>
+        </div>
+
+        <div class="attack-card">
+            <div class="attack-name">Rule #3 — Most Recent Attacker</div>
+            <div class="attack-desc">Landing an attack grants <strong>+15 temporary threat</strong> that decays by 5 points per second. This is the "aggro swap" mechanic: if you need to pull aggro off a teammate, hit the wanderer once. The threat spike overwrites proximity priority for 3s. Stacking resonance skills re-applies the bonus, effectively holding aggro indefinitely.</div>
+        </div>
+
+        <div class="attack-card">
+            <div class="attack-name">Rule #4 — Taunt & Shield Aggro</div>
+            <div class="attack-desc">Taunt abilities force the wanderer to target the caster for 4s regardless of threat values. Shield abilities (e.g., Rafayel's Bubble Guard) grant <strong>+30 passive threat</strong> for their duration — shielded operatives are highly prioritized, making shield management a valid tanking strategy. Note: shields do not stack threat; only the highest shield value counts.</div>
+        </div>
+
+        <p><strong>Priority summary:</strong> Taunted target (forced) → Shielded operative (+30) → Lowest HP (<40%, +25) → Recent attacker (+15, decaying) → Nearest operative (base). If two operatives tie on threat, the wanderer targets the one it faced most recently. Use this to control chase direction.</p>
+
+        <h2>3. Leash & Reset Mechanics</h2>
+        <p>Wanderers cannot chase indefinitely. Every wanderer type has a maximum leash distance measured from its spawn point. When the player exceeds this distance, the wanderer turns around and walks back at half speed, fully resetting its HP and shield. Understanding leash lets you create safe farming loops.</p>
+
+        <div class="wdr19-leash-container">
+            <div class="wdr19-leash-item"><span class="wdr19-leash-label">Normal wanderers</span><span class="wdr19-leash-val">16 units</span><div class="wdr19-leash-bar"><div class="wdr19-leash-fill" style="width:35%"></div></div></div>
+            <div class="wdr19-leash-item"><span class="wdr19-leash-label">Elite wanderers</span><span class="wdr19-leash-val">22 units</span><div class="wdr19-leash-bar"><div class="wdr19-leash-fill" style="width:50%"></div></div></div>
+            <div class="wdr19-leash-item"><span class="wdr19-leash-label">Commanders</span><span class="wdr19-leash-val">30 units</span><div class="wdr19-leash-bar"><div class="wdr19-leash-fill" style="width:68%"></div></div></div>
+            <div class="wdr19-leash-item"><span class="wdr19-leash-label">Boss wanderers</span><span class="wdr19-leash-val">40 units</span><div class="wdr19-leash-bar"><div class="wdr19-leash-fill" style="width:90%"></div></div></div>
+        </div>
+
+        <p><strong>Leash threshold (HP-based):</strong> Wanderers also have a hidden "return threshold" — if their current HP drops below a percentage, they become more aggressive and their effective leash extends by 50%. This prevents "chip and reset" farming on boss wanderers.</p>
+
+        <div class="wdr19-threshold-grid">
+            <div class="wdr19-threshold-card"><span class="wdr19-threshold-pct">&lt;50% HP</span><span class="wdr19-threshold-desc">Normal leash extends 1.5x. Wanderer cannot be reset below 50% unless you leave the entire zone.</span></div>
+            <div class="wdr19-threshold-card"><span class="wdr19-threshold-pct">&lt;25% HP</span><span class="wdr19-threshold-desc">Leash disabled. Wanderer pursues indefinitely within the zone. Must kill or zone-transition to escape.</span></div>
+            <div class="wdr19-threshold-card"><span class="wdr19-threshold-pct">0% HP</span><span class="wdr19-threshold-desc">Dead. No leash mechanics apply.</span></div>
+        </div>
+
+        <p><strong>Farming technique — Leash-edge pulling:</strong> Identify a wanderer's spawn location. Aggro it, then walk backward toward the zone entrance. Stop when the wanderer is at the edge of its leash but still aggressive. Kill it there — you maintain max safe distance from other spawns and have a guaranteed escape route if things go wrong. This is the standard technique for cleared-domain speed runs.</p>
+
+        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> You can reset a wanderer's leash by stepping into a different zone region (crossing a loading threshold). In abyss floors, the boss room entrance is a leash reset point. Step in, let the boss reset, then step back out with full cooldowns. This is called "door-tech" and works on every non-timed encounter.</p></div>
+
+        <h2>4. Group Behavior & Coordination</h2>
+        <p>Wanderers do not fight as individuals — they coordinate using three distinct group AI modes. Recognizing which mode a group uses tells you how to split, pull, and control them.</p>
+
+        <div class="wdr19-group-card">
+            <div class="wdr19-group-title">Pack Hunters (Simultaneous Attack)</div>
+            <div class="wdr19-group-desc">Common among basic wanderers (Slashers, Spitters). All members of the pack attack simultaneously when the first attack lands. This creates burst damage windows. <strong>Counter:</strong> AoE stun before your first attack lands — the pack triggers as one and they all get caught in the stun.</div>
+        </div>
+
+        <div class="wdr19-group-card">
+            <div class="wdr19-group-title">Staggered Attack (Elites)</div>
+            <div class="wdr19-group-desc">Elite wanderers and mini-bosses stagger their attacks: one attacks while the others circle. They cycle through a 3-beat rhythm (attack → reposition → attack). <strong>Counter:</strong> Focus one elite down during its reposition phase. The staggered pattern means only one elite is actively dangerous at any time.</div>
+        </div>
+
+        <div class="wdr19-group-card">
+            <div class="wdr19-group-title">Support Call (Commanders)</div>
+            <div class="wdr19-group-desc">Commanders emit a pulse every 15s that calls nearby un-aggroed wanderers to their location. This is how easy pulls become group wipes. <strong>Counter:</strong> Kill the commander first or pull the group far enough that reinforcements cannot arrive before the commander dies. Use Sylus's Shadow Bind to silence the support call.</div>
+        </div>
+
+        <p>Use a rotation-guide approach for safe pulling: mark the commander → pull with ranged attack → drag to leash edge → burst commander → handle adds if support call triggers. Never aggro two commander packs simultaneously — their support calls stack and you will face 12+ wanderers.</p>
+
+        <div class="rotation-guide">
+            <div class="rotation-step"><div class="step-num">1</div><div class="step-content"><strong>Identify & Mark</strong><span class="step-desc">Locate the commander or elite. Mark it with your reticle (aim at it for 1s). All wanderers in that pack are now tagged on your HUD.</span></div></div>
+            <div class="rotation-step"><div class="step-num">2</div><div class="step-content"><strong>Ranged Pull</strong><span class="step-desc">Use any ranged attack (Xavier's Light Lance, Rafayel's Aqua Bolt) to aggro only the marked pack. Other packs ignore you.</span></div></div>
+            <div class="rotation-step"><div class="step-num">3</div><div class="step-content"><strong>Drag to Leash Edge</strong><span class="step-desc">Backpedal to the zone entrance. The pack follows. Stop at the leash edge so they are still aggressive but you have exit space.</span></div></div>
+            <div class="rotation-step"><div class="step-num">4</div><div class="step-content"><strong>Burst & Reset</strong><span class="step-desc">Drop your Ardent Oath and resonance skills. If the support call fires, you are already at the entrance — step out to reset.</span></div></div>
+        </div>
+
+        <h2>5. Exploitable Behaviors</h2>
+        <p>Wanderer AI has predictable pathfinding quirks that you can weaponize. These are not bugs — they are emergent behaviors from the navigation mesh that become consistent patterns once you recognize them.</p>
+
+        <div class="attack-card">
+            <div class="attack-name">Pathing Loops</div>
+            <div class="attack-desc">Wanderers chase using the shortest path on the navigation mesh. If you run around a circular obstacle (pillar, crystal formation), the wanderer follows the outer edge in a predictable loop. You can maintain a constant distance while charging skills or waiting for cooldowns. This is most effective against Chargers — their charge animation locks them into the loop direction for 2s.</div>
+        </div>
+
+        <div class="attack-card">
+            <div class="attack-name">Corner Grouping</div>
+            <div class="attack-desc">Wanderers cluster at walls and corners because their pathfinding fails to spread out when multiple units target the same point. Run to a corner and stand there — all chasing wanderers will stack into a single hitbox. This is the foundation of AoE farming: corner group → Ardent Oath → wipe. Corner grouping works best in rooms with right-angle geometry. Avoid circular rooms where wanderers spread evenly along the curve.</div>
+        </div>
+
+        <div class="attack-card">
+            <div class="attack-name">Stagger Chains via Elemental Reactions</div>
+            <div class="attack-desc">Wanderers cannot act while in stagger state. By chaining elemental reactions — Freeze (Zayne) → Shatter (Xavier Light) → Knockback (Rafayel Wave) — you can keep a wanderer locked in stagger for 6+ seconds. This is a true chain-stun; the wanderer cannot build resistance because each reaction type is tracked independently. Commander wanderers have a 50% stagger resistance reduction after the third consecutive stagger — use a 4th type (Sylus Dark Bind) to bypass it.</div>
+        </div>
+
+        <p><strong>Advanced — AI state confusion:</strong> If you apply two conflicting statuses simultaneously (e.g., Freeze + Taunt), the wanderer's AI enters a 0.5s "state resolution" window where it stops moving and attacking. This is frame-perfect to execute and not reliable in real combat, but it confirms that wanderer AI processes status and threat in separate threads. Useful knowledge for frame-counting speedrunners.</p>
+
+        <div class="wdr19-summary-grid">
+            <div class="wdr19-summary-do"><strong>DO:</strong><ul><li>Pull to leash edges for safe kills</li><li>Corner-group before AoE bursts</li><li>Chain elemental reactions for free stagger</li><li>Kill commanders first to prevent support calls</li></ul></div>
+            <div class="wdr19-summary-dont"><strong>DON'T:</strong><ul><li>Aggro two commander packs at once</li><li>Fight in open circles (no corner grouping)</li><li>Ignore the 40% HP threat threshold on healers</li><li>Assume crouch works against elite detection</li></ul></div>
+        </div>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Master AI aggro and you master the battlefield. Detection radius determines approach (8/14/20/28 units). Threat priority is a weighted table — taunt &gt; shield &gt; low HP &gt; recent attacker &gt; nearest. Leash distance caps chase (16-40 units). Group AI has three modes: simultaneous, staggered, support call. Exploit pathing loops, corner grouping, and stagger chains to fight with maximum efficiency and minimum risk.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

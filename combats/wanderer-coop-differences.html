@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-op Mode Enemy Differences | Deepspace Hub</title>
+    <meta name="description" content="Complete guide to how wanderers change in co-op mode — HP scaling, damage multipliers, aggro behavior, revive mechanics, and exclusive co-op mechanics.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="wanderer-coop-differences.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-wander">
+        <div class="gb-hero"><div class="gb-badge">WANDERER ENCYCLOPEDIA — CO-OP</div><h1>Co-op Mode Enemy Differences</h1><p>Everything changes when you bring a friend — or two. Co-op wanderers hit harder, soak more damage, and introduce entirely new mechanics. Here's what you need to know before queueing up.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WDR_21</span><span class="meta-date">2026.07.11</span><span class="meta-tag">COOP</span></div>
+        <div class="gb-highlight"><p><strong>Core Identity:</strong> Co-op enemies behave fundamentally differently from solo wanderers. They are not simply scaled-up versions — they gain new attack patterns, shared mechanics, and altered aggro rules designed specifically for multi-player engagement. Treat co-op as a separate game mode with its own rules, not just harder solo content.</p></div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <h2>1. Health Scaling</h2>
+        <p>HP scaling is the most immediately noticeable change. Co-op wanderers receive a flat HP multiplier based on party size, calculated at spawn. This multiplier applies to the <strong>base HP</strong> of the wanderer — any HP variance from difficulty level or domain modifiers is calculated <em>before</em> the multiplier.</p>
+
+        <div class="wdr21-hp-scaling">
+            <div class="wdr21-hp-card"><div class="wdr21-hp-mult">1.0x</div><div class="wdr21-hp-label">Solo</div><div class="wdr21-hp-desc">Baseline HP — no scaling applied</div></div>
+            <div class="wdr21-hp-card"><div class="wdr21-hp-mult">2.0x</div><div class="wdr21-hp-label">2 Players</div><div class="wdr21-hp-desc">HP doubles. Each player effectively sees the same HP they would solo.</div></div>
+            <div class="wdr21-hp-card"><div class="wdr21-hp-mult">3.5x</div><div class="wdr21-hp-label">3 Players</div><div class="wdr21-hp-desc">HP jumps to 3.5x baseline — each player must deal ~1.17x solo DPS.</div></div>
+            <div class="wdr21-hp-card"><div class="wdr21-hp-mult">5.0x</div><div class="wdr21-hp-label">Full Party</div><div class="wdr21-hp-desc">(Upcoming) 4-player content uses a 5.0x multiplier.</div></div>
+        </div>
+
+        <div class="stats-summary">
+            <div class="stat-card"><div class="stat-number">2.0x</div><div class="stat-label">2-PLAYER HP</div><div class="stat-desc">Each player sees ~1.0x solo DPS requirement</div></div>
+            <div class="stat-card"><div class="stat-number">3.5x</div><div class="stat-label">3-PLAYER HP</div><div class="stat-desc">Each player must contribute ~1.17x solo DPS</div></div>
+            <div class="stat-card"><div class="stat-number">Shared</div><div class="stat-label">HP POOL TYPE</div><div class="stat-desc">All players share one HP pool — damage is additive</div></div>
+            <div class="stat-card"><div class="stat-number">No Split</div><div class="stat-label">INDIVIDUAL POOLS</div><div class="stat-desc">Wanderers do NOT get separate HP per player</div></div>
+        </div>
+
+        <p>The HP pool is <strong>shared</strong> — all players contribute damage to the same bar. This means kill times are determined by your team's combined DPS, not individual performance. At 3 players, the 3.5x multiplier means each player must output roughly 17% more DPS than they would in solo. If one player is significantly undergeared, the remaining two must overcompensate.</p>
+
+        <p><strong>Kill time implications:</strong> In practice, 2-player co-op feels similar to solo because two players each dealing their normal DPS will clear 2x HP at roughly the same speed. The 3-player mode is where the strain shows — a weak third player actually makes the fight <em>harder</em> than 2-player because the HP multiplier outpaces their damage contribution.</p>
+
+        <h2>2. Damage Multiplier</h2>
+        <p>Wanderers in co-op gain a base ATK increase of <strong>20% per additional player</strong>. This stacks multiplicatively with the wanderer's own attack buffs and enrage modifiers. A 3-player co-op wanderer hits <strong>40% harder</strong> than its solo counterpart before factoring in any special attacks.</p>
+
+        <div class="gb-data-card">
+            <div class="data-row"><span class="data-label">2 Players ATK Bonus</span><span class="data-value">+20% base ATK</span></div>
+            <div class="data-row"><span class="data-label">3 Players ATK Bonus</span><span class="data-value">+40% base ATK</span></div>
+            <div class="data-row"><span class="data-label">% Max HP Attacks</span><span class="data-value">Introduced at 3 players</span></div>
+            <div class="data-row"><span class="data-label">Support Requirement</span><span class="data-value" style="color:#ffd700;font-weight:700;">MANDATORY at 3 players</span></div>
+        </div>
+
+        <p>The most dangerous addition is <strong>percentage-based max HP attacks</strong>. At 3 players, certain wanderers gain special attacks that deal 20-35% of the target's max HP as damage, ignoring DEF entirely. These attacks have longer wind-ups but cannot be mitigated by building tank stats. Examples include the Titan Sentry's ground slam and the Abyssal Siren's drowning shriek.</p>
+
+        <p>Because these attacks bypass DEF, stacking HP on your build provides only marginal benefit — the damage scales off <em>your</em> max HP, so more HP means more damage taken. Instead, focus on damage avoidance and <strong>dedicated healing support</strong>. At 3 players, a party without a healer or support companion will wipe to consecutive max-HP attacks within 15-20 seconds of the first one landing.</p>
+
+        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> In 3-player co-op, always designate one player as the support role. Zayne's frost shields and Rafayel's healing resonance are the most reliable mitigation tools. Sylus's self-heal is <em>not</em> sufficient — you need a source of party-wide healing.</p></div>
+
+        <h2>3. Aggro & Targeting Changes</h2>
+        <p>Co-op fundamentally rewrites how wanderers choose targets. In solo play, aggro follows a predictable table based on distance, damage dealt, and ability usage. In co-op, this table is <strong>disabled</strong> for most elite and boss wanderers. Instead, they use a dynamic targeting system that actively rotates between all players.</p>
+
+        <div class="wdr21-aggro-grid">
+            <div class="wdr21-aggro-card"><div class="wdr21-aggro-title">SOLO AGGR0</div><div class="wdr21-aggro-text">Predictable table — highest DPS or closest target holds aggro. You can control positioning and reliably predict who the wanderer will target next.</div></div>
+            <div class="wdr21-aggro-card"><div class="wdr21-aggro-title">CO-OP AGGR0</div><div class="wdr21-aggro-text">No consistent aggro table. Wanderers switch targets every 3-5 seconds or after any defensive ability (dodge, shield, taunt). Taunt abilities force a target switch.</div></div>
+            <div class="wdr21-aggro-card"><div class="wdr21-aggro-title">SHARED ATTACKS</div><div class="wdr21-aggro-text">Many area attacks now target <strong>all</strong> players simultaneously. Conal breaths, radial pulses, and line-charges spawn at each player's position — not just the primary target.</div></div>
+            <div class="wdr21-aggro-card"><div class="wdr21-aggro-title">TAUNT IMPORTANCE</div><div class="wdr21-aggro-text">Taunt abilities become crucial for controlling dangerous attacks. A well-timed taunt can redirect a max-HP attack away from a low-health teammate. Every comp should have at least one taunt source.</div></div>
+        </div>
+
+        <p><strong>Practical implications:</strong> Because aggro is unpredictable, all players must be comfortable dodging at any moment. The traditional "tank holds aggro while DPS attacks from behind" strategy does not work in co-op. Instead, adopt a <strong>triangular positioning</strong> — spread out so that shared area attacks hit only one player, not all three clustered together.</p>
+
+        <p>Taunt abilities (Xavier's light provocation, certain companion skills) force the wanderer to switch targets to the taunting player for 3 seconds. Use taunts proactively to redirect dangerous charge attacks or to give a revived player breathing room. Note that taunts share a cooldown — if two players taunt simultaneously, only the first one applies.</p>
+
+        <h2>4. Respawn & Revive Mechanics</h2>
+        <p>Death in co-op is punished differently than in solo. The wanderer's HP does <strong>not</strong> reset when a single player dies — the remaining players can continue fighting the same HP pool. However, a <strong>full party wipe</strong> (all players incapacitated) resets the wanderer to full HP, and any defeated wanderers respawn.</p>
+
+        <div class="gb-data-card">
+            <div class="data-row"><span class="data-label">Single Death</span><span class="data-value" style="color:#2ecc71;">Wanderer HP preserved — teammates continue</span></div>
+            <div class="data-row"><span class="data-label">Full Wipe</span><span class="data-value" style="color:#e74c3c;">Wanderer HP resets to 100% — all defeated enemies respawn</span></div>
+            <div class="data-row"><span class="data-label">Revive Beacon</span><span class="data-value">3 charges per party — 10s cast time — interruptible</span></div>
+            <div class="data-row"><span class="data-label">Death Penalty</span><span class="data-value" style="color:#e74c3c;">-50% ATK for 10s after revive</span></div>
+        </div>
+
+        <p>The <strong>revive beacon</strong> is a new mechanic unique to co-op. When a player is incapacitated, a glowing beacon appears at their death location. Any surviving player can interact with it to begin a 10-second revive channel. The channel is <strong>interruptible</strong> — taking damage cancels it. This creates a tension point: the healer must decide whether to revive or keep the remaining teammate alive.</p>
+
+        <p>Revive beacons have <strong>3 charges per party</strong> across the entire fight. Once all three are used, dead players stay dead unless the party resets. Use revives wisely — if one player keeps dying to the same mechanic, it may be better to let them stay dead and have the remaining two finish the fight (especially if the wanderer is low on HP).</p>
+
+        <p>The <strong>death penalty</strong> applies on every revive: the revived player suffers <strong>-50% ATK for 10 seconds</strong>. This debuff cannot be cleansed. Do not waste burst abilities or Ardent Oath immediately after reviving — wait out the penalty, then re-engage. The penalty exists to prevent revive-spamming as a DPS strategy.</p>
+
+        <h2>5. Co-op Exclusive Mechanics</h2>
+        <p>Beyond stat scaling and aggro changes, co-op introduces several exclusive mechanics that have no solo equivalent. These are designed to enforce team coordination and prevent the mode from becoming "three people playing solo side by side."</p>
+
+        <div class="wdr21-exclusive">
+            <div class="wdr21-exclusive-badge"><div class="wdr21-exclusive-icon">⚡</div><div class="wdr21-exclusive-name">Shared Stagger Bar</div><div class="wdr21-exclusive-desc">All players contribute to a single stagger bar. Stagger thresholds are 3x higher than solo. Team must coordinate burst windows to trigger stagger.</div></div>
+            <div class="wdr21-exclusive-badge"><div class="wdr21-exclusive-icon">⏱️</div><div class="wdr21-exclusive-name">Coordinated Enrage</div><div class="wdr21-exclusive-desc">When a wanderer enrages, ALL players must pass a simultaneous DPS check. If any player fails, the enrage persists for all.</div></div>
+            <div class="wdr21-exclusive-badge"><div class="wdr21-exclusive-icon">🆘</div><div class="wdr21-exclusive-name">Rescue Prompt (QTE)</div><div class="wdr21-exclusive-desc">When a teammate is incapacitated, survivors see a 2s QTE. Success: instant revive with no beacon charge cost. Failure: standard revive required.</div></div>
+        </div>
+
+        <p><strong>Shared Stagger Bar:</strong> In co-op, stagger is a team resource. Each player's stagger damage accumulates into one shared bar, but thresholds are tripled. This means a single player cannot stagger an elite wanderer alone — you need coordinated burst. Assign a stagger-caller: when the bar is at 80%, everyone saves their heavy stagger skills and unloads on the caller's mark. A staggered wanderer takes 1.5x damage from all sources for 6 seconds — this is your team's biggest damage window.</p>
+
+        <div class="attack-card">
+            <div class="attack-name">⚡ Shared Stagger Bar</div>
+            <div class="attack-desc">Team-wide stagger accumulation with 3x solo thresholds. Stagger window grants 1.5x damage for 6s.</div>
+            <div class="attack-details">
+                <span class="detail"><span class="detail-label">Threshold:</span> 3x solo</span>
+                <span class="detail"><span class="detail-label">Window:</span> 6s</span>
+                <span class="detail"><span class="detail-label">Dmg Bonus:</span> 1.5x</span>
+                <span class="detail"><span class="detail-label">Strategy:</span> Burst at 80%</span>
+            </div>
+        </div>
+
+        <p><strong>Coordinated Enrage:</strong> When a wanderer enters enrage state (typically at 30% HP or after a time limit), every player receives an individual DPS check marker. Each player must deal X damage within 5 seconds. If <em>any</em> player fails, the enrage persists for the entire party — even players who passed their check remain in enrage territory. This punishes uneven gear distribution and forces teams to balance their party's average DPS rather than relying on one carry.</p>
+
+        <div class="attack-card">
+            <div class="attack-name">⏱️ Coordinated Enrage</div>
+            <div class="attack-desc">Individual DPS checks per player — all must pass or enrage continues for everyone.</div>
+            <div class="attack-details">
+                <span class="detail"><span class="detail-label">Trigger:</span> 30% HP or time limit</span>
+                <span class="detail"><span class="detail-label">Check Duration:</span> 5s</span>
+                <span class="detail"><span class="detail-label">Party Failure:</span> Enrage persists for all</span>
+                <span class="detail"><span class="detail-label">Tip:</span> Save bursts for this phase</span>
+            </div>
+        </div>
+
+        <p><strong>Rescue Prompt (Quick-Time Event):</strong> When a teammate is incapacitated, surviving players see a 2-second QTE prompt. If any player successfully completes it (timing or button sequence varies by wanderer type), the downed player is revived instantly — no beacon required, no beacon charge consumed. The QTE is intentionally strict: the window is 2 seconds and the input varies each time. Miss the QTE and you must use a standard revive beacon. The rescue prompt can only trigger once per 30 seconds per player, so you cannot chain-rescue the same person repeatedly.</p>
+
+        <div class="attack-card">
+            <div class="attack-name">🆘 Rescue Prompt (QTE)</div>
+            <div class="attack-desc">2s QTE to instantly revive a teammate without consuming a beacon charge.</div>
+            <div class="attack-details">
+                <span class="detail"><span class="detail-label">Window:</span> 2s</span>
+                <span class="detail"><span class="detail-label">Cost:</span> Free (no beacon charge)</span>
+                <span class="detail"><span class="detail-label">Cooldown:</span> 30s per target</span>
+                <span class="detail"><span class="detail-label">Failure:</span> Standard revive required</span>
+            </div>
+        </div>
+
+        <p>Mastering co-op requires unlearning solo habits. The three exclusive mechanics above are the primary gatekeepers between casual and advanced co-op play. A team that communicates stagger windows, saves bursts for enrage checks, and lands rescue QTEs will clear content far above their individual gear level.</p>
+
+        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> Voice communication dramatically improves co-op performance. Even basic callouts like "stagger at 80%", "saving burst for enrage", and "I'm going for the rescue QTE" can turn a chaotic 3-player run into a smooth clear. Use the in-game ping system as a fallback — assign pings to stagger timing and danger zones.</p></div>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Co-op mode is not "solo with more HP." Shared stagger bars require coordinated burst windows. Coordinated enrage checks force balanced party DPS. Rescue QTEs reward mechanical skill and awareness. If you're moving from solo to co-op, forget everything you know about aggro management and stagger timing — learn the co-op rules from scratch. Bring a healer at 3 players, communicate stagger timing, and never let a full wipe happen.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

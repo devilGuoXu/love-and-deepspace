@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Level & Enemy Scaling Formula | Deepspace Hub</title>
+    <meta name="description" content="Complete breakdown of the world level scaling formula — HP/ATK/DEF multipliers per WL, scaling tiers, domain scaling, co-op scaling, and practical progression advice.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="wanderer-scaling-formula.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-wander">
+        <div class="gb-hero"><div class="gb-badge">WANDERER ENCYCLOPEDIA — SCALING</div><h1>World Level & Enemy Scaling Formula</h1><p>Every wanderer in Deepspace has a hidden power curve that increases with your World Level. Understanding this formula is the difference between clearing a stage in 30 seconds vs. three minutes.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WDR_18</span><span class="meta-date">2026.07.11</span><span class="meta-tag">SCALING</span></div>
+        <div class="gb-highlight"><p><strong>Core Identity:</strong> Wanderer stats (HP, ATK, DEF) scale multiplicatively with your current World Level. The base stats of each wanderer variant are multiplied by a WL-specific factor. This means a Slasher at WL 8 has roughly twice the effective HP of one at WL 4 — and hits over three times as hard.</p></div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <h2>1. Scaling Formula</h2>
+        <p>The game applies a single multiplier to every wanderer's base HP, ATK, and DEF based on the current World Level. This multiplier is uniform across all wanderer variants — a Charger and a Boss both use the same factor at the same WL. The formula is piecewise with three distinct growth phases.</p>
+
+        <p><strong>Final Stat = Base Stat &times; WL Multiplier</strong></p>
+
+        <div class="wdr18-mult-table">
+            <div class="wdr18-mult-row wdr18-mult-header"><span class="wdr18-mult-cell">WL</span><span class="wdr18-mult-cell">Multiplier</span><span class="wdr18-mult-cell">HP Scale</span><span class="wdr18-mult-cell">ATK Scale</span><span class="wdr18-mult-cell">DEF Scale</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">1</span><span class="wdr18-mult-cell">0.50</span><span class="wdr18-mult-cell">50%</span><span class="wdr18-mult-cell">50%</span><span class="wdr18-mult-cell">50%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">2</span><span class="wdr18-mult-cell">0.55</span><span class="wdr18-mult-cell">55%</span><span class="wdr18-mult-cell">55%</span><span class="wdr18-mult-cell">55%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">3</span><span class="wdr18-mult-cell">0.65</span><span class="wdr18-mult-cell">65%</span><span class="wdr18-mult-cell">65%</span><span class="wdr18-mult-cell">65%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">4</span><span class="wdr18-mult-cell">0.80</span><span class="wdr18-mult-cell">80%</span><span class="wdr18-mult-cell">80%</span><span class="wdr18-mult-cell">80%</span></div>
+            <div class="wdr18-mult-row wdr18-tier-break"><span class="wdr18-mult-cell">5</span><span class="wdr18-mult-cell">1.00</span><span class="wdr18-mult-cell">100%</span><span class="wdr18-mult-cell">100%</span><span class="wdr18-mult-cell">100%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">6</span><span class="wdr18-mult-cell">1.20</span><span class="wdr18-mult-cell">120%</span><span class="wdr18-mult-cell">120%</span><span class="wdr18-mult-cell">120%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">7</span><span class="wdr18-mult-cell">1.50</span><span class="wdr18-mult-cell">150%</span><span class="wdr18-mult-cell">150%</span><span class="wdr18-mult-cell">150%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">8</span><span class="wdr18-mult-cell">1.85</span><span class="wdr18-mult-cell">185%</span><span class="wdr18-mult-cell">185%</span><span class="wdr18-mult-cell">185%</span></div>
+            <div class="wdr18-mult-row wdr18-tier-break"><span class="wdr18-mult-cell">9</span><span class="wdr18-mult-cell">2.30</span><span class="wdr18-mult-cell">230%</span><span class="wdr18-mult-cell">230%</span><span class="wdr18-mult-cell">230%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">10</span><span class="wdr18-mult-cell">2.90</span><span class="wdr18-mult-cell">290%</span><span class="wdr18-mult-cell">290%</span><span class="wdr18-mult-cell">290%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">11</span><span class="wdr18-mult-cell">3.70</span><span class="wdr18-mult-cell">370%</span><span class="wdr18-mult-cell">370%</span><span class="wdr18-mult-cell">370%</span></div>
+            <div class="wdr18-mult-row"><span class="wdr18-mult-cell">12</span><span class="wdr18-mult-cell">4.80</span><span class="wdr18-mult-cell">480%</span><span class="wdr18-mult-cell">480%</span><span class="wdr18-mult-cell">480%</span></div>
+        </div>
+
+        <p>WL 5 functions as the baseline (1.00x). Everything below is a reduction (easier), everything above is an increase (harder). The jumps between tiers grow progressively larger — the gap from WL 8 to WL 9 (+0.45) is nearly three times the gap from WL 4 to WL 5 (+0.20).</p>
+
+        <div class="wdr18-stats-summary">
+            <div class="wdr18-stat-card"><div class="wdr18-stat-number">2.30&times;</div><div class="wdr18-stat-label">WL 9 HP Multiplier</div><div class="wdr18-stat-desc">Enemies have more than double the HP of WL 5</div></div>
+            <div class="wdr18-stat-card"><div class="wdr18-stat-number">4.80&times;</div><div class="wdr18-stat-label">WL 12 HP Multiplier</div><div class="wdr18-stat-desc">Nearly 5x the baseline HP — max WL</div></div>
+            <div class="wdr18-stat-card"><div class="wdr18-stat-number">1.85&times;</div><div class="wdr18-stat-label">WL 8 Multiplier</div><div class="wdr18-stat-desc">End of Mid Tier — steep ramp begins</div></div>
+            <div class="wdr18-stat-card"><div class="wdr18-stat-number">0.50&times;</div><div class="wdr18-stat-label">WL 1 Multiplier</div><div class="wdr18-stat-desc">Half stats — lowest possible scaling</div></div>
+        </div>
+
+        <h2>2. World Level Tiers</h2>
+        <p>The scaling curve is intentionally designed to gate content behind three distinct tier thresholds. Understanding which tier you are in helps you gauge whether your team is ready for the next push.</p>
+
+        <p><strong>Low Tier (WL 1-4): Gradual Growth.</strong> Multiplier increases in small increments of +0.05 to +0.15 per level. The difficulty curve here is gentle — designed for new players building their first team. You can clear content at these levels with underleveled memories and minimal protocore investment. The jump from WL 4 to WL 5 (+0.20) is the first meaningful difficulty spike.</p>
+
+        <p><strong>Mid Tier (WL 5-8): Steep Growth.</strong> Increments widen to +0.20, +0.30, +0.35 per level. This is where the game starts punishing unoptimized builds. A team that cruised through WL 5 will feel the pressure at WL 7. WL 8 is often cited as the first "wall" — mobs become noticeably tankier, and world exploration takes 30-40% longer. This tier requires at least one fully ascended memory set and +9 protocores on your main carry.</p>
+
+        <p><strong>High Tier (WL 9-12): Exponential Growth.</strong> Increments jump to +0.45, +0.60, +0.80, +1.10. This tier exists primarily for endgame players with maxed rosters. Enemies at WL 10+ have massive stat pools that demand optimized teams with correct element matching, proper rotation execution, and +12 protocores with relevant substats. WL 12 is the current ceiling — mobs here have 4.8x baseline stats, and bosses exceed 5.5x effective HP.</p>
+
+        <div class="wdr18-tier-bar"><div class="wdr18-tier-bar-fill wdr18-tf-low" style="width:25%">Low</div><div class="wdr18-tier-bar-fill wdr18-tf-mid" style="width:25%">Mid</div><div class="wdr18-tier-bar-fill wdr18-tf-high" style="width:50%">High</div></div>
+
+        <p><strong>Farming Efficiency Note:</strong> The best farming WL is the highest level you can clear a domain in under 90 seconds. Pushing to a higher WL for +1 drop often costs more time than it saves if your clear time doubles. Time efficiency > marginal drop rate at every stage of the game.</p>
+
+        <h2>3. Domain Level Scaling</h2>
+        <p>Protocore domains and memory domains have their own internal level system that scales independently of World Level. A domain's mob stats are calculated from the domain level, then multiplied by the WL multiplier on top. This creates a two-axis scaling system that can surprise players who rush high-level domains at low WL.</p>
+
+        <p><strong>Domain Level</strong> determines base stats within the instance. Domain level 1 mobs have the same base as WL 5 baseline mobs. Domain level 5 mobs have approximately 2x the base stats. <strong>World Level</strong> then stacks its multiplier on top. A Domain Level 3 instance at WL 8 produces mobs with roughly 2.15x the stats of Domain Level 1 at WL 5.</p>
+
+        <p>Key takeaway: completing a Domain Level 5 at WL 3 is roughly equivalent in difficulty to Domain Level 2 at WL 9. The domain level primarily gates loot quality (gold protocore drop rate), while the WL multiplier gates overall difficulty. Focus on reaching Domain Level 3 before pushing WL for maximum farm efficiency.</p>
+
+        <h2>4. Co-op Scaling</h2>
+        <p>When you enter co-op, all wanderer stats receive an additional multiplier based on party size. This is applied after the WL multiplier, making co-op enemies significantly tankier per player.</p>
+
+        <p><strong>2 players:</strong> 2.0x HP multiplier. Each enemy has double its solo HP. ATK and DEF remain at 1.0x (no change). This is the most efficient co-op configuration — two coordinated players can burst through doubled HP faster than two solo players could handle the split.</p>
+
+        <p><strong>3 players:</strong> 3.0x HP multiplier. Triple HP pools. ATK/DEF remain at 1.0x. The third player adds more total HP to the pool than their damage contribution if they are undergeared. Only run 3-player co-op when all three are equally invested.</p>
+
+        <p>Importantly, co-op uses a <strong>shared HP pool</strong> — all party members damage the same enemy HP bar. This differs from individual scaling modes (like Abyss) where each player faces their own instance. Shared pools mean burst compositions excel in co-op, while sustain teams underperform. If two players each deal 100% of solo DPS, the 2x HP goes down in the same time as a solo kill — coordination is free efficiency.</p>
+
+        <h2>5. Practical Implications</h2>
+        <p>Knowing the formula is one thing — applying it to your progression is another. Here are the key decisions you will face at each stage.</p>
+
+        <p><strong>When to push World Level:</strong> Push WL immediately if (a) you can clear the WL-upgrade trial on the first attempt, (b) your main carry has +9 protocores or better, and (c) you have at least two characters at max ascension for your current cap. If any of these are false, stay at your current WL and farm.</p>
+
+        <p><strong>When to stay:</strong> Stay if your domain clear time exceeds 2 minutes. WL increases drop quantity in some modes (boss loot, bounty rewards) but does <strong>not</strong> increase drop quality in most content. Protocore domains and memory domains scale quality by domain level, not WL. Raising WL without raising domain level just makes farming harder for the same loot table.</p>
+
+        <div class="wdr18-rec-box">
+            <div class="wdr18-rec-header">Recommended WL Per Account Stage</div>
+            <div class="wdr18-rec-row"><span class="wdr18-rec-label">New (Week 1-2)</span><span class="wdr18-rec-value">WL 1-3</span><span class="wdr18-rec-desc">Focus on story and domain unlocks</span></div>
+            <div class="wdr18-rec-row"><span class="wdr18-rec-label">Early (Week 3-6)</span><span class="wdr18-rec-value">WL 4-5</span><span class="wdr18-rec-desc">One built team, farm domain level 3</span></div>
+            <div class="wdr18-rec-row"><span class="wdr18-rec-label">Mid (Month 2-3)</span><span class="wdr18-rec-value">WL 6-7</span><span class="wdr18-rec-desc">Two teams, +9 protocores, domain layer 4</span></div>
+            <div class="wdr18-rec-row"><span class="wdr18-rec-label">Late (Month 4+)</span><span class="wdr18-rec-value">WL 8-9</span><span class="wdr18-rec-desc">Full roster, +12 protocores, domain layer 5</span></div>
+            <div class="wdr18-rec-row"><span class="wdr18-rec-label">Endgame</span><span class="wdr18-rec-value">WL 10-12</span><span class="wdr18-rec-desc">Optimal builds only, domain layer 5+</span></div>
+        </div>
+
+        <p>The single most important rule: <strong>WL is a difficulty slider, not a reward slider.</strong> A higher WL makes every enemy stronger but does not guarantee better loot in domains or overworld content. Only push WL when your account needs the increase for a specific gate (character ascension cap, weekly boss tier, Abyss floor requirement). Otherwise, farm efficiently at the WL where your clear speed-to-reward ratio peaks.</p>
+
+        <div class="gb-tip-box"><p><strong>Pro Tip:</strong> Before increasing your WL, spend one week farming protocores, upgrade materials, and memory XP at your current level. The pre-farm buffer lets you ascend immediately after the WL jump, softening the difficulty spike. Players who push WL on cooldown without pre-farming consistently hit walls at WL 6 and WL 9.</p></div>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Enemies scale on a three-tier curve: gradual (WL 1-4), steep (WL 5-8), exponential (WL 9-12). The multiplier equals the stat increase across HP/ATK/DEF uniformly. Domain level and WL are independent axes — raise both strategically. Co-op doubles or triples HP pools. Never push WL without pre-farming first. Clear speed determines farm efficiency more than drop rate does.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">&uarr;</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemental Reaction System vs Wanderers | Deepspace Hub</title>
+    <meta name="description" content="Complete guide to the Elemental Reaction System in Love and Deepspace — gauge mechanics, reaction formulas, strategic setup, enemy RES, and team synergy.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="wanderer-elemental-reactions.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-wander">
+        <div class="gb-hero"><div class="gb-badge">WANDERER ENCYCLOPEDIA — REACTIONS</div><h1>Elemental Reaction System vs Wanderers</h1><p>Master the six-element combat system — how elemental gauges interact, which reactions to trigger, and how to build teams that annihilate every wanderer type.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#WDR_20</span><span class="meta-date">2026.07.11</span><span class="meta-tag">REACTIONS</span></div>
+        <div class="gb-highlight"><p><strong>Core Identity:</strong> Elemental reactions multiply your damage output by 1.5x–3.0x when properly sequenced. Understanding gauge application, decay rates, and reaction formulas is the single largest DPS upgrade available — more impactful than any protocore set.</p></div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+
+        <h2>1. Element System Overview</h2>
+        <p>The combat system features six core elements: <strong>Light</strong> (Xavier), <strong>Dark</strong> (Sylus), <strong>Fire</strong> (Rafayel), <strong>Water</strong> (Zayne), <strong>Frost</strong> (Zayne), and <strong>Physical</strong> (neutral). Each attack applies an <strong>elemental gauge</strong> — a hidden numerical value that determines how much of that element is currently "on" the enemy. The gauge decays at a rate of approximately <strong>10 units per second</strong> after application, with stronger attacks applying 20–40 units and weaker hits applying 8–15 units.</p>
+
+        <div class="wdr20-stats-summary">
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-light"></div><h4>Light</h4><p>40–60 gauge/atk<br>Decay: 12/s<br>Reactions: Resonance</p></div>
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-dark"></div><h4>Dark</h4><p>35–50 gauge/atk<br>Decay: 10/s<br>Reactions: Resonance</p></div>
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-fire"></div><h4>Fire</h4><p>30–45 gauge/atk<br>Decay: 8/s<br>Reactions: Vaporize, Melt</p></div>
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-water"></div><h4>Water</h4><p>25–40 gauge/atk<br>Decay: 10/s<br>Reactions: Conductive</p></div>
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-frost"></div><h4>Frost</h4><p>30–45 gauge/atk<br>Decay: 8/s<br>Reactions: Vaporize, Freeze</p></div>
+            <div class="wdr20-element-card"><div class="wdr20-elem-icon wdr20-phys"></div><h4>Physical</h4><p>20–30 gauge/atk<br>Decay: 15/s<br>Reactions: Shatter</p></div>
+        </div>
+
+        <p>The <strong>elemental gauge</strong> system has three key rules: (1) applying a new element does not remove the existing gauge — both coexist until they react or decay; (2) when two compatible elements are present simultaneously, a reaction triggers consuming both gauges; (3) the reaction damage scales off the <strong>triggering character's ATK + the gauge strength of both elements</strong>. A full gauge bar requires approximately <strong>100 units</strong> to fill.</p>
+        <div class="wdr20-gauge-vis"><div class="wdr20-gauge-bar"><div class="wdr20-gauge-fill wdr20-gauge-low" style="width:30%">30</div><div class="wdr20-gauge-fill wdr20-gauge-mid" style="width:50%">50</div><div class="wdr20-gauge-fill wdr20-gauge-high" style="width:100%">100</div></div><p class="wdr20-gauge-label">Gauge values: Weak (30) — Medium (50) — Full (100)</p></div>
+
+        <h2>2. Reaction Table</h2>
+        <p>Below are the primary elemental reactions available in the current combat system. Each reaction requires both elements to be present on the target simultaneously, with the <strong>second element applied</strong> acting as the trigger.</p>
+
+        <div class="wdr20-attack-card"><div class="wdr20-react-header"><span class="wdr20-react-badge wdr20-resonance">RESONANCE</span><span class="wdr20-react-formula">Light + Dark ⚡ True Damage</span></div><p><strong>Effect:</strong> Deals bonus true damage equal to 30% of combined ATK. Applies a Resonance buff: +15% all damage for 6s. <strong>Best setup:</strong> Xavier applies Light (skill or combo ender) → Sylus immediately follows with Dark (skill). The reaction window is ~1.2s after first application.</p></div>
+
+        <div class="wdr20-attack-card"><div class="wdr20-react-header"><span class="wdr20-react-badge wdr20-vaporize">VAPORIZE</span><span class="wdr20-react-formula">Fire + Frost 🔥 50% Bonus ATK</span></div><p><strong>Effect:</strong> Consumes both gauges to deal a single hit of 50% bonus ATK as Fire damage. If Frost is the trigger, the bonus increases to 65%. <strong>Best setup:</strong> Rafayel applies fire with charged shot → Zayne shatters with frost skill. Ideal for burning down high-HP elites.</p></div>
+
+        <div class="wdr20-attack-card"><div class="wdr20-react-header"><span class="wdr20-react-badge wdr20-conductive">CONDUCTIVE</span><span class="wdr20-react-formula">Water + Lightning ⚡ 15% CRIT Rate</span></div><p><strong>Effect:</strong> Applies a Conductive debuff: +15% CRIT rate and +25% CRIT damage for 8s against the target. Does not consume gauges instantly — instead, both elements persist for 2s before triggering. <strong>Best setup:</strong> Zayne applies Water (any skill) → follow with a Lightning memory companion attack to trigger.</p></div>
+
+        <div class="wdr20-attack-card"><div class="wdr20-react-header"><span class="wdr20-react-badge wdr20-melt">MELT</span><span class="wdr20-react-formula">Fire + Frost ❄️ Armor Shred</span></div><p><strong>Effect:</strong> Reduces target DEF by 20% for 5s. Stackable once per 10s cooldown. <strong>Best setup:</strong> Apply Fire then Frost (or vice versa). Melt is best used as a setup reaction before your main DPS window.</p></div>
+
+        <div class="wdr20-attack-card"><div class="wdr20-react-header"><span class="wdr20-react-badge wdr20-shatter">SHATTER</span><span class="wdr20-react-formula">Physical + Frost 💥 Bonus Break DMG</span></div><p><strong>Effect:</strong> When Frost and Physical coexist, the next hit deals 40% bonus damage and breaks 30% of the target's stagger bar. <strong>Best setup:</strong> Use Physical basic attacks while Frost gauge is active.</p></div>
+
+        <h2>3. Applying Elements Strategically</h2>
+        <p>Reaction sequencing follows a strict <strong>first element → second element (trigger)</strong> pattern. The first element applied determines the <strong>aura</strong> — the lingering element type that stays on the enemy. The second element consumes both gauges to produce the reaction. Timing is critical: if the first gauge decays before the second lands, no reaction occurs.</p>
+
+        <p><strong>Resonance Chains</strong> are the most powerful reaction sequence in the game. A full chain: Light applied (gauge: 45) → Dark applied within 1.2s (gauge: 40) → Resonance triggers dealing true damage → leaves a <strong>Light resonance buff</strong> on the team for 6s. During this buff window, reapplying Light extends the buff duration by 2s per application. Xavier + Sylus teams can maintain permanent Resonance uptime.</p>
+
+        <div class="wdr20-rotation-guide">
+            <h4>Ideal Reaction Rotation (Resonance Focus)</h4>
+            <ol>
+                <li><span class="wdr20-step-num">1</span> <strong>Opener:</strong> Xavier — Light skill (applies 45 gauge)</li>
+                <li><span class="wdr20-step-num">2</span> <strong>Trigger:</strong> Sylus — Dark skill within 1.2s (Resonance procs)</li>
+                <li><span class="wdr20-step-num">3</span> <strong>Buff:</strong> Resonance buff active — switch to Xavier</li>
+                <li><span class="wdr20-step-num">4</span> <strong>Extend:</strong> Xavier — Light attack (refreshes buff +2s)</li>
+                <li><span class="wdr20-step-num">5</span> <strong>Repeat:</strong> Sylus — Dark skill again (another Resonance)</li>
+            </ol>
+            <p>This rotation yields ~2.5x sustained DPS over raw attacking with no reactions. The key is to never let the gauge decay — queue your second character's skill immediately after the first lands.</p>
+        </div>
+
+        <p><strong>Vaporize setups</strong> follow a different tempo: Fire applied → wait 0.5s for the gauge to stabilize → Frost applied for the 50% ATK bonus. The delay prevents the gauge from being consumed too early by Melt instead of Vaporize. Rafayel's charged shot applies a 50-unit Fire gauge that persists for a generous 1.5s window — the easiest Vaporize setup in the game.</p>
+
+        <h2>4. Enemy Elemental RES vs Reaction Damage</h2>
+        <p>Every wanderer has <strong>innate elemental resistances</strong> that affect both gauge application and reaction damage. A wandere with 30% Light RES will have 30% less Light gauge applied per attack and deal 30% less damage from any reaction involving Light. RES values range from <strong>0% (neutral) to 60% (nearly immune)</strong>.</p>
+
+        <p>The formula for effective gauge application: <code>Applied Gauge × (1 − RES/100) × Penetration Multiplier</code>. For example, a Light attack that normally applies 50 gauge against a wanderer with 30% Light RES and 0% penetration applies only 35 gauge. This means reactions trigger slower (<em>or not at all</em>) against highly resistant enemies.</p>
+
+        <p><strong>Elemental RES penetration</strong> is available through:<br>
+        — <strong>Memory resonance nodes:</strong> Select the +10% Light PEN node on Xavier's third ascension.<br>
+        — <strong>Set bonuses:</strong> The 4-piece "Dawning Light" set grants 15% all-element PEN.<br>
+        — <strong>Protocore substats:</strong> Up to 8% single-element PEN per substat roll.<br>
+        — <strong>Ardent Oath enhancements:</strong> Certain Oath upgrades add 10–20% PEN for 8s after activation.</p>
+
+        <div class="wdr20-tip-box"><p><strong>Pro Tip:</strong> The most common mistake is running a mono-element team against a wanderer with high resistance to that element. Always check the wanderer's elemental RES in the Codex before building your reaction team. If the Codex shows 40%+ RES to your planned reaction, switch to a different element pairing.</p></div>
+
+        <p>At endgame (level 80+ content), elite wanderers average 25% RES across all elements with a 40% spike in one specific element. <strong>Plan around the spike</strong>: if a wanderer has 40% Fire RES, don't build a Vaporize team. Use Resonance (Light + Dark) instead, as few enemies resist both simultaneously.</p>
+
+        <h2>5. Team Reaction Synergy</h2>
+        <p>The best teams are built around maintaining <strong>high reaction uptime</strong> — the percentage of combat time during which a reaction is either active or being set up. Below are the top-performing team compositions for reaction-based combat:</p>
+
+        <div class="wdr20-team-card">
+            <div class="wdr20-team-header"><span class="wdr20-team-badge">S-TIER</span><h4>Xavier + Sylus — Permanent Resonance</h4></div>
+            <p><strong>Core loop:</strong> Xavier applies Light → Sylus triggers Resonance → buff uptime is sustained through Xavier's fast Light attacks. At endgame gear, this team maintains 95%+ Resonance uptime. <strong>Reaction DPS:</strong> ~2800 true damage per proc at 60/60. <strong>Best for:</strong> Any content without high Light or Dark RES. The universal RES-pair is the safest pick for unknown encounters.</p>
+        </div>
+
+        <div class="wdr20-team-card">
+            <div class="wdr20-team-header"><span class="wdr20-team-badge">A-TIER</span><h4>Zayne + Rafayel — Vaporize Setup</h4></div>
+            <p><strong>Core loop:</strong> Rafayel applies Fire (charged shot) → Zayne follows with Frost skill for Vaporize → 50–65% ATK bonus hit lands. The slower tempo works well for hit-and-run tactics. <strong>Reaction DPS:</strong> ~3500 per Vaporize proc but with 3–4s downtime between setups. <strong>Best for:</strong> High-HP single targets and wanderers weak to Fire or Frost.</p>
+        </div>
+
+        <div class="wdr20-team-card">
+            <div class="wdr20-team-header"><span class="wdr20-team-badge">A-TIER</span><h4>Double Element Stacking — Zayne (Water + Frost)</h4></div>
+            <p><strong>Core loop:</strong> Zayne applies Water → Lightning companion procs Conductive → Frost applies for Shatter synergy. This triple-reaction chain requires precise timing but outputs the highest burst in the game. <strong>Reaction DPS:</strong> ~5000 combined over a 3s burst window. <strong>Best for:</strong> Speed kills and Abyss floors with tight time limits.</p>
+        </div>
+
+        <p><strong>Reaction uptime comparison:</strong> Resonance teams average 85–95% uptime due to the fast cycling of Light and Dark basic attacks. Vaporize teams sit at 50–65% uptime because of the deliberate setup delay. Conductive teams vary wildly (40–80%) depending on Lightning companion cooldowns. For general content, Resonance is the most forgiving; for optimized speed clears, Double Element Stacking edges ahead.</p>
+
+        <p><strong>Team building rule of thumb:</strong> bring at least two different elements that can react, and ensure both characters can apply their element quickly. Avoid pairing two characters who need the same element to trigger different reactions — Water + Frost on Zayne is fine because he provides both, but running Zayne + another Frost character without a second element gives you zero reactions.</p>
+
+        <div class="wdr20-final-box"><p><strong>Summary:</strong> Elemental reactions are the backbone of high-damage combat in Love and Deepspace. Master gauge application, learn each reaction's formula, plan around enemy RES, and build teams with complementary elements. Resonance (Light + Dark) is the universal fallback — safe, consistent, and powerful. For maximum burst, stack Zayne's Water + Frost with Lightning companions. Always check the enemy's RES before committing to a reaction strategy.</p></div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

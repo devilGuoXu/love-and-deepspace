@@ -1,0 +1,82 @@
+.gb-container { max-width:800px; margin:0 auto; padding:60px 24px 80px; display:block; }
+.gb-hero { text-align:center; margin-bottom:50px; padding-bottom:30px; border-bottom:1px solid #2a2f3d; }
+.gb-badge { display:inline-block; background:rgba(230,126,34,0.2); border:1px solid #e67e22; padding:6px 20px; border-radius:20px; font-size:.7rem; letter-spacing:2px; color:#e67e22; margin-bottom:20px; }
+.gb-hero h1 { font-size:2.5rem; font-weight:700; background:linear-gradient(135deg,#fff,#e67e22); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:16px; }
+.gb-hero p { color:#8a94a8; font-size:.9rem; }
+.gb-meta { display:flex; justify-content:space-between; align-items:center; background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:12px 20px; margin-bottom:40px; }
+.gb-meta .meta-date { color:#6a7080; font-size:.8rem; }
+.gb-meta .meta-tag { background:rgba(230,126,34,0.2); padding:4px 12px; border-radius:20px; font-size:.7rem; font-weight:600; letter-spacing:1px; color:#e67e22; }
+.gb-highlight { background:#0f121b; border-left:3px solid #e67e22; padding:20px 24px; margin:30px 0; border-radius:0 12px 12px 0; }
+.gb-highlight strong { color:#e67e22; }
+.gb-container h2 { font-size:1.6rem; color:#e67e22; margin:40px 0 20px 0; border-left:3px solid #e67e22; padding-left:16px; }
+.gb-container p { color:#b0bedb; margin-bottom:20px; line-height:1.7; }
+.gb-author { font-size:.85rem; color:#8a94a8; margin-top:4px; padding:4px 0 8px; border-bottom:1px solid #2a2f3d; margin-bottom:20px; }
+
+/* --- Stats Summary: Element Cards --- */
+.wdr20-stats-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0 30px; }
+.wdr20-element-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px; text-align:center; transition:border-color .2s; }
+.wdr20-element-card:hover { border-color:#e67e22; }
+.wdr20-element-card h4 { font-size:1rem; margin:8px 0 4px; color:#f0f4ff; }
+.wdr20-element-card p { font-size:.75rem; color:#8a94a8; margin:0; line-height:1.5; }
+.wdr20-elem-icon { width:32px; height:32px; border-radius:50%; margin:0 auto; }
+.wdr20-light { background:linear-gradient(135deg,#f1c40f,#f39c12); }
+.wdr20-dark { background:linear-gradient(135deg,#8e44ad,#6c3483); }
+.wdr20-fire { background:linear-gradient(135deg,#e74c3c,#c0392b); }
+.wdr20-water { background:linear-gradient(135deg,#3498db,#2980b9); }
+.wdr20-frost { background:linear-gradient(135deg,#00bcd4,#0097a7); }
+.wdr20-phys { background:linear-gradient(135deg,#95a5a6,#7f8c8d); }
+
+/* --- Gauge Visualization --- */
+.wdr20-gauge-vis { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:20px; margin:20px 0 30px; }
+.wdr20-gauge-bar { display:flex; gap:8px; align-items:stretch; height:28px; margin-bottom:8px; }
+.wdr20-gauge-fill { display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:700; border-radius:6px; color:#0f121b; }
+.wdr20-gauge-low { background:rgba(46,204,113,.7); }
+.wdr20-gauge-mid { background:rgba(241,196,15,.7); }
+.wdr20-gauge-high { background:rgba(231,76,60,.7); }
+.wdr20-gauge-label { font-size:.7rem; color:#6a7080; text-align:center; margin:0; }
+
+/* --- Reaction Attack Cards --- */
+.wdr20-attack-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:20px; margin:16px 0; transition:border-color .2s; }
+.wdr20-attack-card:hover { border-color:#e67e22; }
+.wdr20-react-header { display:flex; align-items:center; gap:12px; margin-bottom:10px; flex-wrap:wrap; }
+.wdr20-react-badge { padding:4px 14px; border-radius:20px; font-size:.65rem; font-weight:700; letter-spacing:1px; }
+.wdr20-resonance { background:rgba(241,196,15,.2); border:1px solid #f1c40f; color:#f1c40f; }
+.wdr20-vaporize { background:rgba(231,76,60,.2); border:1px solid #e74c3c; color:#e74c3c; }
+.wdr20-conductive { background:rgba(52,152,219,.2); border:1px solid #3498db; color:#3498db; }
+.wdr20-melt { background:rgba(142,68,173,.2); border:1px solid #8e44ad; color:#8e44ad; }
+.wdr20-shatter { background:rgba(149,165,166,.2); border:1px solid #95a5a6; color:#95a5a6; }
+.wdr20-react-formula { font-size:.75rem; color:#8a94a8; letter-spacing:1px; }
+.wdr20-attack-card p { font-size:.85rem; margin:0; }
+
+/* --- Rotation Guide --- */
+.wdr20-rotation-guide { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:20px 24px; margin:24px 0; }
+.wdr20-rotation-guide h4 { font-size:1rem; color:#e67e22; margin:0 0 14px; }
+.wdr20-rotation-guide ol { list-style:none; padding:0; margin:0 0 12px; }
+.wdr20-rotation-guide li { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #1e2433; color:#b0bedb; font-size:.85rem; }
+.wdr20-rotation-guide li:last-child { border-bottom:none; }
+.wdr20-step-num { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; background:#e67e22; color:#0f121b; font-size:.7rem; font-weight:700; flex-shrink:0; }
+.wdr20-rotation-guide p { font-size:.8rem; color:#8a94a8; margin:0; }
+
+/* --- Team Cards --- */
+.wdr20-team-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:20px 24px; margin:16px 0; transition:border-color .2s; }
+.wdr20-team-card:hover { border-color:#e67e22; }
+.wdr20-team-header { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.wdr20-team-header h4 { font-size:1rem; color:#f0f4ff; margin:0; }
+.wdr20-team-badge { padding:2px 12px; border-radius:16px; font-size:.6rem; font-weight:700; letter-spacing:1px; }
+.wdr20-team-badge:first-of-type { background:rgba(241,196,15,.2); border:1px solid #f1c40f; color:#f1c40f; }
+.wdr20-team-card p { font-size:.85rem; margin:0; }
+
+/* --- Tip/Final Boxes --- */
+.wdr20-tip-box { background:rgba(46,204,113,0.08); border-left:3px solid #2ecc71; padding:16px 20px; margin:20px 0; border-radius:0 12px 12px 0; }
+.wdr20-tip-box strong { color:#2ecc71; }
+.wdr20-final-box { background:#0f121b; border-left:3px solid #2ecc71; padding:20px 24px; margin:30px 0; border-radius:0 12px 12px 0; }
+.wdr20-final-box strong { color:#2ecc71; }
+code { background:#1e2433; padding:2px 8px; border-radius:4px; font-size:.85em; color:#e67e22; }
+
+@media (max-width:700px) {
+    .gb-container { padding:40px 20px; }
+    .gb-hero h1 { font-size:1.8rem; }
+    .gb-container h2 { font-size:1.3rem; }
+    .wdr20-stats-summary { grid-template-columns:repeat(2,1fr); }
+    .wdr20-react-header { flex-direction:column; align-items:flex-start; gap:6px; }
+}
