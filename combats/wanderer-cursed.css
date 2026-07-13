@@ -1,0 +1,126 @@
+/* =========================================
+   Cursed Wanderers: Hex & Debuff Specialists
+   Prefix: .wdr12-
+   Accent: #e67e22
+   ========================================= */
+
+/* --- Stack Visual --- */
+.wdr12-stack-visual {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.wdr12-stack-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #e67e22;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.wdr12-stack-bar {
+    flex: 1;
+    min-width: 120px;
+    height: 12px;
+    background: #1a1f2e;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.wdr12-stack-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #e67e22, #ff4444);
+    transition: width 0.4s;
+}
+.wdr12-stack-count {
+    font-size: 0.8rem;
+    color: #b0bedb;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* --- Tether Indicator --- */
+.wdr12-tether {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-left: 3px solid #3498db;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.wdr12-tether-icon {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #3498db;
+    font-weight: 700;
+}
+.wdr12-tether-range,
+.wdr12-tether-tick {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    padding: 4px 10px;
+    background: #05070a;
+    border-radius: 6px;
+}
+
+/* --- Hex Status Cards --- */
+.wdr12-hex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+.wdr12-hex-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.wdr12-hex-card:hover {
+    border-color: #e67e22;
+    transform: translateY(-2px);
+}
+.wdr12-hex-visual {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    border: 2px solid #2a2f3d;
+}
+.wdr12-hex-slow { background: radial-gradient(circle, rgba(155,89,182,0.3), rgba(155,89,182,0.1)); border-color: #9b59b6; }
+.wdr12-hex-silence { background: radial-gradient(circle, rgba(149,165,166,0.3), rgba(149,165,166,0.1)); border-color: #95a5a6; }
+.wdr12-hex-confuse { background: radial-gradient(circle, rgba(26,188,156,0.3), rgba(26,188,156,0.1)); border-color: #1abc9c; }
+.wdr12-hex-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 6px;
+}
+.wdr12-hex-detail {
+    font-size: 0.8rem;
+    color: #b0bedb;
+    margin-bottom: 8px;
+}
+.wdr12-hex-icon {
+    font-size: 0.7rem;
+    color: #6a7080;
+    letter-spacing: 1px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .wdr12-hex-grid { grid-template-columns: 1fr; }
+    .wdr12-stack-visual { flex-direction: column; align-items: stretch; text-align: center; }
+    .wdr12-tether { flex-direction: column; align-items: flex-start; }
+}

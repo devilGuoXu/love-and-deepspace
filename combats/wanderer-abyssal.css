@@ -1,0 +1,116 @@
+.wdr15-tether-visual {
+    position: relative;
+    height: 32px;
+    margin: 16px 0 24px;
+    background: linear-gradient(90deg, transparent, rgba(230, 126, 34, 0.15), transparent);
+    border-radius: 16px;
+    overflow: hidden;
+}
+.wdr15-tether-visual::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, #e67e22, #c0392b, #e67e22);
+    border-radius: 2px;
+    animation: wdr15-tether-pulse 1.5s ease-in-out infinite;
+}
+.wdr15-tether-visual::after {
+    content: 'TETHER ACTIVE — break range: 8 units';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: #e67e22;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@keyframes wdr15-tether-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.wdr15-barrier-timer {
+    position: relative;
+    height: 32px;
+    margin: 16px 0 24px;
+    background: rgba(15, 18, 27, 0.8);
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.wdr15-barrier-timer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.4), rgba(231, 76, 60, 0.4));
+    border-radius: 16px;
+    animation: wdr15-barrier-cycle 20s ease-in-out infinite;
+}
+.wdr15-barrier-timer::after {
+    content: 'REFLECTIVE BARRIER — 6s active / 14s cooldown (30% reflect)';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: #8a94a8;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@keyframes wdr15-barrier-cycle {
+    0% { width: 30%; background: linear-gradient(90deg, rgba(52, 152, 219, 0.4), rgba(231, 76, 60, 0.4)); }
+    30% { width: 30%; background: linear-gradient(90deg, rgba(52, 152, 219, 0.4), rgba(231, 76, 60, 0.4)); }
+    30.1% { width: 0; background: rgba(46, 204, 113, 0.3); }
+    100% { width: 70%; background: linear-gradient(90deg, rgba(46, 204, 113, 0.3), rgba(46, 204, 113, 0.1)); }
+}
+
+.wdr15-mine-indicator {
+    position: relative;
+    height: 32px;
+    margin: 16px 0 24px;
+    background: rgba(15, 18, 27, 0.8);
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.wdr15-mine-indicator::before {
+    content: '';
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #8e44ad 30%, transparent 70%);
+    border-radius: 50%;
+    border: 2px solid #8e44ad;
+    animation: wdr15-mine-spawn 8s ease-in-out infinite;
+}
+.wdr15-mine-indicator::after {
+    content: 'DIMENSIONAL MINE — 500 Dark damage, 4-unit radius, detonates after 3s';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    color: #8a94a8;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@keyframes wdr15-mine-spawn {
+    0%, 62% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    65% { opacity: 1; transform: translate(-50%, -50%) scale(1.4); background: radial-gradient(circle, #e74c3c 30%, transparent 70%); border-color: #e74c3c; }
+    70% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); background: radial-gradient(circle, #8e44ad 30%, transparent 70%); border-color: #8e44ad; }
+}

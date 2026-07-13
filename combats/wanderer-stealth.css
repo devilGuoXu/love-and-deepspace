@@ -1,0 +1,155 @@
+/* Stealth indicator card */
+.wdr13-stealth-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+.wdr13-stealth-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #9b59b6, transparent);
+}
+.wdr13-stealth-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #9b59b6;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.wdr13-stealth-cues {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+.wdr13-cue {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.wdr13-cue-visual {
+    background: rgba(155, 89, 182, 0.15);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    color: #c39bd3;
+}
+.wdr13-cue-audio {
+    background: rgba(230, 126, 34, 0.15);
+    border: 1px solid rgba(230, 126, 34, 0.4);
+    color: #e67e22;
+}
+.wdr13-stealth-timer {
+    font-size: 0.8rem;
+    color: #6a7080;
+    padding-top: 10px;
+    border-top: 1px solid #1a1f2e;
+}
+
+/* Teleport warning card */
+.wdr13-warning-card {
+    background: rgba(230, 126, 34, 0.06);
+    border-left: 3px solid #e67e22;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+.wdr13-warning-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(230, 126, 34, 0.2);
+    border: 1px solid #e67e22;
+    color: #e67e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+.wdr13-warning-content {
+    flex: 1;
+    color: #b0bedb;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+.wdr13-warning-content strong {
+    color: #e67e22;
+}
+
+/* Decoy comparison grid */
+.wdr13-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+}
+.wdr13-compare-item {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+.wdr13-compare-item:hover {
+    border-color: #e67e22;
+}
+.wdr13-compare-fake {
+    opacity: 0.6;
+}
+.wdr13-compare-fake:hover {
+    opacity: 0.9;
+    border-color: #6a7080;
+}
+.wdr13-compare-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #e67e22;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #2a2f3d;
+}
+.wdr13-compare-fake .wdr13-compare-label {
+    color: #6a7080;
+}
+.wdr13-compare-trait {
+    font-size: 0.8rem;
+    color: #b0bedb;
+    padding: 6px 0;
+    padding-left: 16px;
+    position: relative;
+}
+.wdr13-compare-trait::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e67e22;
+}
+.wdr13-compare-fake .wdr13-compare-trait::before {
+    background: #6a7080;
+}
+
+@media (max-width: 700px) {
+    .wdr13-compare-grid {
+        grid-template-columns: 1fr;
+    }
+    .wdr13-stealth-cues {
+        flex-direction: column;
+    }
+}
