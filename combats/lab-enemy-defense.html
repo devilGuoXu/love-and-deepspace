@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enemy DEF & DMG Resistance Formula | Deepspace Hub</title>
+    <meta name="description" content="Enemy DEF and DMG resistance are two independent damage reduction layers. Learn the formula, DEF scaling per floor, shred vs ignore mechanics, and elemental RES by enemy type.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="lab-enemy-defense.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-lab">
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — MATH</div><h1>Enemy DEF &amp; DMG Resistance Formula</h1><p>Every point of damage you deal passes through two independent gates: the enemy's flat DEF reduction and their percentage-based elemental resistance. Understanding both is the difference between a build that works and one that optimizes.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_12</span><span class="meta-date">2026.07.11</span><span class="meta-tag">MATH</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#two-layer-system">The Two-Layer Defense System</a></li>
+                <li><a href="#def-scaling">DEF Scaling by Floor</a></li>
+                <li><a href="#shred-vs-ignore">DEF Shred vs DEF Ignore</a></li>
+                <li><a href="#elemental-res">Elemental RES by Enemy Type</a></li>
+                <li><a href="#practical-implications">Practical Implications</a></li>
+            </ul>
+        </div>
+
+        <section id="two-layer-system">
+            <h2>The Two-Layer Defense System</h2>
+            <div class="gb-highlight"><p><strong>Key Concept:</strong> Enemy DEF and DMG resistance are two independent damage reduction layers. They multiply together, meaning one weak layer can halve your damage regardless of how strong you are against the other. You must address both to deal optimal damage.</p></div>
+
+            <p>Deepspace uses a two-layer defense model. The first layer is <strong>flat DEF reduction</strong> — a formula that scales with the enemy's Defense stat and a per-floor level constant. The second layer is <strong>percentage-based elemental resistance</strong> — a fixed value per enemy type that reduces incoming damage of a given element by a percentage.</p>
+
+            <h3>DEF Formula</h3>
+            <p>The damage reduction from DEF follows the standard MMO formula:</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">DMG Reduction = DEF / (DEF + C)</span>
+            </div>
+
+            <p>Where <strong>C</strong> is a level-dependent constant that changes per floor, domain tier, or world level. At level 60 content (Abyss Floor 1–3), C ≈ 600. At level 80 content (Abyss Floor 10–12), C ≈ 1000. At level 90 content (Deepspace Origin), C ≈ 1200.</p>
+
+            <p>A typical Abyss Floor 12 enemy has approximately 850 DEF. Using C = 1000:</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">DMG Reduction = 850 / (850 + 1000) = 45.9%</span>
+                <span class="lab12-formula-label">You deal only 54.1% of your raw damage before RES is applied</span>
+            </div>
+
+            <p>This means on Floor 12, DEF alone cuts your damage nearly in half. Understanding where this reduction comes from is essential to making informed build decisions.</p>
+
+            <h3>RES Formula</h3>
+            <p>After DEF reduction, the remaining damage is multiplied by the enemy's elemental resistance:</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Final DMG = Raw DMG × (1 − DEF_Reduction) × (1 − RES)</span>
+            </div>
+
+            <p>If an enemy has +30% RES to your element, you deal 70% of the post-DEF damage. If they have −20% RES (vulnerable), you deal 120%. The two layers compound — a high-DEF enemy with high RES can reduce your damage to less than 30% of your theoretical maximum.</p>
+
+            <div class="gb-tip-box"><p><strong>Key insight:</strong> Because DEF and RES multiply, reducing either one has an outsized effect. A 20% DEF reduction combined with a 20% RES reduction is not additive (40%) — it is multiplicative, resulting in 1 / (0.8 × 0.8) = 1.56x damage, or a 56% effective increase. This is why shred stacking is so powerful in Deepspace.</p></div>
+        </section>
+
+        <section id="def-scaling">
+            <h2>DEF Scaling by Floor</h2>
+            <p>Enemy DEF increases consistently as you progress through harder content. Each Abyss floor adds approximately 12% more DEF over the previous floor. Domain levels and world level wanderers follow similar scaling curves but with different baselines.</p>
+
+            <div class="lab12-table-caption">Abyss Floor DEF Values (C = 1000 baseline)</div>
+            <div class="lab12-table">
+                <div class="lab12-th"><span class="lab12-td-label">Floor</span><span class="lab12-td-val">Enemy DEF</span><span class="lab12-td-eff">Effective DMG</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 1</span><span class="lab12-td-val">450</span><span class="lab12-td-eff">69.0%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 2</span><span class="lab12-td-val">480</span><span class="lab12-td-eff">67.6%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 3</span><span class="lab12-td-val">510</span><span class="lab12-td-eff">66.2%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 4</span><span class="lab12-td-val">550</span><span class="lab12-td-eff">64.5%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 5</span><span class="lab12-td-val">590</span><span class="lab12-td-eff">62.9%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 6</span><span class="lab12-td-val">635</span><span class="lab12-td-eff">61.2%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 7</span><span class="lab12-td-val">680</span><span class="lab12-td-eff">59.5%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 8</span><span class="lab12-td-val">730</span><span class="lab12-td-eff">57.8%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 9</span><span class="lab12-td-val">780</span><span class="lab12-td-eff">56.2%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 10</span><span class="lab12-td-val">800</span><span class="lab12-td-eff">55.6%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Floor 11</span><span class="lab12-td-val">825</span><span class="lab12-td-eff">54.8%</span></div>
+                <div class="lab12-tr lab12-tr-highlight"><span class="lab12-td-label">Floor 12</span><span class="lab12-td-val">850</span><span class="lab12-td-eff">54.1%</span></div>
+            </div>
+
+            <div class="lab12-table-caption">Domain &amp; World Level DEF Values</div>
+            <div class="lab12-table">
+                <div class="lab12-th"><span class="lab12-td-label">Content</span><span class="lab12-td-val">Enemy DEF</span><span class="lab12-td-eff">C Value</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Domain Lv.50</span><span class="lab12-td-val">380</span><span class="lab12-td-eff">550</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Domain Lv.60</span><span class="lab12-td-val">520</span><span class="lab12-td-eff">700</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Domain Lv.70</span><span class="lab12-td-val">670</span><span class="lab12-td-eff">850</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Domain Lv.80</span><span class="lab12-td-val">820</span><span class="lab12-td-eff">1000</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">WL Wanderer</span><span class="lab12-td-val">450</span><span class="lab12-td-eff">650</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">WL Elite</span><span class="lab12-td-val">620</span><span class="lab12-td-eff">800</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Deepspace Origin</span><span class="lab12-td-val">950</span><span class="lab12-td-eff">1200</span></div>
+            </div>
+
+            <p>The key takeaway: as you climb from Floor 1 to Floor 12, your effective damage from DEF alone drops from 69% to 54% — a 22% relative loss. This is one of the primary reasons content feels dramatically harder at higher floors even when your ATK stat seems adequate. The DEF gate is tightening.</p>
+
+            <div class="gb-tip-box"><p><strong>DEF growth rate:</strong> Between Floor 6 and Floor 12, DEF increases by roughly 34%. Over the same range, a moderately built operative gains about 25–30% ATK from protocores and leveling. The DEF scaling nearly matches your ATK growth, which means the difficulty curve is intentionally flat — you must improve your gear quality, not just your levels, to break through.</p></div>
+        </section>
+
+        <section id="shred-vs-ignore">
+            <h2>DEF Shred vs DEF Ignore</h2>
+            <p>Two distinct mechanics allow you to bypass or reduce the DEF layer. They are often confused but function very differently.</p>
+
+            <h3>DEF Shred</h3>
+            <p>Shred reduces the enemy's DEF stat before the formula is calculated. A 30% DEF shred on an enemy with 850 DEF reduces it to 850 × 0.7 = 595 DEF. The damage reduction then becomes 595 / (595 + 1000) = 37.3%, meaning you deal 62.7% of raw damage instead of 54.1% — a 15.9% effective damage increase.</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Shredded DEF = Base_DEF × (1 − Shred%)</span>
+            </div>
+
+            <p>Sources of DEF shred include certain companion passives (e.g., Zayne's Frostguard resonance), set bonuses, and protocore secondary effects. Shred values typically range from 15% to 40% and have a hard floor of 0 DEF — you cannot reduce enemy DEF below zero.</p>
+
+            <div class="lab12-shred-table">
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Zayne Frostguard</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">20% DEF shred on resonance (8s)</span>
+                </div>
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Broken Space Set (4pc)</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">30% DEF shred on full stack</span>
+                </div>
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Void Walker passive</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">15% DEF shred on hit (stacks 2x)</span>
+                </div>
+            </div>
+
+            <h3>DEF Ignore</h3>
+            <p>DEF Ignore bypasses the DEF calculation entirely. A 20% DEF Ignore means 20% of your damage is calculated as if the enemy had 0 DEF. This is effectively a <strong>direct damage multiplier</strong> that scales linearly with your Ignore percentage.</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Effective DMG = Raw × (1 − Ignore%) × (1 − DEF_Reduction) + Raw × Ignore%</span>
+            </div>
+
+            <p>At 850 DEF and C = 1000, 20% DEF Ignore converts 20% of your damage to true damage (ignoring DEF entirely). The other 80% still faces the 45.9% reduction. Net damage: 0.2 × 1.0 + 0.8 × 0.541 = 0.633 — a 17% increase over the baseline 0.541.</p>
+
+            <div class="lab12-shred-table">
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Sylus — Dark Champion (4pc)</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">25% DEF Ignore on execute</span>
+                </div>
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Rafayel — Inferno (4pc)</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">15% DEF Ignore on burning enemies</span>
+                </div>
+                <div class="lab12-shred-row">
+                    <span class="lab12-shred-source">Crowd Control protocore</span>
+                    <span class="lab12-shred-arrow">&rarr;</span>
+                    <span class="lab12-shred-val">10% DEF Ignore on stunned enemies</span>
+                </div>
+            </div>
+
+            <h3>Mathematical Comparison</h3>
+            <p>At Floor 12 DEF levels (850 DEF, C = 1000):</p>
+
+            <div class="lab12-compare-grid">
+                <div class="lab12-compare-card">
+                    <div class="lab12-compare-title">30% DEF Shred</div>
+                    <div class="lab12-compare-val">+15.9% effective damage</div>
+                    <div class="lab12-compare-detail">Has diminishing returns — 30% → 60% shred gives only +13.7% more (not double). Cannot go below 0 DEF. Best used as a team-wide debuff.</div>
+                </div>
+                <div class="lab12-compare-card">
+                    <div class="lab12-compare-title">30% DEF Ignore</div>
+                    <div class="lab12-compare-val">+25.9% effective damage</div>
+                    <div class="lab12-compare-detail">Linear scaling — 30% ignore is exactly 3x better than 10% ignore. No cap. Effective true damage on a portion of your attacks. Better on paper, rarer in practice.</div>
+                </div>
+            </div>
+
+            <p>The practical difference: DEF shred is easier to stack (more sources, higher values) but has diminishing returns and a hard cap. DEF Ignore is rarer but scales linearly and has no cap. In endgame content, having both mechanics active simultaneously is extremely powerful because they are multiplicative with each other.</p>
+
+            <div class="warning-box"><p><strong>Caveat:</strong> DEF shred and DEF ignore do not stack in the way most players assume. Shred reduces the DEF stat; ignore skips the calculation for a portion of damage. They are not additive or multiplicative with each other — they operate on different parts of the formula. A 20% shred and 15% ignore result in: 85% of damage faces reduced DEF, 15% faces zero DEF. The total effectiveness depends on the specific order of operations in the game engine, which Papergames has confirmed is: shred first, then apply ignore on the post-shred value.</p></div>
+        </section>
+
+        <section id="elemental-res">
+            <h2>Elemental RES by Enemy Type</h2>
+            <p>Every wanderer and elite enemy in Deepspace has innate resistances to the five elements: Light, Fire, Dark, Frost, and Water. These resistances range from −20% (vulnerability — the enemy takes extra damage) to +50% (high resistance — the enemy shrugs off that element).</p>
+
+            <div class="lab12-table-caption">Standard Wanderer Elemental Resistances</div>
+            <div class="lab12-table lab12-table-wide">
+                <div class="lab12-th"><span class="lab12-td-label">Enemy Type</span><span class="lab12-td-val">Light</span><span class="lab12-td-val">Fire</span><span class="lab12-td-val">Dark</span><span class="lab12-td-val">Frost</span><span class="lab12-td-val">Water</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Vanguard</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">−10%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">+20%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Cursed</span><span class="lab12-td-val">+30%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">−20%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">0%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Corrupted</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">−10%</span><span class="lab12-td-val">+10%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Abyssal</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">−20%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Elemental</span><span class="lab12-td-val">−10%</span><span class="lab12-td-val">+30%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">+10%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Ancient</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">0%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Void Spawn</span><span class="lab12-td-val">+40%</span><span class="lab12-td-val">+30%</span><span class="lab12-td-val">+50%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">+30%</span></div>
+            </div>
+
+            <div class="lab12-table-caption">Elite &amp; Boss Enemy Elemental Resistances</div>
+            <div class="lab12-table lab12-table-wide">
+                <div class="lab12-th"><span class="lab12-td-label">Boss</span><span class="lab12-td-val">Light</span><span class="lab12-td-val">Fire</span><span class="lab12-td-val">Dark</span><span class="lab12-td-val">Frost</span><span class="lab12-td-val">Water</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Inferno Colossus</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">+50%</span><span class="lab12-td-val">−10%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">0%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Frost Tyrant</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">−10%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">+50%</span><span class="lab12-td-val">+10%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Abyssal Siren</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">0%</span><span class="lab12-td-val">−20%</span></div>
+                <div class="lab12-tr"><span class="lab12-td-label">Void Corruptor</span><span class="lab12-td-val">+30%</span><span class="lab12-td-val">+20%</span><span class="lab12-td-val">+40%</span><span class="lab12-td-val">+10%</span><span class="lab12-td-val">+20%</span></div>
+            </div>
+
+            <p>The most important pattern: elite enemies and bosses have significantly higher RES values than standard wanderers. A standard wanderer might have +20% RES to one element, but a boss of the same family can have +50%. This means elemental matching becomes disproportionately important in endgame content.</p>
+
+            <h3>Off-Element Penalty</h3>
+            <p>When you attack with an element that the enemy resists, the damage penalty is direct and severe. Matching element versus off-element:</p>
+
+            <div class="lab12-compare-grid">
+                <div class="lab12-compare-card lab12-compare-good">
+                    <div class="lab12-compare-title">Matching Element</div>
+                    <div class="lab12-compare-val">0% to −20% RES</div>
+                    <div class="lab12-compare-detail">Effective damage multiplier: 1.0x to 1.2x. Your element either deals full damage or bonus damage. Always use matching element when possible.</div>
+                </div>
+                <div class="lab12-compare-card lab12-compare-bad">
+                    <div class="lab12-compare-title">Off-Element (Resisted)</div>
+                    <div class="lab12-compare-val">+20% to +50% RES</div>
+                    <div class="lab12-compare-detail">Effective damage multiplier: 0.8x down to 0.5x. You are losing 20–50% of your damage before DEF is even calculated. Avoid resisted elements.</div>
+                </div>
+            </div>
+
+            <p>The off-element penalty is often underestimated. A player bringing a Fire DPS against the Inferno Colossus (+50% Fire RES) is dealing only 50% of their post-DEF damage — effectively cutting their total damage by over 60% after DEF reduction. This is the single largest damage loss in the game that is within the player's control to avoid.</p>
+
+            <div class="gb-tip-box"><p><strong>Elemental RES reduction:</strong> Some memories and set bonuses provide RES shred (reducing the enemy's specific elemental resistance). Unlike DEF shred, RES shred <em>can</em> go negative — meaning you can push an enemy's RES below 0% and gain bonus damage. This is exceptionally powerful on enemies with already-low RES values. A 20% RES shred on a −20% vulnerable enemy results in −40% RES, giving you a 1.4x multiplier (instead of 1.2x). Always stack RES shred on your chosen element.</p></div>
+        </section>
+
+        <section id="practical-implications">
+            <h2>Practical Implications</h2>
+            <div class="gb-highlight"><p><strong>Practical Implications:</strong> The DEF and RES layers combine to create a system where ATK% becomes more valuable at higher floors, elemental matching is mandatory in endgame, and shred/ignore mechanics are the most efficient way to scale your damage past the soft caps.</p></div>
+
+            <h3>Why ATK% Gets Better as Enemies Get Harder</h3>
+            <p>This seems counterintuitive — if DEF reduces your damage by 46%, does that not devalue ATK%? Actually, the opposite is true. DEF is a <strong>flat reduction multiplier</strong> that applies to all damage equally. If you double your ATK, your post-DEF damage also doubles. The DEF multiplier is constant for a given enemy, so ATK% retains its full relative value.</p>
+
+            <p>What changes is the value of <strong>flat damage bonuses</strong> (like flat ATK substats, flat DMG bonuses from sets). Because DEF reduces damage by a large percentage at high floors, flat bonuses that do not scale with your ATK multiplier are heavily devalued. A flat +200 damage bonus that is strong at Floor 1 (where DEF reduction is only 31%) becomes weak at Floor 12 (where DEF reduction is 46%). Meanwhile, ATK% scales with your base ATK and is multiplied by the full DEF formula, retaining its value.</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Effective DMG = (Base_ATK × ATK%) × Skill_Mult × (1 − DEF_Reduction) × (1 − RES)</span>
+            </div>
+
+            <p>Every multiplicative bracket in this formula compounds equally. ATK% is not special — but it is also not devalued by DEF. The common myth that "DEF makes ATK% worse" is mathematically incorrect. DEF makes <em>flat, non-scaling damage</em> worse, not ATK%.</p>
+
+            <h3>Why Elemental Matching is More Important in Endgame</h3>
+            <p>Elite enemies and bosses have significantly higher base RES values than standard wanderers. While a standard wanderer might have +20% RES to its resisted element, a boss can have +40–50%. The off-element penalty grows from 20% damage loss to 50% damage loss.</p>
+
+            <p>Furthermore, endgame content often features bosses with two high RES values and one vulnerability. The Abyssal Siren (−20% Water, +20% Light and Dark) heavily incentivizes Water DPS while punishing non-Water options. Players who have built multiple elemental teams can exploit these vulnerabilities for 20% bonus damage, while players relying on a single element face 20% penalties — a 40–50% total swing in effective damage.</p>
+
+            <div class="lab12-compare-grid">
+                <div class="lab12-compare-card lab12-compare-good">
+                    <div class="lab12-compare-title">Abyssal Siren — Water DPS</div>
+                    <div class="lab12-compare-val">−20% RES = 1.2x multiplier</div>
+                    <div class="lab12-compare-detail">Post-DEF: 54.1% × 1.2 = 64.9% effective damage. The vulnerability offsets most of the DEF penalty.</div>
+                </div>
+                <div class="lab12-compare-card lab12-compare-bad">
+                    <div class="lab12-compare-title">Abyssal Siren — Light DPS</div>
+                    <div class="lab12-compare-val">+20% RES = 0.8x multiplier</div>
+                    <div class="lab12-compare-detail">Post-DEF: 54.1% × 0.8 = 43.3% effective damage. Combined penalty: 56.7% damage loss from raw.</div>
+                </div>
+            </div>
+
+            <p>The difference between matching and resisting is a factor of 1.5x (64.9% / 43.3%) — meaning a Water DPS deals 50% more effective damage than a Light DPS against the Siren. This is the single largest damage optimization available in the game, dwarfing the impact of protocore substats or set bonuses.</p>
+
+            <h3>Combined Effective Damage Formula</h3>
+            <p>The complete formula for effective damage against any enemy:</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Total_Effective = Raw_DMG × (1 − DEF / (DEF + C)) × (1 − RES)</span>
+            </div>
+
+            <p>With DEF shred and DEF ignore incorporated:</p>
+
+            <div class="lab12-formula">
+                <span class="lab12-formula-text">Effective_DEF = max(0, DEF × (1 − Shred%))</span>
+                <span class="lab12-formula-text">Post_Shred = 1 − Effective_DEF / (Effective_DEF + C)</span>
+                <span class="lab12-formula-text">Final = Raw × (Ignore% + (1 − Ignore%) × Post_Shred) × (1 − RES)</span>
+            </div>
+
+            <p>This formula may look complex, but the practical takeaway is simple: <strong>DEF and RES are two independent multipliers. Stack shred and ignore to reduce the DEF multiplier. Match elements to keep the RES multiplier at 1.0x or better. Do both, and your damage doubles compared to ignoring both.</strong></p>
+
+            <div class="lab12-summary-grid">
+                <div class="lab12-summary-item">
+                    <div class="lab12-summary-num">~54%</div>
+                    <div class="lab12-summary-label">Floor 12 DEF Efficiency</div>
+                    <div class="lab12-summary-desc">Only 54% of raw damage passes the DEF gate. 46% is lost to flat reduction.</div>
+                </div>
+                <div class="lab12-summary-item">
+                    <div class="lab12-summary-num">1.5x</div>
+                    <div class="lab12-summary-label">Match vs Resist Gap</div>
+                    <div class="lab12-summary-desc">Matching element deals 50% more damage than a resisted element on endgame bosses.</div>
+                </div>
+                <div class="lab12-summary-item">
+                    <div class="lab12-summary-num">~26%</div>
+                    <div class="lab12-summary-label">30% DEF Ignore Gain</div>
+                    <div class="lab12-summary-desc">30% DEF ignore increases effective damage by ~26% on Floor 12 enemies.</div>
+                </div>
+                <div class="lab12-summary-item">
+                    <div class="lab12-summary-num">Always</div>
+                    <div class="lab12-summary-label">Match Element in Endgame</div>
+                    <div class="lab12-summary-desc">Elemental matching is the single highest-impact decision you can make in team building.</div>
+                </div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Build recommendation:</strong> For general content (domains, overworld, lower Abyss floors), prioritize ATK% and CRIT stats — the DEF penalty is mild enough that raw stats carry you. For endgame Abyss (Floor 9+) and Deepspace Origin, prioritize DEF shred/ignore sources and elemental matching. A well-optimized endgame team uses both layers: shred DEF via set bonuses/companion passives, and match element for favorable RES values. The combination of the two is what separates a Floor 9 clear from a Floor 12 three-star.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Enemy DEF reduces damage via the formula DEF / (DEF + C), where C scales with content level. At Floor 12, DEF alone cuts damage to ~54%. Elemental RES then applies a percentage multiplier, ranging from 0.5x (+50% RES) to 1.2x (−20% RES). DEF shred reduces the DEF stat (diminishing returns, hard floor at 0). DEF ignore bypasses DEF for a portion of damage (linear, no cap). Elemental matching is the single most important decision — matching offers 50% more effective damage than a resisted element on endgame bosses. Combined effective formula: Final = Raw × (1 − Effective_DEF / (Effective_DEF + C)) × (1 − RES). Build for both layers in endgame content.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Breakpoint Calculator</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Memory Set Comparison</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing & Survivability Math | Deepspace Hub</title>
+    <meta name="description" content="Effective HP, DEF vs HP% breakpoints, shield strength formulas, HPS calculations, and survivability thresholds for every content type.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="lab-healing-math.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-lab">
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — MATH</div><h1>Healing & Survivability Math</h1><p>Effective HP (EHP), DEF reduction formulas, shield strength scaling, healing per second, and content-specific survivability thresholds. Every number you need to build for survival.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_17</span><span class="meta-date">2026.07.11</span><span class="meta-tag">MATH</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#effective-hp">Effective HP Formula</a></li>
+                <li><a href="#def-vs-hp">DEF vs HP% on Protocores</a></li>
+                <li><a href="#shield-strength">Shield Strength Math</a></li>
+                <li><a href="#hps">Healing Per Second (HPS)</a></li>
+                <li><a href="#survivability-per-content">Survivability per Content Type</a></li>
+            </ul>
+        </div>
+
+        <section id="effective-hp">
+            <h2>Effective HP Formula</h2>
+            <div class="gb-highlight"><p><strong>Key Concept:</strong> Effective HP (EHP) = HP / (1 − Damage Reduction). DEF, shields, and healing all feed into a single survivability metric. EHP tells you how much raw damage your operative can survive before factoring in any heals.</p></div>
+            <p>EHP is the true measure of survivability. Your displayed HP is misleading because DEF reduces all incoming damage by a percentage. Shield absorption and healing over the fight duration add additional layers. The unified formula is:</p>
+            <p><strong>EHP = (HP + Shield) / (1 − DEF_DMG_Reduction)</strong></p>
+            <p>DEF damage reduction is calculated using a diminishing-returns formula common to most RPGs: <strong>DEF_DMG_Reduction = DEF / (DEF + Constant)</strong>. The constant varies by content level. At Abyss floor 10, the constant is approximately 4,000. At floor 12, it is 5,200. Higher content = higher constant = less effective DEF.</p>
+
+            <div class="data-row"><span class="data-label">1,000 DEF at floor 10</span><span class="data-value">1000 / (1000 + 4000) = 20% reduction → EHP ×1.25</span></div>
+            <div class="data-row"><span class="data-label">2,000 DEF at floor 10</span><span class="data-value">2000 / (2000 + 4000) = 33% reduction → EHP ×1.50</span></div>
+            <div class="data-row"><span class="data-label">3,000 DEF at floor 10</span><span class="data-value">3000 / (3000 + 4000) = 43% reduction → EHP ×1.75</span></div>
+            <div class="data-row"><span class="data-label">4,000 DEF at floor 10</span><span class="data-value">4000 / (4000 + 4000) = 50% reduction → EHP ×2.00</span></div>
+
+            <p><strong>Example:</strong> An operative with 20,000 HP, 2,000 DEF, and a 5,000 shield at Abyss floor 10 has EHP = (20000 + 5000) / (1 − 0.33) = 25,000 / 0.67 = <strong>37,313 EHP</strong>. That is nearly double the raw HP pool. Every point of DEF and every shield point multiplies your survivability.</p>
+
+            <div class="gb-tip-box"><p><strong>Rule of Thumb:</strong> 1,000 DEF ≈ 25% EHP multiplier. 2,000 DEF ≈ 50% EHP multiplier. Every additional 1,000 DEF past 2,000 gives diminishing returns — the multiplier gain shrinks from +25% to +17% to +12%. Past 3,000 DEF, each 1,000 DEF is worth less than 12% EHP increase. Invest in DEF only until the next HP% roll gives more EHP.</p></div>
+        </section>
+
+        <section id="def-vs-hp">
+            <h2>DEF vs HP% on Protocores</h2>
+            <p>One of the most common build questions: should a main stat slot use DEF% or HP%? The answer depends entirely on your operative's base DEF. The two stats scale differently and have a mathematical crossover point.</p>
+
+            <div class="lab17-table">
+                <div class="lab17-table-row lab17-table-header">
+                    <span class="lab17-table-cell">Base DEF</span>
+                    <span class="lab17-table-cell">DEF% Roll (+30%)</span>
+                    <span class="lab17-table-cell">HP% Roll (+30%)</span>
+                    <span class="lab17-table-cell">Better Stat</span>
+                </div>
+                <div class="lab17-table-row">
+                    <span class="lab17-table-cell">400</span>
+                    <span class="lab17-table-cell">+120 DEF → +2.8% EHP</span>
+                    <span class="lab17-table-cell">+3,000 HP → +5.5% EHP</span>
+                    <span class="lab17-table-cell lab17-highlight">HP% wins</span>
+                </div>
+                <div class="lab17-table-row">
+                    <span class="lab17-table-cell">600</span>
+                    <span class="lab17-table-cell">+180 DEF → +3.6% EHP</span>
+                    <span class="lab17-table-cell">+3,000 HP → +4.8% EHP</span>
+                    <span class="lab17-table-cell lab17-highlight">HP% wins</span>
+                </div>
+                <div class="lab17-table-row">
+                    <span class="lab17-table-cell">800</span>
+                    <span class="lab17-table-cell">+240 DEF → +4.2% EHP</span>
+                    <span class="lab17-table-cell">+3,000 HP → +4.3% EHP</span>
+                    <span class="lab17-table-cell lab17-highlight">≈ equal</span>
+                </div>
+                <div class="lab17-table-row">
+                    <span class="lab17-table-cell">1,000</span>
+                    <span class="lab17-table-cell">+300 DEF → +4.7% EHP</span>
+                    <span class="lab17-table-cell">+3,000 HP → +3.9% EHP</span>
+                    <span class="lab17-table-cell lab17-highlight">DEF% wins</span>
+                </div>
+                <div class="lab17-table-row">
+                    <span class="lab17-table-cell">1,200</span>
+                    <span class="lab17-table-cell">+360 DEF → +5.1% EHP</span>
+                    <span class="lab17-table-cell">+3,000 HP → +3.5% EHP</span>
+                    <span class="lab17-table-cell lab17-highlight">DEF% wins</span>
+                </div>
+            </div>
+
+            <p><strong>Crossover Point:</strong> At approximately 800 base DEF, a DEF% main stat roll gives the same EHP increase as an HP% roll. Below 800 base DEF, HP% is strictly better. Above 800, DEF% pulls ahead. Most DPS operatives have 500–700 base DEF at level 60 — meaning HP% is better for them. Zayne (support build) has ~900 base DEF, making DEF% slightly more EHP-efficient, but HP% also increases his shield healing, which may outweigh raw EHP.</p>
+
+            <div class="gb-tip-box"><p><strong>Practical Decision:</strong> For DPS operatives: always HP% over DEF%. The 500–700 base DEF range means HP% gives 10–30% more EHP per roll. For Zayne: HP% is still preferred because it scales both shield absorption and healing simultaneously. For any operative above 1,000 base DEF (none currently exist at level 60), DEF% would be the better pick. This may change with future level cap increases.</p></div>
+        </section>
+
+        <section id="shield-strength">
+            <h2>Shield Strength Math</h2>
+            <p>Shields are the only form of pre-mitigation damage prevention in Deepspace. They absorb damage before DEF reduction applies, making them extremely efficient for high-burst content. Shield formulas vary by source, but the general structure is consistent.</p>
+
+            <p><strong>Base Shield Formula:</strong> Base Shield = ATK% of Shield Caster × Shield Multiplier. Most shield skills use a percentage of the caster's ATK (for DPS shields) or HP (for support shields like Zayne). The shield multiplier is a skill-specific number — typically 150–300% of the relevant stat.</p>
+
+            <p><strong>Shield Strength Bonuses:</strong> Set bonuses and passive skills increase shield effectiveness multiplicatively. The Tidal set gives +20% shield strength. Frostguard gives +15% shield strength. These bonuses stack additively with each other but multiplicatively with base shield.</p>
+
+            <div class="data-row"><span class="data-label">Effective Shield Formula</span><span class="data-value">Base Shield × (1 + Total Shield Strength%)</span></div>
+            <div class="data-row"><span class="data-label">Tidal Set (2pc)</span><span class="data-value">+20% shield strength → 1.2x multiplier</span></div>
+            <div class="data-row"><span class="data-label">Frostguard (2pc)</span><span class="data-value">+15% shield strength → 1.15x multiplier</span></div>
+            <div class="data-row"><span class="data-label">Tidal + Frostguard stacked</span><span class="data-value">1 + 0.20 + 0.15 = 1.35x multiplier</span></div>
+
+            <p><strong>Shield stacking rules:</strong> Most shields from different sources stack (e.g., Zayne's skill shield + memory set shield). Shields from the same source overwrite — casting a new shield before the old one expires replaces it. The exception is passive shield procs (e.g., from set bonuses), which typically add to existing shields rather than overwriting.</p>
+
+            <div class="lab17-shield-compare">
+                <div class="lab17-shield-card">
+                    <div class="lab17-shield-name">Zayne — Frostguard</div>
+                    <div class="lab17-shield-stat">Base: 25% of max HP</div>
+                    <div class="lab17-shield-stat">At 35k HP: 8,750 shield</div>
+                    <div class="lab17-shield-stat">With 2pc Frostguard: 8,750 × 1.15 = 10,063</div>
+                    <div class="lab17-shield-stat">+ healing 5,250 over 4s (4pc)</div>
+                </div>
+                <div class="lab17-shield-card">
+                    <div class="lab17-shield-name">Rafayel — Tidal</div>
+                    <div class="lab17-shield-stat">Base: 200% of ATK</div>
+                    <div class="lab17-shield-stat">At 2,000 ATK: 4,000 shield</div>
+                    <div class="lab17-shield-stat">With 2pc Tidal: 4,000 × 1.20 = 4,800</div>
+                    <div class="lab17-shield-stat">Duration: 8s, cooldown: 12s</div>
+                </div>
+                <div class="lab17-shield-card">
+                    <div class="lab17-shield-name">Memory Set Shield</div>
+                    <div class="lab17-shield-stat">Base: 12% of max HP per 2pc</div>
+                    <div class="lab17-shield-stat">At 25k HP: 3,000 shield</div>
+                    <div class="lab17-shield-stat">Passive proc — stacks with skills</div>
+                    <div class="lab17-shield-stat">Triggers once per 30s</div>
+                </div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Shield Efficiency Ranking:</strong> Zayne's Frostguard shield is the most EHP-efficient in the game because it scales off HP (which also increases his healing). Rafayel's Tidal shield is second-best — scales off ATK but has high uptime (66%). Generic memory set shields are a baseline — useful but not build-around material. For co-op content, at least one shield source per team is recommended.</p></div>
+        </section>
+
+        <section id="hps">
+            <h2>Healing Per Second (HPS)</h2>
+            <p>HPS is the measure of sustained recovery. Unlike shields (pre-mitigation), healing recovers HP after damage has been reduced by DEF — meaning healing is less efficient per raw point than shielding, but it can sustain through long attrition fights where shields would be overwhelmed.</p>
+
+            <p><strong>Zayne Healing Formula:</strong> Zayne's 4pc Frostguard heal = 15% of max HP over 4 seconds. At 35k HP: 5,250 total HP / 4s = 1,312 HPS. Healing Bonus% from substats increases this: Heal = Base Heal × (1 + Healing Bonus%). A +15% Healing Bonus roll increases Zayne's HPS to 1,312 × 1.15 = 1,509 HPS.</p>
+
+            <p><strong>Rafayel Self-Heal Formula:</strong> Rafayel's Inferno Blaze 4pc grants life steal on burn ticks: 3% of damage dealt as HP. If Rafayel deals 8,000 DPS with burn active, his self-heal is 240 HPS. This is lower than Zayne's output but requires no dedicated support slot.</p>
+
+            <div class="data-row"><span class="data-label">Zayne 4pc HPS (35k HP)</span><span class="data-value">1,312 HPS (base) — 1,509 HPS (with +15% Healing Bonus)</span></div>
+            <div class="data-row"><span class="data-label">Zayne 4pc HPS (45k HP)</span><span class="data-value">1,687 HPS (base) — 1,940 HPS (with +15% Healing Bonus)</span></div>
+            <div class="data-row"><span class="data-label">Rafayel self-heal HPS</span><span class="data-value">~240 HPS (8k DPS sustain) — ~360 HPS (12k DPS burst)</span></div>
+            <div class="data-row"><span class="data-label">Passive set heal (2pc Healer)</span><span class="data-value">~200 HPS — 3% HP per 5s when below 50% HP</span></div>
+
+            <p><strong>Healing vs Shield Comparison:</strong> A shield that absorbs 10,000 damage prevents 10,000 HP loss. A heal that recovers 10,000 HP after damage requires your operative to survive the hit first. In one-shot content (Abyss floors 10–12 boss nukes), shields are essential because they prevent the lethal hit entirely. In attrition content (Domain farming, boss rush), healing is superior because shields cannot keep up with sustained damage over 2+ minutes.</p>
+
+            <div class="gb-tip-box"><p><strong>Content Decision Tree:</strong> Is there a one-shot mechanic? → Use shields (Zayne or Tidal set). Is the fight longer than 90 seconds? → Use healing (Zayne 4pc or life steal). Is it both? → Use both — shield for the one-shot, healing for attrition recovery. For Abyss floors 7–9, one shield source is usually enough. For floors 10–12, you want shields on the support AND self-heal on the DPS.</p></div>
+        </section>
+
+        <section id="survivability-per-content">
+            <h2>Survivability per Content Type</h2>
+            <p>Different content types require very different survivability thresholds. Over-investing in survivability costs you DPS; under-investing costs you the clear. Here are the recommended EHP and HPS thresholds for every major content type, based on observed enemy damage output at each tier.</p>
+
+            <div class="team-card">
+                <div class="team-rank">ABYSS FLOORS 1–6 — MODERATE</div>
+                <div class="team-comp">EHP: 20k–28k | HPS: Minimal (0–200)</div>
+                <div class="team-reason">Story-level enemy damage. Shields from memory set passives are sufficient. No dedicated healer needed. Focus on DPS stats — survivability is a non-issue at this tier. Zayne's base shield without any HP investment is enough.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-rank">ABYSS FLOORS 7–9 — MODERATE+</div>
+                <div class="team-comp">EHP: 28k–35k | HPS: 200–600</div>
+                <div class="team-reason">Enemy damage starts to matter. One shield source (Zayne or Tidal) recommended. If running double DPS, at least one memory set with a shield passive. Healing from set bonuses is sufficient. Zayne at 30k HP handles this tier comfortably.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-rank">ABYSS FLOORS 10–12 — HIGH</div>
+                <div class="team-comp">EHP: 35k–50k | HPS: 600–1,500</div>
+                <div class="team-reason">Boss nukes hit for 25k+ before DEF reduction. Shields are mandatory. Zayne (35k HP / 4pc Frostguard) or Tidal set on a support. Healing active throughout the fight. DPS operatives should have at least 30k EHP self-sufficiently. Cooldown management of shields is critical — mistiming a shield cast means a oneshot.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-rank">CO-OP (ALL TIERS) — VERY HIGH</div>
+                <div class="team-comp">EHP: 40k+ | HPS: 1,000+</div>
+                <div class="team-reason">Multiplayer enemy scaling means damage comes from multiple sources simultaneously. Both shields and healing are required. Team composition should include at least one dedicated shielder (Zayne) and one sustain healer. DPS operatives should bring self-shield or life steal as a backup. Communication of shield cooldowns helps prevent overlapping.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-rank">DOMAIN FARMING — LOW</div>
+                <div class="team-comp">EHP: 18k–22k | HPS: 0–100</div>
+                <div class="team-reason">Domain enemies hit softly. No survivability investment needed. Speed is the only metric that matters. Equip full DPS sets. If your operative dies in domains, the problem is not survivability — it is failing to dodge telegraphed attacks. Practice the dodge timing instead of sacrificing DPS for HP/DEF.</div>
+            </div>
+
+            <div class="gb-final-box"><p><strong>Summary:</strong> EHP = (HP + Shield) / (1 − DEF_Reduction). DEF reduction = DEF / (DEF + Constant). Crossover for DEF% vs HP% is ~800 base DEF — below that, HP% wins. Shields are pre-mitigation (better for one-shots). Healing is post-mitigation (better for attrition). Survivability thresholds: Abyss 1–6 (20k EHP), Abyss 7–9 (28k+ EHP), Abyss 10–12 (35k+ EHP + mandatory shields), Co-op (40k+ EHP + both shield and heal), Domains (negligible — focus on speed). Build shields for burst content, healing for sustained content, and both for endgame.</p></div>
+        </section>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Breakpoint Calculator</span></a>
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Memory Set Comparison</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

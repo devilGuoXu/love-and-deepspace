@@ -1,0 +1,54 @@
+/* =========================================
+   LAB 15 — PROTOCORE SET EFFECT DEEP DIVE
+   Per-article styles, dark theme, #3498db accent
+   Prefix: .lab15-*
+   ========================================= */
+
+/* --- Set Attack Cards --- */
+.lab15-set { border-left:3px solid #3498db; padding-left:20px; }
+.lab15-set-name { color:#3498db; font-size:1.05rem; }
+
+/* --- Math Cards --- */
+.lab15-math-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; padding:20px 24px; margin:20px 0; }
+.lab15-math-title { font-size:.85rem; font-weight:700; letter-spacing:1.5px; color:#3498db; margin-bottom:12px; text-transform:uppercase; }
+.lab15-math-body p { color:#b0bedb; font-size:.9rem; margin-bottom:10px; line-height:1.6; }
+.lab15-math-body strong { color:#e0e6f0; }
+
+/* --- Uptime Grid --- */
+.lab15-uptime-grid { margin:24px 0; }
+.lab15-uptime-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; padding:20px 24px; margin-bottom:16px; }
+.lab15-uptime-alt { border-left:3px solid #e67e22; }
+.lab15-uptime-title { font-size:.85rem; font-weight:700; color:#3498db; margin-bottom:16px; letter-spacing:1px; }
+.lab15-uptime-alt .lab15-uptime-title { color:#e67e22; }
+.lab15-uptime-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #1a1f2e; font-size:.85rem; }
+.lab15-uptime-row:last-of-type { border-bottom:none; }
+.lab15-uptime-row span:first-child { color:#8a94a8; }
+.lab15-uptime-row span:last-child { color:#e0e6f0; font-weight:600; }
+.lab15-uptime-desc { color:#6a7080; font-size:.78rem; line-height:1.5; padding:8px 0 12px; }
+
+/* --- Uptime Stat Bars --- */
+.lab15-stat-bar { height:6px; background:#1a1f2e; border-radius:3px; margin-bottom:16px; overflow:hidden; }
+.lab15-stat-fill { height:100%; border-radius:3px; background:linear-gradient(90deg,#3498db,#5dade2); }
+.lab15-stat-amber { background:linear-gradient(90deg,#e67e22,#f39c12); }
+
+/* --- Stats Summary Overrides for Ranking --- */
+.stats-summary .stat-card:nth-child(1) .stat-number { color:#c9a063; }
+.stats-summary .stat-card:nth-child(2) .stat-number { color:#3498db; }
+.stats-summary .stat-card:nth-child(3) .stat-number { color:#9b59b6; }
+.stats-summary .stat-card:nth-child(4) .stat-number { color:#8e44ad; }
+.stats-summary .stat-card:nth-child(5) .stat-number { color:#e74c3c; }
+.stats-summary .stat-card:nth-child(6) .stat-number { color:#6a7080; }
+
+/* --- Team Card Overrides for Content Section --- */
+.team-card .team-rank { color:#3498db; }
+.team-card:nth-child(1) .team-rank::before { content:"⚡ "; }
+.team-card:nth-child(2) .team-rank::before { content:"❄️ "; }
+.team-card:nth-child(3) .team-rank::before { content:"🌑 "; }
+.team-card:nth-child(4) .team-rank::before { content:"⚒️ "; }
+.team-card:nth-child(5) .team-rank::before { content:"🎪 "; }
+
+/* --- Responsive --- */
+@media (max-width:700px) {
+  .lab15-uptime-row { flex-direction:column; align-items:flex-start; gap:4px; }
+  .lab15-math-card { padding:16px; }
+}

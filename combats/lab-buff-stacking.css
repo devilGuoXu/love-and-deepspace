@@ -1,0 +1,263 @@
+/* =========================================
+   LAB 14 — BUFF & DEBUFF STACKING RULES
+   Per-article theme overrides
+   Prefix: .lab14-
+   Accent: #3498db
+   ========================================= */
+
+/* --- Formula Display --- */
+.lab14-formula {
+    background: #0a0d15;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #3498db;
+    letter-spacing: 0.5px;
+}
+
+.lab14-formula span {
+    color: #b0bedb;
+}
+
+/* --- Bucket Grid --- */
+.lab14-bucket-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.lab14-bucket-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: border-color 0.2s;
+}
+
+.lab14-bucket-card:hover {
+    border-color: #3498db;
+}
+
+.lab14-bucket-icon {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.lab14-bucket-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #3498db;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.lab14-bucket-desc {
+    font-size: 0.82rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+/* --- Stacking Rule Card --- */
+.lab14-rule-card {
+    display: flex;
+    gap: 16px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    align-items: flex-start;
+}
+
+.lab14-rule-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(52, 152, 219, 0.15);
+    border: 1px solid #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.lab14-rule-content {
+    flex: 1;
+}
+
+.lab14-rule-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #3498db;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.lab14-rule-text {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.6;
+}
+
+/* --- Unique Buff Table --- */
+.lab14-buff-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.lab14-buff-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+}
+
+.lab14-buff-row:last-child {
+    border-bottom: none;
+}
+
+.lab14-buff-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.lab14-buff-type {
+    font-size: 0.82rem;
+    color: #3498db;
+    font-weight: 600;
+}
+
+.lab14-buff-behavior {
+    font-size: 0.82rem;
+    color: #b0bedb;
+}
+
+.lab14-buff-example {
+    font-size: 0.78rem;
+    color: #6a7080;
+    text-align: right;
+}
+
+/* --- Debuff Duration Bar --- */
+.lab14-duration-bar {
+    margin: 20px 0;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.lab14-duration-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a1f2e;
+    gap: 16px;
+}
+
+.lab14-duration-row:last-child {
+    border-bottom: none;
+}
+
+.lab14-duration-label {
+    font-size: 0.82rem;
+    color: #8a94a8;
+    flex-shrink: 0;
+}
+
+.lab14-duration-track {
+    flex: 1;
+    height: 10px;
+    background: #1a1f2e;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 80px;
+}
+
+.lab14-duration-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #3498db, rgba(52, 152, 219, 0.3));
+    transition: width 0.3s;
+}
+
+.lab14-duration-value {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+    min-width: 50px;
+}
+
+/* --- Math Block --- */
+.lab14-math {
+    background: #05070a;
+    border: 1px solid #2a2f3d;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #b0bedb;
+    overflow-x: auto;
+}
+
+.lab14-math .hl {
+    color: #3498db;
+}
+
+.lab14-math .dim {
+    color: #6a7080;
+}
+
+.lab14-math .green {
+    color: #2ecc71;
+}
+
+/* --- Cap Indicator --- */
+.lab14-cap {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.15);
+    border: 1px solid #3498db;
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #3498db;
+    letter-spacing: 0.5px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .lab14-bucket-grid {
+        grid-template-columns: 1fr;
+    }
+    .lab14-buff-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .lab14-buff-example {
+        text-align: left;
+    }
+    .lab14-duration-row {
+        flex-wrap: wrap;
+    }
+    .lab14-formula {
+        font-size: 0.95rem;
+        padding: 16px;
+    }
+}

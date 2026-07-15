@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buff & Debuff Stacking Rules | Deepspace Hub</title>
+    <meta name="description" content="Everything about buff and debuff stacking in Deepspace — additive vs multiplicative, unique buffs, DEF shred rules, debuff duration refresh mechanics, and damage bonus buckets.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="lab-buff-stacking.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-lab">
+        <div class="gb-hero"><div class="article-badge">EXTREME LAB — MATH</div><h1>Buff & Debuff Stacking Rules</h1><p>Not all buffs are created equal. Some add together, some multiply, some overwrite entirely. Understanding stacking rules is the difference between a perfectly optimized rotation and wasted stat potential.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_14</span><span class="meta-date">2026.07.11</span><span class="meta-tag">MATH</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#damage-buckets">Damage Bonus Buckets</a></li>
+                <li><a href="#atk-stacking">ATK% Stacking Rules</a></li>
+                <li><a href="#def-shred">DEF Shred & RES Shred Stacking</a></li>
+                <li><a href="#unique-buffs">Unique Buffs</a></li>
+                <li><a href="#debuff-duration">Debuff Duration & Refresh Rules</a></li>
+            </ul>
+        </div>
+
+        <section id="damage-buckets">
+            <h2>Damage Bonus Buckets</h2>
+            <div class="gb-highlight"><p><strong>Key Concept:</strong> Buffs and debuffs follow rigid stacking rules. Same-type sources within a bucket are additive; different-type sources across buckets are multiplicative. Understanding which bucket a buff belongs to determines whether it stacks or dilutes.</p></div>
+            <p>Deepspace groups all damage bonuses into four multiplicative buckets. Every damage modifier you apply belongs to exactly one bucket. Your final damage is the product of all four, not the sum. This means the order in which you apply buffs does not matter — only the total value in each bucket matters.</p>
+
+            <div class="lab14-formula">Total = <span>ATK_bucket</span> &times; <span>DMG_bucket</span> &times; <span>CRIT_bucket</span> &times; <span>Reaction_bucket</span></div>
+
+            <div class="lab14-bucket-grid">
+                <div class="lab14-bucket-card"><div class="lab14-bucket-icon">&#x2694;</div><div class="lab14-bucket-name">ATK% Bucket</div><div class="lab14-bucket-desc">All ATK% sources (memory set, protocore main/substat, set bonuses) add together into one multiplier: 1 + total ATK%.</div></div>
+                <div class="lab14-bucket-card"><div class="lab14-bucket-icon">&#x1F525;</div><div class="lab14-bucket-name">DMG% Bucket</div><div class="lab14-bucket-desc">All DMG bonus sources (elemental DMG, skill type DMG, conditional DMG bonuses) add together: 1 + total DMG%.</div></div>
+                <div class="lab14-bucket-card"><div class="lab14-bucket-icon">&#x1F3AF;</div><div class="lab14-bucket-name">CRIT Bucket</div><div class="lab14-bucket-desc">Calculated as 1 + (CRIT Rate &times; CRIT DMG). This is already a product within itself — Rate and DMG multiply each other.</div></div>
+                <div class="lab14-bucket-card"><div class="lab14-bucket-icon">&#x26A1;</div><div class="lab14-bucket-name">Reaction Bucket</div><div class="lab14-bucket-desc">Elemental reaction bonuses, Stellactrum advantage, and enemy-specific vulnerability multipliers. These multiply against everything else.</div></div>
+            </div>
+
+            <p><strong>Why buckets matter:</strong> A buff that reads "increase ATK by 20%" and a buff that reads "increase damage by 20%" are in different buckets. They multiply. A buff that reads "increase ATK by 20%" and another that reads "increase ATK by 30%" are in the same bucket. They add — meaning the second buff gives less relative gain than the first. The more you stack within one bucket, the less each additional source is worth.</p>
+
+            <div class="lab14-math">
+                <span class="dim">// Two buffs in same bucket (ATK%): additive</span><br>
+                (1 + 0.20 + 0.30) = <span class="hl">1.50x</span><br><br>
+                <span class="dim">// Two buffs in different buckets (ATK% &times; DMG%): multiplicative</span><br>
+                (1 + 0.20) &times; (1 + 0.30) = <span class="hl">1.56x</span>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Practical rule:</strong> When choosing between two buffs, prefer the one that fills the lowest bucket. If your ATK bucket is at 2.0x (100% bonus) but your DMG bucket is at 1.2x (20% bonus), adding 20% to DMG gives a 16.7% total damage increase, while adding 20% to ATK gives only 10%. Diversify your buckets.</p></div>
+        </section>
+
+        <section id="atk-stacking">
+            <h2>ATK% Stacking Rules</h2>
+            <p>ATK% is the most common offensive modifier in Deepspace. It appears on memory set bonuses, protocore main stats, protocore substats, and temporary combat buffs. All ATK% sources are additive within the ATK bucket — they sum together before multiplying with base ATK.</p>
+
+            <div class="lab14-rule-card">
+                <div class="lab14-rule-icon">+</div>
+                <div class="lab14-rule-content">
+                    <div class="lab14-rule-label">Rule: Additive Within Bucket</div>
+                    <div class="lab14-rule-text">Memory set ATK% + protocore set ATK% + substat ATK% = one combined ATK% total. They do not multiply each other.</div>
+                </div>
+            </div>
+
+            <div class="lab14-math">
+                <span class="dim">// Example build ATK% calculation</span><br>
+                Solar 12%<span class="dim"> (memory set 2-piece)</span><br>
+                + Solar Flare 18%<span class="dim"> (memory set 4-piece)</span><br>
+                + 5 substat rolls at 3% each = 15%<br>
+                = <span class="hl">45% total ATK bonus</span><br><br>
+                <span class="dim">// Effective ATK with 1,200 base ATK</span><br>
+                1,200 &times; (1 + 0.45) = <span class="hl">1,740 effective ATK</span>
+            </div>
+
+            <p><strong>The dilution trap:</strong> Adding more ATK% gives diminishing relative returns because each new ATK% is a smaller percentage increase against the existing total. The first 50% ATK bonus doubles your base damage. The next 50% only adds 33% more. By the time you have +150% ATK, another 10% adds only 4% more damage.</p>
+
+            <div class="lab14-duration-bar">
+                <div class="lab14-duration-row"><span class="lab14-duration-label">0% &rarr; 50% ATK</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:50%"></div></div><span class="lab14-duration-value">+50% dmg</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">50% &rarr; 100% ATK</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:33%"></div></div><span class="lab14-duration-value">+33% dmg</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">100% &rarr; 150% ATK</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:25%"></div></div><span class="lab14-duration-value">+25% dmg</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">150% &rarr; 200% ATK</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:20%"></div></div><span class="lab14-duration-value">+20% dmg</span></div>
+            </div>
+
+            <div class="article-info-box"><p><strong>The 100% ATK gate:</strong> Once you cross +100% ATK from all sources, every additional ATK% roll is worth roughly half of what it was before. This is the threshold where you should pivot to DMG% or CRIT buckets. A character with +120% ATK / +30% DMG deals less damage than a character with +90% ATK / +50% DMG despite having higher ATK — the bucket imbalance hurts total output.</p></div>
+        </section>
+
+        <section id="def-shred">
+            <h2>DEF Shred & RES Shred Stacking</h2>
+            <p>Defense reduction and resistance shred follow their own unique stacking rules that differ from the buff system. Understanding the difference between <strong>shred</strong> (applied as a debuff on the enemy) and <strong>ignore</strong> (applied as a buff on yourself) is critical for optimizing damage against tough targets.</p>
+
+            <div class="lab14-rule-card">
+                <div class="lab14-rule-icon">&#x1F6AB;</div>
+                <div class="lab14-rule-content">
+                    <div class="lab14-rule-label">Rule 1: Shred + Shred = Additive</div>
+                    <div class="lab14-rule-text">Two DEF shred debuffs from different sources stack additively on the enemy. If Skill A shreds 20% DEF and Skill B shreds 15% DEF, the enemy has 35% reduced DEF.</div>
+                </div>
+            </div>
+
+            <div class="lab14-rule-card">
+                <div class="lab14-rule-icon">&#x2716;</div>
+                <div class="lab14-rule-content">
+                    <div class="lab14-rule-label">Rule 2: Shred &times; Ignore = Multiplicative</div>
+                    <div class="lab14-rule-text">Shred (reduces enemy DEF stat) and ignore (bypasses remaining DEF) are separate mechanics. Shred applies first, then ignore bypasses a portion of whatever is left. They multiply rather than add.</div>
+                </div>
+            </div>
+
+            <div class="lab14-math">
+                <span class="dim">// Enemy has 1,000 DEF. You apply 40% shred + 30% ignore.</span><br><br>
+                <span class="dim">Step 1 — Shred applies:</span> 1,000 &times; (1 &minus; 0.40) = <span class="hl">600 remaining DEF</span><br>
+                <span class="dim">Step 2 — Ignore applies:</span> 600 &times; (1 &minus; 0.30) = <span class="hl">420 effective DEF</span><br>
+                <span class="dim">Total reduction:</span> (1,000 &minus; 420) / 1,000 = <span class="green">58% effective DEF reduction</span>
+            </div>
+
+            <p><strong>Maximum shred cap:</strong> DEF reduction from shred effects caps at <span class="lab14-cap">60% MAX</span>. If you have 40% shred from one skill and 30% from another, the total would be 70% — but the cap reduces it to 60% effective shred. Any shred beyond 60% is wasted. Ignore effects bypass the cap because they apply after shred and are not subject to the same limit.</p>
+
+            <div class="lab14-duration-bar">
+                <div class="lab14-duration-row"><span class="lab14-duration-label">20% Shred only</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:20%;background:linear-gradient(90deg,#3498db,rgba(52,152,219,0.3))"></div></div><span class="lab14-duration-value">20% reduced</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">35% Shred (additive)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:35%;background:linear-gradient(90deg,#3498db,rgba(52,152,219,0.3))"></div></div><span class="lab14-duration-value">35% reduced</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">50% Shred</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:50%;background:linear-gradient(90deg,#3498db,rgba(52,152,219,0.3))"></div></div><span class="lab14-duration-value">50% reduced</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">60% Shred (cap)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:60%;background:linear-gradient(90deg,#2ecc71,rgba(46,204,113,0.3))"></div></div><span class="lab14-duration-value">60% max</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">70% Shred (capped)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:60%;background:linear-gradient(90deg,#e74c3c,rgba(231,76,60,0.3))"></div></div><span class="lab14-duration-value">wasted overcap</span></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Resistance shred note:</strong> Elemental RES shred follows the same additive-stacking rule as DEF shred but has a separate cap at <span class="lab14-cap">40% RES MAX</span>. Resistance ignore effects also bypass this cap the same way. Most enemies have 10–30% base elemental resistance, so 40% shred is usually enough to drop them to 0% or negative resistance, which increases damage beyond the normal multiplier.</p></div>
+        </section>
+
+        <section id="unique-buffs">
+            <h2>Unique Buffs</h2>
+            <p>Not all buffs are created equal. Some are flagged as <strong>"unique"</strong> — a special classification that means they cannot stack with themselves from the same or different sources. When a unique buff is applied while the same unique buff already exists, the newer application overwrites the older one instead of stacking.</p>
+
+            <div class="lab14-buff-table">
+                <div class="lab14-buff-row" style="background:#0f121b;border-bottom:2px solid #2a2f3d;font-weight:700;">
+                    <div class="lab14-buff-type">Buff Type</div>
+                    <div class="lab14-buff-behavior">Stacking Behavior</div>
+                    <div class="lab14-buff-example">Example Source</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">Ultimate DMG</div>
+                    <div class="lab14-buff-behavior">Unique — overwrites, does not stack</div>
+                    <div class="lab14-buff-example">Memory set 4-piece bonus</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">Shield Strength</div>
+                    <div class="lab14-buff-behavior">Unique — overwrites, does not stack</div>
+                    <div class="lab14-buff-example">Support companion passive</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">Damage Reduction</div>
+                    <div class="lab14-buff-behavior">Unique — overwrites, does not stack</div>
+                    <div class="lab14-buff-example">Protocore set bonus</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">ATK% (standard)</div>
+                    <div class="lab14-buff-behavior">Stacking — additive within bucket</div>
+                    <div class="lab14-buff-example">Memory set + protocore</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">DMG% (standard)</div>
+                    <div class="lab14-buff-behavior">Stacking — additive within bucket</div>
+                    <div class="lab14-buff-example">Elemental DMG + skill DMG</div>
+                </div>
+                <div class="lab14-buff-row">
+                    <div class="lab14-buff-type">Healing Bonus</div>
+                    <div class="lab14-buff-behavior">Unique — overwrites, does not stack</div>
+                    <div class="lab14-buff-example">Healing set bonus</div>
+                </div>
+            </div>
+
+            <div class="article-info-box"><p><strong>How to identify unique buffs:</strong> Check the tooltip wording. Unique buffs explicitly state "does not stack with other [buff type] effects" or "only the highest value applies." Stacking buffs say "stacks up to X times" or simply list the percentage without restriction. If there is no stacking language, assume it is stacking. When in doubt, test in the training room — apply the same buff twice and check if the stat screen shows an increase.</p></div>
+
+            <p><strong>Why unique buffs exist:</strong> Unique buffs are typically powerful multiplicative effects that would break the game if they could stack. For example, if two 50% damage reduction effects stacked, you would have 100% damage reduction (immunity). By making them unique, the developers cap the maximum benefit at a single application. Strategic play is about timing these unique buffs to cover different phases of a fight, not stacking them simultaneously.</p>
+
+            <div class="lab14-math">
+                <span class="dim">// Unique buff scenario — two sources of Ultimate DMG buff</span><br>
+                Source A: +30% Ultimate DMG (unique)<br>
+                Source B: +25% Ultimate DMG (unique)<br>
+                <span class="dim">// Result: Only +30% applies (highest value wins)</span><br>
+                Total Ultimate DMG bonus = <span class="hl">+30%</span> <span class="dim">(not +55%)</span><br><br>
+                <span class="dim">// Stacking buff scenario — two sources of ATK%</span><br>
+                Source A: +20% ATK (stacking)<br>
+                Source B: +15% ATK (stacking)<br>
+                <span class="dim">// Result: Both add together</span><br>
+                Total ATK bonus = <span class="hl">+35%</span>
+            </div>
+        </section>
+
+        <section id="debuff-duration">
+            <h2>Debuff Duration & Refresh Rules</h2>
+            <p>Debuffs on enemies follow strict refresh rules that are different from how buffs work on your operatives. Understanding the difference between a <strong>refresh</strong> and a <strong>stack</strong> is essential for maintaining uptime on key debuffs without wasting resources.</p>
+
+            <div class="lab14-rule-card">
+                <div class="lab14-rule-icon">&#x1F504;</div>
+                <div class="lab14-rule-content">
+                    <div class="lab14-rule-label">Refresh Rule: Duration Resets, Magnitude Does Not</div>
+                    <div class="lab14-rule-text">Reapplying a debuff before it expires resets the duration timer but does not increase the debuff's magnitude beyond the initial cap. A 20% DEF shred applied twice still shreds 20% — it does not become 40%.</div>
+                </div>
+            </div>
+
+            <div class="lab14-rule-card">
+                <div class="lab14-rule-icon">&#x26A0;</div>
+                <div class="lab14-rule-content">
+                    <div class="lab14-rule-label">Exception: Stacking Debuffs</div>
+                    <div class="lab14-rule-text">Certain debuffs (like Curse from Cursed wanderers or Mark from specific companions) have their own per-stack cap. Each application adds a stack, and the debuff magnitude increases with stacks. These are explicitly labeled — do not assume a debuff stacks unless the tooltip says so.</div>
+                </div>
+            </div>
+
+            <div class="lab14-math">
+                <span class="dim">// Standard debuff refresh (DEF shred 20%, 8s duration)</span><br>
+                Apply at t=0: &rarr; 20% shred, expires at t=8s<br>
+                Reapply at t=5: &rarr; still 20% shred, expires at t=13s<br>
+                <span class="dim">// Magnitude never increases. Duration refreshes.</span><br><br>
+                <span class="dim">// Stacking debuff (Curse, 3 stacks max, 10s duration)</span><br>
+                Stack 1 at t=0: &rarr; 10% ATK reduction<br>
+                Stack 2 at t=2: &rarr; 20% ATK reduction, duration refreshes<br>
+                Stack 3 at t=4: &rarr; 30% ATK reduction, duration refreshes<br>
+                <span class="dim">// Each stack adds magnitude until cap. Refresh resets timer.</span>
+            </div>
+
+            <p><strong>Diminishing returns on debuff duration:</strong> When a debuff that is already on the target is reapplied multiple times within a short window, the game imposes a diminishing returns penalty. Each subsequent application after the first within a 15-second window reduces the new duration by 50%, down to a minimum of 2 seconds. This prevents infinite lockdown.</p>
+
+            <div class="lab14-duration-bar">
+                <div class="lab14-duration-row"><span class="lab14-duration-label">1st application</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:100%"></div></div><span class="lab14-duration-value">8.0s</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">2nd (within 15s)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:50%"></div></div><span class="lab14-duration-value">4.0s</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">3rd (within 15s)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:25%"></div></div><span class="lab14-duration-value">2.0s</span></div>
+                <div class="lab14-duration-row"><span class="lab14-duration-label">4th+ (within 15s)</span><div class="lab14-duration-track"><div class="lab14-duration-fill" style="width:25%"></div></div><span class="lab14-duration-value">2.0s min</span></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Optimal debuff rotation:</strong> To maximize debuff uptime without triggering diminishing returns, wait at least 15 seconds between applications of the same debuff type. If you have two different debuff sources (e.g., DEF shred from two different companions), they are treated as separate debuffs and their duration diminishing returns are tracked independently. Use debuffs from different sources in alternating rotations to keep uptime without penalty.</p></div>
+
+            <div class="article-info-box"><p><strong>DR window tracking:</strong> The 15-second diminishing return window applies per debuff type per target. You can track it in practice by noting when you apply a debuff — if you reapply within 15 seconds, the duration is halved. The minimum duration of 2 seconds means even hasty reapplication still gives a meaningful window, but you lose 75% of the potential uptime. Wait out the window whenever possible.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Buffs stack additively within the same bucket, multiplicatively across different buckets. ATK% caps out in value around +100% before you should diversify. DEF shred stacks additively up to a 60% cap; ignore effects bypass the cap and multiply with shred. Unique buffs (Ultimate DMG, Shield Strength, Damage Reduction, Healing Bonus) overwrite rather than stack — check tooltips for "does not stack" language. Debuffs refresh duration on reapplication but do not increase magnitude unless they are stacking debuffs. Repeated applications within 15 seconds suffer a 50% duration penalty per application, minimum 2 seconds. Use different debuff sources in alternating rotations to maintain uptime without triggering diminishing returns.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Breakpoint Calculator</span></a>
+                <a href="lab-substat-probability.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Substat Probability</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

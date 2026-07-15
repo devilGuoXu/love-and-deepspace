@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemental Reaction & Stellactrum Theory | Deepspace Hub</title>
+    <meta name="description" content="The complete math behind elemental reactions and stellactrum matching — separate multiplicative damage layers that define team building.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="lab-elemental-theory.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-lab">
+        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — MATH</div><h1>Elemental Reaction & Stellactrum Theory</h1><p>Stellactrum matching and elemental reactions are separate multiplicative damage layers. Understanding how they stack — and when they conflict — is the difference between a good team and a mathematically optimal one.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_13</span><span class="meta-date">2026.07.11</span><span class="meta-tag">MATH</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#stellactrum">Stellactrum Matching</a></li>
+                <li><a href="#resonance">Elemental Resonance Formula</a></li>
+                <li><a href="#interactions">Other Elemental Interactions</a></li>
+                <li><a href="#application">Elemental Application Rate</a></li>
+                <li><a href="#team-math">Team Composition Math</a></li>
+            </ul>
+        </div>
+
+        <section id="stellactrum">
+            <h2>Stellactrum Matching</h2>
+            <div class="gb-highlight"><p><strong>Key Concept:</strong> Stellactrum matching and elemental reactions are separate multiplicative damage layers. The stellactrum system gives a flat ATK bonus for matching colors, while elemental reactions provide conditional damage amplifiers. These layers multiply against each other, meaning a team that optimizes both will out-damage a team that optimizes only one.</p></div>
+            <p>The stellactrum system assigns each operative a primary color and a secondary color. When an operative's stellactrum matches the memory set bonus requirement, they receive a flat ATK bonus. The exact multiplier works as follows:</p>
+
+            <div class="lab13-math-block"><p><code>Same color match = +15% ATK bonus to that operative</code><br><code>Off-color = no bonus</code></p></div>
+
+            <p>A +15% ATK bonus at +80% total ATK represents an 8.3% total damage increase. At +120% total ATK, the same 15% bonus represents a 6.8% increase. Matching stellactrum is always valuable, but its relative value decreases as you stack more ATK% from other sources — a classic diminishing returns pattern.</p>
+
+            <div class="lab13-comparison">
+                <div class="lab13-comp-card"><div class="lab13-comp-title">ON-COLOR MATCH</div><div class="lab13-comp-desc">+15% ATK. If base ATK = 1,800 and ATK% = +80%, total ATK = 3,240. With match: +15% → 1.95x multiplier → 3,510 ATK. Effective damage gain: +8.3%.</div></div>
+                <div class="lab13-comp-card"><div class="lab13-comp-title">OFF-COLOR COST</div><div class="lab13-desc">Zero ATK bonus from stellactrum. To compensate, you need substats worth ~8% more damage — roughly 2 high CRIT rolls or 1.5 ATK% rolls. The opportunity cost is real but surmountable with better individual gear.</div></div>
+            </div>
+
+            <p>The opportunity cost equation: forcing an off-color match to activate a set bonus is worth it if the set bonus provides >8% total damage increase. Most 2-piece set bonuses provide 10–15% damage, making off-color matching viable when the set bonus is strong. However, if the set bonus provides less than 8% (some defensive sets), on-color matching with a weaker set bonus is mathematically superior.</p>
+
+            <div class="article-info-box"><p><strong>Decision Rule:</strong> Calculate the set bonus damage multiplier × the stellactrum multiplier. Compare both options: Option A (on-color, weak set) vs Option B (off-color, strong set). Pick the higher product. Example: On-color with +0% set = 1.083 × 1.0 = 1.083. Off-color with +12% set = 1.0 × 1.12 = 1.12. Off-color wins by 3.4%. But if the set gives only 6%: 1.0 × 1.06 = 1.06 — on-color wins. Do the math before committing resources.</p></div>
+        </section>
+
+        <section id="resonance">
+            <h2>Elemental Resonance Formula</h2>
+            <p>When two operatives with Light + Dark elements are on the same team, Elemental Resonance is triggered. This is the most impactful reaction in the game because it provides a team-wide damage multiplier with no stat condition — it works regardless of gear quality.</p>
+
+            <div class="lab13-math-block"><p><code>Resonance: +20% True Damage bonus on all attacks for 8s<br>Trigger: Apply both Light and Dark elements within 3s<br>Internal cooldown: 12s</code></p></div>
+
+            <p>Uptime calculation: 8 seconds active ÷ 12 seconds cooldown = 67% uptime. At 67% uptime, the 20% True Damage bonus becomes a 0.67 × 20% = 13.4% overall damage multiplier. This is the highest unconditional team-wide damage increase available from any single team composition choice.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">67%</div><div class="stat-label">Uptime</div><div class="stat-desc">8s active / 12s cooldown</div></div>
+                <div class="stat-card"><div class="stat-number">13.4%</div><div class="stat-label">Avg Multiplier</div><div class="stat-desc">Uptime × 20% True DMG</div></div>
+                <div class="stat-card"><div class="stat-number">3s</div><div class="stat-label">Trigger Window</div><div class="stat-desc">Both elements must land within 3s</div></div>
+                <div class="stat-card"><div class="stat-number">True</div><div class="stat-label">DMG Type</div><div class="stat-desc">Ignores DEF — always full value</div></div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>Why True Damage matters:</strong> True Damage bypasses enemy DEF entirely. At Abyss floor 12 where DEF reduces normal damage by ~50%, a 20% True Damage bonus effectively becomes a ~40% effective damage increase during its window — because it is applied after DEF reduction. This makes Light + Dark resonance disproportionately powerful in endgame content. Teams that struggle with high-DEF floors should prioritize unlocking this resonance.</p></div>
+
+            <p>True Damage being applied after DEF reduction means the resonance multiplier grows stronger as enemy DEF increases. Against floor 5 enemies (20% DEF reduction), the 13.4% average is accurate. Against floor 12 enemies (50% DEF reduction), the effective value of True Damage doubles — making the resonance worth ~26.8% effective damage at floor 12. This scaling property makes Light + Dark teams the mathematically optimal choice for endgame Abyss pushing.</p>
+        </section>
+
+        <section id="interactions">
+            <h2>Other Elemental Interactions</h2>
+            <p>Beyond the Light + Dark resonance, there are three additional elemental reactions. Each has a different trigger condition and damage profile.</p>
+
+            <div class="lab13-element-grid">
+                <div class="lab13-element-card"><div class="lab13-element-name">Melt — Fire + Frost</div><div class="lab13-element-desc">50% bonus ATK for 1 hit on the triggering operative. This is a single-hit nuke, not a sustained buff. Best used when you can line up your highest-multiplier skill (usually skill 3 or ultimate) to consume the Melt proc. The 50% bonus applies to base ATK before other multipliers, making it additive with ATK% in the damage formula. At +80% ATK, a Melt proc increases that single hit's damage by ~28%. Highest burst potential of all reactions.</div></div>
+                <div class="lab13-element-card"><div class="lab13-element-name">Conduct — Water + Lightning</div><div class="lab13-element-desc">15% CRIT Rate team buff for 6 seconds. This is a team-wide CRIT Rate increase that affects all operatives on field. At 60% baseline CRIT Rate, this buff increases CRIT multiplier from 1 + (0.6 × CRIT DMG) to 1 + (0.75 × CRIT DMG). With 150% CRIT DMG: from 1.9x to 2.125x = 11.8% damage increase during the 6s window. Best sustained DPS reaction.</div></div>
+                <div class="lab13-element-card"><div class="lab13-element-name">Illuminate — Light + Any</div><div class="lab13-element-desc">Reveals stealth enemies for 10 seconds. This reaction has zero direct damage value. Its value is entirely situational: against stealth-based enemies (Phantom-type wanderers, some Abyss floor layouts), it negates the stealth mechanic entirely. In content without stealth enemies, this reaction provides no combat benefit. Never build a team around Illuminate — it is a convenience mechanic, not a damage strategy.</div></div>
+            </div>
+
+            <div class="gb-highlight"><p><strong>Reaction Priority:</strong> Light + Dark Resonance (13.4% avg team multiplier) > Melt for burst comps (~28% single-hit) > Conduct for sustained comps (~11.8% during window) > Illuminate (situational only). In most content, you will only have one reaction type active per team composition. Choose based on your team's damage profile — burst teams want Melt, sustained teams want Conduct, endgame Abyss teams want Resonance.</p></div>
+        </section>
+
+        <section id="application">
+            <h2>Elemental Application Rate</h2>
+            <p>Elemental reactions are not automatic — they depend on how much "element gauge" each skill applies. The gauge system determines how quickly you can trigger reactions and how long the element persists on the enemy.</p>
+
+            <div class="lab13-gauge-table">
+                <div class="lab13-gauge-row"><span class="lab13-gauge-label">Basic Attack (hit)</span><span class="lab13-gauge-value">1 unit</span><span class="lab13-gauge-note">Applies element on hit</span></div>
+                <div class="lab13-gauge-row"><span class="lab13-gauge-label">Resonance Skill</span><span class="lab13-gauge-value">2 units</span><span class="lab13-gauge-note">Standard skill cast</span></div>
+                <div class="lab13-gauge-row"><span class="lab13-gauge-label">Ultimate</span><span class="lab13-gauge-value">3 units</span><span class="lab13-gauge-note">Ardent Oath cast</span></div>
+                <div class="lab13-gauge-row"><span class="lab13-gauge-label">Decay Rate</span><span class="lab13-gauge-value">1 unit per 3s</span><span class="lab13-gauge-note">Gauge decreases over time</span></div>
+                <div class="lab13-gauge-row"><span class="lab13-gauge-label">Gauge Cap</span><span class="lab13-gauge-value">5 units</span><span class="lab13-gauge-note">Maximum stackable gauge</span></div>
+            </div>
+
+            <p>Multiple applications stack the gauge, but the cap is 5 units. This means you cannot "over-apply" elements beyond 5 units — any excess application beyond the cap is wasted. The practical implication: once an enemy has 5 units of an element applied, further applications of that element do nothing until the gauge decays below the cap.</p>
+
+            <p>The decay rate of 1 unit per 3 seconds means a single basic attack (1 unit) lasts 3 seconds, a resonance skill (2 units) lasts 6 seconds, and an ultimate (3 units) lasts 9 seconds. The trigger window for reactions is 3 seconds — so you need at least 1 unit of both elements present on the enemy simultaneously within that 3-second window to trigger a reaction.</p>
+
+            <div class="article-info-box"><p><strong>Practical rotation:</strong> To trigger Resonance (Light + Dark), apply one element first (e.g., Light via basic attack, 1 unit, lasts 3s), then apply the other element (Dark via resonance skill, 2 units, lasts 6s) within 3 seconds. The reaction consumes 1 unit from each element, reducing the gauge but not fully clearing it. After the reaction, you have 1 unit of Light remaining (from the original 1 unit - 1 consumed = 0 ... this is tricky — reactions consume 1 unit of the triggering element and 1 unit of the base element). This means you need to reapply elements more frequently than you might expect.</div></div>
+
+            <p><strong>Element gauge consumption rule:</strong> When a reaction triggers, it consumes 1 unit from each element present. If only 1 unit was applied, the element is fully consumed and must be reapplied. If 2+ units were applied, the element persists with reduced gauge, enabling back-to-back reactions in some cases. A perfectly timed rotation using resonance skills (2 units) on both elements can trigger a reaction, leave 1 unit of each remaining, and trigger a second reaction within the same window if you reapply quickly.</p>
+        </section>
+
+        <section id="team-math">
+            <h2>Team Composition Math</h2>
+            <p>The choice between building for elemental reactions versus raw stat stacking is a mathematical optimization problem. Here is the damage uplift for different team compositions.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">~40%</div><div class="stat-label">2-Man Reaction</div><div class="stat-desc">One reaction active ~40% of fight</div></div>
+                <div class="stat-card"><div class="stat-number">~20%</div><div class="stat-label">3-Man Overlap</div><div class="stat-desc">Two reactions overlap ~20% of fight</div></div>
+                <div class="stat-card"><div class="stat-number">13.4%</div><div class="stat-label">Resonance Uplift</div><div class="stat-desc">Best single reaction value</div></div>
+                <div class="stat-card"><div class="stat-number">6–9%</div><div class="stat-label">Raw Stacking</div><div class="stat-desc">Extra ATK% from no reactions</div></div>
+            </div>
+
+            <p><strong>2-Man Team (e.g., Light + Dark):</strong> One reaction type active. Resonance activates every 12s (cooldown) and lasts 8s. During the 4s downtime, you have no reaction benefits. Average team DPS uplift: 13.4% from Resonance. Efficiency: high — low skill ceiling, consistent returns.</p>
+
+            <p><strong>3-Man Team (e.g., Light + Dark + Fire):</strong> Two reactions possible: Resonance (Light + Dark) and Melt (Fire + Frost, if Frost is present). In practice, managing two reaction gauges simultaneously creates complexity. The reactions can overlap ~20% of the fight time, but the effective damage uplift from the second reaction is reduced because you cannot always align skill cooldowns. Average total uplift: ~16–18% from reactions combined. Efficiency: moderate — higher ceiling but requires precise rotation management.</p>
+
+            <p><strong>Raw Stat Stacking (3 same element or no reactions):</strong> Without reactions, you build extra ATK% or CRIT stats by ignoring elemental variety. The opportunity gain is approximately 6–9% more damage from stats compared to a reaction-focused build (because you can stack set bonuses and substats without worrying about element coverage). This option has the lowest ceiling but the highest consistency — no rotation management required.</p>
+
+            <div class="gb-tip-box"><p><strong>Decision Framework:</strong> (1) Are you pushing Abyss floor 10+? Yes → Build for Resonance (Light + Dark) — the True Damage scaling with DEF makes it mathematically dominant at high floors. (2) Is your team DPS low but your survival high? Yes → Build for Melt (burst) to create clear windows. (3) Do you have excellent gear but struggle with clear times? Yes → Build for Conduct (sustained CRIT) to amplify your already-strong stats. (4) Are you speedrunning? Yes → Build for Melt + Resonance combo for maximum burst overlap.</p></div>
+
+            <div class="lab13-comparison">
+                <div class="lab13-comp-card"><div class="lab13-comp-title">OPTIMAL — RESONANCE</div><div class="lab13-comp-desc">Light + Dark core. Add a flex element. The 13.4% average True Damage multiplier scales with content difficulty. Best for Abyss 10+ and general clearing. Low execution barrier.</div></div>
+                <div class="lab13-comp-card"><div class="lab13-comp-title">BURST — MELT</div><div class="lab13-comp-desc">Fire + Frost + Flex. The 50% single-hit bonus enables devastating burst windows. Best for boss floors and content with short DPS windows. Higher ceiling, higher skill requirement.</div></div>
+            </div>
+
+            <p>The final consideration: <strong>elemental reaction value changes with gear quality.</strong> A whale with +150% ATK and 70/170 CRIT gets proportionally less benefit from the 15% stellactrum bonus (diminishing returns) but full benefit from the 13.4% Resonance multiplier (which is multiplicative with everything). This is why whales prioritize elemental reactions over stellactrum matching — the reaction bonus is a separate multiplier that does not suffer from their already-saturated stat brackets.</p>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Stellactrum matching = +15% ATK (diminishing with ATK% saturation). Elemental Resonance (Light + Dark) = 13.4% avg True Damage multiplier (increases with enemy DEF). Melt = 50% single-hit burst. Conduct = 15% CRIT team buff 6s. Illuminate = stealth reveal (situational). Gauge: basics 1 unit, skills 2, ultimates 3. Decay: 1 unit/3s. Cap: 5 units. Optimal team: Resonance > Melt > Conduct > raw stats for floor 10+. Whale optimization: reactions over stellactrum due to separate multiplicative layer.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-team-synergy.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Team DPS Synergy Math</span></a>
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-dps-framework.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">DPS Calculation Framework</span></a>
+                <a href="lab-breakpoints.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Breakpoint Calculator</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">&copy; 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

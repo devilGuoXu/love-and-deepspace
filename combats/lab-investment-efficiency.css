@@ -1,0 +1,25 @@
+/* lab-investment-efficiency.css — F2P vs Whale Investment Efficiency */
+/* LAB_16 — #3498db accent, dark theme */
+
+.lab16-cost-table { margin:24px 0; background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; overflow:hidden; }
+.lab16-cost-row { display:flex; justify-content:space-between; align-items:center; padding:14px 20px; border-bottom:1px solid #1a1f2e; gap:16px; }
+.lab16-cost-row:last-child { border-bottom:none; }
+.lab16-cost-tier { color:#6a7080; font-size:.8rem; flex-shrink:0; }
+.lab16-cost-label { color:#8a94a8; font-size:.75rem; }
+.lab16-cost-value { color:#e0e6f0; font-size:.85rem; font-weight:600; text-align:right; }
+.lab16-cost-high { color:#f39c12; font-size:.7rem; }
+
+.lab16-tier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0; }
+.lab16-tier-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; padding:20px 16px; transition:border-color .2s; }
+.lab16-tier-card:hover { border-color:#3498db; }
+.lab16-tier-name { font-size:.65rem; letter-spacing:2px; font-weight:700; color:#3498db; text-transform:uppercase; margin-bottom:8px; text-align:center; }
+.lab16-tier-stat { font-size:1.3rem; font-weight:800; color:#f0f3fc; text-align:center; margin-bottom:4px; }
+.lab16-tier-sub { font-size:.7rem; color:#8a94a8; text-align:center; margin-bottom:10px; }
+.lab16-tier-desc { font-size:.75rem; color:#6a7080; line-height:1.5; text-align:center; }
+
+.lab16-spend-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:24px 0; }
+
+@media (max-width:700px) {
+  .lab16-tier-grid { grid-template-columns:1fr; }
+  .lab16-spend-grid { grid-template-columns:1fr; }
+}

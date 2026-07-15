@@ -1,0 +1,19 @@
+.lab13-element-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:24px 0; }
+.lab13-element-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; transition:border-color .2s; }
+.lab13-element-card:hover { border-color:#3498db; }
+.lab13-element-name { font-size:.85rem; font-weight:700; color:#3498db; margin-bottom:4px; }
+.lab13-element-desc { font-size:.8rem; color:#8a94a8; line-height:1.5; }
+.lab13-gauge-table { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; overflow:hidden; margin:24px 0; }
+.lab13-gauge-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; padding:10px 16px; border-bottom:1px solid #1a1f2e; align-items:center; }
+.lab13-gauge-row:last-child { border-bottom:none; }
+.lab13-gauge-row:nth-child(even) { background:rgba(255,255,255,.02); }
+.lab13-gauge-label { color:#8a94a8; font-size:.8rem; }
+.lab13-gauge-value { color:#3498db; font-size:.85rem; font-weight:600; }
+.lab13-gauge-note { color:#6a7080; font-size:.75rem; text-align:right; }
+.lab13-math-block { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; margin:20px 0; text-align:center; }
+.lab13-math-block code { color:#3498db; font-size:1.1rem; font-weight:700; }
+.lab13-comparison { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+.lab13-comp-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; }
+.lab13-comp-title { font-size:.7rem; letter-spacing:2px; color:#3498db; font-weight:700; margin-bottom:8px; }
+.lab13-comp-desc { font-size:.82rem; color:#b0bedb; line-height:1.5; }
+@media(max-width:700px) { .lab13-element-grid { grid-template-columns:1fr; } .lab13-gauge-row { grid-template-columns:1fr 1fr; } .lab13-comparison { grid-template-columns:1fr; } }

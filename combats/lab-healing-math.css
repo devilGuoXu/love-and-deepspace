@@ -1,0 +1,116 @@
+/* lab-healing-math.css — LAB_17 Healing & Survivability Math */
+/* Dark theme, #3498db accent. All classes prefixed lab17- */
+
+.lab17-table {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 24px 0;
+}
+
+.lab17-table-row {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 1.8fr 1.2fr;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+}
+
+.lab17-table-row:last-child {
+    border-bottom: none;
+}
+
+.lab17-table-row:nth-child(even):not(.lab17-table-header) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.lab17-table-header {
+    background: #05070a;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #6a7080;
+    text-transform: uppercase;
+}
+
+.lab17-table-cell {
+    color: #b0bedb;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.lab17-table-header .lab17-table-cell {
+    color: #6a7080;
+    font-weight: 600;
+}
+
+.lab17-highlight {
+    color: #3498db;
+    font-weight: 700;
+}
+
+.lab17-shield-compare {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.lab17-shield-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+
+.lab17-shield-card:hover {
+    border-color: #3498db;
+}
+
+.lab17-shield-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.lab17-shield-stat {
+    font-size: 0.82rem;
+    color: #8a94a8;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.lab17-shield-stat:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .lab17-table-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        padding: 10px 14px;
+        font-size: 0.78rem;
+    }
+
+    .lab17-table-row .lab17-table-cell:nth-child(3),
+    .lab17-table-row .lab17-table-cell:nth-child(4) {
+        grid-column: span 1;
+    }
+
+    .lab17-table-row .lab17-table-cell:nth-child(3) {
+        grid-column: 1;
+    }
+
+    .lab17-table-row .lab17-table-cell:nth-child(4) {
+        grid-column: 2;
+    }
+
+    .lab17-shield-compare {
+        grid-template-columns: 1fr;
+    }
+}

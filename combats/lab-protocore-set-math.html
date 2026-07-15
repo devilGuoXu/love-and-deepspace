@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocore Set Effect Deep Dive | Deepspace Hub</title>
+    <meta name="description" content="Complete mathematical breakdown of every protocore set effect — ranking by DPS uplift, 2pc vs 4pc comparisons, uptime modeling, and content-specific recommendations.">
+    <link rel="icon" type="image/x-icon" href="../favicon.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab-all.css">
+    <link rel="stylesheet" href="article-shared.css">
+    <link rel="stylesheet" href="lab-protocore-set-math.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6092371274714048" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6092371274714048">
+</head>
+<body>
+    <nav class="nav-bar"><div class="nav-inner"><a href="/combats/" onclick="history.back();return false">&larr; BACK TO COMBAT GUIDES</a></div></nav>
+    <div class="gb-container article-theme-lab">
+        <div class="gb-hero"><div class="gb-badge">EXTREME LAB — SET MATH</div><h1>Protocore Set Effect Deep Dive</h1><p>Every protocore set in Love and Deepspace mathematically ranked by DPS contribution, uptime modeling, and content-specific tier lists. Know exactly which set to farm and equip.</p></div>
+        <div class="gb-meta"><span class="meta-id">ENTRY_#LAB_15</span><span class="meta-date">2026.07.11</span><span class="meta-tag">SET_MATH</span></div>
+
+        <div class="article-toc">
+            <div class="article-toc-title">Table of Contents</div>
+        <div class="gb-author">Written by Kaelen &mdash; Deepspace Hunter Station Team</div>
+            <ul class="article-toc-list">
+                <li><a href="#catalog">All Protocore Sets Catalog</a></li>
+                <li><a href="#ranking">DPS Uplift Ranking</a></li>
+                <li><a href="#math-2v4">2pc vs 4pc Math</a></li>
+                <li><a href="#uptime">Uptime Modeling</a></li>
+                <li><a href="#content">Content-Specific Recommendations</a></li>
+            </ul>
+        </div>
+
+        <div class="gb-highlight"><p><strong>Key Concept:</strong> Protocore set bonuses provide 8–15% damage uplift depending on the set, operative, and content type. Knowing which set to use per operative per content maximizes your effective stats by up to 20% compared to random equipping. The math behind set selection is deterministic — this guide breaks it down.</p></div>
+
+        <section id="catalog">
+            <h2>All Protocore Sets Catalog</h2>
+            <p>There are six protocore sets in the current game meta. Each set provides a 2-piece bonus and a 4-piece bonus. The 2-piece is always a flat stat increase; the 4-piece provides a unique effect or a stronger stat multiplier. Below is the complete catalog with detailed breakdowns.</p>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Solar — Raw Power</div>
+                <div class="attack-desc">The universal ATK set. Solar has no conditional triggers and no elemental alignment. It works on every operative in every content type. The most farmed set in the game for good reason.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> ATK +12%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> ATK +25% (stacks with 2pc for +37% total)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> 12–15% raw (no conditions)</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> All operatives, all content</span>
+                </div>
+            </div>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Permafrost — Frost Domain</div>
+                <div class="attack-desc">The premier elemental set for Frost-aligned operatives. Permafrost not only increases Frost damage but extends freeze duration, creating additional CC windows. Excellent in freezeable content.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> Frost DMG +15%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> Freeze duration +1s (on top of Frost DMG+15%)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> 18–22% (if freezeable content)</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> Zayne, Frost-team comps</span>
+                </div>
+            </div>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Tidal — Ocean's Embrace</div>
+                <div class="attack-desc">The support-oriented Water set. Tidal provides healing amplification and Water damage. This is the primary set for healers and off-support operatives who contribute both damage and sustain.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> Water DMG +15%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> Healing +20% (on top of Water DMG+15%)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> 5–8% (healers) / 12–15% (damage)</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> Support operatives, healer builds</span>
+                </div>
+            </div>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Shadow — Abyssal Execute</div>
+                <div class="attack-desc">The conditional high-risk set. Shadow provides a massive damage bonus when enemies are below 50% HP. This makes it a powerful execute set, but the conditional nature means its average value depends entirely on fight length and enemy durability.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> Dark DMG +15%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> Below 50% HP: DMG +25% (stacks with Dark DMG)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> ~12.5% average (see uptime section)</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> Sylus, execute phase carries</span>
+                </div>
+            </div>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Storm — Thunderous Wrath</div>
+                <div class="attack-desc">An Electro-based set focused on burst windows and energy regeneration. Storm excels in short fights where the 4pc burst can be aligned with resonance rotations for maximum impact.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> Electro DMG +15%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> On resonance: next 3 attacks deal +30% Electro DMG (8s ICD)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> 10–16% (depends on rotation alignment)</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> Rafayel, burst-window comps</span>
+                </div>
+            </div>
+
+            <div class="attack-card lab15-set">
+                <div class="attack-name lab15-set-name">Ember — Scorched Earth</div>
+                <div class="attack-desc">A Fire DoT and debuff set. Ember excels in prolonged fights where burn stacks can ramp up. The 4pc applies a stacking defense reduction that benefits the entire team, making it a hybrid DPS/support set.</div>
+                <div class="attack-details">
+                    <span class="detail"><span class="detail-label">2pc:</span> Fire DMG +15%</span>
+                    <span class="detail"><span class="detail-label">4pc:</span> Burn ticks reduce DEF by 3% per stack (max 5 stacks = 15%)</span>
+                    <span class="detail"><span class="detail-label">DPS Uplift:</span> 9–14% (personal) + 10–15% teamwide</span>
+                    <span class="detail"><span class="detail-label">Best For:</span> Rafayel, team-debuff strategies</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="ranking">
+            <h2>DPS Uplift Ranking</h2>
+            <p>Every protocore set's DPS contribution varies by operative, team composition, and content type. Below is a mathematical ranking based on average DPS uplift across all standard conditions. These numbers assume optimal rotations and no stat saturation interference.</p>
+
+            <div class="stats-summary">
+                <div class="stat-card"><div class="stat-number">1st</div><div class="stat-label">Solar</div><div class="stat-desc">12–15% raw ATK — universal, no conditions, works everywhere</div></div>
+                <div class="stat-card"><div class="stat-number">2nd</div><div class="stat-label">Permafrost</div><div class="stat-desc">18–22% Frost teams — conditional on freezeable content</div></div>
+                <div class="stat-card"><div class="stat-number">3rd</div><div class="stat-label">Storm</div><div class="stat-desc">10–16% burst — requires rotation alignment</div></div>
+                <div class="stat-card"><div class="stat-number">4th</div><div class="stat-label">Shadow</div><div class="stat-desc">~12.5% average — below 50% HP condition drags average down</div></div>
+                <div class="stat-card"><div class="stat-number">5th</div><div class="stat-label">Ember</div><div class="stat-desc">9–14% personal + team debuff — great in long fights</div></div>
+                <div class="stat-card"><div class="stat-number">6th</div><div class="stat-label">Tidal</div><div class="stat-desc">5–8% healers — best for support roles only</div></div>
+            </div>
+
+            <p><strong>Key takeaways:</strong> Solar dominates because it has zero conditions. A set that is active 100% of the time with a flat 12–15% uplift mathematically outperforms conditional sets whose average is dragged down by uptime. Permafrost is the only elemental set that can rival Solar, and only in freezeable content. Shadow's 25% bonus below 50% HP sounds impressive, but its average across a full fight is only ~12.5% because half the fight happens above 50% HP.</p>
+
+            <div class="gb-tip-box"><p><strong>Rule of thumb:</strong> If a set's peak bonus is active less than 60% of the fight, a universal ATK set (Solar) will almost always outperform it on average. Always calculate effective uptime before choosing a conditional set over Solar.</p></div>
+        </section>
+
+        <section id="math-2v4">
+            <h2>2pc vs 4pc Math</h2>
+            <p>One of the most common questions: is it better to run a full 4-piece set or combine two 2-piece bonuses? The answer depends on stat dilution — the principle that stacking more of a stat you already have gives diminishing percentage returns.</p>
+
+            <div class="lab15-math-card">
+                <div class="lab15-math-title">Example A: 2 Solar + 2 Permafrost</div>
+                <div class="lab15-math-body">
+                    <p>2 Solar = ATK +12%. 2 Permafrost = Frost DMG +15%. Combined: +12% ATK and +15% Frost DMG.</p>
+                    <p>If Zayne has +80% ATK from other sources and +40% Frost DMG from his kit: +12% ATK is worth 12 / 180 = 6.7% total damage. +15% Frost DMG is worth 15 / 140 = 10.7% total damage. Combined: <strong>~17.4% total damage increase</strong>.</p>
+                </div>
+            </div>
+
+            <div class="lab15-math-card">
+                <div class="lab15-math-title">Example B: Full 4 Solar</div>
+                <div class="lab15-math-body">
+                    <p>2pc: ATK +12%. 4pc: ATK +25%. Total: ATK +37%.</p>
+                    <p>Same Zayne with +80% ATK: 37 / 180 = <strong>~20.6% total damage increase</strong>.</p>
+                    <p><strong>Winner: 4 Solar</strong> by ~3.2%. The 4-piece ATK% bonus is undiluted because ATK% is a broader damage multiplier than elemental DMG%.</p>
+                </div>
+            </div>
+
+            <p>The math flips when base ATK is already very high. If Zayne already has +120% ATK from gear and memories, the 4 Solar bonus of +37% is worth 37 / 220 = 16.8%. The 2+2 hybrid gives 6.7% + 10.7% = 17.4% — now the hybrid wins. This is the dilution crossover point.</p>
+
+            <div class="lab15-math-card">
+                <div class="lab15-math-title">The 2+2 Dilution Formula</div>
+                <div class="lab15-math-body">
+                    <p><strong>When 2+2 beats 4-piece:</strong> (ATK% from other sources) / (Elemental DMG% from other sources) > (4pc ATK% gain) / (2pc Elemental gain). Simplified: if your ATK% is more than ~2.5x your elemental DMG% from other sources, 2+2 is mathematically superior. Otherwise, full 4-piece wins.</p>
+                </div>
+            </div>
+
+            <div class="gb-tip-box"><p><strong>General rule:</strong> Full 4-piece Solar is almost always better for main DPS operatives unless your ATK% surpasses +100%. 2+2 hybrids are better for sub-DPS and support roles where you want balanced stat distribution. Mixed sets (one elemental + one ATK) excel when the elemental matches your operative's damage type.</p></div>
+        </section>
+
+        <section id="uptime">
+            <h2>Uptime Modeling</h2>
+            <p>Conditional set bonuses like Shadow's below-50% execute and Storm's resonance-window burst have effective uptimes that vary dramatically by content type. A 25% damage bonus sounds incredible until you realize it only works for a fraction of the fight. Below is the uptime modeling per content category.</p>
+
+            <div class="lab15-uptime-grid">
+                <div class="lab15-uptime-card">
+                    <div class="lab15-uptime-title">Shadow 4pc — Below 50% HP Bonus</div>
+                    <div class="lab15-stat-bar"><div class="lab15-stat-fill" style="width:90%"></div></div>
+                    <div class="lab15-uptime-row"><span>Abyss Floors 1–6</span><span>~10% uptime</span></div>
+                    <div class="lab15-uptime-desc">Enemies die in 10–15 seconds. The bonus is active for roughly the last 1–2 seconds. Shadow is essentially wasted here. Use Solar or elemental matching.</div>
+                    <div class="lab15-uptime-row"><span>Abyss Floors 7–9</span><span>~25% uptime</span></div>
+                    <div class="lab15-uptime-desc">Elite enemies live 30–45 seconds. The below-50% window is approximately 8–12 seconds. Shadow starts to become viable.</div>
+                    <div class="lab15-uptime-row"><span>Abyss Floors 10–12</span><span>~40% uptime</span></div>
+                    <div class="lab15-uptime-desc">Bosses live 60–90 seconds. The execute window (below 50% HP) spans 25–35 seconds. Shadow's effective DPS uplift reaches ~10% — competitive with Solar.</div>
+                    <div class="lab15-uptime-row"><span>Co-op Bosses</span><span>~50% uptime</span></div>
+                    <div class="lab15-uptime-desc">Multi-phase boss fights lasting 2–3 minutes. The below-50% phase is roughly half the fight. Shadow's effective ~12.5% average matches Solar's raw 12%.</div>
+                </div>
+            </div>
+
+            <div class="lab15-uptime-grid">
+                <div class="lab15-uptime-card lab15-uptime-alt">
+                    <div class="lab15-uptime-title">Storm 4pc — Resonance Burst Window</div>
+                    <div class="lab15-stat-bar"><div class="lab15-stat-fill lab15-stat-amber" style="width:70%"></div></div>
+                    <div class="lab15-uptime-row"><span>Short Fights (&lt;30s)</span><span>~60% alignment</span></div>
+                    <div class="lab15-uptime-desc">With 8s ICD and 10–15 second fights, you can align 1 burst window. Storm's peak 30% Electro DMG on 3 attacks translates to ~15% average per fight.</div>
+                    <div class="lab15-uptime-row"><span>Medium Fights (30–60s)</span><span>~45% alignment</span></div>
+                    <div class="lab15-uptime-desc">Multiple resonance cycles mean some burst windows will overlap with low-damage phases of your rotation. Effective average drops to ~10%.</div>
+                    <div class="lab15-uptime-row"><span>Long Fights (60s+)</span><span>~35% alignment</span></div>
+                    <div class="lab15-uptime-desc">Over extended fights, the 8s ICD and rotation drift reduce Storm's effective uptime. Average drops to ~8–10% — below Solar's unconditional 12%.</div>
+                </div>
+            </div>
+
+            <p><strong>Uptime is everything.</strong> A set with 100% uptime and a 12% bonus mathematically beats a set with 50% uptime and a 25% bonus (12% vs 12.5% — barely). But when you factor in the consistency of Solar (no rotation adjustments needed), the unconditional set is nearly always preferred for general content. Conditional sets excel only when you can specifically tailor content around their condition.</p>
+        </section>
+
+        <section id="content">
+            <h2>Content-Specific Recommendations</h2>
+            <p>Different content types demand different set priorities. Below are the recommendations per content tier, ranked by optimal set choice for each operative role.</p>
+
+            <div class="team-section">
+                <div class="team-card"><div class="team-rank">ABYSS FLOORS 1–6</div><div class="team-comp">Solar (any operative) &gt; Storm &gt; Elemental Match</div><div class="team-reason">Enemies die too fast for conditional sets. Solar's raw ATK% clears waves fastest. Storm can work if you need energy burst for the final wave.</div></div>
+                <div class="team-card"><div class="team-rank">ABYSS FLOORS 7–9</div><div class="team-comp">Elemental Match &gt; Solar &gt; Permafrost (if freezeable)</div><div class="team-reason">Elites have enough HP to justify elemental matching. Frost teams gain significant value from Permafrost's freeze extension. Shadow starts being viable but not optimal.</div></div>
+                <div class="team-card"><div class="team-rank">ABYSS FLOORS 10–12</div><div class="team-comp">Shadow (execute) &gt; Permafrost &gt; Solar</div><div class="team-reason">Long boss fights make Shadow's execute mathematically competitive or superior. Permafrost's freeze duration gives 1–2 extra CC windows, which can prevent one-shot mechanics.</div></div>
+                <div class="team-card"><div class="team-rank">DOMAINS (Farming)</div><div class="team-comp">Solar &gt; Ember &gt; any set</div><div class="team-reason">Consistency is king in farming. Solar's unconditional ATK% ensures every run has the same clear time. Ember provides team debuffs for co-op domains.</div></div>
+                <div class="team-card"><div class="team-rank">EVENTS</div><div class="team-comp">Varies by event buff &gt; Solar &gt; Elemental Match</div><div class="team-reason">Most events provide a specific buff that favors one element or mechanic. Check the event details before equipping. Solar is a safe default if you don't want to swap.</div></div>
+            </div>
+
+            <div class="gb-highlight"><p><strong>Per-Operative Quick Reference:</strong> Zayne (Permafrost 4pc in freezeable content, Solar otherwise). Rafayel (Storm 4pc for burst, Ember 4pc for debuff teams). Sylus (Shadow 4pc on Abyss 10–12, Solar elsewhere). Xavier (Solar 4pc always — no elemental set matches his Light damage type). A universal Solar set at +12/16 is sufficient to clear all Abyss content, but optimal element matching shaves 10–20 seconds per floor at high investment.</p></div>
+        </section>
+
+        <div class="gb-final-box"><p><strong>Summary:</strong> Protocore set selection is a math problem with four variables — set bonus magnitude, uptime percentage, stat dilution from existing gear, and content type. Solar is the universal best-in-slot for any operative in any content where you are unsure. Permafrost is best for Zayne in freezeable Abyss floors 7+. Shadow is only competitive in long fights (Abyss 10–12, co-op). Storm and Ember fill niche burst and debuff roles respectively. Tidal is for healers only. When in doubt: farm Solar and build a +12/16 set — it will never be wrong.</p></div>
+
+        <div class="article-related">
+            <div class="article-related-title">Related Lab Articles</div>
+            <div class="article-related-grid">
+                <a href="lab-set-comparison.html" class="article-related-link"><span class="rel-label">← PREVIOUS</span><span class="rel-title">Memory Set: 4pc vs 2+2</span></a>
+                <a href="lab-diminishing-returns.html" class="article-related-link"><span class="rel-label">NEXT →</span><span class="rel-title">Stat Diminishing Returns</span></a>
+                <a href="lab-roll-value.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Protocore Roll Value</span></a>
+                <a href="lab-team-synergy.html" class="article-related-link"><span class="rel-label">RELATED</span><span class="rel-title">Team DPS Synergy Math</span></a>
+            </div>
+        </div>
+    </div>
+    <button id="backToTopBtn" class="back-to-top"><span class="arrow-up">↑</span></button>
+    <footer class="main-footer"><div class="footer-links"><a href="../legal/about.html">About Us</a><a href="../legal/contact.html">Contact Us</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div><p class="copyright">© 2026 Deepspace Hunter Station. All original content is protected. Unauthorized reproduction prohibited.</p><p class="disclaimer-mini">Disclaimer: This is a fan-made site. All game assets and characters are trademarks of Papergames.</p></footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() { if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } else { backToTopBtn.classList.remove('show'); } });
+        backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
