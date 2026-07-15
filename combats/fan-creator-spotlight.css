@@ -1,0 +1,149 @@
+/* fan16 — Creator Spotlight: Monthly Feature
+   per-article CSS, .fan16-* prefix, #9c27b0 accent
+   Dark theme spotlight cards with colored borders per content type */
+
+.fan16-team-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.fan16-team-card:hover {
+    transform: translateY(-2px);
+}
+
+.fan16-type-art { border-left: 4px solid #e91e63; }
+.fan16-type-art:hover { border-color: #e91e63; }
+.fan16-type-video { border-left: 4px solid #ff9800; }
+.fan16-type-video:hover { border-color: #ff9800; }
+.fan16-type-music { border-left: 4px solid #2196f3; }
+.fan16-type-music:hover { border-color: #2196f3; }
+.fan16-type-writing { border-left: 4px solid #4caf50; }
+.fan16-type-writing:hover { border-color: #4caf50; }
+
+.fan16-card-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.fan16-type-art .fan16-card-badge { background: rgba(233,30,99,0.15); color: #e91e63; border: 1px solid rgba(233,30,99,0.3); }
+.fan16-type-video .fan16-card-badge { background: rgba(255,152,0,0.15); color: #ff9800; border: 1px solid rgba(255,152,0,0.3); }
+.fan16-type-music .fan16-card-badge { background: rgba(33,150,243,0.15); color: #2196f3; border: 1px solid rgba(33,150,243,0.3); }
+.fan16-type-writing .fan16-card-badge { background: rgba(76,175,80,0.15); color: #4caf50; border: 1px solid rgba(76,175,80,0.3); }
+
+.fan16-creator-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 4px;
+}
+
+.fan16-creator-platform {
+    font-size: 0.78rem;
+    color: #6a7080;
+    margin-bottom: 12px;
+}
+
+.fan16-creator-desc {
+    color: #b0bedb;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.fan16-creator-process,
+.fan16-creator-tools,
+.fan16-creator-find {
+    color: #8a94a8;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    border-left: 2px solid #2a2f3d;
+}
+
+.fan16-creator-process strong,
+.fan16-creator-tools strong,
+.fan16-creator-find strong {
+    color: #9c27b0;
+}
+
+.fan16-creator-find a {
+    color: #9c27b0;
+    text-decoration: none;
+}
+
+.fan16-creator-find a:hover {
+    text-decoration: underline;
+}
+
+.fan16-creator-process { margin-top: 12px; }
+
+/* Compact table for requirements & past spotlights */
+.fan16-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.fan16-table-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #1a1f2e;
+    align-items: center;
+}
+
+.fan16-table-row:last-child {
+    border-bottom: none;
+}
+
+.fan16-table-row:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+}
+
+.fan16-table-header {
+    background: #0f121b;
+}
+
+.fan16-table-header .fan16-table-cell {
+    color: #9c27b0;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.fan16-table-cell {
+    color: #b0bedb;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.fan16-table-cell strong {
+    color: #8a94a8;
+}
+
+/* Past spotlights table: 4 columns */
+#past + .fan16-table .fan16-table-row {
+    grid-template-columns: 60px 1.5fr 1fr 1fr;
+}
+
+@media (max-width: 700px) {
+    .fan16-team-card { padding: 18px; }
+    .fan16-creator-name { font-size: 1rem; }
+    .fan16-table-row { grid-template-columns: 1fr; gap: 4px; }
+    #past + .fan16-table .fan16-table-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,20 @@
+.fan12-video-container { margin:24px 0; }
+.fan12-tool-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:24px 0; }
+.fan12-tool-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; transition:border-color .2s; }
+.fan12-tool-card:hover { border-color:#9c27b0; }
+.fan12-tool-name { font-size:.95rem; font-weight:700; color:#f0f3fc; margin-bottom:6px; }
+.fan12-tool-desc { font-size:.78rem; color:#8a94a8; line-height:1.5; }
+.fan12-style-tag { display:inline-block; background:rgba(156,39,176,0.12); border:1px solid rgba(156,39,176,0.3); padding:3px 12px; border-radius:14px; font-size:.65rem; letter-spacing:1px; color:#ce93d8; margin:2px 4px 2px 0; }
+.fan12-technique-card { background:#0f121b; border-left:3px solid #9c27b0; padding:16px 20px; margin:16px 0; border-radius:0 12px 12px 0; }
+.fan12-technique-card strong { color:#ce93d8; }
+.fan12-content-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; padding:20px 24px; margin:16px 0; }
+.fan12-content-card:hover { border-color:#9c27b0; }
+.fan12-content-title { font-size:1rem; font-weight:700; color:#f0f3fc; margin-bottom:8px; }
+.fan12-content-title span { color:#ce93d8; }
+.fan12-content-desc { color:#8a94a8; font-size:.85rem; line-height:1.6; }
+.fan12-hashtag { display:inline-block; background:#0f121b; border:1px solid #2a2f3d; border-radius:6px; padding:2px 10px; font-size:.7rem; color:#9c27b0; font-family:monospace; margin:2px 3px; }
+.fan12-thumbnail-tip { background:linear-gradient(135deg,rgba(156,39,176,0.08),rgba(156,39,176,0.02)); border:1px solid rgba(156,39,176,0.2); border-radius:12px; padding:16px 20px; margin:12px 0; }
+.fan12-thumbnail-tip strong { color:#ce93d8; }
+@media (max-width:700px) {
+    .fan12-tool-grid { grid-template-columns:1fr; }
+}

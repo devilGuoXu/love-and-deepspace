@@ -1,0 +1,88 @@
+/* =========================================
+   FAN_15 — Community Hubs & Social Spaces Guide
+   Prefix: .fan15-*
+   Accent: #9c27b0 (purple)
+   Dark theme overrides
+   ========================================= */
+
+body { background:#0a0c12; color:#b0bedb; }
+
+/* --- Platform note card --- */
+.fan15-platform-note {
+    background:rgba(156,39,176,0.08);
+    border:1px solid rgba(156,39,176,0.25);
+    border-radius:12px;
+    padding:14px 20px;
+    margin:24px 0;
+    font-size:0.82rem;
+    color:#8a94a8;
+    line-height:1.6;
+}
+
+/* --- Two-column tip grid --- */
+.fan15-grid-2col {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin:24px 0;
+}
+
+.fan15-tip-col {
+    background:#0f121b;
+    border:1px solid #2a2f3d;
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:0.82rem;
+    color:#8a94a8;
+    line-height:1.6;
+    transition:border-color 0.2s;
+}
+
+.fan15-tip-col:hover {
+    border-color:#9c27b0;
+}
+
+.fan15-tip-col strong {
+    color:#9c27b0;
+}
+
+/* --- Participate callout box --- */
+.fan15-participate-box {
+    background:linear-gradient(135deg,rgba(156,39,176,0.12),rgba(156,39,176,0.04));
+    border:1px solid rgba(156,39,176,0.3);
+    border-radius:16px;
+    padding:20px 24px;
+    margin:24px 0;
+    text-align:center;
+}
+
+.fan15-participate-box p {
+    color:#b0bedb;
+    font-size:0.9rem;
+    line-height:1.7;
+    margin:0;
+}
+
+.fan15-participate-box strong {
+    color:#9c27b0;
+}
+
+/* --- Team card accent override --- */
+.gb-container .team-rank { color:#9c27b0; }
+.gb-container .team-card:hover { border-color:#9c27b0; }
+
+/* --- Attack card accent override --- */
+.gb-container .attack-card:hover { border-color:#9c27b0; }
+.gb-container .attack-name { color:#f0f3fc; }
+
+/* --- Stats grid override --- */
+.gb-container .stat-number { color:#9c27b0; }
+.gb-container .stat-card:hover { border-color:#9c27b0; }
+
+/* --- TOC hover accent --- */
+.gb-container .article-toc-list a:hover { color:#9c27b0; }
+
+/* --- Responsive --- */
+@media (max-width:700px) {
+    .fan15-grid-2col { grid-template-columns:1fr; }
+}

@@ -1,0 +1,38 @@
+.fan17-tech-badge { display:inline-block; padding:2px 10px; border-radius:6px; font-size:.6rem; font-weight:700; letter-spacing:1.5px; margin-bottom:10px; }
+.fan17-badge-web { background:rgba(156,39,176,0.15); color:#ce93d8; border:1px solid rgba(156,39,176,0.3); }
+.fan17-badge-sheet { background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); }
+.fan17-badge-mobile { background:rgba(52,152,219,0.15); color:#3498db; border:1px solid rgba(52,152,219,0.3); }
+.fan17-badge-oss { background:rgba(243,156,18,0.15); color:#f39c12; border:1px solid rgba(243,156,18,0.3); }
+.fan17-tool-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+.fan17-tool-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:16px; padding:20px; transition:border-color .2s,transform .2s; }
+.fan17-tool-card:hover { border-color:#9c27b0; transform:translateY(-2px); }
+.fan17-tool-name { font-size:1rem; font-weight:700; color:#f0f3fc; margin-bottom:4px; }
+.fan17-tool-dev { font-size:.72rem; color:#6a7080; margin-bottom:8px; }
+.fan17-tool-desc { font-size:.82rem; color:#8a94a8; line-height:1.6; margin-bottom:10px; }
+.fan17-tool-features { font-size:.75rem; color:#b0bedb; line-height:1.5; padding-left:14px; margin-bottom:10px; }
+.fan17-tool-link { display:inline-block; font-size:.72rem; color:#ce93d8; text-decoration:none; border:1px solid rgba(156,39,176,0.3); padding:4px 12px; border-radius:8px; transition:background .2s; }
+.fan17-tool-link:hover { background:rgba(156,39,176,0.12); }
+.fan17-stack-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:24px 0; }
+.fan17-stack-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px; text-align:center; transition:border-color .2s; }
+.fan17-stack-card:hover { border-color:#9c27b0; }
+.fan17-stack-icon { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:rgba(156,39,176,0.12); border:1px solid rgba(156,39,176,0.25); color:#ce93d8; font-size:.9rem; font-weight:700; margin-bottom:10px; }
+.fan17-stack-name { font-size:.82rem; font-weight:600; color:#f0f3fc; margin-bottom:4px; }
+.fan17-stack-desc { font-size:.7rem; color:#6a7080; line-height:1.4; }
+.fan17-project-list { margin:24px 0; }
+.fan17-project-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; margin-bottom:10px; transition:border-color .2s; }
+.fan17-project-card:hover { border-color:#9c27b0; }
+.fan17-project-title { font-size:.9rem; font-weight:700; color:#f0f3fc; margin-bottom:4px; }
+.fan17-project-desc { font-size:.8rem; color:#8a94a8; line-height:1.5; }
+.fan17-legal-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0; }
+.fan17-legal-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 20px; }
+.fan17-legal-do { border-left:3px solid #2ecc71; }
+.fan17-legal-dont { border-left:3px solid #e74c3c; }
+.fan17-legal-label { font-size:.65rem; font-weight:700; letter-spacing:1.5px; margin-bottom:6px; }
+.fan17-legal-do .fan17-legal-label { color:#2ecc71; }
+.fan17-legal-dont .fan17-legal-label { color:#e74c3c; }
+.fan17-legal-text { font-size:.78rem; color:#b0bedb; line-height:1.5; }
+@media (max-width:700px) {
+    .fan17-tool-grid { grid-template-columns:1fr; }
+    .fan17-stack-grid { grid-template-columns:repeat(2,1fr); }
+    .fan17-legal-grid { grid-template-columns:1fr; }
+}

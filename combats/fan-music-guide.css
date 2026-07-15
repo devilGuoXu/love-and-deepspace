@@ -1,0 +1,11 @@
+.fan13-platforms-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:24px 0; }
+.fan13-platform-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 18px; transition:border-color 0.2s; }
+.fan13-platform-card:hover { border-color:#9c27b0; }
+.fan13-platform-name { font-size:.85rem; font-weight:700; color:#9c27b0; margin-bottom:6px; }
+.fan13-platform-desc { font-size:.78rem; color:#8a94a8; line-height:1.5; }
+.fan13-tools-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:24px 0; }
+.fan13-tool-card { background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:16px 18px; transition:border-color 0.2s; }
+.fan13-tool-card:hover { border-color:#9c27b0; }
+.fan13-tool-category { font-size:.75rem; font-weight:700; letter-spacing:1.5px; color:#9c27b0; margin-bottom:8px; }
+.fan13-tool-desc { font-size:.78rem; color:#8a94a8; line-height:1.5; }
+@media (max-width:700px) { .fan13-platforms-grid { grid-template-columns:1fr; } .fan13-tools-grid { grid-template-columns:1fr; } }
