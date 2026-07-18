@@ -1,0 +1,421 @@
+/* =========================================
+   MEM15 — MEMORY RESONANCE CHAINS
+   Prefix: .mem15-*
+   Dark theme, #4caf50 green accent
+   ========================================= */
+
+/* --- Rank Summary Cards (hero showcase) --- */
+.mem15-rank-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.mem15-rank-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.mem15-rank-card:hover {
+    transform: translateY(-3px);
+}
+
+.mem15-rank-label {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.mem15-rank-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.mem15-rank-desc {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #8a94a8;
+}
+
+.mem15-transformative { border-color: #4caf50; }
+.mem15-transformative .mem15-rank-label,
+.mem15-transformative .mem15-rank-title { color: #4caf50; }
+
+.mem15-strong { border-color: #2ecc71; }
+.mem15-strong .mem15-rank-label,
+.mem15-strong .mem15-rank-title { color: #2ecc71; }
+
+.mem15-moderate { border-color: #f39c12; }
+.mem15-moderate .mem15-rank-label,
+.mem15-moderate .mem15-rank-title { color: #f39c12; }
+
+.mem15-minimal { border-color: #6a7080; }
+.mem15-minimal .mem15-rank-label,
+.mem15-minimal .mem15-rank-title { color: #6a7080; }
+
+/* --- Tier Breakdown --- */
+.mem15-tier-section {
+    margin: 24px 0;
+}
+
+.mem15-tier {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border-left: 3px solid #2a2f3d;
+    transition: border-color 0.2s;
+}
+
+.mem15-tier:hover {
+    border-color: var(--accent, #4caf50);
+}
+
+.mem15-tier-header {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.mem15-tier-body {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.7;
+}
+
+.mem15-tier-s { border-left-color: #4caf50; }
+.mem15-tier-s .mem15-tier-header { color: #4caf50; }
+
+.mem15-tier-a { border-left-color: #2ecc71; }
+.mem15-tier-a .mem15-tier-header { color: #2ecc71; }
+
+.mem15-tier-b { border-left-color: #f39c12; }
+.mem15-tier-b .mem15-tier-header { color: #f39c12; }
+
+.mem15-tier-c { border-left-color: #6a7080; }
+.mem15-tier-c .mem15-tier-header { color: #6a7080; }
+
+/* --- Team / Memory Cards --- */
+.mem15-team-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    transition: border-color 0.2s;
+}
+
+.mem15-team-card:hover {
+    border-color: #4caf50;
+}
+
+.mem15-memory-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4caf50;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2f3d;
+}
+
+.mem15-power-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 14px;
+    background: #05070a;
+    border-radius: 12px;
+}
+
+.mem15-base,
+.mem15-max {
+    font-size: 0.82rem;
+    color: #b0bedb;
+    line-height: 1.6;
+}
+
+.mem15-base .mem15-version-label,
+.mem15-max .mem15-version-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.mem15-base .mem15-version-label { color: #6a7080; }
+.mem15-max .mem15-version-label { color: #4caf50; }
+
+.mem15-vs {
+    font-size: 1.2rem;
+    color: #4caf50;
+    font-weight: 700;
+}
+
+.mem15-rank-breakdown {
+    margin: 16px 0;
+}
+
+.mem15-rank-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #1a1f2e;
+    font-size: 0.82rem;
+    color: #b0bedb;
+}
+
+.mem15-rank-line:last-child {
+    border-bottom: none;
+}
+
+.mem15-r {
+    flex-shrink: 0;
+    min-width: 28px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+/* Rank tags */
+.mem15-tag-t {
+    color: #4caf50;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.mem15-tag-a {
+    color: #2ecc71;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.mem15-tag-b {
+    color: #f39c12;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.mem15-tag-c {
+    color: #6a7080;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.mem15-why-care {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(76, 175, 80, 0.06);
+    border-left: 2px solid #4caf50;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.6;
+}
+
+.mem15-why-care strong {
+    color: #4caf50;
+}
+
+/* --- F2P Strategy Section --- */
+.mem15-strategy-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.mem15-strategy-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.mem15-strategy-card:hover {
+    transform: translateY(-2px);
+}
+
+.mem15-strategy-icon {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.mem15-strategy-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.mem15-strategy-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.mem15-strategy-card ul li {
+    padding: 5px 0;
+    padding-left: 16px;
+    position: relative;
+    font-size: 0.78rem;
+    color: #8a94a8;
+    line-height: 1.5;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.mem15-strategy-card ul li:last-child {
+    border-bottom: none;
+}
+
+.mem15-strategy-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.mem15-sweet-spot {
+    font-size: 0.72rem;
+    color: #6a7080;
+    font-style: italic;
+    padding-top: 8px;
+    border-top: 1px solid #1a1f2e;
+}
+
+.mem15-chase { border-color: rgba(76, 175, 80, 0.4); }
+.mem15-chase .mem15-strategy-title { color: #4caf50; }
+.mem15-chase .mem15-strategy-icon { color: #4caf50; }
+.mem15-chase ul li::before { background: #4caf50; }
+
+.mem15-fine { border-color: rgba(46, 204, 113, 0.3); }
+.mem15-fine .mem15-strategy-title { color: #2ecc71; }
+.mem15-fine .mem15-strategy-icon { color: #2ecc71; }
+.mem15-fine ul li::before { background: #2ecc71; }
+
+.mem15-skip { border-color: rgba(231, 76, 60, 0.3); }
+.mem15-skip .mem15-strategy-title { color: #e74c3c; }
+.mem15-skip .mem15-strategy-icon { color: #e74c3c; }
+.mem15-skip ul li::before { background: #e74c3c; }
+
+/* --- Cost Comparison Table --- */
+.mem15-cost-table {
+    margin: 24px 0;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f121b;
+}
+
+.mem15-cost-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 14px 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #4caf50;
+}
+
+.mem15-cost-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    font-size: 0.82rem;
+    color: #b0bedb;
+    transition: background 0.2s;
+}
+
+.mem15-cost-row:last-child {
+    border-bottom: none;
+}
+
+.mem15-cost-row:hover {
+    background: rgba(76, 175, 80, 0.03);
+}
+
+.mem15-cost-row:nth-child(2) {
+    background: rgba(76, 175, 80, 0.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .mem15-rank-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mem15-power-compare {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .mem15-vs {
+        transform: rotate(90deg);
+    }
+
+    .mem15-rank-line {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .mem15-tag-t,
+    .mem15-tag-a,
+    .mem15-tag-b,
+    .mem15-tag-c {
+        margin-left: 0;
+    }
+
+    .mem15-strategy-section {
+        grid-template-columns: 1fr;
+    }
+
+    .mem15-cost-header,
+    .mem15-cost-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+    }
+
+    .mem15-cost-header .mem15-cost-col:nth-child(n+3),
+    .mem15-cost-row .mem15-cost-col:nth-child(n+3) {
+        display: none;
+    }
+}

@@ -1,0 +1,297 @@
+/* =========================================
+   MEM_18 — Memory Acquisition Catalog
+   Prefix: .mem18-*
+   Accent: #4caf50 (memory green)
+   Dark theme source cards, rate tables, banners
+   ========================================= */
+
+/* --- Source Type Cards (6-grid) --- */
+.mem18-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.mem18-source-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+    transition: border-color 0.25s, transform 0.2s;
+}
+
+.mem18-source-card:hover {
+    border-color: #4caf50;
+    transform: translateY(-3px);
+}
+
+.mem18-source-icon {
+    font-size: 1.8rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.mem18-source-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #e0e6f0;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.mem18-source-desc {
+    font-size: 0.76rem;
+    color: #8a94a8;
+    line-height: 1.55;
+}
+
+/* --- Rate Table (data rows) --- */
+.mem18-rate-table {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 24px 0;
+}
+
+.mem18-rate-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4caf50;
+}
+
+.mem18-rate-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    gap: 16px;
+}
+
+.mem18-rate-row:last-child {
+    border-bottom: none;
+}
+
+.mem18-rate-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.mem18-rate-label {
+    color: #8a94a8;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.mem18-rate-value {
+    color: #e0e6f0;
+    font-size: 0.88rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* --- Banner Catalog Cards --- */
+.mem18-banner-catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.mem18-banner-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: border-color 0.2s;
+}
+
+.mem18-banner-card:hover {
+    border-color: #4caf50;
+}
+
+.mem18-banner-rank {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4caf50;
+    margin-bottom: 6px;
+}
+
+.mem18-banner-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 4px;
+}
+
+.mem18-banner-meta {
+    font-size: 0.75rem;
+    color: #6a7080;
+    margin-bottom: 10px;
+}
+
+.mem18-banner-status {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.mem18-status-standard {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.mem18-status-limited {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* --- Shop Cards --- */
+.mem18-shop-section {
+    margin: 24px 0;
+}
+
+.mem18-shop-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+}
+
+.mem18-shop-card:hover {
+    border-color: #4caf50;
+}
+
+.mem18-shop-header {
+    padding: 14px 22px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(76, 175, 80, 0.12);
+    color: #4caf50;
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.mem18-shop-body {
+    padding: 18px 22px;
+}
+
+.mem18-shop-body p {
+    color: #b0bedb;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    line-height: 1.65;
+}
+
+.mem18-shop-body p:last-child {
+    margin-bottom: 0;
+}
+
+.mem18-shop-body strong {
+    color: #e0e6f0;
+}
+
+/* --- Shard Comparison Table --- */
+.mem18-shard-comparison {
+    margin: 24px 0;
+}
+
+.mem18-shard-table {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.mem18-shard-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+    gap: 12px;
+    padding: 14px 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4caf50;
+}
+
+.mem18-shard-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+    gap: 12px;
+    padding: 13px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    font-size: 0.85rem;
+    color: #b0bedb;
+    align-items: center;
+}
+
+.mem18-shard-row:last-child {
+    border-bottom: none;
+}
+
+.mem18-shard-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.mem18-shard-best {
+    background: rgba(76, 175, 80, 0.08) !important;
+    border-top: 1px solid rgba(76, 175, 80, 0.2);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    color: #e0e6f0;
+    font-weight: 600;
+}
+
+.mem18-shard-best .mem18-shard-label {
+    color: #4caf50;
+    font-weight: 700;
+}
+
+.mem18-shard-label {
+    color: #8a94a8;
+    font-weight: 500;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .mem18-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mem18-banner-catalog {
+        grid-template-columns: 1fr;
+    }
+    .mem18-shard-header,
+    .mem18-shard-row {
+        grid-template-columns: 1fr 1fr;
+        font-size: 0.78rem;
+    }
+    .mem18-shard-header span:nth-child(n+3),
+    .mem18-shard-row span:nth-child(n+3) {
+        text-align: right;
+    }
+}
+
+@media (max-width: 480px) {
+    .mem18-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

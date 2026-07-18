@@ -1,0 +1,336 @@
+/* F2P Memory Blueprint (#4caf50 green theme) */
+/* Uses .mem17-* prefix for article-specific overrides */
+
+/* =========================================
+   STAT GRID — F2P Budget Overview
+   ========================================= */
+.mem17-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.mem17-stat-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.mem17-stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #4caf50;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
+}
+
+.mem17-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4caf50;
+    margin-bottom: 6px;
+    font-family: monospace;
+}
+
+.mem17-stat-label {
+    font-size: 0.7rem;
+    color: #e0e6f0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.mem17-stat-desc {
+    font-size: 0.65rem;
+    color: #6a7080;
+    line-height: 1.3;
+}
+
+/* =========================================
+   SSR TEAM GRID — Free SSR Viability
+   ========================================= */
+.mem17-team-grid {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.mem17-team-grid .team-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: border-color 0.2s;
+}
+
+.mem17-team-grid .team-card:hover {
+    border-color: #4caf50;
+}
+
+.mem17-team-grid .team-rank {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4caf50;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.mem17-team-grid .team-comp {
+    font-size: 0.95rem;
+    color: #f0f3fc;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.mem17-team-grid .team-reason {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.mem17-viability {
+    font-size: 0.7rem;
+    color: #6a7080;
+    letter-spacing: 0.5px;
+}
+
+.viability-high { color: #4caf50; font-weight: 700; }
+.viability-med { color: #ff9800; font-weight: 700; }
+.viability-low { color: #e74c3c; font-weight: 700; }
+
+/* =========================================
+   SR TIER GRID — Attack Card Layout
+   ========================================= */
+.mem17-tier-grid {
+    display: grid;
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.mem17-tier-grid .attack-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.mem17-tier-grid .attack-card:hover {
+    border-color: #4caf50;
+    transform: translateX(4px);
+}
+
+.mem17-tier-grid .attack-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.mem17-tier-grid .attack-name .article-tier {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+}
+
+.mem17-tier-grid .attack-desc {
+    color: #8a94a8;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.mem17-tier-grid .attack-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    background: #05070a;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 12px;
+}
+
+.mem17-tier-grid .detail {
+    font-size: 0.78rem;
+    color: #b0bedb;
+    line-height: 1.6;
+}
+
+.mem17-tier-grid .detail-label {
+    color: #6a7080;
+    margin-right: 4px;
+}
+
+/* =========================================
+   MILESTONE TIMELINE — 6-Month Plan
+   ========================================= */
+.mem17-milestone {
+    margin: 30px 0 20px;
+    padding: 20px 24px;
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+}
+
+.mem17-milestone-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 12px 0;
+}
+
+.mem17-milestone-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: #2a2f3d;
+    transform: translateY(-50%);
+}
+
+.mem17-milestone-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1a1f2e;
+    border: 2px solid #2a2f3d;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.mem17-milestone-dot.completed {
+    background: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.4);
+}
+
+.mem17-milestone-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.mem17-milestone-labels span {
+    font-size: 0.7rem;
+    color: #8a94a8;
+    letter-spacing: 0.5px;
+    text-align: center;
+    width: 33%;
+}
+
+.mem17-milestone-labels span:first-child {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+/* =========================================
+   PULL BUDGET — Stat Summary Overrides
+   ========================================= */
+.mem17-pull-budget.stats-summary {
+    margin: 30px 0;
+}
+
+.mem17-pull-budget .stat-card {
+    border-color: #1a2a1a;
+}
+
+.mem17-pull-budget .stat-card:hover {
+    border-color: #4caf50;
+}
+
+.mem17-pull-budget .stat-number {
+    color: #4caf50;
+}
+
+/* =========================================
+   PULL FORMULA — Budget Breakdown Table
+   ========================================= */
+.mem17-pull-formula {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 4px 0;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.mem17-formula-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4caf50;
+    text-transform: uppercase;
+    padding: 14px 20px 8px;
+    border-bottom: 1px solid #1a1f2e;
+}
+
+.mem17-formula-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1a1f2e;
+    font-size: 0.85rem;
+    color: #b0bedb;
+    gap: 16px;
+}
+
+.mem17-formula-row:last-of-type {
+    border-bottom: none;
+}
+
+.mem17-formula-row span:last-child {
+    font-weight: 600;
+    color: #e0e6f0;
+    font-family: monospace;
+}
+
+.mem17-formula-total {
+    background: rgba(76, 175, 80, 0.06);
+    border-top: 1px solid #1a2a1a;
+}
+
+.mem17-formula-total span:last-child {
+    color: #4caf50;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   BACK TO TOP — Memory Theme Override
+   ========================================= */
+.mem17-pull-budget + .back-to-top,
+.gb-container + .back-to-top {
+    background: #4caf50;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 700px) {
+    .mem17-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .mem17-stat-number {
+        font-size: 1.6rem;
+    }
+
+    .mem17-tier-grid .attack-details {
+        grid-template-columns: 1fr;
+    }
+
+    .mem17-milestone-track::before {
+        left: 5%;
+        right: 5%;
+    }
+}
