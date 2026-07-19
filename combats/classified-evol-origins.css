@@ -1,0 +1,130 @@
+/* Evol Origins & Classification — N109_14 */
+/* Prefix: n109-14-  |  Theme: #e74c3c red / dark */
+
+/* --- Evol Type Cards (5-column grid) --- */
+.n109-14-evol-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 28px 0;
+}
+.n109-14-evol-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 20px 14px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.n109-14-evol-card:hover {
+    border-color: #e74c3c;
+    transform: translateY(-3px);
+}
+.n109-14-evol-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.n109-14-evol-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e74c3c;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.n109-14-evol-wielder {
+    font-size: 0.85rem;
+    color: #e0e6f0;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.n109-14-evol-desc {
+    font-size: 0.72rem;
+    color: #8a94a8;
+    line-height: 1.5;
+}
+
+/* --- Info grid icon overrides --- */
+.n109-14-info-icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+.n109-14-icon-large {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* Magnitude color variants */
+.n109-14-alpha .n109-14-info-icon { color: #e74c3c; }
+.n109-14-beta .n109-14-info-icon  { color: #f39c12; }
+.n109-14-gamma .n109-14-info-icon { color: #3498db; }
+.n109-14-omega .n109-14-info-icon { color: #8e44ad; }
+
+/* --- Trigger Attack Cards --- */
+.n109-14-attack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+}
+.n109-14-trigger-trauma    { border-left: 3px solid #e74c3c; }
+.n109-14-trigger-hereditary { border-left: 3px solid #f39c12; }
+.n109-14-trigger-exposure  { border-left: 3px solid #3498db; }
+.n109-14-trigger-artificial { border-left: 3px solid #8e44ad; }
+.n109-14-trigger-trauma .attack-name,
+.n109-14-trigger-hereditary .attack-name,
+.n109-14-trigger-exposure .attack-name,
+.n109-14-trigger-artificial .attack-name {
+    color: #f0f3fc;
+}
+
+/* --- Cost Cards --- */
+.n109-14-cost-grid {
+    display: grid;
+    gap: 14px;
+    margin: 24px 0;
+}
+.n109-14-cost-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.n109-14-cost-card:hover {
+    border-color: #e74c3c;
+}
+.n109-14-cost-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 2px solid;
+    background: rgba(255,255,255,0.02);
+}
+.n109-14-cost-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0f3fc;
+}
+.n109-14-cost-rating {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+}
+.n109-14-cost-detail {
+    padding: 16px 20px;
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .n109-14-evol-grid { grid-template-columns: repeat(2, 1fr); }
+    .n109-14-attack-grid { grid-template-columns: 1fr; }
+}

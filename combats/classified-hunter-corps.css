@@ -1,0 +1,192 @@
+/* =============================================
+   HUNTER CORPS — CLASSIFIED N109 DOSSIER (#N109_15)
+   Theme: Dark dossier / red accent (#e74c3c)
+   Prefix: .n109-15-*
+   ============================================= */
+
+/* --- Override accent to pure red --- */
+.article-theme-n109 {
+    --accent: #e74c3c;
+    --accent-rgb: 231, 76, 60;
+    --accent-dim: rgba(231, 76, 60, 0.12);
+}
+
+/* --- Hero badge — red glow --- */
+.n109-15-badge {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    box-shadow: 0 0 12px rgba(231, 76, 60, 0.15);
+}
+
+/* --- Hero — blood-red underline --- */
+.n109-15-hero::after {
+    background: linear-gradient(90deg, transparent, #e74c3c, transparent) !important;
+}
+
+/* --- Container background with red vignette --- */
+.n109-15-container {
+    position: relative;
+}
+
+.n109-15-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 0%, rgba(231, 76, 60, 0.03) 0%, transparent 60%);
+    z-index: 0;
+}
+
+/* --- Section headers --- */
+.n109-15-container h2 {
+    border-left-color: #e74c3c;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.1);
+}
+
+/* --- Accent borders on cards --- */
+.n109-15-container .team-card,
+.n109-15-container .attack-card {
+    border-left: 3px solid transparent;
+    transition: border-left-color 0.3s, border-color 0.3s;
+}
+
+.n109-15-container .team-card:hover,
+.n109-15-container .attack-card:hover {
+    border-left-color: #e74c3c;
+    border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* --- Team rank red tint --- */
+.n109-15-container .team-rank {
+    color: #e74c3c;
+    letter-spacing: 2px;
+    font-size: 0.65rem;
+}
+
+/* --- Attack card name red --- */
+.n109-15-container .attack-name {
+    color: #f0f3fc;
+}
+
+.n109-15-container .attack-name::before {
+    content: '\26A0';
+    color: #e74c3c;
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+/* --- Attack details — red border --- */
+.n109-15-container .attack-details {
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    background: rgba(231, 76, 60, 0.04);
+}
+
+.n109-15-container .detail .detail-label {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* --- TOC red accent --- */
+.n109-15-container .article-toc {
+    border: 1px solid rgba(231, 76, 60, 0.15);
+}
+
+.n109-15-container .article-toc-list a:hover {
+    color: #e74c3c;
+    padding-left: 8px;
+}
+
+/* --- Author line red tint --- */
+.n109-15-container .gb-author {
+    border-bottom-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* --- Meta tag red --- */
+.n109-15-container .gb-meta .meta-tag {
+    background: rgba(231, 76, 60, 0.12);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* --- Highlight box red accent --- */
+.n109-15-container .gb-highlight {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.04);
+}
+
+.n109-15-container .gb-highlight strong {
+    color: #e74c3c;
+}
+
+/* --- Tip box — red variant override --- */
+.n109-15-container .gb-tip-box {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.06);
+}
+
+.n109-15-container .gb-tip-box strong {
+    color: #e74c3c;
+}
+
+/* --- Final box — red accent --- */
+.n109-15-container .gb-final-box {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.04);
+}
+
+.n109-15-container .gb-final-box strong {
+    color: #e74c3c;
+}
+
+/* --- Horizontal rule red --- */
+.n109-15-container hr {
+    border-color: rgba(231, 76, 60, 0.15);
+}
+
+/* --- Red selection highlight --- */
+.n109-15-container ::selection {
+    background: rgba(231, 76, 60, 0.3);
+    color: #fff;
+}
+
+/* --- Links red --- */
+.n109-15-container a {
+    color: #e74c3c;
+}
+
+.n109-15-container a:hover {
+    color: #ff6b6b;
+}
+
+/* --- Back-to-top red --- */
+.n109-15-container ~ .back-to-top {
+    background: #e74c3c;
+}
+
+/* --- TOC bottom text --- */
+.n109-15-container .article-toc > div:last-child {
+    font-size: 0.75rem;
+    color: rgba(231, 76, 60, 0.6);
+    font-style: italic;
+    border-top: 1px solid rgba(231, 76, 60, 0.1);
+    padding-top: 12px;
+}
+
+/* --- Scrollbar styling --- */
+.n109-15-container ::-webkit-scrollbar-thumb {
+    background: #e74c3c;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .n109-15-container h2 {
+        font-size: 1.3rem;
+    }
+}

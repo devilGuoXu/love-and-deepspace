@@ -1,0 +1,35 @@
+.gb-container { max-width:800px; margin:0 auto; padding:60px 24px 80px; display:block; }
+.gb-hero { text-align:center; margin-bottom:50px; padding:40px 20px 30px; border-bottom:1px solid #2a2f3d; position:relative; }
+.gb-hero::after { content:''; position:absolute; bottom:-1px; left:50%; transform:translateX(-50%); width:120px; height:2px; background:linear-gradient(90deg,transparent,#e74c3c,transparent); }
+.gb-hero h1 { font-size:2.5rem; font-weight:700; background:linear-gradient(135deg,#fff,#e74c3c); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:16px; line-height:1.2; }
+.gb-hero p { color:#8a94a8; font-size:.95rem; max-width:600px; margin:0 auto; line-height:1.6; }
+.gb-badge { display:inline-block; background:rgba(231,76,60,0.15); border:1px solid #e74c3c; padding:6px 20px; border-radius:20px; font-size:.7rem; letter-spacing:2px; color:#e74c3c; margin-bottom:20px; text-transform:uppercase; }
+.gb-meta { display:flex; justify-content:space-between; align-items:center; background:#0f121b; border:1px solid #2a2f3d; border-radius:12px; padding:12px 20px; margin-bottom:40px; flex-wrap:wrap; gap:8px; }
+.gb-meta .meta-id { font-family:monospace; font-size:.8rem; color:#6a7080; letter-spacing:.5px; }
+.gb-meta .meta-date { color:#6a7080; font-size:.8rem; }
+.gb-meta .meta-tag { background:rgba(231,76,60,0.2); padding:4px 12px; border-radius:20px; font-size:.7rem; font-weight:600; letter-spacing:1px; color:#e74c3c; }
+.gb-highlight { background:#0f121b; border-left:3px solid #e74c3c; padding:20px 24px; margin:30px 0; border-radius:0 12px 12px 0; }
+.gb-highlight strong { color:#e74c3c; }
+.gb-container h2 { font-size:1.6rem; color:#e74c3c; margin:48px 0 20px 0; padding-left:16px; border-left:3px solid #e74c3c; line-height:1.3; }
+.gb-container h3 { font-size:1.2rem; color:#e0e6f0; margin:32px 0 16px 0; }
+.gb-container p { color:#b0bedb; margin-bottom:20px; line-height:1.8; font-size:.95rem; }
+.gb-container ul { color:#b0bedb; margin-bottom:20px; line-height:1.8; padding-left:24px; }
+.gb-container li { margin-bottom:8px; }
+.gb-author { font-size:.85rem; color:#8a94a8; margin-top:4px; padding:4px 0 8px; border-bottom:1px solid #2a2f3d; margin-bottom:20px; }
+.gb-tip-box { background:rgba(46,204,113,0.08); border-left:3px solid #2ecc71; padding:16px 20px; margin:20px 0; border-radius:0 12px 12px 0; }
+.gb-tip-box strong { color:#2ecc71; }
+.gb-final-box { background:#0f121b; border-left:3px solid #2ecc71; padding:20px 24px; margin:30px 0; border-radius:0 12px 12px 0; }
+.gb-final-box strong { color:#2ecc71; }
+
+.n109-17-attack-card { background:rgba(231,76,60,0.04); border:1px solid #2a2f3d; border-left:3px solid #e74c3c; border-radius:0 16px 16px 0; padding:20px 24px; margin:16px 0; transition:border-color .2s,background .2s; }
+.n109-17-attack-card:hover { border-color:#e74c3c; background:rgba(231,76,60,0.07); }
+.n109-17-attack-name { font-size:1.1rem; font-weight:700; color:#f0f3fc; margin-bottom:8px; letter-spacing:.3px; }
+.n109-17-attack-desc { color:#8a94a8; font-size:.85rem; line-height:1.6; }
+
+.n109-17-team-card { background:rgba(231,76,60,0.04); border:1px solid #2a2f3d; border-left:3px solid #e74c3c; border-radius:0 12px 12px 0; padding:16px 20px; margin-bottom:10px; transition:border-color .2s,background .2s; }
+.n109-17-team-card:hover { border-color:#e74c3c; background:rgba(231,76,60,0.07); }
+.n109-17-team-rank { font-size:.7rem; font-weight:700; letter-spacing:2px; color:#e74c3c; margin-bottom:6px; }
+.n109-17-team-comp { color:#f0f3fc; font-size:.9rem; font-weight:600; margin-bottom:4px; }
+.n109-17-team-reason { color:#8a94a8; font-size:.8rem; line-height:1.5; }
+
+@media (max-width:700px) { .gb-container { padding:40px 20px; } .gb-hero h1 { font-size:1.8rem; } .gb-container h2 { font-size:1.3rem; } }

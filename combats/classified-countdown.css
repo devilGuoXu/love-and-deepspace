@@ -1,0 +1,298 @@
+/* =========================================
+   The 50-Year Warning — Countdown Theme
+   N109_16 | Prefix: .n109-16-*
+   Accent: #e74c3c (N109 red)
+   ========================================= */
+
+/* --- Countdown Timeline Bar --- */
+.n109-16-countdown-bar {
+    height: 8px;
+    background: #1a1f2e;
+    border-radius: 4px;
+    margin: 28px 0 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.n109-16-countdown-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #e74c3c, #ff6b6b, #ffd700);
+    transition: width 0.5s;
+    position: relative;
+}
+
+.n109-16-countdown-fill::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 14px;
+    height: 14px;
+    background: #e74c3c;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(231, 76, 60, 0.6);
+}
+
+.n109-16-countdown-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #6a7080;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+}
+
+.n109-16-countdown-labels span:first-child {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* --- Stage Cards (Five Stages) --- */
+.n109-16-stage-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 14px 0;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.n109-16-stage-card:hover {
+    border-color: #e74c3c;
+}
+
+.n109-16-stage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #e74c3c;
+    border-radius: 4px 0 0 4px;
+}
+
+.n109-16-stage-done::before {
+    background: #6a7080;
+}
+
+.n109-16-stage-active::before {
+    background: #e74c3c;
+    box-shadow: 0 0 12px rgba(231, 76, 60, 0.4);
+}
+
+.n109-16-stage-number {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #6a7080;
+    margin-bottom: 4px;
+}
+
+.n109-16-stage-done .n109-16-stage-number {
+    color: #6a7080;
+}
+
+.n109-16-stage-active .n109-16-stage-number {
+    color: #e74c3c;
+}
+
+.n109-16-stage-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 10px;
+}
+
+.n109-16-stage-done .n109-16-stage-name {
+    color: #6a7080;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.n109-16-stage-active .n109-16-stage-name {
+    color: #e74c3c;
+}
+
+.n109-16-stage-desc {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.7;
+}
+
+.n109-16-stage-desc strong {
+    color: #e74c3c;
+}
+
+.n109-16-stage-done .n109-16-stage-desc {
+    opacity: 0.5;
+}
+
+/* --- Faction Knowledge Grid --- */
+.n109-16-faction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.n109-16-faction-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+
+.n109-16-faction-card:hover {
+    border-color: #e74c3c;
+}
+
+.n109-16-faction-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 4px;
+}
+
+.n109-16-faction-access {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #e74c3c;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1a1f2e;
+    text-transform: uppercase;
+}
+
+.n109-16-faction-desc {
+    font-size: 0.8rem;
+    color: #8a94a8;
+    line-height: 1.6;
+}
+
+/* --- Approach Cards --- */
+.n109-16-approach-grid {
+    margin: 24px 0;
+}
+
+.n109-16-approach-card {
+    background: #0f121b;
+    border: 1px solid #2a2f3d;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 14px 0;
+    transition: border-color 0.2s;
+    position: relative;
+    padding-left: 76px;
+}
+
+.n109-16-approach-card:hover {
+    border-color: #e74c3c;
+}
+
+.n109-16-approach-icon {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.n109-16-approach-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f0f3fc;
+    margin-bottom: 2px;
+}
+
+.n109-16-approach-status {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #e74c3c;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.n109-16-approach-desc {
+    font-size: 0.85rem;
+    color: #b0bedb;
+    line-height: 1.7;
+}
+
+/* --- Countdown Bar Variant (bottom) --- */
+.n109-16-approach-card + .n109-16-countdown-bar {
+    margin-top: 36px;
+}
+
+/* --- Override shared theme accent for this article --- */
+.article-theme-n109 .gb-highlight strong {
+    color: #e74c3c;
+}
+
+.article-theme-n109 .gb-highlight {
+    border-left-color: #e74c3c;
+}
+
+.article-theme-n109 .gb-container h2 {
+    border-left-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.article-theme-n109 .gb-badge {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.article-theme-n109 .gb-meta .meta-tag {
+    background: rgba(231, 76, 60, 0.12);
+    color: #e74c3c;
+}
+
+.article-toc-list a:hover {
+    color: #e74c3c;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+    .n109-16-faction-grid {
+        grid-template-columns: 1fr;
+    }
+    .n109-16-faction-grid,
+    .n109-16-approach-grid {
+        gap: 10px;
+    }
+    .n109-16-approach-card {
+        padding-left: 20px;
+        padding-top: 70px;
+    }
+    .n109-16-approach-icon {
+        left: 20px;
+        top: 18px;
+    }
+    .n109-16-stage-card {
+        padding: 16px 18px;
+    }
+}
+@media (max-width: 500px) {
+    .n109-16-stage-name {
+        font-size: 1rem;
+    }
+    .n109-16-faction-card {
+        padding: 16px;
+    }
+}
